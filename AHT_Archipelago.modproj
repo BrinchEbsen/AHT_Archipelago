@@ -465,7 +465,7 @@
         {
           "name": "PlayerObjectives__SetObjective__ReImplHook",
           "code_files": [
-            "./asm/PlayerObjectives__SetObjective__ReImplHook.s"
+            "./asm/GC_NTSC/PlayerObjectives__SetObjective__ReImplHook.s"
           ],
           "memory_address": "80066244",
           "size": "0",
@@ -477,7 +477,7 @@
         {
           "name": "SE_BitHeap__Allocate__FixBug",
           "code_files": [
-            "./asm/SE_BitHeap__Allocate__FixBug.s"
+            "./asm/GC_NTSC/SE_BitHeap__Allocate__FixBug.s"
           ],
           "memory_address": "8022c238",
           "size": "0",
