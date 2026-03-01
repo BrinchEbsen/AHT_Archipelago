@@ -1,5 +1,20 @@
 #include <ap_collectables.h>
+#include <ap_settings.h>
 #include <hashcodes.h>
+#include <system.h>
+
+void ap_set_collectable(int index)
+{
+    int byte = index / 8;
+    int bit = index % 8;
+
+    u8* val = &g_location_bitfield[byte];
+
+    if (((*val) & (1 << bit)) == 0) {
+        (*val) |= (1 << bit);
+        PRINTF("[AP] Set location flag index %d\n", index);
+    }
+}
 
 APCollectable g_ap_collectables[] = {
     #pragma region 19 Sunken Ruins
