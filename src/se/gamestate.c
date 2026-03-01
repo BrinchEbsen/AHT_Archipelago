@@ -37,13 +37,18 @@ void PlayerObjectives__SetObjective__ReImplHook(PlayerObjectives* self, EXHashCo
     switch (hashcode) {
         case HT_Objective_GainedLockPicker:
             gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BOUGHT_LOCK_PICK;
+            break;
         case HT_Objective_GivenDoubleJump:
             gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_DOUBLE_JUMP;
+            break;
         case HT_Objective_GivenPoleGrabAbility:
             gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_POLE_SPIN;
+            break;
         case HT_Objective_GivenWallKickAbility:
             gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_WALL_KICK;
+            break;
         case HT_Objective_GivenWingShieldAbility:
             gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_WING_SHIELD;
+            break;
     }
 }
