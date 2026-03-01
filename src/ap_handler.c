@@ -60,6 +60,9 @@ void print_trigger_array_code()
                         break;
                 }
             } break;
+            case HT_TriggerType_EggThief: {
+                typestr = "            .type = EggThief\n";
+            } break;
         }
 
         if (typestr == NULL) {

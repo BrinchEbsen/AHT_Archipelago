@@ -8,7 +8,8 @@ typedef enum APCollectable_Type
     DragonEgg,
     DarkGem,
     LightGem_Chest,
-    DragonEgg_Chest
+    DragonEgg_Chest,
+    EggThief
 } APCollectable_Type;
 
 typedef enum APCollectable_UnionType
@@ -40,8 +41,9 @@ typedef struct APCollectable
 } APCollectable;
 
 #define AP_GRABBABLE_START 0
-#define AP_GRABBABLE_NUM 171
+#define AP_GRABBABLE_NUM 181
 #define AP_OBJECTIVES_START AP_GRABBABLE_NUM
+#define AP_OBJECTIVES_NUM 220-AP_GRABBABLE_NUM
 
 extern APCollectable g_ap_collectables[];
 

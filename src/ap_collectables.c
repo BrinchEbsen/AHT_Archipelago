@@ -229,6 +229,14 @@ APCollectable g_ap_collectables[] = {
             .type = DragonEgg_Chest
         }
     },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 20,
+            .trigger_index = 239,
+            .type = EggThief
+        }
+    },
     #pragma endregion
     #pragma region 21 Cloudy Domain Ball Gadget
     {
@@ -333,6 +341,14 @@ APCollectable g_ap_collectables[] = {
         .union_type = APC_Grabbable,
         .grabbable = {
             .map_index = 22,
+            .trigger_index = 52,
+            .type = EggThief
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 22,
             .trigger_index = 73,
             .type = LightGem
         }
@@ -385,6 +401,14 @@ APCollectable g_ap_collectables[] = {
             .map_index = 23,
             .trigger_index = 0,
             .type = DarkGem
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 23,
+            .trigger_index = 1,
+            .type = EggThief
         }
     },
     {
@@ -757,6 +781,14 @@ APCollectable g_ap_collectables[] = {
         .union_type = APC_Grabbable,
         .grabbable = {
             .map_index = 31,
+            .trigger_index = 60,
+            .type = EggThief
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 31,
             .trigger_index = 61,
             .type = DragonEgg
         }
@@ -935,6 +967,14 @@ APCollectable g_ap_collectables[] = {
         .union_type = APC_Grabbable,
         .grabbable = {
             .map_index = 33,
+            .trigger_index = 133,
+            .type = EggThief
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 33,
             .trigger_index = 421,
             .type = DragonEgg_Chest
         }
@@ -1107,6 +1147,14 @@ APCollectable g_ap_collectables[] = {
         .union_type = APC_Grabbable,
         .grabbable = {
             .map_index = 40,
+            .trigger_index = 237,
+            .type = EggThief
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 40,
             .trigger_index = 388,
             .type = LightGem
         }
@@ -1127,6 +1175,14 @@ APCollectable g_ap_collectables[] = {
             .map_index = 44,
             .trigger_index = 44,
             .type = LightGem
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 44,
+            .trigger_index = 66,
+            .type = EggThief
         }
     },
     #pragma endregion
@@ -1223,6 +1279,14 @@ APCollectable g_ap_collectables[] = {
         .union_type = APC_Grabbable,
         .grabbable = {
             .map_index = 45,
+            .trigger_index = 59,
+            .type = EggThief
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 45,
             .trigger_index = 119,
             .type = LightGem
         }
@@ -1291,6 +1355,14 @@ APCollectable g_ap_collectables[] = {
             .map_index = 60,
             .trigger_index = 21,
             .type = DarkGem
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 60,
+            .trigger_index = 36,
+            .type = EggThief
         }
     },
     {
@@ -1385,6 +1457,14 @@ APCollectable g_ap_collectables[] = {
             .map_index = 63,
             .trigger_index = 2,
             .type = DarkGem
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 63,
+            .trigger_index = 10,
+            .type = EggThief
         }
     },
     {
