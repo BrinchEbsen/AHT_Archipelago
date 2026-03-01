@@ -1,12 +1,15 @@
 #include <gamestate.h>
 #include <hashcodes.h>
 #include <ap_handler.h>
+#include <ap_settings.h>
 
 bool g_sync_objectives_and_abilities = true;
 
 void PlayerObjectives__SetObjective__ReImplHook(PlayerObjectives* self, EXHashCode hashcode)
 {
-    update_objectives(hashcode);
+    if (g_ap_enable_archipelago) {
+        update_objectives(hashcode);
+    }
 
     int o_index;
     int o_bit;
@@ -30,7 +33,7 @@ void PlayerObjectives__SetObjective__ReImplHook(PlayerObjectives* self, EXHashCo
 
     *uintVal |= mask;
 
-    if (!g_sync_objectives_and_abilities) {
+    if (g_ap_enable_archipelago && !g_sync_objectives_and_abilities) {
         return;
     }
 

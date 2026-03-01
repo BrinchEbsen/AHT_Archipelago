@@ -447,6 +447,19 @@
           "auto_calculate_injection_file_address": true,
           "injection_type": "existing_file",
           "enabled": true
+        },
+        {
+          "name": "SE_GameState_Storage",
+          "code_files": [
+            "./src/ap_settings.c"
+          ],
+          "memory_address": "80467ce4",
+          "size": "2000",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x464ce4",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "existing_file",
+          "enabled": true
         }
       ],
       "hooks": [
