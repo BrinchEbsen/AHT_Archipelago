@@ -14,8 +14,7 @@ typedef enum APCollectable_Type
 typedef enum APCollectable_UnionType
 {
     APC_Grabbable,
-    APC_Objective,
-    APC_Boiler
+    APC_Objective
 } APCollectable_UnionType;
 
 typedef struct APCollectable_Grabbable
@@ -31,23 +30,18 @@ typedef struct APCollectable_Objective
     APCollectable_Type type;
 } APCollectable_Objective;
 
-typedef struct APCollectable_Boiler
-{
-    // Always in Ice Citadel and always a light gem
-    u16 trigger_index;
-} APCollectable_Boiler;
-
 typedef struct APCollectable
 {
     APCollectable_UnionType union_type;
     union {
         APCollectable_Grabbable grabbable;
-        APCollectable_Objective npc;
-        APCollectable_Boiler boiler;
+        APCollectable_Objective objective;
     };
 } APCollectable;
 
-#define NUM_AP_GRABBABLE 169
+#define AP_GRABBABLE_START 0
+#define AP_GRABBABLE_NUM 171
+#define AP_OBJECTIVES_START AP_GRABBABLE_NUM
 
 extern APCollectable g_ap_collectables[];
 
