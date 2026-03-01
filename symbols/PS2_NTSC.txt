@@ -1,0 +1,14 @@
+/* syscalls.h */
+_sceSifSendCmd = 0x411A80;
+
+/* pad.h */
+EXBaseGamePad__m_pGamePad = 0x4fb894;
+g_PadNum = 0x4fae0c;
+
+/* gamestate.h */
+
+
+/* igstdlib.h */
+printf = 0x405338;
+
+/* igmath.h */

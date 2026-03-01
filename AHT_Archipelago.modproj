@@ -1,0 +1,482 @@
+{
+  "version": "1.0",
+  "project_name": "AHT_Archipelago",
+  "project_folder": "./",
+  "currently_selected_build_index": 1,
+  "build_versions": [
+    {
+      "build_name": "PS2_NTSC",
+      "platform": "PS2",
+      "symbols_file": "PS2_NTSC.txt",
+      "injection_files": [
+        "SLUS_208.84"
+      ],
+      "injection_file_offsets": {
+        "SLUS_208.84": "FF000"
+      },
+      "injection_file_types": {
+        "SLUS_208.84": "disk"
+      },
+      "extracted_game_folder": "./.config/game_files/DEFAULT",
+      "main_executable": "SLUS_208.84",
+      "source_path": "D:/PS2 games/Spyro - A Hero's Tail (USA).iso",
+      "compiler_flags": "-O2 -fsingle-precision-constant -Werror -I include/ingame_stdlib/ -I include/ex/",
+      "is_single_file_mode": false,
+      "single_file_path": null,
+      "section_maps": {
+        "SLUS_208.84": [
+          {
+            "section_type": "text",
+            "file_offset": 4096,
+            "mem_start": 1048576,
+            "mem_end": 4293004,
+            "size": 3244428
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 3248528,
+            "mem_start": 4293008,
+            "mem_end": 4352992,
+            "size": 59984
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4183484,
+            "mem_start": 0,
+            "mem_end": 24,
+            "size": 24
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4183508,
+            "mem_start": 0,
+            "mem_end": 372,
+            "size": 372
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4183880,
+            "mem_start": 0,
+            "mem_end": 1166,
+            "size": 1166
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4185046,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4187094,
+            "mem_start": 0,
+            "mem_end": 1704,
+            "size": 1704
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4188798,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4190846,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4192894,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4194942,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4196990,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4199038,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4201086,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4203134,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4205182,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4207230,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4209278,
+            "mem_start": 0,
+            "mem_end": 640,
+            "size": 640
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4209918,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4211966,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4214014,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4216062,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4218110,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4220158,
+            "mem_start": 0,
+            "mem_end": 1328,
+            "size": 1328
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4221486,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4223534,
+            "mem_start": 0,
+            "mem_end": 2008,
+            "size": 2008
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4225542,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4227590,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4229638,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4231686,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4233734,
+            "mem_start": 0,
+            "mem_end": 1616,
+            "size": 1616
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4235350,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4237398,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4239446,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4241494,
+            "mem_start": 0,
+            "mem_end": 2048,
+            "size": 2048
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4243542,
+            "mem_start": 0,
+            "mem_end": 1088,
+            "size": 1088
+          },
+          {
+            "section_type": "data",
+            "file_offset": 3308544,
+            "mem_start": 4353024,
+            "mem_end": 4477852,
+            "size": 124828
+          },
+          {
+            "section_type": "data",
+            "file_offset": 3433472,
+            "mem_start": 4477952,
+            "mem_end": 5188008,
+            "size": 710056
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4143616,
+            "mem_start": 5188096,
+            "mem_end": 5217764,
+            "size": 29668
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4173312,
+            "mem_start": 5217792,
+            "mem_end": 5227801,
+            "size": 10009
+          },
+          {
+            "section_type": "unknown",
+            "file_offset": 4183424,
+            "mem_start": 5227904,
+            "mem_end": 5228612,
+            "size": 708
+          },
+          {
+            "section_type": "bss",
+            "file_offset": 4183484,
+            "mem_start": 5228672,
+            "mem_end": 5488736,
+            "size": 260064
+          }
+        ]
+      },
+      "code_caves": [
+        {
+          "name": "EXGeoViewerWnd_Overwrite",
+          "code_files": [
+            "./src/main.c",
+            "./asm/syscalls.s",
+            "./src/ap_handler.c",
+            "./src/pad.c"
+          ],
+          "memory_address": "00351670",
+          "size": "6fa8",
+          "injection_file": "SLUS_208.84",
+          "injection_file_address": "0x252670",
+          "auto_calculate_injection_file_address": true,
+          "injection_type": "existing_file",
+          "enabled": true
+        }
+      ],
+      "hooks": [
+        {
+          "name": "AutoHook_PS2_NTSC",
+          "code_files": [
+            "./asm/AutoHook_PS2_NTSC.s"
+          ],
+          "memory_address": "411BE0",
+          "size": "0",
+          "injection_file": "SLUS_208.84",
+          "injection_file_address": "312BE0",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        }
+      ],
+      "binary_patches": [],
+      "multi_patches": []
+    },
+    {
+      "build_name": "GC_NTSC",
+      "platform": "Gamecube",
+      "symbols_file": "GC_NTSC.txt",
+      "injection_files": [
+        "Start.dol"
+      ],
+      "injection_file_offsets": {
+        "Start.dol": "3000"
+      },
+      "injection_file_types": {
+        "Start.dol": "disk"
+      },
+      "extracted_game_folder": "C:/Users/Ebbers/Documents/GC_CodeInject/modding_utility_v2/game_files/GAMECUBE_NTSC\\root",
+      "main_executable": "Start.dol",
+      "source_path": "C:/Users/Ebbers/Documents/GC_CodeInject/modding_utility_v2/game_files/GAMECUBE_NTSC",
+      "compiler_flags": "-O2 -Werror -I include/ingame_stdlib/ -I include/ex/ -I include/se/",
+      "is_single_file_mode": false,
+      "single_file_path": null,
+      "section_maps": {
+        "Start.dol": [
+          {
+            "section_type": "text",
+            "file_offset": 256,
+            "mem_start": 12544,
+            "mem_end": 13472,
+            "size": 928
+          },
+          {
+            "section_type": "text",
+            "file_offset": 1184,
+            "mem_start": 13472,
+            "mem_end": 3882912,
+            "size": 3869440
+          },
+          {
+            "section_type": "data",
+            "file_offset": 3870624,
+            "mem_start": 3882912,
+            "mem_end": 3883136,
+            "size": 224
+          },
+          {
+            "section_type": "data",
+            "file_offset": 3870848,
+            "mem_start": 3883136,
+            "mem_end": 4054080,
+            "size": 170944
+          },
+          {
+            "section_type": "data",
+            "file_offset": 4041792,
+            "mem_start": 4054080,
+            "mem_end": 4496736,
+            "size": 442656
+          },
+          {
+            "section_type": "data",
+            "file_offset": 4484448,
+            "mem_start": 5026592,
+            "mem_end": 5030976,
+            "size": 4384
+          },
+          {
+            "section_type": "data",
+            "file_offset": 4488832,
+            "mem_start": 5033760,
+            "mem_end": 5037184,
+            "size": 3424
+          }
+        ]
+      },
+      "code_caves": [
+        {
+          "name": "EXGeoViewerWnd_Overwrite",
+          "code_files": [
+            "./src/ap_handler.c",
+            "./src/main.c",
+            "./src/pad.c",
+            "./src/ex/exvector.c",
+            "./src/ex/runtimeclass.c",
+            "./src/se/gamestate.c",
+            "./src/ap_collectables.c"
+          ],
+          "memory_address": "80296618",
+          "size": "7DCC",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x293618",
+          "auto_calculate_injection_file_address": true,
+          "injection_type": "existing_file",
+          "enabled": true
+        }
+      ],
+      "hooks": [
+        {
+          "name": "AutoHook_GC_NTSC",
+          "code_files": [
+            "./asm/AutoHook_GC_NTSC.s"
+          ],
+          "memory_address": "8026FA6C",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "26CA6C",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "PlayerObjectives__SetObjective__ReImplHook",
+          "code_files": [
+            "./asm/PlayerObjectives__SetObjective__ReImplHook.s"
+          ],
+          "memory_address": "80066244",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x63244",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        }
+      ],
+      "binary_patches": [],
+      "multi_patches": []
+    }
+  ]
+}

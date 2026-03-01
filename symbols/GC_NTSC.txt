@@ -1,0 +1,51 @@
+/* os.h */
+OSReport = 0x8026226C;
+
+/* pad.h */
+EXBaseGamePad__m_pGamePad = 0x804cba94;
+g_PadNum = 0x804cb660;
+
+/* map.h */
+GetSpyroMap = 0x80232df0;
+
+/* gamestate.h */
+gGameState = 0x80463b38;
+PlayerObjectives__ObjectiveIntoIndexAndBit = 0x800665e4;
+
+/* igstdlib.h */
+strcasecmp = 0x80259f24;
+strcmp = 0x80259fa0;
+strcpy = 0x8025a048;
+strlen = 0x8025a0cc;
+strncpy = 0x8025a138;
+strupr = 0x8025a204;
+strrev = 0x8025a2cc;
+strcat = 0x80359da4;
+strncat = 0x80359e34;
+strncmp = 0x80359ee0;
+strstr = 0x80359fc0;
+Wcscpy = 0x802fbe30;
+memcpy = 0x80259d00;
+memmove = 0x80259da4;
+memset = 0x80259e90;
+memcmp = 0x80359d14;
+printf = 0x803592a8;
+vprintf = 0x80359354;
+sprintf = 0x80259af8;
+vsprintf = 0x80259bd0;
+
+/* igmath.h */
+acosf = 0x802573e4;
+asinf = 0x80257630;
+atan2f = 0x8025785c;
+fmodf = 0x80257a7c;
+powf = 0x80257c44;
+sqrtf = 0x80258338;
+atanf = 0x80258430;
+ceilf = 0x80258640;
+cosf = 0x80258704;
+fabsf = 0x802587e0;
+floorf = 0x80258804;
+sinf = 0x802588cc;
+tanf = 0x802589a8;
+scalbnf = 0x80258a28;
