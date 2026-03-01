@@ -473,6 +473,18 @@
           "injection_file_address": "0x63244",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "SE_BitHeap__Allocate__FixBug",
+          "code_files": [
+            "./asm/SE_BitHeap__Allocate__FixBug.s"
+          ],
+          "memory_address": "8022c238",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x229238",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],
