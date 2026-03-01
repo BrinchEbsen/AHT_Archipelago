@@ -1,0 +1,1 @@
+.long LightXtal__Collected_VtableHook

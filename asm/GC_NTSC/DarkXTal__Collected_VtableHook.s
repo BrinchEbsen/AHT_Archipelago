@@ -1,0 +1,1 @@
+.long DarkXtal__Collected_VtableHook

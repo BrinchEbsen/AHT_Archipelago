@@ -438,7 +438,9 @@
             "./src/ex/exvector.c",
             "./src/ex/runtimeclass.c",
             "./src/se/gamestate.c",
-            "./src/ap_collectables.c"
+            "./src/ap_collectables.c",
+            "./src/breath_hooks.c",
+            "./src/collectable_hooks.c"
           ],
           "memory_address": "80296618",
           "size": "7DCC",
@@ -496,6 +498,42 @@
           "size": "0",
           "injection_file": "Start.dol",
           "injection_file_address": "0x229238",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "DarkXTal__Collected_VtableHook",
+          "code_files": [
+            "./asm/GC_NTSC/DarkXTal__Collected_VtableHook.s"
+          ],
+          "memory_address": "80426b30",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x423B30",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "DragonEgg__Collected_VtableHook",
+          "code_files": [
+            "./asm/GC_NTSC/DragonEgg__Collected_VtableHook.s"
+          ],
+          "memory_address": "80426730",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x423730",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "LightXTal__Collected_VtableHook",
+          "code_files": [
+            "./asm/GC_NTSC/LightXTal__Collected_VtableHook.s"
+          ],
+          "memory_address": "80426930",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x423930",
           "auto_calculate_injection_file_address": true,
           "enabled": true
         }

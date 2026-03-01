@@ -12,6 +12,11 @@ GetSpyroMap = 0x80232df0;
 gGameState = 0x80463b38;
 PlayerObjectives__ObjectiveIntoIndexAndBit = 0x800665e4;
 
+/* collectable_hooks.h */
+LightXtal__Collected = 0x80154f50;
+DarkXtal__Collected = 0x80154d60;
+DragonEgg__Collected = 0x80155290;
+
 /* igstdlib.h */
 strcasecmp = 0x80259f24;
 strcmp = 0x80259fa0;

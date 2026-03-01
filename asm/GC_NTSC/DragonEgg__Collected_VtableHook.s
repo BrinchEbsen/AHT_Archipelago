@@ -1,0 +1,1 @@
+.long DragonEgg__Collected_VtableHook

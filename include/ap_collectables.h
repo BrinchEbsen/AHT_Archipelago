@@ -43,7 +43,7 @@ typedef struct APCollectable
 #define AP_GRABBABLE_START 0
 #define AP_GRABBABLE_NUM 181
 #define AP_OBJECTIVES_START AP_GRABBABLE_NUM
-#define AP_OBJECTIVES_NUM 220-AP_GRABBABLE_NUM
+#define AP_OBJECTIVES_NUM 39
 
 extern APCollectable g_ap_collectables[];
 
