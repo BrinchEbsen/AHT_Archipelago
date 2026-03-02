@@ -3,8 +3,10 @@
 #include <types.h>
 #include <player.h>
 
+#define AP_SETTINGS_LOCATIONS_BITFIELD_SIZE 0x30
+
 typedef struct APSettings {
-    u8 location_bitfield[0x30];
+    u8 location_bitfield[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];
     BreathType starting_breath;
     bool firebreath_enable;
     bool glide_enable;

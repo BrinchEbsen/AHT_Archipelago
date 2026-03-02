@@ -1,5 +1,6 @@
 #include <ap_handler.h>
 #include <ap_settings.h>
+#include <ap_patch.h>
 #include <system.h>
 #include <pad.h>
 #include <gamestate.h>
@@ -10,6 +11,24 @@
 void ap_update()
 {
     
+}
+
+void ap_init_gamestate()
+{
+    APSettings* from = &g_patch_ap_settings;
+    APSettings* to = &g_gamestate_ap_settings;
+
+    for (int i = 0; i < AP_SETTINGS_LOCATIONS_BITFIELD_SIZE; i++) {
+        to->location_bitfield[i] = from->location_bitfield[i];
+    }
+    to->starting_breath = from->starting_breath;
+    to->firebreath_enable = from->firebreath_enable;
+    to->glide_enable = from->glide_enable;
+    to->charge_enable = from->charge_enable;
+    to->swim_enable = from->swim_enable;
+    to->free_realm_travel_enable = from->free_realm_travel_enable;
+
+    PRINTF("INIT!!!\n");
 }
 
 void ap_set_grabbable(u16 map_index, u16 trigger_index)

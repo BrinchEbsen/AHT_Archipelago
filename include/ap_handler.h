@@ -5,6 +5,10 @@
 // runs every frame
 void ap_update();
 
+void SE_GameState__Init_PostHook();
+
+void ap_init_gamestate();
+
 void ap_set_grabbable(u16 map_index, u16 trigger_index);
 
 void ap_set_objective(EXHashCode objective);
