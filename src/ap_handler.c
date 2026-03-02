@@ -9,7 +9,15 @@
 void ap_update()
 {
     if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
-        print_trigger_array_code();
+        for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
+            APCollectable* coll = &g_ap_collectables[i];
+
+            if (coll->union_type == APC_Grabbable) {
+                PRINTF("[%d] m: %d t: %d\n", i, coll->grabbable.map_index, coll->grabbable.trigger_index);
+            } else {
+                PRINTF("[%d] o: %x\n", i, coll->objective.objective);
+            }
+        }
     }
 }
 

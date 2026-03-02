@@ -1715,7 +1715,7 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
-            .objective = HT_Entity_Boiler3C_1_Lit,
+            .objective = HT_Objective_3C_LitBoiler_1,
             .type = LightGem
         }
     },
@@ -1724,7 +1724,7 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
-            .objective = HT_Entity_Boiler3C_3_Lit,
+            .objective = HT_Objective_3C_LitBoiler_3,
             .type = LightGem
         }
     },
@@ -1733,7 +1733,7 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
-            .objective = HT_Entity_Boiler3C_5_Lit,
+            .objective = HT_Objective_3C_LitBoiler_5,
             .type = LightGem
         }
     },

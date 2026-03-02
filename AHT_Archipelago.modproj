@@ -536,6 +536,42 @@
           "injection_file_address": "0x423930",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "PlayerState__AddDarkGems_ReImplHook",
+          "code_files": [
+            "./asm/GC_NTSC/PlayerState__AddDarkGems_ReImplHook.s"
+          ],
+          "memory_address": "80068a78",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x65A78",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "PlayerState__AddDragonEggs_ReImplHook",
+          "code_files": [
+            "./asm/GC_NTSC/PlayerState__AddDragonEggs_ReImplHook.s"
+          ],
+          "memory_address": "80068b94",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x65B94",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "PlayerState__AddLightGems_ReImplHook",
+          "code_files": [
+            "./asm/GC_NTSC/PlayerState__AddLightGems_ReImplHook.s"
+          ],
+          "memory_address": "800689ec",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x659EC",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],

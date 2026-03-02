@@ -186,6 +186,9 @@ _Static_assert(sizeof(SE_Map) == 0x128);
 _Static_assert(sizeof(SE_Map) == 0x130);
 #endif
 
+s32 SE_Map__GetNumDragonEggs(SE_Map* this, int Type);
+void SE_Map__SetNumDragonEggs(SE_Map* this, s32 Num, int Type);
+
 SE_Map* GetSpyroMap(long FindFlag);
 
 typedef struct SE_MapListEntry {

@@ -6,16 +6,22 @@ EXBaseGamePad__m_pGamePad = 0x804cba94;
 g_PadNum = 0x804cb660;
 
 /* map.h */
+SE_Map__GetNumDragonEggs = 0x802328c8;
+SE_Map__SetNumDragonEggs = 0x80232914;
 GetSpyroMap = 0x80232df0;
 
 /* gamestate.h */
 gGameState = 0x80463b38;
 PlayerObjectives__ObjectiveIntoIndexAndBit = 0x800665e4;
 
+/* playerstate.h */
+PlayerState__Update = 0x80068830;
+
 /* collectable_hooks.h */
 LightXtal__Collected = 0x80154f50;
 DarkXtal__Collected = 0x80154d60;
 DragonEgg__Collected = 0x80155290;
+MemCard_AutoSave = 0x80238680;
 
 /* igstdlib.h */
 strcasecmp = 0x80259f24;

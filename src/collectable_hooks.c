@@ -72,3 +72,69 @@ int binary_search_for_collectable(u16 map_index, u16 trigger_index)
 
     return -1;
 }
+
+s32 PlayerState__AddDarkGems_ReImplHook(PlayerState *self, int n, SE_Map *pMap)
+{
+    if (pMap == NULL) {
+        pMap = GetSpyroMap(0);
+        if (pMap == NULL) {
+            return -1;
+        }
+    }
+
+    int* curr_count = &pMap->m_GameState->m_CollectNum[0];
+    (*curr_count) += n;
+
+    // this is where adding the total count would be done. not in archipelago
+
+    PlayerState__Update(self);
+    MemCard_AutoSave();
+
+    return *curr_count;
+}
+
+s32 PlayerState__AddDragonEggs_ReImplHook(PlayerState *self, int n, int Type, SE_Map *pMap)
+{
+    int _type = Type;
+    if (_type == -1) {
+        _type = 2;
+    }
+    
+    if (pMap == NULL) {
+        pMap = GetSpyroMap(0);
+        if (pMap == NULL) {
+            return -1;
+        }
+    }
+
+    s32 num = SE_Map__GetNumDragonEggs(pMap, _type);
+    SE_Map__SetNumDragonEggs(pMap, num+n, _type);
+    num = SE_Map__GetNumDragonEggs(pMap, _type);
+
+    // this is where adding the total count would be done. not in archipelago
+
+    PlayerState__Update(self);
+    MemCard_AutoSave();
+
+    return num;
+}
+
+s32 PlayerState__AddLightGems_ReImplHook(PlayerState *self, int n, SE_Map *pMap)
+{
+    if (pMap == NULL) {
+        pMap = GetSpyroMap(0);
+        if (pMap == NULL) {
+            return -1;
+        }
+    }
+
+    int* curr_count = &pMap->m_GameState->m_CollectNum[1];
+    (*curr_count) += n;
+
+    // this is where adding the total count would be done. not in archipelago
+
+    PlayerState__Update(self);
+    MemCard_AutoSave();
+
+    return *curr_count;
+}
