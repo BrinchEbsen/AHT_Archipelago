@@ -47,8 +47,6 @@ typedef struct APCollectable
 
 #define AP_COLLECTABLES_TOTAL AP_GRABBABLE_NUM + AP_OBJECTIVES_NUM
 
-void ap_set_collectable(int index);
-
 extern APCollectable g_ap_collectables[];
 
 #endif /* AP_COLLECTABLES */

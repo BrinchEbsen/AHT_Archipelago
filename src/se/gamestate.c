@@ -7,7 +7,7 @@ bool g_sync_objectives_and_abilities = true;
 
 void PlayerObjectives__SetObjective__ReImplHook(PlayerObjectives* self, EXHashCode hashcode)
 {
-    update_objectives(hashcode);
+    ap_set_objective(hashcode);
 
     int o_index;
     int o_bit;

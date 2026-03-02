@@ -1,4 +1,5 @@
 #include <ap_handler.h>
+#include <ap_settings.h>
 #include <system.h>
 #include <pad.h>
 #include <gamestate.h>
@@ -8,22 +9,67 @@
 
 void ap_update()
 {
-    if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
-        for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
-            APCollectable* coll = &g_ap_collectables[i];
+    
+}
 
-            if (coll->union_type == APC_Grabbable) {
-                PRINTF("[%d] m: %d t: %d\n", i, coll->grabbable.map_index, coll->grabbable.trigger_index);
-            } else {
-                PRINTF("[%d] o: %x\n", i, coll->objective.objective);
-            }
+void ap_set_grabbable(u16 map_index, u16 trigger_index)
+{
+    int index = ap_binary_search_grabbable(map_index, trigger_index);
+    if (index < 0) {
+        return;
+    }
+
+    ap_set_location(index);
+}
+
+void ap_set_objective(EXHashCode objective)
+{
+    for (int i = AP_OBJECTIVES_START; i < AP_OBJECTIVES_START+AP_OBJECTIVES_NUM; i++) {
+        APCollectable* coll = &g_ap_collectables[i];
+        if (coll->objective.objective == objective) {
+            ap_set_location(i);
+            break;
         }
     }
 }
 
-void update_objectives(EXHashCode objective)
+void ap_set_location(int index)
 {
-    
+    int byte = index / 8;
+    int bit = index % 8;
+
+    u8* val = &g_gamestate_ap_settings.location_bitfield[byte];
+
+    if (((*val) & (1 << bit)) == 0) {
+        (*val) |= (1 << bit);
+        PRINTF("[AP] Set location flag index %d\n", index);
+    }
+}
+
+int ap_binary_search_grabbable(u16 map_index, u16 trigger_index)
+{
+    int start = AP_GRABBABLE_START;
+    int end = AP_GRABBABLE_START + AP_GRABBABLE_NUM - 1;
+
+    while (start <= end) {
+        int index = start + ((end-start)/2);
+        APCollectable* curr = &g_ap_collectables[index];
+
+        if ((map_index == curr->grabbable.map_index) &&
+            (trigger_index == curr->grabbable.trigger_index)) {
+            return index;
+        }
+
+        if ((map_index < curr->grabbable.map_index) ||
+            ((map_index == curr->grabbable.map_index) &&
+            (trigger_index < curr->grabbable.trigger_index))) {
+            end = index - 1;
+        } else {
+            start = index + 1;
+        }
+    }
+
+    return -1;
 }
 
 void print_trigger_array_code()
