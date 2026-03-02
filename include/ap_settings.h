@@ -1,13 +1,18 @@
 #ifndef AP_SETTINGS_H
 #define AP_SETTINGS_H
 #include <types.h>
+#include <player.h>
 
-#define LOCATION_BITFIELD_SIZE 0x30
-extern u8 g_location_bitfield[];
+typedef struct APSettings {
+    u8 location_bitfield[0x30];
+    BreathType starting_breath;
+    bool firebreath_enable;
+    bool glide_enable;
+    bool charge_enable;
+    bool swim_enable;
+    bool free_realm_travel_enable;
+} APSettings;
 
-extern bool g_ap_enable_archipelago;
-extern bool g_ap_firebreath_enable;
-extern bool g_ap_breaths_as_locations;
-extern bool g_ap_enable_free_realm_travel;
+extern APSettings g_gamestate_ap_settings;
 
 #endif /* AP_SETTINGS_H */

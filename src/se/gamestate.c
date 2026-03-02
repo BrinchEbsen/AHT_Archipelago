@@ -7,9 +7,7 @@ bool g_sync_objectives_and_abilities = true;
 
 void PlayerObjectives__SetObjective__ReImplHook(PlayerObjectives* self, EXHashCode hashcode)
 {
-    if (g_ap_enable_archipelago) {
-        update_objectives(hashcode);
-    }
+    update_objectives(hashcode);
 
     int o_index;
     int o_bit;
@@ -33,25 +31,24 @@ void PlayerObjectives__SetObjective__ReImplHook(PlayerObjectives* self, EXHashCo
 
     *uintVal |= mask;
 
-    if (g_ap_enable_archipelago && !g_sync_objectives_and_abilities) {
-        return;
-    }
+    // Setting the ability flags was part of the original function, but it
+    // has been decoupled from objectives.
 
-    switch (hashcode) {
-        case HT_Objective_GainedLockPicker:
-            gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BOUGHT_LOCK_PICK;
-            break;
-        case HT_Objective_GivenDoubleJump:
-            gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_DOUBLE_JUMP;
-            break;
-        case HT_Objective_GivenPoleGrabAbility:
-            gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_POLE_SPIN;
-            break;
-        case HT_Objective_GivenWallKickAbility:
-            gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_WALL_KICK;
-            break;
-        case HT_Objective_GivenWingShieldAbility:
-            gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_WING_SHIELD;
-            break;
-    }
+    // switch (hashcode) {
+    //     case HT_Objective_GainedLockPicker:
+    //         gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BOUGHT_LOCK_PICK;
+    //         break;
+    //     case HT_Objective_GivenDoubleJump:
+    //         gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_DOUBLE_JUMP;
+    //         break;
+    //     case HT_Objective_GivenPoleGrabAbility:
+    //         gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_POLE_SPIN;
+    //         break;
+    //     case HT_Objective_GivenWallKickAbility:
+    //         gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_WALL_KICK;
+    //         break;
+    //     case HT_Objective_GivenWingShieldAbility:
+    //         gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_WING_SHIELD;
+    //         break;
+    // }
 }

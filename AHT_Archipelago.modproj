@@ -462,6 +462,19 @@
           "auto_calculate_injection_file_address": false,
           "injection_type": "existing_file",
           "enabled": true
+        },
+        {
+          "name": "AP_Patch_Storage",
+          "code_files": [
+            "./src/ap_patch.c"
+          ],
+          "memory_address": "803D8FA8",
+          "size": "2000",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x3D5FA8",
+          "auto_calculate_injection_file_address": true,
+          "injection_type": "existing_file",
+          "enabled": true
         }
       ],
       "hooks": [

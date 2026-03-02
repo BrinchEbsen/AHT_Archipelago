@@ -5,25 +5,20 @@
 
 void LightXtal__Collected_VtableHook(void *this, Bool Register)
 {
-    if (g_ap_enable_archipelago) {
-        register_collectable(this);
-    }
+    register_collectable(this);
     LightXtal__Collected(this, Register);
 }
 
 void DragonEgg__Collected_VtableHook(void *this, Bool Register)
 {
-    if (g_ap_enable_archipelago) {
-        register_collectable(this);
-    }
+    register_collectable(this);
     DragonEgg__Collected(this, Register);
 }
 
 void DarkXtal__Collected_VtableHook(void *this, Bool Register)
 {
-    if (g_ap_enable_archipelago) {
-        register_collectable(this);
-    }
+    register_collectable(this);
+
     DarkXtal__Collected(this, Register);
 }
 
