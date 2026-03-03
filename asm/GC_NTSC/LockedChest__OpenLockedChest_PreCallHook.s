@@ -1,0 +1,1 @@
+bl LockedChest__OpenLockedChest_PreCallHook

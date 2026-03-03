@@ -3,7 +3,7 @@
 #include <ap_handler.h>
 #include <ap_settings.h>
 
-bool g_sync_objectives_and_abilities = true;
+//#define SYNC_ABI_FLAGS
 
 void PlayerObjectives__SetObjective__ReImplHook(PlayerObjectives* self, EXHashCode hashcode)
 {
@@ -34,21 +34,23 @@ void PlayerObjectives__SetObjective__ReImplHook(PlayerObjectives* self, EXHashCo
     // Setting the ability flags was part of the original function, but it
     // has been decoupled from objectives.
 
-    // switch (hashcode) {
-    //     case HT_Objective_GainedLockPicker:
-    //         gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BOUGHT_LOCK_PICK;
-    //         break;
-    //     case HT_Objective_GivenDoubleJump:
-    //         gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_DOUBLE_JUMP;
-    //         break;
-    //     case HT_Objective_GivenPoleGrabAbility:
-    //         gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_POLE_SPIN;
-    //         break;
-    //     case HT_Objective_GivenWallKickAbility:
-    //         gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_WALL_KICK;
-    //         break;
-    //     case HT_Objective_GivenWingShieldAbility:
-    //         gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_WING_SHIELD;
-    //         break;
-    // }
+    #ifdef SYNC_ABI_FLAGS
+    switch (hashcode) {
+        case HT_Objective_GainedLockPicker:
+            gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BOUGHT_LOCK_PICK;
+            break;
+        case HT_Objective_GivenDoubleJump:
+            gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_DOUBLE_JUMP;
+            break;
+        case HT_Objective_GivenPoleGrabAbility:
+            gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_POLE_SPIN;
+            break;
+        case HT_Objective_GivenWallKickAbility:
+            gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_WALL_KICK;
+            break;
+        case HT_Objective_GivenWingShieldAbility:
+            gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_WING_SHIELD;
+            break;
+    }
+    #endif
 }

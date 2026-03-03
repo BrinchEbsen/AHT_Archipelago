@@ -22,6 +22,7 @@ LightXtal__Collected = 0x80154f50;
 DarkXtal__Collected = 0x80154d60;
 DragonEgg__Collected = 0x80155290;
 MemCard_AutoSave = 0x80238680;
+LockedChest__OpenLockedChest = 0x8014996c;
 
 /* igstdlib.h */
 strcasecmp = 0x80259f24;

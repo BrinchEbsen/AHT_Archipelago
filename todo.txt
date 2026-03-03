@@ -1,0 +1,15 @@
+- Make boss gates respond to number of dark gems instead of objectives
+
+- Disable Frostbite Village/Ice Citadel auto abilities
+
+- Ability to teleport out of boss arena
+
+- Skip realm intro cutscenes
+
+- Make charge ability toggleable
+
+- Make glide ability toggleable
+
+- Make swim ability toggleable
+
+- Let player teleport to all realms

@@ -23,9 +23,37 @@ void DarkXtal__Collected_VtableHook(void *this, Bool Register)
     DarkXtal__Collected(this, Register);
 }
 
-void register_collectable(void* special_item)
+void LockedChest__OpenLockedChest_PreCallHook(void* self)
 {
-    SE_Trigger* trigger = XSEITEMHANDLER_ITEM_TRIGGER(special_item);
+    register_collectable(self);
+
+    LockedChest__OpenLockedChest(self);
+}
+
+s32 EggThief__EggCollection_ReImplHook(void* self)
+{
+    void* sItem = EGGTHIEF_M_SITEM(self);
+
+    if (sItem == NULL) {
+        return 2;
+    }
+
+    u32 sItemStatus = SPECIALITEM_M_STATUS(sItem);
+    if (sItemStatus > 5) {
+        EGGTHIEF_M_SITEM(self) = NULL;
+        EGGTHIEF_M_FLAGS(self) |= 8;
+
+        register_collectable(self);
+
+        return -1;
+    }
+
+    return 2;
+}
+
+void register_collectable(void* handler)
+{
+    SE_Trigger* trigger = XSEITEMHANDLER_ITEM_TRIGGER(handler);
     if (trigger == NULL) {
         return;
     }

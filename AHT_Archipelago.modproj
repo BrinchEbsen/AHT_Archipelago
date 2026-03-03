@@ -585,6 +585,30 @@
           "injection_file_address": "0x659EC",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "LockedChest__OpenLockedChest_PreCallHook",
+          "code_files": [
+            "./asm/GC_NTSC/LockedChest__OpenLockedChest_PreCallHook.s"
+          ],
+          "memory_address": "800fa5b8",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0xF75B8",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "EggThief__EggCollection_ReImplHook",
+          "code_files": [
+            "./asm/GC_NTSC/EggThief__EggCollection_ReImplHook.s"
+          ],
+          "memory_address": "80156b74",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x153B74",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],

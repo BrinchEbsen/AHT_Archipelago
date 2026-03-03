@@ -15,6 +15,15 @@ void DragonEgg__Collected_VtableHook(void* this, Bool Register);
 void DarkXtal__Collected(void* this, Bool Register);
 void DarkXtal__Collected_VtableHook(void* this, Bool Register);
 
+void LockedChest__OpenLockedChest(void* self);
+void LockedChest__OpenLockedChest_PreCallHook(void* self);
+
+#define EGGTHIEF_M_FLAGS(self) OFFSET_VAL(u32, self, 0x3dc)
+#define EGGTHIEF_M_SITEM(self) OFFSET_VAL(void*, self, 0x518)
+#define SPECIALITEM_M_STATUS(self) OFFSET_VAL(u32, self, 0x3e0)
+
+s32 EggThief__EggCollection_ReImplHook(void* self);
+
 void register_collectable(void* special_item);
 
 extern void MemCard_AutoSave(void);
