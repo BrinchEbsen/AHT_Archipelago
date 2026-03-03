@@ -13,6 +13,7 @@ GetSpyroMap = 0x80232df0;
 /* gamestate.h */
 gGameState = 0x80463b38;
 PlayerObjectives__ObjectiveIntoIndexAndBit = 0x800665e4;
+PlayerObjectives__GetObjective = 0x800663dc;
 
 /* playerstate.h */
 PlayerState__Update = 0x80068830;
@@ -23,6 +24,13 @@ DarkXtal__Collected = 0x80154d60;
 DragonEgg__Collected = 0x80155290;
 MemCard_AutoSave = 0x80238680;
 LockedChest__OpenLockedChest = 0x8014996c;
+
+/* boss_gate.h */
+SpyroBASIC__Update = 0x800c2284;
+Monitor__BASICcmd_Stall = 0x800da1f0;
+Monitor__BASICcmd_Suicide = 0x800da1b8;
+Monitor__BASICcmd_GetDistanceToPlayer = 0x800da054;
+Monitor__BASICcmd_Zoopoo = 0x800da360;
 
 /* igstdlib.h */
 strcasecmp = 0x80259f24;

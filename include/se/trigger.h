@@ -91,6 +91,8 @@ struct SE_Trigger {
     SE_Trigger__vtable *__vtable;
 };
 
+#define XSEITEMHANDLER_ITEM_TRIGGER(self) OFFSET_VAL(SE_Trigger*, self, 0x10)
+
 #if GC_NTSC
 _Static_assert(sizeof(SE_Trigger) == 0xc8);
 #elif PS2_NTSC

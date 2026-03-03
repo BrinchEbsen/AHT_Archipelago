@@ -4,8 +4,6 @@
 #include <trigger.h>
 #include <gamestate.h>
 
-#define XSEITEMHANDLER_ITEM_TRIGGER(self) OFFSET_VAL(SE_Trigger*, self, 0x10)
-
 void LightXtal__Collected(void* this, Bool Register);
 void LightXtal__Collected_VtableHook(void* this, Bool Register);
 

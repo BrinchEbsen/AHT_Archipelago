@@ -1,5 +1,3 @@
-- Make boss gates respond to number of dark gems instead of objectives
-
 - Disable Frostbite Village/Ice Citadel auto abilities
 
 - Ability to teleport out of boss arena

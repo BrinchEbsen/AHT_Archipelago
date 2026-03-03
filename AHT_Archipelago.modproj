@@ -440,7 +440,8 @@
             "./src/se/gamestate.c",
             "./src/ap_collectables.c",
             "./src/breath_hooks.c",
-            "./src/collectable_hooks.c"
+            "./src/collectable_hooks.c",
+            "./src/boss_gate.c"
           ],
           "memory_address": "80296618",
           "size": "7DCC",
@@ -607,6 +608,18 @@
           "size": "0",
           "injection_file": "Start.dol",
           "injection_file_address": "0x153B74",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "Monitor__BASIC_Update_PreCallHook",
+          "code_files": [
+            "./asm/GC_NTSC/Monitor__BASIC_Update_PreCallHook.s"
+          ],
+          "memory_address": "800d9f4c",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0xD6F4C",
           "auto_calculate_injection_file_address": true,
           "enabled": true
         }
