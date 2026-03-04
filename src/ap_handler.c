@@ -30,6 +30,17 @@ void ap_init_gamestate()
     to->charge_enable = from->charge_enable;
     to->swim_enable = from->swim_enable;
     to->free_realm_travel_enable = from->free_realm_travel_enable;
+    to->skip_realm_intro_cutscenes = from->skip_realm_intro_cutscenes;
+
+    if (from->skip_realm_intro_cutscenes) {
+        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_OpeningMovie);
+        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_SeenIntro_R1A);
+        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_SeenProfStartR2A);
+        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_SeenIntroR2A);
+        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_SeenProfStartR3A);
+        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_SeenIntroR3A);
+        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_ProfGoneToFindRed);
+    }
 
     g_gamestate_ap_settings.init = AP_SETTINGS_INIT_MAGICVALUE;
 }

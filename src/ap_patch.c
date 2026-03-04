@@ -8,5 +8,6 @@ APSettings g_patch_ap_settings = {
     .charge_enable = true,
     .swim_enable = true,
     .free_realm_travel_enable = false,
+    .skip_realm_intro_cutscenes = false,
     .init = 0
 };

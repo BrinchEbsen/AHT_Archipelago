@@ -14,6 +14,7 @@ typedef struct APSettings {
     bool charge_enable;
     bool swim_enable;
     bool free_realm_travel_enable;
+    bool skip_realm_intro_cutscenes;
     u32 init;
 } APSettings;
 

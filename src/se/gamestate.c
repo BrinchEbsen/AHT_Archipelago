@@ -2,8 +2,10 @@
 #include <hashcodes.h>
 #include <ap_handler.h>
 #include <ap_settings.h>
+#include <system.h>
 
 #define SYNC_ABI_FLAGS
+#define DEBUG_PRINT_OBJECTIVES
 
 void PlayerObjectives__SetObjective__ReImplHook(PlayerObjectives* self, EXHashCode hashcode)
 {
@@ -30,6 +32,10 @@ void PlayerObjectives__SetObjective__ReImplHook(PlayerObjectives* self, EXHashCo
     }
 
     *uintVal |= mask;
+    
+    #ifdef DEBUG_PRINT_OBJECTIVES
+        PRINTF("[AP] Objective set: %x\n", hashcode);
+    #endif
 
     // Setting the ability flags was part of the original function, but it
     // has been decoupled from objectives.
