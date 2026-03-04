@@ -4,6 +4,7 @@
 #include <player.h>
 
 #define AP_SETTINGS_LOCATIONS_BITFIELD_SIZE 0x30
+#define AP_SETTINGS_INIT_MAGICVALUE 0x45424245
 
 typedef struct APSettings {
     u8 location_bitfield[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];
@@ -13,6 +14,7 @@ typedef struct APSettings {
     bool charge_enable;
     bool swim_enable;
     bool free_realm_travel_enable;
+    u32 init;
 } APSettings;
 
 extern APSettings g_gamestate_ap_settings;

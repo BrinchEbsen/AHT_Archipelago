@@ -10,7 +10,9 @@
 
 void ap_update()
 {
-    
+    if (g_gamestate_ap_settings.init != AP_SETTINGS_INIT_MAGICVALUE) {
+        ap_init_gamestate();
+    }
 }
 
 void ap_init_gamestate()
@@ -22,11 +24,14 @@ void ap_init_gamestate()
         to->location_bitfield[i] = from->location_bitfield[i];
     }
     to->starting_breath = from->starting_breath;
+    gGameState.m_PlayerState.m_CurrentBreath = from->starting_breath;
     to->firebreath_enable = from->firebreath_enable;
     to->glide_enable = from->glide_enable;
     to->charge_enable = from->charge_enable;
     to->swim_enable = from->swim_enable;
     to->free_realm_travel_enable = from->free_realm_travel_enable;
+
+    g_gamestate_ap_settings.init = AP_SETTINGS_INIT_MAGICVALUE;
 }
 
 void ap_set_grabbable(u16 map_index, u16 trigger_index)
