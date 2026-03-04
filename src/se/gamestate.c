@@ -3,7 +3,7 @@
 #include <ap_handler.h>
 #include <ap_settings.h>
 
-//#define SYNC_ABI_FLAGS
+#define SYNC_ABI_FLAGS
 
 void PlayerObjectives__SetObjective__ReImplHook(PlayerObjectives* self, EXHashCode hashcode)
 {

@@ -27,8 +27,6 @@ void ap_init_gamestate()
     to->charge_enable = from->charge_enable;
     to->swim_enable = from->swim_enable;
     to->free_realm_travel_enable = from->free_realm_travel_enable;
-
-    PRINTF("INIT!!!\n");
 }
 
 void ap_set_grabbable(u16 map_index, u16 trigger_index)
