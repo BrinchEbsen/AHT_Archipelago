@@ -634,6 +634,18 @@
           "injection_file_address": "0xAA9FC",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "XSEItemHandler_Spyro__TestBreathChange__ReImplHook",
+          "code_files": [
+            "./asm/GC_NTSC/XSEItemHandler_Spyro__TestBreathChange__ReImplHook.s"
+          ],
+          "memory_address": "8008ae04",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x87E04",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],

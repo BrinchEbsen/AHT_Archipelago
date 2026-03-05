@@ -174,4 +174,6 @@ typedef enum BreathType {
 extern void* gpPlayer;
 extern void* gpPlayerItem;
 
+extern bool XSEItemHandler_Player__ControlsLocked(void* self);
+
 #endif /* PLAYER_H */

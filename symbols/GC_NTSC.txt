@@ -5,10 +5,21 @@ OSReport = 0x8026226C;
 EXBaseGamePad__m_pGamePad = 0x804cba94;
 g_PadNum = 0x804cb660;
 
+/* sfx.h */
+PlaySFX = 0x8024bc58;
+
+/* gameloop.h */
+gGameLoop = 0x8046f2f0;
+
 /* map.h */
 SE_Map__GetNumDragonEggs = 0x802328c8;
 SE_Map__SetNumDragonEggs = 0x80232914;
 GetSpyroMap = 0x80232df0;
+
+/* player.h */
+gpPlayer = 0x804CB35C;
+gpPlayerItem = 0x804CB360;
+XSEItemHandler_Player__ControlsLocked = 0x8005be88;
 
 /* gamestate.h */
 gGameState = 0x80463b38;
@@ -27,6 +38,7 @@ LockedChest__OpenLockedChest = 0x8014996c;
 
 /* breath_hooks.h */
 XSEItemHandler_Spyro__GetCurrentBreath = 0x800ad55c;
+GUI_Panel__ForcePanelOn = 0x802226b8;
 
 /* boss_gate.h */
 SpyroBASIC__Update = 0x800c2284;
