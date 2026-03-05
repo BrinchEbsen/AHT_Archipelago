@@ -9,7 +9,7 @@ bool XSEItemHandler_Spyro__TestBreatheFire__ReImplHook(void* self, int set)
     bool no_breaths_unlocked
         = (abiflg & (ABILITY_ELECTRIC_BREATH | ABILITY_WATER_BREATH | ABILITY_ICE_BREATH)) == 0;
 
-    bool enable_flame = g_gamestate_ap_settings.firebreath_enable;
+    bool enable_flame = (gGameState.m_PlayerState.m_AbilityFlags | ABILITY_AP_FIREBREATH) != 0;
 
     if (no_breaths_unlocked && !enable_flame)
     {
