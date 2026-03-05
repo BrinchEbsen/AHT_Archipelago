@@ -6,8 +6,6 @@
 
 - Make charge ability toggleable
 
-- Make glide ability toggleable
-
 - Make swim ability toggleable
 
 - Let player teleport to all realms

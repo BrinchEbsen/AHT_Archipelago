@@ -171,9 +171,23 @@ typedef enum BreathType {
     all_types=63
 } BreathType;
 
+typedef enum Buttons {
+	but_jump,
+	but_charge,
+	but_glide,
+	but_talk,
+	but_fire,
+	but_jumpslam,
+	but_tailspin,
+	but_firstperson,
+	but_shooter,
+	but_last
+} Buttons;
+
 extern void* gpPlayer;
 extern void* gpPlayerItem;
 
 extern bool XSEItemHandler_Player__ControlsLocked(void* self);
+extern Bool XSEItemHandler_Player__ButtonDown(void* self, Buttons button);
 
 #endif /* PLAYER_H */
