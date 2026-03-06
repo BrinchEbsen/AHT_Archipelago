@@ -11,12 +11,14 @@
 bool XSEItemHandler_Spyro__TestBreatheFire__ReImplHook(void* self, int set)
 {
     u32 abiflg = gGameState.m_PlayerState.m_AbilityFlags;
-    bool no_breaths_unlocked
-        = (abiflg & (ABILITY_ELECTRIC_BREATH | ABILITY_WATER_BREATH | ABILITY_ICE_BREATH)) == 0;
+    bool no_breaths_unlocked = (abiflg & (
+        ABILITY_ELECTRIC_BREATH |
+        ABILITY_WATER_BREATH |
+        ABILITY_ICE_BREATH |
+        ABILITY_AP_FIREBREATH
+    )) == 0;
 
-    bool enable_flame = (gGameState.m_PlayerState.m_AbilityFlags | ABILITY_AP_FIREBREATH) != 0;
-
-    if (no_breaths_unlocked && !enable_flame)
+    if (no_breaths_unlocked)
     {
         return false;
     }
