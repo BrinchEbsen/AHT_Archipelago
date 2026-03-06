@@ -1,6 +1,7 @@
 #include <ap_handler.h>
 #include <ap_settings.h>
 #include <ap_patch.h>
+#include <ap_notification.h>
 #include <system.h>
 #include <pad.h>
 #include <gamestate.h>
@@ -16,11 +17,15 @@ void ap_update()
     if (g_gamestate_ap_settings.init != AP_SETTINGS_INIT_MAGICVALUE) {
         ap_init_gamestate();
     }
+
+    if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
+        ap_set_notification(60*10, COLOR_TEXT, "This is some test text.\nHello there!");
+    }
 }
 
 void ap_draw(void* pWnd)
 {
-
+    ap_draw_notification(pWnd);
 }
 
 void ap_init_gamestate()
