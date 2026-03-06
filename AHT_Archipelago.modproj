@@ -447,7 +447,8 @@
             "./src/swim_hooks.c",
             "./src/arena.c",
             "./src/paneldraw.c",
-            "./src/ap_notification.c"
+            "./src/ap_notification.c",
+            "./src/se/wnd.c"
           ],
           "memory_address": "80296618",
           "size": "7DCC",
