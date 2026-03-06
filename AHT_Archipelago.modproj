@@ -442,7 +442,8 @@
             "./src/breath_hooks.c",
             "./src/collectable_hooks.c",
             "./src/boss_gate.c",
-            "./src/glide_hooks.c"
+            "./src/glide_hooks.c",
+            "./src/charge_hooks.c"
           ],
           "memory_address": "80296618",
           "size": "7DCC",
@@ -654,6 +655,10 @@
         {
           "name": "multi_GlideHooks",
           "file_path": "./asm/GC_NTSC/multi_GlideHooks.s"
+        },
+        {
+          "name": "multi_ChargeHooks",
+          "file_path": "./asm/GC_NTSC/multi_ChargeHooks.s"
         }
       ]
     }
