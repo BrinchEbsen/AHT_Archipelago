@@ -2,10 +2,4 @@
 
 - Ability to teleport out of boss arena
 
-- Skip realm intro cutscenes
-
-- Make charge ability toggleable
-
-- Make swim ability toggleable
-
 - Let player teleport to all realms

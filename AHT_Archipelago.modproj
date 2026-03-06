@@ -443,7 +443,8 @@
             "./src/collectable_hooks.c",
             "./src/boss_gate.c",
             "./src/glide_hooks.c",
-            "./src/charge_hooks.c"
+            "./src/charge_hooks.c",
+            "./src/swim_hooks.c"
           ],
           "memory_address": "80296618",
           "size": "7DCC",
@@ -659,6 +660,10 @@
         {
           "name": "multi_ChargeHooks",
           "file_path": "./asm/GC_NTSC/multi_ChargeHooks.s"
+        },
+        {
+          "name": "multi_SwimHooks",
+          "file_path": "./asm/GC_NTSC/multi_SwimHooks.s"
         }
       ]
     }

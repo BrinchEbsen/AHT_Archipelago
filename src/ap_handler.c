@@ -8,6 +8,8 @@
 #include <hashcodes.h>
 #include <ap_collectables.h>
 
+//#define AP_DEBUG_ENABLE_ABILITIES
+
 void ap_update()
 {
     if (g_gamestate_ap_settings.init != AP_SETTINGS_INIT_MAGICVALUE) {
@@ -25,6 +27,14 @@ void ap_init_gamestate()
     }
     to->starting_breath = from->starting_breath;
     to->starting_abilities = from->starting_abilities;
+    #ifdef AP_DEBUG_ENABLE_ABILITIES
+    gGameState.m_PlayerState.m_AbilityFlags |= (
+        ABILITY_AP_FIREBREATH |
+        ABILITY_AP_GLIDE |
+        ABILITY_AP_CHARGE |
+        ABILITY_AP_SWIM
+    );
+    #endif
     to->free_realm_travel_enable = from->free_realm_travel_enable;
     to->skip_realm_intro_cutscenes = from->skip_realm_intro_cutscenes;
 
