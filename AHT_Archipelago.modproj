@@ -444,7 +444,9 @@
             "./src/boss_gate.c",
             "./src/glide_hooks.c",
             "./src/charge_hooks.c",
-            "./src/swim_hooks.c"
+            "./src/swim_hooks.c",
+            "./src/arena.c",
+            "./src/paneldraw.c"
           ],
           "memory_address": "80296618",
           "size": "7DCC",
@@ -473,7 +475,7 @@
             "./src/ap_patch.c"
           ],
           "memory_address": "803D8FA8",
-          "size": "2000",
+          "size": "1000",
           "injection_file": "Start.dol",
           "injection_file_address": "0x3D5FA8",
           "auto_calculate_injection_file_address": true,
@@ -482,18 +484,6 @@
         }
       ],
       "hooks": [
-        {
-          "name": "AutoHook_GC_NTSC",
-          "code_files": [
-            "./asm/AutoHook_GC_NTSC.s"
-          ],
-          "memory_address": "8026FA6C",
-          "size": "0",
-          "injection_file": "Start.dol",
-          "injection_file_address": "26CA6C",
-          "auto_calculate_injection_file_address": true,
-          "enabled": true
-        },
         {
           "name": "PlayerObjectives__SetObjective__ReImplHook",
           "code_files": [
@@ -647,6 +637,18 @@
           "size": "0",
           "injection_file": "Start.dol",
           "injection_file_address": "0x87E04",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "SEGameFlow__v_StateRunning__VTHOOK",
+          "code_files": [
+            "./asm/GC_NTSC/SEGameFlow_StateRunning_VTHook.s"
+          ],
+          "memory_address": "804173a0",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x4143A0",
           "auto_calculate_injection_file_address": true,
           "enabled": true
         }

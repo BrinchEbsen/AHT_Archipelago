@@ -84,4 +84,12 @@ _Static_assert(sizeof(SE_Loop) == 0x78);
 _Static_assert(sizeof(SE_Loop) == 0x78);
 #endif
 
+extern SE_Loop* SE_Loop__CreateObject(void);
+extern s32 SE_Loop__DrawStateRunning(SE_Loop* self, void* pWnd);
+extern s32 SE_Loop__ChildListDraw(SE_Loop* self, void* pWnd);
+extern s32 SE_Loop__Cue(SE_Loop* self);
+extern s32 SE_Loop__CueRun(SE_Loop* self);
+extern void SE_Loop__CueChildLoop(SE_Loop* self, SE_Loop* pChild, s32 HeadFlag);
+extern void SE_Loop__AddDrawToXWnd(SE_Loop* self, EXDListItem* pWnd);
+
 #endif /* LOOP_H */

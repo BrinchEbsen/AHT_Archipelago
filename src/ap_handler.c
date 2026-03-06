@@ -7,6 +7,7 @@
 #include <map.h>
 #include <hashcodes.h>
 #include <ap_collectables.h>
+#include <paneldraw.h>
 
 //#define AP_DEBUG_ENABLE_ABILITIES
 
@@ -15,6 +16,11 @@ void ap_update()
     if (g_gamestate_ap_settings.init != AP_SETTINGS_INIT_MAGICVALUE) {
         ap_init_gamestate();
     }
+}
+
+void ap_draw(void* pWnd)
+{
+
 }
 
 void ap_init_gamestate()
@@ -171,4 +177,18 @@ void print_trigger_array_code()
         PRINTF("        }\n");
         PRINTF("    },\n");
     }
+}
+
+s32 SEGameFlow__v_StateRunning__VTHOOK(SEGameFlow *self)
+{
+    if (gp_paneldraw_loop == NULL) {
+        GUI_Base* paneldraw = paneldraw_create();
+        if (paneldraw != NULL) {
+            paneldraw_callback = ap_draw;
+        }
+    }
+
+    ap_update();
+
+    return SEGameFlow__v_StateRunning(self);
 }
