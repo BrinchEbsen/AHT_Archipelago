@@ -4,10 +4,10 @@
 #include <igstdlib.h>
 
 RGBA ap_notification_color = {
-    .r = 0xFF,
-    .g = 0xFF,
-    .b = 0xFF,
-    .a = 0xFF
+    .r = 0x80,
+    .g = 0x80,
+    .b = 0x80,
+    .a = 0x80
 };
 
 u32 ap_notification_timer = 0;
@@ -24,7 +24,7 @@ void ap_draw_notification(void *pWnd)
         return;
     }
 
-    TEXT_PRINT_ALIGN_COLOR(pWnd, 0, 0, CentreLeft, ap_notification_color, text_buffer);
+    TEXT_PRINT_ALIGN_COLOR(pWnd, 5, 0, CentreLeft, ap_notification_color, text_buffer);
     
     ap_notification_timer--;
 }
