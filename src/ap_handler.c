@@ -10,7 +10,7 @@
 #include <ap_collectables.h>
 #include <paneldraw.h>
 
-//#define AP_DEBUG_ENABLE_ABILITIES
+#define AP_DEBUG_ENABLE_ABILITIES
 
 void ap_update()
 {
@@ -18,9 +18,9 @@ void ap_update()
         ap_init_gamestate();
     }
 
-    if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
-        ap_set_notification(60*10, COLOR_TEXT, "This is some test text.\nHello there!");
-    }
+    // if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
+    //     ap_set_notification(60*10, COLOR_TEXT, "This is some test text.\nHello there!");
+    // }
 }
 
 void ap_draw(void* pWnd)
@@ -48,6 +48,7 @@ void ap_init_gamestate()
     #endif
     to->free_realm_travel_enable = from->free_realm_travel_enable;
     to->skip_realm_intro_cutscenes = from->skip_realm_intro_cutscenes;
+    to->skip_cutscene_button = from->skip_cutscene_button;
 
     if (from->skip_realm_intro_cutscenes) {
         PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_OpeningMovie);

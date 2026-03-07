@@ -448,7 +448,8 @@
             "./src/arena.c",
             "./src/paneldraw.c",
             "./src/ap_notification.c",
-            "./src/se/wnd.c"
+            "./src/se/wnd.c",
+            "./src/cutscene_skip.c"
           ],
           "memory_address": "80296618",
           "size": "7DCC",
@@ -651,6 +652,18 @@
           "size": "0",
           "injection_file": "Start.dol",
           "injection_file_address": "0x4143A0",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "XItemHandler_Cutscene__Update_VtableHook",
+          "code_files": [
+            "./asm/GC_NTSC/XItemHandler_Cutscene__Update_VtableHook.s"
+          ],
+          "memory_address": "80415130",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x412130",
           "auto_calculate_injection_file_address": true,
           "enabled": true
         }

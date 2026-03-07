@@ -62,6 +62,8 @@ EXWnd__SelectTriFanTexture = 0x8031b938;
 SE_Map__GetNumDragonEggs = 0x802328c8;
 SE_Map__SetNumDragonEggs = 0x80232914;
 GetSpyroMap = 0x80232df0;
+gMapList = 0x8046ee54;
+SE_MapList__m_gNumMaps = 0x804cb608;
 
 /* player.h */
 gpPlayer = 0x804CB35C;
@@ -70,6 +72,10 @@ XSEItemHandler_Player__ControlsLocked = 0x8005be88;
 XSEItemHandler_Player__ButtonDown = 0x8005b14c;
 XSEItemHandler_Player__ButtonPressed = 0x8005b0a8;
 XSEItemHandler_Player__SetMode = 0x80058414;
+
+/* cutscene_skip.h */
+EXItemAnimator_Script__SetScriptStatus = 0x802b1418;
+XItemHandler_Cutscene__Update = 0x80107364;
 
 /* gamestate.h */
 gGameState = 0x80463b38;

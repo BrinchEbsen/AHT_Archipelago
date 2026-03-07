@@ -13,6 +13,7 @@ typedef struct APSettings {
     u32 starting_abilities;
     bool free_realm_travel_enable;
     bool skip_realm_intro_cutscenes;
+    bool skip_cutscene_button;
     u32 init;
 } APSettings;
 

@@ -1,0 +1,1 @@
+.long XItemHandler_Cutscene__Update_VtableHook
