@@ -57,7 +57,6 @@ XWnd__DrawRect = 0x8012f688;
 XWnd__DrawRectOutline = 0x8012f6b4;
 XWnd__DrawSector = 0x80250848;
 XWnd__DrawTextureBox = 0x8012fa14;
-wnd_drawing_buffer = 0x803D9FB0;
 EXWnd__DrawLine = 0x8031c588;
 EXWnd__DrawTriFan = 0x8031c838;
 EXWnd__DrawTriStrip = 0x8031c7f8;
@@ -109,6 +108,10 @@ Monitor__BASICcmd_Stall = 0x800da1f0;
 Monitor__BASICcmd_Suicide = 0x800da1b8;
 Monitor__BASICcmd_GetDistanceToPlayer = 0x800da054;
 Monitor__BASICcmd_Zoopoo = 0x800da360;
+
+/* gametext.h */
+gGameText = 0x80455c1c;
+GameText__GetText = 0x8012df2c;
 
 /* igstdlib.h */
 strcasecmp = 0x80259f24;

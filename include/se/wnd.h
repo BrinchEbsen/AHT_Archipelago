@@ -122,10 +122,6 @@ extern void XWnd__DrawSector(void* self, EXPoint *XY, float InRad, float OutRad,
 extern void XWnd__DrawTextureBox(void* self, EXRect* Rect, Bool borderoutsiderect, TextureBoxTabs tab, RGBA Col,
     EXHashCode* pTextures);
 
-#define WND_DRAWING_BUFFER_SIZE 0x1000
-extern u8 wnd_drawing_buffer[WND_DRAWING_BUFFER_SIZE];
-extern Arena wnd_drawing_arena;
-
 extern void EXWnd__DrawLine(void* self, EXPrimVert* v1, EXPrimVert* v2);
 extern void EXWnd__DrawTriFan(void* self, uint nVerts, EXPrimVert* pVert);
 extern void EXWnd__DrawTriStrip(void* self, uint nVerts, EXPrimVert* pVert);

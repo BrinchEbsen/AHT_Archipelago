@@ -448,7 +448,6 @@
             "./src/arena.c",
             "./src/paneldraw.c",
             "./src/ap_notification.c",
-            "./src/se/wnd.c",
             "./src/cutscene_skip.c",
             "./src/ap_teleport.c",
             "./src/shop_hooks.c"
@@ -480,7 +479,7 @@
             "./src/ap_patch.c"
           ],
           "memory_address": "803D8FA8",
-          "size": "1000",
+          "size": "2000",
           "injection_file": "Start.dol",
           "injection_file_address": "0x3D5FA8",
           "auto_calculate_injection_file_address": true,
@@ -690,6 +689,18 @@
           "size": "0",
           "injection_file": "Start.dol",
           "injection_file_address": "0x42A950",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "GUI_Item__v_GetText_ReImplHook",
+          "code_files": [
+            "./asm/GC_NTSC/GUI_Item__v_GetText_ReImplHook.s"
+          ],
+          "memory_address": "801aa434",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x1A7434",
           "auto_calculate_injection_file_address": true,
           "enabled": true
         }

@@ -8,6 +8,15 @@
 #define AP_SETTINGS_LOCATIONS_BITFIELD_SIZE 0x30
 #define AP_SETTINGS_INIT_MAGICVALUE 0x45424245 // 'EBBE' in ASCII :)
 
+#define SHOP_NUM_VANILLA_ENTRIES 15
+#define SHOP_TOTAL_NUM_ENTRIES 100
+#define AP_TEXT_ENTRY_HASHCODE_BASE 0x28010000
+
+typedef struct APSettings_TextEntry
+{
+    char text[50];
+} APSettings_TextEntry;
+
 typedef struct APSettings {
     u8 location_bitfield[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];
     BreathType starting_breath;
@@ -28,7 +37,9 @@ typedef struct APSettings {
     // This is the number of items in the shop (15 in vanilla).
     int xls_shop_rowcount;
     // The entries in the datasheet, each representing a shop item.
-    xlsShoppingItem xls_shop_items[100];
+    xlsShoppingItem xls_shop_items[SHOP_TOTAL_NUM_ENTRIES];
+
+    APSettings_TextEntry shop_text[SHOP_TOTAL_NUM_ENTRIES - SHOP_NUM_VANILLA_ENTRIES];
 } APSettings;
 
 extern APSettings g_gamestate_ap_settings;
