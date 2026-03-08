@@ -91,6 +91,10 @@ PlayerObjectives__GetObjective = 0x800663dc;
 /* playerstate.h */
 PlayerState__Update = 0x80068830;
 
+/* minimap_status.h */
+gMiniMapStatus = 0x80459ae4;
+MiniMapStatus__SetBitName = 0x801ae508;
+
 /* collectable_hooks.h */
 LightXtal__Collected = 0x80154f50;
 DarkXtal__Collected = 0x80154d60;

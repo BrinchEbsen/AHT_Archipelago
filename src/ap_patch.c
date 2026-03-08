@@ -6,10 +6,10 @@ APSettings g_patch_ap_settings = {
     .location_bitfield = {0},
     .starting_breath = fire,
     .starting_abilities = ABILITY_AP_FIREBREATH | ABILITY_AP_CHARGE | ABILITY_AP_GLIDE | ABILITY_AP_SWIM,
-    .free_realm_travel_enable = false,
     .skip_realm_intro_cutscenes = false,
     .skip_cutscene_button = true,
     .allow_teleport_to_hub = true,
+    .allow_immediate_realm_access = true,
     .init = 0,
 
     // SHOP ITEMS

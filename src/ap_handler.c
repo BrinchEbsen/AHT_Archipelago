@@ -10,6 +10,7 @@
 #include <ap_collectables.h>
 #include <paneldraw.h>
 #include <igstdlib.h>
+#include <minimap_status.h>
 
 #define NUM_REALM_INTRO_OBJECTIVES 7
 EXHashCode realm_intro_objectives[] = {
@@ -20,6 +21,13 @@ EXHashCode realm_intro_objectives[] = {
     HT_Objective_SeenProfStartR3A,
     HT_Objective_SeenIntroR3A,
     HT_Objective_ProfGoneToFindRed
+};
+
+#define NUM_REALM_TELEPORTER_MAPORDERINFO 3
+MapOrderInfo realm_teleporter_maporderinfo[] = {
+    { .m_FileHash = HT_File_Realm2A,    .m_MapHash = 0xFFFFFFFF },
+    { .m_FileHash = HT_File_Realm3A,    .m_MapHash = 0xFFFFFFFF },
+    { .m_FileHash = HT_File_Realm4A,    .m_MapHash = 0xFFFFFFFF }
 };
 
 #define AP_DEBUG_ENABLE_ABILITIES
@@ -52,12 +60,30 @@ void ap_init_gamestate()
     );
     #endif
 
-    if (g_patch_ap_settings.skip_realm_intro_cutscenes) {
+    if (g_gamestate_ap_settings.skip_realm_intro_cutscenes) {
         for (int i = 0; i < NUM_REALM_INTRO_OBJECTIVES; i++) {
             PlayerObjectives__SetObjective__ReImplHook(
                 &gGameState.m_PlayerObjectives, realm_intro_objectives[i]);
         }
     }
+
+    if (g_gamestate_ap_settings.allow_immediate_realm_access) {
+        for (int i = 0; i < NUM_REALM_TELEPORTER_MAPORDERINFO; i++) {
+            MiniMapStatus__SetBitName(
+                &gMiniMapStatus, &realm_teleporter_maporderinfo[i], Selectable);
+        }
+    }
+}
+
+bool TeleportPad_PlayerObjectives__GetObjective_PreCallHook(
+    PlayerObjectives* self, EXHashCode hashcode, s32* result)
+{
+    if (g_gamestate_ap_settings.allow_immediate_realm_access) {
+        *result = 1;
+        return true;
+    }
+
+    return PlayerObjectives__GetObjective(self, hashcode, result);
 }
 
 void ap_set_grabbable(u16 map_index, u16 trigger_index)

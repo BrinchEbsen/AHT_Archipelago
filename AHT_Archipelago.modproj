@@ -703,6 +703,18 @@
           "injection_file_address": "0x1A7434",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "TeleportPad_PlayerObjectives__GetObjective_PreCallHook",
+          "code_files": [
+            "./asm/GC_NTSC/TeleportPad_PlayerObjectives__GetObjective_PreCallHook.s"
+          ],
+          "memory_address": "800ea594",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0xE7594",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],

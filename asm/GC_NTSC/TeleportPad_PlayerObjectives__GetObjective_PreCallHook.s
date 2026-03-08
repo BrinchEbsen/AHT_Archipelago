@@ -1,0 +1,1 @@
+bl TeleportPad_PlayerObjectives__GetObjective_PreCallHook
