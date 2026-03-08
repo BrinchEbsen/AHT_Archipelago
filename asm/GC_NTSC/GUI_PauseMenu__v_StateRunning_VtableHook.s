@@ -1,0 +1,1 @@
+.long GUI_PauseMenu__v_StateRunning_VtableHook

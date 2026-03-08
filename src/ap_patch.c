@@ -8,5 +8,6 @@ APSettings g_patch_ap_settings = {
     .free_realm_travel_enable = false,
     .skip_realm_intro_cutscenes = false,
     .skip_cutscene_button = true,
+    .allow_teleport_to_hub = true,
     .init = 0
 };

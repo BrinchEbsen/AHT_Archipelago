@@ -32,6 +32,9 @@ typedef enum TextureBoxTabs {
 #define RECT_SIDE_RIGHT 0b1000
 #define RECT_SIDE_ALL   RECT_SIDE_UPPER | RECT_SIDE_LOWER | RECT_SIDE_LEFT | RECT_SIDE_RIGHT
 
+#define WND_WIDTH 512
+#define WND_HEIGHT 448
+
 extern void* gpGameWnd;
 extern void* gpPanelWnd;
 

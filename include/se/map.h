@@ -186,8 +186,9 @@ _Static_assert(sizeof(SE_Map) == 0x128);
 _Static_assert(sizeof(SE_Map) == 0x130);
 #endif
 
-s32 SE_Map__GetNumDragonEggs(SE_Map* this, int Type);
-void SE_Map__SetNumDragonEggs(SE_Map* this, s32 Num, int Type);
+extern s32 SE_Map__GetNumDragonEggs(SE_Map* self, int Type);
+extern void SE_Map__SetNumDragonEggs(SE_Map* self, s32 Num, int Type);
+extern void SE_Map__SetLastStartPoint(SE_Map* self, s32 StartPoint, Players Player);
 
 SE_Map* GetSpyroMap(long FindFlag);
 

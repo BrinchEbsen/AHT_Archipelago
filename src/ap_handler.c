@@ -9,18 +9,27 @@
 #include <hashcodes.h>
 #include <ap_collectables.h>
 #include <paneldraw.h>
+#include <igstdlib.h>
+
+#define NUM_REALM_INTRO_OBJECTIVES 7
+EXHashCode realm_intro_objectives[] = {
+    HT_Objective_OpeningMovie,
+    HT_Objective_SeenIntro_R1A,
+    HT_Objective_SeenProfStartR2A,
+    HT_Objective_SeenIntroR2A,
+    HT_Objective_SeenProfStartR3A,
+    HT_Objective_SeenIntroR3A,
+    HT_Objective_ProfGoneToFindRed
+};
 
 #define AP_DEBUG_ENABLE_ABILITIES
 
 void ap_update()
 {
+    // The savefile data is initialized by checking if a magic value isn't set.
     if (g_gamestate_ap_settings.init != AP_SETTINGS_INIT_MAGICVALUE) {
         ap_init_gamestate();
     }
-
-    // if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
-    //     ap_set_notification(60*10, COLOR_TEXT, "This is some test text.\nHello there!");
-    // }
 }
 
 void ap_draw(void* pWnd)
@@ -30,14 +39,10 @@ void ap_draw(void* pWnd)
 
 void ap_init_gamestate()
 {
-    APSettings* from = &g_patch_ap_settings;
-    APSettings* to = &g_gamestate_ap_settings;
+    memcpy(&g_gamestate_ap_settings, &g_patch_ap_settings, sizeof(APSettings));
 
-    for (int i = 0; i < AP_SETTINGS_LOCATIONS_BITFIELD_SIZE; i++) {
-        to->location_bitfield[i] = from->location_bitfield[i];
-    }
-    to->starting_breath = from->starting_breath;
-    to->starting_abilities = from->starting_abilities;
+    g_gamestate_ap_settings.init = AP_SETTINGS_INIT_MAGICVALUE;
+
     #ifdef AP_DEBUG_ENABLE_ABILITIES
     gGameState.m_PlayerState.m_AbilityFlags |= (
         ABILITY_AP_FIREBREATH |
@@ -46,21 +51,13 @@ void ap_init_gamestate()
         ABILITY_AP_SWIM
     );
     #endif
-    to->free_realm_travel_enable = from->free_realm_travel_enable;
-    to->skip_realm_intro_cutscenes = from->skip_realm_intro_cutscenes;
-    to->skip_cutscene_button = from->skip_cutscene_button;
 
-    if (from->skip_realm_intro_cutscenes) {
-        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_OpeningMovie);
-        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_SeenIntro_R1A);
-        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_SeenProfStartR2A);
-        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_SeenIntroR2A);
-        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_SeenProfStartR3A);
-        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_SeenIntroR3A);
-        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_ProfGoneToFindRed);
+    if (g_patch_ap_settings.skip_realm_intro_cutscenes) {
+        for (int i = 0; i < NUM_REALM_INTRO_OBJECTIVES; i++) {
+            PlayerObjectives__SetObjective__ReImplHook(
+                &gGameState.m_PlayerObjectives, realm_intro_objectives[i]);
+        }
     }
-
-    g_gamestate_ap_settings.init = AP_SETTINGS_INIT_MAGICVALUE;
 }
 
 void ap_set_grabbable(u16 map_index, u16 trigger_index)

@@ -449,7 +449,8 @@
             "./src/paneldraw.c",
             "./src/ap_notification.c",
             "./src/se/wnd.c",
-            "./src/cutscene_skip.c"
+            "./src/cutscene_skip.c",
+            "./src/ap_teleport.c"
           ],
           "memory_address": "80296618",
           "size": "7DCC",
@@ -664,6 +665,30 @@
           "size": "0",
           "injection_file": "Start.dol",
           "injection_file_address": "0x412130",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "GUI_PauseMenu__v_DrawStateRunning_VtableHook",
+          "code_files": [
+            "./asm/GC_NTSC/GUI_PauseMenu__v_DrawStateRunning_VtableHook.s"
+          ],
+          "memory_address": "8042d968",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x42A968",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "GUI_PauseMenu__v_StateRunning_VtableHook",
+          "code_files": [
+            "./asm/GC_NTSC/GUI_PauseMenu__v_StateRunning_VtableHook.s"
+          ],
+          "memory_address": "8042d950",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x42A950",
           "auto_calculate_injection_file_address": true,
           "enabled": true
         }

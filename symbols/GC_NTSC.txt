@@ -19,6 +19,7 @@ SE_Loop__CueChildLoop = 0x8022ff18;
 SE_Loop__AddDrawToXWnd = 0x80230068;
 
 /* gameloop.h */
+SE_GameLoop__GoToMap = 0x8023e644;
 gGameLoop = 0x8046f2f0;
 
 /* gameflow.h */
@@ -30,6 +31,10 @@ GUI_Base_virtual_table = 0x8042e408;
 GUI_Base__CreateObject = 0x801a5be0;
 GUI_Base__Update = 0x801a69c0;
 GUI_Base__v_Draw = 0x801a67ac;
+
+/* ap_teleport.h */
+GUI_PauseMenu__v_StateRunning = 0x803986ac;
+GUI_PauseMenu__v_DrawStateRunning = 0x8039874c;
 
 /* exdisplay.h */
 EXBaseDisplay__m_pDisplay = 0x804cba84;
@@ -61,6 +66,8 @@ EXWnd__SelectTriFanTexture = 0x8031b938;
 /* map.h */
 SE_Map__GetNumDragonEggs = 0x802328c8;
 SE_Map__SetNumDragonEggs = 0x80232914;
+SE_Map__GetLastStartPoint = 0x8023257c;
+SE_Map__SetLastStartPoint = 0x8023251c;
 GetSpyroMap = 0x80232df0;
 gMapList = 0x8046ee54;
 SE_MapList__m_gNumMaps = 0x804cb608;

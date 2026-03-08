@@ -5,7 +5,7 @@
 #include <playerstate.h>
 
 #define AP_SETTINGS_LOCATIONS_BITFIELD_SIZE 0x30
-#define AP_SETTINGS_INIT_MAGICVALUE 0x45424245
+#define AP_SETTINGS_INIT_MAGICVALUE 0x45424245 // 'EBBE' in ASCII :)
 
 typedef struct APSettings {
     u8 location_bitfield[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];
@@ -14,6 +14,7 @@ typedef struct APSettings {
     bool free_realm_travel_enable;
     bool skip_realm_intro_cutscenes;
     bool skip_cutscene_button;
+    bool allow_teleport_to_hub;
     u32 init;
 } APSettings;
 

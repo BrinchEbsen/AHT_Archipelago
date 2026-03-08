@@ -1,5 +1,5 @@
 - Disable Frostbite Village/Ice Citadel auto abilities
 
-- Ability to teleport out of boss arena
-
 - Let player teleport to all realms
+
+- Support shop price randomization
