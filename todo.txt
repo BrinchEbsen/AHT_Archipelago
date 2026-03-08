@@ -1,5 +1,1 @@
-- Disable Frostbite Village/Ice Citadel auto abilities
-
 - Let player teleport to all realms
-
-- Support shop price randomization

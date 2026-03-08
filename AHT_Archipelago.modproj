@@ -722,6 +722,10 @@
         {
           "name": "multi_ShopHooks",
           "file_path": "./asm/GC_NTSC/multi_ShopHooks.s"
+        },
+        {
+          "name": "multi_DisableRealm3AutoAbilities",
+          "file_path": "./asm/GC_NTSC/multi_DisableRealm3AutoAbilities.s"
         }
       ]
     }
