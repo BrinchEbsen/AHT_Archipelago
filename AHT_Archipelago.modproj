@@ -450,7 +450,8 @@
             "./src/ap_notification.c",
             "./src/se/wnd.c",
             "./src/cutscene_skip.c",
-            "./src/ap_teleport.c"
+            "./src/ap_teleport.c",
+            "./src/shop_hooks.c"
           ],
           "memory_address": "80296618",
           "size": "7DCC",
@@ -706,6 +707,10 @@
         {
           "name": "multi_SwimHooks",
           "file_path": "./asm/GC_NTSC/multi_SwimHooks.s"
+        },
+        {
+          "name": "multi_ShopHooks",
+          "file_path": "./asm/GC_NTSC/multi_ShopHooks.s"
         }
       ]
     }
