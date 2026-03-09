@@ -140,18 +140,30 @@ bool TeleportPad_PlayerObjectives__GetObjective_PreCallHook(
 
 void ap_set_grabbable(u16 map_index, u16 trigger_index)
 {
-    int index = ap_binary_search_grabbable(map_index, trigger_index);
-    if (index < 0) {
-        return;
-    }
+    for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
+        APCollectable* coll = &g_ap_collectables[i];
 
-    ap_set_location(index);
+        if (coll->union_type != APC_Grabbable) {
+            continue;
+        }
+
+        if ((coll->grabbable.map_index == map_index) &&
+            (coll->grabbable.trigger_index == trigger_index)) {
+            ap_set_location(i);
+            break;
+        }
+    }
 }
 
 void ap_set_objective(EXHashCode objective)
 {
-    for (int i = AP_OBJECTIVES_START; i < AP_OBJECTIVES_START+AP_OBJECTIVES_NUM; i++) {
+    for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
         APCollectable* coll = &g_ap_collectables[i];
+
+        if (coll->union_type != APC_Objective) {
+            continue;
+        }
+
         if (coll->objective.objective == objective) {
             ap_set_location(i);
             break;
@@ -172,6 +184,7 @@ void ap_set_location(int index)
     }
 }
 
+/*
 int ap_binary_search_grabbable(u16 map_index, u16 trigger_index)
 {
     int start = AP_GRABBABLE_START;
@@ -197,6 +210,7 @@ int ap_binary_search_grabbable(u16 map_index, u16 trigger_index)
 
     return -1;
 }
+*/
 
 s32 SEGameFlow__v_StateRunning__VTHOOK(SEGameFlow *self)
 {

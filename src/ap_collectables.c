@@ -1807,4 +1807,243 @@ APCollectable g_ap_collectables[] = {
         }
     },
     #pragma endregion
+
+    #pragma region Junk Chests
+    // Coastal Remains
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 45,
+            .trigger_index = 315,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 45,
+            .trigger_index = 462,
+            .type = Junk_Chest
+        }
+    },
+    // Sunken Ruins
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 19,
+            .trigger_index = 284,
+            .type = Junk_Chest
+        }
+    },
+    // Cloudy Domain
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 20,
+            .trigger_index = 243,
+            .type = Junk_Chest
+        }
+    },
+    // Frostbite Village
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 31,
+            .trigger_index = 232,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 31,
+            .trigger_index = 485,
+            .type = Junk_Chest
+        }
+    },
+    // Gloomy Glacier
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 35,
+            .trigger_index = 249,
+            .type = Junk_Chest
+        }
+    },
+    // Ice Citadel
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 33,
+            .trigger_index = 286,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 33,
+            .trigger_index = 300,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 33,
+            .trigger_index = 309,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 33,
+            .trigger_index = 377,
+            .type = Junk_Chest
+        }
+    },
+    // Stormy Beach
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 44,
+            .trigger_index = 97,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 44,
+            .trigger_index = 105,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 44,
+            .trigger_index = 168,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 44,
+            .trigger_index = 198,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 44,
+            .trigger_index = 199,
+            .type = Junk_Chest
+        }
+    },
+    // Molten Mount
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 60,
+            .trigger_index = 213,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 60,
+            .trigger_index = 214,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 60,
+            .trigger_index = 215,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 60,
+            .trigger_index = 325,
+            .type = Junk_Chest
+        }
+    },
+    // Magma Falls Top
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 61,
+            .trigger_index = 39,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 61,
+            .trigger_index = 49,
+            .type = Junk_Chest
+        }
+    },
+    // Magma Falls Bottom
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 63,
+            .trigger_index = 51,
+            .type = Junk_Chest
+        }
+    },
+    // Dark Mine
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 30,
+            .trigger_index = 150,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 30,
+            .trigger_index = 211,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 30,
+            .trigger_index = 377,
+            .type = Junk_Chest
+        }
+    },
+    // Red's Laboratory
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 40,
+            .trigger_index = 389,
+            .type = Junk_Chest
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 40,
+            .trigger_index = 390,
+            .type = Junk_Chest
+        }
+    },
+    #pragma endregion
 };
