@@ -31,6 +31,7 @@ MapOrderInfo realm_teleporter_maporderinfo[] = {
 };
 
 #define AP_DEBUG_ENABLE_ABILITIES
+#define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
 
 void ap_update()
 {
@@ -38,7 +39,58 @@ void ap_update()
     if (g_gamestate_ap_settings.init != AP_SETTINGS_INIT_MAGICVALUE) {
         ap_init_gamestate();
     }
+
+    #ifdef AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
+    if (g_pad_button_state(PAD_BUTTON_B)) {
+        if (g_pad_button_edge_down(PAD_BUTTON_DPAD_RIGHT)) {
+            dbg_add_shop_item();
+        } else if (g_pad_button_edge_down(PAD_BUTTON_DPAD_LEFT)) {
+            dbg_remove_shop_item();
+        }
+    }
+    #endif
 }
+
+#ifdef AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
+void dbg_add_shop_item()
+{
+    int index = g_gamestate_ap_settings.xls_shop_rowcount;
+    if (index >= SHOP_TOTAL_NUM_ENTRIES) {
+        return;
+    }
+
+    xlsShoppingItem* item = &g_gamestate_ap_settings.xls_shop_items[index];
+
+    item->Entity = HT_Entity_Lockpicker;
+    item->File = HT_File_Panel;
+    item->ItemText = AP_TEXT_ENTRY_HASHCODE_BASE + index-1;
+    item->DescText = AP_TEXT_ENTRY_HASHCODE_BASE + index-1;
+    item->cost[0] = 500;
+    item->cost[1] = 500;
+    item->Count = 1;
+    item->Num = 0;
+    item->AvailableFlags = ABILITY_BOUGHT_LOCK_PICK;
+    item->BroughtFlags = 0;
+
+    char* shoptext = g_gamestate_ap_settings.shop_text[index-1].text;
+    sprintf(shoptext, "Example check item %d", index);
+    
+    PRINTF("Added item %d\n", index);
+
+    g_gamestate_ap_settings.xls_shop_rowcount++;
+}
+void dbg_remove_shop_item()
+{
+    int index = g_gamestate_ap_settings.xls_shop_rowcount;
+    if (index <= 1) {
+        return;
+    }
+    
+    PRINTF("Removed item %d\n", index);
+
+    g_gamestate_ap_settings.xls_shop_rowcount--;
+}
+#endif
 
 void ap_draw(void* pWnd)
 {

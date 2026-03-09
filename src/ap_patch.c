@@ -15,8 +15,28 @@ APSettings g_patch_ap_settings = {
     // SHOP ITEMS
     .xls_shop_sheetcount_ALWAYS_1 = 1,
     .xls_shop_sheet_offset_ALWAYS_4 = 4,
-    .xls_shop_rowcount = 16,
+    .xls_shop_rowcount = 1,
     .xls_shop_items = {
+        {
+            .Entity = HT_Entity_Shop_RightsOfPassage,
+            .File = HT_File_Panel,
+            .ItemText = HT_Text_ShoppingItem_RightsOfPassage,
+            .DescText = HT_Text_ShoppingDesc_RightsOfPassage,
+            .cost = { 100, 100 },
+            .Count = 1,
+            .Num = 0,
+            .AvailableFlags = ABILITY_BOUGHT_LOCK_PICK,
+            .BroughtFlags = 0
+        }
+    }
+
+    //.shop_text = {
+    //    /* 0  */ { .text = "Example check item 1" }
+    //}
+};
+
+#pragma region VanillaShopItems
+/*
         {
             .Entity = HT_Entity_Lockpicker,
             .File = HT_File_Panel,
@@ -198,21 +218,5 @@ APSettings g_patch_ap_settings = {
             .AvailableFlags = ABILITY_BOUGHT_LOCK_PICK,
             .BroughtFlags = 0
         },
-
-        {
-            .Entity = HT_Entity_DragonEgg,
-            .File = HT_File_CommonPickups,
-            .ItemText = AP_TEXT_ENTRY_HASHCODE_BASE + 0,
-            .DescText = AP_TEXT_ENTRY_HASHCODE_BASE + 0,
-            .cost = { 100, 100 },
-            .Count = -1,
-            .Num = 0,
-            .AvailableFlags = ABILITY_BOUGHT_LOCK_PICK,
-            .BroughtFlags = 0
-        }
-    },
-
-    .shop_text = {
-        /* 0 */ { .text = "Muh buh dwagon egg" }
-    }
-};
+*/
+#pragma endregion

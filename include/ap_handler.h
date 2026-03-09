@@ -7,6 +7,10 @@
 // runs every frame
 void ap_update();
 
+void dbg_add_shop_item();
+
+void dbg_remove_shop_item();
+
 void ap_draw(void* pWnd);
 
 void ap_init_gamestate();
