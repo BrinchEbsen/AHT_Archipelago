@@ -41,7 +41,7 @@ typedef struct APCollectable
     };
 } APCollectable;
 
-#define AP_COLLECTABLES_TOTAL 248
+#define AP_COLLECTABLES_TOTAL 241
 
 extern APCollectable g_ap_collectables[];
 

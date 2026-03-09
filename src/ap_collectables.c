@@ -1949,30 +1949,6 @@ APCollectable g_ap_collectables[] = {
         .union_type = APC_Grabbable,
         .grabbable = {
             .map_index = 60,
-            .trigger_index = 213,
-            .type = Junk_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
-            .trigger_index = 214,
-            .type = Junk_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
-            .trigger_index = 215,
-            .type = Junk_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
             .trigger_index = 325,
             .type = Junk_Chest
         }
@@ -1982,44 +1958,11 @@ APCollectable g_ap_collectables[] = {
         .union_type = APC_Grabbable,
         .grabbable = {
             .map_index = 61,
-            .trigger_index = 39,
-            .type = Junk_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 61,
             .trigger_index = 49,
             .type = Junk_Chest
         }
     },
-    // Magma Falls Bottom
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 63,
-            .trigger_index = 51,
-            .type = Junk_Chest
-        }
-    },
     // Dark Mine
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 150,
-            .type = Junk_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 211,
-            .type = Junk_Chest
-        }
-    },
     {
         .union_type = APC_Grabbable,
         .grabbable = {
