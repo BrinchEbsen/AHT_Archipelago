@@ -12,7 +12,7 @@ RGBA ap_notification_color = {
 
 u32 ap_notification_timer = 0;
 
-char text_buffer[0x100];
+char ap_notification_text_buffer[AP_NOTIFICATION_TEXT_BUFFER_SIZE];
 
 void ap_draw_notification(void *pWnd)
 {
@@ -20,11 +20,11 @@ void ap_draw_notification(void *pWnd)
         return;
     }
 
-    if (text_buffer[0] == 0) {
+    if (ap_notification_text_buffer[0] == 0) {
         return;
     }
 
-    TEXT_PRINT_ALIGN_COLOR(pWnd, 5, 0, CentreLeft, ap_notification_color, text_buffer);
+    TEXT_PRINT_ALIGN_COLOR(pWnd, 5, 0, CentreLeft, ap_notification_color, ap_notification_text_buffer);
     
     ap_notification_timer--;
 }
@@ -33,5 +33,5 @@ void ap_set_notification(u32 timer, RGBA col, char *text)
 {
     ap_notification_timer = timer;
     ap_notification_color.rgba = col.rgba;
-    strcpy(text_buffer, text);
+    strcpy(ap_notification_text_buffer, text);
 }

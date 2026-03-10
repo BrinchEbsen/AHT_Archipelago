@@ -4,12 +4,13 @@
 
 APSettings g_patch_ap_settings = {
     .location_bitfield = {0},
-    .starting_breath = fire,
-    .starting_abilities = ABILITY_AP_FIREBREATH | ABILITY_AP_CHARGE | ABILITY_AP_GLIDE | ABILITY_AP_SWIM,
-    .skip_realm_intro_cutscenes = false,
+    .num_gem_packs_received = 0,
     .skip_cutscene_button = true,
     .allow_teleport_to_hub = true,
     .allow_immediate_realm_access = true,
+
+    .patch_been_written_to = false,
+    
     .init = 0,
 
     // SHOP ITEMS

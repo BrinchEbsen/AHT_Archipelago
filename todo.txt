@@ -1,11 +1,11 @@
 - Unlock lock pick count and make it visible on the HUD
 
+- Make check shop items register when they've been bought
+
 - Add flag to patch area to mark as "written to"
 
 - Add seed value as verification between patch and savefile
 
 - Make savefile only accessible if the seed matches and the patch has been written to
-
-- Remove all items from shop list except for teleport ticket
 
 - Make starting area gate open from the start

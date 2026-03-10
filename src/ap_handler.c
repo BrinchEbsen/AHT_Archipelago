@@ -12,16 +12,16 @@
 #include <igstdlib.h>
 #include <minimap_status.h>
 
-#define NUM_REALM_INTRO_OBJECTIVES 7
-EXHashCode realm_intro_objectives[] = {
-    HT_Objective_OpeningMovie,
-    HT_Objective_SeenIntro_R1A,
-    HT_Objective_SeenProfStartR2A,
-    HT_Objective_SeenIntroR2A,
-    HT_Objective_SeenProfStartR3A,
-    HT_Objective_SeenIntroR3A,
-    HT_Objective_ProfGoneToFindRed
-};
+// #define NUM_REALM_INTRO_OBJECTIVES 7
+// EXHashCode realm_intro_objectives[] = {
+//     HT_Objective_OpeningMovie,
+//     HT_Objective_SeenIntro_R1A,
+//     HT_Objective_SeenProfStartR2A,
+//     HT_Objective_SeenIntroR2A,
+//     HT_Objective_SeenProfStartR3A,
+//     HT_Objective_SeenIntroR3A,
+//     HT_Objective_ProfGoneToFindRed
+// };
 
 #define NUM_REALM_TELEPORTER_MAPORDERINFO 3
 MapOrderInfo realm_teleporter_maporderinfo[] = {
@@ -36,8 +36,13 @@ MapOrderInfo realm_teleporter_maporderinfo[] = {
 void ap_update()
 {
     // The savefile data is initialized by checking if a magic value isn't set.
-    if (g_gamestate_ap_settings.init != AP_SETTINGS_INIT_MAGICVALUE) {
+    if ((g_gamestate_ap_settings.init != AP_SETTINGS_INIT_MAGICVALUE) &&
+        g_patch_ap_settings.patch_been_written_to) {
         ap_init_gamestate();
+    }
+
+    ONCE {
+        print_interface_addresses();
     }
 
     #ifdef AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
@@ -111,13 +116,6 @@ void ap_init_gamestate()
         ABILITY_AP_SWIM
     );
     #endif
-
-    if (g_gamestate_ap_settings.skip_realm_intro_cutscenes) {
-        for (int i = 0; i < NUM_REALM_INTRO_OBJECTIVES; i++) {
-            PlayerObjectives__SetObjective__ReImplHook(
-                &gGameState.m_PlayerObjectives, realm_intro_objectives[i]);
-        }
-    }
 
     if (g_gamestate_ap_settings.allow_immediate_realm_access) {
         for (int i = 0; i < NUM_REALM_TELEPORTER_MAPORDERINFO; i++) {
@@ -211,6 +209,35 @@ int ap_binary_search_grabbable(u16 map_index, u16 trigger_index)
     return -1;
 }
 */
+
+void print_interface_addresses()
+{
+    PRINTF("PATCH AREA:\n");
+    print_apsettings_addresses(&g_patch_ap_settings);
+    PRINTF("-----\nGAMESTATE AREA:\n");
+    print_apsettings_addresses(&g_gamestate_ap_settings);
+    PRINTF("-----\nNOTIFICATION:\n");
+    PRINTF("RGBA ap_notification_color: %x\n", &ap_notification_color);
+    PRINTF("u32 ap_notification_timer: %x\n", &ap_notification_timer);
+    PRINTF("char[%d] ap_notification_text_buffer: %x\n", AP_NOTIFICATION_TEXT_BUFFER_SIZE, &ap_notification_text_buffer);
+    PRINTF("-----\n");
+}
+
+void print_apsettings_addresses(APSettings* psettings)
+{
+    PRINTF("u8 location_bitfield[%d]: %x\n", AP_SETTINGS_LOCATIONS_BITFIELD_SIZE, &psettings->location_bitfield);
+    PRINTF("u8 num_gem_packs_received: %x\n", &psettings->num_gem_packs_received);
+    PRINTF("bool skip_cutscene_button: %x\n", &psettings->skip_cutscene_button);
+    PRINTF("bool allow_teleport_to_hub: %x\n", &psettings->allow_teleport_to_hub);
+    PRINTF("bool allow_immediate_realm_access: %x\n", &psettings->allow_immediate_realm_access);
+    PRINTF("bool patch_been_written_to: %x\n", &psettings->patch_been_written_to);
+    PRINTF("u32 init: %x\n", &psettings->init);
+    PRINTF("int xls_shop_sheetcount_ALWAYS_1: %x\n", &psettings->xls_shop_sheetcount_ALWAYS_1);
+    PRINTF("int xls_shop_sheet_offset_ALWAYS_4: %x\n", &psettings->xls_shop_sheet_offset_ALWAYS_4);
+    PRINTF("int xls_shop_rowcount: %x\n", &psettings->xls_shop_rowcount);
+    PRINTF("xlsShoppingItem[%d] xls_shop_items: %x\n", SHOP_TOTAL_NUM_ENTRIES, &psettings->xls_shop_items);
+    PRINTF("APSettings_TextEntry[%d] shop_text: %x\n", SHOP_TOTAL_NUM_ENTRIES - SHOP_NUM_VANILLA_ENTRIES, &psettings->shop_text);
+}
 
 s32 SEGameFlow__v_StateRunning__VTHOOK(SEGameFlow *self)
 {
