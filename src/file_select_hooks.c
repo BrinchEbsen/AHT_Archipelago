@@ -13,6 +13,13 @@ void MemCardSlotMenu__DrawSavedGameInfo_PreCallHook(GUI_Base* self, void* pWnd, 
 
     if (MEMCARDSLOTMENU_M_LOADGAMEFLAG(self) != 0) {
         APSettings* p_settings = OFFSET_PTR(APSettings, &pSavedGame->m_GameState.m_BitHeap, 0x2000);
+
+        if (p_settings->init != AP_SETTINGS_INIT_MAGICVALUE) {
+            textprintf(pWnd, 200, 0, 1.0f, Centre, COLOR_WHITE, false,
+                "WARNING!\nThis save was not started with archipelago.\nLoad another save or start a new one.");
+            return;
+        }
+
         if (g_patch_ap_settings.mw_seed != p_settings->mw_seed) {
             textprintf(pWnd, 200, 0, 1.0f, Centre, COLOR_WHITE, false,
                 "WARNING!\nSeed mismatch!\nLoad another save or start a new one.\nCurrent multiworld seed: %x\nFile seed: %x",
