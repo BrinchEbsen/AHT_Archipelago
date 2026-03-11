@@ -4,7 +4,7 @@
 #include <ap_settings.h>
 #include <system.h>
 
-#define SYNC_ABI_FLAGS
+// #define SYNC_ABI_FLAGS
 #define DEBUG_PRINT_OBJECTIVES
 
 void PlayerObjectives__SetObjective__ReImplHook(PlayerObjectives* self, EXHashCode hashcode)
