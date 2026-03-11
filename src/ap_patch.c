@@ -9,7 +9,9 @@ APSettings g_patch_ap_settings = {
     .allow_teleport_to_hub = true,
     .allow_immediate_realm_access = true,
 
-    .patch_been_written_to = false,
+    .patch_been_written_to = true,
+
+    .mw_seed = 0x69696969,
     
     .init = 0,
 

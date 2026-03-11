@@ -25,6 +25,7 @@ typedef struct APSettings {
     bool allow_immediate_realm_access;
 
     bool patch_been_written_to;
+    u32 mw_seed;
 
     // For detecting whether the gamestate should initialize.
     // Always the ASCII value "EBBE" when initialized.

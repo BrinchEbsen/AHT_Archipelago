@@ -90,6 +90,7 @@ PlayerObjectives__GetObjective = 0x800663dc;
 
 /* playerstate.h */
 PlayerState__Update = 0x80068830;
+PlayerState__RestartGame = 0x800687ec;
 
 /* minimap_status.h */
 gMiniMapStatus = 0x80459ae4;
@@ -105,6 +106,12 @@ LockedChest__OpenLockedChest = 0x8014996c;
 /* breath_hooks.h */
 XSEItemHandler_Spyro__GetCurrentBreath = 0x800ad55c;
 GUI_Panel__ForcePanelOn = 0x802226b8;
+
+/* file_select_hooks.h */
+MemCardSlotMenu__DrawSavedGameInfo = 0x802350cc;
+
+/* start_gate_hooks.h */
+ScriptedGate__v_Preserve = 0x80161678;
 
 /* boss_gate.h */
 SpyroBASIC__Update = 0x800c2284;

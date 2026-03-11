@@ -199,18 +199,20 @@ void teleport_to_hub()
     for (int i = 0; i < NUM_HUB_CENTERS; i++) {
         HUBCentreEntry* entry = &hub_centers[i];
 
-        SE_Map* goto_map = NULL;
+        s32 goto_map_index = -1;
         // Test which realm the current map is in
         for (int j = 0; j < entry->num_maps; j++) {
             if (*(entry->maps + j) == curr_map->m_MapListIndex) {
-                goto_map = gMapList.m_List[entry->map_index].m_pMap;
-                break;
+                goto_map_index = entry->map_index;
             }
         }
 
-        if (goto_map != NULL) {
-            SE_GameLoop__GoToMap(&gGameLoop, entry->file, entry->startpoint, entry->map);
-            SE_Map__SetLastStartPoint(goto_map, entry->startpoint, Player_Spyro);
+        if (goto_map_index != -1) {
+            SE_Map* goto_map = gMapList.m_List[goto_map_index].m_pMap;
+            goto_map->m_GameState->m_LastStartPoint = entry->startpoint;
+            goto_map->m_GameState->m_LastStartPointPlayer = Player_Spyro;
+            gGameState.m_StartMapIndex = goto_map_index;
+            PlayerState__RestartGame(&gGameState.m_PlayerState);
             break;
         }
     }

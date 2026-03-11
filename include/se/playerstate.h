@@ -148,6 +148,7 @@ _Static_assert(sizeof(PlayerState) == 0x128);
 _Static_assert(sizeof(PlayerState) == 0x130);
 #endif
 
-void PlayerState__Update(PlayerState* self);
+extern void PlayerState__Update(PlayerState* self);
+extern void PlayerState__RestartGame(PlayerState* self);
 
 #endif /* PLAYERSTATE_H */

@@ -1,0 +1,1 @@
+.long ScriptedGate__v_Preserve_VtableHook

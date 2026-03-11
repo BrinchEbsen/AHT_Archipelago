@@ -11,17 +11,18 @@
 #include <paneldraw.h>
 #include <igstdlib.h>
 #include <minimap_status.h>
+#include <gameloop.h>
 
-// #define NUM_REALM_INTRO_OBJECTIVES 7
-// EXHashCode realm_intro_objectives[] = {
-//     HT_Objective_OpeningMovie,
-//     HT_Objective_SeenIntro_R1A,
-//     HT_Objective_SeenProfStartR2A,
-//     HT_Objective_SeenIntroR2A,
-//     HT_Objective_SeenProfStartR3A,
-//     HT_Objective_SeenIntroR3A,
-//     HT_Objective_ProfGoneToFindRed
-// };
+#define NUM_REALM_INTRO_OBJECTIVES 7
+EXHashCode realm_intro_objectives[] = {
+    HT_Objective_OpeningMovie,
+    HT_Objective_SeenIntro_R1A,
+    HT_Objective_SeenProfStartR2A,
+    HT_Objective_SeenIntroR2A,
+    HT_Objective_SeenProfStartR3A,
+    HT_Objective_SeenIntroR3A,
+    HT_Objective_ProfGoneToFindRed
+};
 
 #define NUM_REALM_TELEPORTER_MAPORDERINFO 3
 MapOrderInfo realm_teleporter_maporderinfo[] = {
@@ -36,8 +37,10 @@ MapOrderInfo realm_teleporter_maporderinfo[] = {
 void ap_update()
 {
     // The savefile data is initialized by checking if a magic value isn't set.
-    if ((g_gamestate_ap_settings.init != AP_SETTINGS_INIT_MAGICVALUE) &&
-        g_patch_ap_settings.patch_been_written_to) {
+    bool should_init = (g_gamestate_ap_settings.init != AP_SETTINGS_INIT_MAGICVALUE) &&
+        g_patch_ap_settings.patch_been_written_to;
+
+    if (should_init && (gGameLoop.m_State == Running)) {
         ap_init_gamestate();
     }
 
@@ -123,6 +126,18 @@ void ap_init_gamestate()
                 &gMiniMapStatus, &realm_teleporter_maporderinfo[i], Selectable);
         }
     }
+
+    // Set objective for having opened the starting area gate
+    PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_R1A_OpenLockPickerSwitch);
+    // Set objective for having talked to Zoe
+    PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_R1A_MetZoe);
+    // Set objectives for the realm intro cutscenes
+    for (int i = 0; i < NUM_REALM_INTRO_OBJECTIVES; i++) {
+        PlayerObjectives__SetObjective__ReImplHook(
+            &gGameState.m_PlayerObjectives, realm_intro_objectives[i]);
+    }
+
+    PRINTF("Gamestate initialized!\n");
 }
 
 bool TeleportPad_PlayerObjectives__GetObjective_PreCallHook(
@@ -231,6 +246,7 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("bool allow_teleport_to_hub: %x\n", &psettings->allow_teleport_to_hub);
     PRINTF("bool allow_immediate_realm_access: %x\n", &psettings->allow_immediate_realm_access);
     PRINTF("bool patch_been_written_to: %x\n", &psettings->patch_been_written_to);
+    PRINTF("u32 mw_seed: %x\n", &psettings->mw_seed);
     PRINTF("u32 init: %x\n", &psettings->init);
     PRINTF("int xls_shop_sheetcount_ALWAYS_1: %x\n", &psettings->xls_shop_sheetcount_ALWAYS_1);
     PRINTF("int xls_shop_sheet_offset_ALWAYS_4: %x\n", &psettings->xls_shop_sheet_offset_ALWAYS_4);

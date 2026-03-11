@@ -1,0 +1,1 @@
+bl MemCardSlotMenu__DrawSavedGameInfo_PreCallHook

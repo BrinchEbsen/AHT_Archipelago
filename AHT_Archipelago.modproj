@@ -450,7 +450,9 @@
             "./src/ap_notification.c",
             "./src/cutscene_skip.c",
             "./src/ap_teleport.c",
-            "./src/shop_hooks.c"
+            "./src/shop_hooks.c",
+            "./src/file_select_hooks.c",
+            "./src/start_gate_hooks.c"
           ],
           "memory_address": "80296618",
           "size": "7DCC",
@@ -713,6 +715,30 @@
           "size": "0",
           "injection_file": "Start.dol",
           "injection_file_address": "0xE7594",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "MemCardSlotMenu__DrawSavedGameInfo_PreCallHook",
+          "code_files": [
+            "./asm/GC_NTSC/MemCardSlotMenu__DrawSavedGameInfo_PreCallHook.s"
+          ],
+          "memory_address": "80236398",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x233398",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "ScriptedGate__v_Preserve_VtableHook",
+          "code_files": [
+            "./asm/GC_NTSC/ScriptedGate__v_Preserve_VtableHook.s"
+          ],
+          "memory_address": "80423210",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x420210",
           "auto_calculate_injection_file_address": true,
           "enabled": true
         }
