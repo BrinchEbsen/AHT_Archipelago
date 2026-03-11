@@ -31,8 +31,8 @@ MapOrderInfo realm_teleporter_maporderinfo[] = {
     { .m_FileHash = HT_File_Realm4A,    .m_MapHash = 0xFFFFFFFF }
 };
 
-#define AP_DEBUG_ENABLE_ABILITIES
-#define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
+//#define AP_DEBUG_ENABLE_ABILITIES
+//#define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
 
 void ap_update()
 {

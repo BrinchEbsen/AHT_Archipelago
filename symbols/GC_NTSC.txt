@@ -113,6 +113,9 @@ MemCardSlotMenu__DrawSavedGameInfo = 0x802350cc;
 /* start_gate_hooks.h */
 ScriptedGate__v_Preserve = 0x80161678;
 
+/* shop_hooks.h */
+SE_SpreadSheet__OpenSpreadSheet_FileHash = 0x8024c5d8;
+
 /* boss_gate.h */
 SpyroBASIC__Update = 0x800c2284;
 Monitor__BASICcmd_Stall = 0x800da1f0;

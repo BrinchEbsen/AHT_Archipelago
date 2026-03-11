@@ -3,11 +3,17 @@
 #include <hashcodes.h>
 #include <gametext.h>
 
+// #define AP_READ_CUSTOM_SPREADSHEET
+
 void *SE_SpreadSheet__OpenSpreadSheet_FileHash_PreCallHook(
     SE_SpreadSheet *self, EXHashCode FileHash, EXHashCode SpreadSheetHash)
 {
+    #ifdef AP_READ_CUSTOM_SPREADSHEET
     self->m_pSpreadSheet = AP_GAMESTATE_SHOP_SPREADSHEET_START;
     return self->m_pSpreadSheet;
+    #else
+    return SE_SpreadSheet__OpenSpreadSheet_FileHash(self, FileHash, SpreadSheetHash);
+    #endif
 }
 
 void GUI_Item__v_GetText_ReImplHook(GUI_Base* self, wchar16** pWide, char** pString)

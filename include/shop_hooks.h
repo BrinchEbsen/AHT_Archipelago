@@ -8,6 +8,9 @@
 #define GUI_ITEM__STRING(self)      OFFSET_VAL(char*, self, 0x2a8)
 #define GUI_ITEM__WIDESTRING(self)  OFFSET_VAL(wchar16*, self, 0x2ac)
 
+extern void* SE_SpreadSheet__OpenSpreadSheet_FileHash(
+    SE_SpreadSheet* self, EXHashCode FileHash, EXHashCode SpreadSheetHash);
+
 void* SE_SpreadSheet__OpenSpreadSheet_FileHash_PreCallHook(
     SE_SpreadSheet* self, EXHashCode FileHash, EXHashCode SpreadSheetHash);
 

@@ -5,13 +5,13 @@
 APSettings g_patch_ap_settings = {
     .location_bitfield = {0},
     .num_gem_packs_received = 0,
-    .skip_cutscene_button = true,
-    .allow_teleport_to_hub = true,
-    .allow_immediate_realm_access = true,
+    .skip_cutscene_button = false,
+    .allow_teleport_to_hub = false,
+    .allow_immediate_realm_access = false,
 
-    .patch_been_written_to = true,
+    .patch_been_written_to = false,
 
-    .mw_seed = 0x69696969,
+    .mw_seed = 0,
     
     .init = 0,
 
