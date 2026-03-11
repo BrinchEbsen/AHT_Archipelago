@@ -68,7 +68,7 @@ bool XSEItemHandler_Spyro__TestBreathChange__ReImplHook(void *self)
     }
 
     bool has_ice = (gGameState.m_PlayerState.m_AbilityFlags & ABILITY_ICE_BREATH) != 0;
-    if (g_pad_button_state(PAD_BUTTON_DPAD_DOWN) && has_water) {
+    if (g_pad_button_state(PAD_BUTTON_DPAD_DOWN) && has_ice) {
         curr_breath = ice;
         if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
             switchto = true;
