@@ -3,7 +3,7 @@
 #include <hashcodes.h>
 #include <gametext.h>
 
-// #define AP_READ_CUSTOM_SPREADSHEET
+#define AP_READ_CUSTOM_SPREADSHEET
 
 void *SE_SpreadSheet__OpenSpreadSheet_FileHash_PreCallHook(
     SE_SpreadSheet *self, EXHashCode FileHash, EXHashCode SpreadSheetHash)
