@@ -1,0 +1,1 @@
+b XSEItemHandler_Spyro__TestShooter__ReImplHook
