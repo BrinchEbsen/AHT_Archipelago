@@ -136,6 +136,11 @@ void ap_init_gamestate()
         PlayerObjectives__SetObjective__ReImplHook(
             &gGameState.m_PlayerObjectives, realm_intro_objectives[i]);
     }
+    // Set objectives for meeting the mammoth and having rescued Spyro.
+    // This is to prevent the gate into Gloomy Glacier from being present,
+    // And to allow access to Gloomy Glacier at the player's discretion.
+    PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_3A_MetMonsterMammoth);
+    PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_3B_HunterRescuedSpyro);
 
     PRINTF("Gamestate initialized!\n");
 }
