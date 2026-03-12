@@ -50,7 +50,7 @@ typedef struct PlayerObjectives {
 
 extern bool PlayerObjectives__ObjectiveIntoIndexAndBit(PlayerObjectives *this, EXHashCode hashcode, int *index_out, int *bit_out);
 void PlayerObjectives__SetObjective__ReImplHook(PlayerObjectives* self, EXHashCode hashcode);
-bool PlayerObjectives__GetObjective(PlayerObjectives* this, EXHashCode hashcode, s32 *result);
+bool PlayerObjectives__GetObjective__ReImplHook(PlayerObjectives* self, EXHashCode hashcode, s32 *result);
 
 typedef struct PlayerTasks {
     uint m_TasksState[5];

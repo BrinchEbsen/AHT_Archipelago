@@ -741,6 +741,18 @@
           "injection_file_address": "0x420210",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "PlayerObjectives__GetObjective__ReImplHook",
+          "code_files": [
+            "./asm/GC_NTSC/PlayerObjectives__GetObjective__ReImplHook.s"
+          ],
+          "memory_address": "800663dc",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x633DC",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],

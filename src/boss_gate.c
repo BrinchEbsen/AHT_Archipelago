@@ -65,7 +65,7 @@ void Monitor__BASIC_Update_PreCallHook(void* self)
 void monitor_process_boss_gate(void* self, u16 cost, EXHashCode clear_objective)
 {
     s32 obj;
-    PlayerObjectives__GetObjective(
+    PlayerObjectives__GetObjective__ReImplHook(
         &gGameState.m_PlayerObjectives, clear_objective, &obj);
 
     // Kill trigger if barrier already gone

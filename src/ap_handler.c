@@ -148,7 +148,7 @@ bool TeleportPad_PlayerObjectives__GetObjective_PreCallHook(
         return true;
     }
 
-    return PlayerObjectives__GetObjective(self, hashcode, result);
+    return PlayerObjectives__GetObjective__ReImplHook(self, hashcode, result);
 }
 
 void ap_set_grabbable(u16 map_index, u16 trigger_index)
