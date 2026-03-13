@@ -7,11 +7,11 @@
 APSettings g_patch_ap_settings = {
     .location_bitfield = {0},
     .num_gem_packs_received = 0,
-    .skip_cutscene_button = true,
-    .allow_teleport_to_hub = true,
+    .skip_cutscene_button = false,
+    .allow_teleport_to_hub = false,
     .allow_immediate_realm_access = false,
 
-    .patch_been_written_to = true,
+    .patch_been_written_to = false,
 
     .mw_seed = 0,
     
@@ -207,7 +207,7 @@ APSettings g_patch_ap_settings = {
     }
     #endif /* USE_VANILLA_SHOP */
 
-    .xls_shop_rowcount = 3,
+    .xls_shop_rowcount = 1,
     .xls_shop_items = {
         {
             .Entity = HT_Entity_Shop_RightsOfPassage,
@@ -219,39 +219,9 @@ APSettings g_patch_ap_settings = {
             .Num = 0,
             .AvailableFlags = 0,
             .BroughtFlags = 0
-        },
-        {
-            .Entity = HT_Entity_Lockpicker,
-            .File = HT_File_Panel,
-            .ItemText = 0x28010000,
-            .DescText = 0x28010000,
-            .cost = { 500, 650 },
-            .Count = 1,
-            .Num = 0,
-            .AvailableFlags = 0,
-            .BroughtFlags = 0
-        },
-        {
-            .Entity = HT_Entity_Lockpicker,
-            .File = HT_File_Panel,
-            .ItemText = 0x28010001,
-            .DescText = 0x28010001,
-            .cost = { 500, 650 },
-            .Count = 1,
-            .Num = 0,
-            .AvailableFlags = 0,
-            .BroughtFlags = 0
         }
-    },
-
-    .shop_text = {
-        { // 0x28010000
-            .been_bought = false,
-            .text = "Player1's Heart Piece"
-        },
-        { // 0x28010001
-            .been_bought = false,
-            .text = "Player2's Master Sword"
-        },
     }
+
+    // .shop_text = {
+    // }
 };
