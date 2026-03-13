@@ -258,6 +258,7 @@ void print_apsettings_addresses(APSettings* psettings)
 {
     PRINTF("u8 location_bitfield[%d]: %x\n", AP_SETTINGS_LOCATIONS_BITFIELD_SIZE, &psettings->location_bitfield);
     PRINTF("u8 num_gem_packs_received: %x\n", &psettings->num_gem_packs_received);
+    PRINTF("u8 num_lock_picks_received: %x\n", &psettings->num_lock_picks_received);
     PRINTF("bool skip_cutscene_button: %x\n", &psettings->skip_cutscene_button);
     PRINTF("bool allow_teleport_to_hub: %x\n", &psettings->allow_teleport_to_hub);
     PRINTF("bool allow_immediate_realm_access: %x\n", &psettings->allow_immediate_realm_access);
