@@ -42,3 +42,25 @@ void GUI_Item__v_GetText_ReImplHook(GUI_Base* self, wchar16** pWide, char** pStr
         *pWide = this_widestr;
     }
 }
+
+int GUI_ShopItem__BuyItems_PreCallHook(GUI_ShopItem* self)
+{
+    if ((self->m_pItemData->ItemText & 0xFFFF0000) == AP_TEXT_ENTRY_HASHCODE_BASE) {
+        int index = self->m_pItemData->ItemText & 0xFFFF;
+        g_gamestate_ap_settings.shop_text[index].been_bought = true;
+    }
+    
+    return GUI_ShopItem__BuyItems(self);
+}
+
+int GUI_ShopItem__IsAvailable_PreCallHook(GUI_ShopItem* self, Bool Buy)
+{
+    if ((self->m_pItemData->ItemText & 0xFFFF0000) == AP_TEXT_ENTRY_HASHCODE_BASE) {
+        int index = self->m_pItemData->ItemText & 0xFFFF;
+        if (g_gamestate_ap_settings.shop_text[index].been_bought) {
+            return 2;
+        }
+    }
+
+    return GUI_ShopItem__IsAvailable(self, Buy);
+}
