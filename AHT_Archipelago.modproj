@@ -452,7 +452,7 @@
             "./src/ap_teleport.c",
             "./src/shop_hooks.c",
             "./src/file_select_hooks.c",
-            "./src/start_gate_hooks.c"
+            "./src/gate_hooks.c"
           ],
           "memory_address": "80296618",
           "size": "7DCC",

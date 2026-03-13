@@ -129,18 +129,29 @@ void ap_init_gamestate()
 
     // Set objective for having opened the starting area gate
     PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_R1A_OpenLockPickerSwitch);
+
     // Set objective for having talked to Zoe
     PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_R1A_MetZoe);
+
     // Set objectives for the realm intro cutscenes
     for (int i = 0; i < NUM_REALM_INTRO_OBJECTIVES; i++) {
         PlayerObjectives__SetObjective__ReImplHook(
             &gGameState.m_PlayerObjectives, realm_intro_objectives[i]);
     }
+
     // Set objectives for meeting the mammoth and having rescued Spyro.
     // This is to prevent the gate into Gloomy Glacier from being present,
-    // And to allow access to Gloomy Glacier at the player's discretion.
+    // and to allow access to Gloomy Glacier at the player's discretion.
     PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_3A_MetMonsterMammoth);
     PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_3B_HunterRescuedSpyro);
+
+    // Set objectives for completing Moneybags' tutorial
+    PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_MoneybagsGems_1A);
+    PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_Moneybagsintro_1A);
+    PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_GainedLockPicker);
+
+    // Set objective flag for having bought a lock pick
+    gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BOUGHT_LOCK_PICK;
 
     PRINTF("Gamestate initialized!\n");
 }
