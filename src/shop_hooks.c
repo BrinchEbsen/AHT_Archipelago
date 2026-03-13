@@ -9,6 +9,9 @@ void *SE_SpreadSheet__OpenSpreadSheet_FileHash_PreCallHook(
     SE_SpreadSheet *self, EXHashCode FileHash, EXHashCode SpreadSheetHash)
 {
     #ifdef AP_READ_CUSTOM_SPREADSHEET
+    if (g_gamestate_ap_settings.xls_shop_rowcount == 0) {
+        return SE_SpreadSheet__OpenSpreadSheet_FileHash(self, FileHash, SpreadSheetHash);
+    }
     self->m_pSpreadSheet = AP_GAMESTATE_SHOP_SPREADSHEET_START;
     return self->m_pSpreadSheet;
     #else
