@@ -18,6 +18,6 @@ extern void ScriptedGate__v_Preserve(void* self);
 
 void ScriptedGate__v_Preserve_VtableHook(void* self);
 
-bool gate_should_force_open(void* self);
+bool gate_should_force_open(void* pgate);
 
 #endif /* GATE_HOOKS_H */
