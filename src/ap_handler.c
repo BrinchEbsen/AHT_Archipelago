@@ -59,6 +59,13 @@ void ap_gamestate_update()
         gGameState.m_PlayerState.m_DoubleGemTimer = gGameState.m_PlayerState.m_DoubleGemTimerMax;
     }
 
+    // Freeze max values for lock picks and breath ammo
+    gGameState.m_PlayerState.m_LockPickers_Max = 127;
+    gGameState.m_PlayerState.m_FlameBombs_Max = 127;
+    gGameState.m_PlayerState.m_IceBombs_Max = 127;
+    gGameState.m_PlayerState.m_WaterBombs_Max = 127;
+    gGameState.m_PlayerState.m_ElectricBombs_Max = 127;
+
     #ifdef AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
     if (g_pad_button_state(PAD_BUTTON_B)) {
         if (g_pad_button_edge_down(PAD_BUTTON_DPAD_RIGHT)) {
