@@ -38,16 +38,25 @@ bool replenish_butterfly_jar = false;
 
 void ap_update()
 {
-    // The savefile data is initialized by checking if a magic value isn't set.
-    bool should_init = (g_gamestate_ap_settings.init != AP_SETTINGS_INIT_MAGICVALUE) &&
-        g_patch_ap_settings.patch_been_written_to;
-
-    if (should_init && (gGameLoop.m_State == Running)) {
-        ap_init_gamestate();
+    if (g_patch_ap_settings.patch_been_written_to && (gGameLoop.m_State == Running)) {
+        ap_gamestate_update();
     }
 
     ONCE {
         print_interface_addresses();
+    }
+}
+
+void ap_gamestate_update()
+{
+    if (g_gamestate_ap_settings.init != AP_SETTINGS_INIT_MAGICVALUE) {
+        ap_init_gamestate();
+    }
+
+    // Freeze double gem timer if enabled
+    if ((gGameState.m_PlayerState.m_AbilityFlags & ABILITY_DOUBLE_GEM) != 0)
+    {
+        gGameState.m_PlayerState.m_DoubleGemTimer = gGameState.m_PlayerState.m_DoubleGemTimerMax;
     }
 
     #ifdef AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
