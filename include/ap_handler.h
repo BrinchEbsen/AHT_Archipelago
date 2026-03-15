@@ -31,6 +31,10 @@ void print_interface_addresses();
 
 void print_apsettings_addresses(APSettings* psettings);
 
+int XSEItemHandler_Player__InitialiseStart_PreCallHook(void* self);
+
+void Player_urghhhImDead_PostHook();
+
 s32 SEGameFlow__v_StateRunning__VTHOOK(SEGameFlow* self);
 
 #endif /* AP_HANDLER_H */

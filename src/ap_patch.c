@@ -7,6 +7,7 @@
 APSettings g_patch_ap_settings = {
     .location_bitfield = {0},
     .num_gem_packs_received = 0,
+    .infinite_butterfly_jar = false,
     .skip_cutscene_button = false,
     .allow_teleport_to_hub = false,
     .allow_immediate_realm_access = false,

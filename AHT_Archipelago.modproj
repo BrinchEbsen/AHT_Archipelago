@@ -788,6 +788,14 @@
         {
           "name": "multi_DisableRealm3AutoAbilities",
           "file_path": "./asm/GC_NTSC/multi_DisableRealm3AutoAbilities.s"
+        },
+        {
+          "name": "multi_Player_urghhhImDead_PostHook",
+          "file_path": "./asm/GC_NTSC/multi_Player_urghhhImDead_PostHook.s"
+        },
+        {
+          "name": "multi_XSEItemHandler_Player__InitialiseStart_PreCallHook",
+          "file_path": "./asm/GC_NTSC/multi_XSEItemHandler_Player__InitialiseStart_PreCallHook.s"
         }
       ]
     }

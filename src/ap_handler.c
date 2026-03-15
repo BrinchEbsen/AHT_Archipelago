@@ -34,6 +34,8 @@ MapOrderInfo realm_teleporter_maporderinfo[] = {
 //#define AP_DEBUG_ENABLE_ABILITIES
 //#define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
 
+bool replenish_butterfly_jar = false;
+
 void ap_update()
 {
     // The savefile data is initialized by checking if a magic value isn't set.
@@ -260,6 +262,7 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("u8 location_bitfield[%d]: %x\n", AP_SETTINGS_LOCATIONS_BITFIELD_SIZE, &psettings->location_bitfield);
     PRINTF("u8 num_gem_packs_received: %x\n", &psettings->num_gem_packs_received);
     PRINTF("u8 num_lock_picks_received: %x\n", &psettings->num_lock_picks_received);
+    PRINTF("bool infinite_butterfly_jar: %x\n", &psettings->infinite_butterfly_jar);
     PRINTF("bool skip_cutscene_button: %x\n", &psettings->skip_cutscene_button);
     PRINTF("bool allow_teleport_to_hub: %x\n", &psettings->allow_teleport_to_hub);
     PRINTF("bool allow_immediate_realm_access: %x\n", &psettings->allow_immediate_realm_access);
@@ -271,6 +274,25 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("int xls_shop_rowcount: %x\n", &psettings->xls_shop_rowcount);
     PRINTF("xlsShoppingItem[%d] xls_shop_items: %x\n", SHOP_TOTAL_NUM_ENTRIES, &psettings->xls_shop_items);
     PRINTF("APSettings_TextEntry[%d] shop_text: %x\n", SHOP_TOTAL_NUM_ENTRIES - SHOP_NUM_VANILLA_ENTRIES, &psettings->shop_text);
+}
+
+int XSEItemHandler_Player__InitialiseStart_PreCallHook(void* self)
+{
+    if (replenish_butterfly_jar)
+    {
+        replenish_butterfly_jar = false;
+        gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BUTTERFLY_JAR;
+    }
+
+    return XSEItemHandler_Player__InitialiseStart(self);
+}
+
+void Player_urghhhImDead_PostHook()
+{
+    if (g_gamestate_ap_settings.infinite_butterfly_jar)
+    {
+        replenish_butterfly_jar = true;
+    }
 }
 
 s32 SEGameFlow__v_StateRunning__VTHOOK(SEGameFlow *self)

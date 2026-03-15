@@ -191,5 +191,6 @@ extern bool XSEItemHandler_Player__ControlsLocked(void* self);
 extern Bool XSEItemHandler_Player__ButtonDown(void* self, Buttons button);
 extern Bool XSEItemHandler_Player__ButtonPressed(void* self, Buttons button);
 extern void XSEItemHandler_Player__SetMode(void* self, PlayerModes mode, int force, int params);
+extern int XSEItemHandler_Player__InitialiseStart(void* self);
 
 #endif /* PLAYER_H */

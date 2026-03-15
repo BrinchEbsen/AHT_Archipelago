@@ -23,6 +23,8 @@ typedef struct APSettings {
     u8 location_bitfield[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];
     u8 num_gem_packs_received;
     u8 num_lock_picks_received;
+    bool infinite_butterfly_jar;
+
     bool skip_cutscene_button;
     bool allow_teleport_to_hub;
     bool allow_immediate_realm_access;

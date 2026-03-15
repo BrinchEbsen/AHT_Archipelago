@@ -78,6 +78,7 @@ XSEItemHandler_Player__ControlsLocked = 0x8005be88;
 XSEItemHandler_Player__ButtonDown = 0x8005b14c;
 XSEItemHandler_Player__ButtonPressed = 0x8005b0a8;
 XSEItemHandler_Player__SetMode = 0x80058414;
+XSEItemHandler_Player__InitialiseStart = 0x8005805c;
 
 /* cutscene_skip.h */
 EXItemAnimator_Script__SetScriptStatus = 0x802b1418;
