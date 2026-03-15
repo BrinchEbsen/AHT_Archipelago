@@ -17,7 +17,7 @@ typedef struct APSettings_TextEntry
     /* 0x0 */ bool been_bought;
     /* 0x1 */ u8 padding;
     /* 0x2 */ char text[48];
-} APSettings_TextEntry; // Size: 0x50
+} APSettings_TextEntry; // Size: 0x32
 
 typedef struct APSettings {
     u8 location_bitfield[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];

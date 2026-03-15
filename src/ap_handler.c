@@ -73,13 +73,14 @@ void dbg_add_shop_item()
     item->File = HT_File_Panel;
     item->ItemText = AP_TEXT_ENTRY_HASHCODE_BASE + index-1;
     item->DescText = AP_TEXT_ENTRY_HASHCODE_BASE + index-1;
-    item->cost[0] = 500;
-    item->cost[1] = 500;
+    item->cost[0] = 1;
+    item->cost[1] = 1;
     item->Count = 1;
     item->Num = 0;
-    item->AvailableFlags = ABILITY_BOUGHT_LOCK_PICK;
+    item->AvailableFlags = 0;
     item->BroughtFlags = 0;
 
+    g_gamestate_ap_settings.shop_text[index-1].been_bought = false;
     char* shoptext = g_gamestate_ap_settings.shop_text[index-1].text;
     sprintf(shoptext, "Example check item %d", index);
     
