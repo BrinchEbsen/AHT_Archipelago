@@ -1,4 +1,4 @@
-#include <ap_teleport.h>
+#include <ap_pausemenu.h>
 #include <pad.h>
 #include <paneldraw.h>
 #include <map.h>
@@ -124,6 +124,8 @@ s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
         draw_teleport_menu(self, pWnd);
     }
 
+    draw_pause_stats(self, pWnd);
+
     return GUI_PauseMenu__v_DrawStateRunning(self, pWnd);
 }
 
@@ -174,6 +176,88 @@ void draw_teleport_menu(GUI_Base* self, void* pWnd)
 
     XWnd__DrawRect(pWnd, &bgrect, COLOR_BLACK);
     XWnd__DrawRect(pWnd, &redrect, COLOR_RED);
+}
+
+void draw_pause_stats(GUI_Base* self, void* pWnd)
+{
+    u16 x = 3;
+    u16 y = 60;
+    static u16 spacing = 20;
+
+    EXRect r = {
+        .x = 0,
+        .y = y,
+        .w = 140,
+        .h = 325
+    };
+
+    XWnd__DrawRect(pWnd, &r, COLOR_RGBA(0, 0, 0, 0x20));
+
+    RGBA on_color = COLOR_WHITE;
+    RGBA off_color = COLOR_RGBA(0x40, 0x40, 0x40, 0x80);
+
+    RGBA* col;
+    u32 abiflg = gGameState.m_PlayerState.m_AbilityFlags;
+
+    col = ((abiflg & ABILITY_DOUBLE_JUMP) != 0) ? &on_color : &off_color;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Double Jump");
+    y += spacing;
+
+    col = ((abiflg & ABILITY_POLE_SPIN) != 0) ? &on_color : &off_color;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Pole Spin");
+    y += spacing;
+
+    col = ((abiflg & ABILITY_HIT_POINT_UPGRADE) != 0) ? &on_color : &off_color;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Health Unit+");
+    y += spacing;
+
+    col = g_gamestate_ap_settings.infinite_butterfly_jar ? &on_color : &off_color;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Health Refill");
+    y += spacing;
+
+    col = ((abiflg & ABILITY_AP_FIREBREATH) != 0) ? &on_color : &off_color;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Fire Breath");
+    y += spacing;
+
+    col = ((abiflg & ABILITY_ELECTRIC_BREATH) != 0) ? &on_color : &off_color;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Electric Breath");
+    y += spacing;
+
+    col = ((abiflg & ABILITY_WATER_BREATH) != 0) ? &on_color : &off_color;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Water Breath");
+    y += spacing;
+
+    col = ((abiflg & ABILITY_ICE_BREATH) != 0) ? &on_color : &off_color;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Ice Breath");
+    y += spacing;
+
+    col = ((abiflg & ABILITY_WING_SHIELD) != 0) ? &on_color : &off_color;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Wing Shield");
+    y += spacing;
+
+    col = ((abiflg & ABILITY_WALL_KICK) != 0) ? &on_color : &off_color;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Wall Kick");
+    y += spacing;
+
+    col = ((abiflg & ABILITY_HORN_DIVE_UPGRADE) != 0) ? &on_color : &off_color;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Shockwave");
+    y += spacing;
+
+    col = ((abiflg & ABILITY_AP_GLIDE) != 0) ? &on_color : &off_color;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Glide");
+    y += spacing;
+
+    col = ((abiflg & ABILITY_AP_CHARGE) != 0) ? &on_color : &off_color;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Charge");
+    y += spacing;
+
+    col = ((abiflg & ABILITY_AP_SWIM) != 0) ? &on_color : &off_color;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Swim");
+    y += spacing*2;
+
+    s8 lock_pickers = gGameState.m_PlayerState.m_LockPickers;
+    col = (lock_pickers > 0) ? &on_color : &off_color;
+    TEXT_PRINT_ALIGN_COLOR_F(pWnd, x, y, TopLeft, *col, "Lock Picks: %d", lock_pickers);
 }
 
 void close_pause_menu(GUI_Base* self)

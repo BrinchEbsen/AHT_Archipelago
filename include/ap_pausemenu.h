@@ -1,5 +1,5 @@
-#ifndef AP_TELEPORT_H
-#define AP_TELEPORT_H
+#ifndef AP_PAUSEMENU_H
+#define AP_PAUSEMENU_H
 #include <types.h>
 #include <gui_base.h>
 
@@ -15,8 +15,10 @@ s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self);
 
 void draw_teleport_menu(GUI_Base* self, void* pWnd);
 
+void draw_pause_stats(GUI_Base* self, void* pWnd);
+
 void close_pause_menu(GUI_Base* self);
 
 void teleport_to_hub();
 
-#endif /* AP_TELEPORT_H */
+#endif /* AP_PAUSEMENU_H */
