@@ -1,0 +1,1 @@
+bl BASIC_Main__UpdatePointers_PreCallHook

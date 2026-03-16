@@ -441,7 +441,6 @@
             "./src/ap_collectables.c",
             "./src/breath_hooks.c",
             "./src/collectable_hooks.c",
-            "./src/boss_gate.c",
             "./src/glide_hooks.c",
             "./src/charge_hooks.c",
             "./src/swim_hooks.c",
@@ -452,7 +451,8 @@
             "./src/shop_hooks.c",
             "./src/file_select_hooks.c",
             "./src/gate_hooks.c",
-            "./src/ap_pausemenu.c"
+            "./src/ap_pausemenu.c",
+            "./src/BASIC_hooks.c"
           ],
           "memory_address": "80296618",
           "size": "7DCC",
@@ -611,18 +611,6 @@
           "enabled": true
         },
         {
-          "name": "Monitor__BASIC_Update_PreCallHook",
-          "code_files": [
-            "./asm/GC_NTSC/Monitor__BASIC_Update_PreCallHook.s"
-          ],
-          "memory_address": "800d9f4c",
-          "size": "0",
-          "injection_file": "Start.dol",
-          "injection_file_address": "0xD6F4C",
-          "auto_calculate_injection_file_address": true,
-          "enabled": true
-        },
-        {
           "name": "XSEItemHandler_Spyro__TestBreatheFire__ReImplHook",
           "code_files": [
             "./asm/GC_NTSC/XSEItemHandler_Spyro__TestBreatheFire__ReImplHook.s"
@@ -775,6 +763,30 @@
           "size": "0",
           "injection_file": "Start.dol",
           "injection_file_address": "0x65C78",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "XSEItemHandler_Base__BASIC_Update_ReImplHook",
+          "code_files": [
+            "./asm/GC_NTSC/XSEItemHandler_Base__BASIC_Update_ReImplHook.s"
+          ],
+          "memory_address": "800bf070",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0xBC070",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "BASIC_Main__UpdatePointers_PreCallHook",
+          "code_files": [
+            "./asm/GC_NTSC/BASIC_Main__UpdatePointers_PreCallHook.s"
+          ],
+          "memory_address": "800037f8",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x7F8",
           "auto_calculate_injection_file_address": true,
           "enabled": true
         }

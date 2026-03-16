@@ -118,8 +118,12 @@ SE_SpreadSheet__OpenSpreadSheet_FileHash = 0x8024c5d8;
 GUI_ShopItem__BuyItems = 0x8022837c;
 GUI_ShopItem__IsAvailable = 0x80227e68;
 
-/* boss_gate.h */
+/* BASIC_hooks.h */
 SpyroBASIC__Update = 0x800c2284;
+SpyroBASIC__Init = 0x800c1398;
+BASIC_Main__Init = 0x800035fc;
+BASIC_Main__RunScript = 0x800037e0;
+BASIC_Main__UpdatePointers = 0x80003504;
 Monitor__BASICcmd_Stall = 0x800da1f0;
 Monitor__BASICcmd_Suicide = 0x800da1b8;
 Monitor__BASICcmd_GetDistanceToPlayer = 0x800da054;

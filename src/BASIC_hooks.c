@@ -1,8 +1,9 @@
-#include <boss_gate.h>
+#include <basic_hooks.h>
 #include <trigger.h>
 #include <map.h>
 #include <gamestate.h>
 #include <hashcodes.h>
+#include <system.h>
 
 BossGateEntry g_boss_gate_list[] = {
     // Gnasty Gnorc
@@ -35,16 +36,31 @@ BossGateEntry g_boss_gate_list[] = {
     }
 };
 
-void Monitor__BASIC_Update_PreCallHook(void* self)
-{
-    SE_Map* pMap = GetSpyroMap(0);
-    if (pMap != NULL) {
-        SE_Trigger* pTrigger = XSEITEMHANDLER_ITEM_TRIGGER(self);
+u32 dragon_village_hunter_patch_1[] = {
+    // loc0 = 0
+    0x0e1c0001, 0x00000000
+};
 
-        if (pTrigger != NULL) {
+GameScriptPatch g_gamescript_patches[] = {
+    {
+        .map_index = 24,
+        .trig_index = 10,
+        .num_lines = 1,
+        .start_line = 0,
+        .patches = dragon_village_hunter_patch_1
+    }
+};
+
+void XSEItemHandler_Base__BASIC_Update_ReImplHook(void* self)
+{
+    SE_Trigger* pTrigger = XSEITEMHANDLER_ITEM_TRIGGER(self);
+    if (pTrigger != NULL) {
+        SE_Map* pMap = pTrigger->m_pMap;
+
+        if (pMap != NULL) {
             for (int i = 0; i < BOSS_GATE_NUM_ENTRIES; i++) {
                 BossGateEntry* entry = &g_boss_gate_list[i];
-
+    
                 // Check if this is a boss gate monitor trigger
                 if ((entry->map_index == pMap->m_MapListIndex) &&
                     (entry->trigger_index == pTrigger->m_GeoTriggerIndex))
@@ -92,4 +108,41 @@ void monitor_process_boss_gate(void* self, u16 cost, EXHashCode clear_objective)
     PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, clear_objective);
     // Kill trigger
     Monitor__BASICcmd_Suicide(self);
+}
+
+bool BASIC_Main__UpdatePointers_PreCallHook(void* self)
+{
+    bool ret = BASIC_Main__UpdatePointers(self);
+
+    void* owner = BASICMAIN_OWNER(self);
+    SE_Trigger* pTrigger = XSEITEMHANDLER_ITEM_TRIGGER(owner);
+    if (pTrigger != NULL) {
+        SE_Map* pMap = pTrigger->m_pMap;
+
+        for (int i = 0; i < NUM_GAMESCRIPT_PATCHES; i++) {
+            GameScriptPatch* patch = &g_gamescript_patches[i];
+    
+            if ((patch->map_index == pMap->m_MapListIndex) &&
+                (patch->trig_index == pTrigger->m_GeoTriggerIndex))
+            {
+                void* pBasic = XSEITEMHANDLER_M_PBASIC(owner);
+                if (pBasic != NULL) {
+                    apply_gamescript_patch(pBasic, patch);
+                }
+            }
+        }
+    }
+
+    return ret;
+}
+
+void apply_gamescript_patch(void* pBasic, GameScriptPatch* patch)
+{
+    u32* code = SPYROBASIC_SCRIPTCODE(pBasic);
+
+    code += patch->start_line*2;
+
+    for (int i = 0; i < patch->num_lines*2; i++) {
+        code[i] = patch->patches[i];
+    }
 }
