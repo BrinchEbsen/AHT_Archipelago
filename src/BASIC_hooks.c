@@ -125,10 +125,7 @@ bool BASIC_Main__UpdatePointers_PreCallHook(void* self)
             if ((patch->map_index == pMap->m_MapListIndex) &&
                 (patch->trig_index == pTrigger->m_GeoTriggerIndex))
             {
-                void* pBasic = XSEITEMHANDLER_M_PBASIC(owner);
-                if (pBasic != NULL) {
-                    apply_gamescript_patch(pBasic, patch);
-                }
+                apply_gamescript_patch(self, patch);
             }
         }
     }
