@@ -19,11 +19,25 @@ APSettings g_patch_ap_settings = {
     
     .init = 0,
 
+    // BOSS/DOOR COSTS
+    .boss_costs = {
+        10,
+        20,
+        30,
+        40
+    },
+    .lg_door_costs = {
+        70,
+        20,
+        95,
+        45
+    },
+
     // SHOP ITEMS
     .xls_shop_sheetcount_ALWAYS_1 = 1,
     .xls_shop_sheet_offset_ALWAYS_4 = 4,
     #ifdef USE_VANILLA_SHOP
-    .xls_shop_rowcount = SHOP_NUM_VANILLA_ENTRIES,
+    .xls_shop_rowcount = 15,
     .xls_shop_items = {
         {
             .Entity = HT_Entity_Lockpicker,
@@ -207,8 +221,7 @@ APSettings g_patch_ap_settings = {
             .BroughtFlags = 0
         }
     }
-    #endif /* USE_VANILLA_SHOP */
-
+    #else
     .xls_shop_rowcount = 1,
     .xls_shop_items = {
         {
@@ -226,4 +239,5 @@ APSettings g_patch_ap_settings = {
 
     // .shop_text = {
     // }
+    #endif /* USE_VANILLA_SHOP */
 };

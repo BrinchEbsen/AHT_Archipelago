@@ -6,7 +6,6 @@ typedef struct BossGateEntry
 {
     u16 map_index;
     u16 trigger_index;
-    u16 dark_gem_cost;
     EXHashCode clear_objective;
 } BossGateEntry;
 
@@ -43,7 +42,7 @@ extern void Monitor__BASICcmd_Zoopoo(void* self, u32 value);
 
 void XSEItemHandler_Base__BASIC_Update_ReImplHook(void* self);
 
-void monitor_process_boss_gate(void* self, u16 cost, EXHashCode clear_objective);
+void monitor_process_boss_gate(void* self, int index);
 
 bool BASIC_Main__UpdatePointers_PreCallHook(void* self);
 

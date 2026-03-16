@@ -4,34 +4,31 @@
 #include <gamestate.h>
 #include <hashcodes.h>
 #include <system.h>
+#include <ap_settings.h>
 
 BossGateEntry g_boss_gate_list[] = {
     // Gnasty Gnorc
     {
         .map_index = 24,
         .trigger_index = 349,
-        .dark_gem_cost = 10,
         .clear_objective = HT_Objective_RA_RemovedBossBarrier
     },
     // Ineptune
     {
         .map_index = 45,
         .trigger_index = 236,
-        .dark_gem_cost = 20,
         .clear_objective = HT_Objective_RB_RemovedBossBarrier
     },
     // Red
     {
         .map_index = 31,
         .trigger_index = 319,
-        .dark_gem_cost = 30,
         .clear_objective = HT_Objective_RC_RemovedBossBarrier
     },
     // Mecha Red
     {
         .map_index = 40,
         .trigger_index = 394,
-        .dark_gem_cost = 40,
         .clear_objective = HT_Objective_RD_RemovedBossBarrier
     }
 };
@@ -65,7 +62,7 @@ void XSEItemHandler_Base__BASIC_Update_ReImplHook(void* self)
                 if ((entry->map_index == pMap->m_MapListIndex) &&
                     (entry->trigger_index == pTrigger->m_GeoTriggerIndex))
                 {
-                    monitor_process_boss_gate(self, entry->dark_gem_cost, entry->clear_objective);
+                    monitor_process_boss_gate(self, i);
                     return;
                 }
             }
@@ -78,8 +75,11 @@ void XSEItemHandler_Base__BASIC_Update_ReImplHook(void* self)
     }
 }
 
-void monitor_process_boss_gate(void* self, u16 cost, EXHashCode clear_objective)
+void monitor_process_boss_gate(void* self, int index)
 {
+    EXHashCode clear_objective = g_boss_gate_list[index].clear_objective;
+    u8 cost = g_gamestate_ap_settings.boss_costs[index];
+
     s32 obj;
     PlayerObjectives__GetObjective__ReImplHook(
         &gGameState.m_PlayerObjectives, clear_objective, &obj);

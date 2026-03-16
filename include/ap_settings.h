@@ -37,6 +37,9 @@ typedef struct APSettings {
     // Always the ASCII value "EBBE" when initialized.
     u32 init;
 
+    u8 boss_costs[4];
+    u8 lg_door_costs[4];
+
     // Number of datasheets in this spreadsheet.
     // GUI_Shop only has 1 datasheet.
     int xls_shop_sheetcount_ALWAYS_1;

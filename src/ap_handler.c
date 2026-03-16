@@ -286,6 +286,8 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("bool patch_been_written_to: %x\n", &psettings->patch_been_written_to);
     PRINTF("u32 mw_seed: %x\n", &psettings->mw_seed);
     PRINTF("u32 init: %x\n", &psettings->init);
+    PRINTF("u8[4] boss_costs: %x\n", &psettings->boss_costs);
+    PRINTF("u8[4] lg_door_costs: %x\n", &psettings->lg_door_costs);
     PRINTF("int xls_shop_sheetcount_ALWAYS_1: %x\n", &psettings->xls_shop_sheetcount_ALWAYS_1);
     PRINTF("int xls_shop_sheet_offset_ALWAYS_4: %x\n", &psettings->xls_shop_sheet_offset_ALWAYS_4);
     PRINTF("int xls_shop_rowcount: %x\n", &psettings->xls_shop_rowcount);
