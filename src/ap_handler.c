@@ -36,6 +36,10 @@ MapOrderInfo realm_teleporter_maporderinfo[] = {
 
 bool replenish_butterfly_jar = false;
 
+bool draw_cost_text = false;
+CostTextType cost_text_type = LightGem;
+int cost_text_amt = 0;
+
 void ap_update()
 {
     if (g_patch_ap_settings.patch_been_written_to && (gGameLoop.m_State == Running)) {
@@ -121,7 +125,40 @@ void dbg_remove_shop_item()
 
 void ap_draw(void* pWnd)
 {
-    ap_draw_notification(pWnd);
+    if ((gGameLoop.m_State == Running) && !gGameLoop.m_GameIsPaused)
+    {
+        ap_draw_notification(pWnd);
+
+        if (draw_cost_text) {
+            ap_draw_cost_text(pWnd, cost_text_type, cost_text_amt);
+            draw_cost_text = false;
+        }
+    }
+}
+
+void ap_draw_cost_text(void* pWnd, CostTextType type, int amt)
+{
+    char* type_text;
+
+    switch (type) {
+        case COST_LightGem:
+            if (gGameState.m_PlayerState.m_TotalLightGems >= amt) {
+                return;
+            }
+            type_text = "Light Gems";
+            break;
+        case COST_DarkGem:
+            if (gGameState.m_PlayerState.m_TotalDarkGems >= amt) {
+                return;
+            }
+            type_text = "Dark Gems";
+            break;
+        default:
+            return;
+    }
+
+    TEXT_PRINT_ALIGN_COLOR_F(pWnd, 0, 0, Centre, COLOR_LIGHT_RED,
+        "Cost: %d %s", amt, type_text);
 }
 
 void ap_init_gamestate()

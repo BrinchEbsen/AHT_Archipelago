@@ -5,6 +5,16 @@
 #include <gamestate.h>
 #include <ap_settings.h>
 
+typedef enum CostTextType
+{
+    COST_LightGem,
+    COST_DarkGem
+} CostTextType;
+
+extern bool draw_cost_text;
+extern CostTextType cost_text_type;
+extern int cost_text_amt;
+
 // runs every frame
 void ap_update();
 
@@ -15,6 +25,8 @@ void dbg_add_shop_item();
 void dbg_remove_shop_item();
 
 void ap_draw(void* pWnd);
+
+void ap_draw_cost_text(void* pWnd, CostTextType type, int amt);
 
 void ap_init_gamestate();
 

@@ -5,6 +5,9 @@
 #include <hashcodes.h>
 #include <system.h>
 #include <ap_settings.h>
+#include <ap_handler.h>
+#include <player.h>
+#include <exvector.h>
 
 BossGateEntry g_boss_gate_list[] = {
     // Gnasty Gnorc
@@ -80,6 +83,8 @@ void monitor_process_boss_gate(void* self, int index)
     EXHashCode clear_objective = g_boss_gate_list[index].clear_objective;
     u8 cost = g_gamestate_ap_settings.boss_costs[index];
 
+    test_draw_boss_gate_cost(self, index);
+
     s32 obj;
     PlayerObjectives__GetObjective__ReImplHook(
         &gGameState.m_PlayerObjectives, clear_objective, &obj);
@@ -108,6 +113,22 @@ void monitor_process_boss_gate(void* self, int index)
     PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, clear_objective);
     // Kill trigger
     Monitor__BASICcmd_Suicide(self);
+}
+
+void test_draw_boss_gate_cost(void* self, int index)
+{
+    s32 dist = Monitor__BASICcmd_GetDistanceToPlayer(self);
+    
+    if (dist > DRAW_DG_COST_TEXT_RANGE) {
+        return;
+    }
+
+    u8 count = g_gamestate_ap_settings.boss_costs[index];
+    if (count > 0) {
+        draw_cost_text = true;
+        cost_text_type = COST_DarkGem;
+        cost_text_amt = count;
+    }
 }
 
 bool BASIC_Main__UpdatePointers_PreCallHook(void* self)

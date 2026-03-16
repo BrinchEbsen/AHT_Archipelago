@@ -30,6 +30,8 @@ extern GameScriptPatch g_gamescript_patches[];
 
 #define BASICMAIN_OWNER(self) OFFSET_VAL(void*, self, 0x28)
 
+#define DRAW_DG_COST_TEXT_RANGE 1500
+
 extern void SpyroBASIC__Update(void* self);
 extern bool SpyroBASIC__Init(void* self, void* owner);
 extern bool BASIC_Main__Init(void* self, void* owner);
@@ -43,6 +45,8 @@ extern void Monitor__BASICcmd_Zoopoo(void* self, u32 value);
 void XSEItemHandler_Base__BASIC_Update_ReImplHook(void* self);
 
 void monitor_process_boss_gate(void* self, int index);
+
+void test_draw_boss_gate_cost(void* self, int index);
 
 bool BASIC_Main__UpdatePointers_PreCallHook(void* self);
 

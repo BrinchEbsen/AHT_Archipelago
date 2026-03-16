@@ -134,6 +134,7 @@ Monitor__BASICcmd_Zoopoo = 0x800da360;
 
 /* lg_door_hooks.h */
 Switch_LightGem__GetTriggerConfig = 0x8018b9a0;
+Switch_LightGem__Update = 0x8018b9c8;
 
 /* gametext.h */
 gGameText = 0x80455c1c;

@@ -826,6 +826,18 @@
           "injection_file_address": "0x188988",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "Switch_LightGem__Update_VtableHook",
+          "code_files": [
+            "./asm/GC_NTSC/Switch_LightGem__Update_VtableHook.s"
+          ],
+          "memory_address": "8041eaa8",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x41BAA8",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],
