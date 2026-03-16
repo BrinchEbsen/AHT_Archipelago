@@ -2,6 +2,7 @@
 #include <color.h>
 #include <paneldraw.h>
 #include <igstdlib.h>
+#include <wnd.h>
 
 RGBA ap_notification_color = {
     .r = 0x80,
@@ -24,7 +25,7 @@ void ap_draw_notification(void *pWnd)
         return;
     }
 
-    TEXT_PRINT_ALIGN_COLOR(pWnd, 5, 0, CentreLeft, ap_notification_color, ap_notification_text_buffer);
+    TEXT_PRINT_ALIGN_COLOR(pWnd, 2, 120, TopLeft, ap_notification_color, ap_notification_text_buffer);
     
     ap_notification_timer--;
 }

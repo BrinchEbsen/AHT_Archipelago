@@ -33,6 +33,7 @@ MapOrderInfo realm_teleporter_maporderinfo[] = {
 
 //#define AP_DEBUG_ENABLE_ABILITIES
 //#define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
+//#define AP_DEBUG_NOTIFICATION
 
 bool replenish_butterfly_jar = false;
 
@@ -77,6 +78,13 @@ void ap_gamestate_update()
         } else if (g_pad_button_edge_down(PAD_BUTTON_DPAD_LEFT)) {
             dbg_remove_shop_item();
         }
+    }
+    #endif
+
+    #ifdef AP_DEBUG_NOTIFICATION
+    if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
+        ap_set_notification(60*5, COLOR_WHITE,
+            "Test notification! The notification that tests things! Something testy happened, probably!");
     }
     #endif
 }
