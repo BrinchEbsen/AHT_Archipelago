@@ -789,6 +789,18 @@
           "injection_file_address": "0x7F8",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "Popup__Update_VtableHook",
+          "code_files": [
+            "./asm/GC_NTSC/Popup__Update_VtableHook.s"
+          ],
+          "memory_address": "804142A8",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x4112A8",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],

@@ -32,7 +32,10 @@ GUI_Base__CreateObject = 0x801a5be0;
 GUI_Base__Update = 0x801a69c0;
 GUI_Base__v_Draw = 0x801a67ac;
 
-/* ap_teleport.h */
+/* ap_handler.h */
+Popup__Update = 0x800fc6a8;
+
+/* ap_pausemenu.h */
 GUI_PauseMenu__v_StateRunning = 0x803986ac;
 GUI_PauseMenu__v_DrawStateRunning = 0x8039874c;
 

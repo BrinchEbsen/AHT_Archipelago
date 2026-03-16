@@ -11,6 +11,7 @@ APSettings g_patch_ap_settings = {
     .skip_cutscene_button = false,
     .allow_teleport_to_hub = false,
     .allow_immediate_realm_access = false,
+    .disable_popups = false,
 
     .patch_been_written_to = false,
 

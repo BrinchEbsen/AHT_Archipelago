@@ -28,6 +28,7 @@ typedef struct APSettings {
     bool skip_cutscene_button;
     bool allow_teleport_to_hub;
     bool allow_immediate_realm_access;
+    bool disable_popups;
 
     bool patch_been_written_to;
     u32 mw_seed;

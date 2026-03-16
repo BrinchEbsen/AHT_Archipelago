@@ -282,6 +282,7 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("bool skip_cutscene_button: %x\n", &psettings->skip_cutscene_button);
     PRINTF("bool allow_teleport_to_hub: %x\n", &psettings->allow_teleport_to_hub);
     PRINTF("bool allow_immediate_realm_access: %x\n", &psettings->allow_immediate_realm_access);
+    PRINTF("bool disable_popups: %x\n", &psettings->disable_popups);
     PRINTF("bool patch_been_written_to: %x\n", &psettings->patch_been_written_to);
     PRINTF("u32 mw_seed: %x\n", &psettings->mw_seed);
     PRINTF("u32 init: %x\n", &psettings->init);
@@ -309,6 +310,16 @@ void Player_urghhhImDead_PostHook()
     {
         replenish_butterfly_jar = true;
     }
+}
+
+int Popup__Update_VtableHook(void* self)
+{
+    if (g_gamestate_ap_settings.disable_popups)
+    {
+        return -1;
+    }
+
+    return Popup__Update(self);
 }
 
 s32 SEGameFlow__v_StateRunning__VTHOOK(SEGameFlow *self)

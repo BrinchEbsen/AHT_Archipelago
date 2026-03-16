@@ -37,6 +37,9 @@ int XSEItemHandler_Player__InitialiseStart_PreCallHook(void* self);
 
 void Player_urghhhImDead_PostHook();
 
+extern int Popup__Update(void* self);
+int Popup__Update_VtableHook(void* self);
+
 s32 SEGameFlow__v_StateRunning__VTHOOK(SEGameFlow* self);
 
 #endif /* AP_HANDLER_H */
