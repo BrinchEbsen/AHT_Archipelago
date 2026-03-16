@@ -1,0 +1,1 @@
+.long Switch_LightGem__GetTriggerConfig_VtableHook

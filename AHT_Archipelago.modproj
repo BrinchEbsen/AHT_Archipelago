@@ -452,7 +452,8 @@
             "./src/file_select_hooks.c",
             "./src/gate_hooks.c",
             "./src/ap_pausemenu.c",
-            "./src/BASIC_hooks.c"
+            "./src/BASIC_hooks.c",
+            "./src/lg_door_hooks.c"
           ],
           "memory_address": "80296618",
           "size": "7DCC",
@@ -799,6 +800,30 @@
           "size": "0",
           "injection_file": "Start.dol",
           "injection_file_address": "0x4112A8",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "Switch_LightGem__GetTriggerConfig_VtableHook",
+          "code_files": [
+            "./asm/GC_NTSC/Switch_LightGem__GetTriggerConfig_VtableHook.s"
+          ],
+          "memory_address": "8041ec50",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x41BC50",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "Switch_LightGem_disablemodel",
+          "code_files": [
+            "./asm/GC_NTSC/Switch_LightGem_disablemodel.s"
+          ],
+          "memory_address": "8018b988",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x188988",
           "auto_calculate_injection_file_address": true,
           "enabled": true
         }
