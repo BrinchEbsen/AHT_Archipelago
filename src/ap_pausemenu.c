@@ -7,6 +7,7 @@
 #include <hashcodes.h>
 #include <gamestate.h>
 #include <ap_settings.h>
+#include <ap_notification.h>
 
 #define AP_TELEPORT_CLOSE_TIMER_MAX 60
 
@@ -125,6 +126,7 @@ s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
     }
 
     draw_pause_stats(self, pWnd);
+    draw_notification_toggle(self, pWnd);
 
     return GUI_PauseMenu__v_DrawStateRunning(self, pWnd);
 }
@@ -142,6 +144,10 @@ s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self)
         } else {
             close_timer = 0;
         }
+    }
+
+    if (g_pad_button_edge_down(PAD_BUTTON_X)) {
+        show_notifications = !show_notifications;
     }
 
     return GUI_PauseMenu__v_StateRunning(self);
@@ -258,6 +264,21 @@ void draw_pause_stats(GUI_Base* self, void* pWnd)
     s8 lock_pickers = gGameState.m_PlayerState.m_LockPickers;
     col = (lock_pickers > 0) ? &on_color : &off_color;
     TEXT_PRINT_ALIGN_COLOR_F(pWnd, x, y, TopLeft, *col, "Lock Picks: %d", lock_pickers);
+}
+
+void draw_notification_toggle(GUI_Base* self, void* pWnd)
+{
+    EXRect r = {
+        .x = 0,
+        .y = 0,
+        .w = 250,
+        .h = 37
+    };
+
+    XWnd__DrawRect(pWnd, &r, COLOR_RGBA(0, 0, 0, 0x20));
+
+    textprintf(pWnd, 2, 2, 1.0f, TopLeft, COLOR_WHITE, true,
+        "~B Show Notifications: %s", show_notifications ? "Yes" : "No");
 }
 
 void close_pause_menu(GUI_Base* self)

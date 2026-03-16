@@ -33,7 +33,7 @@ MapOrderInfo realm_teleporter_maporderinfo[] = {
 
 //#define AP_DEBUG_ENABLE_ABILITIES
 //#define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
-//#define AP_DEBUG_NOTIFICATION
+#define AP_DEBUG_NOTIFICATION
 
 bool replenish_butterfly_jar = false;
 

@@ -17,6 +17,8 @@ void draw_teleport_menu(GUI_Base* self, void* pWnd);
 
 void draw_pause_stats(GUI_Base* self, void* pWnd);
 
+void draw_notification_toggle(GUI_Base* self, void* pWnd);
+
 void close_pause_menu(GUI_Base* self);
 
 void teleport_to_hub();

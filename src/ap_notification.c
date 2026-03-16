@@ -15,6 +15,8 @@ u32 ap_notification_timer = 0;
 
 char ap_notification_text_buffer[AP_NOTIFICATION_TEXT_BUFFER_SIZE];
 
+bool show_notifications = true;
+
 void ap_draw_notification(void *pWnd)
 {
     if (ap_notification_timer == 0) {
@@ -25,9 +27,11 @@ void ap_draw_notification(void *pWnd)
         return;
     }
 
-    TEXT_PRINT_ALIGN_COLOR(pWnd, 2, 120, TopLeft, ap_notification_color, ap_notification_text_buffer);
-    
     ap_notification_timer--;
+    
+    if (show_notifications) {
+        TEXT_PRINT_ALIGN_COLOR(pWnd, 2, 120, TopLeft, ap_notification_color, ap_notification_text_buffer);
+    }
 }
 
 void ap_set_notification(u32 timer, RGBA col, char *text)

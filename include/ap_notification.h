@@ -9,6 +9,8 @@ extern u32 ap_notification_timer;
 #define AP_NOTIFICATION_TEXT_BUFFER_SIZE 0x100
 extern char ap_notification_text_buffer[];
 
+extern bool show_notifications;
+
 void ap_draw_notification(void* pWnd);
 void ap_set_notification(u32 timer, RGBA col, char *text);
 
