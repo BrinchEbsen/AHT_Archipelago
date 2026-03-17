@@ -446,7 +446,6 @@
             "./src/swim_hooks.c",
             "./src/arena.c",
             "./src/paneldraw.c",
-            "./src/ap_notification.c",
             "./src/cutscene_skip.c",
             "./src/shop_hooks.c",
             "./src/file_select_hooks.c",
@@ -456,7 +455,7 @@
             "./src/lg_door_hooks.c"
           ],
           "memory_address": "80296618",
-          "size": "7DCC",
+          "size": "7500",
           "injection_file": "Start.dol",
           "injection_file_address": "0x293618",
           "auto_calculate_injection_file_address": true,
@@ -485,6 +484,19 @@
           "size": "2000",
           "injection_file": "Start.dol",
           "injection_file_address": "0x3D5FA8",
+          "auto_calculate_injection_file_address": true,
+          "injection_type": "existing_file",
+          "enabled": true
+        },
+        {
+          "name": "EXGeoViewerWnd_Overwrite_2",
+          "code_files": [
+            "./src/ap_notification.c"
+          ],
+          "memory_address": "8029DB18",
+          "size": "8CC",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x29AB18",
           "auto_calculate_injection_file_address": true,
           "injection_type": "existing_file",
           "enabled": true
