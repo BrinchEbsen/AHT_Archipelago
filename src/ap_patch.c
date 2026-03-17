@@ -222,7 +222,7 @@ APSettings g_patch_ap_settings = {
         }
     }
     #else
-    .xls_shop_rowcount = 1,
+    .xls_shop_rowcount = 0,
     .xls_shop_items = {
         {
             .Entity = HT_Entity_Shop_RightsOfPassage,

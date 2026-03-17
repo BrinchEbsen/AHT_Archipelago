@@ -33,7 +33,7 @@ MapOrderInfo realm_teleporter_maporderinfo[] = {
 
 //#define AP_DEBUG_ENABLE_ABILITIES
 //#define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
-#define AP_DEBUG_NOTIFICATION
+//#define AP_DEBUG_NOTIFICATION
 
 bool replenish_butterfly_jar = false;
 
@@ -58,18 +58,23 @@ void ap_gamestate_update()
         ap_init_gamestate();
     }
 
-    // Freeze double gem timer if enabled
-    if ((gGameState.m_PlayerState.m_AbilityFlags & ABILITY_DOUBLE_GEM) != 0)
+    if (g_gamestate_ap_settings.xls_shop_rowcount > 0)
     {
-        gGameState.m_PlayerState.m_DoubleGemTimer = gGameState.m_PlayerState.m_DoubleGemTimerMax;
-    }
+        // Freeze double gem timer if enabled
+        if ((gGameState.m_PlayerState.m_AbilityFlags & ABILITY_DOUBLE_GEM) != 0)
+        {
+            static float freeze = 60.0f * 60.0f * 60.0f; // 1 hour
+            gGameState.m_PlayerState.m_DoubleGemTimerMax = freeze;
+            gGameState.m_PlayerState.m_DoubleGemTimer = freeze;
+        }
 
-    // Freeze max values for lock picks and breath ammo
-    gGameState.m_PlayerState.m_LockPickers_Max = 127;
-    gGameState.m_PlayerState.m_FlameBombs_Max = 127;
-    gGameState.m_PlayerState.m_IceBombs_Max = 127;
-    gGameState.m_PlayerState.m_WaterBombs_Max = 127;
-    gGameState.m_PlayerState.m_ElectricBombs_Max = 127;
+        // Freeze max values for lock picks and breath ammo
+        gGameState.m_PlayerState.m_LockPickers_Max = 127;
+        gGameState.m_PlayerState.m_FlameBombs_Max = 127;
+        gGameState.m_PlayerState.m_IceBombs_Max = 127;
+        gGameState.m_PlayerState.m_WaterBombs_Max = 127;
+        gGameState.m_PlayerState.m_ElectricBombs_Max = 127;
+    }
 
     #ifdef AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
     if (g_pad_button_state(PAD_BUTTON_B)) {
@@ -353,6 +358,11 @@ int XSEItemHandler_Player__InitialiseStart_PreCallHook(void* self)
 
 void Player_urghhhImDead_PostHook()
 {
+    if (g_gamestate_ap_settings.xls_shop_rowcount == 0)
+    {
+        return;
+    }
+
     if (g_gamestate_ap_settings.infinite_butterfly_jar)
     {
         replenish_butterfly_jar = true;
