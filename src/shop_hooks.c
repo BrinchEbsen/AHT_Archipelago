@@ -10,7 +10,14 @@ void *SE_SpreadSheet__OpenSpreadSheet_FileHash_PreCallHook(
 {
     #ifdef AP_READ_CUSTOM_SPREADSHEET
     if (g_gamestate_ap_settings.xls_shop_rowcount == 0) {
-        return SE_SpreadSheet__OpenSpreadSheet_FileHash(self, FileHash, SpreadSheetHash);
+        void* data = (xlsShoppingItem*)SE_SpreadSheet__OpenSpreadSheet_FileHash(self, FileHash, SpreadSheetHash);
+        
+        // Change flame bomb availableflags to only allow purchase when fire breath is acquired
+        xlsShoppingItem* items = OFFSET_PTR(xlsShoppingItem, data, 0xc);
+        items[2].AvailableFlags |= ABILITY_AP_FIREBREATH;
+        items[6].AvailableFlags |= ABILITY_AP_FIREBREATH;
+
+        return data;
     }
     self->m_pSpreadSheet = AP_GAMESTATE_SHOP_SPREADSHEET_START;
     return self->m_pSpreadSheet;
