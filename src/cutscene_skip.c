@@ -7,12 +7,23 @@
 
 // Cutscenes that crash/cause issues and thus should not be skipped
 FileSceneHash cutscenes_to_ignore[] = {
+    // Ice Citadel transition from Gloomy Glacier.
+    // Skipping this cutscene causes a crash.
     {
         .file_hash = HT_File_C47_R3C,
         .scene_hash = HT_Script_CutsceneF
+    },
+    
+    // Cutscene for the horn dive switch that opens the gate
+    // leading to the Gloomy Glacier area.
+    // Skipping this cutscene early means the gate remains
+    // closed, softlocking the player.
+    {
+        .file_hash = HT_File_Realm3A,
+        .scene_hash = HT_Script_CutsceneG
     }
 };
-#define NUM_CUTSCENES_TO_IGNORE 1
+#define NUM_CUTSCENES_TO_IGNORE 2
 
 int XItemHandler_Cutscene__Update_VtableHook(void *self)
 {
