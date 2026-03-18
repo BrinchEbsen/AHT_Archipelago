@@ -13,14 +13,15 @@
 #include <minimap_status.h>
 #include <gameloop.h>
 
-#define NUM_REALM_INTRO_OBJECTIVES 7
+#define NUM_REALM_INTRO_OBJECTIVES 8
 EXHashCode realm_intro_objectives[] = {
     HT_Objective_OpeningMovie,
     HT_Objective_SeenIntro_R1A,
-    HT_Objective_SeenProfStartR2A,
     HT_Objective_SeenIntroR2A,
-    HT_Objective_SeenProfStartR3A,
+    HT_Objective_SeenProfStartR2A,
     HT_Objective_SeenIntroR3A,
+    HT_Objective_SeenProfStartR3A,
+    HT_Objective_SeenIntroR4A,
     HT_Objective_ProfGoneToFindRed
 };
 
