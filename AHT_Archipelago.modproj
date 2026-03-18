@@ -881,6 +881,10 @@
         {
           "name": "multi_XSEItemHandler_Player__InitialiseStart_PreCallHook",
           "file_path": "./asm/GC_NTSC/multi_XSEItemHandler_Player__InitialiseStart_PreCallHook.s"
+        },
+        {
+          "name": "multi_BossDisableAbilityGain",
+          "file_path": "./asm/GC_NTSC/multi_BossDisableAbilityGain.s"
         }
       ]
     }
