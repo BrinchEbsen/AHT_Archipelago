@@ -2,13 +2,12 @@
 # Disable Gnasty Gnorc enabling Electric Breath ability
 nop
 
-.memaddr 0x80031a0c
+.memaddr 0x80031a20
 # Disable Gnasty Gnorc switching player to Electric Breath
 nop
 
 .memaddr 0x80038060
 # Disable Ineptune enabling Water Breath ability
-nop
 nop
 
 .memaddr 0x800388dc
@@ -17,7 +16,6 @@ nop
 
 .memaddr 0x80044c3c
 # Disable Red enabling Ice Breath ability
-nop
 nop
 
 .memaddr 0x80044c50
