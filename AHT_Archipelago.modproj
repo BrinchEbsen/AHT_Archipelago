@@ -850,6 +850,18 @@
           "injection_file_address": "0x41BAA8",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "ElecBreath__Stop_ReImplHook",
+          "code_files": [
+            "./asm/GC_NTSC/ElecBreath__Stop_ReImplHook.s"
+          ],
+          "memory_address": "8009b84c",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x9884C",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],

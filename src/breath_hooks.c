@@ -121,3 +121,15 @@ bool XSEItemHandler_Spyro__TestBreathChange__ReImplHook(void *self)
         return true;
     }
 }
+
+void ElecBreath__Stop_ReImplHook(void* self)
+{
+    ELECBREATH_M_GALPHATARGET(self) = 0.0f;
+    ELECBREATH_M_FLAGS(self) |= 2;
+
+    // Extra null check for gpPlayer added to prevent crash
+    if (EXSoundTag__IsPlaying((void*)&ELECBREATH_M_SFX(self)) && (gpPlayer != NULL)) {
+        PlaySFX_Item(HT_Sound_SFX_HERO_SPYRO_SHOOT_ELEC_END, OFFSET_VAL(void*, gpPlayer, 0));
+    }
+    ElecBreath__PlaySound(self, false);
+}

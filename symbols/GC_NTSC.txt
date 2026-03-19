@@ -7,6 +7,7 @@ g_PadNum = 0x804cb660;
 
 /* sfx.h */
 PlaySFX = 0x8024bc58;
+PlaySFX_Item = 0x8024bd00;
 
 /* loop.h */
 SE_Loop__virtual_table = 0x80447330;
@@ -109,6 +110,8 @@ LockedChest__OpenLockedChest = 0x8014996c;
 /* breath_hooks.h */
 XSEItemHandler_Spyro__GetCurrentBreath = 0x800ad55c;
 GUI_Panel__ForcePanelOn = 0x802226b8;
+EXSoundTag__IsPlaying = 0x802f8e90;
+ElecBreath__PlaySound = 0x8009d388;
 
 /* file_select_hooks.h */
 MemCardSlotMenu__DrawSavedGameInfo = 0x802350cc;

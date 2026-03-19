@@ -36,4 +36,13 @@ bool XSEItemHandler_Spyro__TestShooter__ReImplHook(void* self, int set);
 
 bool XSEItemHandler_Spyro__TestBreathChange__ReImplHook(void* self);
 
+#define ELECBREATH_M_FLAGS(self) OFFSET_VAL(int, self, 0x80)
+#define ELECBREATH_M_GALPHATARGET(self) OFFSET_VAL(float, self, 0xA4)
+#define ELECBREATH_M_SFX(self) OFFSET_VAL(int, self, 0x14c)
+
+extern Bool EXSoundTag__IsPlaying(void* self);
+extern void ElecBreath__PlaySound(void* self, Bool onoff);
+
+void ElecBreath__Stop_ReImplHook(void* self);
+
 #endif /* BREATH_HOOK_H */
