@@ -193,4 +193,6 @@ extern Bool XSEItemHandler_Player__ButtonPressed(void* self, Buttons button);
 extern void XSEItemHandler_Player__SetMode(void* self, PlayerModes mode, int force, int params);
 extern int XSEItemHandler_Player__InitialiseStart(void* self);
 
+#define XSEItemHandler_Player__M_PLAYERTYPE(self) OFFSET_VAL(Players, self, 0x578)
+
 #endif /* PLAYER_H */
