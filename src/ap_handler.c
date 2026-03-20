@@ -346,8 +346,8 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("u8 num_electric_ammo_received: %x\n", &psettings->num_electric_ammo_received);
     PRINTF("u8 num_water_ammo_received: %x\n", &psettings->num_water_ammo_received);
     PRINTF("u8 num_ice_ammo_received: %x\n", &psettings->num_ice_ammo_received);
-    PRINTF("u8 deathlink_ingoing: %x\n", &psettings->deathlink_ingoing);
-    PRINTF("u8 deathlink_outgoing: %x\n", &psettings->deathlink_outgoing);
+    PRINTF("bool deathlink_ingoing: %x\n", &psettings->deathlink_ingoing);
+    PRINTF("bool deathlink_outgoing: %x\n", &psettings->deathlink_outgoing);
     PRINTF("bool infinite_butterfly_jar: %x\n", &psettings->infinite_butterfly_jar);
     PRINTF("bool skip_cutscene_button: %x\n", &psettings->skip_cutscene_button);
     PRINTF("bool allow_teleport_to_hub: %x\n", &psettings->allow_teleport_to_hub);
