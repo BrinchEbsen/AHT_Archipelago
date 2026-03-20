@@ -23,6 +23,12 @@ typedef struct APSettings {
     u8 location_bitfield[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];
     u8 num_gem_packs_received;
     u8 num_lock_picks_received;
+    u8 num_fire_ammo_received;
+    u8 num_electric_ammo_received;
+    u8 num_water_ammo_received;
+    u8 num_ice_ammo_received;
+    bool deathlink_ingoing;
+    bool deathlink_outgoing;
     bool infinite_butterfly_jar;
 
     bool skip_cutscene_button;

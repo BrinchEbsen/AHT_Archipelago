@@ -7,7 +7,24 @@
 APSettings g_patch_ap_settings = {
     .location_bitfield = {0},
     .num_gem_packs_received = 0,
+    .num_fire_ammo_received = 0,
+    .num_electric_ammo_received = 0,
+    .num_water_ammo_received = 0,
+    .num_ice_ammo_received = 0,
+    .deathlink_ingoing = false,
+    .deathlink_outgoing = false,
     .infinite_butterfly_jar = false,
+
+    #ifdef AP_QUICK_START
+    .skip_cutscene_button = true,
+    .allow_teleport_to_hub = true,
+    .allow_immediate_realm_access = true,
+    .disable_popups = true,
+
+    .patch_been_written_to = true,
+
+    .mw_seed = 0x69696969,
+    #else
     .skip_cutscene_button = false,
     .allow_teleport_to_hub = false,
     .allow_immediate_realm_access = false,
@@ -16,9 +33,10 @@ APSettings g_patch_ap_settings = {
     .patch_been_written_to = false,
 
     .mw_seed = 0,
+    #endif
     
     .init = 0,
-
+    
     // BOSS/DOOR COSTS
     .boss_costs = {
         10,

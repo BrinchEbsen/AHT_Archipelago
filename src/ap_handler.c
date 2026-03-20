@@ -13,8 +13,24 @@
 #include <minimap_status.h>
 #include <gameloop.h>
 
-#define NUM_REALM_INTRO_OBJECTIVES 8
-EXHashCode realm_intro_objectives[] = {
+// #define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
+// #define AP_DEBUG_NOTIFICATION
+
+#ifdef AP_QUICK_START
+#pragma message ( "COMPILING WITH AP_QUICK_START, DO NOT RELEASE" )
+#endif
+
+#ifdef AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
+#pragma message ( "COMPILING WITH AP_DEBUG_ADD_REMOVE_SHOP_ITEMS, DO NOT RELEASE" )
+#endif
+
+#ifdef AP_DEBUG_NOTIFICATION
+#pragma message ( "COMPILING WITH AP_DEBUG_NOTIFICATION, DO NOT RELEASE" )
+#endif
+
+#define NUM_NEW_GAME_OBJECTIVES 15
+EXHashCode new_game_objectives[] = {
+    // Realm introduction cutscenes
     HT_Objective_OpeningMovie,
     HT_Objective_SeenIntro_R1A,
     HT_Objective_SeenIntroR2A,
@@ -22,7 +38,24 @@ EXHashCode realm_intro_objectives[] = {
     HT_Objective_SeenIntroR3A,
     HT_Objective_SeenProfStartR3A,
     HT_Objective_SeenIntroR4A,
-    HT_Objective_ProfGoneToFindRed
+    HT_Objective_ProfGoneToFindRed,
+
+    // Opened starting gate
+    HT_Objective_R1A_OpenLockPickerSwitch,
+    
+    // Zoe intro cutscene
+    HT_Objective_R1A_MetZoe,
+
+    // Met the mammoth and rescued Spyro.
+    // This is to prevent the gate into Gloomy Glacier from being present,
+    // and to allow access to Gloomy Glacier at the player's discretion.
+    HT_Objective_3A_MetMonsterMammoth,
+    HT_Objective_3B_HunterRescuedSpyro,
+
+    // Moneybags intro
+    HT_Objective_MoneybagsGems_1A,
+    HT_Objective_Moneybagsintro_1A,
+    HT_Objective_GainedLockPicker,
 };
 
 #define NUM_REALM_TELEPORTER_MAPORDERINFO 3
@@ -31,10 +64,6 @@ MapOrderInfo realm_teleporter_maporderinfo[] = {
     { .m_FileHash = HT_File_Realm3A,    .m_MapHash = 0xFFFFFFFF },
     { .m_FileHash = HT_File_Realm4A,    .m_MapHash = 0xFFFFFFFF }
 };
-
-//#define AP_DEBUG_ENABLE_ABILITIES
-//#define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
-//#define AP_DEBUG_NOTIFICATION
 
 bool replenish_butterfly_jar = false;
 
@@ -181,12 +210,13 @@ void ap_init_gamestate()
 
     g_gamestate_ap_settings.init = AP_SETTINGS_INIT_MAGICVALUE;
 
-    #ifdef AP_DEBUG_ENABLE_ABILITIES
+    #ifdef AP_QUICK_START
     gGameState.m_PlayerState.m_AbilityFlags |= (
         ABILITY_AP_FIREBREATH |
         ABILITY_AP_GLIDE |
         ABILITY_AP_CHARGE |
-        ABILITY_AP_SWIM
+        ABILITY_AP_SWIM |
+        ABILITY_DOUBLE_JUMP
     );
     #endif
 
@@ -197,28 +227,11 @@ void ap_init_gamestate()
         }
     }
 
-    // Set objective for having opened the starting area gate
-    PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_R1A_OpenLockPickerSwitch);
-
-    // Set objective for having talked to Zoe
-    PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_R1A_MetZoe);
-
-    // Set objectives for the realm intro cutscenes
-    for (int i = 0; i < NUM_REALM_INTRO_OBJECTIVES; i++) {
+    // Set starting game objectives
+    for (int i = 0; i < NUM_NEW_GAME_OBJECTIVES; i++) {
         PlayerObjectives__SetObjective__ReImplHook(
-            &gGameState.m_PlayerObjectives, realm_intro_objectives[i]);
+            &gGameState.m_PlayerObjectives, new_game_objectives[i]);
     }
-
-    // Set objectives for meeting the mammoth and having rescued Spyro.
-    // This is to prevent the gate into Gloomy Glacier from being present,
-    // and to allow access to Gloomy Glacier at the player's discretion.
-    PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_3A_MetMonsterMammoth);
-    PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_3B_HunterRescuedSpyro);
-
-    // Set objectives for completing Moneybags' tutorial
-    PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_MoneybagsGems_1A);
-    PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_Moneybagsintro_1A);
-    PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_GainedLockPicker);
 
     // Set objective flag for having bought a lock pick
     gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BOUGHT_LOCK_PICK;
@@ -329,6 +342,12 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("u8 location_bitfield[%d]: %x\n", AP_SETTINGS_LOCATIONS_BITFIELD_SIZE, &psettings->location_bitfield);
     PRINTF("u8 num_gem_packs_received: %x\n", &psettings->num_gem_packs_received);
     PRINTF("u8 num_lock_picks_received: %x\n", &psettings->num_lock_picks_received);
+    PRINTF("u8 num_fire_ammo_received: %x\n", &psettings->num_fire_ammo_received);
+    PRINTF("u8 num_electric_ammo_received: %x\n", &psettings->num_electric_ammo_received);
+    PRINTF("u8 num_water_ammo_received: %x\n", &psettings->num_water_ammo_received);
+    PRINTF("u8 num_ice_ammo_received: %x\n", &psettings->num_ice_ammo_received);
+    PRINTF("u8 deathlink_ingoing: %x\n", &psettings->deathlink_ingoing);
+    PRINTF("u8 deathlink_outgoing: %x\n", &psettings->deathlink_outgoing);
     PRINTF("bool infinite_butterfly_jar: %x\n", &psettings->infinite_butterfly_jar);
     PRINTF("bool skip_cutscene_button: %x\n", &psettings->skip_cutscene_button);
     PRINTF("bool allow_teleport_to_hub: %x\n", &psettings->allow_teleport_to_hub);
