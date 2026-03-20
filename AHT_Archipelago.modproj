@@ -452,7 +452,8 @@
             "./src/gate_hooks.c",
             "./src/ap_pausemenu.c",
             "./src/BASIC_hooks.c",
-            "./src/lg_door_hooks.c"
+            "./src/lg_door_hooks.c",
+            "./src/ap_objectives.c"
           ],
           "memory_address": "80296618",
           "size": "7500",

@@ -12,6 +12,7 @@
 #include <igstdlib.h>
 #include <minimap_status.h>
 #include <gameloop.h>
+#include <ap_objectives.h>
 
 // #define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
 // #define AP_DEBUG_NOTIFICATION
@@ -27,36 +28,6 @@
 #ifdef AP_DEBUG_NOTIFICATION
 #pragma message ( "COMPILING WITH AP_DEBUG_NOTIFICATION, DO NOT RELEASE" )
 #endif
-
-#define NUM_NEW_GAME_OBJECTIVES 15
-EXHashCode new_game_objectives[] = {
-    // Realm introduction cutscenes
-    HT_Objective_OpeningMovie,
-    HT_Objective_SeenIntro_R1A,
-    HT_Objective_SeenIntroR2A,
-    HT_Objective_SeenProfStartR2A,
-    HT_Objective_SeenIntroR3A,
-    HT_Objective_SeenProfStartR3A,
-    HT_Objective_SeenIntroR4A,
-    HT_Objective_ProfGoneToFindRed,
-
-    // Opened starting gate
-    HT_Objective_R1A_OpenLockPickerSwitch,
-    
-    // Zoe intro cutscene
-    HT_Objective_R1A_MetZoe,
-
-    // Met the mammoth and rescued Spyro.
-    // This is to prevent the gate into Gloomy Glacier from being present,
-    // and to allow access to Gloomy Glacier at the player's discretion.
-    HT_Objective_3A_MetMonsterMammoth,
-    HT_Objective_3B_HunterRescuedSpyro,
-
-    // Moneybags intro
-    HT_Objective_MoneybagsGems_1A,
-    HT_Objective_Moneybagsintro_1A,
-    HT_Objective_GainedLockPicker,
-};
 
 #define NUM_REALM_TELEPORTER_MAPORDERINFO 3
 MapOrderInfo realm_teleporter_maporderinfo[] = {
