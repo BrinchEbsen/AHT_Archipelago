@@ -324,6 +324,7 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("bool allow_teleport_to_hub: %x\n", &psettings->allow_teleport_to_hub);
     PRINTF("bool allow_immediate_realm_access: %x\n", &psettings->allow_immediate_realm_access);
     PRINTF("bool disable_popups: %x\n", &psettings->disable_popups);
+    PRINTF("bool instant_elevators: %x\n", &psettings->instant_elevators);
     PRINTF("bool patch_been_written_to: %x\n", &psettings->patch_been_written_to);
     PRINTF("u32 mw_seed: %x\n", &psettings->mw_seed);
     PRINTF("u32 init: %x\n", &psettings->init);

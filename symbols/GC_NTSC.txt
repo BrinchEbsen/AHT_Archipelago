@@ -139,6 +139,10 @@ Monitor__BASICcmd_Zoopoo = 0x800da360;
 Switch_LightGem__GetTriggerConfig = 0x8018b9a0;
 Switch_LightGem__Update = 0x8018b9c8;
 
+/* elevator_hooks.h */
+SXI_Path__MoveAlongPath = 0x80246080;
+FlippingPlatform__HandleFlip = 0x801e9c34;
+
 /* gametext.h */
 gGameText = 0x80455c1c;
 GameText__GetText = 0x8012df2c;

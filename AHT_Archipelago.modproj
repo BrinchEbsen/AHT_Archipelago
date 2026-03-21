@@ -453,7 +453,8 @@
             "./src/ap_pausemenu.c",
             "./src/BASIC_hooks.c",
             "./src/lg_door_hooks.c",
-            "./src/ap_objectives.c"
+            "./src/ap_objectives.c",
+            "./src/elevator_hooks.c"
           ],
           "memory_address": "80296618",
           "size": "7500",
@@ -898,6 +899,10 @@
         {
           "name": "multi_BossDisableAbilityGain",
           "file_path": "./asm/GC_NTSC/multi_BossDisableAbilityGain.s"
+        },
+        {
+          "name": "multi_elevator_hooks",
+          "file_path": "./asm/GC_NTSC/multi_elevator_hooks.s"
         }
       ]
     }

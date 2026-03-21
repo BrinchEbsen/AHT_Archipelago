@@ -35,6 +35,7 @@ typedef struct APSettings {
     bool allow_teleport_to_hub;
     bool allow_immediate_realm_access;
     bool disable_popups;
+    bool instant_elevators;
 
     bool patch_been_written_to;
     u32 mw_seed;
