@@ -151,4 +151,6 @@ _Static_assert(sizeof(PlayerState) == 0x130);
 extern void PlayerState__Update(PlayerState* self);
 extern void PlayerState__RestartGame(PlayerState* self);
 
+void PlayerState__IncLockPickers_ReImplHook(PlayerState* self, s8 lockpicks);
+
 #endif /* PLAYERSTATE_H */

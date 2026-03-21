@@ -454,7 +454,8 @@
             "./src/BASIC_hooks.c",
             "./src/lg_door_hooks.c",
             "./src/ap_objectives.c",
-            "./src/elevator_hooks.c"
+            "./src/elevator_hooks.c",
+            "./src/se/playerstate.c"
           ],
           "memory_address": "80296618",
           "size": "7500",
@@ -862,6 +863,18 @@
           "size": "0",
           "injection_file": "Start.dol",
           "injection_file_address": "0x9884C",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "PlayerState__IncLockPickers_ReImplHook",
+          "code_files": [
+            "./asm/GC_NTSC/PlayerState__IncLockPickers_ReImplHook.s"
+          ],
+          "memory_address": "80068c90",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x65C90",
           "auto_calculate_injection_file_address": true,
           "enabled": true
         }
