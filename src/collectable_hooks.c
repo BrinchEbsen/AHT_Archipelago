@@ -3,6 +3,8 @@
 #include <ap_settings.h>
 #include <ap_handler.h>
 #include <map.h>
+#include <hashcodes.h>
+#include <runtimeclass.h>
 
 void LightXtal__Collected_VtableHook(void *this, Bool Register)
 {
@@ -130,4 +132,34 @@ s32 PlayerState__AddLightGems_ReImplHook(PlayerState *self, int n, SE_Map *pMap)
     MemCard_AutoSave();
 
     return *curr_count;
+}
+
+Bool CPU_Base__CreatedChestPickup_PreCallHook(void* self, s32 Index, EXVector* Pos, void* Data)
+{
+    void* vtable = OFFSET_VAL(void*, self, 0x4);
+    GetRuntimeClass_func get_rtc = OFFSET_VAL(GetRuntimeClass_func, vtable, 0x8);
+    EXRuntimeClass* rtc = get_rtc();
+    if (!class_is_or_inherits_from(rtc, &classLockedChest)) {
+        return CPU_Base__CreatedChestPickup(self, Index, Pos, Data);
+    }
+
+    switch (CPU_BASE_M_PICKUPHASH(self)) {
+        case HT_ChestCreate_LightGem:
+        case HT_ChestCreate_DragonEgg2:
+        case HT_ChestCreate_DragonEgg3:
+        case HT_ChestCreate_DragonEgg4:
+        case HT_ChestCreate_DragonEgg5:
+        case HT_ChestCreate_DragonEgg6:
+        case HT_ChestCreate_DragonEgg7:
+        case HT_ChestCreate_DragonEgg8:
+            return CPU_Base__CreatedChestPickup(self, Index, Pos, Data);
+            break;
+    }
+
+    return false;
+}
+
+Bool LockedChest__ReleaseMyGems_VtableHook(void *self)
+{
+    return false;
 }

@@ -916,6 +916,10 @@
         {
           "name": "multi_elevator_hooks",
           "file_path": "./asm/GC_NTSC/multi_elevator_hooks.s"
+        },
+        {
+          "name": "multi_CPU_Base_hooks",
+          "file_path": "./asm/GC_NTSC/multi_CPU_Base_hooks.s"
         }
       ]
     }
