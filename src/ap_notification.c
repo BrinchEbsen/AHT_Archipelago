@@ -28,7 +28,7 @@ void ap_draw_notification(void *pWnd)
         return;
     }
 
-    u16 y = 100;
+    u16 y = 120;
     if (gpPlayer != NULL) {
         if (XSEItemHandler_Player__M_PLAYERTYPE(gpPlayer) == Player_Sparx) {
             y = 160;
