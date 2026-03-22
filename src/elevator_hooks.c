@@ -12,20 +12,20 @@ void teleport_to_elevator_endpoint(int map_index, EXHashCode startpoint)
 
 void SXI_Path__MoveAlongPath_PreCallHook_2Ato2C(void* self, float DeltaDist, Bool UseSpline)
 {
-    if (!g_gamestate_ap_settings.instant_elevators) {
-        return SXI_Path__MoveAlongPath(self, DeltaDist, UseSpline);
+    if (g_gamestate_ap_settings.instant_elevators) {
+        teleport_to_elevator_endpoint(ELEVATOR_2A_2C_MAPINDEX, ELEVATOR_2A_2C_STARTPOINT);
     }
-
-    teleport_to_elevator_endpoint(ELEVATOR_2A_2C_MAPINDEX, ELEVATOR_2A_2C_STARTPOINT);
+    
+    SXI_Path__MoveAlongPath(self, DeltaDist, UseSpline);
 }
 
 void SXI_Path__MoveAlongPath_PreCallHook_2Cto2A(void* self, float DeltaDist, Bool UseSpline)
 {
-    if (!g_gamestate_ap_settings.instant_elevators) {
-        return SXI_Path__MoveAlongPath(self, DeltaDist, UseSpline);
+    if (g_gamestate_ap_settings.instant_elevators) {
+        teleport_to_elevator_endpoint(ELEVATOR_2C_2A_MAPINDEX, ELEVATOR_2C_2A_STARTPOINT);
     }
-
-    teleport_to_elevator_endpoint(ELEVATOR_2C_2A_MAPINDEX, ELEVATOR_2C_2A_STARTPOINT);
+    
+    SXI_Path__MoveAlongPath(self, DeltaDist, UseSpline);
 }
 
 void test_elevator_teleport(void* elevator)
@@ -76,10 +76,9 @@ void test_elevator_teleport(void* elevator)
 
 void FlippingPlatform__HandleFlip_PreCallHook(void* self)
 {
-    if (!g_gamestate_ap_settings.instant_elevators) {
-        FlippingPlatform__HandleFlip(self);
-        return;
+    if (g_gamestate_ap_settings.instant_elevators) {
+        test_elevator_teleport(self);
     }
-
-    test_elevator_teleport(self);
+    
+    FlippingPlatform__HandleFlip(self);
 }
