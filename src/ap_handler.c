@@ -378,6 +378,10 @@ int XSEItemHandler_Player__InitialiseStart_PreCallHook(void* self)
         gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BUTTERFLY_JAR;
     }
 
+    // Safety measure. At this point, a death caused by deathlink is over,
+    // and incoming deathlinks should be received.
+    deathlink_ignore_next_death = false;
+
     return XSEItemHandler_Player__InitialiseStart(self);
 }
 

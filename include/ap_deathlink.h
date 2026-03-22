@@ -43,4 +43,8 @@ DeathLinkResult try_kill_player(bool shielded);
 
 void ap_handle_deathlink_outgoing();
 
+/// @brief Takes away the butterfly jar and returns true if the deathlink should be shielded.
+/// @param shielded Whether the deathlink mode is Shielded. If this is false, this always returns false.
+bool take_butterfly_jar(bool shielded);
+
 #endif /* AP_DEATHLINK_H */

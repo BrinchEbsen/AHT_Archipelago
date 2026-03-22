@@ -66,13 +66,16 @@ DeathLinkResult try_kill_player(bool shielded)
         case HT_File_MR3_Spy:
         case HT_File_MR4_Spy:
         {
+            if (take_butterfly_jar(shielded)) {
+                return DeathLinkResult_Shielded;
+            }
+
             // Because deathlink is handled immediately after SetMiniGameFailed:
             deathlink_ignore_next_death = true;
 
             SEMap_MiniGame__SetMiniGameFailed(curr_map);
             return DeathLinkResult_MiniGameFail;
         }
-        break;
     }
     
     objCollide obj;
@@ -83,12 +86,34 @@ DeathLinkResult try_kill_player(bool shielded)
     
     Players playertype = XSEItemHandler_Player__M_PLAYERTYPE(gpPlayer);
 
+    // Sgt. Byrd special case
+    if (playertype == Player_SrgBird) {
+        switch (currmode) {
+            case breatheFire: // lava crash (yes really)
+            case water_dive: // water crash
+            case deathfall: // death fall
+                return DeathLinkResult_Failed;
+        }
+
+        if (take_butterfly_jar(shielded)) {
+            XSEItemHandler_BallGadget__TakeDamage(gpPlayer, 0, 0, 1, &obj, "Death Link", true);
+            return DeathLinkResult_Shielded;
+        }
+
+        XSEItemHandler_Player__SetMode(gpPlayer, breatheFire, 1, 0);
+        return DeathLinkResult_Died;
+    }
+
     // Ball Gadget special case
     if (playertype == Player_BallGadget) {
         // Don't kill if these flags are set (game will probably crash)
         u32* ball_physicsflags = &XSEITEMHANDLER_BALLGADGET_M_PHYSICSFLAGS(gpPlayer);
         if (((*ball_physicsflags) & 0x42) != 0) {
             return DeathLinkResult_Failed;
+        }
+
+        if (take_butterfly_jar(shielded)) {
+            return DeathLinkResult_Shielded;
         }
 
         // This physics flag makes the ballgadget killable
@@ -98,19 +123,15 @@ DeathLinkResult try_kill_player(bool shielded)
         return DeathLinkResult_Died;
     }
 
-    // Handle default case
+    // Handle default case (Spyro, Hunter, Blink and Sparx)
 
-    u32 damage = 0xA0;
-    bool has_butterfly_jar = (gGameState.m_PlayerState.m_AbilityFlags & ABILITY_BUTTERFLY_JAR) != 0;
-
-    if (shielded && has_butterfly_jar) {
-        damage = 0;
+    if (take_butterfly_jar(shielded)) {
+        XSEItemHandler_Player__TakeDamage(gpPlayer, 0, 0, 1, &obj, "Death Link", true);
+        return DeathLinkResult_Shielded;
+    } else {
+        XSEItemHandler_Player__TakeDamage(gpPlayer, 0xA0, 0, 1, &obj, "Death Link", true);
+        return DeathLinkResult_Died;
     }
-    
-    gGameState.m_PlayerState.m_AbilityFlags &= ~ABILITY_BUTTERFLY_JAR;
-    XSEItemHandler_Player__TakeDamage(gpPlayer, damage, 0, 1, &obj, "Death Link", true);
-
-    return (damage == 0) ? DeathLinkResult_Shielded : DeathLinkResult_Died;
 }
 
 void ap_handle_deathlink_outgoing()
@@ -119,5 +140,17 @@ void ap_handle_deathlink_outgoing()
         deathlink_ignore_next_death = false;
     } else {
         g_gamestate_ap_settings.deathlink_outgoing = true;
+    }
+}
+
+bool take_butterfly_jar(bool shielded)
+{
+    bool had_jar = (gGameState.m_PlayerState.m_AbilityFlags & ABILITY_BUTTERFLY_JAR) != 0;
+    gGameState.m_PlayerState.m_AbilityFlags &= ~ABILITY_BUTTERFLY_JAR;
+
+    if (shielded) {
+        return had_jar;
+    } else {
+        return false;
     }
 }
