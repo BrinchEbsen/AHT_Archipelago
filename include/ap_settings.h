@@ -12,6 +12,10 @@
 #define SHOP_TOTAL_NUM_ENTRIES 80
 #define AP_TEXT_ENTRY_HASHCODE_BASE 0x28010000
 
+#define AP_DEATHLINK_MODE_NONE      0
+#define AP_DEATHLINK_MODE_SHIELDED  1
+#define AP_DEATHLINK_MODE_FULL      2
+
 typedef struct APSettings_TextEntry
 {
     /* 0x0 */ bool been_bought;
@@ -27,7 +31,7 @@ typedef struct APSettings {
     u8 num_electric_ammo_received;
     u8 num_water_ammo_received;
     u8 num_ice_ammo_received;
-    bool deathlink_ingoing;
+    u8 deathlink_ingoing;
     bool deathlink_outgoing;
     bool infinite_butterfly_jar;
 

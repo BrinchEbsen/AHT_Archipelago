@@ -13,6 +13,7 @@
 #include <minimap_status.h>
 #include <gameloop.h>
 #include <ap_objectives.h>
+#include <ap_deathlink.h>
 
 // #define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
 // #define AP_DEBUG_NOTIFICATION
@@ -76,6 +77,16 @@ void ap_gamestate_update()
         gGameState.m_PlayerState.m_WaterBombs_Max = 127;
         gGameState.m_PlayerState.m_ElectricBombs_Max = 127;
     }
+
+    if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
+        g_gamestate_ap_settings.deathlink_ingoing = AP_DEATHLINK_MODE_SHIELDED;
+    }
+    if (g_pad_button_edge_down(PAD_BUTTON_DPAD_RIGHT)) {
+        g_gamestate_ap_settings.deathlink_ingoing = AP_DEATHLINK_MODE_FULL;
+    }
+    
+
+    ap_deathlink_update();
 
     #ifdef AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
     if (g_pad_button_state(PAD_BUTTON_B)) {
@@ -317,7 +328,7 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("u8 num_electric_ammo_received: %x\n", &psettings->num_electric_ammo_received);
     PRINTF("u8 num_water_ammo_received: %x\n", &psettings->num_water_ammo_received);
     PRINTF("u8 num_ice_ammo_received: %x\n", &psettings->num_ice_ammo_received);
-    PRINTF("bool deathlink_ingoing: %x\n", &psettings->deathlink_ingoing);
+    PRINTF("u8 deathlink_ingoing: %x\n", &psettings->deathlink_ingoing);
     PRINTF("bool deathlink_outgoing: %x\n", &psettings->deathlink_outgoing);
     PRINTF("bool infinite_butterfly_jar: %x\n", &psettings->infinite_butterfly_jar);
     PRINTF("bool skip_cutscene_button: %x\n", &psettings->skip_cutscene_button);

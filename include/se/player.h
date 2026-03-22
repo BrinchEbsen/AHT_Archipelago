@@ -194,5 +194,7 @@ extern void XSEItemHandler_Player__SetMode(void* self, PlayerModes mode, int for
 extern int XSEItemHandler_Player__InitialiseStart(void* self);
 
 #define XSEItemHandler_Player__M_PLAYERTYPE(self) OFFSET_VAL(Players, self, 0x578)
+#define XSEItemHandler_Player__M_PLAYERSTATEFLAGS(self) OFFSET_VAL(PStateFlags, self, 0x580)
+#define XSEItemHandler_Player__M_PLAYERMODE(self) OFFSET_VAL(PlayerModes, self, 0x834)
 
 #endif /* PLAYER_H */

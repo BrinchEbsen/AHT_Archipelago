@@ -11,7 +11,7 @@ APSettings g_patch_ap_settings = {
     .num_electric_ammo_received = 0,
     .num_water_ammo_received = 0,
     .num_ice_ammo_received = 0,
-    .deathlink_ingoing = false,
+    .deathlink_ingoing = AP_DEATHLINK_MODE_NONE,
     .deathlink_outgoing = false,
     .infinite_butterfly_jar = false,
 

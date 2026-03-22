@@ -40,6 +40,11 @@ Popup__Update = 0x800fc6a8;
 GUI_PauseMenu__v_StateRunning = 0x803986ac;
 GUI_PauseMenu__v_DrawStateRunning = 0x8039874c;
 
+/* ap_deathlink.h */
+XSEItemHandler_Player__TakeDamage = 0x80064260;
+XSEItemHandler_BallGadget__TakeDamage = 0x80008df4;
+XSEItemHandler_Player__InvulnerableToAttack = 0x8005a95c;
+
 /* exdisplay.h */
 EXBaseDisplay__m_pDisplay = 0x804cba84;
 
