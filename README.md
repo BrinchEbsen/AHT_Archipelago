@@ -1,6 +1,6 @@
 # Spyro: A Hero's Tail - Archipelago Interface Mod
 
-Code injection mod for Spyro: A Hero's Tail that provides an interface for Maya/Xua's [Archipelago client](https://github.com/XuaTheGrate/spyro-aht-ap/releases/tag/0.3.1) for the game, as well as implementing several features suitable for Archipelago.
+Code injection mod for Spyro: A Hero's Tail that provides an interface for Maya/Xua's [Archipelago client](https://github.com/XuaTheGrate/spyro-aht-ap) for the game, as well as implementing several features suitable for Archipelago.
 
 Read more about Archipelago here: https://archipelago.gg/
 
