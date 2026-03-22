@@ -17,6 +17,7 @@
 
 // #define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
 // #define AP_DEBUG_NOTIFICATION
+#define AP_DEBUG_DEATHLINK
 
 #ifdef AP_QUICK_START
 #pragma message ( "COMPILING WITH AP_QUICK_START, DO NOT RELEASE" )
@@ -28,6 +29,10 @@
 
 #ifdef AP_DEBUG_NOTIFICATION
 #pragma message ( "COMPILING WITH AP_DEBUG_NOTIFICATION, DO NOT RELEASE" )
+#endif
+
+#ifdef AP_DEBUG_DEATHLINK
+#pragma message ( "COMPILING WITH AP_DEBUG_DEATHLINK, DO NOT RELEASE" )
 #endif
 
 #define NUM_REALM_TELEPORTER_MAPORDERINFO 3
@@ -78,13 +83,22 @@ void ap_gamestate_update()
         gGameState.m_PlayerState.m_ElectricBombs_Max = 127;
     }
 
-    if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
-        g_gamestate_ap_settings.deathlink_ingoing = AP_DEATHLINK_MODE_SHIELDED;
+    #ifdef AP_DEBUG_DEATHLINK
+    if (g_pad_button_state(PAD_BUTTON_B)) {
+        if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
+            g_gamestate_ap_settings.deathlink_ingoing = AP_DEATHLINK_MODE_SHIELDED;
+        }
+        if (g_pad_button_edge_down(PAD_BUTTON_DPAD_RIGHT)) {
+            g_gamestate_ap_settings.deathlink_ingoing = AP_DEATHLINK_MODE_FULL;
+        }
+        if (g_pad_button_edge_down(PAD_BUTTON_DPAD_LEFT)) {
+            g_gamestate_ap_settings.deathlink_outgoing = false;
+        }
+        if (g_pad_button_edge_down(PAD_BUTTON_DPAD_UP)) {
+            gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BUTTERFLY_JAR;
+        }
     }
-    if (g_pad_button_edge_down(PAD_BUTTON_DPAD_RIGHT)) {
-        g_gamestate_ap_settings.deathlink_ingoing = AP_DEATHLINK_MODE_FULL;
-    }
-    
+    #endif
 
     ap_deathlink_update();
 
@@ -158,6 +172,14 @@ void ap_draw(void* pWnd)
             ap_draw_cost_text(pWnd, cost_text_type, cost_text_amt);
             draw_cost_text = false;
         }
+
+        #ifdef AP_DEBUG_DEATHLINK
+        TEXT_PRINT_ALIGN_COLOR_F(pWnd, 0, 0, CentreLeft, COLOR_LIGHT_RED,
+            "DL in: %d\nDL out: %d\nign: %d",
+            g_gamestate_ap_settings.deathlink_ingoing,
+            g_gamestate_ap_settings.deathlink_outgoing,
+            deathlink_ignore_next_death);
+        #endif
     }
 }
 
@@ -361,6 +383,8 @@ int XSEItemHandler_Player__InitialiseStart_PreCallHook(void* self)
 
 void Player_urghhhImDead_PostHook()
 {
+    ap_handle_deathlink_outgoing();
+
     if (g_gamestate_ap_settings.xls_shop_rowcount == 0)
     {
         return;
@@ -369,6 +393,34 @@ void Player_urghhhImDead_PostHook()
     if (g_gamestate_ap_settings.infinite_butterfly_jar)
     {
         replenish_butterfly_jar = true;
+    }
+}
+
+s32 SE_GameLoop__StartGameState_PreCallHook_BallGadgetDeath(SE_GameLoop *self, SE_GameState *pGS)
+{
+    ap_handle_deathlink_outgoing();
+
+    return SE_GameLoop__StartGameState(self, pGS);
+}
+
+void SEMap_MiniGame__SetMiniGameDie_PreCallHook_SparxDeath(SE_Map* self)
+{
+    ap_handle_deathlink_outgoing();
+
+    SEMap_MiniGame__SetMiniGameDie(self);
+}
+
+void SEMap_MiniGame__SetMiniGameFailed_PostHook()
+{
+    SE_Map* currmap = GetSpyroMap(0);
+
+    switch (currmap->m_MapGeoHashCode) {
+        case HT_File_MR1_Spy:
+        case HT_File_MR2_Spy:
+        case HT_File_MR3_Spy:
+        case HT_File_MR4_Spy:
+            ap_handle_deathlink_outgoing();
+            break;
     }
 }
 

@@ -878,6 +878,42 @@
           "injection_file_address": "0x65C90",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "SE_GameLoop__StartGameState_PreCallHook_BallGadgetDeath",
+          "code_files": [
+            "./asm/GC_NTSC/SE_GameLoop__StartGameState_PreCallHook_BallGadgetDeath.s"
+          ],
+          "memory_address": "8000b43c",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x843C",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "SEMap_MiniGame__SetMiniGameDie_PreCallHook_SparxDeath",
+          "code_files": [
+            "./asm/GC_NTSC/SEMap_MiniGame__SetMiniGameDie_PreCallHook_SparxDeath.s"
+          ],
+          "memory_address": "80016494",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x13494",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "SEMap_MiniGame__SetMiniGameFailed_PostHook",
+          "code_files": [
+            "./asm/GC_NTSC/SEMap_MiniGame__SetMiniGameFailed_PostHook.s"
+          ],
+          "memory_address": "80201e44",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x1FEE44",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],

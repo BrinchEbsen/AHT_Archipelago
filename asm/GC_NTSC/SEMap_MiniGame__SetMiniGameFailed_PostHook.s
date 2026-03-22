@@ -1,0 +1,1 @@
+b SEMap_MiniGame__SetMiniGameFailed_PostHook

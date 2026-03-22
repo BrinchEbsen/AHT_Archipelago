@@ -1,0 +1,1 @@
+bl SEMap_MiniGame__SetMiniGameDie_PreCallHook_SparxDeath

@@ -4,6 +4,7 @@
 #include <gameflow.h>
 #include <gamestate.h>
 #include <ap_settings.h>
+#include <gameloop.h>
 
 typedef enum CostTextType
 {
@@ -48,6 +49,12 @@ void print_apsettings_addresses(APSettings* psettings);
 int XSEItemHandler_Player__InitialiseStart_PreCallHook(void* self);
 
 void Player_urghhhImDead_PostHook();
+
+s32 SE_GameLoop__StartGameState_PreCallHook_BallGadgetDeath(SE_GameLoop* self, SE_GameState* pGS);
+
+void SEMap_MiniGame__SetMiniGameDie_PreCallHook_SparxDeath(SE_Map* self);
+
+void SEMap_MiniGame__SetMiniGameFailed_PostHook();
 
 extern int Popup__Update(void* self);
 int Popup__Update_VtableHook(void* self);

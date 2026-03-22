@@ -1,6 +1,7 @@
 #ifndef GAMELOOP_H
 #define GAMELOOP_H
 #include <loop.h>
+#include <gamestate.h>
 
 typedef struct SE_GameLoop__vtable SE_GameLoop__vtable;
 struct SE_GameLoop__vtable {
@@ -81,6 +82,7 @@ _Static_assert(sizeof(SE_GameLoop) == 0xA4);
 
 extern s32 SE_GameLoop__GoToMap(
     SE_GameLoop* this, EXHashCode GeoCode, EXHashCode StartPointCode, EXHashCode MapCode);
+extern s32 SE_GameLoop__StartGameState(SE_GameLoop* self, SE_GameState* pGS);
 
 extern SE_GameLoop gGameLoop;
 

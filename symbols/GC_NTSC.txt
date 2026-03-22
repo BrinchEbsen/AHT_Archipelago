@@ -21,6 +21,7 @@ SE_Loop__AddDrawToXWnd = 0x80230068;
 
 /* gameloop.h */
 SE_GameLoop__GoToMap = 0x8023e644;
+SE_GameLoop__StartGameState = 0x80240330;
 gGameLoop = 0x8046f2f0;
 
 /* gameflow.h */
@@ -76,6 +77,8 @@ SE_Map__GetNumDragonEggs = 0x802328c8;
 SE_Map__SetNumDragonEggs = 0x80232914;
 SE_Map__GetLastStartPoint = 0x8023257c;
 SE_Map__SetLastStartPoint = 0x8023251c;
+SEMap_MiniGame__SetMiniGameDie = 0x80201e48;
+SEMap_MiniGame__SetMiniGameFailed = 0x80201d44;
 GetSpyroMap = 0x80232df0;
 gMapList = 0x8046ee54;
 SE_MapList__m_gNumMaps = 0x804cb608;

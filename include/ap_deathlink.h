@@ -7,7 +7,8 @@ typedef enum DeathLinkResult
 {
     DeathLinkResult_Failed,
     DeathLinkResult_Shielded,
-    DeathLinkResult_Died
+    DeathLinkResult_Died,
+    DeathLinkResult_MiniGameFail
 } DeathLinkResult;
 
 typedef struct objCollide
@@ -39,5 +40,7 @@ extern bool deathlink_ignore_next_death;
 void ap_deathlink_update();
 
 DeathLinkResult try_kill_player(bool shielded);
+
+void ap_handle_deathlink_outgoing();
 
 #endif /* AP_DEATHLINK_H */
