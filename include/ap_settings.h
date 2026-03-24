@@ -6,6 +6,7 @@
 #include <xls_shop.h>
 
 #define AP_SETTINGS_LOCATIONS_BITFIELD_SIZE 0x30
+#define AP_SETTINGS_KEYRINGS_BITFIELD_SIZE 0x2
 #define AP_SETTINGS_INIT_MAGICVALUE 0x45424245 // 'EBBE' in ASCII :)
 
 #define SHOP_NUM_VANILLA_ENTRIES 1
@@ -25,6 +26,7 @@ typedef struct APSettings_TextEntry
 
 typedef struct APSettings {
     u8 location_bitfield[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];
+    u8 keyring_bitfield[AP_SETTINGS_KEYRINGS_BITFIELD_SIZE];
     u8 num_gem_packs_received;
     u8 num_lock_picks_received;
     u8 num_fire_ammo_received;
@@ -34,6 +36,8 @@ typedef struct APSettings {
     u8 deathlink_ingoing;
     bool deathlink_outgoing;
     bool infinite_butterfly_jar;
+    bool randomize_shop;
+    bool use_key_rings;
 
     bool skip_cutscene_button;
     bool allow_teleport_to_hub;
@@ -72,5 +76,7 @@ typedef struct APSettings {
 extern APSettings g_gamestate_ap_settings;
 
 #define AP_GAMESTATE_SHOP_SPREADSHEET_START ((void*)(&g_gamestate_ap_settings.xls_shop_sheetcount_ALWAYS_1))
+#define AP_GAMESTATE_SHOP_IS_RANDOMIZED (g_gamestate_ap_settings.randomize_shop)
+#define AP_GAMESTATE_USE_KEY_RINGS (g_gamestate_ap_settings.use_key_rings)
 
 #endif /* AP_SETTINGS_H */

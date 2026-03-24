@@ -1,3 +1,4 @@
+#include <util.h>
 #include <ap_pausemenu.h>
 #include <pad.h>
 #include <paneldraw.h>
@@ -8,6 +9,7 @@
 #include <gamestate.h>
 #include <ap_settings.h>
 #include <ap_notification.h>
+#include <ap_keyring.h>
 
 #define AP_TELEPORT_CLOSE_TIMER_MAX 60
 
@@ -119,6 +121,22 @@ HUBCentreEntry hub_centers[] = {
     }
 };
 
+int curr_page = 0;
+static inline void next_page()
+{
+    curr_page++;
+    if (curr_page >= PauseMenu_NUM) {
+        curr_page = 0;
+    }
+}
+static inline void prev_page()
+{
+    curr_page--;
+    if (curr_page < 0) {
+        curr_page = (int)PauseMenu_NUM - 1;
+    }
+}
+
 s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
 {
     if (g_gamestate_ap_settings.allow_teleport_to_hub) {
@@ -148,6 +166,16 @@ s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self)
 
     if (g_pad_button_edge_down(PAD_BUTTON_X)) {
         show_notifications = !show_notifications;
+    }
+
+    if (AP_GAMESTATE_USE_KEY_RINGS) {
+        if (g_pad_button_edge_down(PAD_BUTTON_L)) {
+            prev_page();
+        } else if (g_pad_button_edge_down(PAD_BUTTON_R)) {
+            next_page();
+        }
+    } else {
+        curr_page = PauseMenu_Abilities;
     }
 
     return GUI_PauseMenu__v_StateRunning(self);
@@ -199,71 +227,105 @@ void draw_pause_stats(GUI_Base* self, void* pWnd)
 
     XWnd__DrawRect(pWnd, &r, COLOR_RGBA(0, 0, 0, 0x20));
 
-    RGBA on_color = COLOR_WHITE;
-    RGBA off_color = COLOR_RGBA(0x40, 0x40, 0x40, 0x80);
+    RGBA on_col = COLOR_WHITE;
+    RGBA off_col = COLOR_RGBA(0x40, 0x40, 0x40, 0x80);
 
+    switch (curr_page)
+    {
+        case PauseMenu_Abilities:
+            draw_stats_abilities(self, pWnd, x, y, spacing, on_col, off_col);
+            break;
+        case PauseMenu_Keyrings:
+            draw_stats_keyrings(self, pWnd, x, y, spacing, on_col, off_col);
+            break;
+        default:
+            break;
+    }
+}
+
+void draw_stats_abilities(GUI_Base* self, void *pWnd, u16 x, u16 y, u16 spacing, RGBA on_col, RGBA off_col)
+{
     RGBA* col;
     u32 abiflg = gGameState.m_PlayerState.m_AbilityFlags;
 
-    col = ((abiflg & ABILITY_DOUBLE_JUMP) != 0) ? &on_color : &off_color;
+    col = ((abiflg & ABILITY_DOUBLE_JUMP) != 0) ? &on_col : &off_col;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Double Jump");
     y += spacing;
 
-    col = ((abiflg & ABILITY_POLE_SPIN) != 0) ? &on_color : &off_color;
+    col = ((abiflg & ABILITY_POLE_SPIN) != 0) ? &on_col : &off_col;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Pole Spin");
     y += spacing;
 
-    col = ((abiflg & ABILITY_HIT_POINT_UPGRADE) != 0) ? &on_color : &off_color;
+    col = ((abiflg & ABILITY_HIT_POINT_UPGRADE) != 0) ? &on_col : &off_col;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Health Unit+");
     y += spacing;
 
-    col = g_gamestate_ap_settings.infinite_butterfly_jar ? &on_color : &off_color;
+    col = g_gamestate_ap_settings.infinite_butterfly_jar ? &on_col : &off_col;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Health Refill");
     y += spacing;
 
-    col = ((abiflg & ABILITY_AP_FIREBREATH) != 0) ? &on_color : &off_color;
+    col = ((abiflg & ABILITY_AP_FIREBREATH) != 0) ? &on_col : &off_col;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Fire Breath");
     y += spacing;
 
-    col = ((abiflg & ABILITY_ELECTRIC_BREATH) != 0) ? &on_color : &off_color;
+    col = ((abiflg & ABILITY_ELECTRIC_BREATH) != 0) ? &on_col : &off_col;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Electric Breath");
     y += spacing;
 
-    col = ((abiflg & ABILITY_WATER_BREATH) != 0) ? &on_color : &off_color;
+    col = ((abiflg & ABILITY_WATER_BREATH) != 0) ? &on_col : &off_col;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Water Breath");
     y += spacing;
 
-    col = ((abiflg & ABILITY_ICE_BREATH) != 0) ? &on_color : &off_color;
+    col = ((abiflg & ABILITY_ICE_BREATH) != 0) ? &on_col : &off_col;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Ice Breath");
     y += spacing;
 
-    col = ((abiflg & ABILITY_WING_SHIELD) != 0) ? &on_color : &off_color;
+    col = ((abiflg & ABILITY_WING_SHIELD) != 0) ? &on_col : &off_col;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Wing Shield");
     y += spacing;
 
-    col = ((abiflg & ABILITY_WALL_KICK) != 0) ? &on_color : &off_color;
+    col = ((abiflg & ABILITY_WALL_KICK) != 0) ? &on_col : &off_col;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Wall Kick");
     y += spacing;
 
-    col = ((abiflg & ABILITY_HORN_DIVE_UPGRADE) != 0) ? &on_color : &off_color;
+    col = ((abiflg & ABILITY_HORN_DIVE_UPGRADE) != 0) ? &on_col : &off_col;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Shockwave");
     y += spacing;
 
-    col = ((abiflg & ABILITY_AP_GLIDE) != 0) ? &on_color : &off_color;
+    col = ((abiflg & ABILITY_AP_GLIDE) != 0) ? &on_col : &off_col;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Glide");
     y += spacing;
 
-    col = ((abiflg & ABILITY_AP_CHARGE) != 0) ? &on_color : &off_color;
+    col = ((abiflg & ABILITY_AP_CHARGE) != 0) ? &on_col : &off_col;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Charge");
     y += spacing;
 
-    col = ((abiflg & ABILITY_AP_SWIM) != 0) ? &on_color : &off_color;
+    col = ((abiflg & ABILITY_AP_SWIM) != 0) ? &on_col : &off_col;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Swim");
     y += spacing*2;
 
-    s8 lock_pickers = gGameState.m_PlayerState.m_LockPickers;
-    col = (lock_pickers > 0) ? &on_color : &off_color;
-    TEXT_PRINT_ALIGN_COLOR_F(pWnd, x, y, TopLeft, *col, "Lock Picks: %d", lock_pickers);
+    if (AP_GAMESTATE_USE_KEY_RINGS) {
+        TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, on_col, "<L Abilities R>");
+    } else {
+        s8 lock_pickers = gGameState.m_PlayerState.m_LockPickers;
+        col = (lock_pickers > 0) ? &on_col : &off_col;
+        TEXT_PRINT_ALIGN_COLOR_F(pWnd, x, y, TopLeft, *col, "Lock Picks: %d", lock_pickers);
+    }
+}
+
+void draw_stats_keyrings(GUI_Base* self, void *pWnd, u16 x, u16 y, u16 spacing, RGBA on_col, RGBA off_col)
+{
+    RGBA* col;
+    u8* keyrings = g_gamestate_ap_settings.keyring_bitfield;
+
+    for (int i = 0; i < AP_NUM_KEYRINGS; i++) {
+        col = get_u8_bitfield_value(keyrings, i) ? &on_col : &off_col;
+        TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, g_ap_keyring_pausemenu_strings[i]);
+        y += spacing;
+    }
+
+    y += spacing;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, on_col, "<L Key Rings R>");
 }
 
 void draw_notification_toggle(GUI_Base* self, void* pWnd)

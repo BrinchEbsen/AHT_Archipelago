@@ -1,3 +1,4 @@
+#include <util.h>
 #include <ap_handler.h>
 #include <ap_settings.h>
 #include <ap_patch.h>
@@ -65,7 +66,7 @@ void ap_gamestate_update()
         ap_init_gamestate();
     }
 
-    if (g_gamestate_ap_settings.xls_shop_rowcount > 0)
+    if (AP_GAMESTATE_SHOP_IS_RANDOMIZED)
     {
         // Freeze double gem timer if enabled
         if ((gGameState.m_PlayerState.m_AbilityFlags & ABILITY_DOUBLE_GEM) != 0)
@@ -76,11 +77,18 @@ void ap_gamestate_update()
         }
 
         // Freeze max values for lock picks and breath ammo
-        gGameState.m_PlayerState.m_LockPickers_Max = 127;
+        if (!AP_GAMESTATE_USE_KEY_RINGS) {
+            gGameState.m_PlayerState.m_LockPickers_Max = 127;
+        }
         gGameState.m_PlayerState.m_FlameBombs_Max = 127;
         gGameState.m_PlayerState.m_IceBombs_Max = 127;
         gGameState.m_PlayerState.m_WaterBombs_Max = 127;
         gGameState.m_PlayerState.m_ElectricBombs_Max = 127;
+    }
+
+    if (AP_GAMESTATE_USE_KEY_RINGS) {
+        gGameState.m_PlayerState.m_LockPickers = 0;
+        gGameState.m_PlayerState.m_LockPickers_Max = 0;
     }
 
     #ifdef AP_DEBUG_DEATHLINK
@@ -289,13 +297,7 @@ void ap_set_objective(EXHashCode objective)
 
 void ap_set_location(int index)
 {
-    int byte = index / 8;
-    int bit = index % 8;
-
-    u8* val = &g_gamestate_ap_settings.location_bitfield[byte];
-
-    if (((*val) & (1 << bit)) == 0) {
-        (*val) |= (1 << bit);
+    if (!set_u8_bitfield_value(g_gamestate_ap_settings.location_bitfield, index, true)) {
         PRINTF("[AP] Set location flag index %d\n", index);
     }
 }
@@ -344,6 +346,7 @@ void print_interface_addresses()
 void print_apsettings_addresses(APSettings* psettings)
 {
     PRINTF("u8 location_bitfield[%d]: %x\n", AP_SETTINGS_LOCATIONS_BITFIELD_SIZE, &psettings->location_bitfield);
+    PRINTF("u8 keyring_bitfield[%d]: %x\n", AP_SETTINGS_KEYRINGS_BITFIELD_SIZE, &psettings->keyring_bitfield);
     PRINTF("u8 num_gem_packs_received: %x\n", &psettings->num_gem_packs_received);
     PRINTF("u8 num_lock_picks_received: %x\n", &psettings->num_lock_picks_received);
     PRINTF("u8 num_fire_ammo_received: %x\n", &psettings->num_fire_ammo_received);
@@ -353,6 +356,8 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("u8 deathlink_ingoing: %x\n", &psettings->deathlink_ingoing);
     PRINTF("bool deathlink_outgoing: %x\n", &psettings->deathlink_outgoing);
     PRINTF("bool infinite_butterfly_jar: %x\n", &psettings->infinite_butterfly_jar);
+    PRINTF("bool randomize_shop: %x\n", &psettings->randomize_shop);
+    PRINTF("bool use_key_rings: %x\n", &psettings->use_key_rings);
     PRINTF("bool skip_cutscene_button: %x\n", &psettings->skip_cutscene_button);
     PRINTF("bool allow_teleport_to_hub: %x\n", &psettings->allow_teleport_to_hub);
     PRINTF("bool allow_immediate_realm_access: %x\n", &psettings->allow_immediate_realm_access);
@@ -389,7 +394,7 @@ void Player_urghhhImDead_PostHook()
 {
     ap_handle_deathlink_outgoing();
 
-    if (g_gamestate_ap_settings.xls_shop_rowcount == 0)
+    if (AP_GAMESTATE_SHOP_IS_RANDOMIZED)
     {
         return;
     }

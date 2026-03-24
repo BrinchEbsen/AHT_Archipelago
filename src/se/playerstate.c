@@ -3,8 +3,9 @@
 
 void PlayerState__IncLockPickers_ReImplHook(PlayerState* self, s8 lockpicks)
 {
-    // If shop is randomized
-    if (g_gamestate_ap_settings.xls_shop_rowcount > 0) {
+    // If shop is randomized or we're using keyrings,
+    // don't let the game increase the key count.
+    if (AP_GAMESTATE_SHOP_IS_RANDOMIZED | AP_GAMESTATE_USE_KEY_RINGS) {
         return;
     }
 

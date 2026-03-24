@@ -6,6 +6,7 @@
 
 APSettings g_patch_ap_settings = {
     .location_bitfield = {0},
+    .keyring_bitfield = {0},
     .num_gem_packs_received = 0,
     .num_fire_ammo_received = 0,
     .num_electric_ammo_received = 0,
@@ -14,6 +15,8 @@ APSettings g_patch_ap_settings = {
     .deathlink_ingoing = AP_DEATHLINK_MODE_NONE,
     .deathlink_outgoing = false,
     .infinite_butterfly_jar = false,
+    .randomize_shop = false,
+    .use_key_rings = false,
 
     #ifdef AP_QUICK_START
     .skip_cutscene_button = true,

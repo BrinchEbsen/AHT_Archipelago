@@ -5,6 +5,7 @@
 #include <map.h>
 #include <hashcodes.h>
 #include <runtimeclass.h>
+#include <ap_keyring.h>
 
 void LightXtal__Collected_VtableHook(void *this, Bool Register)
 {
@@ -150,4 +151,25 @@ Bool LockedChest__ReleaseMyGems_VtableHook(void *self)
     }
 
     return false;
+}
+
+void LockedChest__IdleUpdate_VtableHook(void* self)
+{
+    if (!AP_GAMESTATE_USE_KEY_RINGS) {
+        LockedChest__IdleUpdate(self);
+        return;
+    }
+
+    SE_Trigger* trigger = OFFSET_VAL(SE_Trigger*, self, 0x10);
+
+    bool unlocked;
+    ap_keyring_unlocked(trigger->m_pMap, &unlocked);
+
+    s8 previous = gGameState.m_PlayerState.m_LockPickers;
+
+    // The locked chest thinks the player has 1 lockpick if keyring is unlocked
+    gGameState.m_PlayerState.m_LockPickers = unlocked ? 1 : 0;
+    LockedChest__IdleUpdate(self);
+
+    gGameState.m_PlayerState.m_LockPickers = previous;
 }

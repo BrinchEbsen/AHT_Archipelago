@@ -456,7 +456,8 @@
             "./src/ap_objectives.c",
             "./src/elevator_hooks.c",
             "./src/se/playerstate.c",
-            "./src/ap_deathlink.c"
+            "./src/ap_deathlink.c",
+            "./src/ap_keyring.c"
           ],
           "memory_address": "80296618",
           "size": "7500",
