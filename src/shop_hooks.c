@@ -87,7 +87,6 @@ int GUI_ShopItem__IsAvailable_PreCallHook(GUI_ShopItem* self, Bool Buy)
                 return 2;
             }
         }
-        return 0;
     }
 
     return GUI_ShopItem__IsAvailable(self, Buy);
