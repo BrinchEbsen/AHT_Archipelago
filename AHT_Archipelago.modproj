@@ -325,15 +325,50 @@
         {
           "name": "EXGeoViewerWnd_Overwrite",
           "code_files": [
-            "./src/main.c",
-            "./asm/syscalls.s",
+            "./src/ex/exvector.c",
+            "./src/ex/runtimeclass.c",
+            "./src/se/gamestate.c",
+            "./src/se/playerstate.c",
+            "./src/ap_collectables.c",
+            "./src/ap_deathlink.c",
             "./src/ap_handler.c",
-            "./src/pad.c"
+            "./src/ap_keyring.c",
+            "./src/ap_objectives.c",
+            "./src/ap_pausemenu.c",
+            "./src/arena.c",
+            "./src/BASIC_hooks.c",
+            "./src/breath_hooks.c",
+            "./src/charge_hooks.c",
+            "./src/collectable_hooks.c",
+            "./src/cutscene_skip.c",
+            "./src/elevator_hooks.c",
+            "./src/file_select_hooks.c",
+            "./src/gate_hooks.c",
+            "./src/glide_hooks.c",
+            "./src/lg_door_hooks.c",
+            "./src/main.c",
+            "./src/pad.c",
+            "./src/paneldraw.c",
+            "./src/shop_hooks.c",
+            "./src/swim_hooks.c"
           ],
           "memory_address": "00351670",
           "size": "6fa8",
           "injection_file": "SLUS_208.84",
           "injection_file_address": "0x252670",
+          "auto_calculate_injection_file_address": true,
+          "injection_type": "existing_file",
+          "enabled": true
+        },
+        {
+          "name": "SE_GameState_Storage",
+          "code_files": [
+            "./src/ap_settings.c"
+          ],
+          "memory_address": "504188",
+          "size": "2000",
+          "injection_file": "SLUS_208.84",
+          "injection_file_address": "0x404EC4",
           "auto_calculate_injection_file_address": true,
           "injection_type": "existing_file",
           "enabled": true
