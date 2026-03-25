@@ -362,7 +362,8 @@
             "./src/pad.c",
             "./src/paneldraw.c",
             "./src/shop_hooks.c",
-            "./src/swim_hooks.c"
+            "./src/swim_hooks.c",
+            "./asm/syscalls.s"
           ],
           "memory_address": "A2500",
           "size": "5DAFF",
