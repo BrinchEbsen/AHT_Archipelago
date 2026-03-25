@@ -3,12 +3,12 @@ EXBaseGamePad__m_pGamePad = 0x4fb894;
 g_PadNum = 0x4fae0c;
 
 /* sfx.h */
-/* PlaySFX = 0x8024bc58; */
-/* PlaySFX_Item = 0x8024bd00; */
+PlaySFX = 0x287918;
+PlaySFX_Item = 0x2879b8;
 
 /* loop.h */
-/* SE_Loop__virtual_table = 0x80447330; */
-/* SE_Loop__CreateObject = 0x8022f524; */
+SE_Loop__virtual_table = 0x448148;
+SE_Loop__CreateObject = 0x103898;
 /* SE_Loop__DrawStateRunning = 0x80243a90; */
 /* SE_Loop__ChildListDraw = 0x80230098; */
 /* SE_Loop__Cue = 0x80230664; */

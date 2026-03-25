@@ -18,9 +18,17 @@ typedef signed int              s32, int32_t;
 typedef signed char             Bool;
 typedef unsigned int            EXHashCode;
 
+#ifdef PS2_NTSC
+struct __vtbl_ptr_type {
+    short int __delta;
+    short int __index;
+    void *__pfn;
+};
+#else
 struct __vtbl_ptr_type {
     void *__pfn;
 };
+#endif
 
 // ==================== Helper Macros ====================
 
