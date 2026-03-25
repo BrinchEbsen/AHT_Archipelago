@@ -346,7 +346,6 @@
             "./src/gate_hooks.c",
             "./src/glide_hooks.c",
             "./src/lg_door_hooks.c",
-            "./src/main.c",
             "./src/pad.c",
             "./src/paneldraw.c",
             "./src/shop_hooks.c",
@@ -374,20 +373,7 @@
           "enabled": true
         }
       ],
-      "hooks": [
-        {
-          "name": "AutoHook_PS2_NTSC",
-          "code_files": [
-            "./asm/AutoHook_PS2_NTSC.s"
-          ],
-          "memory_address": "411BE0",
-          "size": "0",
-          "injection_file": "SLUS_208.84",
-          "injection_file_address": "312BE0",
-          "auto_calculate_injection_file_address": true,
-          "enabled": true
-        }
-      ],
+      "hooks": [],
       "binary_patches": [],
       "multi_patches": []
     },
@@ -468,7 +454,6 @@
           "name": "EXGeoViewerWnd_Overwrite",
           "code_files": [
             "./src/ap_handler.c",
-            "./src/main.c",
             "./src/pad.c",
             "./src/ex/exvector.c",
             "./src/ex/runtimeclass.c",

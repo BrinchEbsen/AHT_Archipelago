@@ -1,6 +1,3 @@
-/* syscalls.h */
-_sceSifSendCmd = 0x411A80;
-
 /* pad.h */
 EXBaseGamePad__m_pGamePad = 0x4fb894;
 g_PadNum = 0x4fae0c;
