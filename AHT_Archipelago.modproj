@@ -793,18 +793,6 @@
           "enabled": true
         },
         {
-          "name": "disable_double_gem_timer.s",
-          "code_files": [
-            "./asm/GC_NTSC/disable_double_gem_timer.s"
-          ],
-          "memory_address": "80068c78",
-          "size": "0",
-          "injection_file": "Start.dol",
-          "injection_file_address": "0x65C78",
-          "auto_calculate_injection_file_address": true,
-          "enabled": false
-        },
-        {
           "name": "XSEItemHandler_Base__BASIC_Update_ReImplHook",
           "code_files": [
             "./asm/GC_NTSC/XSEItemHandler_Base__BASIC_Update_ReImplHook.s"
