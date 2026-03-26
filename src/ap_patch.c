@@ -13,7 +13,7 @@ APSettings g_patch_ap_settings = {
     .num_water_ammo_received = 0,
     .num_ice_ammo_received = 0,
     .deathlink_ingoing = AP_DEATHLINK_MODE_NONE,
-    .deathlink_outgoing = false,
+    .deathlink_outgoing = AP_DEATHLINK_REASON_NONE,
     .infinite_butterfly_jar = false,
     .randomize_shop = false,
     .use_key_rings = false,
@@ -54,6 +54,15 @@ APSettings g_patch_ap_settings = {
         20,
         95,
         45
+    },
+    .invincibility_cost = 24,
+    .supercharge_cost = 40,
+
+    .boss_easy_mode = {
+        false,
+        false,
+        false,
+        false
     },
 
     // SHOP ITEMS

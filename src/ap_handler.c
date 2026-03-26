@@ -354,7 +354,7 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("u8 num_water_ammo_received: %x\n", &psettings->num_water_ammo_received);
     PRINTF("u8 num_ice_ammo_received: %x\n", &psettings->num_ice_ammo_received);
     PRINTF("u8 deathlink_ingoing: %x\n", &psettings->deathlink_ingoing);
-    PRINTF("bool deathlink_outgoing: %x\n", &psettings->deathlink_outgoing);
+    PRINTF("u8 deathlink_outgoing: %x\n", &psettings->deathlink_outgoing);
     PRINTF("bool infinite_butterfly_jar: %x\n", &psettings->infinite_butterfly_jar);
     PRINTF("bool randomize_shop: %x\n", &psettings->randomize_shop);
     PRINTF("bool use_key_rings: %x\n", &psettings->use_key_rings);
@@ -368,6 +368,9 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("u32 init: %x\n", &psettings->init);
     PRINTF("u8[4] boss_costs: %x\n", &psettings->boss_costs);
     PRINTF("u8[4] lg_door_costs: %x\n", &psettings->lg_door_costs);
+    PRINTF("u8 invincibility_cost: %x\n", &psettings->invincibility_cost);
+    PRINTF("u8 supercharge_cost: %x\n", &psettings->supercharge_cost);
+    PRINTF("bool[4] boss_easy_mode: %x\n", &psettings->boss_easy_mode);
     PRINTF("int xls_shop_sheetcount_ALWAYS_1: %x\n", &psettings->xls_shop_sheetcount_ALWAYS_1);
     PRINTF("int xls_shop_sheet_offset_ALWAYS_4: %x\n", &psettings->xls_shop_sheet_offset_ALWAYS_4);
     PRINTF("int xls_shop_rowcount: %x\n", &psettings->xls_shop_rowcount);
@@ -392,7 +395,7 @@ int XSEItemHandler_Player__InitialiseStart_PreCallHook(void* self)
 
 void Player_urghhhImDead_PostHook()
 {
-    ap_handle_deathlink_outgoing();
+    ap_handle_deathlink_outgoing(AP_DEATHLINK_REASON_DEFAULT);
 
     if (AP_GAMESTATE_SHOP_IS_RANDOMIZED)
     {
@@ -407,14 +410,14 @@ void Player_urghhhImDead_PostHook()
 
 s32 SE_GameLoop__StartGameState_PreCallHook_BallGadgetDeath(SE_GameLoop *self, SE_GameState *pGS)
 {
-    ap_handle_deathlink_outgoing();
+    ap_handle_deathlink_outgoing(AP_DEATHLINK_REASON_DEFAULT);
 
     return SE_GameLoop__StartGameState(self, pGS);
 }
 
 void SEMap_MiniGame__SetMiniGameDie_PreCallHook_SparxDeath(SE_Map* self)
 {
-    ap_handle_deathlink_outgoing();
+    ap_handle_deathlink_outgoing(AP_DEATHLINK_REASON_DEFAULT);
 
     SEMap_MiniGame__SetMiniGameDie(self);
 }
@@ -428,7 +431,7 @@ void SEMap_MiniGame__SetMiniGameFailed_PostHook()
         case HT_File_MR2_Spy:
         case HT_File_MR3_Spy:
         case HT_File_MR4_Spy:
-            ap_handle_deathlink_outgoing();
+            ap_handle_deathlink_outgoing(AP_DEATHLINK_REASON_DEFAULT);
             break;
     }
 }

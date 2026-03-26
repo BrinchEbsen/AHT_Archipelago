@@ -17,6 +17,9 @@
 #define AP_DEATHLINK_MODE_SHIELDED  1
 #define AP_DEATHLINK_MODE_FULL      2
 
+#define AP_DEATHLINK_REASON_NONE    0
+#define AP_DEATHLINK_REASON_DEFAULT 1
+
 typedef struct APSettings_TextEntry
 {
     /* 0x0 */ bool been_bought;
@@ -34,7 +37,7 @@ typedef struct APSettings {
     u8 num_water_ammo_received;
     u8 num_ice_ammo_received;
     u8 deathlink_ingoing;
-    bool deathlink_outgoing;
+    u8 deathlink_outgoing;
     bool infinite_butterfly_jar;
     bool randomize_shop;
     bool use_key_rings;
@@ -54,6 +57,9 @@ typedef struct APSettings {
 
     u8 boss_costs[4];
     u8 lg_door_costs[4];
+    u8 invincibility_cost;
+    u8 supercharge_cost;
+    bool boss_easy_mode[4];
 
     // Number of datasheets in this spreadsheet.
     // GUI_Shop only has 1 datasheet.

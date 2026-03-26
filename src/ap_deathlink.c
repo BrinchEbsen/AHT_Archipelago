@@ -134,12 +134,12 @@ DeathLinkResult try_kill_player(bool shielded)
     }
 }
 
-void ap_handle_deathlink_outgoing()
+void ap_handle_deathlink_outgoing(u8 reason)
 {
     if (deathlink_ignore_next_death) {
         deathlink_ignore_next_death = false;
     } else {
-        g_gamestate_ap_settings.deathlink_outgoing = true;
+        g_gamestate_ap_settings.deathlink_outgoing = reason;
     }
 }
 
