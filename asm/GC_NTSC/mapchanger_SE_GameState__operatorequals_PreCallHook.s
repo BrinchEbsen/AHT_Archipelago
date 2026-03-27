@@ -1,0 +1,1 @@
+bl mapchanger_SE_GameState__operatorequals_PreCallHook

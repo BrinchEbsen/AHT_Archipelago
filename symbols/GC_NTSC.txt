@@ -22,6 +22,7 @@ SE_Loop__AddDrawToXWnd = 0x80230068;
 /* gameloop.h */
 SE_GameLoop__GoToMap = 0x8023e644;
 SE_GameLoop__StartGameState = 0x80240330;
+SE_GameLoop__CueGameState = 0x802402d8;
 gGameLoop = 0x8046f2f0;
 
 /* gameflow.h */
@@ -82,6 +83,7 @@ SEMap_MiniGame__SetMiniGameFailed = 0x80201d44;
 GetSpyroMap = 0x80232df0;
 gMapList = 0x8046ee54;
 SE_MapList__m_gNumMaps = 0x804cb608;
+start_map_index = 0x8045AB00;
 
 /* player.h */
 gpPlayer = 0x804CB35C;
@@ -98,6 +100,7 @@ XItemHandler_Cutscene__Update = 0x80107364;
 
 /* gamestate.h */
 gGameState = 0x80463b38;
+SE_GameState__operatorequals = 0x803883ec;
 PlayerObjectives__ObjectiveIntoIndexAndBit = 0x800665e4;
 
 /* playerstate.h */

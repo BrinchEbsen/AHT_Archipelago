@@ -20,6 +20,8 @@ s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd);
 extern s32 GUI_PauseMenu__v_StateRunning(GUI_Base* self);
 s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self);
 
+bool do_pause_menu_controls();
+
 void draw_teleport_menu(GUI_Base* self, void* pWnd);
 
 void draw_pause_stats(GUI_Base* self, void* pWnd);

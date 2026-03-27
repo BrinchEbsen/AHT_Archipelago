@@ -83,6 +83,7 @@ _Static_assert(sizeof(SE_GameLoop) == 0xA4);
 extern s32 SE_GameLoop__GoToMap(
     SE_GameLoop* this, EXHashCode GeoCode, EXHashCode StartPointCode, EXHashCode MapCode);
 extern s32 SE_GameLoop__StartGameState(SE_GameLoop* self, SE_GameState* pGS);
+extern s32 SE_GameLoop__CueGameState(SE_GameLoop* self, SE_GameState *pGS);
 
 extern SE_GameLoop gGameLoop;
 

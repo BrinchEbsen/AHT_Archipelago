@@ -21,9 +21,15 @@ APSettings g_patch_ap_settings = {
     #ifdef AP_QUICK_START
     .skip_cutscene_button = true,
     .allow_teleport_to_hub = true,
-    .allow_immediate_realm_access = true,
     .disable_popups = true,
     .instant_elevators = true,
+    .starting_realm = 0,
+    .realm_access = {
+        true,
+        true,
+        true,
+        true
+    },
 
     .patch_been_written_to = true,
 
@@ -31,9 +37,15 @@ APSettings g_patch_ap_settings = {
     #else
     .skip_cutscene_button = false,
     .allow_teleport_to_hub = false,
-    .allow_immediate_realm_access = false,
     .disable_popups = false,
     .instant_elevators = false,
+    .starting_realm = 0,
+    .realm_access = {
+        false,
+        false,
+        false,
+        false
+    },
 
     .patch_been_written_to = false,
 

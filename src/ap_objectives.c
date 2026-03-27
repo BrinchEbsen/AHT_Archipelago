@@ -33,6 +33,10 @@ EXHashCode new_game_objectives[] = {
     // Remote shop pad intro
     HT_Objective_1A_DoneHoloMBChat,
 
+    // Post Gnasty cutscene
+    HT_Objective_R1_TeleporterCutscene,
+    HT_Objective_R1A_MetProf_AfterGnasty,
+
     // Pop-ups
     HT_Objective_PopUp_1AChSwitch,
     HT_Objective_PopUP_1AHDSwitch,

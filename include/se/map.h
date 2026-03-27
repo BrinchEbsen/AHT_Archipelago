@@ -204,5 +204,6 @@ typedef struct SE_MapList {
 
 extern SE_MapList gMapList;
 extern int SE_MapList__m_gNumMaps;
+extern int start_map_index;
 
 #endif /* MAP_H */

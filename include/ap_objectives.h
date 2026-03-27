@@ -2,7 +2,7 @@
 #define AP_OBJECTIVES
 #include <types.h>
 
-#define NUM_NEW_GAME_OBJECTIVES 122
+#define NUM_NEW_GAME_OBJECTIVES 124
 extern EXHashCode new_game_objectives[];
 
 #endif /* AP_OBJECTIVES */

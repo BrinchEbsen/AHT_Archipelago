@@ -36,11 +36,18 @@
 #pragma message ( "COMPILING WITH AP_DEBUG_DEATHLINK, DO NOT RELEASE" )
 #endif
 
-#define NUM_REALM_TELEPORTER_MAPORDERINFO 3
 MapOrderInfo realm_teleporter_maporderinfo[] = {
+    { .m_FileHash = HT_File_Realm1A,    .m_MapHash = 0xFFFFFFFF },
     { .m_FileHash = HT_File_Realm2A,    .m_MapHash = 0xFFFFFFFF },
     { .m_FileHash = HT_File_Realm3A,    .m_MapHash = 0xFFFFFFFF },
     { .m_FileHash = HT_File_Realm4A,    .m_MapHash = 0xFFFFFFFF }
+};
+
+s32 realm_hub_map_indexes[] = {
+    24, // Dragon Village
+    45, // Coastal Remains
+    31, // Frostbite Village
+    44  // Stormy Beach
 };
 
 bool replenish_butterfly_jar = false;
@@ -62,8 +69,8 @@ void ap_update()
 
 void ap_gamestate_update()
 {
-    if (g_gamestate_ap_settings.init != AP_SETTINGS_INIT_MAGICVALUE) {
-        ap_init_gamestate();
+    if (!ap_gamestate_is_initialized()) {
+        return;
     }
 
     if (AP_GAMESTATE_SHOP_IS_RANDOMIZED)
@@ -90,6 +97,10 @@ void ap_gamestate_update()
         gGameState.m_PlayerState.m_LockPickers = 0;
         gGameState.m_PlayerState.m_LockPickers_Max = 0;
     }
+    
+    ap_deathlink_update();
+
+    ap_update_realm_access();
 
     #ifdef AP_DEBUG_DEATHLINK
     if (g_pad_button_state(PAD_BUTTON_B)) {
@@ -107,8 +118,6 @@ void ap_gamestate_update()
         }
     }
     #endif
-
-    ap_deathlink_update();
 
     #ifdef AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
     if (g_pad_button_state(PAD_BUTTON_B)) {
@@ -218,9 +227,10 @@ void ap_draw_cost_text(void* pWnd, CostTextType type, int amt)
 
 void ap_init_gamestate()
 {
-    memcpy(&g_gamestate_ap_settings, &g_patch_ap_settings, sizeof(APSettings));
+    PRINTF("Initializing gamestate...\n");
 
-    g_gamestate_ap_settings.init = AP_SETTINGS_INIT_MAGICVALUE;
+    memcpy(&g_gamestate_ap_settings, &g_patch_ap_settings, sizeof(APSettings));
+    PRINTF("Copied settings from injected patch.\n");
 
     #ifdef AP_QUICK_START
     gGameState.m_PlayerState.m_AbilityFlags |= (
@@ -230,36 +240,71 @@ void ap_init_gamestate()
         ABILITY_AP_SWIM |
         ABILITY_DOUBLE_JUMP
     );
+    PRINTF("DEBUG QUICK START!\n");
     #endif
 
-    if (g_gamestate_ap_settings.allow_immediate_realm_access) {
-        for (int i = 0; i < NUM_REALM_TELEPORTER_MAPORDERINFO; i++) {
-            MiniMapStatus__SetBitName(
-                &gMiniMapStatus, &realm_teleporter_maporderinfo[i], Selectable);
-        }
+    if (g_gamestate_ap_settings.starting_realm > 3) {
+        PRINTF("Invalid starting realm %d, defaulting to 0 (Dragon Village).\n",
+            g_gamestate_ap_settings.starting_realm);
+
+        g_gamestate_ap_settings.starting_realm = 0;
     }
+
+    gGameState.m_StartMapIndex = realm_hub_map_indexes[g_gamestate_ap_settings.starting_realm];
+    PRINTF("Set starting map index to %d\n", gGameState.m_StartMapIndex);
+
+    MiniMapStatus__SetBitName(
+        &gMiniMapStatus,
+        &realm_teleporter_maporderinfo[g_gamestate_ap_settings.starting_realm],
+        Selectable);
 
     // Set starting game objectives
     for (int i = 0; i < NUM_NEW_GAME_OBJECTIVES; i++) {
         PlayerObjectives__SetObjective__ReImplHook(
             &gGameState.m_PlayerObjectives, new_game_objectives[i]);
     }
+    PRINTF("Set %d objectives.\n", NUM_NEW_GAME_OBJECTIVES);
 
     // Set objective flag for having bought a lock pick
     gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BOUGHT_LOCK_PICK;
 
+    ap_set_gamestate_initialized();
+
     PRINTF("Gamestate initialized!\n");
+}
+
+void ap_update_realm_access()
+{
+    for (int i = 0; i < 4; i++) {
+        if (g_gamestate_ap_settings.realm_access[i]) {
+            MiniMapStatus__SetBitName(
+                &gMiniMapStatus,
+                &realm_teleporter_maporderinfo[i],
+                Selectable);
+        }
+    }
+}
+
+SE_GameState* mapchanger_SE_GameState__operatorequals_PreCallHook(SE_GameState* self, SE_GameState* _ctor_arg)
+{
+    // This function copies the save file's gamestate into the current gamestate before the game starts up.
+    // We initialize whatever we need to in here.
+
+    SE_GameState* ret = SE_GameState__operatorequals(self, _ctor_arg);
+
+    if (g_patch_ap_settings.patch_been_written_to && !ap_gamestate_is_initialized()) {
+        ap_init_gamestate();
+    }
+
+    return ret;
 }
 
 bool TeleportPad_PlayerObjectives__GetObjective_PreCallHook(
     PlayerObjectives* self, EXHashCode hashcode, s32* result)
 {
-    if (g_gamestate_ap_settings.allow_immediate_realm_access) {
-        *result = 1;
-        return true;
-    }
-
-    return PlayerObjectives__GetObjective__ReImplHook(self, hashcode, result);
+    // Realm teleporter is now always active
+    *result = 1;
+    return true;
 }
 
 void ap_set_grabbable(u16 map_index, u16 trigger_index)
@@ -360,9 +405,10 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("bool use_key_rings: %x\n", &psettings->use_key_rings);
     PRINTF("bool skip_cutscene_button: %x\n", &psettings->skip_cutscene_button);
     PRINTF("bool allow_teleport_to_hub: %x\n", &psettings->allow_teleport_to_hub);
-    PRINTF("bool allow_immediate_realm_access: %x\n", &psettings->allow_immediate_realm_access);
     PRINTF("bool disable_popups: %x\n", &psettings->disable_popups);
     PRINTF("bool instant_elevators: %x\n", &psettings->instant_elevators);
+    PRINTF("bool starting_realm: %x\n", &psettings->starting_realm);
+    PRINTF("bool[4] realm_access: %x\n", &psettings->realm_access);
     PRINTF("bool patch_been_written_to: %x\n", &psettings->patch_been_written_to);
     PRINTF("u32 mw_seed: %x\n", &psettings->mw_seed);
     PRINTF("u32 init: %x\n", &psettings->init);

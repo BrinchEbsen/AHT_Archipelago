@@ -16,6 +16,14 @@ extern bool draw_cost_text;
 extern CostTextType cost_text_type;
 extern int cost_text_amt;
 
+static inline bool ap_gamestate_is_initialized() {
+    return g_gamestate_ap_settings.init == AP_SETTINGS_INIT_MAGICVALUE;
+}
+
+static inline void ap_set_gamestate_initialized() {
+    g_gamestate_ap_settings.init = AP_SETTINGS_INIT_MAGICVALUE;
+}
+
 // runs every frame
 void ap_update();
 
@@ -30,6 +38,10 @@ void ap_draw(void* pWnd);
 void ap_draw_cost_text(void* pWnd, CostTextType type, int amt);
 
 void ap_init_gamestate();
+
+void ap_update_realm_access();
+
+SE_GameState* mapchanger_SE_GameState__operatorequals_PreCallHook(SE_GameState* self, SE_GameState* _ctor_arg);
 
 bool TeleportPad_PlayerObjectives__GetObjective_PreCallHook(
     PlayerObjectives* self, EXHashCode hashcode, s32* result);

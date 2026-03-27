@@ -139,46 +139,57 @@ static inline void prev_page()
 
 s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
 {
-    if (g_gamestate_ap_settings.allow_teleport_to_hub) {
-        draw_teleport_menu(self, pWnd);
+    if (do_pause_menu_controls()) {
+        if (g_gamestate_ap_settings.allow_teleport_to_hub) {
+            draw_teleport_menu(self, pWnd);
+        }
+    
+        draw_pause_stats(self, pWnd);
+        draw_notification_toggle(self, pWnd);
+    } else {
+        TEXT_PRINT_ALIGN_COLOR(pWnd, 0, 0, BottomCentre, COLOR_RED, "Archipelago gamestate not initialized!");
     }
-
-    draw_pause_stats(self, pWnd);
-    draw_notification_toggle(self, pWnd);
 
     return GUI_PauseMenu__v_DrawStateRunning(self, pWnd);
 }
 
 s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self)
 {
-    if (g_gamestate_ap_settings.allow_teleport_to_hub) {
-        if (g_pad_button_state(PAD_BUTTON_Y)) {
-            close_timer++;
-
-            if (close_timer >= AP_TELEPORT_CLOSE_TIMER_MAX) {
-                close_pause_menu(self);
-                teleport_to_hub();
+    if (do_pause_menu_controls()) {
+        if (g_gamestate_ap_settings.allow_teleport_to_hub) {
+            if (g_pad_button_state(PAD_BUTTON_Y)) {
+                close_timer++;
+    
+                if (close_timer >= AP_TELEPORT_CLOSE_TIMER_MAX) {
+                    close_pause_menu(self);
+                    teleport_to_hub();
+                }
+            } else {
+                close_timer = 0;
+            }
+        }
+    
+        if (g_pad_button_edge_down(PAD_BUTTON_X)) {
+            show_notifications = !show_notifications;
+        }
+    
+        if (AP_GAMESTATE_USE_KEY_RINGS) {
+            if (g_pad_button_edge_down(PAD_BUTTON_L)) {
+                prev_page();
+            } else if (g_pad_button_edge_down(PAD_BUTTON_R)) {
+                next_page();
             }
         } else {
-            close_timer = 0;
-        }
+            curr_page = PauseMenu_Abilities;
     }
-
-    if (g_pad_button_edge_down(PAD_BUTTON_X)) {
-        show_notifications = !show_notifications;
-    }
-
-    if (AP_GAMESTATE_USE_KEY_RINGS) {
-        if (g_pad_button_edge_down(PAD_BUTTON_L)) {
-            prev_page();
-        } else if (g_pad_button_edge_down(PAD_BUTTON_R)) {
-            next_page();
-        }
-    } else {
-        curr_page = PauseMenu_Abilities;
     }
 
     return GUI_PauseMenu__v_StateRunning(self);
+}
+
+bool do_pause_menu_controls()
+{
+    return g_gamestate_ap_settings.init == AP_SETTINGS_INIT_MAGICVALUE;
 }
 
 void draw_teleport_menu(GUI_Base* self, void* pWnd)

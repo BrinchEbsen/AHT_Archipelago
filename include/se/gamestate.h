@@ -88,4 +88,6 @@ _Static_assert(sizeof(SE_GameState) == 0xb270);
 
 extern SE_GameState gGameState;
 
+extern SE_GameState* SE_GameState__operatorequals(SE_GameState* self, SE_GameState* _ctor_arg);
+
 #endif /* GAMESTATE_H */
