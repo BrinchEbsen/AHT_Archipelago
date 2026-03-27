@@ -292,8 +292,16 @@ SE_GameState* mapchanger_SE_GameState__operatorequals_PreCallHook(SE_GameState* 
 
     SE_GameState* ret = SE_GameState__operatorequals(self, _ctor_arg);
 
-    if (g_patch_ap_settings.patch_been_written_to && !ap_gamestate_is_initialized()) {
-        ap_init_gamestate();
+    PRINTF("--- AP STARTING SAVE ---\n");
+
+    if (g_patch_ap_settings.patch_been_written_to) {
+        if (ap_gamestate_is_initialized()) {
+            PRINTF("Save's gamestate already initialized. Continuing existing AP save.\n");
+        } else {
+            ap_init_gamestate();
+        }
+    } else {
+        PRINTF("Cannot initialize gamestate! Patch not written by client.\n");
     }
 
     return ret;
