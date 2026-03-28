@@ -1,6 +1,6 @@
 #include <gamestate.h>
 #include <hashcodes.h>
-#include <ap_handler.h>
+#include <ap_collectables.h>
 #include <ap_settings.h>
 #include <system.h>
 

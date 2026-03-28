@@ -46,12 +46,6 @@ SE_GameState* mapchanger_SE_GameState__operatorequals_PreCallHook(SE_GameState* 
 bool TeleportPad_PlayerObjectives__GetObjective_PreCallHook(
     PlayerObjectives* self, EXHashCode hashcode, s32* result);
 
-void ap_set_grabbable(u16 map_index, u16 trigger_index);
-
-void ap_set_objective(EXHashCode objective);
-
-void ap_set_location(int index);
-
 // int ap_binary_search_grabbable(u16 map_index, u16 trigger_index);
 
 void print_interface_addresses();

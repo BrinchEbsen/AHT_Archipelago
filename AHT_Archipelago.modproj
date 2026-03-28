@@ -485,7 +485,6 @@
             "./src/ex/exvector.c",
             "./src/ex/runtimeclass.c",
             "./src/se/gamestate.c",
-            "./src/ap_collectables.c",
             "./src/breath_hooks.c",
             "./src/collectable_hooks.c",
             "./src/glide_hooks.c",
@@ -504,7 +503,8 @@
             "./src/elevator_hooks.c",
             "./src/se/playerstate.c",
             "./src/ap_deathlink.c",
-            "./src/ap_keyring.c"
+            "./src/ap_keyring.c",
+            "./src/ap_minimap.c"
           ],
           "memory_address": "80296618",
           "size": "7500",
@@ -549,6 +549,19 @@
           "size": "8CC",
           "injection_file": "Start.dol",
           "injection_file_address": "0x29AB18",
+          "auto_calculate_injection_file_address": true,
+          "injection_type": "existing_file",
+          "enabled": true
+        },
+        {
+          "name": "Shark_Overwrite",
+          "code_files": [
+            "./src/ap_collectables.c"
+          ],
+          "memory_address": "801858c0",
+          "size": "1D64",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x1828C0",
           "auto_calculate_injection_file_address": true,
           "injection_type": "existing_file",
           "enabled": true
@@ -960,6 +973,18 @@
           "size": "0",
           "injection_file": "Start.dol",
           "injection_file_address": "0x23BF88",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "GUI_MiniMap__DrawRestarts__PreCallHOOK",
+          "code_files": [
+            "./asm/GC_NTSC/GUI_MiniMap__DrawRestarts__PreCallHOOK.s"
+          ],
+          "memory_address": "801ad85c",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x1AA85C",
           "auto_calculate_injection_file_address": true,
           "enabled": true
         }

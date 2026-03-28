@@ -32,6 +32,8 @@ void draw_stats_keyrings(GUI_Base* self, void* pWnd, u16 x, u16 y, u16 spacing, 
 
 void draw_notification_toggle(GUI_Base* self, void* pWnd);
 
+void draw_map_icon_toggle(GUI_Base* self, void* pWnd);
+
 void close_pause_menu(GUI_Base* self);
 
 void teleport_to_hub();

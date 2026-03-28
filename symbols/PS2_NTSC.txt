@@ -44,6 +44,11 @@ SE_Loop__CreateObject = 0x103898;
 /* XSEItemHandler_BallGadget__TakeDamage = 0x80008df4; */
 /* XSEItemHandler_Player__InvulnerableToAttack = 0x8005a95c; */
 
+/* ap_minimap.h */
+/* GUI_MiniMap__DrawRestarts = 0x801ad220; */
+/* GUI_MiniMap__DrawIcon = 0x801ac858; */
+/* EXGeoHeader__Texture = 0x8028f630; */
+
 /* exdisplay.h */
 /* EXBaseDisplay__m_pDisplay = 0x804cba84; */
 
@@ -69,6 +74,12 @@ SE_Loop__CreateObject = 0x103898;
 /* EXWnd__DrawTriFan = 0x8031c838; */
 /* EXWnd__DrawTriStrip = 0x8031c7f8; */
 /* EXWnd__SelectTriFanTexture = 0x8031b938; */
+/* EXWnd__SelectSprite2DTexture = 0x8031ceb0; */
+
+/* filemanager.h */
+/* gSEFileManager = 0x804606f8; */
+/* SE_FileManager__IsGeoLoaded = 0x8022db20; */
+/* SE_FileManager__GetGeoHeader = 0x8022db58; */
 
 /* map.h */
 /* SE_Map__GetNumDragonEggs = 0x802328c8; */

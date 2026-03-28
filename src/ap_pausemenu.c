@@ -10,6 +10,7 @@
 #include <ap_settings.h>
 #include <ap_notification.h>
 #include <ap_keyring.h>
+#include <ap_minimap.h>
 
 #define AP_TELEPORT_CLOSE_TIMER_MAX 60
 
@@ -146,6 +147,7 @@ s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
     
         draw_pause_stats(self, pWnd);
         draw_notification_toggle(self, pWnd);
+        draw_map_icon_toggle(self, pWnd);
     } else {
         TEXT_PRINT_ALIGN_COLOR(pWnd, 0, 0, BottomCentre, COLOR_RED, "Archipelago gamestate not initialized!");
     }
@@ -171,6 +173,9 @@ s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self)
     
         if (g_pad_button_edge_down(PAD_BUTTON_X)) {
             show_notifications = !show_notifications;
+        }
+        if (g_pad_button_edge_down(PAD_BUTTON_B)) {
+            g_show_minimap_icons = !g_show_minimap_icons;
         }
     
         if (AP_GAMESTATE_USE_KEY_RINGS) {
@@ -344,7 +349,7 @@ void draw_notification_toggle(GUI_Base* self, void* pWnd)
     EXRect r = {
         .x = 0,
         .y = 0,
-        .w = 250,
+        .w = (WND_WIDTH/2)-2,
         .h = 37
     };
 
@@ -352,6 +357,21 @@ void draw_notification_toggle(GUI_Base* self, void* pWnd)
 
     textprintf(pWnd, 2, 2, 1.0f, TopLeft, COLOR_WHITE, true,
         "~B Show Notifications: %s", show_notifications ? "Yes" : "No");
+}
+
+void draw_map_icon_toggle(GUI_Base* self, void* pWnd)
+{
+    EXRect r = {
+        .x = (WND_WIDTH/2)+2,
+        .y = 0,
+        .w = (WND_WIDTH/2)-2,
+        .h = 37
+    };
+
+    XWnd__DrawRect(pWnd, &r, COLOR_RGBA(0, 0, 0, 0x20));
+
+    textprintf(pWnd, (WND_WIDTH/2)+4, 2, 1.0f, TopLeft, COLOR_WHITE, true,
+        "~Y Show Map Icons: %s", g_show_minimap_icons ? "Yes" : "No");
 }
 
 void close_pause_menu(GUI_Base* self)

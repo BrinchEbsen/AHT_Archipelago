@@ -2,6 +2,47 @@
 #include <ap_settings.h>
 #include <hashcodes.h>
 #include <system.h>
+#include <util.h>
+
+void ap_set_grabbable(u16 map_index, u16 trigger_index)
+{
+    for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
+        APCollectable* coll = &g_ap_collectables[i];
+
+        if (coll->union_type != APC_Grabbable) {
+            continue;
+        }
+
+        if ((coll->grabbable.map_index == map_index) &&
+            (coll->grabbable.trigger_index == trigger_index)) {
+            ap_set_location(i);
+            break;
+        }
+    }
+}
+
+void ap_set_objective(EXHashCode objective)
+{
+    for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
+        APCollectable* coll = &g_ap_collectables[i];
+
+        if (coll->union_type != APC_Objective) {
+            continue;
+        }
+
+        if (coll->objective.objective == objective) {
+            ap_set_location(i);
+            break;
+        }
+    }
+}
+
+void ap_set_location(int index)
+{
+    if (!set_u8_bitfield_value(g_gamestate_ap_settings.location_bitfield, index*2, true)) {
+        PRINTF("[AP] Set location flag index %d\n", index);
+    }
+}
 
 APCollectable g_ap_collectables[] = {
     #pragma region 19 Sunken Ruins
@@ -1492,6 +1533,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 24,
+            .trigger_index = 158,
+            .include_next = true,
             .objective = HT_Objective_MR1_HalfDone,
             .type = DragonEgg
         }
@@ -1499,6 +1543,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 24,
+            .trigger_index = 158,
             .objective = HT_Objective_MR1_AllDone,
             .type = LightGem
         }
@@ -1508,6 +1554,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 23,
+            .trigger_index = 6,
+            .include_next = true,
             .objective = HT_Objective_MR1_Spy_HalfDone,
             .type = DragonEgg
         }
@@ -1515,6 +1564,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 23,
+            .trigger_index = 6,
             .objective = HT_Objective_MiniGame1A_Complete,
             .type = LightGem
         }
@@ -1524,6 +1575,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 23,
+            .trigger_index = 69,
+            .include_next = true,
             .objective = HT_Objective_MR1_Blk_HalfDone,
             .type = DragonEgg
         }
@@ -1531,6 +1585,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 23,
+            .trigger_index = 69,
             .objective = HT_Objective_MR1_Blk_AllDone,
             .type = LightGem
         }
@@ -1540,6 +1596,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 22,
+            .trigger_index = 283,
+            .include_next = true,
             .objective = HT_Objective_MR1_Spx_Egg,
             .type = DragonEgg
         }
@@ -1547,6 +1606,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 22,
+            .trigger_index = 283,
             .objective = HT_Objective_MR1_Spx_AllDone,
             .type = LightGem
         }
@@ -1556,6 +1617,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 45,
+            .trigger_index = 115,
+            .include_next = true,
             .objective = HT_Objective_MR2_Blk_HalfDone,
             .type = DragonEgg
         }
@@ -1563,6 +1627,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 45,
+            .trigger_index = 115,
             .objective = HT_Objective_MR2_Blk_AllDone,
             .type = LightGem
         }
@@ -1572,6 +1638,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 45,
+            .trigger_index = 77,
+            .include_next = true,
             .objective = HT_Objective_MR2_Spy_HalfDone,
             .type = DragonEgg
         }
@@ -1579,6 +1648,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 45,
+            .trigger_index = 77,
             .objective = HT_Objective_MR2_Spy_AllDone,
             .type = LightGem
         }
@@ -1588,6 +1659,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 45,
+            .trigger_index = 150,
             .objective = HT_Objective_OtterNPC_AllDone,
             .type = LightGem
         }
@@ -1597,6 +1670,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 19,
+            .trigger_index = 65,
+            .include_next = true,
             .objective = HT_Objective_MR2_Spx_HalfDone,
             .type = DragonEgg
         }
@@ -1604,6 +1680,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 19,
+            .trigger_index = 65,
             .objective = HT_Objective_MR2_Spx_AllDone,
             .type = LightGem
         }
@@ -1613,6 +1691,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 20,
+            .trigger_index = 81,
+            .include_next = true,
             .objective = HT_Objective_MR2_Sgt_HalfDone,
             .type = DragonEgg
         }
@@ -1620,6 +1701,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 20,
+            .trigger_index = 81,
             .objective = HT_Objective_MR2_Sgt_AllDone,
             .type = LightGem
         }
@@ -1629,6 +1712,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 31,
+            .trigger_index = 244,
+            .include_next = true,
             .objective = HT_Objective_MR3_Blk_HalfDone,
             .type = DragonEgg
         }
@@ -1636,6 +1722,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 31,
+            .trigger_index = 244,
             .objective = HT_Objective_MR3_Blk_AllDone,
             .type = LightGem
         }
@@ -1645,6 +1733,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 31,
+            .trigger_index = 242,
+            .include_next = true,
             .objective = HT_Objective_MR3_Spy_HalfDone,
             .type = DragonEgg
         }
@@ -1652,6 +1743,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 31,
+            .trigger_index = 242,
             .objective = HT_Objective_MR3_Spy_AllDone,
             .type = LightGem
         }
@@ -1661,6 +1754,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 35,
+            .trigger_index = 128,
+            .include_next = true,
             .objective = HT_Objective_MR3_Spx_HalfDone,
             .type = DragonEgg
         }
@@ -1668,6 +1764,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 35,
+            .trigger_index = 128,
             .objective = HT_Objective_MR3_Spx_AllDone,
             .type = LightGem
         }
@@ -1677,6 +1775,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 35,
+            .trigger_index = 88,
             .objective = HT_Objective_3B_BentleyHasRewarded,
             .type = LightGem
         }
@@ -1686,6 +1786,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 33,
+            .trigger_index = 48,
+            .include_next = true,
             .objective = HT_Objective_MR3_Sgt_HalfDone,
             .type = DragonEgg
         }
@@ -1693,6 +1796,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 33,
+            .trigger_index = 48,
             .objective = HT_Objective_MR3_Sgt_AllDone,
             .type = LightGem
         }
@@ -1702,6 +1807,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 33,
+            .trigger_index = 97,
             .objective = HT_Objective_3C_LitBoiler_1,
             .type = LightGem
         }
@@ -1711,6 +1818,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 33,
+            .trigger_index = 99,
             .objective = HT_Objective_3C_LitBoiler_3,
             .type = LightGem
         }
@@ -1720,6 +1829,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 33,
+            .trigger_index = 101,
             .objective = HT_Objective_3C_LitBoiler_5,
             .type = LightGem
         }
@@ -1729,6 +1840,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 33,
+            .trigger_index = 47,
             .objective = HT_Objective_3C_IcePrincessHasRewarded,
             .type = LightGem
         }
@@ -1738,6 +1851,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 44,
+            .trigger_index = 8,
+            .include_next = true,
             .objective = HT_Objective_MR4_Spy_HalfDone,
             .type = DragonEgg
         }
@@ -1745,6 +1861,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 44,
+            .trigger_index = 8,
             .objective = HT_Objective_MR4_Spy_AllDone,
             .type = LightGem
         }
@@ -1754,6 +1872,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 60,
+            .trigger_index = 94,
+            .include_next = true,
             .objective = HT_Objective_MR4_Sgt_HalfDone,
             .type = DragonEgg
         }
@@ -1761,6 +1882,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 60,
+            .trigger_index = 94,
             .objective = HT_Objective_MR4_Sgt_AllDone,
             .type = LightGem
         }
@@ -1770,6 +1893,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 60,
+            .trigger_index = 93,
             .objective = HT_Objective_TeenaHasRewarded,
             .type = DragonEgg
         }
@@ -1779,6 +1904,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 63,
+            .trigger_index = 12,
+            .include_next = true,
             .objective = HT_Objective_MR4_Spx_HalfDone,
             .type = DragonEgg
         }
@@ -1786,6 +1914,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 63,
+            .trigger_index = 12,
             .objective = HT_Objective_MR4_Spx_AllDone,
             .type = LightGem
         }
@@ -1795,6 +1925,9 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 30,
+            .trigger_index = 154,
+            .include_next = true,
             .objective = HT_Objective_MR4_Blk_HalfDone,
             .type = DragonEgg
         }
@@ -1802,6 +1935,8 @@ APCollectable g_ap_collectables[] = {
     {
         .union_type = APC_Objective,
         .objective = {
+            .map_index = 30,
+            .trigger_index = 154,
             .objective = HT_Objective_MR4_Blk_AllDone,
             .type = LightGem
         }

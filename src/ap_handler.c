@@ -311,46 +311,6 @@ bool TeleportPad_PlayerObjectives__GetObjective_PreCallHook(
     return true;
 }
 
-void ap_set_grabbable(u16 map_index, u16 trigger_index)
-{
-    for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
-        APCollectable* coll = &g_ap_collectables[i];
-
-        if (coll->union_type != APC_Grabbable) {
-            continue;
-        }
-
-        if ((coll->grabbable.map_index == map_index) &&
-            (coll->grabbable.trigger_index == trigger_index)) {
-            ap_set_location(i);
-            break;
-        }
-    }
-}
-
-void ap_set_objective(EXHashCode objective)
-{
-    for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
-        APCollectable* coll = &g_ap_collectables[i];
-
-        if (coll->union_type != APC_Objective) {
-            continue;
-        }
-
-        if (coll->objective.objective == objective) {
-            ap_set_location(i);
-            break;
-        }
-    }
-}
-
-void ap_set_location(int index)
-{
-    if (!set_u8_bitfield_value(g_gamestate_ap_settings.location_bitfield, index, true)) {
-        PRINTF("[AP] Set location flag index %d\n", index);
-    }
-}
-
 /*
 int ap_binary_search_grabbable(u16 map_index, u16 trigger_index)
 {

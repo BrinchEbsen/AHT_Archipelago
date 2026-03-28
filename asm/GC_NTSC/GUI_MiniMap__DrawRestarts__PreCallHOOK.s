@@ -1,0 +1,1 @@
+bl GUI_MiniMap__DrawRestarts__PreCallHOOK

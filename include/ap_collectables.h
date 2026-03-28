@@ -28,7 +28,11 @@ typedef struct APCollectable_Grabbable
 
 typedef struct APCollectable_Objective
 {
+    u16 trigger_index;
+    u16 map_index;
     EXHashCode objective;
+    // This objective stems from the same trigger/NPC as the next one
+    bool include_next;
     APCollectable_Type type;
 } APCollectable_Objective;
 
@@ -42,6 +46,12 @@ typedef struct APCollectable
 } APCollectable;
 
 #define AP_COLLECTABLES_TOTAL 241
+
+void ap_set_grabbable(u16 map_index, u16 trigger_index);
+
+void ap_set_objective(EXHashCode objective);
+
+void ap_set_location(int index);
 
 extern APCollectable g_ap_collectables[];
 

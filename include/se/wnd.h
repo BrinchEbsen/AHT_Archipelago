@@ -127,6 +127,8 @@ extern void EXWnd__DrawTriFan(void* self, uint nVerts, EXPrimVert* pVert);
 extern void EXWnd__DrawTriStrip(void* self, uint nVerts, EXPrimVert* pVert);
 extern void EXWnd__SelectTriFanTexture(void* self, void* pTexture);
 
+extern void EXWnd__SelectSprite2DTexture(void* self, void* pTexture, Bool Filter, Bool Wrap);
+
 #define XWND_FONT_COLOR(pWnd) OFFSET_PTR(RGBA, pWnd, 0x80)
 #define XWND_TEXT_SCALE(pWnd) OFFSET_PTR(float, pWnd, 0x2D8)
 #define XWND_TEXT_RECT(pWnd) OFFSET_PTR(EXRect, pWnd, 0x2DC)
