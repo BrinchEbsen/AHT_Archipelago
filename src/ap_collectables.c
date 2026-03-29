@@ -2124,4 +2124,90 @@ APCollectable g_ap_collectables[] = {
         }
     },
     #pragma endregion
+    
+    #pragma region Dragon Elders
+    // Elder Tomas
+    {
+        .union_type = APC_Objective,
+        .objective = {
+            .map_index = 24,
+            .trigger_index = 11,
+            .objective = HT_Objective_GivenDoubleJump,
+            .type = NonCollectable
+        }
+    },
+    // Elder Magnus
+    {
+        .union_type = APC_Objective,
+        .objective = {
+            .map_index = 23,
+            .trigger_index = 71,
+            .objective = HT_Objective_GivenPoleGrabAbility,
+            .type = NonCollectable
+        }
+    },
+    // Elder Titan
+    {
+        .union_type = APC_Objective,
+        .objective = {
+            .map_index = 20,
+            .trigger_index = 10,
+            .objective = HT_Objective_GivenWingShieldAbility,
+            .type = NonCollectable
+        }
+    },
+    // Elder Astor
+    {
+        .union_type = APC_Objective,
+        .objective = {
+            .map_index = 33,
+            .trigger_index = 9,
+            .objective = HT_Objective_GivenWallKickAbility,
+            .type = NonCollectable
+        }
+    },
+    #pragma endregion
+
+    #pragma region Bosses
+    // Gnasty Gnorc
+    {
+        .union_type = APC_Objective,
+        .objective = {
+            .map_index = 24,
+            .trigger_index = 346,
+            .objective = HT_Objective_Boss1_Beaten,
+            .type = NonCollectable
+        }
+    },
+    // Ineptune
+    {
+        .union_type = APC_Objective,
+        .objective = {
+            .map_index = 45,
+            .trigger_index = 235,
+            .objective = HT_Objective_Boss2_Beaten,
+            .type = NonCollectable
+        }
+    },
+    // Red
+    {
+        .union_type = APC_Objective,
+        .objective = {
+            .map_index = 31,
+            .trigger_index = 318,
+            .objective = HT_Objective_Boss3_Beaten,
+            .type = NonCollectable
+        }
+    },
+    // Mecha Red
+    {
+        .union_type = APC_Objective,
+        .objective = {
+            .map_index = 40,
+            .trigger_index = 391,
+            .objective = HT_Objective_Boss4_Beaten,
+            .type = NonCollectable
+        }
+    },
+    #pragma endregion
 };

@@ -19,6 +19,7 @@
 // #define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
 // #define AP_DEBUG_NOTIFICATION
 // #define AP_DEBUG_DEATHLINK
+// #define AP_DEBUG_COLLECTABLES
 
 #ifdef AP_QUICK_START
 #pragma message ( "COMPILING WITH AP_QUICK_START, DO NOT RELEASE" )
@@ -34,6 +35,10 @@
 
 #ifdef AP_DEBUG_DEATHLINK
 #pragma message ( "COMPILING WITH AP_DEBUG_DEATHLINK, DO NOT RELEASE" )
+#endif
+
+#ifdef AP_DEBUG_COLLECTABLES
+#pragma message ( "COMPILING WITH AP_DEBUG_COLLECTABLES, DO NOT RELEASE" )
 #endif
 
 MapOrderInfo realm_teleporter_maporderinfo[] = {
@@ -65,6 +70,27 @@ void ap_update()
     ONCE {
         print_interface_addresses();
     }
+
+    #ifdef AP_DEBUG_COLLECTABLES
+    // Prints all locations to the log
+    if (g_pad_button_state(PAD_BUTTON_B)) {
+        if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
+            for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
+                APCollectable* coll = &g_ap_collectables[i];
+                switch (coll->union_type) {
+                    case APC_Grabbable:
+                        PRINTF("[%d]-G | m: %d, t: %d\n",
+                            i, coll->grabbable.map_index, coll->grabbable.trigger_index);
+                        break;
+                    case APC_Objective:
+                        PRINTF("[%d]-O | m: %d, t: %d, h: %x\n",
+                            i, coll->objective.map_index, coll->objective.trigger_index, coll->objective.objective);
+                        break;
+                }
+            }
+        }
+    }
+    #endif
 }
 
 void ap_gamestate_update()
