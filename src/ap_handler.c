@@ -135,6 +135,12 @@ void ap_gamestate_update()
     } else {
         PlayerObjectives__ClearObjective(&gGameState.m_PlayerObjectives, HT_Objective_SuperchargePowered);
     }
+
+    if (gGameState.m_PlayerState.m_TotalLightGems >= g_gamestate_ap_settings.ball_gadget_cost) {
+        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_BallGadgetPowered);
+    } else {
+        PlayerObjectives__ClearObjective(&gGameState.m_PlayerObjectives, HT_Objective_BallGadgetPowered);
+    }
     
     ap_deathlink_update();
 

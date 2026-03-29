@@ -10,6 +10,9 @@ int GadgetPad__Update_VtableHook(void* self)
 {
     test_gadgetpad_printcost(self);
 
+    // Force to interact with light gem cost
+    GADGETPAD_M_GAMEFLAGS(self) &= ~8u;
+
     return GadgetPad__Update(self);
 }
 
@@ -22,6 +25,11 @@ void test_gadgetpad_printcost(void* self)
     s32 unlocked;
     int cost;
     switch (GADGETPAD_M_GADGETTYPE(self)) {
+        case 0:
+            PlayerObjectives__GetObjective__ReImplHook(
+                &gGameState.m_PlayerObjectives, HT_Objective_BallGadgetPowered, &unlocked);
+            cost = g_gamestate_ap_settings.ball_gadget_cost;
+            break;
         case 2:
             PlayerObjectives__GetObjective__ReImplHook(
                 &gGameState.m_PlayerObjectives, HT_Objective_SuperchargePowered, &unlocked);
@@ -51,5 +59,14 @@ void test_gadgetpad_printcost(void* self)
         draw_cost_text = true;
         cost_text_type = COST_LightGem;
         cost_text_amt = cost;
+    }
+}
+
+s32 GadgetPad__Update__TotalLightGems_PreCallHook(PlayerState* self)
+{
+    if (g_gamestate_ap_settings.ball_gadget_cost > self->m_TotalLightGems) {
+        return 0;
+    } else {
+        return 8;
     }
 }

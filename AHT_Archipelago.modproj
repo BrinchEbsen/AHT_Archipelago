@@ -1000,6 +1000,18 @@
           "injection_file_address": "0x40B768",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "XSEItemHandler_Base__BASICcmd_GetObjective_ReImplHook",
+          "code_files": [
+            "./asm/GC_NTSC/XSEItemHandler_Base__BASICcmd_GetObjective_ReImplHook.s"
+          ],
+          "memory_address": "800bf6cc",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0xBC6CC",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],

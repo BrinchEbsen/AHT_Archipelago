@@ -5,6 +5,7 @@
 #define DRAW_GADGET_COST_TEXT_RANGE 5.0f
 
 #define GADGETPAD_M_GADGETTYPE(self) OFFSET_VAL(s32, self, 0x438)
+#define GADGETPAD_M_GAMEFLAGS(self) OFFSET_VAL(u32, self, 0x454)
 
 extern int GadgetPad__Update(void* self);
 int GadgetPad__Update_VtableHook(void* self);

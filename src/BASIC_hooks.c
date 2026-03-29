@@ -168,9 +168,8 @@ void apply_gamescript_patch(void* pBasic, GameScriptPatch* patch)
 Bool XSEItemHandler_Base__BASICcmd_GetObjective_ReImplHook(void* self, u32 hashcode, s32* result)
 {
     switch (hashcode) {
+        case HT_Objective_BallGadgetPowered:
         case HT_Objective_SuperchargePowered:
-            *result = 1;
-            return true;
         case HT_Objective_InvincibilityPowered:
             *result = 1;
             return true;
