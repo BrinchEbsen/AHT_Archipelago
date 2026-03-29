@@ -67,6 +67,7 @@ APSettings g_patch_ap_settings = {
         95,
         45
     },
+    .ball_gadget_cost = 8,
     .invincibility_cost = 24,
     .supercharge_cost = 40,
 

@@ -59,6 +59,7 @@ typedef struct APSettings {
 
     u8 boss_costs[4];
     u8 lg_door_costs[4];
+    u8 ball_gadget_cost;
     u8 invincibility_cost;
     u8 supercharge_cost;
     bool boss_easy_mode[4];

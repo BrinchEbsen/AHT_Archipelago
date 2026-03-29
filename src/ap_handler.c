@@ -416,6 +416,7 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("u32 init: %x\n", &psettings->init);
     PRINTF("u8[4] boss_costs: %x\n", &psettings->boss_costs);
     PRINTF("u8[4] lg_door_costs: %x\n", &psettings->lg_door_costs);
+    PRINTF("u8 ball_gadget_cost: %x\n", &psettings->ball_gadget_cost);
     PRINTF("u8 invincibility_cost: %x\n", &psettings->invincibility_cost);
     PRINTF("u8 supercharge_cost: %x\n", &psettings->supercharge_cost);
     PRINTF("bool[4] boss_easy_mode: %x\n", &psettings->boss_easy_mode);
