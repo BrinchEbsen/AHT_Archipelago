@@ -164,3 +164,17 @@ void apply_gamescript_patch(void* pBasic, GameScriptPatch* patch)
         code[i] = patch->patches[i];
     }
 }
+
+Bool XSEItemHandler_Base__BASICcmd_GetObjective_ReImplHook(void* self, u32 hashcode, s32* result)
+{
+    switch (hashcode) {
+        case HT_Objective_SuperchargePowered:
+            *result = 1;
+            return true;
+        case HT_Objective_InvincibilityPowered:
+            *result = 1;
+            return true;
+    }
+
+    return PlayerObjectives__GetObjective__ReImplHook(&gGameState.m_PlayerObjectives, hashcode, result);
+}

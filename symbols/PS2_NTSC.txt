@@ -110,6 +110,7 @@ SE_Loop__CreateObject = 0x103898;
 /* gGameState = 0x80463b38; */
 /* SE_GameState__operatorequals = 0x803883ec; */
 /* PlayerObjectives__ObjectiveIntoIndexAndBit = 0x800665e4; */
+/* PlayerObjectives__ClearObjective = 0x80066380; */
 
 /* playerstate.h */
 /* PlayerState__Update = 0x80068830; */
@@ -165,6 +166,9 @@ SE_Loop__CreateObject = 0x103898;
 /* elevator_hooks.h */
 /* SXI_Path__MoveAlongPath = 0x80246080; */
 /* FlippingPlatform__HandleFlip = 0x801e9c34; */
+
+/* gadget_hooks.h */
+/* GadgetPad__Update = 0x800e8a00; */
 
 /* gametext.h */
 /* gGameText = 0x80455c1c; */

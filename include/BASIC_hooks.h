@@ -52,4 +52,8 @@ bool BASIC_Main__UpdatePointers_PreCallHook(void* self);
 
 void apply_gamescript_patch(void* self, GameScriptPatch* patch);
 
+// Make every item believe supercharge and invincibility is active so the
+// professor never shows up to explain it
+Bool XSEItemHandler_Base__BASICcmd_GetObjective_ReImplHook(void* self, u32 hashcode, s32 *result);
+
 #endif /* BASIC_HOOKS_H */

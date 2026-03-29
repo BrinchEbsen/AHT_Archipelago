@@ -123,6 +123,18 @@ void ap_gamestate_update()
         gGameState.m_PlayerState.m_LockPickers = 0;
         gGameState.m_PlayerState.m_LockPickers_Max = 0;
     }
+
+    if (gGameState.m_PlayerState.m_TotalLightGems >= g_gamestate_ap_settings.invincibility_cost) {
+        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_InvincibilityPowered);
+    } else {
+        PlayerObjectives__ClearObjective(&gGameState.m_PlayerObjectives, HT_Objective_InvincibilityPowered);
+    }
+
+    if (gGameState.m_PlayerState.m_TotalLightGems >= g_gamestate_ap_settings.supercharge_cost) {
+        PlayerObjectives__SetObjective__ReImplHook(&gGameState.m_PlayerObjectives, HT_Objective_SuperchargePowered);
+    } else {
+        PlayerObjectives__ClearObjective(&gGameState.m_PlayerObjectives, HT_Objective_SuperchargePowered);
+    }
     
     ap_deathlink_update();
 

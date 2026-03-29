@@ -49,6 +49,7 @@ typedef struct PlayerObjectives {
 } PlayerObjectives;
 
 extern bool PlayerObjectives__ObjectiveIntoIndexAndBit(PlayerObjectives *this, EXHashCode hashcode, int *index_out, int *bit_out);
+extern void PlayerObjectives__ClearObjective(PlayerObjectives* self, EXHashCode hashcode);
 void PlayerObjectives__SetObjective__ReImplHook(PlayerObjectives* self, EXHashCode hashcode);
 bool PlayerObjectives__GetObjective__ReImplHook(PlayerObjectives* self, EXHashCode hashcode, s32 *result);
 

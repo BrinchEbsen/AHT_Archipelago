@@ -504,7 +504,8 @@
             "./src/se/playerstate.c",
             "./src/ap_deathlink.c",
             "./src/ap_keyring.c",
-            "./src/ap_minimap.c"
+            "./src/ap_minimap.c",
+            "./src/gadget_hooks.c"
           ],
           "memory_address": "80296618",
           "size": "7500",
@@ -985,6 +986,18 @@
           "size": "0",
           "injection_file": "Start.dol",
           "injection_file_address": "0x1AA85C",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
+        },
+        {
+          "name": "GadgetPad__Update_VtableHook",
+          "code_files": [
+            "./asm/GC_NTSC/GadgetPad__Update_VtableHook.s"
+          ],
+          "memory_address": "8040e768",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x40B768",
           "auto_calculate_injection_file_address": true,
           "enabled": true
         }

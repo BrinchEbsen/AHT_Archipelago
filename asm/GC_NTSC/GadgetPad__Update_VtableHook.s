@@ -1,0 +1,1 @@
+.long GadgetPad__Update_VtableHook
