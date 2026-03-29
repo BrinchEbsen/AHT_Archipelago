@@ -1043,6 +1043,10 @@
         {
           "name": "multi_CPU_Base_hooks",
           "file_path": "./asm/GC_NTSC/multi_CPU_Base_hooks.s"
+        },
+        {
+          "name": "multi_gadget_hooks",
+          "file_path": "./asm/GC_NTSC/multi_gadget_hooks.s"
         }
       ]
     }
