@@ -54,6 +54,8 @@ void ap_set_objective(EXHashCode objective);
 
 void ap_set_location(int index);
 
+s32 num_collectables_in_map(u16 map_index, s32* out_num_collected, s32* out_num_reachable);
+
 extern APCollectable g_ap_collectables[];
 
 #endif /* AP_COLLECTABLES */

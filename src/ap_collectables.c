@@ -44,6 +44,50 @@ void ap_set_location(int index)
     }
 }
 
+s32 num_collectables_in_map(u16 map_index, s32* out_num_collected, s32* out_num_reachable)
+{
+    s32 num = 0;
+    *out_num_collected = 0;
+    *out_num_reachable = 0;
+
+    for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
+        APCollectable* coll = &g_ap_collectables[i];
+
+        bool ismap = false;
+        switch (coll->union_type) {
+            case APC_Grabbable:
+                if (coll->grabbable.map_index == map_index) {
+                    ismap = true;
+                }
+                break;
+            case APC_Objective:
+                if (coll->objective.map_index == map_index) {
+                    ismap = true;
+                }
+                break;
+        }
+
+        if (!ismap) {
+            continue;
+        }
+
+        num++;
+
+        size_t byte = (i*2) / 8;
+        size_t bit = (i*2) % 8;
+        u8 dat = g_gamestate_ap_settings.location_bitfield[byte];
+
+        if ((dat & (0b01 << bit)) != 0) {
+            (*out_num_collected)++;
+        }
+        if ((dat & (0b10 << bit)) != 0) {
+            (*out_num_reachable)++;
+        }
+    }
+
+    return num;
+}
+
 APCollectable g_ap_collectables[] = {
     #pragma region 19 Sunken Ruins
     {
