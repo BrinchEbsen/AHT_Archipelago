@@ -12,8 +12,13 @@ GateID gates_to_force_open[] = {
         .map_index = 24,
         .trig_index = 271
     },
+    // Dragon Village shop door
+    {
+        .map_index = 24,
+        .trig_index = 308
+    },
 };
-#define NUM_GATES_TO_FORCE_OPEN 2
+#define NUM_GATES_TO_FORCE_OPEN 3
 
 void ScriptedGate__v_Preserve_VtableHook(void* self)
 {
