@@ -170,6 +170,14 @@ SE_Loop__CreateObject = 0x103898;
 /* gadget_hooks.h */
 /* GadgetPad__Update = 0x800e8a00; */
 
+/* boss_hooks.h */
+/* XSEItemHandler_GnastyGnorc__PlayerAttack = 0x80030978; */
+/* gnasty_health_subtract = 0x803b7458; */
+/* XSEItemHandler_Ineptune__PlayerAttack = 0x80036098; */
+/* ineptune_health_subtract = 0x803b75e4; */
+/* XSEItemHandler_Red__HitByExplosion = 0x80043228; */
+/* red_health_subtract = 0x803b7bd0; */
+
 /* gametext.h */
 /* gGameText = 0x80455c1c; */
 /* GameText__GetText = 0x8012df2c; */

@@ -506,6 +506,7 @@
             "./src/ap_keyring.c",
             "./src/ap_minimap.c",
             "./src/gadget_hooks.c"
+            "./src/boss_hooks.c"
           ],
           "memory_address": "80296618",
           "size": "7500",
@@ -1059,6 +1060,10 @@
         {
           "name": "multi_gadget_hooks",
           "file_path": "./asm/GC_NTSC/multi_gadget_hooks.s"
+        },
+        {
+          "name": "multi_boss_hooks",
+          "file_path": "./asm/GC_NTSC/multi_boss_hooks.s"
         }
       ]
     }

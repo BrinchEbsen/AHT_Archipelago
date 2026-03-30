@@ -15,6 +15,7 @@
 #include <gameloop.h>
 #include <ap_objectives.h>
 #include <ap_deathlink.h>
+#include <boss_hooks.h>
 
 // #define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
 // #define AP_DEBUG_NOTIFICATION
@@ -282,7 +283,10 @@ void ap_init_gamestate()
         ABILITY_AP_GLIDE |
         ABILITY_AP_CHARGE |
         ABILITY_AP_SWIM |
-        ABILITY_DOUBLE_JUMP
+        ABILITY_DOUBLE_JUMP |
+        ABILITY_ELECTRIC_BREATH |
+        ABILITY_WATER_BREATH |
+        ABILITY_ICE_BREATH
     );
     PRINTF("DEBUG QUICK START!\n");
     #endif
@@ -311,6 +315,8 @@ void ap_init_gamestate()
 
     // Set objective flag for having bought a lock pick
     gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BOUGHT_LOCK_PICK;
+
+    ap_setup_boss_damage();
 
     ap_set_gamestate_initialized();
 

@@ -1,7 +1,7 @@
 #ifndef AP_DEATHLINK_H
 #define AP_DEATHLINK_H
 #include <types.h>
-#include <exvector.h>
+#include <objcollide.h>
 
 typedef enum DeathLinkResult
 {
@@ -10,20 +10,6 @@ typedef enum DeathLinkResult
     DeathLinkResult_Died,
     DeathLinkResult_MiniGameFail
 } DeathLinkResult;
-
-typedef struct objCollide
-{
-    int datumflags;
-    int hash;
-    EXVector vdelta;
-    EXVector velocity;
-    EXVector position;
-    int mask;
-    int flags;
-    int type;
-    int skinflags;
-    /* EXItemAnimator* */ void* pAnimator;
-} objCollide;
 
 extern void XSEItemHandler_Player__TakeDamage(
     void* self, u32 damage, u32 reactionType, u32 priority, objCollide* coll, char* who, Bool rumble);
