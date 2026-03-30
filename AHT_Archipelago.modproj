@@ -505,7 +505,7 @@
             "./src/ap_deathlink.c",
             "./src/ap_keyring.c",
             "./src/ap_minimap.c",
-            "./src/gadget_hooks.c"
+            "./src/gadget_hooks.c",
             "./src/boss_hooks.c"
           ],
           "memory_address": "80296618",
