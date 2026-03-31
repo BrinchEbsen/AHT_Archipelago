@@ -411,6 +411,40 @@ void teleport_to_hub()
             goto_map->m_GameState->m_LastStartPointPlayer = Player_Spyro;
             gGameState.m_StartMapIndex = goto_map_index;
             PlayerState__RestartGame(&gGameState.m_PlayerState);
+
+            // Reset bosses to make sure they don't bug out when you return
+
+            s32 beaten_obj;
+
+            // Gnasty Gnorc
+            PlayerObjectives__GetObjective__ReImplHook(
+                &gGameState.m_PlayerObjectives, HT_Objective_Boss1_Beaten, &beaten_obj);
+            if (beaten_obj == 0) {
+                gMapList.m_List[32].m_pMap->m_GameState->m_LastStartPoint = HT_StartPoint_START;
+            }
+            
+            // Ineptune
+            PlayerObjectives__GetObjective__ReImplHook(
+                &gGameState.m_PlayerObjectives, HT_Objective_Boss2_Beaten, &beaten_obj);
+            if (beaten_obj == 0) {
+                PlayerObjectives__ClearObjective(
+                    &gGameState.m_PlayerObjectives, HT_Objective_SeenIneptuneIntro);
+            }
+            
+            // Red
+            PlayerObjectives__GetObjective__ReImplHook(
+                &gGameState.m_PlayerObjectives, HT_Objective_Boss3_Beaten, &beaten_obj);
+            if (beaten_obj == 0) {
+                gMapList.m_List[41].m_pMap->m_GameState->m_LastStartPoint = HT_StartPoint_Restart1;
+            }
+            
+            // Mecha Red
+            PlayerObjectives__GetObjective__ReImplHook(
+                &gGameState.m_PlayerObjectives, HT_Objective_Boss4_Beaten, &beaten_obj);
+            if (beaten_obj == 0) {
+                gMapList.m_List[34].m_pMap->m_GameState->m_LastStartPoint = HT_StartPoint_START;
+            }
+
             break;
         }
     }
