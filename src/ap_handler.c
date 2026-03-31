@@ -147,6 +147,8 @@ void ap_gamestate_update()
 
     ap_update_realm_access();
 
+    ap_setup_boss_damage();
+
     #ifdef AP_DEBUG_DEATHLINK
     if (g_pad_button_state(PAD_BUTTON_B)) {
         if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
@@ -315,8 +317,6 @@ void ap_init_gamestate()
 
     // Set objective flag for having bought a lock pick
     gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BOUGHT_LOCK_PICK;
-
-    ap_setup_boss_damage();
 
     ap_set_gamestate_initialized();
 
