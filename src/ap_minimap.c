@@ -28,6 +28,22 @@ APCollectable ballgadgetloc_magma_falls = {
     }
 };
 
+IconNudge icon_nudges[] = {
+    {
+        .map_index = 23,
+        .trigger_index = 58,
+        .nudge_x = -2.23f,
+        .nudge_z = -10.945f
+    },
+    {
+        .map_index = 20,
+        .trigger_index = 137,
+        .nudge_x = 124.017f,
+        .nudge_z = 42.16f
+    }
+};
+#define NUM_ICON_NUDGES 2
+
 void GUI_MiniMap__DrawRestarts__PreCallHOOK(GUI_Base* self, void* pWnd)
 {
     if (g_show_minimap_icons) {
@@ -134,10 +150,22 @@ void minimap_draw_location(
 
     SE_Trigger* trigger = map->m_TriggerList.m_pTriggers[trig_index].m_pSE_Trigger;
 
+    float x = trigger->m_Position.x;
+    float z = trigger->m_Position.z;
+
+    for (int i = 0; i < NUM_ICON_NUDGES; i++) {
+        IconNudge* nudge = &icon_nudges[i];
+        if ((nudge->map_index == map->m_MapListIndex) && (nudge->trigger_index == trig_index)) {
+            x += nudge->nudge_x;
+            z += nudge->nudge_z;
+            break;
+        }
+    }
+
     GUI_MiniMap__DrawIcon(
         self,
-        trigger->m_Position.x,
-        trigger->m_Position.z,
+        x,
+        z,
         reachable ? COLOR_LIGHT_GREEN : COLOR_LIGHT_RED,
         8,
         pWnd);
