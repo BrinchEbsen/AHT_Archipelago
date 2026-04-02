@@ -18,6 +18,10 @@ void DarkXtal__Collected_VtableHook(void* this, Bool Register);
 extern void LockedChest__OpenLockedChest(void* self);
 void LockedChest__OpenLockedChest_PreCallHook(void* self);
 
+extern Bool FireWorks__UpdatePathPosRot(void* self, float Speed);
+extern EXRuntimeClass R4ZFireWorks__classR4ZFireWorks;
+Bool FireWorks__UpdatePathPosRot_PreCallHook(void* self, float Speed);
+
 #define EGGTHIEF_M_FLAGS(self) OFFSET_VAL(u32, self, 0x3dc)
 #define EGGTHIEF_M_SITEM(self) OFFSET_VAL(void*, self, 0x518)
 #define SPECIALITEM_M_STATUS(self) OFFSET_VAL(u32, self, 0x3e0)

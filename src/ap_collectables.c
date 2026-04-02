@@ -2254,4 +2254,200 @@ APCollectable g_ap_collectables[] = {
         }
     },
     #pragma endregion
+
+    #pragma region Fireworks
+    // Dragon Village
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 24,
+            .trigger_index = 304,
+            .type = FireWork
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 24,
+            .trigger_index = 305,
+            .type = FireWork
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 24,
+            .trigger_index = 344,
+            .type = FireWork
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 24,
+            .trigger_index = 431,
+            .type = FireWork
+        }
+    },
+
+    // Crocovile Swamp
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 23,
+            .trigger_index = 276,
+            .type = FireWork
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 23,
+            .trigger_index = 292,
+            .type = FireWork
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 23,
+            .trigger_index = 294,
+            .type = FireWork
+        }
+    },
+
+    // Sunken Ruins
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 19,
+            .trigger_index = 207,
+            .type = FireWork
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 19,
+            .trigger_index = 236,
+            .type = FireWork
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 19,
+            .trigger_index = 252,
+            .type = FireWork
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 19,
+            .trigger_index = 287,
+            .type = FireWork
+        }
+    },
+
+    // Cloudy Domain
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 20,
+            .trigger_index = 113,
+            .type = FireWork
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 20,
+            .trigger_index = 264,
+            .type = FireWork
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 20,
+            .trigger_index = 273,
+            .type = FireWork
+        }
+    },
+
+    // Ice Citadel
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 33,
+            .trigger_index = 250,
+            .type = FireWork
+        }
+    },
+
+    // Stormy Beach
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 44,
+            .trigger_index = 98,
+            .type = FireWork
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 44,
+            .trigger_index = 113,
+            .type = FireWork
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 44,
+            .trigger_index = 149,
+            .type = FireWork
+        }
+    },
+
+    // Molten Mount
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 60,
+            .trigger_index = 132,
+            .type = FireWork
+        }
+    },
+
+    // Magma Falls Top
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 61,
+            .trigger_index = 19,
+            .type = FireWork
+        }
+    },
+
+    // Dark Mine
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 30,
+            .trigger_index = 315,
+            .type = FireWork
+        }
+    },
+    {
+        .union_type = APC_Grabbable,
+        .grabbable = {
+            .map_index = 30,
+            .trigger_index = 366,
+            .type = FireWork
+        }
+    },
+    #pragma endregion
 };

@@ -11,7 +11,8 @@ typedef enum APCollectable_Type
     DragonEgg_Chest,
     EggThief,
     Junk_Chest,
-    NonCollectable
+    NonCollectable,
+    FireWork
 } APCollectable_Type;
 
 typedef enum APCollectable_UnionType
@@ -46,7 +47,7 @@ typedef struct APCollectable
     };
 } APCollectable;
 
-#define AP_COLLECTABLES_TOTAL 249
+#define AP_COLLECTABLES_TOTAL 271
 
 void ap_set_grabbable(u16 map_index, u16 trigger_index);
 

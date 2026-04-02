@@ -1,0 +1,1 @@
+bl FireWorks__UpdatePathPosRot_PreCallHook

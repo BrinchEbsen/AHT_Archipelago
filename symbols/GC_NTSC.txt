@@ -133,6 +133,8 @@ CPU_Base__CreatedChestPickup = 0x80148c1c;
 classLockedChest = 0x803c1ac0;
 BaseChest__ReleaseMyGems = 0x801475e8;
 LockedChest__IdleUpdate = 0x8014959c;
+FireWorks__UpdatePathPosRot = 0x8014a43c;
+R4ZFireWorks__classR4ZFireWorks = 0x803c9024;
 
 /* breath_hooks.h */
 XSEItemHandler_Spyro__GetCurrentBreath = 0x800ad55c;

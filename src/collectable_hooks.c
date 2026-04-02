@@ -33,6 +33,25 @@ void LockedChest__OpenLockedChest_PreCallHook(void* self)
     LockedChest__OpenLockedChest(self);
 }
 
+Bool FireWorks__UpdatePathPosRot_PreCallHook(void* self, float Speed)
+{
+    Bool ret = FireWorks__UpdatePathPosRot(self, Speed);
+
+    // Returns true if the firework is at the end of its
+    // path and it's marked "used" in the save file.
+    if (ret) {
+        // Make sure it's not the Mecha Red firework type
+        void* vtable = OFFSET_VAL(void*, self, 0x4);
+        GetRuntimeClass_func get_rtc = OFFSET_VAL(GetRuntimeClass_func, vtable, 0x8);
+        EXRuntimeClass* rtc = get_rtc();
+        if (!class_is_or_inherits_from(rtc, &R4ZFireWorks__classR4ZFireWorks)) {
+            register_collectable(self);
+        }
+    }
+
+    return ret;
+}
+
 s32 EggThief__EggCollection_ReImplHook(void* self)
 {
     void* sItem = EGGTHIEF_M_SITEM(self);

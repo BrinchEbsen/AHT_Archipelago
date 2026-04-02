@@ -1013,6 +1013,18 @@
           "injection_file_address": "0xBC6CC",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "FireWorks__UpdatePathPosRot_PreCallHook",
+          "code_files": [
+            "./asm/GC_NTSC/FireWorks__UpdatePathPosRot_PreCallHook.s"
+          ],
+          "memory_address": "8014a3a4",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x1473A4",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],
