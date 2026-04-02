@@ -87,4 +87,7 @@ extern s32 SE_GameLoop__CueGameState(SE_GameLoop* self, SE_GameState *pGS);
 
 extern SE_GameLoop gGameLoop;
 
+// No idea where else to put this
+extern void MemCard_AutoSave(void);
+
 #endif /* GAMELOOP_H */

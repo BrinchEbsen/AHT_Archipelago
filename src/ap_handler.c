@@ -62,6 +62,8 @@ bool draw_cost_text = false;
 CostTextType cost_text_type = LightGem;
 int cost_text_amt = 0;
 
+bool do_autosave = false;
+
 void ap_update()
 {
     if (g_patch_ap_settings.patch_been_written_to && (gGameLoop.m_State == Running)) {
@@ -98,6 +100,13 @@ void ap_gamestate_update()
 {
     if (!ap_gamestate_is_initialized()) {
         return;
+    }
+
+    if (do_autosave) {
+        if (!gGameLoop.m_GameIsPaused && (gpPlayer != NULL)) {
+            MemCard_AutoSave();
+            do_autosave = false;
+        }
     }
 
     if (AP_GAMESTATE_SHOP_IS_RANDOMIZED)
@@ -317,6 +326,8 @@ void ap_init_gamestate()
 
     // Set objective flag for having bought a lock pick
     gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BOUGHT_LOCK_PICK;
+
+    do_autosave = true;
 
     ap_set_gamestate_initialized();
 

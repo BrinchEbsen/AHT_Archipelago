@@ -30,8 +30,6 @@ s32 EggThief__EggCollection_ReImplHook(void* self);
 
 void register_collectable(void* special_item);
 
-extern void MemCard_AutoSave(void);
-
 s32 PlayerState__AddDarkGems_ReImplHook(PlayerState* self, int n, SE_Map* pMap);
 s32 PlayerState__AddDragonEggs_ReImplHook(PlayerState* self, int n, int Type, SE_Map* pMap);
 s32 PlayerState__AddLightGems_ReImplHook(PlayerState* self, int n, SE_Map* pMap);
