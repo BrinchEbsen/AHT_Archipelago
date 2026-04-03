@@ -7,6 +7,7 @@ typedef enum PauseMenuPage
 {
     PauseMenu_Abilities,
     PauseMenu_Keyrings,
+    PauseMenu_Realms,
     PauseMenu_NUM
 } PauseMenuPage;
 
@@ -29,6 +30,8 @@ void draw_pause_stats(GUI_Base* self, void* pWnd);
 void draw_stats_abilities(GUI_Base* self, void* pWnd, u16 x, u16 y, u16 spacing, RGBA on_col, RGBA off_col);
 
 void draw_stats_keyrings(GUI_Base* self, void* pWnd, u16 x, u16 y, u16 spacing, RGBA on_col, RGBA off_col);
+
+void draw_stats_realms(GUI_Base* self, void* pWnd, u16 x, u16 y, u16 spacing, RGBA on_col, RGBA off_col);
 
 void draw_notification_toggle(GUI_Base* self, void* pWnd);
 

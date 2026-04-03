@@ -126,6 +126,11 @@ int curr_page = 0;
 static inline void next_page()
 {
     curr_page++;
+    
+    if (!AP_GAMESTATE_USE_KEY_RINGS && (curr_page == PauseMenu_Keyrings)) {
+        curr_page++;
+    }
+
     if (curr_page >= PauseMenu_NUM) {
         curr_page = 0;
     }
@@ -133,6 +138,11 @@ static inline void next_page()
 static inline void prev_page()
 {
     curr_page--;
+    
+    if (!AP_GAMESTATE_USE_KEY_RINGS && (curr_page == PauseMenu_Keyrings)) {
+        curr_page--;
+    }
+
     if (curr_page < 0) {
         curr_page = (int)PauseMenu_NUM - 1;
     }
@@ -178,15 +188,11 @@ s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self)
             g_show_minimap_icons = !g_show_minimap_icons;
         }
     
-        if (AP_GAMESTATE_USE_KEY_RINGS) {
-            if (g_pad_button_edge_down(PAD_BUTTON_L)) {
-                prev_page();
-            } else if (g_pad_button_edge_down(PAD_BUTTON_R)) {
-                next_page();
-            }
-        } else {
-            curr_page = PauseMenu_Abilities;
-    }
+        if (g_pad_button_edge_down(PAD_BUTTON_L) || g_pad_button_edge_down(PAD_BUTTON_DPAD_LEFT)) {
+            prev_page();
+        } else if (g_pad_button_edge_down(PAD_BUTTON_R) || g_pad_button_edge_down(PAD_BUTTON_DPAD_RIGHT)) {
+            next_page();
+        }
     }
 
     return GUI_PauseMenu__v_StateRunning(self);
@@ -231,14 +237,14 @@ void draw_teleport_menu(GUI_Base* self, void* pWnd)
 void draw_pause_stats(GUI_Base* self, void* pWnd)
 {
     u16 x = 3;
-    u16 y = 60;
+    u16 y = 40;
     static u16 spacing = 20;
 
     EXRect r = {
         .x = 0,
         .y = y,
         .w = 140,
-        .h = 325
+        .h = 345
     };
 
     XWnd__DrawRect(pWnd, &r, COLOR_RGBA(0, 0, 0, 0x20));
@@ -253,6 +259,9 @@ void draw_pause_stats(GUI_Base* self, void* pWnd)
             break;
         case PauseMenu_Keyrings:
             draw_stats_keyrings(self, pWnd, x, y, spacing, on_col, off_col);
+            break;
+        case PauseMenu_Realms:
+            draw_stats_realms(self, pWnd, x, y, spacing, on_col, off_col);
             break;
         default:
             break;
@@ -318,15 +327,16 @@ void draw_stats_abilities(GUI_Base* self, void *pWnd, u16 x, u16 y, u16 spacing,
 
     col = ((abiflg & ABILITY_AP_SWIM) != 0) ? &on_col : &off_col;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Swim");
-    y += spacing*2;
+    y += spacing;
 
-    if (AP_GAMESTATE_USE_KEY_RINGS) {
-        TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, on_col, "<L Abilities R>");
-    } else {
+    if (!AP_GAMESTATE_USE_KEY_RINGS) {
         s8 lock_pickers = gGameState.m_PlayerState.m_LockPickers;
         col = (lock_pickers > 0) ? &on_col : &off_col;
         TEXT_PRINT_ALIGN_COLOR_F(pWnd, x, y, TopLeft, *col, "Lock Picks: %d", lock_pickers);
     }
+    y += spacing*2;
+
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, on_col, "<L Abilities R>");
 }
 
 void draw_stats_keyrings(GUI_Base* self, void *pWnd, u16 x, u16 y, u16 spacing, RGBA on_col, RGBA off_col)
@@ -340,8 +350,31 @@ void draw_stats_keyrings(GUI_Base* self, void *pWnd, u16 x, u16 y, u16 spacing, 
         y += spacing;
     }
 
-    y += spacing;
+    y += spacing*2;
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, on_col, "<L Key Rings R>");
+}
+
+void draw_stats_realms(GUI_Base* self, void* pWnd, u16 x, u16 y, u16 spacing, RGBA on_col, RGBA off_col)
+{
+    RGBA* col;
+
+    col = g_gamestate_ap_settings.realm_access[0] ? &on_col : &off_col;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Dragon Kingdom");
+    y += spacing;
+
+    col = g_gamestate_ap_settings.realm_access[1] ? &on_col : &off_col;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Lost Cities");
+    y += spacing;
+
+    col = g_gamestate_ap_settings.realm_access[2] ? &on_col : &off_col;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Icy Wilderness");
+    y += spacing;
+
+    col = g_gamestate_ap_settings.realm_access[3] ? &on_col : &off_col;
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Volcanic Isle");
+    y += spacing*13;
+
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, on_col, "<L Realms R>");
 }
 
 void draw_notification_toggle(GUI_Base* self, void* pWnd)
