@@ -28,21 +28,51 @@ APCollectable ballgadgetloc_magma_falls = {
     }
 };
 
-IconNudge icon_nudges[] = {
+IconPosOverride icon_pos_overrides[] = {
     {
         .map_index = 23,
         .trigger_index = 58,
-        .nudge_x = -2.23f,
-        .nudge_z = -10.945f
+        .pos_x = 75.439f,
+        .pos_z = 538.957f
     },
     {
         .map_index = 20,
         .trigger_index = 137,
-        .nudge_x = 124.017f,
-        .nudge_z = 42.16f
+        .pos_x = -181.482f,
+        .pos_z = -132.52f
+    },
+    {
+        .map_index = 33,
+        .trigger_index = 9,
+        .pos_x = -682.961f,
+        .pos_z = -148.253f
+    },
+    {
+        .map_index = 31,
+        .trigger_index = 485,
+        .pos_x = -89.514f,
+        .pos_z = 74.633f
+    },
+    {
+        .map_index = 31,
+        .trigger_index = 36,
+        .pos_x = -106.951f,
+        .pos_z = 96.723f
+    },
+    {
+        .map_index = 23,
+        .trigger_index = 276,
+        .pos_x = 197.835f,
+        .pos_z = 495.531f
+    },
+    {
+        .map_index = 23,
+        .trigger_index = 294,
+        .pos_x = 209.934f,
+        .pos_z = 496.094f
     }
 };
-#define NUM_ICON_NUDGES 2
+#define NUM_ICON_POS_OVERRIDES 7
 
 void GUI_MiniMap__DrawRestarts__PreCallHOOK(GUI_Base* self, void* pWnd)
 {
@@ -153,11 +183,11 @@ void minimap_draw_location(
     float x = trigger->m_Position.x;
     float z = trigger->m_Position.z;
 
-    for (int i = 0; i < NUM_ICON_NUDGES; i++) {
-        IconNudge* nudge = &icon_nudges[i];
-        if ((nudge->map_index == map->m_MapListIndex) && (nudge->trigger_index == trig_index)) {
-            x += nudge->nudge_x;
-            z += nudge->nudge_z;
+    for (int i = 0; i < NUM_ICON_POS_OVERRIDES; i++) {
+        IconPosOverride* newpos = &icon_pos_overrides[i];
+        if ((newpos->map_index == map->m_MapListIndex) && (newpos->trigger_index == trig_index)) {
+            x = newpos->pos_x;
+            z = newpos->pos_z;
             break;
         }
     }
