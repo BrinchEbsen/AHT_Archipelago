@@ -75,7 +75,7 @@ struct SE_GameLoop {
     u32 m_SingleStep_DoFlag:1;
     u32 m_SingleStep_Speed;
     u32 m_SingleStep_Count;
-    u32 m_gc_unknown; // not on PS2?
+    u32 m_GCStatusScreenCounter; // only on GC
 };
 
 _Static_assert(sizeof(SE_GameLoop) == 0xA4);

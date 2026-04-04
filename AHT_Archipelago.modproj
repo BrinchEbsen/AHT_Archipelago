@@ -1025,6 +1025,18 @@
           "injection_file_address": "0x1473A4",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "GUI_Status_CloseButtonCheckFix",
+          "code_files": [
+            "./asm/GC_NTSC/GUI_Status_CloseButtonCheckFix.s"
+          ],
+          "memory_address": "801b61c4",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x1B31C4",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],
