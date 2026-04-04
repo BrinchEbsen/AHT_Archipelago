@@ -469,7 +469,7 @@ void Player_urghhhImDead_PostHook()
 {
     ap_handle_deathlink_outgoing(AP_DEATHLINK_REASON_DEFAULT);
 
-    if (AP_GAMESTATE_SHOP_IS_RANDOMIZED)
+    if (!AP_GAMESTATE_SHOP_IS_RANDOMIZED)
     {
         return;
     }
