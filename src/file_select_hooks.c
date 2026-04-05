@@ -2,13 +2,37 @@
 #include <ap_settings.h>
 #include <ap_patch.h>
 #include <paneldraw.h>
+#include <pad.h>
+
+bool ap_save_warning_active = false;
 
 void MemCardSlotMenu__DrawSavedGameInfo_PreCallHook(GUI_Base* self, void* pWnd, SavedGame* pSavedGame)
 {
+    if (test_save_select_warning(self, pWnd, pSavedGame)) {
+        ap_save_warning_active = true;
+        return;
+    } else {
+        ap_save_warning_active = false;
+    }
+    
+    MemCardSlotMenu__DrawSavedGameInfo(self, pWnd, pSavedGame);
+}
+
+s32 MemCardSlotMenu__v_OnSelect_VtableHook(GUI_Base* self, void* pMenuItem)
+{
+    if (ap_save_warning_active && !g_pad_button_state(PAD_BUTTON_R)) {
+        return 0;
+    }
+
+    return MemCardSlotMenu__v_OnSelect(self, pMenuItem);
+}
+
+bool test_save_select_warning(GUI_Base* self, void* pWnd, SavedGame* pSavedGame)
+{
     if (!g_patch_ap_settings.patch_been_written_to) {
         textprint(pWnd, 200, 0, 1.0f, Centre, COLOR_WHITE, false,
-            "WARNING!\nSettings not initialized!\nConnect Archipelago client.");
-        return;
+            "WARNING!\nSettings not initialized!\nConnect Archipelago client.\n~R+~A to force-select.");
+        return true;
     }
 
     if (MEMCARDSLOTMENU_M_LOADGAMEFLAG(self) != 0) {
@@ -16,17 +40,17 @@ void MemCardSlotMenu__DrawSavedGameInfo_PreCallHook(GUI_Base* self, void* pWnd, 
 
         if (p_settings->init != AP_SETTINGS_INIT_MAGICVALUE) {
             textprintf(pWnd, 200, 0, 1.0f, Centre, COLOR_WHITE, false,
-                "WARNING!\nThis save was not started with archipelago.\nLoad another save or start a new one.");
-            return;
+                "WARNING!\nThis save was not started with archipelago.\nLoad another save or start a new one.\n~R+~A to force-select.");
+            return true;
         }
 
         if (g_patch_ap_settings.mw_seed != p_settings->mw_seed) {
             textprintf(pWnd, 200, 0, 1.0f, Centre, COLOR_WHITE, false,
-                "WARNING!\nSeed mismatch!\nLoad another save or start a new one.\nCurrent multiworld seed: %x\nFile seed: %x",
+                "WARNING!\nSeed mismatch!\nLoad another save or start a new one.\nCurrent multiworld seed: %x\nFile seed: %x\n~R+~A to force-select.",
             g_patch_ap_settings.mw_seed, p_settings->mw_seed);
-            return;
+            return true;
         }
     }
-    
-    MemCardSlotMenu__DrawSavedGameInfo(self, pWnd, pSavedGame);
+
+    return false;
 }

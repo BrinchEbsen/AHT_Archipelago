@@ -1037,6 +1037,18 @@
           "injection_file_address": "0x1B31C4",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "MemCardSlotMenu__v_OnSelect_VtableHook",
+          "code_files": [
+            "./asm/GC_NTSC/MemCardSlotMenu__v_OnSelect_VtableHook.s"
+          ],
+          "memory_address": "804468fc",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x4438FC",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],

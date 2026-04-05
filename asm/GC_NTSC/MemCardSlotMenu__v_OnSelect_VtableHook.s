@@ -1,0 +1,1 @@
+.long MemCardSlotMenu__v_OnSelect_VtableHook
