@@ -8,9 +8,13 @@ bool ap_save_warning_active = false;
 
 void MemCardSlotMenu__DrawSavedGameInfo_PreCallHook(GUI_Base* self, void* pWnd, SavedGame* pSavedGame)
 {
-    if (test_save_select_warning(self, pWnd, pSavedGame)) {
-        ap_save_warning_active = true;
-        return;
+    if (pSavedGame->m_UsageFlag != 0) {
+        if (test_save_select_warning(self, pWnd, pSavedGame)) {
+            ap_save_warning_active = true;
+            return;
+        } else {
+            ap_save_warning_active = false;
+        }
     } else {
         ap_save_warning_active = false;
     }
