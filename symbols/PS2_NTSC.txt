@@ -142,6 +142,7 @@ SE_Loop__CreateObject = 0x103898;
 /* file_select_hooks.h */
 /* MemCardSlotMenu__DrawSavedGameInfo = 0x802350cc; */
 /* MemCardSlotMenu__v_OnSelect = 0x80234c84; */
+/* TitleLoop__v_DrawStateRunning = 0x801f0534; */
 
 /* start_gate_hooks.h */
 /* ScriptedGate__v_Preserve = 0x80161678; */

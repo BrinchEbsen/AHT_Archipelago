@@ -27,6 +27,24 @@ s32 MemCardSlotMenu__v_OnSelect_VtableHook(GUI_Base* self, void* pMenuItem)
     return MemCardSlotMenu__v_OnSelect(self, pMenuItem);
 }
 
+s32 TitleLoop__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
+{
+    switch (TITLELOOP_M_STATE(self)) {
+        case 1: // TitleState_PressStart
+        case 2: // TitleState_StartMenu
+        case 4: // TitleState_ExtrasMenu
+            TEXT_PRINT_COLOR(pWnd, 0, 0, COLOR_WHITE, "Archipelago v1.0.1");
+            if (g_patch_ap_settings.patch_been_written_to) {
+                TEXT_PRINT_COLOR(pWnd, 0, 20, COLOR_LIGHT_GREEN, "Settings initialized");
+            } else {
+                TEXT_PRINT_COLOR(pWnd, 0, 20, COLOR_LIGHT_RED, "Settings not initalized - Connect client");
+            }
+            break;
+    }
+
+    return TitleLoop__v_DrawStateRunning(self, pWnd);
+}
+
 bool test_save_select_warning(GUI_Base* self, void* pWnd, SavedGame* pSavedGame)
 {
     if (!g_patch_ap_settings.patch_been_written_to) {

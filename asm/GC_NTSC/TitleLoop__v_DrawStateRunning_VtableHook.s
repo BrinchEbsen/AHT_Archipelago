@@ -1,0 +1,1 @@
+.long TitleLoop__v_DrawStateRunning_VtableHook

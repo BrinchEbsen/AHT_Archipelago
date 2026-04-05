@@ -1049,6 +1049,18 @@
           "injection_file_address": "0x4438FC",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "TitleLoop__v_DrawStateRunning_VtableHook",
+          "code_files": [
+            "./asm/GC_NTSC/TitleLoop__v_DrawStateRunning_VtableHook.s"
+          ],
+          "memory_address": "8042e990",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x42B990",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],
