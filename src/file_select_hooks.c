@@ -4,6 +4,10 @@
 #include <paneldraw.h>
 #include <pad.h>
 
+#ifndef AP_VERSION
+#define AP_VERSION ""
+#endif /* AP_VERSION */
+
 bool ap_save_warning_active = false;
 
 void MemCardSlotMenu__DrawSavedGameInfo_PreCallHook(GUI_Base* self, void* pWnd, SavedGame* pSavedGame)
@@ -37,7 +41,7 @@ s32 TitleLoop__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
         case 1: // TitleState_PressStart
         case 2: // TitleState_StartMenu
         case 4: // TitleState_ExtrasMenu
-            TEXT_PRINT_COLOR(pWnd, 0, 0, COLOR_WHITE, "Archipelago v1.0.2");
+            TEXT_PRINT_COLOR(pWnd, 0, 0, COLOR_WHITE, "Archipelago "AP_VERSION);
             if (g_patch_ap_settings.patch_been_written_to) {
                 TEXT_PRINT_COLOR(pWnd, 0, 20, COLOR_LIGHT_GREEN, "Settings initialized");
             } else {

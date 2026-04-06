@@ -420,7 +420,7 @@
       "extracted_game_folder": "C:/Users/Ebbers/Documents/GC_CodeInject/modding_utility_v2/game_files/GAMECUBE_NTSC\\root",
       "main_executable": "Start.dol",
       "source_path": "C:/Users/Ebbers/Documents/GC_CodeInject/modding_utility_v2/game_files/GAMECUBE_NTSC",
-      "compiler_flags": "-O2 -Werror -I include/ingame_stdlib/ -I include/ex/ -I include/se/",
+      "compiler_flags": "-O2 -Werror -I include/ingame_stdlib/ -I include/ex/ -I include/se/ -D AP_VERSION=\"v1.0.2\"",
       "is_single_file_mode": false,
       "single_file_path": null,
       "section_maps": {
