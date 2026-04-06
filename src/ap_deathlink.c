@@ -125,13 +125,31 @@ DeathLinkResult try_kill_player(bool shielded)
 
     // Handle default case (Spyro, Hunter, Blink and Sparx)
 
+    DeathLinkResult res;
+    u32 damage;
+
     if (take_butterfly_jar(shielded)) {
-        XSEItemHandler_Player__TakeDamage(gpPlayer, 0, 0, 1, &obj, "Death Link", true);
-        return DeathLinkResult_Shielded;
+        res = DeathLinkResult_Shielded;
+        damage = 0;
     } else {
-        XSEItemHandler_Player__TakeDamage(gpPlayer, 0xA0, 0, 1, &obj, "Death Link", true);
-        return DeathLinkResult_Died;
+        res = DeathLinkResult_Died;
+        damage = 0xA0;
     }
+
+    u32 reactionType = 0;
+    
+    // Hunter needs a different "reaction type" while climbing
+    if ((playertype == Player_Hunter) && (currmode == hunter_wallclimb)) {
+        reactionType = 4;
+    }
+    
+    // Blink needs to be forced off the wall if he's on one
+    if ((playertype == Player_Blinky) && (currmode == wallkick)) {
+        XSEItemHandler_Player__SetMode(gpPlayer, fall, 1, 0);
+    }
+
+    XSEItemHandler_Player__TakeDamage(gpPlayer, damage, reactionType, 1, &obj, "Death Link", true);
+    return res;
 }
 
 void ap_handle_deathlink_outgoing(u8 reason)
