@@ -109,16 +109,16 @@ void ap_gamestate_update()
         }
     }
 
+    if (g_gamestate_ap_settings.infinite_double_gem)
+    {
+        gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_DOUBLE_GEM;
+        static float freeze = 60.0f * 60.0f * 60.0f; // 1 hour
+        gGameState.m_PlayerState.m_DoubleGemTimerMax = freeze;
+        gGameState.m_PlayerState.m_DoubleGemTimer = freeze;
+    }
+
     if (AP_GAMESTATE_SHOP_IS_RANDOMIZED)
     {
-        // Freeze double gem timer if enabled
-        if ((gGameState.m_PlayerState.m_AbilityFlags & ABILITY_DOUBLE_GEM) != 0)
-        {
-            static float freeze = 60.0f * 60.0f * 60.0f; // 1 hour
-            gGameState.m_PlayerState.m_DoubleGemTimerMax = freeze;
-            gGameState.m_PlayerState.m_DoubleGemTimer = freeze;
-        }
-
         // Freeze max values for lock picks and breath ammo
         if (!AP_GAMESTATE_USE_KEY_RINGS) {
             gGameState.m_PlayerState.m_LockPickers_Max = 127;
@@ -426,6 +426,8 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("u8 deathlink_ingoing: %x\n", &psettings->deathlink_ingoing);
     PRINTF("u8 deathlink_outgoing: %x\n", &psettings->deathlink_outgoing);
     PRINTF("bool infinite_butterfly_jar: %x\n", &psettings->infinite_butterfly_jar);
+    PRINTF("bool infinite_double_gem: %x\n", &psettings->infinite_double_gem);
+    PRINTF("bool fireworks_are_randomized: %x\n", &psettings->fireworks_are_randomized);
     PRINTF("bool randomize_shop: %x\n", &psettings->randomize_shop);
     PRINTF("bool use_key_rings: %x\n", &psettings->use_key_rings);
     PRINTF("bool skip_cutscene_button: %x\n", &psettings->skip_cutscene_button);

@@ -39,6 +39,8 @@ typedef struct APSettings {
     u8 deathlink_ingoing;
     u8 deathlink_outgoing;
     bool infinite_butterfly_jar;
+    bool infinite_double_gem;
+    bool fireworks_are_randomized;
     bool randomize_shop;
     bool use_key_rings;
 

@@ -158,6 +158,10 @@ void minimap_draw_location(
         if (coll->grabbable.map_index != map->m_MapListIndex) {
             return;
         }
+        // Don't show fireworks if not randomized
+        if (!g_gamestate_ap_settings.fireworks_are_randomized && (coll->grabbable.type == FireWork)) {
+            return;
+        }
         trig_index = coll->grabbable.trigger_index;
     } else if (coll->union_type == APC_Objective) {
         if (coll->objective.map_index != map->m_MapListIndex) {
