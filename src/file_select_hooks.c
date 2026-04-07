@@ -12,13 +12,9 @@ bool ap_save_warning_active = false;
 
 void MemCardSlotMenu__DrawSavedGameInfo_PreCallHook(GUI_Base* self, void* pWnd, SavedGame* pSavedGame)
 {
-    if (pSavedGame->m_UsageFlag != 0) {
-        if (test_save_select_warning(self, pWnd, pSavedGame)) {
-            ap_save_warning_active = true;
-            return;
-        } else {
-            ap_save_warning_active = false;
-        }
+    if (test_save_select_warning(self, pWnd, pSavedGame)) {
+        ap_save_warning_active = true;
+        return;
     } else {
         ap_save_warning_active = false;
     }
@@ -55,21 +51,30 @@ s32 TitleLoop__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
 
 bool test_save_select_warning(GUI_Base* self, void* pWnd, SavedGame* pSavedGame)
 {
+    // Can't load/start if settings uninitialized
     if (!g_patch_ap_settings.patch_been_written_to) {
         textprint(pWnd, 200, 0, 1.0f, Centre, COLOR_WHITE, false,
             "WARNING!\nSettings not initialized!\nConnect Archipelago client.\n~R+~A to force-select.");
         return true;
     }
 
+    // If loading game:
     if (MEMCARDSLOTMENU_M_LOADGAMEFLAG(self) != 0) {
+        // Can't load if slot empty (vanilla behavior)
+        if (pSavedGame->m_UsageFlag == 0) {
+            return false;
+        }
+
         APSettings* p_settings = OFFSET_PTR(APSettings, &pSavedGame->m_GameState.m_BitHeap, 0x2000);
 
+        // Can't load if previous save doesn't have AP data.
         if (p_settings->init != AP_SETTINGS_INIT_MAGICVALUE) {
             textprintf(pWnd, 200, 0, 1.0f, Centre, COLOR_WHITE, false,
                 "WARNING!\nThis save was not started with archipelago.\nLoad another save or start a new one.\n~R+~A to force-select.");
             return true;
         }
 
+        // Can't load if seed doesn't match
         if (g_patch_ap_settings.mw_seed != p_settings->mw_seed) {
             textprintf(pWnd, 200, 0, 1.0f, Centre, COLOR_WHITE, false,
                 "WARNING!\nSeed mismatch!\nLoad another save or start a new one.\nCurrent multiworld seed: %x\nFile seed: %x\n~R+~A to force-select.",
