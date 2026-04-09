@@ -62,7 +62,7 @@ void test_gadgetpad_printcost(void* self)
     }
 }
 
-s32 GadgetPad__Update__TotalLightGems_PreCallHook(PlayerState* self)
+s32 GadgetPad__BallGadget__TotalLightGems_PreCallHook(PlayerState* self)
 {
     if (g_gamestate_ap_settings.ball_gadget_cost > self->m_TotalLightGems) {
         return 0;
