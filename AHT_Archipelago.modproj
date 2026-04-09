@@ -1073,6 +1073,18 @@
           "injection_file_address": "0x1EDD9C",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "disable_intro_logos",
+          "code_files": [
+            "./asm/GC_NTSC/disable_intro_logos.s"
+          ],
+          "memory_address": "803c0e1c",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x3BDE1C",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],
