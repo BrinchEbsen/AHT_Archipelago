@@ -1061,6 +1061,18 @@
           "injection_file_address": "0x42B990",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "disable_title_trailer",
+          "code_files": [
+            "./asm/GC_NTSC/disable_title_trailer.s"
+          ],
+          "memory_address": "801f0d9c",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x1EDD9C",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],
