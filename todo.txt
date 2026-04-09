@@ -1,5 +1,0 @@
-- Unlock lock pick count and make it visible on the HUD
-
-- Make check shop items register when they've been bought
-
-- Make junk chests produce nothing
