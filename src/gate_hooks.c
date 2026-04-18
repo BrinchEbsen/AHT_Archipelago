@@ -12,7 +12,7 @@ GateID gates_to_force_open[] = {
         .map_index = 24,
         .trig_index = 271
     },
-    // Dragon Village shop door
+    // Dragon Village nursery door
     {
         .map_index = 24,
         .trig_index = 308
