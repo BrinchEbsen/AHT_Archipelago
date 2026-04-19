@@ -91,10 +91,12 @@ bool g_pad_button_edge_down(uint button);
 // Check if a button has just been released on the global pad.
 bool g_pad_button_edge_up(uint button);
 
+/*
 // Check if a button has been pressed a given number of times within a given number of frames.
 bool pad_button_edge_down_multiple(uint button, int num_presses, int time_limit, int pad_num);
 // Check if a button has been pressed a given number of times within a given number of frames on the global pad.
 bool g_pad_button_edge_down_multiple(uint button, int num_presses, int time_limit);
+*/
 
 // Get the value of the left stick x-axis.
 float pad_analog_get_l_stick_x(int pad_num);

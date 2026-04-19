@@ -1,7 +1,9 @@
 #include "pad.h"
 
+/*
 int button_state_counts[PAD_NUM_BUTTONS * PAD_NUM_PORTS];
 int button_state_timers[PAD_NUM_BUTTONS * PAD_NUM_PORTS];
+*/
 
 // BUTTONS
 
@@ -47,6 +49,7 @@ inline bool g_pad_button_edge_up(uint button)
     return pad_button_edge_up(button, g_PadNum);
 }
 
+/*
 bool pad_button_edge_down_multiple(uint button, int num_presses, int time_limit, int pad_num)
 {
     if (button == 0) return false;
@@ -108,6 +111,7 @@ bool g_pad_button_edge_down_multiple(uint button, int num_presses, int time_limi
 {
     return pad_button_edge_down_multiple(button, num_presses, time_limit, g_PadNum);
 }
+*/
 
 // LEFT STICK
 
