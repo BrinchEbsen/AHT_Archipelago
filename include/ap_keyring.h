@@ -7,7 +7,7 @@
 
 extern u16 g_ap_keyring_list[];
 
-extern char* g_ap_keyring_shop_strings[];
+extern wchar16* g_ap_keyring_shop_strings[];
 
 extern char* g_ap_keyring_pausemenu_strings[];
 

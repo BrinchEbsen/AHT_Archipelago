@@ -40,4 +40,15 @@ static inline bool set_u8_bitfield_value(u8* array, size_t index, bool value)
     return previous;
 }
 
+/// @brief strlen but for wchar
+static inline int wstrlen(wchar16* str) {
+    int len = 0;
+
+    for (; *str != (wchar16)0; str++) {
+        len++;
+    }
+
+    return len;
+}
+
 #endif /* UTIL_H */

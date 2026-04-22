@@ -31,6 +31,13 @@ void *SE_SpreadSheet__OpenSpreadSheet_FileHash_PreCallHook(
     }
 
     self->m_pSpreadSheet = AP_GAMESTATE_SHOP_SPREADSHEET_START;
+
+    // If the row count is 0, the client probably forgot to write stuff there
+    // Write a 1 just to prevent a crash
+    if (g_gamestate_ap_settings.xls_shop_rowcount == 0) {
+        g_gamestate_ap_settings.xls_shop_rowcount = 1;
+    }
+
     return self->m_pSpreadSheet;
 }
 
@@ -44,7 +51,7 @@ void GUI_Item__v_GetText_ReImplHook(GUI_Base* self, wchar16** pWide, char** pStr
     // Injection of custom hashcode
     if ((hash & 0xFFFF0000) == AP_TEXT_ENTRY_HASHCODE_BASE) {
         int index = hash & 0xFFFF;
-        *pString = g_gamestate_ap_settings.shop_text[index].text;
+        *pWide = g_gamestate_ap_settings.shop_text[index].text;
         return;
     }
 
@@ -273,7 +280,9 @@ void initialize_vanilla_key_ring_shop()
 
         APSettings_TextEntry* textentry = &g_gamestate_ap_settings.shop_text[index];
         textentry->been_bought = 0;
-        strcpy(textentry->text, g_ap_keyring_shop_strings[index]);
+        
+        int len = wstrlen(g_ap_keyring_shop_strings[index]);
+        memcpy(textentry->text, g_ap_keyring_shop_strings[index], len*2);
     }
 
     g_gamestate_ap_settings.xls_shop_rowcount = keyrings_start+AP_NUM_KEYRINGS;

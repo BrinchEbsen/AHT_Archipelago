@@ -188,7 +188,7 @@ void ap_gamestate_update()
     #ifdef AP_DEBUG_NOTIFICATION
     if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
         ap_set_notification(60*5, COLOR_WHITE,
-            "Test notification! The notification that tests things! Something testy happened, probably!");
+            u"Test notification! The notification that tests things! Something testy happened, probably!");
     }
     #endif
 }
@@ -215,8 +215,12 @@ void dbg_add_shop_item()
     item->BroughtFlags = 0;
 
     g_gamestate_ap_settings.shop_text[index-1].been_bought = false;
-    char* shoptext = g_gamestate_ap_settings.shop_text[index-1].text;
-    sprintf(shoptext, "Example check item %d", index);
+    wchar16* shoptext = g_gamestate_ap_settings.shop_text[index-1].text;
+    
+    char buff[48];
+    sprintf(buff, "Example check item %d", index);
+
+    Wcscpy(shoptext, buff);
     
     PRINTF("Added item %d\n", index);
 

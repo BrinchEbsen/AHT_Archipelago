@@ -10,7 +10,7 @@
 #define AP_SETTINGS_INIT_MAGICVALUE 0x45424245 // 'EBBE' in ASCII :)
 
 #define SHOP_NUM_VANILLA_ENTRIES 1
-#define SHOP_TOTAL_NUM_ENTRIES 80
+#define SHOP_TOTAL_NUM_ENTRIES 61
 #define AP_TEXT_ENTRY_HASHCODE_BASE 0x28010000
 
 #define AP_DEATHLINK_MODE_NONE      0
@@ -24,8 +24,8 @@ typedef struct APSettings_TextEntry
 {
     /* 0x0 */ bool been_bought;
     /* 0x1 */ u8 padding;
-    /* 0x2 */ char text[48];
-} APSettings_TextEntry; // Size: 0x32
+    /* 0x2 */ wchar16 text[48];
+} APSettings_TextEntry; // Size: 0x62
 
 typedef struct APSettings {
     u8 location_bitfield[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];

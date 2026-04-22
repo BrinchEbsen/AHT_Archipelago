@@ -38,21 +38,21 @@ u16 g_ap_keyring_list[] = {
     ( Realm_4 << 8 ) | Level_E  // 13
 };
 
-char* g_ap_keyring_shop_strings[] = {
-    "Dragon Village key ring",
-    "Crocovile Swamp key ring",
-    "Dragonfly Falls key ring",
-    "Coastal Remains key ring",
-    "Sunken Ruins key ring",
-    "Cloudy Domain key ring",
-    "Frostbite Village key ring",
-    "Gloomy Glacier key ring",
-    "Ice Citadel key ring",
-    "Stormy Beach key ring",
-    "Molten Mount key ring",
-    "Magma Falls key ring",
-    "Dark Mine key ring",
-    "Red's Laboratory key ring"
+wchar16* g_ap_keyring_shop_strings[] = {
+    u"Dragon Village key ring",
+    u"Crocovile Swamp key ring",
+    u"Dragonfly Falls key ring",
+    u"Coastal Remains key ring",
+    u"Sunken Ruins key ring",
+    u"Cloudy Domain key ring",
+    u"Frostbite Village key ring",
+    u"Gloomy Glacier key ring",
+    u"Ice Citadel key ring",
+    u"Stormy Beach key ring",
+    u"Molten Mount key ring",
+    u"Magma Falls key ring",
+    u"Dark Mine key ring",
+    u"Red's Laboratory key ring"
 };
 
 char* g_ap_keyring_pausemenu_strings[] = {
