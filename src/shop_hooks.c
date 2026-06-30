@@ -5,6 +5,7 @@
 #include <gametext.h>
 #include <ap_keyring.h>
 #include <igstdlib.h>
+#include <gamestate.h>
 
 void *SE_SpreadSheet__OpenSpreadSheet_FileHash_PreCallHook(
     SE_SpreadSheet *self, EXHashCode FileHash, EXHashCode SpreadSheetHash)
@@ -77,7 +78,15 @@ int GUI_ShopItem__BuyItems_PreCallHook(GUI_ShopItem* self)
         }
     }
     
-    return GUI_ShopItem__BuyItems(self);
+    s32 prevGems = gGameState.m_PlayerState.m_Gems;
+    int result = GUI_ShopItem__BuyItems(self);
+    
+    // Revert gem subtraction if shop is in "unlock mode"
+    if (g_gamestate_ap_settings.shop_unlock_mode) {
+        gGameState.m_PlayerState.m_Gems = prevGems;
+    }
+
+    return result;
 }
 
 int GUI_ShopItem__IsAvailable_PreCallHook(GUI_ShopItem* self, Bool Buy)

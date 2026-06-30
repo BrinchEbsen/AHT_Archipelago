@@ -1,0 +1,11 @@
+.memaddr 0x8012e0f4
+bl GameText__FindTextItem_PreCallHook
+
+.memaddr 0x8012e230
+bl GameText__FindTextItem_PreCallHook
+
+.memaddr 0x8012e180
+bl GameText__FindTextItem_PreCallHook
+
+.memaddr 0x8012df74
+bl GameText__FindTextItem_PreCallHook

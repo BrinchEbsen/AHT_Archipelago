@@ -66,6 +66,8 @@ typedef struct APSettings {
     u8 supercharge_cost;
     bool boss_easy_mode[4];
 
+    bool shop_unlock_mode;
+
     // Number of datasheets in this spreadsheet.
     // GUI_Shop only has 1 datasheet.
     int xls_shop_sheetcount_ALWAYS_1;

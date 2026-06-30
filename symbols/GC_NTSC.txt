@@ -189,6 +189,9 @@ red_health_subtract = 0x803b7bd0;
 gGameText = 0x80455c1c;
 GameText__GetText = 0x8012df2c;
 
+/* text_hooks.h */
+GameText__FindTextItem = 0x8012dd20;
+
 /* igstdlib.h */
 strcasecmp = 0x80259f24;
 strcmp = 0x80259fa0;

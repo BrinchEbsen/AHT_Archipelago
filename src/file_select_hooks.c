@@ -3,10 +3,7 @@
 #include <ap_patch.h>
 #include <paneldraw.h>
 #include <pad.h>
-
-#ifndef AP_VERSION
-#define AP_VERSION ""
-#endif /* AP_VERSION */
+#include <ap_version.h>
 
 bool ap_save_warning_active = false;
 
@@ -37,7 +34,7 @@ s32 TitleLoop__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
         case 1: // TitleState_PressStart
         case 2: // TitleState_StartMenu
         case 4: // TitleState_ExtrasMenu
-            TEXT_PRINT_COLOR(pWnd, 0, 0, COLOR_WHITE, "Archipelago "AP_VERSION);
+            TEXT_PRINT_COLOR_F(pWnd, 0, 0, COLOR_WHITE, "Archipelago Mod Version %u", g_ap_version);
             if (g_patch_ap_settings.patch_been_written_to) {
                 TEXT_PRINT_COLOR(pWnd, 0, 20, COLOR_LIGHT_GREEN, "Settings initialized");
             } else {

@@ -16,6 +16,7 @@
 #include <ap_objectives.h>
 #include <ap_deathlink.h>
 #include <boss_hooks.h>
+#include <ap_version.h>
 
 // #define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
 // #define AP_DEBUG_NOTIFICATION
@@ -406,7 +407,8 @@ int ap_binary_search_grabbable(u16 map_index, u16 trigger_index)
 
 void print_interface_addresses()
 {
-    PRINTF("PATCH AREA:\n");
+    PRINTF("AP MOD VERSION %u (0x%x)\n", g_ap_version, &g_ap_version);
+    PRINTF("-----\nPATCH AREA:\n");
     print_apsettings_addresses(&g_patch_ap_settings);
     PRINTF("-----\nGAMESTATE AREA:\n");
     print_apsettings_addresses(&g_gamestate_ap_settings);
@@ -449,6 +451,7 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("u8 invincibility_cost: %x\n", &psettings->invincibility_cost);
     PRINTF("u8 supercharge_cost: %x\n", &psettings->supercharge_cost);
     PRINTF("bool[4] boss_easy_mode: %x\n", &psettings->boss_easy_mode);
+    PRINTF("bool shop_unlock_mode: %x\n", &psettings->shop_unlock_mode);
     PRINTF("int xls_shop_sheetcount_ALWAYS_1: %x\n", &psettings->xls_shop_sheetcount_ALWAYS_1);
     PRINTF("int xls_shop_sheet_offset_ALWAYS_4: %x\n", &psettings->xls_shop_sheet_offset_ALWAYS_4);
     PRINTF("int xls_shop_rowcount: %x\n", &psettings->xls_shop_rowcount);
