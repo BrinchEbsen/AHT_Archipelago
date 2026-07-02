@@ -41,6 +41,11 @@ u32 dragon_village_hunter_patch_1[] = {
     0x0e1c0001, 0x00000000
 };
 
+u32 dragon_village_ember_patch[] = {
+    // glo0 = 0
+    0x0e180001, 0x00000000
+};
+
 GameScriptPatch g_gamescript_patches[] = {
     {
         .map_index = 24,
@@ -48,6 +53,13 @@ GameScriptPatch g_gamescript_patches[] = {
         .num_lines = 1,
         .start_line = 0,
         .patches = dragon_village_hunter_patch_1
+    },
+    {
+        .map_index = 24,
+        .trig_index = 289,
+        .num_lines = 1,
+        .start_line = 34,
+        .patches = dragon_village_ember_patch
     }
 };
 

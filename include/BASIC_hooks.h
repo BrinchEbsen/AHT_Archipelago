@@ -16,12 +16,12 @@ typedef struct GameScriptPatch
 {
     u16 trig_index;
     u16 map_index;
-    int num_lines;
-    int start_line;
+    u16 num_lines;
+    u16 start_line;
     u32* patches;
 } GameScriptPatch;
 
-#define NUM_GAMESCRIPT_PATCHES 1
+#define NUM_GAMESCRIPT_PATCHES 2
 extern GameScriptPatch g_gamescript_patches[];
 
 #define XSEITEMHANDLER_M_PBASIC(self) OFFSET_VAL(void*, self, 0x380)
