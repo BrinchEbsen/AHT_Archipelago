@@ -20,6 +20,8 @@
 #define AP_DEATHLINK_REASON_NONE    0
 #define AP_DEATHLINK_REASON_DEFAULT 1
 
+#define TELEPORT_PASS_PRICE 0
+
 typedef struct APSettings_TextEntry
 {
     /* 0x0 */ bool been_bought;

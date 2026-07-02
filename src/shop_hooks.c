@@ -19,6 +19,10 @@ void *SE_SpreadSheet__OpenSpreadSheet_FileHash_PreCallHook(
         xlsShoppingItem* items = OFFSET_PTR(xlsShoppingItem, data, 0xc);
         items[2].AvailableFlags |= ABILITY_AP_FIREBREATH;
         items[6].AvailableFlags |= ABILITY_AP_FIREBREATH;
+
+        // Set teleport pass ticket to desired price
+        items[14].cost[0] = TELEPORT_PASS_PRICE;
+        items[14].cost[1] = TELEPORT_PASS_PRICE;
     
         return data;
     }
@@ -116,8 +120,8 @@ void initialize_vanilla_key_ring_shop()
     items[0].File = HT_File_Panel;
     items[0].ItemText = HT_Text_ShoppingItem_RightsOfPassage;
     items[0].DescText = HT_Text_ShoppingDesc_RightsOfPassage;
-    items[0].cost[0] = 100;
-    items[0].cost[1] = 100;
+    items[0].cost[0] = TELEPORT_PASS_PRICE;
+    items[0].cost[1] = TELEPORT_PASS_PRICE;
     items[0].Count = 1;
     items[0].Num = 0;
     items[0].AvailableFlags = ABILITY_BOUGHT_LOCK_PICK;
