@@ -159,6 +159,8 @@ void ap_gamestate_update()
 
     ap_setup_boss_damage();
 
+    ap_update_teleport_anywhere();
+
     #ifdef AP_DEBUG_DEATHLINK
     if (g_pad_button_state(PAD_BUTTON_B)) {
         if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
@@ -351,6 +353,24 @@ void ap_update_realm_access()
     }
 }
 
+void ap_update_teleport_anywhere() {
+    if (!g_gamestate_ap_settings.teleport_anywhere) {
+        // PrevSelectableRestart - Only if RealmID matches current
+        *((u32*)0x801aecac) = 0x7c7f1b78; // mr r31, r3
+        // NextSelectableRestart - Only if RealmID matches current
+        *((u32*)0x801aeb8c) = 0x7c7f1b78; // mr r31, r3
+
+        *((u32*)0x801af128) = 0x801f008c; // lwz r0, 0x008C (r31)
+    } else {
+        // PrevSelectableRestart - Assume RealmID matches
+        *((u32*)0x801aecac) = 0x3be00001; // li r31, 1
+        // NextSelectableRestart - Assume RealmID matches
+        *((u32*)0x801aeb8c) = 0x3be00001; // li r31, 1
+
+        *((u32*)0x801af128) = 0x7f20cb78; // mr r0, r25
+    }
+}
+
 SE_GameState* mapchanger_SE_GameState__operatorequals_PreCallHook(SE_GameState* self, SE_GameState* _ctor_arg)
 {
     // This function copies the save file's gamestate into the current gamestate before the game starts up.
@@ -452,6 +472,7 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("u8 supercharge_cost: %x\n", &psettings->supercharge_cost);
     PRINTF("bool[4] boss_easy_mode: %x\n", &psettings->boss_easy_mode);
     PRINTF("bool shop_unlock_mode: %x\n", &psettings->shop_unlock_mode);
+    PRINTF("bool teleport_anywhere: %x\n", &psettings->teleport_anywhere);
     PRINTF("int xls_shop_sheetcount_ALWAYS_1: %x\n", &psettings->xls_shop_sheetcount_ALWAYS_1);
     PRINTF("int xls_shop_sheet_offset_ALWAYS_4: %x\n", &psettings->xls_shop_sheet_offset_ALWAYS_4);
     PRINTF("int xls_shop_rowcount: %x\n", &psettings->xls_shop_rowcount);

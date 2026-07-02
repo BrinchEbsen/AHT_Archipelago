@@ -41,6 +41,8 @@ void ap_init_gamestate();
 
 void ap_update_realm_access();
 
+void ap_update_teleport_anywhere();
+
 SE_GameState* mapchanger_SE_GameState__operatorequals_PreCallHook(SE_GameState* self, SE_GameState* _ctor_arg);
 
 bool TeleportPad_PlayerObjectives__GetObjective_PreCallHook(

@@ -80,6 +80,8 @@ APSettings g_patch_ap_settings = {
 
     .shop_unlock_mode = false,
 
+    .teleport_anywhere = false,
+
     // SHOP ITEMS
     .xls_shop_sheetcount_ALWAYS_1 = 1,
     .xls_shop_sheet_offset_ALWAYS_4 = 4,
