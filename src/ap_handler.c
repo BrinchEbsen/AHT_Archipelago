@@ -359,14 +359,14 @@ void ap_update_teleport_anywhere() {
         *((u32*)0x801aecac) = 0x7c7f1b78; // mr r31, r3
         // NextSelectableRestart - Only if RealmID matches current
         *((u32*)0x801aeb8c) = 0x7c7f1b78; // mr r31, r3
-
+        // GetNumBuyableShopPads - Get map realm to compare with
         *((u32*)0x801af128) = 0x801f008c; // lwz r0, 0x008C (r31)
     } else {
         // PrevSelectableRestart - Assume RealmID matches
         *((u32*)0x801aecac) = 0x3be00001; // li r31, 1
         // NextSelectableRestart - Assume RealmID matches
         *((u32*)0x801aeb8c) = 0x3be00001; // li r31, 1
-
+        // GetNumBuyableShopPads - Assume RealmID matches
         *((u32*)0x801af128) = 0x7f20cb78; // mr r0, r25
     }
 }
