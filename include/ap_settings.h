@@ -72,6 +72,8 @@ typedef struct APSettings {
 
     bool teleport_anywhere;
 
+    bool unlock_all_shops;
+
     // Number of datasheets in this spreadsheet.
     // GUI_Shop only has 1 datasheet.
     int xls_shop_sheetcount_ALWAYS_1;

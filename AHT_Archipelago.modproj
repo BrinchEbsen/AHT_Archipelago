@@ -559,7 +559,8 @@
         {
           "name": "Shark_Overwrite",
           "code_files": [
-            "./src/ap_collectables.c"
+            "./src/ap_collectables.c",
+            "./src/ap_triginfo.c"
           ],
           "memory_address": "801858c0",
           "size": "1D60",

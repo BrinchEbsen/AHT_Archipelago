@@ -17,11 +17,13 @@
 #include <ap_deathlink.h>
 #include <boss_hooks.h>
 #include <ap_version.h>
+#include <ap_triginfo.h>
 
 // #define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
 // #define AP_DEBUG_NOTIFICATION
 // #define AP_DEBUG_DEATHLINK
 // #define AP_DEBUG_COLLECTABLES
+// #define AP_DEBUG_TRIGINFO
 
 #ifdef AP_QUICK_START
 #pragma message ( "COMPILING WITH AP_QUICK_START, DO NOT RELEASE" )
@@ -41,6 +43,11 @@
 
 #ifdef AP_DEBUG_COLLECTABLES
 #pragma message ( "COMPILING WITH AP_DEBUG_COLLECTABLES, DO NOT RELEASE" )
+#endif
+
+#ifdef AP_DEBUG_TRIGINFO
+void dbg_print_shop_triginfos();
+#pragma message ( "COMPILING WITH AP_DEBUG_TRIGINFO, DO NOT RELEASE" )
 #endif
 
 MapOrderInfo realm_teleporter_maporderinfo[] = {
@@ -194,6 +201,12 @@ void ap_gamestate_update()
             u"Test notification! The notification that tests things! Something testy happened, probably!");
     }
     #endif
+
+    #ifdef AP_DEBUG_TRIGINFO
+    if (g_pad_button_edge_down(PAD_BUTTON_Z)) {
+        dbg_print_shop_triginfos();
+    }
+    #endif
 }
 
 #ifdef AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
@@ -239,6 +252,46 @@ void dbg_remove_shop_item()
     PRINTF("Removed item %d\n", index);
 
     g_gamestate_ap_settings.xls_shop_rowcount--;
+}
+#endif
+
+#ifdef AP_DEBUG_TRIGINFO
+void dbg_print_shop_triginfos()
+{
+    for (int i = 0; i < gGameState.m_NumTrigInfo; i++) {
+        GameStateTrigInfo* tinfo = &gGameState.m_TrigInfo[i];
+
+        if (tinfo->m_Type != Type_RestartPoint) {
+            continue;
+        }
+
+        char* ht_string;
+        if (tinfo->u.RestartPoint.HashCode == HT_StartPoint_MAINSHOP) {
+            ht_string = "HT_StartPoint_MAINSHOP";
+        } else if (tinfo->u.RestartPoint.HashCode == HT_StartPoint_SHOP) {
+            ht_string = "HT_StartPoint_SHOP";
+        } else {
+            continue;
+        }
+
+        PRINTF("{\n");
+        PRINTF("    .m_MapIndex = %d,\n", tinfo->m_MapIndex);
+        PRINTF("    .m_TrigIndex = %d,\n", tinfo->m_TrigIndex);
+        PRINTF("    .m_XYZ = {\n");
+        PRINTF("        .x = %ff,\n", tinfo->m_XYZ.x);
+        PRINTF("        .y = %ff,\n", tinfo->m_XYZ.y);
+        PRINTF("        .z = %ff\n", tinfo->m_XYZ.z);
+        PRINTF("    },\n");
+        PRINTF("    .m_Type = Type_RestartPoint,\n");
+        PRINTF("    .u = {\n");
+        PRINTF("        .RestartPoint = {\n");
+        PRINTF("            .HasVisited = 1,\n");
+        PRINTF("            .HashCode = %s,\n", ht_string);
+        PRINTF("            .NameTextHashCode = 0x%x,\n", tinfo->u.RestartPoint.NameTextHashCode);
+        PRINTF("        }\n");
+        PRINTF("    }\n");
+        PRINTF("},\n");
+    }
 }
 #endif
 
@@ -334,6 +387,11 @@ void ap_init_gamestate()
     // Set objective flag for having bought a lock pick
     gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BOUGHT_LOCK_PICK;
 
+    if (g_gamestate_ap_settings.unlock_all_shops) {
+        memcpy(gGameState.m_TrigInfo, shops_triginfos, NUM_SHOP_TRIGINFOS*sizeof(GameStateTrigInfo));
+        gGameState.m_NumTrigInfo = NUM_SHOP_TRIGINFOS;
+    }
+
     do_autosave = true;
 
     ap_set_gamestate_initialized();
@@ -349,6 +407,15 @@ void ap_update_realm_access()
                 &gMiniMapStatus,
                 &realm_teleporter_maporderinfo[i],
                 Selectable);
+        }
+    }
+
+    if (g_gamestate_ap_settings.unlock_all_shops) {
+        for (int i = 0; i < NUM_SHOP_MAPINFOS; i++) {
+            MiniMapStatus__SetBitName(
+                &gMiniMapStatus,
+                &shops_mapinfos[i],
+                Visible);
         }
     }
 }
@@ -473,6 +540,7 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("bool[4] boss_easy_mode: %x\n", &psettings->boss_easy_mode);
     PRINTF("bool shop_unlock_mode: %x\n", &psettings->shop_unlock_mode);
     PRINTF("bool teleport_anywhere: %x\n", &psettings->teleport_anywhere);
+    PRINTF("bool unlock_all_shops: %x\n", &psettings->unlock_all_shops);
     PRINTF("int xls_shop_sheetcount_ALWAYS_1: %x\n", &psettings->xls_shop_sheetcount_ALWAYS_1);
     PRINTF("int xls_shop_sheet_offset_ALWAYS_4: %x\n", &psettings->xls_shop_sheet_offset_ALWAYS_4);
     PRINTF("int xls_shop_rowcount: %x\n", &psettings->xls_shop_rowcount);
