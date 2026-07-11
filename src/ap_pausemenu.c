@@ -158,6 +158,10 @@ s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
         draw_pause_stats(self, pWnd);
         draw_notification_toggle(self, pWnd);
         draw_map_icon_toggle(self, pWnd);
+        if (g_gamestate_ap_settings.shop_unlock_mode)
+        {
+            draw_gem_stats(self, pWnd);
+        }
     } else {
         TEXT_PRINT_ALIGN_COLOR(pWnd, 0, 0, BottomCentre, COLOR_RED, "Archipelago gamestate not initialized!");
     }
@@ -405,6 +409,18 @@ void draw_map_icon_toggle(GUI_Base* self, void* pWnd)
 
     textprintf(pWnd, (WND_WIDTH/2)+4, 2, 1.0f, TopLeft, COLOR_WHITE, true,
         "~Y Show Map Icons: %s", g_show_minimap_icons ? "Yes" : "No");
+}
+
+void draw_gem_stats(GUI_Base* self, void* pWnd)
+{
+    static u16 x = 144;
+    static u16 y = 38;
+
+    TEXT_PRINT_ALIGN_COLOR_F(pWnd, x, y, TopLeft, COLOR_TEXT, "Gems: %d/%d",
+        gGameState.m_PlayerState.m_Gems,
+        g_gamestate_ap_settings.total_gems_available);
+    TEXT_PRINT_ALIGN_COLOR_F(pWnd, x, y+20, TopLeft, COLOR_TEXT, "(%d Required)",
+        g_gamestate_ap_settings.total_gems_in_logic);
 }
 
 void close_pause_menu(GUI_Base* self)

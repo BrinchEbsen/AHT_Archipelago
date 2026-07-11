@@ -541,6 +541,8 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("bool shop_unlock_mode: %x\n", &psettings->shop_unlock_mode);
     PRINTF("bool teleport_anywhere: %x\n", &psettings->teleport_anywhere);
     PRINTF("bool unlock_all_shops: %x\n", &psettings->unlock_all_shops);
+    PRINTF("bool total_gems_in_logic: %x\n", &psettings->total_gems_in_logic);
+    PRINTF("bool total_gems_available: %x\n", &psettings->total_gems_available);
     PRINTF("int xls_shop_sheetcount_ALWAYS_1: %x\n", &psettings->xls_shop_sheetcount_ALWAYS_1);
     PRINTF("int xls_shop_sheet_offset_ALWAYS_4: %x\n", &psettings->xls_shop_sheet_offset_ALWAYS_4);
     PRINTF("int xls_shop_rowcount: %x\n", &psettings->xls_shop_rowcount);

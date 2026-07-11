@@ -74,6 +74,9 @@ typedef struct APSettings {
 
     bool unlock_all_shops;
 
+    int total_gems_in_logic;
+    int total_gems_available;
+
     // Number of datasheets in this spreadsheet.
     // GUI_Shop only has 1 datasheet.
     int xls_shop_sheetcount_ALWAYS_1;
