@@ -135,166 +135,9 @@ void initialize_vanilla_key_ring_shop()
 {
     xlsShoppingItem* items = g_gamestate_ap_settings.xls_shop_items;
 
-    items[0].Entity = HT_Entity_Shop_RightsOfPassage;
-    items[0].File = HT_File_Panel;
-    items[0].ItemText = HT_Text_ShoppingItem_RightsOfPassage;
-    items[0].DescText = HT_Text_ShoppingDesc_RightsOfPassage;
-    items[0].cost[0] = TELEPORT_PASS_PRICE;
-    items[0].cost[1] = TELEPORT_PASS_PRICE;
-    items[0].Count = 1;
-    items[0].Num = 0;
-    items[0].AvailableFlags = ABILITY_BOUGHT_LOCK_PICK;
-    items[0].BroughtFlags = 0;
+    memcpy(items, g_vanilla_key_ring_shop_start_items, sizeof(xlsShoppingItem)*NUM_VANILLA_KEY_RING_SHOP_START_ITEMS);
 
-    items[1].Entity = HT_Entity_SparxHit;
-    items[1].File = HT_File_Panel;
-    items[1].ItemText = HT_Text_ShoppingItem_SparxExtraHit;
-    items[1].DescText = HT_Text_ShoppingDesc_SparxExtraHit;
-    items[1].cost[0] = 5000;
-    items[1].cost[1] = 6250;
-    items[1].Count = 1;
-    items[1].Num = 0;
-    items[1].AvailableFlags = ABILITY_BOUGHT_LOCK_PICK;
-    items[1].BroughtFlags = ABILITY_HIT_POINT_UPGRADE;
-
-    items[2].Entity = HT_Entity_FlameBreath;
-    items[2].File = HT_File_Panel;
-    items[2].ItemText = HT_Text_ShoppingItem_FireAmmo;
-    items[2].DescText = HT_Text_ShoppingDesc_FireAmmo;
-    items[2].cost[0] = 50;
-    items[2].cost[1] = 62;
-    items[2].Count = -1;
-    items[2].Num = 0;
-    items[2].AvailableFlags = 
-                ABILITY_BOUGHT_LOCK_PICK |
-                ABILITY_AP_FIREBREATH;
-    items[2].BroughtFlags = 0x8;
-
-    items[3].Entity = HT_Entity_ElectricBreath;
-    items[3].File = HT_File_Panel;
-    items[3].ItemText = HT_Text_ShoppingItem_ElectricAmmo;
-    items[3].DescText = HT_Text_ShoppingDesc_ElectricAmmo;
-    items[3].cost[0] = 250;
-    items[3].cost[1] = 312;
-    items[3].Count = -1;
-    items[3].Num = 0;
-    items[3].AvailableFlags = 
-                ABILITY_BOUGHT_LOCK_PICK |
-                ABILITY_ELECTRIC_BREATH;
-    items[3].BroughtFlags = 0x8;
-
-    items[4].Entity = HT_Entity_WaterBreath;
-    items[4].File = HT_File_Panel;
-    items[4].ItemText = HT_Text_ShoppingItem_WaterAmmo;
-    items[4].DescText = HT_Text_ShoppingDesc_WaterAmmo;
-    items[4].cost[0] = 50;
-    items[4].cost[1] = 62;
-    items[4].Count = -1;
-    items[4].Num = 0;
-    items[4].AvailableFlags = 
-                ABILITY_BOUGHT_LOCK_PICK |
-                ABILITY_WATER_BREATH;
-    items[4].BroughtFlags = 0x8;
-
-    items[5].Entity = HT_Entity_IceBreath;
-    items[5].File = HT_File_Panel;
-    items[5].ItemText = HT_Text_ShoppingItem_IceAmmo;
-    items[5].DescText = HT_Text_ShoppingDesc_IceAmmo;
-    items[5].cost[0] = 100;
-    items[5].cost[1] = 125;
-    items[5].Count = -1;
-    items[5].Num = 0;
-    items[5].AvailableFlags = 
-                ABILITY_BOUGHT_LOCK_PICK |
-                ABILITY_ICE_BREATH;
-    items[5].BroughtFlags = 0x8;
-
-    items[6].Entity = HT_Entity_FlameBreathMag;
-    items[6].File = HT_File_Panel;
-    items[6].ItemText = HT_Text_ShoppingItem_FireMag;
-    items[6].DescText = HT_Text_ShoppingDesc_FireMag;
-    items[6].cost[0] = 500;
-    items[6].cost[1] = 625;
-    items[6].Count = -1;
-    items[6].Num = 5;
-    items[6].AvailableFlags = 
-                ABILITY_BOUGHT_LOCK_PICK |
-                ABILITY_AP_FIREBREATH;
-    items[6].BroughtFlags = 0;
-
-    items[7].Entity = HT_Entity_ElectricBreathMag;
-    items[7].File = HT_File_Panel;
-    items[7].ItemText = HT_Text_ShoppingItem_ElectricMag;
-    items[7].DescText = HT_Text_ShoppingDesc_ElectricMag;
-    items[7].cost[0] = 1000;
-    items[7].cost[1] = 1250;
-    items[7].Count = -1;
-    items[7].Num = 1;
-    items[7].AvailableFlags = 
-                ABILITY_BOUGHT_LOCK_PICK |
-                ABILITY_ELECTRIC_BREATH;
-    items[7].BroughtFlags = 0;
-
-    items[8].Entity = HT_Entity_WaterBreathMag;
-    items[8].File = HT_File_Panel;
-    items[8].ItemText = HT_Text_ShoppingItem_WaterMag;
-    items[8].DescText = HT_Text_ShoppingDesc_WaterMag;
-    items[8].cost[0] = 250;
-    items[8].cost[1] = 312;
-    items[8].Count = -1;
-    items[8].Num = 10;
-    items[8].AvailableFlags = 
-                ABILITY_BOUGHT_LOCK_PICK |
-                ABILITY_WATER_BREATH;
-    items[8].BroughtFlags = 0;
-
-    items[9].Entity = HT_Entity_IceBreathMag;
-    items[9].File = HT_File_Panel;
-    items[9].ItemText = HT_Text_ShoppingItem_IceMag;
-    items[9].DescText = HT_Text_ShoppingDesc_IceMag;
-    items[9].cost[0] = 750;
-    items[9].cost[1] = 937;
-    items[9].Count = -1;
-    items[9].Num = 2;
-    items[9].AvailableFlags = 
-                ABILITY_BOUGHT_LOCK_PICK |
-                ABILITY_ICE_BREATH;
-    items[9].BroughtFlags = 0;
-
-    items[10].Entity = HT_Entity_FullHealth;
-    items[10].File = HT_File_Panel;
-    items[10].ItemText = HT_Text_ShoppingItem_FullHealth;
-    items[10].DescText = HT_Text_ShoppingDesc_FullHealth;
-    items[10].cost[0] = 1500;
-    items[10].cost[1] = 1875;
-    items[10].Count = 1;
-    items[10].Num = 0;
-    items[10].AvailableFlags = ABILITY_BOUGHT_LOCK_PICK;
-    items[10].BroughtFlags = ABILITY_BUTTERFLY_JAR;
-
-    items[11].Entity = HT_Entity_Shop_DoubleGemVal;
-    items[11].File = HT_File_Panel;
-    items[11].ItemText = HT_Text_ShoppingItem_DoubleValue;
-    items[11].DescText = HT_Text_ShoppingDesc_DoubleValue;
-    items[11].cost[0] = 1000;
-    items[11].cost[1] = 1250;
-    items[11].Count = 1;
-    items[11].Num = 0;
-    items[11].AvailableFlags = ABILITY_BOUGHT_LOCK_PICK;
-    items[11].BroughtFlags = ABILITY_DOUBLE_GEM;
-
-    items[12].Entity = HT_Entity_Shop_HornDive;
-    items[12].File = HT_File_Panel;
-    items[12].ItemText = HT_Text_ShoppingItem_HornDive;
-    items[12].DescText = HT_Text_ShoppingDesc_HornDive;
-    items[12].cost[0] = 10000;
-    items[12].cost[1] = 12500;
-    items[12].Count = 1;
-    items[12].Num = 0;
-    items[12].AvailableFlags = ABILITY_BOUGHT_LOCK_PICK;
-    items[12].BroughtFlags = ABILITY_HORN_DIVE_UPGRADE;
-
-    static int keyrings_start = 13;
+    static int keyrings_start = NUM_VANILLA_KEY_RING_SHOP_START_ITEMS;
 
     for (int i = keyrings_start; i < keyrings_start+AP_NUM_KEYRINGS; i++) {
         int index = i - keyrings_start;
@@ -319,3 +162,165 @@ void initialize_vanilla_key_ring_shop()
 
     g_gamestate_ap_settings.xls_shop_rowcount = keyrings_start+AP_NUM_KEYRINGS;
 }
+
+xlsShoppingItem g_vanilla_key_ring_shop_start_items[] = {
+    {
+        .Entity = HT_Entity_Shop_RightsOfPassage,
+        .File = HT_File_Panel,
+        .ItemText = HT_Text_ShoppingItem_RightsOfPassage,
+        .DescText = HT_Text_ShoppingDesc_RightsOfPassage,
+        .cost = { TELEPORT_PASS_PRICE, TELEPORT_PASS_PRICE },
+        .Count = 1,
+        .Num = 0,
+        .AvailableFlags = ABILITY_BOUGHT_LOCK_PICK,
+        .BroughtFlags = 0,
+    },
+    {
+        .Entity = HT_Entity_SparxHit,
+        .File = HT_File_Panel,
+        .ItemText = HT_Text_ShoppingItem_SparxExtraHit,
+        .DescText = HT_Text_ShoppingDesc_SparxExtraHit,
+        .cost = { 500, 6250 },
+        .Count = 1,
+        .Num = 0,
+        .AvailableFlags = ABILITY_BOUGHT_LOCK_PICK,
+        .BroughtFlags = ABILITY_HIT_POINT_UPGRADE
+    },
+    {
+        .Entity = HT_Entity_FlameBreath,
+        .File = HT_File_Panel,
+        .ItemText = HT_Text_ShoppingItem_FireAmmo,
+        .DescText = HT_Text_ShoppingDesc_FireAmmo,
+        .cost = { 50, 62 },
+        .Count = -1,
+        .Num = 0,
+        .AvailableFlags = 
+            ABILITY_BOUGHT_LOCK_PICK |
+            ABILITY_AP_FIREBREATH,
+        .BroughtFlags = 0x8
+    },
+    {
+        .Entity = HT_Entity_ElectricBreath,
+        .File = HT_File_Panel,
+        .ItemText = HT_Text_ShoppingItem_ElectricAmmo,
+        .DescText = HT_Text_ShoppingDesc_ElectricAmmo,
+        .cost = { 250, 312 },
+        .Count = -1,
+        .Num = 0,
+        .AvailableFlags = 
+            ABILITY_BOUGHT_LOCK_PICK |
+            ABILITY_ELECTRIC_BREATH,
+        .BroughtFlags = 0x8
+    },
+    {
+        .Entity = HT_Entity_WaterBreath,
+        .File = HT_File_Panel,
+        .ItemText = HT_Text_ShoppingItem_WaterAmmo,
+        .DescText = HT_Text_ShoppingDesc_WaterAmmo,
+        .cost = { 50, 62 },
+        .Count = -1,
+        .Num = 0,
+        .AvailableFlags = 
+            ABILITY_BOUGHT_LOCK_PICK |
+            ABILITY_WATER_BREATH,
+        .BroughtFlags = 0x8
+    },
+    {
+        .Entity = HT_Entity_IceBreath,
+        .File = HT_File_Panel,
+        .ItemText = HT_Text_ShoppingItem_IceAmmo,
+        .DescText = HT_Text_ShoppingDesc_IceAmmo,
+        .cost = { 100, 125 },
+        .Count = -1,
+        .Num = 0,
+        .AvailableFlags = 
+            ABILITY_BOUGHT_LOCK_PICK |
+            ABILITY_ICE_BREATH,
+        .BroughtFlags = 0x8
+    },
+    {
+        .Entity = HT_Entity_FlameBreathMag,
+        .File = HT_File_Panel,
+        .ItemText = HT_Text_ShoppingItem_FireMag,
+        .DescText = HT_Text_ShoppingDesc_FireMag,
+        .cost = { 500, 625 },
+        .Count = -1,
+        .Num = 5,
+        .AvailableFlags = 
+            ABILITY_BOUGHT_LOCK_PICK |
+            ABILITY_AP_FIREBREATH,
+        .BroughtFlags = 0
+    },
+    {
+        .Entity = HT_Entity_ElectricBreathMag,
+        .File = HT_File_Panel,
+        .ItemText = HT_Text_ShoppingItem_ElectricMag,
+        .DescText = HT_Text_ShoppingDesc_ElectricMag,
+        .cost = { 1000, 1250 },
+        .Count = -1,
+        .Num = 1,
+        .AvailableFlags = 
+            ABILITY_BOUGHT_LOCK_PICK |
+            ABILITY_ELECTRIC_BREATH,
+        .BroughtFlags = 0
+    },
+    {
+        .Entity = HT_Entity_WaterBreathMag,
+        .File = HT_File_Panel,
+        .ItemText = HT_Text_ShoppingItem_WaterMag,
+        .DescText = HT_Text_ShoppingDesc_WaterMag,
+        .cost = { 250, 312 },
+        .Count = -1,
+        .Num = 10,
+        .AvailableFlags = 
+            ABILITY_BOUGHT_LOCK_PICK |
+            ABILITY_WATER_BREATH,
+        .BroughtFlags = 0
+    },
+    {
+        .Entity = HT_Entity_IceBreathMag,
+        .File = HT_File_Panel,
+        .ItemText = HT_Text_ShoppingItem_IceMag,
+        .DescText = HT_Text_ShoppingDesc_IceMag,
+        .cost = { 750, 937 },
+        .Count = -1,
+        .Num = 2,
+        .AvailableFlags = 
+            ABILITY_BOUGHT_LOCK_PICK |
+            ABILITY_ICE_BREATH,
+        .BroughtFlags = 0
+    },
+    {
+        .Entity = HT_Entity_FullHealth,
+        .File = HT_File_Panel,
+        .ItemText = HT_Text_ShoppingItem_FullHealth,
+        .DescText = HT_Text_ShoppingDesc_FullHealth,
+        .cost = { 1500, 1875 },
+        .Count = 1,
+        .Num = 0,
+        .AvailableFlags = ABILITY_BOUGHT_LOCK_PICK,
+        .BroughtFlags = ABILITY_BUTTERFLY_JAR
+    },
+    {
+        .Entity = HT_Entity_Shop_DoubleGemVal,
+        .File = HT_File_Panel,
+        .ItemText = HT_Text_ShoppingItem_DoubleValue,
+        .DescText = HT_Text_ShoppingDesc_DoubleValue,
+        .cost = { 1000, 1250 },
+        .Count = 1,
+        .Num = 0,
+        .AvailableFlags = ABILITY_BOUGHT_LOCK_PICK,
+        .BroughtFlags = ABILITY_DOUBLE_GEM
+    },
+    {
+        .Entity = HT_Entity_Shop_HornDive,
+        .File = HT_File_Panel,
+        .ItemText = HT_Text_ShoppingItem_HornDive,
+        .DescText = HT_Text_ShoppingDesc_HornDive,
+        .cost = { 10000, 12500 },
+        .Count = 1,
+        .Num = 0,
+        .AvailableFlags = ABILITY_BOUGHT_LOCK_PICK,
+        .BroughtFlags = ABILITY_HORN_DIVE_UPGRADE
+    }
+};

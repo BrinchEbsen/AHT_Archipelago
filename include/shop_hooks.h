@@ -42,4 +42,7 @@ int GUI_ShopItem__GetCost_ReImplHook(GUI_ShopItem* self);
 
 void initialize_vanilla_key_ring_shop();
 
+#define NUM_VANILLA_KEY_RING_SHOP_START_ITEMS 13
+extern xlsShoppingItem g_vanilla_key_ring_shop_start_items[];
+
 #endif /* SHOP_HOOKS_H */
