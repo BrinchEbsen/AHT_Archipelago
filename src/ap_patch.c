@@ -289,9 +289,25 @@ APSettings g_patch_ap_settings = {
             .AvailableFlags = 0,
             .BroughtFlags = 0
         }
+        // ,{
+        //     .Entity = HT_Entity_Shop_TeleportMainShop,
+        //     .File = HT_File_Panel,
+        //     .ItemText = AP_TEXT_ENTRY_HASHCODE_BASE,
+        //     .DescText = AP_TEXT_ENTRY_HASHCODE_BASE,
+        //     .cost = { 0x60, 0x0 }, // 6,291,456
+        //     .Count = 1,
+        //     .Num = 0,
+        //     .AvailableFlags = 0,
+        //     .BroughtFlags = 0
+        // }
     }
-
-    // .shop_text = {
+    
+    // ,.shop_text = {
+    //     {
+    //         .been_bought = false,
+    //         .padding = 0,
+    //         .text = u"Test shop item"
+    //     }
     // }
     #endif /* USE_VANILLA_SHOP */
 };

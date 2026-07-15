@@ -38,6 +38,8 @@ int GUI_ShopItem__BuyItems_PreCallHook(GUI_ShopItem* self);
 extern int GUI_ShopItem__IsAvailable(GUI_ShopItem* self, Bool Buy);
 int GUI_ShopItem__IsAvailable_PreCallHook(GUI_ShopItem* self, Bool Buy);
 
+int GUI_ShopItem__GetCost_ReImplHook(GUI_ShopItem* self);
+
 void initialize_vanilla_key_ring_shop();
 
 #endif /* SHOP_HOOKS_H */

@@ -112,6 +112,25 @@ int GUI_ShopItem__IsAvailable_PreCallHook(GUI_ShopItem* self, Bool Buy)
     return GUI_ShopItem__IsAvailable(self, Buy);
 }
 
+int GUI_ShopItem__GetCost_ReImplHook(GUI_ShopItem* self)
+{
+    if (self->m_pItemData == NULL) {
+        return -1;
+    }
+
+    if (g_gamestate_ap_settings.shop_unlock_mode) {
+        // Treat the cost variables as one 32-bit int
+        return *((int*)&self->m_pItemData->cost[0]);
+    } else {
+        // Vanilla behavior
+        if ((self->m_Flags & 4) != 0){
+            return self->m_pItemData->cost[1];
+        } else {
+            return self->m_pItemData->cost[0];
+        }
+    }
+}
+
 void initialize_vanilla_key_ring_shop()
 {
     xlsShoppingItem* items = g_gamestate_ap_settings.xls_shop_items;

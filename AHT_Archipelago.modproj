@@ -1100,6 +1100,18 @@
           "injection_file_address": "0x3BDE1C",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "GUI_ShopItem__GetCost_ReImplHook",
+          "code_files": [
+            "./asm/GC_NTSC/GUI_ShopItem__GetCost_ReImplHook.s"
+          ],
+          "memory_address": "802282b4",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x2252B4",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],
