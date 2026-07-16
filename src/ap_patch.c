@@ -80,10 +80,14 @@ APSettings g_patch_ap_settings = {
 
     .shop_unlock_mode = false,
 
+    #ifdef AP_QUICK_START
+    .teleport_anywhere = true,
+    .unlock_all_shops = true,
+    #else
     .teleport_anywhere = false,
-
     .unlock_all_shops = false,
-
+    #endif
+    
     .total_gems_in_logic = 0,
     .total_gems_available = 0,
 
