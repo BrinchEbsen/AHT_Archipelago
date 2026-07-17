@@ -17,8 +17,37 @@
 #define AP_DEATHLINK_MODE_SHIELDED  1
 #define AP_DEATHLINK_MODE_FULL      2
 
-#define AP_DEATHLINK_REASON_NONE    0
-#define AP_DEATHLINK_REASON_DEFAULT 1
+typedef enum DeathLinkReason
+{
+    /*  0 */ DLReason_None,             // No death (0)
+    /*  1 */ DLReason_Default,          // Fallback value if type of death couldn't be figured out
+    /*  2 */ DLReason_Spy_Default,      // Spyro normal death
+    /*  3 */ DLReason_Spy_Water,        // Spyro death in water
+    /*  4 */ DLReason_Spy_Fall,         // Spyro falls into bottomless pit
+    /*  5 */ DLReason_Spy_Lava,         // Spyro on lava
+    /*  6 */ DLReason_Spy_Swamp,        // Spyro in quicksand
+    /*  7 */ DLReason_Spy_Squash,       // Spyro squashed
+    /*  8 */ DLReason_Spy_Freeze,       // Spyro frozen
+    /*  9 */ DLReason_Hun_Default,      // Hunter normal death
+    /* 10 */ DLReason_Hun_Fall,         // Hunter fall into bottomless pit
+    /* 11 */ DLReason_Hun_Drown,        // Hunter drown
+    /* 12 */ DLReason_Hun_Squash,       // Hunter squashed
+    /* 13 */ DLReason_Blk_Default,      // Blink normal death
+    /* 14 */ DLReason_Blk_Fall,         // Blink fall into bottomless pit
+    /* 15 */ DLReason_Blk_Lava,         // Blink on lava
+    /* 16 */ DLReason_Blk_Drown,        // Blink drown
+    /* 17 */ DLReason_Blk_Squash,       // Blink squashed
+    /* 18 */ DLReason_Sgt_Default,      // Sgt. Byrd normal death (fallback)
+    /* 19 */ DLReason_Sgt_WaterCrash,   // Sgt. Byrd crashed into water
+    /* 20 */ DLReason_Sgt_LavaCrash,    // Sgt. Byrd crashed into lava
+    /* 21 */ DLReason_Sgt_Fall,         // Sgt. Byrd fall into bottomless pit
+    /* 22 */ DLReason_Spx_Default,      // Sparx death
+    /* 23 */ DLReason_Ball_Default,     // Ball Gadget death
+    /* 24 */ DLReason_Turret_R1,        // Turret minigame fail (realm 1)
+    /* 25 */ DLReason_Turret_R2,        // Turret minigame fail (realm 2)
+    /* 26 */ DLReason_Turret_R3,        // Turret minigame fail (realm 3)
+    /* 27 */ DLReason_Turret_R4         // Turret minigame fail (realm 4)
+} DeathLinkReason;
 
 #define TELEPORT_PASS_PRICE 0
 

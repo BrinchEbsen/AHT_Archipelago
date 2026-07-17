@@ -152,7 +152,7 @@ DeathLinkResult try_kill_player(bool shielded)
     return res;
 }
 
-void ap_handle_deathlink_outgoing(u8 reason)
+void ap_handle_deathlink_outgoing(DeathLinkReason reason)
 {
     if (deathlink_ignore_next_death) {
         deathlink_ignore_next_death = false;

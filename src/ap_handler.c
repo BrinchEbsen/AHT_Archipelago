@@ -565,9 +565,65 @@ int XSEItemHandler_Player__InitialiseStart_PreCallHook(void* self)
     return XSEItemHandler_Player__InitialiseStart(self);
 }
 
+DeathLinkReason get_deathlink_reason()
+{
+    if (gpPlayer == NULL) return DLReason_Default;
+
+    Players playerType = XSEItemHandler_Player__M_PLAYERTYPE(gpPlayer);
+    PlayerModes mode = XSEItemHandler_Player__M_PLAYERMODE(gpPlayer);
+    EXHashCode animmode = OFFSET_VAL(PlayerModes, OFFSET_VAL(void*, gpPlayer, 0), 0x180);
+    u32 combine = (mode << 16) | (animmode & 0xFFFF);
+
+    switch (playerType)
+    {
+        case Player_Spyro:
+            switch (combine)
+            {
+                case (water_death   << 16) | (HT_AnimMode_Swim_Death    & 0xFFFF): return DLReason_Spy_Water;
+                case (deathfall     << 16) | (HT_AnimMode_FallLong      & 0xFFFF): return DLReason_Spy_Fall;
+                case (swamp_death   << 16) | (HT_AnimMode_Idle          & 0xFFFF): return DLReason_Spy_Lava;
+                case (nomode        << 16) | (HT_AnimMode_SwampDeath    & 0xFFFF): return DLReason_Spy_Swamp;
+                case (squashed      << 16) | (HT_AnimMode_Victory       & 0xFFFF): return DLReason_Spy_Squash;
+                case (iceydeath     << 16) | (HT_AnimMode_IceLand       & 0xFFFF): return DLReason_Spy_Freeze;
+                default: return DLReason_Spy_Default;
+            }
+
+        case Player_Hunter:
+            switch (combine)
+            {
+                case (deathfall     << 16) | (HT_AnimMode_DeathFall     & 0xFFFF): return DLReason_Hun_Fall;
+                case (swamp_death   << 16) | (HT_AnimMode_SwampDeath    & 0xFFFF): return DLReason_Hun_Drown;
+                case (squashed      << 16) | (HT_AnimMode_Victory       & 0xFFFF): return DLReason_Hun_Squash;
+                default: return DLReason_Hun_Default;
+            }
+
+        case Player_Blinky:
+            switch (combine)
+            {
+                case (deathfall     << 16) | (HT_AnimMode_DeathFall     & 0xFFFF): return DLReason_Blk_Fall;
+                case (swamp_death   << 16) | (HT_AnimMode_LavaLand      & 0xFFFF): return DLReason_Blk_Lava;
+                case (drown         << 16) | (HT_AnimMode_Wasp_Die      & 0xFFFF): return DLReason_Blk_Drown;
+                case (squashed      << 16) | (HT_AnimMode_Victory       & 0xFFFF): return DLReason_Blk_Squash;
+                default: return DLReason_Blk_Default;
+            }
+
+        case Player_SrgBird:
+            switch (combine)
+            {
+                case (water_dive    << 16) | (HT_AnimMode_CrashLand     & 0xFFFF): return DLReason_Sgt_WaterCrash;
+                case (breatheFire   << 16) | (HT_AnimMode_Fly           & 0xFFFF): return DLReason_Sgt_LavaCrash;
+                case (deathfall     << 16) | (HT_AnimMode_Fall          & 0xFFFF): return DLReason_Sgt_Fall;
+                default: return DLReason_Sgt_Default;
+            }
+
+        default: return DLReason_Default;
+    }
+}
+
 void Player_urghhhImDead_PostHook()
 {
-    ap_handle_deathlink_outgoing(AP_DEATHLINK_REASON_DEFAULT);
+    DeathLinkReason reason = get_deathlink_reason();
+    ap_handle_deathlink_outgoing(reason);
 
     if (!AP_GAMESTATE_SHOP_IS_RANDOMIZED)
     {
@@ -582,14 +638,14 @@ void Player_urghhhImDead_PostHook()
 
 s32 SE_GameLoop__StartGameState_PreCallHook_BallGadgetDeath(SE_GameLoop *self, SE_GameState *pGS)
 {
-    ap_handle_deathlink_outgoing(AP_DEATHLINK_REASON_DEFAULT);
+    ap_handle_deathlink_outgoing(DLReason_Ball_Default);
 
     return SE_GameLoop__StartGameState(self, pGS);
 }
 
 void SEMap_MiniGame__SetMiniGameDie_PreCallHook_SparxDeath(SE_Map* self)
 {
-    ap_handle_deathlink_outgoing(AP_DEATHLINK_REASON_DEFAULT);
+    ap_handle_deathlink_outgoing(DLReason_Spx_Default);
 
     SEMap_MiniGame__SetMiniGameDie(self);
 }
@@ -600,10 +656,16 @@ void SEMap_MiniGame__SetMiniGameFailed_PostHook()
 
     switch (currmap->m_MapGeoHashCode) {
         case HT_File_MR1_Spy:
+            ap_handle_deathlink_outgoing(DLReason_Turret_R1);
+            break;
         case HT_File_MR2_Spy:
+            ap_handle_deathlink_outgoing(DLReason_Turret_R2);
+            break;
         case HT_File_MR3_Spy:
+            ap_handle_deathlink_outgoing(DLReason_Turret_R3);
+            break;
         case HT_File_MR4_Spy:
-            ap_handle_deathlink_outgoing(AP_DEATHLINK_REASON_DEFAULT);
+            ap_handle_deathlink_outgoing(DLReason_Turret_R4);
             break;
     }
 }
