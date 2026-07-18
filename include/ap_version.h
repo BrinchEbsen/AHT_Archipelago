@@ -3,6 +3,7 @@
 #include <types.h>
 
 #ifndef AP_VERSION
+#error No AP version defined: Add define for AP_VERSION.
 #define AP_VERSION 0
 #endif /* AP_VERSION */
 
