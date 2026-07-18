@@ -113,6 +113,7 @@ bool g_pad_button_edge_down_multiple(uint button, int num_presses, int time_limi
 }
 */
 
+/*
 // LEFT STICK
 
 inline float pad_analog_get_l_stick_x(int pad_num)
@@ -184,3 +185,4 @@ float g_pad_analog_get_r_trigger()
 {
     return EXBaseGamePad__m_pGamePad->m_AnalogChan[g_PadNum][14];
 }
+*/

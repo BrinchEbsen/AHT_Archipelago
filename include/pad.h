@@ -97,7 +97,7 @@ bool pad_button_edge_down_multiple(uint button, int num_presses, int time_limit,
 // Check if a button has been pressed a given number of times within a given number of frames on the global pad.
 bool g_pad_button_edge_down_multiple(uint button, int num_presses, int time_limit);
 */
-
+/*
 // Get the value of the left stick x-axis.
 float pad_analog_get_l_stick_x(int pad_num);
 // Get the value of the left stick y-axis.
@@ -122,5 +122,6 @@ float pad_analog_get_r_trigger(int pad_num);
 float g_pad_analog_get_l_trigger();
 // Get the value of the right analog trigger on the global pad.
 float g_pad_analog_get_r_trigger();
+*/
 
 #endif /* PAD_H */
