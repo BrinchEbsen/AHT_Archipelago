@@ -1,0 +1,24 @@
+Character	Death type		= PlayerMode		AnimMode
+---------------------------------------------------------------------
+spyro		regular death	= death (35)		HT_AnimMode_Hit_Death
+spyro		water death		= water_death (54)	HT_AnimMode_Swim_Death
+spyro		bottomless pit	= deathfall (40)	HT_AnimMode_FallLong
+spyro		lava			= swamp_death (59)	HT_AnimMode_Idle
+spyro		quicksand		= nomode (0)		HT_AnimMode_SwampDeath
+spyro		squashed		= squashed (67)		HT_AnimMode_Victory
+spyro		frozen			= iceydeath (36)	HT_AnimMode_IceLand
+---------------------------------------------------------------------
+hunter		regular death	= death (35)		HT_AnimMode_Hit_Death
+hunter		bottomless pit	= deathfall (40)	HT_AnimMode_DeathFall
+hunter		drown			= swamp_death (59)	HT_AnimMode_SwampDeath
+hunter		squashed		= squashed (67)		HT_AnimMode_Victory
+---------------------------------------------------------------------
+blink		regular death	= death (35)		HT_AnimMode_Death
+blink		bottomless pit	= deathfall (40)	HT_AnimMode_DeathFall
+blink		lava			= swamp_death (59)	HT_AnimMode_LavaLand
+blink		drown			= drown (73)		HT_AnimMode_Wasp_Die
+blink		squashed		= squashed (67)		HT_AnimMode_Victory
+---------------------------------------------------------------------
+sgt	byrd	water crash		= water_dive (49)	HT_AnimMode_CrashLand
+sgt	byrd	lava crash		= breatheFire (26)	HT_AnimMode_Fly
+sgt	byrd	bottomless pit	= deathfall (40)	HT_AnimMode_Fall
