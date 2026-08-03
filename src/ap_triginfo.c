@@ -3,6 +3,7 @@
 #include <hashcodes.h>
 
 GameStateTrigInfo shops_triginfos[] = {
+    // Dragon Village - Village Depot
     {
         .m_MapIndex = 24,
         .m_TrigIndex = 22,
@@ -16,10 +17,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_MAINSHOP,
-                .NameTextHashCode = 0x280006bf,
+                .NameTextHashCode = HT_Text_ShopPad_R1A,
             }
         }
     },
+    // Crocovile Swamp - Elder's Tree
     {
         .m_MapIndex = 23,
         .m_TrigIndex = 107,
@@ -33,10 +35,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280004e4,
+                .NameTextHashCode = HT_Text_ShopPad_R1B_02,
             }
         }
     },
+    // Crocovile Swamp - Forgotten Temple
     {
         .m_MapIndex = 23,
         .m_TrigIndex = 109,
@@ -50,10 +53,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280004e5,
+                .NameTextHashCode = HT_Text_ShopPad_R1B_03,
             }
         }
     },
+    // Crocovile Swamp - Perilous Pyramid
     {
         .m_MapIndex = 23,
         .m_TrigIndex = 137,
@@ -67,10 +71,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280004e3,
+                .NameTextHashCode = HT_Text_ShopPad_R1B_01,
             }
         }
     },
+    // Dragonfly Falls - Steep Canyon
     {
         .m_MapIndex = 22,
         .m_TrigIndex = 16,
@@ -84,10 +89,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005f9,
+                .NameTextHashCode = HT_Text_ShopPad_R1C_01,
             }
         }
     },
+    // Dragonfly Falls - Secret Area
     {
         .m_MapIndex = 22,
         .m_TrigIndex = 182,
@@ -101,10 +107,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005fa,
+                .NameTextHashCode = HT_Text_ShopPad_R1C_02,
             }
         }
     },
+    // Dragonfly Falls - Tropical  Cove
     {
         .m_MapIndex = 22,
         .m_TrigIndex = 290,
@@ -118,10 +125,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005fb,
+                .NameTextHashCode = HT_Text_ShopPad_R1C_03,
             }
         }
     },
+    // Coastal Remains - Waterfall Walkway
     {
         .m_MapIndex = 45,
         .m_TrigIndex = 32,
@@ -135,10 +143,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005f0,
+                .NameTextHashCode = HT_Text_ShopPad_R2A_01,
             }
         }
     },
+    // Coastal Remains - Domain Doorstep
     {
         .m_MapIndex = 45,
         .m_TrigIndex = 38,
@@ -152,10 +161,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005f1,
+                .NameTextHashCode = HT_Text_ShopPad_R2A_02,
             }
         }
     },
+    // Coastal Remains - Coastal Depot
     {
         .m_MapIndex = 45,
         .m_TrigIndex = 149,
@@ -169,10 +179,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_MAINSHOP,
-                .NameTextHashCode = 0x280005ef,
+                .NameTextHashCode = HT_Text_ShopPad_R2A,
             }
         }
     },
+    // Cloudy Domain - Elevator Top
     {
         .m_MapIndex = 20,
         .m_TrigIndex = 115,
@@ -186,10 +197,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005f2,
+                .NameTextHashCode = HT_Text_ShopPad_R2C_01,
             }
         }
     },
+    // Cloudy Domain - Elder's Homestead
     {
         .m_MapIndex = 20,
         .m_TrigIndex = 153,
@@ -203,10 +215,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005f3,
+                .NameTextHashCode = HT_Text_ShopPad_R2C_02,
             }
         }
     },
+    // Cloudy Domain - Tallest Tower
     {
         .m_MapIndex = 20,
         .m_TrigIndex = 165,
@@ -220,10 +233,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005f4,
+                .NameTextHashCode = HT_Text_ShopPad_R2C_03,
             }
         }
     },
+    // Sunken Ruins - Atlantian Entryway
     {
         .m_MapIndex = 19,
         .m_TrigIndex = 368,
@@ -237,10 +251,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x2800074c,
+                .NameTextHashCode = HT_Text_ShopPad_R2B_01,
             }
         }
     },
+    // Sunken Ruins - The Depths
     {
         .m_MapIndex = 19,
         .m_TrigIndex = 369,
@@ -254,10 +269,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x2800074d,
+                .NameTextHashCode = HT_Text_ShopPad_R2B_02,
             }
         }
     },
+    // Sunken Ruins - Toxic Rise
     {
         .m_MapIndex = 19,
         .m_TrigIndex = 370,
@@ -271,10 +287,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x2800074e,
+                .NameTextHashCode = HT_Text_ShopPad_R2B_03,
             }
         }
     },
+    // Frostbite Village - Eskimole Village
     {
         .m_MapIndex = 31,
         .m_TrigIndex = 84,
@@ -288,10 +305,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005d1,
+                .NameTextHashCode = HT_Text_ShopPad_R3A_01,
             }
         }
     },
+    // Frostbite Village - Icy Camp
     {
         .m_MapIndex = 31,
         .m_TrigIndex = 280,
@@ -305,10 +323,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005d2,
+                .NameTextHashCode = HT_Text_ShopPad_R3A_02,
             }
         }
     },
+    // Frostbite Village - Frosty Depot
     {
         .m_MapIndex = 31,
         .m_TrigIndex = 323,
@@ -322,10 +341,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_MAINSHOP,
-                .NameTextHashCode = 0x280005d0,
+                .NameTextHashCode = HT_Text_ShopPad_R3A,
             }
         }
     },
+    // Ice Citadel - Cool Courtyard
     {
         .m_MapIndex = 33,
         .m_TrigIndex = 89,
@@ -339,10 +359,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005f8,
+                .NameTextHashCode = HT_Text_ShopPad_R3C_04,
             }
         }
     },
+    // Ice Citadel - Supercharge Central
     {
         .m_MapIndex = 33,
         .m_TrigIndex = 90,
@@ -356,10 +377,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005f5,
+                .NameTextHashCode = HT_Text_ShopPad_R3C_01,
             }
         }
     },
+    // Ice Citadel - Royal Chamber
     {
         .m_MapIndex = 33,
         .m_TrigIndex = 91,
@@ -373,10 +395,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005f7,
+                .NameTextHashCode = HT_Text_ShopPad_R3C_03,
             }
         }
     },
+    // Ice Citadel - Drawbridge Drop-off
     {
         .m_MapIndex = 33,
         .m_TrigIndex = 92,
@@ -390,10 +413,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005f6,
+                .NameTextHashCode = HT_Text_ShopPad_R3C_02,
             }
         }
     },
+    // Stormy Beach - Stormy Depot
     {
         .m_MapIndex = 44,
         .m_TrigIndex = 7,
@@ -407,10 +431,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_MAINSHOP,
-                .NameTextHashCode = 0x280005d3,
+                .NameTextHashCode = HT_Text_ShopPad_R4A,
             }
         }
     },
+    // Molten Mount - Destroyed Village
     {
         .m_MapIndex = 60,
         .m_TrigIndex = 108,
@@ -424,10 +449,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005fc,
+                .NameTextHashCode = HT_Text_ShopPad_R4B_01,
             }
         }
     },
+    // Molten Mount - Collapsed Bridge
     {
         .m_MapIndex = 60,
         .m_TrigIndex = 113,
@@ -441,10 +467,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005fd,
+                .NameTextHashCode = HT_Text_ShopPad_R4B_02,
             }
         }
     },
+    // Molten Mount - Lumber Storage
     {
         .m_MapIndex = 60,
         .m_TrigIndex = 122,
@@ -458,10 +485,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005fe,
+                .NameTextHashCode = HT_Text_ShopPad_R4B_03,
             }
         }
     },
+    // Magma Falls Top - Crackling Cave
     {
         .m_MapIndex = 61,
         .m_TrigIndex = 35,
@@ -475,10 +503,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005d6,
+                .NameTextHashCode = HT_Text_ShopPad_R4C_03,
             }
         }
     },
+    // Magma Falls Bottom - Sparx Can Fly
     {
         .m_MapIndex = 63,
         .m_TrigIndex = 21,
@@ -492,10 +521,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005d5,
+                .NameTextHashCode = HT_Text_ShopPad_R4C_02,
             }
         }
     },
+    // Magma Falls Bottom - Chains of Lava
     {
         .m_MapIndex = 63,
         .m_TrigIndex = 24,
@@ -509,10 +539,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005d4,
+                .NameTextHashCode = HT_Text_ShopPad_R4C_01,
             }
         }
     },
+    // Dark Mine - Mine Mouth
     {
         .m_MapIndex = 30,
         .m_TrigIndex = 134,
@@ -526,10 +557,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005d7,
+                .NameTextHashCode = HT_Text_ShopPad_R4D_01,
             }
         }
     },
+    // Dark Mine - Hidden Depths
     {
         .m_MapIndex = 30,
         .m_TrigIndex = 144,
@@ -543,10 +575,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005d8,
+                .NameTextHashCode = HT_Text_ShopPad_R4D_02,
             }
         }
     },
+    // Dark Mine - Miner's Drop
     {
         .m_MapIndex = 30,
         .m_TrigIndex = 146,
@@ -560,10 +593,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005d9,
+                .NameTextHashCode = HT_Text_ShopPad_R4D_03,
             }
         }
     },
+    // Red's Laboratory - Celestial Show
     {
         .m_MapIndex = 40,
         .m_TrigIndex = 293,
@@ -577,10 +611,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005da,
+                .NameTextHashCode = HT_Text_ShopPad_R4E_01,
             }
         }
     },
+    // Red's Laboratory - Mechanical Mishaps
     {
         .m_MapIndex = 40,
         .m_TrigIndex = 295,
@@ -594,10 +629,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005dc,
+                .NameTextHashCode = HT_Text_ShopPad_R4E_03,
             }
         }
     },
+    // Red's Laboratory - Pre-production
     {
         .m_MapIndex = 40,
         .m_TrigIndex = 297,
@@ -611,10 +647,11 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005dd,
+                .NameTextHashCode = HT_Text_ShopPad_R4E_04,
             }
         }
     },
+    // Red's Laboratory - Laser Leaps
     {
         .m_MapIndex = 40,
         .m_TrigIndex = 299,
@@ -628,7 +665,7 @@ GameStateTrigInfo shops_triginfos[] = {
             .RestartPoint = {
                 .HasVisited = 1,
                 .HashCode = HT_StartPoint_SHOP,
-                .NameTextHashCode = 0x280005db,
+                .NameTextHashCode = HT_Text_ShopPad_R4E_02,
             }
         }
     }
