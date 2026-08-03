@@ -36,6 +36,7 @@ GUI_Base__Update = 0x801a69c0;
 GUI_Base__v_Draw = 0x801a67ac;
 
 /* ap_handler.h */
+XSEItemHandler_StartPoint__Update = 0x80105fe4;
 Popup__Update = 0x800fc6a8;
 
 /* ap_pausemenu.h */

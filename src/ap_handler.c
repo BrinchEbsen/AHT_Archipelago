@@ -460,6 +460,18 @@ void ap_update_teleport_anywhere() {
     }
 }
 
+int XSEItemHandler_StartPoint__Update_VtableHook(void* self)
+{
+    if (g_gamestate_ap_settings.disable_shop_pad_proximity_activate)
+    {
+        // Force the first of the flags in m_Flags to 0.
+        // Disables the handling of the "visited" triginfo flag.
+        OFFSET_VAL(u32, self, 0x3DC) &= ~1u;
+    }
+
+    return XSEItemHandler_StartPoint__Update(self);
+}
+
 SE_GameState* mapchanger_SE_GameState__operatorequals_PreCallHook(SE_GameState* self, SE_GameState* _ctor_arg)
 {
     // This function copies the save file's gamestate into the current gamestate before the game starts up.
@@ -564,6 +576,7 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("bool shop_unlock_mode: %x\n", &psettings->shop_unlock_mode);
     PRINTF("bool teleport_anywhere: %x\n", &psettings->teleport_anywhere);
     PRINTF("bool unlock_all_shops: %x\n", &psettings->unlock_all_shops);
+    PRINTF("bool disable_shop_pad_proximity_activate: %x\n", &psettings->disable_shop_pad_proximity_activate);
     PRINTF("bool total_gems_in_logic: %x\n", &psettings->total_gems_in_logic);
     PRINTF("bool total_gems_available: %x\n", &psettings->total_gems_available);
     PRINTF("int xls_shop_sheetcount_ALWAYS_1: %x\n", &psettings->xls_shop_sheetcount_ALWAYS_1);

@@ -43,6 +43,9 @@ void ap_update_realm_access();
 
 void ap_update_teleport_anywhere();
 
+extern int XSEItemHandler_StartPoint__Update(void* self);
+int XSEItemHandler_StartPoint__Update_VtableHook(void* self);
+
 SE_GameState* mapchanger_SE_GameState__operatorequals_PreCallHook(SE_GameState* self, SE_GameState* _ctor_arg);
 
 bool TeleportPad_PlayerObjectives__GetObjective_PreCallHook(

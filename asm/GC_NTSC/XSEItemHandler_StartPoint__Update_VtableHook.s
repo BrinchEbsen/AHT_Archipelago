@@ -1,0 +1,1 @@
+.long XSEItemHandler_StartPoint__Update_VtableHook

@@ -88,6 +88,8 @@ APSettings g_patch_ap_settings = {
     .teleport_anywhere = false,
     .unlock_all_shops = false,
     #endif
+
+    .disable_shop_pad_proximity_activate = false,
     
     .total_gems_in_logic = 0,
     .total_gems_available = 0,
