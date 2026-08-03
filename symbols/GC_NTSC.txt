@@ -112,6 +112,7 @@ XItemHandler_Cutscene__Update = 0x80107364;
 /* gamestate.h */
 gGameState = 0x80463b38;
 SE_GameState__operatorequals = 0x803883ec;
+SE_GameState__FindTrigInfo = 0x8022ecc0;
 PlayerObjectives__ObjectiveIntoIndexAndBit = 0x800665e4;
 PlayerObjectives__ClearObjective = 0x80066380;
 

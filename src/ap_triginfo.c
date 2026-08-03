@@ -671,23 +671,77 @@ GameStateTrigInfo shops_triginfos[] = {
     }
 };
 
+u8 shop_triginfo_mapinfo_indexes[] = {
+    // Dragon Village
+    0,
+    // Crocovile Swamp
+    1,
+    1,
+    1,
+    // Dragonfly Falls
+    2,
+    2,
+    2,
+    // Coastal Remains
+    3,
+    3,
+    3,
+    // Cloudy Domain
+    5,
+    5,
+    5,
+    // Sunken Ruins
+    4,
+    4,
+    4,
+    // Frostbite Village
+    6,
+    6,
+    6,
+    // Ice Citadel
+    7,
+    7,
+    7,
+    7,
+    // Stormy Beach
+    8,
+    // Molten Mount
+    9,
+    9,
+    9,
+    // Magma Falls Top
+    10,
+    // Magma Falls Bottom
+    11,
+    11,
+    // Dark Mine
+    12,
+    12,
+    12,
+    // Red's Laboratory
+    13,
+    13,
+    13,
+    13
+};
+
 MapOrderInfo shops_mapinfos[] = {
-    { .m_FileHash = HT_File_Realm1A,    .m_MapHash = 0xFFFFFFFF },
-    { .m_FileHash = HT_File_Realm1B,    .m_MapHash = 0xFFFFFFFF },
-    { .m_FileHash = HT_File_Realm1C,    .m_MapHash = 0xFFFFFFFF },
+    { .m_FileHash = HT_File_Realm1A,    .m_MapHash = 0xFFFFFFFF }, // 0
+    { .m_FileHash = HT_File_Realm1B,    .m_MapHash = 0xFFFFFFFF }, // 1
+    { .m_FileHash = HT_File_Realm1C,    .m_MapHash = 0xFFFFFFFF }, // 2
 
-    { .m_FileHash = HT_File_Realm2A,    .m_MapHash = 0xFFFFFFFF },
-    { .m_FileHash = HT_File_Realm2B,    .m_MapHash = 0xFFFFFFFF },
-    { .m_FileHash = HT_File_Realm2C,    .m_MapHash = HT_Map_2   },
+    { .m_FileHash = HT_File_Realm2A,    .m_MapHash = 0xFFFFFFFF }, // 3
+    { .m_FileHash = HT_File_Realm2B,    .m_MapHash = 0xFFFFFFFF }, // 4
+    { .m_FileHash = HT_File_Realm2C,    .m_MapHash = HT_Map_2   }, // 5
 
-    { .m_FileHash = HT_File_Realm3A,    .m_MapHash = 0xFFFFFFFF },
-    { .m_FileHash = HT_File_Realm3C,    .m_MapHash = 0xFFFFFFFF },
+    { .m_FileHash = HT_File_Realm3A,    .m_MapHash = 0xFFFFFFFF }, // 6
+    { .m_FileHash = HT_File_Realm3C,    .m_MapHash = 0xFFFFFFFF }, // 7
 
-    { .m_FileHash = HT_File_Realm4A,    .m_MapHash = 0xFFFFFFFF },
-    { .m_FileHash = HT_File_Realm4B,    .m_MapHash = 0xFFFFFFFF },
-    { .m_FileHash = HT_File_Realm4C,    .m_MapHash = HT_Map_1   },
-    { .m_FileHash = HT_File_Realm4C,    .m_MapHash = HT_Map_3   },
-    { .m_FileHash = HT_File_Realm4D,    .m_MapHash = 0xFFFFFFFF },
-    { .m_FileHash = HT_File_Realm4E,    .m_MapHash = 0xFFFFFFFF }
+    { .m_FileHash = HT_File_Realm4A,    .m_MapHash = 0xFFFFFFFF }, // 8
+    { .m_FileHash = HT_File_Realm4B,    .m_MapHash = 0xFFFFFFFF }, // 9
+    { .m_FileHash = HT_File_Realm4C,    .m_MapHash = HT_Map_1   }, // 10
+    { .m_FileHash = HT_File_Realm4C,    .m_MapHash = HT_Map_3   }, // 11
+    { .m_FileHash = HT_File_Realm4D,    .m_MapHash = 0xFFFFFFFF }, // 12
+    { .m_FileHash = HT_File_Realm4E,    .m_MapHash = 0xFFFFFFFF }  // 13
 };
 

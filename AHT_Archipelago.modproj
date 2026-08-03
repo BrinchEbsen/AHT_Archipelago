@@ -3,11 +3,16 @@
   "project_name": "AHT_Archipelago",
   "project_folder": "./",
   "currently_selected_build_index": 1,
+  "symbol_input_mode": "manual",
   "build_versions": [
     {
       "build_name": "PS2_NTSC",
+      "shared_game_files": null,
       "platform": "PS2",
       "symbols_file": "PS2_NTSC.txt",
+      "symbol_inputs": [
+        "symbols/PS2_NTSC.txt"
+      ],
       "injection_files": [
         "SLUS_208.84"
       ],
@@ -23,6 +28,7 @@
       "compiler_flags": "-O2 -fsingle-precision-constant -Werror -I include/ingame_stdlib/ -I include/ex/ -I include/se/",
       "is_single_file_mode": false,
       "single_file_path": null,
+      "output_format": "iso",
       "section_maps": {
         "SLUS_208.84": [
           {
@@ -406,8 +412,12 @@
     },
     {
       "build_name": "GC_NTSC",
+      "shared_game_files": null,
       "platform": "Gamecube",
       "symbols_file": "GC_NTSC.txt",
+      "symbol_inputs": [
+        "symbols/GC_NTSC.txt"
+      ],
       "injection_files": [
         "Start.dol"
       ],
@@ -420,9 +430,10 @@
       "extracted_game_folder": "C:/Users/Ebbers/Documents/GC_CodeInject/modding_utility_v2/game_files/GAMECUBE_NTSC\\root",
       "main_executable": "Start.dol",
       "source_path": "C:/Users/Ebbers/Documents/GC_CodeInject/modding_utility_v2/game_files/GAMECUBE_NTSC",
-      "compiler_flags": "-O2 -Werror -I include/ingame_stdlib/ -I include/ex/ -I include/se/ -D AP_VERSION=9",
+      "compiler_flags": "-O2 -Werror -I include/ingame_stdlib/ -I include/ex/ -I include/se/ -D AP_VERSION=10 -D AP_QUICK_START",
       "is_single_file_mode": false,
       "single_file_path": null,
+      "output_format": "iso",
       "section_maps": {
         "Start.dol": [
           {

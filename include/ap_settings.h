@@ -7,6 +7,7 @@
 
 #define AP_SETTINGS_LOCATIONS_BITFIELD_SIZE 0x50
 #define AP_SETTINGS_KEYRINGS_BITFIELD_SIZE 0x2
+#define AP_SETTINGS_SHOPPAD_BITFIELD_SIZE 0x5
 #define AP_SETTINGS_INIT_MAGICVALUE 0x45424245 // 'EBBE' in ASCII :)
 
 #define SHOP_NUM_VANILLA_ENTRIES 1
@@ -61,6 +62,7 @@ typedef struct APSettings_TextEntry
 typedef struct APSettings {
     u8 location_bitfield[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];
     u8 keyring_bitfield[AP_SETTINGS_KEYRINGS_BITFIELD_SIZE];
+    u8 shoppad_bitfield[AP_SETTINGS_SHOPPAD_BITFIELD_SIZE];
     u8 num_gem_packs_received;
     u8 num_lock_picks_received;
     u8 num_fire_ammo_received;

@@ -7,6 +7,7 @@
 APSettings g_patch_ap_settings = {
     .location_bitfield = {0},
     .keyring_bitfield = {0},
+    .shoppad_bitfield = {0},
     .num_gem_packs_received = 0,
     .num_fire_ammo_received = 0,
     .num_electric_ammo_received = 0,

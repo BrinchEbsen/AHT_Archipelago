@@ -388,8 +388,9 @@ void ap_init_gamestate()
     gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BOUGHT_LOCK_PICK;
 
     if (g_gamestate_ap_settings.unlock_all_shops) {
-        memcpy(gGameState.m_TrigInfo, shops_triginfos, NUM_SHOP_TRIGINFOS*sizeof(GameStateTrigInfo));
-        gGameState.m_NumTrigInfo = NUM_SHOP_TRIGINFOS;
+        for (int i = 0; i < NUM_SHOP_TRIGINFOS; i++) {
+            set_u8_bitfield_value(g_gamestate_ap_settings.shoppad_bitfield, i, 1);
+        }
     }
 
     do_autosave = true;
@@ -410,11 +411,32 @@ void ap_update_realm_access()
         }
     }
 
-    if (g_gamestate_ap_settings.unlock_all_shops) {
-        for (int i = 0; i < NUM_SHOP_MAPINFOS; i++) {
+    for (int i = 0; i < NUM_SHOP_TRIGINFOS; i++)
+    {
+        // Try to enable the shop pad if its bit is set
+        if (get_u8_bitfield_value(g_gamestate_ap_settings.shoppad_bitfield, i))
+        {
+            s32 existing_index = SE_GameState__FindTrigInfo(
+                &gGameState,
+                shops_triginfos[i].m_MapIndex,
+                shops_triginfos[i].m_TrigIndex);
+
+            // If shop pad isn't in the list, add it to the list.
+            if (existing_index == -1)
+            {
+                memcpy(&gGameState.m_TrigInfo[gGameState.m_NumTrigInfo], &shops_triginfos[i], sizeof(GameStateTrigInfo));
+                gGameState.m_NumTrigInfo++;
+            } else {
+                // If it is in the list, mark it as visited.
+                gGameState.m_TrigInfo[existing_index].u.RestartPoint.HasVisited = 1;
+            }
+
+            // Set the pad's map as visible.
+            // It's probably inefficient since it'll inevitably set the same map
+            // multiple times during the loop, but whatevs ¯\_(ツ)_/¯
             MiniMapStatus__SetBitName(
                 &gMiniMapStatus,
-                &shops_mapinfos[i],
+                &shops_mapinfos[shop_triginfo_mapinfo_indexes[i]],
                 Visible);
         }
     }
@@ -510,6 +532,7 @@ void print_apsettings_addresses(APSettings* psettings)
 {
     PRINTF("u8 location_bitfield[%d]: %x\n", AP_SETTINGS_LOCATIONS_BITFIELD_SIZE, &psettings->location_bitfield);
     PRINTF("u8 keyring_bitfield[%d]: %x\n", AP_SETTINGS_KEYRINGS_BITFIELD_SIZE, &psettings->keyring_bitfield);
+    PRINTF("u8 shoppad_bitfield[%d]: %x\n", AP_SETTINGS_SHOPPAD_BITFIELD_SIZE, &psettings->shoppad_bitfield);
     PRINTF("u8 num_gem_packs_received: %x\n", &psettings->num_gem_packs_received);
     PRINTF("u8 num_lock_picks_received: %x\n", &psettings->num_lock_picks_received);
     PRINTF("u8 num_fire_ammo_received: %x\n", &psettings->num_fire_ammo_received);
