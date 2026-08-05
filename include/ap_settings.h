@@ -105,7 +105,7 @@ typedef struct APSettings {
 
     bool unlock_all_shops;
 
-    bool disable_shop_pad_proximity_activate;
+    bool disable_shop_pad_vanilla_activation;
 
     int total_gems_in_logic;
     int total_gems_available;
