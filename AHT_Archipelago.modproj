@@ -1135,6 +1135,18 @@
           "injection_file_address": "0x411D50",
           "auto_calculate_injection_file_address": true,
           "enabled": true
+        },
+        {
+          "name": "GUI_MiniMap__Callback_IsRestartSelectable_ReImplHook",
+          "code_files": [
+            "./asm/GC_NTSC/GUI_MiniMap__Callback_IsRestartSelectable_ReImplHook.s"
+          ],
+          "memory_address": "801ab650",
+          "size": "0",
+          "injection_file": "Start.dol",
+          "injection_file_address": "0x1A8650",
+          "auto_calculate_injection_file_address": true,
+          "enabled": true
         }
       ],
       "binary_patches": [],

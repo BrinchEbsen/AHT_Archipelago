@@ -1,0 +1,1 @@
+b GUI_MiniMap__Callback_IsRestartSelectable_ReImplHook

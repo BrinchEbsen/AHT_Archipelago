@@ -472,6 +472,37 @@ int XSEItemHandler_StartPoint__Update_VtableHook(void* self)
     return XSEItemHandler_StartPoint__Update(self);
 }
 
+s32 GUI_MiniMap__Callback_IsRestartSelectable_ReImplHook(GameStateTrigInfo* pTrigInfo, u32 Val)
+{
+    EXHashCode restart_hash = pTrigInfo->u.RestartPoint.HashCode;
+    bool has_visited = pTrigInfo->u.RestartPoint.HasVisited != 0;
+    bool is_shop = restart_hash == HT_StartPoint_SHOP;
+    bool is_main_shop = restart_hash == HT_StartPoint_MAINSHOP;
+    bool disable_vanilla = g_gamestate_ap_settings.disable_shop_pad_vanilla_activation;
+
+    // If it's not a shop
+    if (!is_shop && !is_main_shop)
+    {
+        return 0;
+    }
+
+    // If it's a remote shop, but not visited
+    if (is_shop && !has_visited)
+    {
+        return 0;
+    }
+
+    // If the vanilla behavior is disabled, we'll also deem a main shop
+    // unselectable if it hasn't been visited.
+    // Otherwise, just always let it be selectable.
+    if (disable_vanilla && is_main_shop && !has_visited)
+    {
+        return 0;
+    }
+
+    return pTrigInfo->m_TrigIndex != gMiniMapStatus.m_CurrentShopRestart;
+}
+
 SE_GameState* mapchanger_SE_GameState__operatorequals_PreCallHook(SE_GameState* self, SE_GameState* _ctor_arg)
 {
     // This function copies the save file's gamestate into the current gamestate before the game starts up.
