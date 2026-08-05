@@ -18,6 +18,10 @@
 #define AP_DEATHLINK_MODE_SHIELDED  1
 #define AP_DEATHLINK_MODE_FULL      2
 
+#define AP_TELEPORT_MODE_VANILLA        0
+#define AP_TELEPORT_MODE_TP_TO_HUB      1
+#define AP_TELEPORT_MODE_SHOP_ANYWHERE  2
+
 typedef enum DeathLinkReason
 {
     /*  0 */ DLReason_None,             // No death (0)
@@ -78,7 +82,7 @@ typedef struct APSettings {
     bool use_key_rings;
 
     bool skip_cutscene_button;
-    bool allow_teleport_to_hub;
+    u8 instant_teleport_mode;
     bool disable_popups;
     bool instant_elevators;
 

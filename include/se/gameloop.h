@@ -84,6 +84,8 @@ extern s32 SE_GameLoop__GoToMap(
     SE_GameLoop* this, EXHashCode GeoCode, EXHashCode StartPointCode, EXHashCode MapCode);
 extern s32 SE_GameLoop__StartGameState(SE_GameLoop* self, SE_GameState* pGS);
 extern s32 SE_GameLoop__CueGameState(SE_GameLoop* self, SE_GameState *pGS);
+extern void SE_GameLoop__GameSetPauseOn(SE_GameLoop* self, s32 PanelFlag);
+extern void SE_GameLoop__GameSetPauseOff(SE_GameLoop* self, s32 PanelFlag);
 
 extern SE_GameLoop gGameLoop;
 

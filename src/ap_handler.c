@@ -18,6 +18,7 @@
 #include <boss_hooks.h>
 #include <ap_version.h>
 #include <ap_triginfo.h>
+#include <ap_pausemenu.h>
 
 // #define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
 // #define AP_DEBUG_NOTIFICATION
@@ -168,6 +169,11 @@ void ap_gamestate_update()
 
     ap_update_teleport_anywhere();
 
+    if (instant_shop_opening)
+    {
+        handle_instant_shop_sequence();
+    }
+
     #ifdef AP_DEBUG_DEATHLINK
     if (g_pad_button_state(PAD_BUTTON_B)) {
         if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
@@ -313,6 +319,12 @@ void ap_draw(void* pWnd)
             g_gamestate_ap_settings.deathlink_outgoing,
             deathlink_ignore_next_death);
         #endif
+
+        // if (gpPlayer != NULL)
+        // {
+        //     PlayerModes mode = XSEItemHandler_Player__M_PLAYERMODE(gpPlayer);
+        //     TEXT_PRINT_ALIGN_F(pWnd, 0, 0, Centre, "%d", mode);
+        // }
     }
 }
 
@@ -590,7 +602,7 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("bool randomize_shop: %x\n", &psettings->randomize_shop);
     PRINTF("bool use_key_rings: %x\n", &psettings->use_key_rings);
     PRINTF("bool skip_cutscene_button: %x\n", &psettings->skip_cutscene_button);
-    PRINTF("bool allow_teleport_to_hub: %x\n", &psettings->allow_teleport_to_hub);
+    PRINTF("u8 instant_teleport_mode: %x\n", &psettings->instant_teleport_mode);
     PRINTF("bool disable_popups: %x\n", &psettings->disable_popups);
     PRINTF("bool instant_elevators: %x\n", &psettings->instant_elevators);
     PRINTF("u8 starting_realm: %x\n", &psettings->starting_realm);

@@ -23,6 +23,8 @@ SE_Loop__AddDrawToXWnd = 0x80230068;
 SE_GameLoop__GoToMap = 0x8023e644;
 SE_GameLoop__StartGameState = 0x80240330;
 SE_GameLoop__CueGameState = 0x802402d8;
+SE_GameLoop__GameSetPauseOn = 0x802400c8;
+SE_GameLoop__GameSetPauseOff = 0x80240164;
 gGameLoop = 0x8046f2f0;
 
 /* gameflow.h */
@@ -40,8 +42,11 @@ XSEItemHandler_StartPoint__Update = 0x80105fe4;
 Popup__Update = 0x800fc6a8;
 
 /* ap_pausemenu.h */
+gpPanelShop = 0x804cb5ec;
+PanelShop__OpenShop = 0x8022aa8c;
 GUI_PauseMenu__v_StateRunning = 0x803986ac;
 GUI_PauseMenu__v_DrawStateRunning = 0x8039874c;
+SE_GameLoop__Teleport = 0x802403f0;
 
 /* ap_deathlink.h */
 XSEItemHandler_Player__TakeDamage = 0x80064260;
@@ -105,6 +110,7 @@ XSEItemHandler_Player__ButtonDown = 0x8005b14c;
 XSEItemHandler_Player__ButtonPressed = 0x8005b0a8;
 XSEItemHandler_Player__SetMode = 0x80058414;
 XSEItemHandler_Player__InitialiseStart = 0x8005805c;
+XSEItemHandler_Player__SetShoppingMode = 0x8005ca88;
 
 /* cutscene_skip.h */
 EXItemAnimator_Script__SetScriptStatus = 0x802b1418;

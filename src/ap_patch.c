@@ -21,7 +21,7 @@ APSettings g_patch_ap_settings = {
 
     #ifdef AP_QUICK_START
     .skip_cutscene_button = true,
-    .allow_teleport_to_hub = true,
+    .instant_teleport_mode = AP_TELEPORT_MODE_SHOP_ANYWHERE,
     .disable_popups = true,
     .instant_elevators = true,
     .starting_realm = 0,
@@ -37,7 +37,7 @@ APSettings g_patch_ap_settings = {
     .mw_seed = 0x69696969,
     #else
     .skip_cutscene_button = false,
-    .allow_teleport_to_hub = false,
+    .instant_teleport_mode = AP_TELEPORT_MODE_VANILLA,
     .disable_popups = false,
     .instant_elevators = false,
     .starting_realm = 0,

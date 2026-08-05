@@ -11,10 +11,14 @@
 #include <ap_notification.h>
 #include <ap_keyring.h>
 #include <ap_minimap.h>
+#include <minimap_status.h>
 
 #define AP_TELEPORT_CLOSE_TIMER_MAX 60
 
 int close_timer = 0;
+
+bool instant_shop_opening = false;
+char* instant_shop_cannot_open_reason = NULL;
 
 int realm1_map_indexes[] = {
     2,  // Blinky MiniGame (MR1_Blk)
@@ -151,8 +155,10 @@ static inline void prev_page()
 s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
 {
     if (do_pause_menu_controls()) {
-        if (g_gamestate_ap_settings.allow_teleport_to_hub) {
+        if (g_gamestate_ap_settings.instant_teleport_mode == AP_TELEPORT_MODE_TP_TO_HUB) {
             draw_teleport_menu(self, pWnd);
+        } else if (g_gamestate_ap_settings.instant_teleport_mode == AP_TELEPORT_MODE_SHOP_ANYWHERE) {
+            draw_instant_shop_menu(self, pWnd);
         }
     
         draw_pause_stats(self, pWnd);
@@ -172,7 +178,7 @@ s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
 s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self)
 {
     if (do_pause_menu_controls()) {
-        if (g_gamestate_ap_settings.allow_teleport_to_hub) {
+        if (g_gamestate_ap_settings.instant_teleport_mode == AP_TELEPORT_MODE_TP_TO_HUB) {
             if (g_pad_button_state(PAD_BUTTON_Y)) {
                 close_timer++;
     
@@ -183,6 +189,20 @@ s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self)
             } else {
                 close_timer = 0;
             }
+        } else if (g_gamestate_ap_settings.instant_teleport_mode == AP_TELEPORT_MODE_SHOP_ANYWHERE) {
+            char* reason = NULL;
+
+            if (can_start_shop_sequence(&reason)) {
+                if (g_pad_button_edge_down(PAD_BUTTON_Y))
+                {
+                    close_pause_menu(self);
+                    gMiniMapStatus.m_CurrentShopRestart = 0;
+                    PanelShop__OpenShop(gpPanelShop, false);
+                    instant_shop_opening = true;
+                }
+            }
+
+            instant_shop_cannot_open_reason = reason;
         }
     
         if (g_pad_button_edge_down(PAD_BUTTON_X)) {
@@ -200,6 +220,68 @@ s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self)
     }
 
     return GUI_PauseMenu__v_StateRunning(self);
+}
+
+bool can_start_shop_sequence(char** reason)
+{
+    *reason = NULL;
+
+    static char str_already_opening_shop[] = "Already opening shop";
+    static char str_player_is_unloaded[] = "Player is unloaded";
+    static char str_player_isnt_spyro[] = "Player isn't Spyro";
+    static char str_not_idle_on_ground[] = "Not idle on ground";
+
+    if (instant_shop_opening)
+    {
+        *reason = str_already_opening_shop;
+        return false;
+    }
+
+    if (gpPlayer == NULL)
+    {
+        *reason = str_player_is_unloaded;
+        return false;
+    }
+
+    Players curr_player = XSEItemHandler_Player__M_PLAYERTYPE(gpPlayer);
+    if ((curr_player != Player_Spyro) && (curr_player != Player_Flame) && (curr_player != Player_Ember))
+    {
+        *reason = str_player_isnt_spyro;
+        return false;
+    }
+
+    PStateFlags state_flags = XSEItemHandler_Player__M_PLAYERSTATEFLAGS(gpPlayer);
+    if ((state_flags & ps_Shopping) != 0)
+    {
+        *reason = str_already_opening_shop;
+        return false;
+    }
+
+    PlayerModes mode = XSEItemHandler_Player__M_PLAYERMODE(gpPlayer);
+    switch (mode)
+    {
+        case breathe:
+            break;
+        case walk:
+            break;
+        case idleSparx:
+            break;
+        default:
+            *reason = str_not_idle_on_ground;
+            return false;
+    }
+
+    return true;
+}
+
+void handle_instant_shop_sequence()
+{
+    // Wait until the game is unpaused, then pause.
+    if (!gGameLoop.m_GameIsPaused)
+    {
+        SE_GameLoop__GameSetPauseOn(&gGameLoop, 0);
+        instant_shop_opening = false;
+    }
 }
 
 bool do_pause_menu_controls()
@@ -236,6 +318,19 @@ void draw_teleport_menu(GUI_Base* self, void* pWnd)
 
     XWnd__DrawRect(pWnd, &bgrect, COLOR_BLACK);
     XWnd__DrawRect(pWnd, &redrect, COLOR_RED);
+}
+
+void draw_instant_shop_menu(GUI_Base* self, void* pWnd)
+{
+    if (instant_shop_cannot_open_reason == NULL)
+    {
+        TEXT_PRINT_ALIGN(pWnd, 35, 0, BottomCentre, "Press ~X to open shop");
+    }
+    else
+    {
+        TEXT_PRINT_ALIGN(pWnd, 35, 350, Centre, "Cannot open shop:");
+        TEXT_PRINT_ALIGN(pWnd, 35, 385, Centre, instant_shop_cannot_open_reason);
+    }
 }
 
 void draw_pause_stats(GUI_Base* self, void* pWnd)
@@ -461,40 +556,49 @@ void teleport_to_hub()
             gGameState.m_StartMapIndex = goto_map_index;
             PlayerState__RestartGame(&gGameState.m_PlayerState);
 
-            // Reset bosses to make sure they don't bug out when you return
-
-            s32 beaten_obj;
-
-            // Gnasty Gnorc
-            PlayerObjectives__GetObjective__ReImplHook(
-                &gGameState.m_PlayerObjectives, HT_Objective_Boss1_Beaten, &beaten_obj);
-            if (beaten_obj == 0) {
-                gMapList.m_List[32].m_pMap->m_GameState->m_LastStartPoint = HT_StartPoint_START;
-            }
-            
-            // Ineptune
-            PlayerObjectives__GetObjective__ReImplHook(
-                &gGameState.m_PlayerObjectives, HT_Objective_Boss2_Beaten, &beaten_obj);
-            if (beaten_obj == 0) {
-                PlayerObjectives__ClearObjective(
-                    &gGameState.m_PlayerObjectives, HT_Objective_SeenIneptuneIntro);
-            }
-            
-            // Red
-            PlayerObjectives__GetObjective__ReImplHook(
-                &gGameState.m_PlayerObjectives, HT_Objective_Boss3_Beaten, &beaten_obj);
-            if (beaten_obj == 0) {
-                gMapList.m_List[41].m_pMap->m_GameState->m_LastStartPoint = HT_StartPoint_Restart1;
-            }
-            
-            // Mecha Red
-            PlayerObjectives__GetObjective__ReImplHook(
-                &gGameState.m_PlayerObjectives, HT_Objective_Boss4_Beaten, &beaten_obj);
-            if (beaten_obj == 0) {
-                gMapList.m_List[34].m_pMap->m_GameState->m_LastStartPoint = HT_StartPoint_START;
-            }
+            reset_boss_progress();
 
             break;
         }
+    }
+}
+
+s32 SE_GameLoop__Teleport_PreCallHook(SE_GameLoop* self, SE_GameState* pGS)
+{
+    SE_GameLoop__Teleport(self, pGS);
+    reset_boss_progress();
+}
+
+void reset_boss_progress()
+{
+    s32 beaten_obj;
+
+    // Gnasty Gnorc
+    PlayerObjectives__GetObjective__ReImplHook(
+        &gGameState.m_PlayerObjectives, HT_Objective_Boss1_Beaten, &beaten_obj);
+    if (beaten_obj == 0) {
+        gMapList.m_List[32].m_pMap->m_GameState->m_LastStartPoint = HT_StartPoint_START;
+    }
+    
+    // Ineptune
+    PlayerObjectives__GetObjective__ReImplHook(
+        &gGameState.m_PlayerObjectives, HT_Objective_Boss2_Beaten, &beaten_obj);
+    if (beaten_obj == 0) {
+        PlayerObjectives__ClearObjective(
+            &gGameState.m_PlayerObjectives, HT_Objective_SeenIneptuneIntro);
+    }
+    
+    // Red
+    PlayerObjectives__GetObjective__ReImplHook(
+        &gGameState.m_PlayerObjectives, HT_Objective_Boss3_Beaten, &beaten_obj);
+    if (beaten_obj == 0) {
+        gMapList.m_List[41].m_pMap->m_GameState->m_LastStartPoint = HT_StartPoint_Restart1;
+    }
+    
+    // Mecha Red
+    PlayerObjectives__GetObjective__ReImplHook(
+        &gGameState.m_PlayerObjectives, HT_Objective_Boss4_Beaten, &beaten_obj);
+    if (beaten_obj == 0) {
+        gMapList.m_List[34].m_pMap->m_GameState->m_LastStartPoint = HT_StartPoint_START;
     }
 }
