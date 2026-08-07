@@ -474,7 +474,7 @@ void ap_update_teleport_anywhere() {
 
 int XSEItemHandler_StartPoint__Update_VtableHook(void* self)
 {
-    if (g_gamestate_ap_settings.disable_shop_pad_vanilla_activation)
+    if (g_gamestate_ap_settings.disable_shop_pad_proximity_activate)
     {
         // Force the first of the flags in m_Flags to 0.
         // Disables the handling of the "visited" triginfo flag.
@@ -490,7 +490,7 @@ s32 GUI_MiniMap__Callback_IsRestartSelectable_ReImplHook(GameStateTrigInfo* pTri
     bool has_visited = pTrigInfo->u.RestartPoint.HasVisited != 0;
     bool is_shop = restart_hash == HT_StartPoint_SHOP;
     bool is_main_shop = restart_hash == HT_StartPoint_MAINSHOP;
-    bool disable_vanilla = g_gamestate_ap_settings.disable_shop_pad_vanilla_activation;
+    bool disable_vanilla = g_gamestate_ap_settings.disable_main_shop_always_available;
 
     // If it's not a shop
     if (!is_shop && !is_main_shop)
@@ -619,7 +619,8 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("bool shop_unlock_mode: %x\n", &psettings->shop_unlock_mode);
     PRINTF("bool teleport_anywhere: %x\n", &psettings->teleport_anywhere);
     PRINTF("bool unlock_all_shops: %x\n", &psettings->unlock_all_shops);
-    PRINTF("bool disable_shop_pad_vanilla_activation: %x\n", &psettings->disable_shop_pad_vanilla_activation);
+    PRINTF("bool disable_shop_pad_proximity_activate: %x\n", &psettings->disable_shop_pad_proximity_activate);
+    PRINTF("bool disable_main_shop_always_available: %x\n", &psettings->disable_main_shop_always_available);
     PRINTF("bool total_gems_in_logic: %x\n", &psettings->total_gems_in_logic);
     PRINTF("bool total_gems_available: %x\n", &psettings->total_gems_available);
     PRINTF("int xls_shop_sheetcount_ALWAYS_1: %x\n", &psettings->xls_shop_sheetcount_ALWAYS_1);
