@@ -9,42 +9,20 @@ typedef enum APCollectable_Type
     DarkGem,
     LightGem_Chest,
     DragonEgg_Chest,
+    LightGem_MiniGame,
+    DragonEgg_MiniGame,
     EggThief,
     Junk_Chest,
     NonCollectable,
     FireWork
 } APCollectable_Type;
 
-typedef enum APCollectable_UnionType
-{
-    APC_Grabbable,
-    APC_Objective
-} APCollectable_UnionType;
-
-typedef struct APCollectable_Grabbable
-{
-    u16 trigger_index;
-    u16 map_index;
-    APCollectable_Type type;
-} APCollectable_Grabbable;
-
-typedef struct APCollectable_Objective
-{
-    u16 trigger_index;
-    u16 map_index;
-    EXHashCode objective;
-    // This objective stems from the same trigger/NPC as the next one
-    bool include_next;
-    APCollectable_Type type;
-} APCollectable_Objective;
-
 typedef struct APCollectable
 {
-    APCollectable_UnionType union_type;
-    union {
-        APCollectable_Grabbable grabbable;
-        APCollectable_Objective objective;
-    };
+    u8 type;
+    u8 map_index;
+    u16 trig_index;
+    u16 objective;
 } APCollectable;
 
 #define AP_COLLECTABLES_TOTAL 271

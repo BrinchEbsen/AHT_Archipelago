@@ -10,22 +10,16 @@
 bool g_show_minimap_icons = false;
 
 APCollectable ballgadgetloc_cloudy_domain = {
-    .union_type = APC_Objective,
-    .objective = {
-        .map_index = 20,
-        .trigger_index = 77,
-        .objective = -1u,
-        .type = NonCollectable
-    }
+    .map_index = 20,
+    .trig_index = 77,
+    .objective = 0xFFFF,
+    .type = NonCollectable
 };
 APCollectable ballgadgetloc_magma_falls = {
-    .union_type = APC_Objective,
-    .objective = {
-        .map_index = 61,
-        .trigger_index = 1,
-        .objective = -1u,
-        .type = NonCollectable
-    }
+    .map_index = 61,
+    .trig_index = 1,
+    .objective = 0xFFFF,
+    .type = NonCollectable
 };
 
 IconPosOverride icon_pos_overrides[] = {
@@ -114,17 +108,15 @@ void minimap_draw_locations(GUI_Base* self, void* pWnd)
         bool collected = (dat & (0b01 << bit)) != 0;
         bool reachable = (dat & (0b10 << bit)) != 0;
 
-        if (coll->union_type == APC_Objective) {
+        if (coll->type == DragonEgg_MiniGame) {
             // Combine with next objective
-            if (coll->objective.include_next) {
-                i++;
-                byte = (i*2) / 8;
-                bit = (i*2) % 8;
-                dat = g_gamestate_ap_settings.location_bitfield[byte];
+            i++;
+            byte = (i*2) / 8;
+            bit = (i*2) % 8;
+            dat = g_gamestate_ap_settings.location_bitfield[byte];
     
-                // Both this and the next is collected
-                collected = collected && ((dat & (0b01 << bit)) != 0);
-            }
+            // Both this and the next is collected
+            collected = collected && ((dat & (0b01 << bit)) != 0);
         }
 
         minimap_draw_location(self, pWnd, map, coll, reachable, collected);
@@ -153,22 +145,13 @@ void minimap_draw_locations(GUI_Base* self, void* pWnd)
 void minimap_draw_location(
     GUI_Base* self, void* pWnd, SE_Map* map, APCollectable* coll, bool reachable, bool collected)
 {
-    u16 trig_index;
-    if (coll->union_type == APC_Grabbable) {
-        if (coll->grabbable.map_index != map->m_MapListIndex) {
-            return;
-        }
-        // Don't show fireworks if not randomized
-        if (!g_gamestate_ap_settings.fireworks_are_randomized && (coll->grabbable.type == FireWork)) {
-            return;
-        }
-        trig_index = coll->grabbable.trigger_index;
-    } else if (coll->union_type == APC_Objective) {
-        if (coll->objective.map_index != map->m_MapListIndex) {
-            return;
-        }
-        trig_index = coll->objective.trigger_index;
-    } else {
+    if ((coll->type == FireWork) && !g_gamestate_ap_settings.fireworks_are_randomized)
+    {
+        return;
+    }
+
+    if (coll->map_index != map->m_MapListIndex)
+    {
         return;
     }
 
@@ -182,14 +165,14 @@ void minimap_draw_location(
 
     EXWnd__SelectSprite2DTexture(pWnd, pTexture, false, false);
 
-    SE_Trigger* trigger = map->m_TriggerList.m_pTriggers[trig_index].m_pSE_Trigger;
+    SE_Trigger* trigger = map->m_TriggerList.m_pTriggers[coll->trig_index].m_pSE_Trigger;
 
     float x = trigger->m_Position.x;
     float z = trigger->m_Position.z;
 
     for (int i = 0; i < NUM_ICON_POS_OVERRIDES; i++) {
         IconPosOverride* newpos = &icon_pos_overrides[i];
-        if ((newpos->map_index == map->m_MapListIndex) && (newpos->trigger_index == trig_index)) {
+        if ((newpos->map_index == map->m_MapListIndex) && (newpos->trigger_index == coll->trig_index)) {
             x = newpos->pos_x;
             z = newpos->pos_z;
             break;

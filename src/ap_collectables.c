@@ -9,12 +9,12 @@ void ap_set_grabbable(u16 map_index, u16 trigger_index)
     for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
         APCollectable* coll = &g_ap_collectables[i];
 
-        if (coll->union_type != APC_Grabbable) {
+        if (coll->objective != 0xFFFF) {
             continue;
         }
 
-        if ((coll->grabbable.map_index == map_index) &&
-            (coll->grabbable.trigger_index == trigger_index)) {
+        if ((coll->map_index == map_index) &&
+            (coll->trig_index == trigger_index)) {
             ap_set_location(i);
             break;
         }
@@ -26,11 +26,11 @@ void ap_set_objective(EXHashCode objective)
     for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
         APCollectable* coll = &g_ap_collectables[i];
 
-        if (coll->union_type != APC_Objective) {
+        if (coll->objective == 0xFFFF) {
             continue;
         }
 
-        if (coll->objective.objective == objective) {
+        if (coll->objective == (objective & 0xFFFF)) {
             ap_set_location(i);
             break;
         }
@@ -53,21 +53,8 @@ s32 num_collectables_in_map(u16 map_index, s32* out_num_collected, s32* out_num_
     for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
         APCollectable* coll = &g_ap_collectables[i];
 
-        bool ismap = false;
-        switch (coll->union_type) {
-            case APC_Grabbable:
-                if (coll->grabbable.map_index == map_index) {
-                    ismap = true;
-                }
-                break;
-            case APC_Objective:
-                if (coll->objective.map_index == map_index) {
-                    ismap = true;
-                }
-                break;
-        }
-
-        if (!ismap) {
+        if (coll->map_index != map_index)
+        {
             continue;
         }
 
@@ -90,2364 +77,1729 @@ s32 num_collectables_in_map(u16 map_index, s32* out_num_collected, s32* out_num_
 
 APCollectable g_ap_collectables[] = {
     #pragma region 19 Sunken Ruins
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 0,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 2,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 3,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 4,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 10,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 26,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 64,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 86,
-            .type = DragonEgg_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 90,
-            .type = LightGem_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 91,
-            .type = LightGem_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 92,
-            .type = DragonEgg_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 93,
-            .type = DragonEgg_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 94,
-            .type = LightGem_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 131,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 183,
-            .type = LightGem_Chest
-        }
-    },
+	{
+		.type = LightGem,
+		.map_index = 19,
+		.trig_index = 0,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 19,
+		.trig_index = 2,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 19,
+		.trig_index = 3,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 19,
+		.trig_index = 4,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 19,
+		.trig_index = 10,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 19,
+		.trig_index = 26,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 19,
+		.trig_index = 64,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 19,
+		.trig_index = 86,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem_Chest,
+		.map_index = 19,
+		.trig_index = 90,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem_Chest,
+		.map_index = 19,
+		.trig_index = 91,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 19,
+		.trig_index = 92,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 19,
+		.trig_index = 93,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem_Chest,
+		.map_index = 19,
+		.trig_index = 94,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 19,
+		.trig_index = 131,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem_Chest,
+		.map_index = 19,
+		.trig_index = 183,
+		.objective = 0xFFFF
+	},
     #pragma endregion
-    #pragma region 20 Cloudy Domain
+	#pragma region 20 Cloudy Domain
     {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 2,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 8,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 9,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 82,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 109,
-            .type = LightGem_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 132,
-            .type = DragonEgg_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 133,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 134,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 135,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 136,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 137,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 183,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 194,
-            .type = DragonEgg_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 239,
-            .type = EggThief
-        }
-    },
+		.type = DarkGem,
+		.map_index = 20,
+		.trig_index = 2,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 20,
+		.trig_index = 8,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 20,
+		.trig_index = 9,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 20,
+		.trig_index = 82,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem_Chest,
+		.map_index = 20,
+		.trig_index = 109,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 20,
+		.trig_index = 132,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 20,
+		.trig_index = 133,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 20,
+		.trig_index = 134,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 20,
+		.trig_index = 135,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 20,
+		.trig_index = 136,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 20,
+		.trig_index = 137,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 20,
+		.trig_index = 183,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 20,
+		.trig_index = 194,
+		.objective = 0xFFFF
+	},
+	{
+		.type = EggThief,
+		.map_index = 20,
+		.trig_index = 239,
+		.objective = 0xFFFF
+	},
     #pragma endregion
-    #pragma region 21 Cloudy Domain Ball Gadget
+	#pragma region 21 Cloudy Domain Ball Gadget
     {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 21,
-            .trigger_index = 59,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 21,
-            .trigger_index = 60,
-            .type = DragonEgg
-        }
-    },
+		.type = LightGem,
+		.map_index = 21,
+		.trig_index = 59,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 21,
+		.trig_index = 60,
+		.objective = 0xFFFF
+	},
     #pragma endregion
-    #pragma region 22 Dragonfly Falls
+	#pragma region 22 Dragonfly Falls
     {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 8,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 11,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 12,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 14,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 15,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 21,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 23,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 29,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 37,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 38,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 52,
-            .type = EggThief
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 73,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 74,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 90,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 312,
-            .type = LightGem_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 313,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 22,
-            .trigger_index = 314,
-            .type = LightGem_Chest
-        }
-    },
+		.type = LightGem,
+		.map_index = 22,
+		.trig_index = 8,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 22,
+		.trig_index = 11,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 22,
+		.trig_index = 12,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 22,
+		.trig_index = 14,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 22,
+		.trig_index = 15,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 22,
+		.trig_index = 21,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 22,
+		.trig_index = 23,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 22,
+		.trig_index = 29,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 22,
+		.trig_index = 37,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 22,
+		.trig_index = 38,
+		.objective = 0xFFFF
+	},
+	{
+		.type = EggThief,
+		.map_index = 22,
+		.trig_index = 52,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 22,
+		.trig_index = 73,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 22,
+		.trig_index = 74,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 22,
+		.trig_index = 90,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem_Chest,
+		.map_index = 22,
+		.trig_index = 312,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 22,
+		.trig_index = 313,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem_Chest,
+		.map_index = 22,
+		.trig_index = 314,
+		.objective = 0xFFFF
+	},
     #pragma endregion
-    #pragma region 23 Crocovile Swamp
+	#pragma region 23 Crocovile Swamp
     {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 0,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 1,
-            .type = EggThief
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 5,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 8,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 36,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 48,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 49,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 54,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 58,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 62,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 68,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 103,
-            .type = DragonEgg_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 161,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 162,
-            .type = LightGem_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 202,
-            .type = DragonEgg_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 203,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 204,
-            .type = LightGem
-        }
-    },
+		.type = DarkGem,
+		.map_index = 23,
+		.trig_index = 0,
+		.objective = 0xFFFF
+	},
+	{
+		.type = EggThief,
+		.map_index = 23,
+		.trig_index = 1,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 23,
+		.trig_index = 5,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 23,
+		.trig_index = 8,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 23,
+		.trig_index = 36,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 23,
+		.trig_index = 48,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 23,
+		.trig_index = 49,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 23,
+		.trig_index = 54,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 23,
+		.trig_index = 58,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 23,
+		.trig_index = 62,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 23,
+		.trig_index = 68,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 23,
+		.trig_index = 103,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 23,
+		.trig_index = 161,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem_Chest,
+		.map_index = 23,
+		.trig_index = 162,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 23,
+		.trig_index = 202,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 23,
+		.trig_index = 203,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 23,
+		.trig_index = 204,
+		.objective = 0xFFFF
+	},
     #pragma endregion
-    #pragma region 24 Dragon Village
+	#pragma region 24 Dragon Village
     {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 1,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 2,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 8,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 16,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 21,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 92,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 139,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 141,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 290,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 302,
-            .type = DragonEgg_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 341,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 342,
-            .type = LightGem_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 343,
-            .type = LightGem_Chest
-        }
-    },
+		.type = DarkGem,
+		.map_index = 24,
+		.trig_index = 1,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 24,
+		.trig_index = 2,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 24,
+		.trig_index = 8,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 24,
+		.trig_index = 16,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 24,
+		.trig_index = 21,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 24,
+		.trig_index = 92,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 24,
+		.trig_index = 139,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 24,
+		.trig_index = 141,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 24,
+		.trig_index = 290,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 24,
+		.trig_index = 302,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 24,
+		.trig_index = 341,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem_Chest,
+		.map_index = 24,
+		.trig_index = 342,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem_Chest,
+		.map_index = 24,
+		.trig_index = 343,
+		.objective = 0xFFFF
+	},
     #pragma endregion
     #pragma region 30 Dark Mine
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 19,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 83,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 84,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 85,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 86,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 87,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 88,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 89,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 150,
-            .type = LightGem_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 211,
-            .type = DragonEgg_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 214,
-            .type = DragonEgg
-        }
-    },
+	{
+		.type = DarkGem,
+		.map_index = 30,
+		.trig_index = 19,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 30,
+		.trig_index = 83,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 30,
+		.trig_index = 84,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 30,
+		.trig_index = 85,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 30,
+		.trig_index = 86,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 30,
+		.trig_index = 87,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 30,
+		.trig_index = 88,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 30,
+		.trig_index = 89,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem_Chest,
+		.map_index = 30,
+		.trig_index = 150,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 30,
+		.trig_index = 211,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 30,
+		.trig_index = 214,
+		.objective = 0xFFFF
+	},
     #pragma endregion
     #pragma region 31 Frostbite Village
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 4,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 5,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 6,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 7,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 11,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 36,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 60,
-            .type = EggThief
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 61,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 66,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 74,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 150,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 170,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 246,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 247,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 312,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 372,
-            .type = DragonEgg_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 373,
-            .type = DragonEgg_Chest
-        }
-    },
+	{
+		.type = LightGem,
+		.map_index = 31,
+		.trig_index = 4,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 31,
+		.trig_index = 5,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 31,
+		.trig_index = 6,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 31,
+		.trig_index = 7,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 31,
+		.trig_index = 11,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 31,
+		.trig_index = 36,
+		.objective = 0xFFFF
+	},
+	{
+		.type = EggThief,
+		.map_index = 31,
+		.trig_index = 60,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 31,
+		.trig_index = 61,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 31,
+		.trig_index = 66,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 31,
+		.trig_index = 74,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 31,
+		.trig_index = 150,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 31,
+		.trig_index = 170,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 31,
+		.trig_index = 246,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 31,
+		.trig_index = 247,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 31,
+		.trig_index = 312,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 31,
+		.trig_index = 372,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 31,
+		.trig_index = 373,
+		.objective = 0xFFFF
+	},
     #pragma endregion
     #pragma region 33 Ice Citadel
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 4,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 8,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 11,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 15,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 21,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 22,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 31,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 33,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 36,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 44,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 45,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 67,
-            .type = LightGem_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 133,
-            .type = EggThief
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 421,
-            .type = DragonEgg_Chest
-        }
-    },
+	{
+		.type = LightGem,
+		.map_index = 33,
+		.trig_index = 4,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 33,
+		.trig_index = 8,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 33,
+		.trig_index = 11,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 33,
+		.trig_index = 15,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 33,
+		.trig_index = 21,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 33,
+		.trig_index = 22,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 33,
+		.trig_index = 31,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 33,
+		.trig_index = 33,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 33,
+		.trig_index = 36,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 33,
+		.trig_index = 44,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 33,
+		.trig_index = 45,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem_Chest,
+		.map_index = 33,
+		.trig_index = 67,
+		.objective = 0xFFFF
+	},
+	{
+		.type = EggThief,
+		.map_index = 33,
+		.trig_index = 133,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 33,
+		.trig_index = 421,
+		.objective = 0xFFFF
+	},
     #pragma endregion
     #pragma region 35 Gloomy Glacier
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 35,
-            .trigger_index = 1,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 35,
-            .trigger_index = 2,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 35,
-            .trigger_index = 15,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 35,
-            .trigger_index = 27,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 35,
-            .trigger_index = 57,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 35,
-            .trigger_index = 58,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 35,
-            .trigger_index = 212,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 35,
-            .trigger_index = 232,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 35,
-            .trigger_index = 233,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 35,
-            .trigger_index = 267,
-            .type = DragonEgg_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 35,
-            .trigger_index = 268,
-            .type = DragonEgg_Chest
-        }
-    },
+	{
+		.type = DragonEgg,
+		.map_index = 35,
+		.trig_index = 1,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 35,
+		.trig_index = 2,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 35,
+		.trig_index = 15,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 35,
+		.trig_index = 27,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 35,
+		.trig_index = 57,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 35,
+		.trig_index = 58,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 35,
+		.trig_index = 212,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 35,
+		.trig_index = 232,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 35,
+		.trig_index = 233,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 35,
+		.trig_index = 267,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 35,
+		.trig_index = 268,
+		.objective = 0xFFFF
+	},
     #pragma endregion
     #pragma region 40 Reds Laboratory
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 40,
-            .trigger_index = 1,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 40,
-            .trigger_index = 2,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 40,
-            .trigger_index = 3,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 40,
-            .trigger_index = 4,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 40,
-            .trigger_index = 41,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 40,
-            .trigger_index = 109,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 40,
-            .trigger_index = 110,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 40,
-            .trigger_index = 111,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 40,
-            .trigger_index = 115,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 40,
-            .trigger_index = 237,
-            .type = EggThief
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 40,
-            .trigger_index = 388,
-            .type = LightGem
-        }
-    },
+	{
+		.type = LightGem,
+		.map_index = 40,
+		.trig_index = 1,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 40,
+		.trig_index = 2,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 40,
+		.trig_index = 3,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 40,
+		.trig_index = 4,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 40,
+		.trig_index = 41,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 40,
+		.trig_index = 109,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 40,
+		.trig_index = 110,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 40,
+		.trig_index = 111,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 40,
+		.trig_index = 115,
+		.objective = 0xFFFF
+	},
+	{
+		.type = EggThief,
+		.map_index = 40,
+		.trig_index = 237,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 40,
+		.trig_index = 388,
+		.objective = 0xFFFF
+	},
     #pragma endregion
     #pragma region 44 Stormy Beach
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 44,
-            .trigger_index = 27,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 44,
-            .trigger_index = 44,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 44,
-            .trigger_index = 66,
-            .type = EggThief
-        }
-    },
+	{
+		.type = DarkGem,
+		.map_index = 44,
+		.trig_index = 27,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 44,
+		.trig_index = 44,
+		.objective = 0xFFFF
+	},
+	{
+		.type = EggThief,
+		.map_index = 44,
+		.trig_index = 66,
+		.objective = 0xFFFF
+	},
     #pragma endregion
     #pragma region 45 Coastal Remains
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 0,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 2,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 3,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 4,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 7,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 11,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 12,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 13,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 19,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 29,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 47,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 59,
-            .type = EggThief
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 119,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 120,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 192,
-            .type = LightGem
-        }
-    },
+	{
+		.type = DragonEgg,
+		.map_index = 45,
+		.trig_index = 0,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 45,
+		.trig_index = 2,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 45,
+		.trig_index = 3,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 45,
+		.trig_index = 4,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 45,
+		.trig_index = 7,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 45,
+		.trig_index = 11,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 45,
+		.trig_index = 12,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 45,
+		.trig_index = 13,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 45,
+		.trig_index = 19,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 45,
+		.trig_index = 29,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 45,
+		.trig_index = 47,
+		.objective = 0xFFFF
+	},
+	{
+		.type = EggThief,
+		.map_index = 45,
+		.trig_index = 59,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 45,
+		.trig_index = 119,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 45,
+		.trig_index = 120,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 45,
+		.trig_index = 192,
+		.objective = 0xFFFF
+	},
     #pragma endregion
     #pragma region 60 Molten Mount
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
-            .trigger_index = 4,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
-            .trigger_index = 5,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
-            .trigger_index = 6,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
-            .trigger_index = 9,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
-            .trigger_index = 17,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
-            .trigger_index = 21,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
-            .trigger_index = 36,
-            .type = EggThief
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
-            .trigger_index = 63,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
-            .trigger_index = 213,
-            .type = LightGem_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
-            .trigger_index = 214,
-            .type = DragonEgg_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
-            .trigger_index = 215,
-            .type = LightGem_Chest
-        }
-    },
+	{
+		.type = LightGem,
+		.map_index = 60,
+		.trig_index = 4,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 60,
+		.trig_index = 5,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 60,
+		.trig_index = 6,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 60,
+		.trig_index = 9,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 60,
+		.trig_index = 17,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 60,
+		.trig_index = 21,
+		.objective = 0xFFFF
+	},
+	{
+		.type = EggThief,
+		.map_index = 60,
+		.trig_index = 36,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DarkGem,
+		.map_index = 60,
+		.trig_index = 63,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem_Chest,
+		.map_index = 60,
+		.trig_index = 213,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 60,
+		.trig_index = 214,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem_Chest,
+		.map_index = 60,
+		.trig_index = 215,
+		.objective = 0xFFFF
+	},
     #pragma endregion
     #pragma region 61 Magma Falls Top
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 61,
-            .trigger_index = 39,
-            .type = DragonEgg_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 61,
-            .trigger_index = 57,
-            .type = LightGem
-        }
-    },
+	{
+		.type = DragonEgg_Chest,
+		.map_index = 61,
+		.trig_index = 39,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 61,
+		.trig_index = 57,
+		.objective = 0xFFFF
+	},
     #pragma endregion
     #pragma region 62 Magma Falls Ball Gadget
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 62,
-            .trigger_index = 59,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 62,
-            .trigger_index = 82,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 62,
-            .trigger_index = 83,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 62,
-            .trigger_index = 90,
-            .type = LightGem
-        }
-    },
+	{
+		.type = DragonEgg,
+		.map_index = 62,
+		.trig_index = 59,
+		.objective = 0xFFFF
+	},
+	{
+		.type = DragonEgg,
+		.map_index = 62,
+		.trig_index = 82,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 62,
+		.trig_index = 83,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 62,
+		.trig_index = 90,
+		.objective = 0xFFFF
+	},
     #pragma endregion
     #pragma region 63 Magma Falls Bottom
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 63,
-            .trigger_index = 2,
-            .type = DarkGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 63,
-            .trigger_index = 10,
-            .type = EggThief
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 63,
-            .trigger_index = 16,
-            .type = LightGem
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 63,
-            .trigger_index = 51,
-            .type = LightGem_Chest
-        }
-    },
+	{
+		.type = DarkGem,
+		.map_index = 63,
+		.trig_index = 2,
+		.objective = 0xFFFF
+	},
+	{
+		.type = EggThief,
+		.map_index = 63,
+		.trig_index = 10,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem,
+		.map_index = 63,
+		.trig_index = 16,
+		.objective = 0xFFFF
+	},
+	{
+		.type = LightGem_Chest,
+		.map_index = 63,
+		.trig_index = 51,
+		.objective = 0xFFFF
+	},
     #pragma endregion
 
     #pragma region Objectives
     // Dragon Village - Sgt. Byrd
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 24,
-            .trigger_index = 158,
-            .include_next = true,
-            .objective = HT_Objective_MR1_HalfDone,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 24,
-            .trigger_index = 158,
-            .objective = HT_Objective_MR1_AllDone,
-            .type = LightGem
-        }
-    },
-
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 24,
+		.trig_index = 158,
+		.objective = HT_Objective_MR1_HalfDone & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 24,
+		.trig_index = 158,
+		.objective = HT_Objective_MR1_AllDone & 0xFFFF,
+	},
     // Crocovile Swamp - Turret
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 23,
-            .trigger_index = 6,
-            .include_next = true,
-            .objective = HT_Objective_MR1_Spy_HalfDone,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 23,
-            .trigger_index = 6,
-            .objective = HT_Objective_MiniGame1A_Complete,
-            .type = LightGem
-        }
-    },
-
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 23,
+		.trig_index = 6,
+		.objective = HT_Objective_MR1_Spy_HalfDone & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 23,
+		.trig_index = 6,
+		.objective = HT_Objective_MiniGame1A_Complete & 0xFFFF,
+	},
     // Crocovile Swamp - Blink
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 23,
-            .trigger_index = 69,
-            .include_next = true,
-            .objective = HT_Objective_MR1_Blk_HalfDone,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 23,
-            .trigger_index = 69,
-            .objective = HT_Objective_MR1_Blk_AllDone,
-            .type = LightGem
-        }
-    },
-    
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 23,
+		.trig_index = 69,
+		.objective = HT_Objective_MR1_Blk_HalfDone & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 23,
+		.trig_index = 69,
+		.objective = HT_Objective_MR1_Blk_AllDone & 0xFFFF,
+	},
     // Dragonfly Falls - Sparx
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 22,
-            .trigger_index = 283,
-            .include_next = true,
-            .objective = HT_Objective_MR1_Spx_Egg,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 22,
-            .trigger_index = 283,
-            .objective = HT_Objective_MR1_Spx_AllDone,
-            .type = LightGem
-        }
-    },
-    
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 22,
+		.trig_index = 283,
+		.objective = HT_Objective_MR1_Spx_Egg & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 22,
+		.trig_index = 283,
+		.objective = HT_Objective_MR1_Spx_AllDone & 0xFFFF,
+	},
     // Coastal Remains - Blink
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 45,
-            .trigger_index = 115,
-            .include_next = true,
-            .objective = HT_Objective_MR2_Blk_HalfDone,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 45,
-            .trigger_index = 115,
-            .objective = HT_Objective_MR2_Blk_AllDone,
-            .type = LightGem
-        }
-    },
-    
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 45,
+		.trig_index = 115,
+		.objective = HT_Objective_MR2_Blk_HalfDone & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 45,
+		.trig_index = 115,
+		.objective = HT_Objective_MR2_Blk_AllDone & 0xFFFF,
+	},
     // Coastal Remains - Turret
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 45,
-            .trigger_index = 77,
-            .include_next = true,
-            .objective = HT_Objective_MR2_Spy_HalfDone,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 45,
-            .trigger_index = 77,
-            .objective = HT_Objective_MR2_Spy_AllDone,
-            .type = LightGem
-        }
-    },
-
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 45,
+		.trig_index = 77,
+		.objective = HT_Objective_MR2_Spy_HalfDone & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 45,
+		.trig_index = 77,
+		.objective = HT_Objective_MR2_Spy_AllDone & 0xFFFF,
+	},
     // Coastal Remains - Otto
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 45,
-            .trigger_index = 150,
-            .objective = HT_Objective_OtterNPC_AllDone,
-            .type = LightGem
-        }
-    },
-    
+	{
+		.type = LightGem,
+		.map_index = 45,
+		.trig_index = 150,
+		.objective = HT_Objective_OtterNPC_AllDone & 0xFFFF,
+	},
     // Sunken Ruins - Sparx
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 19,
-            .trigger_index = 65,
-            .include_next = true,
-            .objective = HT_Objective_MR2_Spx_HalfDone,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 19,
-            .trigger_index = 65,
-            .objective = HT_Objective_MR2_Spx_AllDone,
-            .type = LightGem
-        }
-    },
-    
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 19,
+		.trig_index = 65,
+		.objective = HT_Objective_MR2_Spx_HalfDone & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 19,
+		.trig_index = 65,
+		.objective = HT_Objective_MR2_Spx_AllDone & 0xFFFF,
+	},
     // Cloudy Domain - Sgt. Byrd
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 20,
-            .trigger_index = 81,
-            .include_next = true,
-            .objective = HT_Objective_MR2_Sgt_HalfDone,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 20,
-            .trigger_index = 81,
-            .objective = HT_Objective_MR2_Sgt_AllDone,
-            .type = LightGem
-        }
-    },
-    
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 20,
+		.trig_index = 81,
+		.objective = HT_Objective_MR2_Sgt_HalfDone & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 20,
+		.trig_index = 81,
+		.objective = HT_Objective_MR2_Sgt_AllDone & 0xFFFF,
+	},
     // Frostbite Village - Blink
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 31,
-            .trigger_index = 244,
-            .include_next = true,
-            .objective = HT_Objective_MR3_Blk_HalfDone,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 31,
-            .trigger_index = 244,
-            .objective = HT_Objective_MR3_Blk_AllDone,
-            .type = LightGem
-        }
-    },
-    
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 31,
+		.trig_index = 244,
+		.objective = HT_Objective_MR3_Blk_HalfDone & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 31,
+		.trig_index = 244,
+		.objective = HT_Objective_MR3_Blk_AllDone & 0xFFFF,
+	},
     // Frostbite Village - Turret
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 31,
-            .trigger_index = 242,
-            .include_next = true,
-            .objective = HT_Objective_MR3_Spy_HalfDone,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 31,
-            .trigger_index = 242,
-            .objective = HT_Objective_MR3_Spy_AllDone,
-            .type = LightGem
-        }
-    },
-    
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 31,
+		.trig_index = 242,
+		.objective = HT_Objective_MR3_Spy_HalfDone & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 31,
+		.trig_index = 242,
+		.objective = HT_Objective_MR3_Spy_AllDone & 0xFFFF,
+	},
     // Gloomy Glacier - Sparx
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 35,
-            .trigger_index = 128,
-            .include_next = true,
-            .objective = HT_Objective_MR3_Spx_HalfDone,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 35,
-            .trigger_index = 128,
-            .objective = HT_Objective_MR3_Spx_AllDone,
-            .type = LightGem
-        }
-    },
-
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 35,
+		.trig_index = 128,
+		.objective = HT_Objective_MR3_Spx_HalfDone & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 35,
+		.trig_index = 128,
+		.objective = HT_Objective_MR3_Spx_AllDone & 0xFFFF,
+	},
     // Gloomy Glacier - Bentley
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 35,
-            .trigger_index = 88,
-            .objective = HT_Objective_3B_BentleyHasRewarded,
-            .type = LightGem
-        }
-    },
-    
+	{
+		.type = LightGem,
+		.map_index = 35,
+		.trig_index = 88,
+		.objective = HT_Objective_3B_BentleyHasRewarded & 0xFFFF,
+	},
     // Ice Citadel - Sgt. Byrd
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 33,
-            .trigger_index = 48,
-            .include_next = true,
-            .objective = HT_Objective_MR3_Sgt_HalfDone,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 33,
-            .trigger_index = 48,
-            .objective = HT_Objective_MR3_Sgt_AllDone,
-            .type = LightGem
-        }
-    },
-
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 33,
+		.trig_index = 48,
+		.objective = HT_Objective_MR3_Sgt_HalfDone & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 33,
+		.trig_index = 48,
+		.objective = HT_Objective_MR3_Sgt_AllDone & 0xFFFF,
+	},
     // Ice Citadel - Boiler 1
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 33,
-            .trigger_index = 97,
-            .objective = HT_Objective_3C_LitBoiler_1,
-            .type = LightGem
-        }
-    },
-
+	{
+		.type = LightGem,
+		.map_index = 33,
+		.trig_index = 97,
+		.objective = HT_Objective_3C_LitBoiler_1 & 0xFFFF,
+	},
     // Ice Citadel - Boiler 3
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 33,
-            .trigger_index = 99,
-            .objective = HT_Objective_3C_LitBoiler_3,
-            .type = LightGem
-        }
-    },
-
+	{
+		.type = LightGem,
+		.map_index = 33,
+		.trig_index = 99,
+		.objective = HT_Objective_3C_LitBoiler_3 & 0xFFFF,
+	},
     // Ice Citadel - Boiler 5
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 33,
-            .trigger_index = 101,
-            .objective = HT_Objective_3C_LitBoiler_5,
-            .type = LightGem
-        }
-    },
-
+	{
+		.type = LightGem,
+		.map_index = 33,
+		.trig_index = 101,
+		.objective = HT_Objective_3C_LitBoiler_5 & 0xFFFF,
+	},
     // Ice Citadel - Ice Princess
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 33,
-            .trigger_index = 47,
-            .objective = HT_Objective_3C_IcePrincessHasRewarded,
-            .type = LightGem
-        }
-    },
-    
+	{
+		.type = LightGem,
+		.map_index = 33,
+		.trig_index = 47,
+		.objective = HT_Objective_3C_IcePrincessHasRewarded & 0xFFFF,
+	},
     // Stormy Beach - Turret
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 44,
-            .trigger_index = 8,
-            .include_next = true,
-            .objective = HT_Objective_MR4_Spy_HalfDone,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 44,
-            .trigger_index = 8,
-            .objective = HT_Objective_MR4_Spy_AllDone,
-            .type = LightGem
-        }
-    },
-    
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 44,
+		.trig_index = 8,
+		.objective = HT_Objective_MR4_Spy_HalfDone & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 44,
+		.trig_index = 8,
+		.objective = HT_Objective_MR4_Spy_AllDone & 0xFFFF,
+	},
     // Molten Mount - Sgt. Byrd
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 60,
-            .trigger_index = 94,
-            .include_next = true,
-            .objective = HT_Objective_MR4_Sgt_HalfDone,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 60,
-            .trigger_index = 94,
-            .objective = HT_Objective_MR4_Sgt_AllDone,
-            .type = LightGem
-        }
-    },
-
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 60,
+		.trig_index = 94,
+		.objective = HT_Objective_MR4_Sgt_HalfDone & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 60,
+		.trig_index = 94,
+		.objective = HT_Objective_MR4_Sgt_AllDone & 0xFFFF,
+	},
     // Molten Mount - Teena
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 60,
-            .trigger_index = 93,
-            .objective = HT_Objective_TeenaHasRewarded,
-            .type = DragonEgg
-        }
-    },
-    
+	{
+		.type = DragonEgg,
+		.map_index = 60,
+		.trig_index = 93,
+		.objective = HT_Objective_TeenaHasRewarded & 0xFFFF,
+	},
     // Magma Falls Bottom - Sparx
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 63,
-            .trigger_index = 12,
-            .include_next = true,
-            .objective = HT_Objective_MR4_Spx_HalfDone,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 63,
-            .trigger_index = 12,
-            .objective = HT_Objective_MR4_Spx_AllDone,
-            .type = LightGem
-        }
-    },
-    
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 63,
+		.trig_index = 12,
+		.objective = HT_Objective_MR4_Spx_HalfDone & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 63,
+		.trig_index = 12,
+		.objective = HT_Objective_MR4_Spx_AllDone & 0xFFFF,
+	},
     // Dark Mine - Blink
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 30,
-            .trigger_index = 154,
-            .include_next = true,
-            .objective = HT_Objective_MR4_Blk_HalfDone,
-            .type = DragonEgg
-        }
-    },
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 30,
-            .trigger_index = 154,
-            .objective = HT_Objective_MR4_Blk_AllDone,
-            .type = LightGem
-        }
-    },
+	{
+		.type = DragonEgg_MiniGame,
+		.map_index = 30,
+		.trig_index = 154,
+		.objective = HT_Objective_MR4_Blk_HalfDone & 0xFFFF,
+	},
+	{
+		.type = LightGem_MiniGame,
+		.map_index = 30,
+		.trig_index = 154,
+		.objective = HT_Objective_MR4_Blk_AllDone & 0xFFFF,
+	},
     #pragma endregion
 
     #pragma region Junk Chests
     // Coastal Remains
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 315,
-            .type = Junk_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 45,
-            .trigger_index = 462,
-            .type = Junk_Chest
-        }
-    },
+	{
+		.type = Junk_Chest,
+		.map_index = 45,
+		.trig_index = 315,
+		.objective = 0xFFFF
+	},
+	{
+		.type = Junk_Chest,
+		.map_index = 45,
+		.trig_index = 462,
+		.objective = 0xFFFF
+	},
     // Sunken Ruins
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 284,
-            .type = Junk_Chest
-        }
-    },
+	{
+		.type = Junk_Chest,
+		.map_index = 19,
+		.trig_index = 284,
+		.objective = 0xFFFF
+	},
     // Cloudy Domain
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 243,
-            .type = Junk_Chest
-        }
-    },
+	{
+		.type = Junk_Chest,
+		.map_index = 20,
+		.trig_index = 243,
+		.objective = 0xFFFF
+	},
     // Frostbite Village
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 232,
-            .type = Junk_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 31,
-            .trigger_index = 485,
-            .type = Junk_Chest
-        }
-    },
+	{
+		.type = Junk_Chest,
+		.map_index = 31,
+		.trig_index = 232,
+		.objective = 0xFFFF
+	},
+	{
+		.type = Junk_Chest,
+		.map_index = 31,
+		.trig_index = 485,
+		.objective = 0xFFFF
+	},
     // Gloomy Glacier
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 35,
-            .trigger_index = 249,
-            .type = Junk_Chest
-        }
-    },
+	{
+		.type = Junk_Chest,
+		.map_index = 35,
+		.trig_index = 249,
+		.objective = 0xFFFF
+	},
     // Ice Citadel
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 286,
-            .type = Junk_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 300,
-            .type = Junk_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 309,
-            .type = Junk_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 377,
-            .type = Junk_Chest
-        }
-    },
+	{
+		.type = Junk_Chest,
+		.map_index = 33,
+		.trig_index = 286,
+		.objective = 0xFFFF
+	},
+	{
+		.type = Junk_Chest,
+		.map_index = 33,
+		.trig_index = 300,
+		.objective = 0xFFFF
+	},
+	{
+		.type = Junk_Chest,
+		.map_index = 33,
+		.trig_index = 309,
+		.objective = 0xFFFF
+	},
+	{
+		.type = Junk_Chest,
+		.map_index = 33,
+		.trig_index = 377,
+		.objective = 0xFFFF
+	},
     // Stormy Beach
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 44,
-            .trigger_index = 97,
-            .type = Junk_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 44,
-            .trigger_index = 105,
-            .type = Junk_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 44,
-            .trigger_index = 168,
-            .type = Junk_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 44,
-            .trigger_index = 198,
-            .type = Junk_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 44,
-            .trigger_index = 199,
-            .type = Junk_Chest
-        }
-    },
+	{
+		.type = Junk_Chest,
+		.map_index = 44,
+		.trig_index = 97,
+		.objective = 0xFFFF
+	},
+	{
+		.type = Junk_Chest,
+		.map_index = 44,
+		.trig_index = 105,
+		.objective = 0xFFFF
+	},
+	{
+		.type = Junk_Chest,
+		.map_index = 44,
+		.trig_index = 168,
+		.objective = 0xFFFF
+	},
+	{
+		.type = Junk_Chest,
+		.map_index = 44,
+		.trig_index = 198,
+		.objective = 0xFFFF
+	},
+	{
+		.type = Junk_Chest,
+		.map_index = 44,
+		.trig_index = 199,
+		.objective = 0xFFFF
+	},
     // Molten Mount
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
-            .trigger_index = 325,
-            .type = Junk_Chest
-        }
-    },
+	{
+		.type = Junk_Chest,
+		.map_index = 60,
+		.trig_index = 325,
+		.objective = 0xFFFF
+	},
     // Magma Falls Top
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 61,
-            .trigger_index = 49,
-            .type = Junk_Chest
-        }
-    },
+	{
+		.type = Junk_Chest,
+		.map_index = 61,
+		.trig_index = 49,
+		.objective = 0xFFFF
+	},
     // Dark Mine
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 377,
-            .type = Junk_Chest
-        }
-    },
+	{
+		.type = Junk_Chest,
+		.map_index = 30,
+		.trig_index = 377,
+		.objective = 0xFFFF
+	},
     // Red's Laboratory
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 40,
-            .trigger_index = 389,
-            .type = Junk_Chest
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 40,
-            .trigger_index = 390,
-            .type = Junk_Chest
-        }
-    },
+	{
+		.type = Junk_Chest,
+		.map_index = 40,
+		.trig_index = 389,
+		.objective = 0xFFFF
+	},
+	{
+		.type = Junk_Chest,
+		.map_index = 40,
+		.trig_index = 390,
+		.objective = 0xFFFF
+	},
     #pragma endregion
-    
+
     #pragma region Dragon Elders
     // Elder Tomas
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 24,
-            .trigger_index = 11,
-            .objective = HT_Objective_GivenDoubleJump,
-            .type = NonCollectable
-        }
-    },
+	{
+		.type = NonCollectable,
+		.map_index = 24,
+		.trig_index = 11,
+		.objective = 0x1,
+	},
     // Elder Magnus
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 23,
-            .trigger_index = 71,
-            .objective = HT_Objective_GivenPoleGrabAbility,
-            .type = NonCollectable
-        }
-    },
+	{
+		.type = NonCollectable,
+		.map_index = 23,
+		.trig_index = 71,
+		.objective = 0x3,
+	},
     // Elder Titan
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 20,
-            .trigger_index = 10,
-            .objective = HT_Objective_GivenWingShieldAbility,
-            .type = NonCollectable
-        }
-    },
+	{
+		.type = NonCollectable,
+		.map_index = 20,
+		.trig_index = 10,
+		.objective = 0x9d,
+	},
     // Elder Astor
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 33,
-            .trigger_index = 9,
-            .objective = HT_Objective_GivenWallKickAbility,
-            .type = NonCollectable
-        }
-    },
+	{
+		.type = NonCollectable,
+		.map_index = 33,
+		.trig_index = 9,
+		.objective = 0x9c,
+	},
     #pragma endregion
 
     #pragma region Bosses
     // Gnasty Gnorc
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 24,
-            .trigger_index = 346,
-            .objective = HT_Objective_Boss1_Beaten,
-            .type = NonCollectable
-        }
-    },
+	{
+		.type = NonCollectable,
+		.map_index = 24,
+		.trig_index = 346,
+		.objective = 0x81,
+	},
     // Ineptune
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 45,
-            .trigger_index = 235,
-            .objective = HT_Objective_Boss2_Beaten,
-            .type = NonCollectable
-        }
-    },
+	{
+		.type = NonCollectable,
+		.map_index = 45,
+		.trig_index = 235,
+		.objective = 0x82,
+	},
     // Red
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 31,
-            .trigger_index = 318,
-            .objective = HT_Objective_Boss3_Beaten,
-            .type = NonCollectable
-        }
-    },
+	{
+		.type = NonCollectable,
+		.map_index = 31,
+		.trig_index = 318,
+		.objective = 0x83,
+	},
     // Mecha Red
-    {
-        .union_type = APC_Objective,
-        .objective = {
-            .map_index = 40,
-            .trigger_index = 391,
-            .objective = HT_Objective_Boss4_Beaten,
-            .type = NonCollectable
-        }
-    },
+	{
+		.type = NonCollectable,
+		.map_index = 40,
+		.trig_index = 391,
+		.objective = 0x84,
+	},
     #pragma endregion
 
     #pragma region Fireworks
     // Dragon Village
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 304,
-            .type = FireWork
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 305,
-            .type = FireWork
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 344,
-            .type = FireWork
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 24,
-            .trigger_index = 431,
-            .type = FireWork
-        }
-    },
-
+	{
+		.type = FireWork,
+		.map_index = 24,
+		.trig_index = 304,
+		.objective = 0xFFFF
+	},
+	{
+		.type = FireWork,
+		.map_index = 24,
+		.trig_index = 305,
+		.objective = 0xFFFF
+	},
+	{
+		.type = FireWork,
+		.map_index = 24,
+		.trig_index = 344,
+		.objective = 0xFFFF
+	},
+	{
+		.type = FireWork,
+		.map_index = 24,
+		.trig_index = 431,
+		.objective = 0xFFFF
+	},
     // Crocovile Swamp
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 276,
-            .type = FireWork
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 292,
-            .type = FireWork
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 23,
-            .trigger_index = 294,
-            .type = FireWork
-        }
-    },
-
+	{
+		.type = FireWork,
+		.map_index = 23,
+		.trig_index = 276,
+		.objective = 0xFFFF
+	},
+	{
+		.type = FireWork,
+		.map_index = 23,
+		.trig_index = 292,
+		.objective = 0xFFFF
+	},
+	{
+		.type = FireWork,
+		.map_index = 23,
+		.trig_index = 294,
+		.objective = 0xFFFF
+	},
     // Sunken Ruins
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 207,
-            .type = FireWork
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 236,
-            .type = FireWork
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 252,
-            .type = FireWork
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 19,
-            .trigger_index = 287,
-            .type = FireWork
-        }
-    },
-
+	{
+		.type = FireWork,
+		.map_index = 19,
+		.trig_index = 207,
+		.objective = 0xFFFF
+	},
+	{
+		.type = FireWork,
+		.map_index = 19,
+		.trig_index = 236,
+		.objective = 0xFFFF
+	},
+	{
+		.type = FireWork,
+		.map_index = 19,
+		.trig_index = 252,
+		.objective = 0xFFFF
+	},
+	{
+		.type = FireWork,
+		.map_index = 19,
+		.trig_index = 287,
+		.objective = 0xFFFF
+	},
     // Cloudy Domain
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 113,
-            .type = FireWork
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 264,
-            .type = FireWork
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 20,
-            .trigger_index = 273,
-            .type = FireWork
-        }
-    },
-
+	{
+		.type = FireWork,
+		.map_index = 20,
+		.trig_index = 113,
+		.objective = 0xFFFF
+	},
+	{
+		.type = FireWork,
+		.map_index = 20,
+		.trig_index = 264,
+		.objective = 0xFFFF
+	},
+	{
+		.type = FireWork,
+		.map_index = 20,
+		.trig_index = 273,
+		.objective = 0xFFFF
+	},
     // Ice Citadel
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 33,
-            .trigger_index = 250,
-            .type = FireWork
-        }
-    },
-
+	{
+		.type = FireWork,
+		.map_index = 33,
+		.trig_index = 250,
+		.objective = 0xFFFF
+	},
     // Stormy Beach
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 44,
-            .trigger_index = 98,
-            .type = FireWork
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 44,
-            .trigger_index = 113,
-            .type = FireWork
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 44,
-            .trigger_index = 149,
-            .type = FireWork
-        }
-    },
-
+	{
+		.type = FireWork,
+		.map_index = 44,
+		.trig_index = 98,
+		.objective = 0xFFFF
+	},
+	{
+		.type = FireWork,
+		.map_index = 44,
+		.trig_index = 113,
+		.objective = 0xFFFF
+	},
+	{
+		.type = FireWork,
+		.map_index = 44,
+		.trig_index = 149,
+		.objective = 0xFFFF
+	},
     // Molten Mount
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 60,
-            .trigger_index = 132,
-            .type = FireWork
-        }
-    },
-
+	{
+		.type = FireWork,
+		.map_index = 60,
+		.trig_index = 132,
+		.objective = 0xFFFF
+	},
     // Magma Falls Top
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 61,
-            .trigger_index = 19,
-            .type = FireWork
-        }
-    },
-
+	{
+		.type = FireWork,
+		.map_index = 61,
+		.trig_index = 19,
+		.objective = 0xFFFF
+	},
     // Dark Mine
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 315,
-            .type = FireWork
-        }
-    },
-    {
-        .union_type = APC_Grabbable,
-        .grabbable = {
-            .map_index = 30,
-            .trigger_index = 366,
-            .type = FireWork
-        }
-    },
+	{
+		.type = FireWork,
+		.map_index = 30,
+		.trig_index = 315,
+		.objective = 0xFFFF
+	},
+	{
+		.type = FireWork,
+		.map_index = 30,
+		.trig_index = 366,
+		.objective = 0xFFFF
+	}
     #pragma endregion
 };
