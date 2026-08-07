@@ -206,4 +206,6 @@ extern SE_MapList gMapList;
 extern int SE_MapList__m_gNumMaps;
 extern int start_map_index;
 
+extern SE_Map* SE_MapList__FindMap(SE_MapList* self, EXHashCode GeoHashCode, EXHashCode MapHashCode);
+
 #endif /* MAP_H */

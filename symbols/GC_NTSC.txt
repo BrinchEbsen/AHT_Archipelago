@@ -105,6 +105,7 @@ GetSpyroMap = 0x80232df0;
 gMapList = 0x8046ee54;
 SE_MapList__m_gNumMaps = 0x804cb608;
 start_map_index = 0x8045AB00;
+SE_MapList__FindMap = 0x80233044;
 
 /* player.h */
 gpPlayer = 0x804CB35C;

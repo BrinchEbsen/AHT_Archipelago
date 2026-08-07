@@ -16,6 +16,8 @@ APSettings g_patch_ap_settings = {
     .deathlink_ingoing = AP_DEATHLINK_MODE_NONE,
     .deathlink_outgoing = DLReason_None,
     .infinite_butterfly_jar = false,
+    .infinite_double_gem = false,
+    .fireworks_are_randomized = false,
     .randomize_shop = false,
     .use_key_rings = false,
 

@@ -23,6 +23,8 @@ typedef struct APCollectable
     u8 map_index;
     u16 trig_index;
     u16 objective;
+    float x;
+    float z;
 } APCollectable;
 
 #define AP_COLLECTABLES_TOTAL 271

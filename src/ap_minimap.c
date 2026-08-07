@@ -6,6 +6,7 @@
 #include <hashcodes.h>
 #include <minimap_status.h>
 #include <system.h>
+#include <pad.h>
 
 bool g_show_minimap_icons = false;
 
@@ -13,60 +14,18 @@ APCollectable ballgadgetloc_cloudy_domain = {
     .map_index = 20,
     .trig_index = 77,
     .objective = 0xFFFF,
-    .type = NonCollectable
+    .type = NonCollectable,
+    .x = 452.590f,
+    .z = 65.122f
 };
 APCollectable ballgadgetloc_magma_falls = {
     .map_index = 61,
     .trig_index = 1,
     .objective = 0xFFFF,
-    .type = NonCollectable
+    .type = NonCollectable,
+    .x = 260.809f,
+    .z = 931.982f
 };
-
-IconPosOverride icon_pos_overrides[] = {
-    {
-        .map_index = 23,
-        .trigger_index = 58,
-        .pos_x = 75.439f,
-        .pos_z = 538.957f
-    },
-    {
-        .map_index = 20,
-        .trigger_index = 137,
-        .pos_x = -181.482f,
-        .pos_z = -132.52f
-    },
-    {
-        .map_index = 33,
-        .trigger_index = 9,
-        .pos_x = -682.961f,
-        .pos_z = -148.253f
-    },
-    {
-        .map_index = 31,
-        .trigger_index = 485,
-        .pos_x = -89.514f,
-        .pos_z = 74.633f
-    },
-    {
-        .map_index = 31,
-        .trigger_index = 36,
-        .pos_x = -106.951f,
-        .pos_z = 96.723f
-    },
-    {
-        .map_index = 23,
-        .trigger_index = 276,
-        .pos_x = 197.835f,
-        .pos_z = 495.531f
-    },
-    {
-        .map_index = 23,
-        .trigger_index = 294,
-        .pos_x = 209.934f,
-        .pos_z = 496.094f
-    }
-};
-#define NUM_ICON_POS_OVERRIDES 7
 
 void GUI_MiniMap__DrawRestarts__PreCallHOOK(GUI_Base* self, void* pWnd)
 {
@@ -78,28 +37,28 @@ void GUI_MiniMap__DrawRestarts__PreCallHOOK(GUI_Base* self, void* pWnd)
 
 void minimap_draw_locations(GUI_Base* self, void* pWnd)
 {
-    SE_Map* map = GetSpyroMap(0);
-    if (map == NULL) {
-        return;
-    }
-    if (map->m_State != Running) {
-        return;
-    }
-    if (map->m_TriggerList.m_pTriggers == NULL) {
-        return;
+    EXHashCode file_hash = gMiniMapStatus.m_Current.m_FileHash;
+    EXHashCode map_hash = gMiniMapStatus.m_Current.m_MapHash;
+
+    if ((map_hash & 0xFF000000) != HT_Map_HASHCODE_BASE)
+    {
+        map_hash = 0;
     }
 
-    if (gMiniMapStatus.m_Current.m_FileHash != map->m_MapGeoHashCode) {
+    SE_Map* map = SE_MapList__FindMap(&gMapList, file_hash, map_hash);
+
+    if (map == NULL)
+    {
         return;
-    }
-    if (gMiniMapStatus.m_Current.m_MapHash != 0) {
-        if (gMiniMapStatus.m_Current.m_MapHash != map->m_MapHashCode) {
-            return;
-        }
     }
 
     for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
         APCollectable* coll = &g_ap_collectables[i];
+
+        if (map->m_MapListIndex != coll->map_index)
+        {
+            continue;
+        }
 
         size_t byte = (i*2) / 8;
         size_t bit = (i*2) % 8;
@@ -119,7 +78,7 @@ void minimap_draw_locations(GUI_Base* self, void* pWnd)
             collected = collected && ((dat & (0b01 << bit)) != 0);
         }
 
-        minimap_draw_location(self, pWnd, map, coll, reachable, collected);
+        minimap_draw_location(self, pWnd, coll, reachable, collected);
     }
 
     // Cloudy Domain Ball Gadget
@@ -127,7 +86,7 @@ void minimap_draw_locations(GUI_Base* self, void* pWnd)
         s32 collected;
         s32 reachable;
         s32 num = num_collectables_in_map(21, &collected, &reachable);
-        minimap_draw_location(self, pWnd, map, &ballgadgetloc_cloudy_domain,
+        minimap_draw_location(self, pWnd, &ballgadgetloc_cloudy_domain,
             reachable >= num,
             collected >= num);
     }
@@ -136,21 +95,16 @@ void minimap_draw_locations(GUI_Base* self, void* pWnd)
         s32 collected;
         s32 reachable;
         s32 num = num_collectables_in_map(62, &collected, &reachable);
-        minimap_draw_location(self, pWnd, map, &ballgadgetloc_magma_falls,
+        minimap_draw_location(self, pWnd, &ballgadgetloc_magma_falls,
             reachable >= num,
             collected >= num);
     }
 }
 
 void minimap_draw_location(
-    GUI_Base* self, void* pWnd, SE_Map* map, APCollectable* coll, bool reachable, bool collected)
+    GUI_Base* self, void* pWnd, APCollectable* coll, bool reachable, bool collected)
 {
     if ((coll->type == FireWork) && !g_gamestate_ap_settings.fireworks_are_randomized)
-    {
-        return;
-    }
-
-    if (coll->map_index != map->m_MapListIndex)
     {
         return;
     }
@@ -165,24 +119,15 @@ void minimap_draw_location(
 
     EXWnd__SelectSprite2DTexture(pWnd, pTexture, false, false);
 
-    SE_Trigger* trigger = map->m_TriggerList.m_pTriggers[coll->trig_index].m_pSE_Trigger;
-
-    float x = trigger->m_Position.x;
-    float z = trigger->m_Position.z;
-
-    for (int i = 0; i < NUM_ICON_POS_OVERRIDES; i++) {
-        IconPosOverride* newpos = &icon_pos_overrides[i];
-        if ((newpos->map_index == map->m_MapListIndex) && (newpos->trigger_index == coll->trig_index)) {
-            x = newpos->pos_x;
-            z = newpos->pos_z;
-            break;
-        }
+    if ((coll->x == 0.0f) || (coll->z == 0.0f))
+    {
+        PRINTF("ATTEMPTED TO DRAW AT 0,0 (m: %d, t: %d)\n", coll->map_index, coll->trig_index);
     }
 
     GUI_MiniMap__DrawIcon(
         self,
-        x,
-        z,
+        coll->x,
+        coll->z,
         reachable ? COLOR_LIGHT_GREEN : COLOR_LIGHT_RED,
         8,
         pWnd);
