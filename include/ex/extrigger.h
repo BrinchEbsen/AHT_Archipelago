@@ -28,4 +28,16 @@ _Static_assert(sizeof(EXTrigger) == 0x68);
 _Static_assert(sizeof(EXTrigger) == 0x68);
 #endif
 
+typedef struct EXGeoTrigger
+{
+    u16 TypeIndex;
+    u16 Debug;
+    u32 GameFlags;
+    u32 TrigFlags;
+    EXVector3 Position;
+    EXVector3 Rotation;
+    EXVector3 Scale;
+    EXVar32 Data[32];
+} EXGeoTrigger;
+
 #endif /* EXTRIGGER_H */

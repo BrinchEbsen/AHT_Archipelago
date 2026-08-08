@@ -205,6 +205,10 @@ GameText__GetText = 0x8012df2c;
 /* text_hooks.h */
 GameText__FindTextItem = 0x8012dd20;
 
+/* trigger_hooks.h */
+EXItemAnimator_Map__GetGeoMap = 0x802ab580;
+SE_TriggerList__ConstructAll = 0x8023b534;
+
 /* igstdlib.h */
 strcasecmp = 0x80259f24;
 strcmp = 0x80259fa0;
