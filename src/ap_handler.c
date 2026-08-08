@@ -414,6 +414,7 @@ void ap_init_gamestate()
 
 void ap_update_realm_access()
 {
+    // Update which realm HUB's are selectable in the realm teleporter.
     for (int i = 0; i < 4; i++) {
         if (g_gamestate_ap_settings.realm_access[i]) {
             MiniMapStatus__SetBitName(
@@ -423,6 +424,7 @@ void ap_update_realm_access()
         }
     }
 
+    // Update which shop pads are selectable.
     for (int i = 0; i < NUM_SHOP_TRIGINFOS; i++)
     {
         // Try to enable the shop pad if its bit is set
@@ -541,34 +543,6 @@ bool TeleportPad_PlayerObjectives__GetObjective_PreCallHook(
     return true;
 }
 
-/*
-int ap_binary_search_grabbable(u16 map_index, u16 trigger_index)
-{
-    int start = AP_GRABBABLE_START;
-    int end = AP_GRABBABLE_START + AP_GRABBABLE_NUM - 1;
-
-    while (start <= end) {
-        int index = start + ((end-start)/2);
-        APCollectable* curr = &g_ap_collectables[index];
-
-        if ((map_index == curr->grabbable.map_index) &&
-            (trigger_index == curr->grabbable.trigger_index)) {
-            return index;
-        }
-
-        if ((map_index < curr->grabbable.map_index) ||
-            ((map_index == curr->grabbable.map_index) &&
-            (trigger_index < curr->grabbable.trigger_index))) {
-            end = index - 1;
-        } else {
-            start = index + 1;
-        }
-    }
-
-    return -1;
-}
-*/
-
 void print_interface_addresses()
 {
     PRINTF("AP MOD VERSION %u (0x%x)\n", g_ap_version, &g_ap_version);
@@ -632,6 +606,7 @@ void print_apsettings_addresses(APSettings* psettings)
 
 int XSEItemHandler_Player__InitialiseStart_PreCallHook(void* self)
 {
+    // Replenish the player's butterfly jar if it was requested.
     if (replenish_butterfly_jar)
     {
         replenish_butterfly_jar = false;
@@ -652,6 +627,8 @@ DeathLinkReason get_deathlink_reason()
     Players playerType = XSEItemHandler_Player__M_PLAYERTYPE(gpPlayer);
     PlayerModes mode = XSEItemHandler_Player__M_PLAYERMODE(gpPlayer);
     EXHashCode animmode = OFFSET_VAL(PlayerModes, OFFSET_VAL(void*, gpPlayer, 0), 0x180);
+
+    // Combine the playermode and animmode for easier checking.
     u32 combine = (mode << 16) | (animmode & 0xFFFF);
 
     switch (playerType)
@@ -734,6 +711,7 @@ void SEMap_MiniGame__SetMiniGameFailed_PostHook()
 {
     SE_Map* currmap = GetSpyroMap(0);
 
+    // Send the correct deathlink if we're in a turret level.
     switch (currmap->m_MapGeoHashCode) {
         case HT_File_MR1_Spy:
             ap_handle_deathlink_outgoing(DLReason_Turret_R1);
@@ -752,6 +730,7 @@ void SEMap_MiniGame__SetMiniGameFailed_PostHook()
 
 int Popup__Update_VtableHook(void* self)
 {
+    // Return -1 (Kill) as the update response if we're disabling popups.
     if (g_gamestate_ap_settings.disable_popups)
     {
         return -1;
@@ -762,6 +741,7 @@ int Popup__Update_VtableHook(void* self)
 
 s32 SEGameFlow__v_StateRunning__VTHOOK(SEGameFlow *self)
 {
+    // Get or create a GUI element to assign a draw-routine.
     if (gp_paneldraw_loop == NULL) {
         GUI_Base* paneldraw = paneldraw_create();
         if (paneldraw != NULL) {
@@ -769,6 +749,7 @@ s32 SEGameFlow__v_StateRunning__VTHOOK(SEGameFlow *self)
         }
     }
 
+    // Every frame update.
     ap_update();
 
     return SEGameFlow__v_StateRunning(self);

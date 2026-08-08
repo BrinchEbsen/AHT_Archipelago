@@ -10,6 +10,7 @@ void ap_set_grabbable(u16 map_index, u16 trigger_index)
         APCollectable* coll = &g_ap_collectables[i];
 
         if (coll->objective != 0xFFFF) {
+			// This is an objective
             continue;
         }
 
@@ -27,6 +28,7 @@ void ap_set_objective(EXHashCode objective)
         APCollectable* coll = &g_ap_collectables[i];
 
         if (coll->objective == 0xFFFF) {
+			// This is a grabbable
             continue;
         }
 

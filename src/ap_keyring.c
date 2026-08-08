@@ -118,6 +118,7 @@ bool ap_keyring_unlocked(SE_Map* map, bool* out_result)
         return false;
     }
 
+    // Combine realm and level ID to match against format in keyring array
     u16 realm_level = ( map->m_RealmID << 8 ) | map->m_LevelID;
 
     for (int i = 0; i < AP_NUM_KEYRINGS; i++) {

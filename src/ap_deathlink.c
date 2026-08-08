@@ -78,6 +78,9 @@ DeathLinkResult try_kill_player(bool shielded)
         }
     }
     
+    // The following cases require a collision object be passed to a function.
+    // It doesn't really matter what's in it, the game only cares about the velocity vector.
+
     objCollide obj;
     obj.velocity.x = 0.0f;
     obj.velocity.y = 0.0f;
@@ -116,7 +119,7 @@ DeathLinkResult try_kill_player(bool shielded)
             return DeathLinkResult_Shielded;
         }
 
-        // This physics flag makes the ballgadget killable
+        // This physics flag makes the ball gadget killable
         *ball_physicsflags |= 1;
         XSEItemHandler_BallGadget__TakeDamage(gpPlayer, 0xA0, 0, 1, &obj, "Death Link", true);
 

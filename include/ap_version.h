@@ -7,6 +7,7 @@
 #define AP_VERSION 0
 #endif /* AP_VERSION */
 
+/// @brief The current version of this mod. Defined in the compiler flags as: `-D AP_VERSION [version number]`.
 extern u32 g_ap_version;
 
 #endif /* AP_VERSION_H */

@@ -12,6 +12,7 @@
 
 #define SHOP_NUM_VANILLA_ENTRIES 1
 #define SHOP_TOTAL_NUM_ENTRIES 61
+// Base hashcode for custom shop text elements.
 #define AP_TEXT_ENTRY_HASHCODE_BASE 0x28010000
 
 #define AP_DEATHLINK_MODE_NONE      0
@@ -62,6 +63,11 @@ typedef struct APSettings_TextEntry
     /* 0x1 */ u8 padding;
     /* 0x2 */ wchar16 text[48];
 } APSettings_TextEntry; // Size: 0x62
+
+/*
+ * Read the wiki for this mod for a detailed explanation of the settings:
+ * https://github.com/BrinchEbsen/AHT_Archipelago/wiki
+ */
 
 typedef struct APSettings {
     u8 location_bitfield[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];
@@ -133,6 +139,9 @@ typedef struct APSettings {
     APSettings_TextEntry shop_text[SHOP_TOTAL_NUM_ENTRIES - SHOP_NUM_VANILLA_ENTRIES];
 } APSettings;
 
+// The gamestate area settings. These are used while the game is being played.
+// The translation unit containing this variable is held in the save's current game state,
+// and it is therefore persisted on the memory card.
 extern APSettings g_gamestate_ap_settings;
 
 #define AP_GAMESTATE_SHOP_SPREADSHEET_START ((void*)(&g_gamestate_ap_settings.xls_shop_sheetcount_ALWAYS_1))
