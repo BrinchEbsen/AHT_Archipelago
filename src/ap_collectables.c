@@ -2075,7 +2075,7 @@ APCollectable g_ap_collectables[] = {
 		.type = NonCollectable,
 		.map_index = 24,
 		.trig_index = 11,
-		.objective = 0x1,
+		.objective = HT_Objective_GivenDoubleJump & 0xFFFF,
         .x = 206.557f,
         .z = 54.382f
 	},
@@ -2084,7 +2084,7 @@ APCollectable g_ap_collectables[] = {
 		.type = NonCollectable,
 		.map_index = 23,
 		.trig_index = 71,
-		.objective = 0x3,
+		.objective = HT_Objective_GivenPoleGrabAbility & 0xFFFF,
         .x = 181.836f,
         .z = 503.226f
 	},
@@ -2093,7 +2093,7 @@ APCollectable g_ap_collectables[] = {
 		.type = NonCollectable,
 		.map_index = 20,
 		.trig_index = 10,
-		.objective = 0x9d,
+		.objective = HT_Objective_GivenWingShieldAbility & 0xFFFF,
         .x = 240.131f,
         .z = -0.156f
 	},
@@ -2102,7 +2102,7 @@ APCollectable g_ap_collectables[] = {
 		.type = NonCollectable,
 		.map_index = 33,
 		.trig_index = 9,
-		.objective = 0x9c,
+		.objective = HT_Objective_GivenWallKickAbility & 0xFFFF,
         .x = -682.961f,
         .z = -148.253f
 	},
@@ -2114,7 +2114,7 @@ APCollectable g_ap_collectables[] = {
 		.type = NonCollectable,
 		.map_index = 24,
 		.trig_index = 346,
-		.objective = 0x81,
+		.objective = HT_Objective_Boss1_Beaten & 0xFFFF,
         .x = 151.245f,
         .z = -102.081f
 	},
@@ -2123,7 +2123,7 @@ APCollectable g_ap_collectables[] = {
 		.type = NonCollectable,
 		.map_index = 45,
 		.trig_index = 235,
-		.objective = 0x82,
+		.objective = HT_Objective_Boss2_Beaten & 0xFFFF,
         .x = 3.925f,
         .z = 80.844f
 	},
@@ -2132,7 +2132,7 @@ APCollectable g_ap_collectables[] = {
 		.type = NonCollectable,
 		.map_index = 31,
 		.trig_index = 318,
-		.objective = 0x83,
+		.objective = HT_Objective_Boss3_Beaten & 0xFFFF,
         .x = -51.937f,
         .z = -58.285f
 	},
@@ -2141,7 +2141,7 @@ APCollectable g_ap_collectables[] = {
 		.type = NonCollectable,
 		.map_index = 40,
 		.trig_index = 391,
-		.objective = 0x84,
+		.objective = HT_Objective_Boss4_Beaten & 0xFFFF,
         .x = -1281.773f,
         .z = -1668.250f
 	},
