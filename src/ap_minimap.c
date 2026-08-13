@@ -8,8 +8,6 @@
 #include <system.h>
 #include <pad.h>
 
-bool g_show_minimap_icons = false;
-
 // Extra collectable items for the ball gadget stations
 
 APCollectable ballgadgetloc_cloudy_domain = {
@@ -31,7 +29,7 @@ APCollectable ballgadgetloc_magma_falls = {
 
 void GUI_MiniMap__DrawRestarts__PreCallHOOK(GUI_Base* self, void* pWnd)
 {
-    if (g_show_minimap_icons) {
+    if (g_gamestate_ap_settings.ut_enabled) {
         minimap_draw_locations(self, pWnd);
     }
     GUI_MiniMap__DrawRestarts(self, pWnd);

@@ -595,8 +595,9 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("bool unlock_all_shops: %x\n", &psettings->unlock_all_shops);
     PRINTF("bool disable_shop_pad_proximity_activate: %x\n", &psettings->disable_shop_pad_proximity_activate);
     PRINTF("bool disable_main_shop_always_available: %x\n", &psettings->disable_main_shop_always_available);
-    PRINTF("bool total_gems_in_logic: %x\n", &psettings->total_gems_in_logic);
-    PRINTF("bool total_gems_available: %x\n", &psettings->total_gems_available);
+    PRINTF("int total_gems_in_logic: %x\n", &psettings->total_gems_in_logic);
+    PRINTF("int total_gems_available: %x\n", &psettings->total_gems_available);
+    PRINTF("bool ut_enabled: %x\n", &psettings->ut_enabled);
     PRINTF("int xls_shop_sheetcount_ALWAYS_1: %x\n", &psettings->xls_shop_sheetcount_ALWAYS_1);
     PRINTF("int xls_shop_sheet_offset_ALWAYS_4: %x\n", &psettings->xls_shop_sheet_offset_ALWAYS_4);
     PRINTF("int xls_shop_rowcount: %x\n", &psettings->xls_shop_rowcount);

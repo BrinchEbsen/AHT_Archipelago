@@ -97,6 +97,12 @@ APSettings g_patch_ap_settings = {
     .total_gems_in_logic = 0,
     .total_gems_available = 0,
 
+    #ifdef AP_QUICK_START
+    .ut_enabled = true,
+    #else
+    .ut_enabled = false,
+    #endif
+
     // SHOP ITEMS
     .xls_shop_sheetcount_ALWAYS_1 = 1,
     .xls_shop_sheet_offset_ALWAYS_4 = 4,

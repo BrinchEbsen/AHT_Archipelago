@@ -163,11 +163,7 @@ s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
     
         draw_pause_stats(self, pWnd);
         draw_notification_toggle(self, pWnd);
-        draw_map_icon_toggle(self, pWnd);
-        if (g_gamestate_ap_settings.shop_unlock_mode)
-        {
-            draw_gem_stats(self, pWnd);
-        }
+        draw_ut_stats(self, pWnd);
     } else {
         TEXT_PRINT_ALIGN_COLOR(pWnd, 0, 0, BottomCentre, COLOR_RED, "Archipelago gamestate not initialized!");
     }
@@ -207,9 +203,6 @@ s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self)
     
         if (g_pad_button_edge_down(PAD_BUTTON_X)) {
             show_notifications = !show_notifications;
-        }
-        if (g_pad_button_edge_down(PAD_BUTTON_B)) {
-            g_show_minimap_icons = !g_show_minimap_icons;
         }
     
         if (g_pad_button_edge_down(PAD_BUTTON_L) || g_pad_button_edge_down(PAD_BUTTON_DPAD_LEFT)) {
@@ -481,7 +474,7 @@ void draw_notification_toggle(GUI_Base* self, void* pWnd)
     EXRect r = {
         .x = 0,
         .y = 0,
-        .w = (WND_WIDTH/2)-2,
+        .w = (WND_WIDTH/2)-1,
         .h = 37
     };
 
@@ -491,31 +484,59 @@ void draw_notification_toggle(GUI_Base* self, void* pWnd)
         "~B Show Notifications: %s", show_notifications ? "Yes" : "No");
 }
 
-void draw_map_icon_toggle(GUI_Base* self, void* pWnd)
+void draw_ut_stats(GUI_Base* self, void* pWnd)
 {
     EXRect r = {
-        .x = (WND_WIDTH/2)+2,
+        .x = (WND_WIDTH/2)+1,
         .y = 0,
-        .w = (WND_WIDTH/2)-2,
+        .w = (WND_WIDTH/2)-1,
         .h = 37
     };
 
+    if (!g_gamestate_ap_settings.ut_enabled)
+    {
+        r.h += r.h/2;
+    }
+    else if (g_gamestate_ap_settings.shop_unlock_mode)
+    {
+        r.h += r.h;
+    }
+
     XWnd__DrawRect(pWnd, &r, COLOR_RGBA(0, 0, 0, 0x20));
 
-    textprintf(pWnd, (WND_WIDTH/2)+4, 2, 1.0f, TopLeft, COLOR_WHITE, true,
-        "~Y Show Map Icons: %s", g_show_minimap_icons ? "Yes" : "No");
-}
+    u16 txt_x_base = r.x+4;
+    static const u16 txt_y_base = 12;
 
-void draw_gem_stats(GUI_Base* self, void* pWnd)
-{
-    static u16 x = 144;
-    static u16 y = 38;
+    if (!g_gamestate_ap_settings.ut_enabled)
+    {
+        if (g_gamestate_ap_settings.shop_unlock_mode)
+        {
+            textprint(pWnd, txt_x_base, txt_y_base, 1.0f, TopLeft, COLOR_LIGHT_RED, true,
+                "Map Icons & Gem Logic unavailable, UT required.");
+        }
+        else
+        {
+            textprint(pWnd, txt_x_base, txt_y_base, 1.0f, TopLeft, COLOR_LIGHT_RED, true,
+                "Map Icons unavailable,\nUT required.");
+        }
+    }
+    else
+    {
+        textprint(pWnd, txt_x_base, txt_y_base, 1.0f, TopLeft, COLOR_WHITE, true,
+            "Map Icons Enabled");
+        
+        if (g_gamestate_ap_settings.shop_unlock_mode)
+        {
+            textprintf(pWnd, txt_x_base, txt_y_base+20, 1.0f, TopLeft, COLOR_WHITE, true,
+                "Gems: %d/%d",
+                gGameState.m_PlayerState.m_Gems,
+                g_gamestate_ap_settings.total_gems_available);
 
-    TEXT_PRINT_ALIGN_COLOR_F(pWnd, x, y, TopLeft, COLOR_TEXT, "Gems: %d/%d",
-        gGameState.m_PlayerState.m_Gems,
-        g_gamestate_ap_settings.total_gems_available);
-    TEXT_PRINT_ALIGN_COLOR_F(pWnd, x, y+20, TopLeft, COLOR_TEXT, "(%d Required)",
-        g_gamestate_ap_settings.total_gems_in_logic);
+            textprintf(pWnd, txt_x_base, txt_y_base+40, 1.0f, TopLeft, COLOR_WHITE, true,
+                "(%d Required)",
+                g_gamestate_ap_settings.total_gems_in_logic);
+        }
+    }
 }
 
 void close_pause_menu(GUI_Base* self)

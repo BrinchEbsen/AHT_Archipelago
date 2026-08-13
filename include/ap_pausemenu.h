@@ -65,7 +65,7 @@ void draw_stats_realms(GUI_Base* self, void* pWnd, u16 x, u16 y, u16 spacing, RG
 void draw_notification_toggle(GUI_Base* self, void* pWnd);
 
 // Draw the map icon toggle button prompt.
-void draw_map_icon_toggle(GUI_Base* self, void* pWnd);
+void draw_ut_stats(GUI_Base* self, void* pWnd);
 
 // Draw the stats for the gem logic.
 void draw_gem_stats(GUI_Base* self, void* pWnd);
