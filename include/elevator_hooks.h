@@ -35,14 +35,12 @@ extern void FlippingPlatform__HandleFlip(void* self);
 // Teleport to a map and startpoint
 void teleport_to_elevator_endpoint(int map_index, EXHashCode startpoint);
 
-// The Cloudy Domain elevator has its own special class, so a simpler hook is used
-
 // Elevator from Coastal Remains to Cloudy Domain
 void SXI_Path__MoveAlongPath_PreCallHook_2Ato2C(void* self, float DeltaDist, Bool UseSpline);
 // Elevator from Cloudy Domain to Coastal Remains
 void SXI_Path__MoveAlongPath_PreCallHook_2Cto2A(void* self, float DeltaDist, Bool UseSpline);
 
-// Check if a FlippingPlatform is an elevator that should teleport
+// Check if a FlippingPlatform is an elevator that should teleport the player.
 void test_elevator_teleport(void* elevator);
 
 // Every other elevator

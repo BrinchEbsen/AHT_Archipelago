@@ -5,10 +5,13 @@
 #include <pad.h>
 #include <ap_version.h>
 
+// Whether the file select screen is currently displaying a warning.
 bool ap_save_warning_active = false;
 
 void MemCardSlotMenu__DrawSavedGameInfo_PreCallHook(GUI_Base* self, void* pWnd, SavedGame* pSavedGame)
 {
+    // Before we draw the save information, test if we should instead print a warning.
+
     if (test_save_select_warning(self, pWnd, pSavedGame)) {
         ap_save_warning_active = true;
         return;
@@ -21,6 +24,9 @@ void MemCardSlotMenu__DrawSavedGameInfo_PreCallHook(GUI_Base* self, void* pWnd, 
 
 s32 MemCardSlotMenu__v_OnSelect_VtableHook(GUI_Base* self, void* pMenuItem)
 {
+    // We intercept the selection routine in case there's a warning on-screen.
+    // We let the player override this by holding down R.
+
     if (ap_save_warning_active && !g_pad_button_state(PAD_BUTTON_R)) {
         return 0;
     }
@@ -30,6 +36,8 @@ s32 MemCardSlotMenu__v_OnSelect_VtableHook(GUI_Base* self, void* pMenuItem)
 
 s32 TitleLoop__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
 {
+    // Draw some text on the top-left of the title screen.
+
     switch (TITLELOOP_M_STATE(self)) {
         case 1: // TitleState_PressStart
         case 2: // TitleState_StartMenu

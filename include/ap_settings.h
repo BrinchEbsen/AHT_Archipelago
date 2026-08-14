@@ -144,6 +144,12 @@ typedef struct APSettings {
 // The gamestate area settings. These are used while the game is being played.
 // The translation unit containing this variable is held in the save's current game state,
 // and it is therefore persisted on the memory card.
+// Specifically it's held 0x2000 bytes into the save's "bitheap", which contains states for
+// the minimap coverage and trigger preserved states. A 100% playthrough will only fill this
+// 1/3rd of the way up, so we're free to make use of the latter half of its 0x4000 bytes.
+// We do also have to fix a bug with the bitheap allocate function which accidentally clears
+// way more bits than it's meant to, which could corrupt our data.
+// (see the hook SE_BitHeap__Allocate__FixBug.s)
 extern APSettings g_gamestate_ap_settings;
 
 #define AP_GAMESTATE_SHOP_SPREADSHEET_START ((void*)(&g_gamestate_ap_settings.xls_shop_sheetcount_ALWAYS_1))

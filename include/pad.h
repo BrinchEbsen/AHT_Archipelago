@@ -74,6 +74,8 @@ extern EXBaseGamePad* EXBaseGamePad__m_pGamePad;
 /// @brief The global current pad index.
 extern s32 g_PadNum;
 
+// A bunch of these pad functions are commented out as they weren't needed and took up space.
+
 // Check if a button is down.
 bool pad_button_state(uint button, int pad_num);
 // Check if a button was down last frame.

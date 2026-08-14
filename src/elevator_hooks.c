@@ -4,11 +4,18 @@
 
 void teleport_to_elevator_endpoint(int map_index, EXHashCode startpoint)
 {
+    // Set the start map and its startpoint, then reload the game.
+
     SE_Map* goto_map = gMapList.m_List[map_index].m_pMap;
     goto_map->m_GameState->m_LastStartPoint = startpoint;
     gGameState.m_StartMapIndex = map_index;
     PlayerState__RestartGame(&gGameState.m_PlayerState);
 }
+
+// Cloudy Domain's elevator has its own special class, and we can hook into it directly
+// without having to check if it's the right object before we teleport.
+// "MoveAlongPath" runs while the elevator is moving. We just immediately teleport if the
+// instant elevators option is set.
 
 void SXI_Path__MoveAlongPath_PreCallHook_2Ato2C(void* self, float DeltaDist, Bool UseSpline)
 {
@@ -38,6 +45,8 @@ void test_elevator_teleport(void* elevator)
 
     s16 ti = trigger->m_GeoTriggerIndex;
     s32 mi = map->m_MapListIndex;
+
+    // Test if it's either of the two elevators, and which direction we should teleport
 
     int map_index;
     EXHashCode startpoint;
@@ -73,6 +82,10 @@ void test_elevator_teleport(void* elevator)
 
     teleport_to_elevator_endpoint(map_index, startpoint);
 }
+
+// Elevators are just "FlippingPlatform" objects moving on a path.
+// "HandleFlip" is called while they move, so we test if we should
+// teleport the player when it's called.
 
 void FlippingPlatform__HandleFlip_PreCallHook(void* self)
 {

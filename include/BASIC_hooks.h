@@ -10,18 +10,26 @@ typedef struct BossGateEntry
 } BossGateEntry;
 
 #define BOSS_GATE_NUM_ENTRIES 4
+// A list of boss gate triggers and their associated objectives for clearing them.
 extern BossGateEntry g_boss_gate_list[];
 
+// A patch for a gamescript.
 typedef struct GameScriptPatch
 {
+    // The trigger containing the gamescript.
     u16 trig_index;
+    // The map containing the trigger.
     u16 map_index;
+    // Number of script lines to patch.
     u16 num_lines;
+    // The starting line to patch from.
     u16 start_line;
+    // Pointer to the values to patch into the gamescript.
     u32* patches;
 } GameScriptPatch;
 
 #define NUM_GAMESCRIPT_PATCHES 2
+// Array of gamescript patches.
 extern GameScriptPatch g_gamescript_patches[];
 
 #define XSEITEMHANDLER_M_PBASIC(self) OFFSET_VAL(void*, self, 0x380)
@@ -44,8 +52,10 @@ extern void Monitor__BASICcmd_Zoopoo(void* self, u32 value);
 
 void XSEItemHandler_Base__BASIC_Update_ReImplHook(void* self);
 
+// A function that replaces the gamescript for boss gates.
 void monitor_process_boss_gate(void* self, int index);
 
+// Draw dark gem cost text if the player is close enough.
 void test_draw_boss_gate_cost(void* self, int index);
 
 bool BASIC_Main__UpdatePointers_PreCallHook(void* self);

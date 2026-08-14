@@ -18,6 +18,7 @@ bool XSEItemHandler_Spyro__TestBreatheFire__ReImplHook(void* self, int set)
         ABILITY_AP_FIREBREATH
     )) == 0;
 
+    // Disallow entirely if no breaths are unlocked.
     if (no_breaths_unlocked)
     {
         return false;
@@ -40,6 +41,7 @@ bool XSEItemHandler_Spyro__TestShooter__ReImplHook(void* self, int set)
         ABILITY_AP_FIREBREATH
     )) == 0;
 
+    // Disallow entirely if no breaths are unlocked.
     if (no_breaths_unlocked)
     {
         return false;
@@ -72,6 +74,9 @@ bool XSEItemHandler_Spyro__TestBreathChange__ReImplHook(void *self)
     }
 
     bool switchto = false;
+
+    // This is the only altered part of the function. It makes fire breath depend on an
+    // ability flag just like the other breaths, instead of just being assumed unlocked.
 
     bool has_fire = (gGameState.m_PlayerState.m_AbilityFlags & ABILITY_AP_FIREBREATH) != 0;
     if (g_pad_button_state(PAD_BUTTON_DPAD_LEFT) && has_fire) {
@@ -128,6 +133,7 @@ void ElecBreath__Stop_ReImplHook(void* self)
     ELECBREATH_M_FLAGS(self) |= 2;
 
     // Extra null check for gpPlayer added to prevent crash
+    // Read the details at https://tcrf.net/Bugs:Spyro:_A_Hero's_Tail_(GameCube,_Xbox,_PlayStation_2)#Player_Unload_While_Breathing_Electric_Crash
     if (EXSoundTag__IsPlaying((void*)&ELECBREATH_M_SFX(self)) && (gpPlayer != NULL)) {
         PlaySFX_Item(HT_Sound_SFX_HERO_SPYRO_SHOOT_ELEC_END, OFFSET_VAL(void*, gpPlayer, 0));
     }
