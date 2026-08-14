@@ -26,10 +26,12 @@ Open the properties menu for Spyro: A Hero's Tail (G5SE7D) in the game list, go 
 
 ## Building (for developers)
 
-1. Download the [code injection utility](https://github.com/C0mposer/C-Game-Modding-Utility/releases) by Composer.
+1. Download the [code injection utility](https://github.com/C0mposer/C-Game-Modding-Utility/releases) by Composer. Note that you may need to create a new temporary project for GameCube in the GUI to install the necessary prerequisites to build this project.
 
 2. Clone this repository into the tool's `projects` folder.
-3. In the GUI or by editing the .modproj folder itself, edit the paths for the extracted game folder to your own.
-4. Build the project using the GUI, or alternatively the CLI:<br>
-`mod_utility build AHT_Archipelago --build=GAMECUBE_NTSC`<br>
-The resulting modded ISO should be in the project's `build` folder.
+
+3. Open the project in the GUI by clicking "Load Existing Project" and choosing the .modproj in the cloned repository.
+
+4. Go to the "Build Project" tab and click "Compile".
+
+5. Once compilation is finished, click "Generate Action Replay Code" to generate the code for the mod.
