@@ -27,6 +27,7 @@ FileSceneHash cutscenes_to_ignore[] = {
 
 int XItemHandler_Cutscene__Update_VtableHook(void *self)
 {
+    // Test if we should skip this cutscene
     if (g_gamestate_ap_settings.skip_cutscene_button && g_pad_button_edge_down(PAD_BUTTON_Y)) {
         bool ignore = false;
         for (int i = 0; i < NUM_CUTSCENES_TO_IGNORE; i++) {
@@ -54,6 +55,10 @@ int XItemHandler_Cutscene__Update_VtableHook(void *self)
 
 void skip_cutscene(void* p_cutscene)
 {
+    // This is essentially a re-implementation of how skipping cutscenes worked
+    // in the August 3rd 2004 prototype of the game.
+    // We simply set the cutscene script's status to 3, which ends it immediately.
+
     bool controls_locked = true;
     if (gpPlayer != NULL) {
         controls_locked = XSEItemHandler_Player__ControlsLocked(gpPlayer);

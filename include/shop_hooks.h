@@ -5,6 +5,9 @@
 #include <gui_base.h>
 #include <xls_shop.h>
 
+// All the code related to the custom shop stuff.
+
+// The GUI object for the shopping item.
 typedef struct GUI_ShopItem
 {
     xlsShoppingItem* m_pItemData;
@@ -40,9 +43,12 @@ int GUI_ShopItem__IsAvailable_PreCallHook(GUI_ShopItem* self, Bool Buy);
 
 int GUI_ShopItem__GetCost_ReImplHook(GUI_ShopItem* self);
 
+// Initialize the shop for the case when shop randomization is off and keyrings are on.
 void initialize_vanilla_key_ring_shop();
 
 #define NUM_VANILLA_KEY_RING_SHOP_START_ITEMS 13
+// All the non-keyring shop items in the non-randomized keyring-enabled shop.
+// This is copied into the custom shop item array and the keyrings are dynamically appended.
 extern xlsShoppingItem g_vanilla_key_ring_shop_start_items[];
 
 #endif /* SHOP_HOOKS_H */

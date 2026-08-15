@@ -24,6 +24,9 @@ void ScriptedGate__v_Preserve_VtableHook(void* self)
 {
     ScriptedGate__v_Preserve(self);
 
+    // After the item has "preserved" (either written or read its preserved
+    // state from the savefile) we force its status to 3 (open).
+
     if (gate_should_force_open(self)) {
         SCRIPTEDGATE_M_STATUS(self) = 3;
     }

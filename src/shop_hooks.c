@@ -135,10 +135,13 @@ void initialize_vanilla_key_ring_shop()
 {
     xlsShoppingItem* items = g_gamestate_ap_settings.xls_shop_items;
 
+    // Copy over all the non-keyring items.
     memcpy(items, g_vanilla_key_ring_shop_start_items, sizeof(xlsShoppingItem)*NUM_VANILLA_KEY_RING_SHOP_START_ITEMS);
 
+    // Start index for the keyring items
     static int keyrings_start = NUM_VANILLA_KEY_RING_SHOP_START_ITEMS;
 
+    // Add all the keyrings
     for (int i = keyrings_start; i < keyrings_start+AP_NUM_KEYRINGS; i++) {
         int index = i - keyrings_start;
 
