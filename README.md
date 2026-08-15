@@ -24,7 +24,13 @@ The mod is installed through an Action Replay (AR) code in Dolphin. The latest c
 
 Open the properties menu for Spyro: A Hero's Tail (G5SE7D) in the game list, go to AR Codes, then add a new code with the contents of the text file. Make sure the code is enabled, and that "enable cheats" is enabled in Dolphin.
 
-## Building (for developers)
+## For Developers
+
+### Wiki
+
+There's a [wiki](https://github.com/BrinchEbsen/AHT_Archipelago/wiki) with a bunch of technical information about the mod, to serve as reference for client devs.
+
+### Building AR Code
 
 1. Download the [code injection utility](https://github.com/C0mposer/C-Game-Modding-Utility/releases) by Composer. Note that you may need to create a new temporary project for GameCube in the GUI to install the necessary prerequisites to build this project.
 
