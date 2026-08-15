@@ -24,10 +24,11 @@
       },
       "extracted_game_folder": "./.config/game_files/DEFAULT",
       "main_executable": "SLUS_208.84",
-      "source_path": "D:/PS2 games/Spyro - A Hero's Tail (USA).iso",
+      "source_path": "",
       "compiler_flags": "-O2 -fsingle-precision-constant -Werror -I include/ingame_stdlib/ -I include/ex/ -I include/se/",
       "is_single_file_mode": false,
       "single_file_path": null,
+      "memory_only_mode": false,
       "output_format": "iso",
       "section_maps": {
         "SLUS_208.84": [
@@ -421,12 +422,13 @@
       "injection_files": [],
       "injection_file_offsets": {},
       "injection_file_types": {},
-      "extracted_game_folder": "C:/Users/Ebbers/Documents/GC_CodeInject/modding_utility_v2/game_files/GAMECUBE_NTSC\\root",
+      "extracted_game_folder": "",
       "main_executable": "Start.dol",
-      "source_path": "C:/Users/Ebbers/Documents/GC_CodeInject/modding_utility_v2/game_files/GAMECUBE_NTSC",
+      "source_path": "",
       "compiler_flags": "-O2 -Werror -I include/ingame_stdlib/ -I include/ex/ -I include/se/ -D AP_VERSION=12",
       "is_single_file_mode": false,
       "single_file_path": null,
+      "memory_only_mode": true,
       "output_format": "iso",
       "section_maps": {
         "Start.dol": [
@@ -599,7 +601,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -611,7 +614,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -623,7 +627,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -635,7 +640,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -647,7 +653,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -659,7 +666,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -671,7 +679,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -683,7 +692,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -695,7 +705,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -707,7 +718,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -719,7 +731,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -731,7 +744,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -743,7 +757,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -755,7 +770,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -767,7 +783,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -779,7 +796,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -791,7 +809,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -803,7 +822,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -815,7 +835,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -827,7 +848,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -839,7 +861,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -851,7 +874,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -863,7 +887,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -875,7 +900,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -887,7 +913,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -899,7 +926,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -911,7 +939,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -923,7 +952,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -935,7 +965,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -947,7 +978,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -959,7 +991,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -971,7 +1004,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -983,7 +1017,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -995,7 +1030,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -1007,7 +1043,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -1019,7 +1056,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -1031,7 +1069,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -1043,7 +1082,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -1055,7 +1095,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -1067,7 +1108,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -1079,7 +1121,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -1091,7 +1134,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -1103,7 +1147,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -1115,7 +1160,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -1127,7 +1173,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -1139,7 +1186,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -1151,7 +1199,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         },
         {
@@ -1163,7 +1212,8 @@
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
-          "auto_calculate_injection_file_address": true,
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
           "enabled": true
         }
       ],
