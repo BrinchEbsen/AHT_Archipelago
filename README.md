@@ -32,12 +32,24 @@ There's a [wiki](https://github.com/BrinchEbsen/AHT_Archipelago/wiki) with a bun
 
 ### Building AR Code
 
-1. Download the [code injection utility](https://github.com/C0mposer/C-Game-Modding-Utility/releases) by Composer. Note that you may need to create a new temporary project for GameCube in the GUI to install the necessary prerequisites to build this project.
+#### Setup
 
-2. Clone this repository into the tool's `projects` folder.
+Download the [code injection utility](https://github.com/C0mposer/C-Game-Modding-Utility/releases) by Composer.
 
-3. Open the project in the GUI by clicking "Load Existing Project" and choosing the .modproj in the cloned repository.
+Clone this repository into the tool's `projects` folder.
 
-4. Go to the "Build Project" tab and click "Compile".
+#### Building (GUI)
 
-5. Once compilation is finished, click "Generate Action Replay Code" to generate the code for the mod.
+Open the project in the GUI by clicking "Load Existing Project" and choosing the .modproj in the cloned repository.
+
+Go to the "Build Project" tab and click "Compile".
+
+Once compilation is finished, click "Generate Action Replay Code" to generate the code for the mod.
+
+#### Building (CLI)
+
+Run the following command on `mod_utility.exe` to output a text file with the code:
+
+`mod_utility export-cheat AHT_Archipelago action_replay --build=GC_NTSC --output=AR_Code.txt`
+
+Note that the resulting `AR_Code.txt` will have two extra lines at the top, which aren't part of the code that goes in Dolphin.
