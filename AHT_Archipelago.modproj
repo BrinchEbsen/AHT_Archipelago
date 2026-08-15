@@ -495,7 +495,6 @@
             "./src/glide_hooks.c",
             "./src/charge_hooks.c",
             "./src/swim_hooks.c",
-            "./src/arena.c",
             "./src/paneldraw.c",
             "./src/cutscene_skip.c",
             "./src/shop_hooks.c",
