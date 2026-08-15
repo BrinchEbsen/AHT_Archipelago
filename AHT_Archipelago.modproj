@@ -503,7 +503,6 @@
             "./src/file_select_hooks.c",
             "./src/gate_hooks.c",
             "./src/ap_pausemenu.c",
-            "./src/BASIC_hooks.c",
             "./src/lg_door_hooks.c",
             "./src/ap_objectives.c",
             "./src/elevator_hooks.c",
@@ -517,7 +516,7 @@
             "./src/trigger_hooks.c"
           ],
           "memory_address": "80296618",
-          "size": "8000",
+          "size": "7A00",
           "injection_file": "",
           "injection_file_address": "",
           "auto_calculate_injection_file_address": false,
@@ -567,7 +566,8 @@
           "name": "Shark_Overwrite",
           "code_files": [
             "./src/ap_collectables.c",
-            "./src/ap_triginfo.c"
+            "./src/ap_triginfo.c",
+            "./src/BASIC_hooks.c"
           ],
           "memory_address": "801858c0",
           "size": "1D60",
