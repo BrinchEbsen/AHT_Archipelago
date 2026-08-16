@@ -15,8 +15,6 @@
 
 #define AP_TELEPORT_CLOSE_TIMER_MAX 60
 
-#define PAUSEMENU_OUTLINE_COLOR COLOR_DARK_GREEN
-
 int close_timer = 0;
 
 bool instant_shop_opening = false;
@@ -152,6 +150,15 @@ static inline void prev_page()
     if (curr_page < 0) {
         curr_page = (int)PauseMenu_NUM - 1;
     }
+}
+
+void draw_menu_rect(void* pWnd, EXRect* r)
+{
+    XWnd__DrawRect(pWnd, r, COLOR_RGBA(0, 0, 0, 0x20));
+    XWnd__DrawGraduatedRectOutline(pWnd, r,
+        COLOR_HEX(0x9340BC),
+        COLOR_RGBA(0, 0, 0, 0),
+    3, RECT_SIDE_ALL);
 }
 
 s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
@@ -342,8 +349,7 @@ void draw_pause_stats(GUI_Base* self, void* pWnd)
         .h = 345
     };
 
-    XWnd__DrawRect(pWnd, &r, COLOR_RGBA(0, 0, 0, 0x20));
-    XWnd__DrawRectOutline(pWnd, &r, PAUSEMENU_OUTLINE_COLOR, 2, RECT_SIDE_ALL);
+    draw_menu_rect(pWnd, &r);
 
     RGBA on_col = COLOR_WHITE;
     RGBA off_col = COLOR_RGBA(0x40, 0x40, 0x40, 0x80);
@@ -482,8 +488,7 @@ void draw_notification_toggle(GUI_Base* self, void* pWnd)
         .h = 37
     };
 
-    XWnd__DrawRect(pWnd, &r, COLOR_RGBA(0, 0, 0, 0x20));
-    XWnd__DrawRectOutline(pWnd, &r, PAUSEMENU_OUTLINE_COLOR, 2, RECT_SIDE_ALL);
+    draw_menu_rect(pWnd, &r);
 
     textprintf(pWnd, 2, 2, 1.0f, TopLeft, COLOR_WHITE, true,
         "~B Show Notifications: %s", show_notifications ? "Yes" : "No");
@@ -507,8 +512,7 @@ void draw_ut_stats(GUI_Base* self, void* pWnd)
         r.h += r.h;
     }
 
-    XWnd__DrawRect(pWnd, &r, COLOR_RGBA(0, 0, 0, 0x20));
-    XWnd__DrawRectOutline(pWnd, &r, PAUSEMENU_OUTLINE_COLOR, 2, RECT_SIDE_ALL);
+    draw_menu_rect(pWnd, &r);
 
     u16 txt_x_base = r.x+4;
     static const u16 txt_y_base = 12;
@@ -565,15 +569,14 @@ void draw_checks_percentage(GUI_Base* self, void* pWnd)
 
     float percentage = ((float)collected / (float)total) * 100.0f;
 
-    static EXRect r = {
+    EXRect r = {
         .x = 0,
         .y = 40+345+2,
         .w = 140,
         .h = 28
     };
 
-    XWnd__DrawRect(pWnd, &r, COLOR_RGBA(0, 0, 0, 0x20));
-    XWnd__DrawRectOutline(pWnd, &r, PAUSEMENU_OUTLINE_COLOR, 2, RECT_SIDE_ALL);
+    draw_menu_rect(pWnd, &r);
 
     textprintf(pWnd, 3, 390, 1.0f, TopLeft, COLOR_WHITE, true, "Checks: %.1f%%", percentage);
 }

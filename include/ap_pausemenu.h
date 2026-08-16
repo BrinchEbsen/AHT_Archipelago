@@ -3,6 +3,7 @@
 #include <types.h>
 #include <gui_base.h>
 #include <gameloop.h>
+#include <exrect.h>
 
 // Whether the shop from the pause menu is opening.
 extern bool instant_shop_opening;
@@ -24,6 +25,8 @@ typedef void(*SE_Loop__RequestClose_func)(SE_Loop*, s32);
 
 extern GUI_Base* gpPanelShop;
 void PanelShop__OpenShop(GUI_Base* self, Bool shopViaTeleporter);
+
+void draw_menu_rect(void* pWnd, EXRect* r);
 
 extern s32 GUI_PauseMenu__v_DrawStateRunning(GUI_Base* self, void* pWnd);
 s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd);

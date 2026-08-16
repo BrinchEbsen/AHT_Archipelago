@@ -23,6 +23,13 @@ extern void RGBA_Interp(RGBA* Dest, RGBA From, RGBA To, float Amount);
 #define COLOR_ARGB(A,R,G,B) ((ARGB){ .r=(R), .g=(G), .b=(B), .a=(A) })
 #define COLOR_RGB(R,G,B) ((RGBA){ .r=(R), .g=(G), .b=(B), .a=0x80 })
 
+// Take a standard RGB hex value and get a color.
+#define COLOR_HEX(val) COLOR_RGB( \
+    ((val & 0xFF0000) >> 16)/2, \
+    ((val &   0xFF00) >> 8 )/2, \
+    ((val &     0xFF)      )/2  \
+)
+
 #define COLOR_TEXT          COLOR_RGBA(0x80, 0x64, 0x32, 0xFF) // Used by various UI elements
 #define COLOR_WHITE         COLOR_RGBA(0x80, 0x80, 0x80, 0x80)
 #define COLOR_BLACK         COLOR_RGBA(0x00, 0x00, 0x00, 0x80)
