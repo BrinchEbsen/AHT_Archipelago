@@ -71,6 +71,8 @@ bool draw_cost_text = false;
 CostTextType cost_text_type = LightGem;
 int cost_text_amt = 0;
 
+bool draw_cutscene_skip_text = false;
+
 bool do_autosave = false;
 
 void ap_update()
@@ -310,6 +312,12 @@ void ap_draw(void* pWnd)
         if (draw_cost_text) {
             ap_draw_cost_text(pWnd, cost_text_type, cost_text_amt);
             draw_cost_text = false;
+        }
+
+        if (draw_cutscene_skip_text)
+        {
+            draw_cutscene_skip_text = false;
+            TEXT_PRINT_COLOR(pWnd, 0, 0, COLOR_WHITE, "~X Skip");
         }
 
         #ifdef AP_DEBUG_DEATHLINK

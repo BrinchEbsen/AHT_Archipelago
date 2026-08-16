@@ -4,6 +4,7 @@
 #include <player.h>
 #include <ap_settings.h>
 #include <hashcodes.h>
+#include <ap_handler.h>
 
 // Cutscenes that crash/cause issues and thus should not be skipped
 FileSceneHash cutscenes_to_ignore[] = {
@@ -28,7 +29,7 @@ FileSceneHash cutscenes_to_ignore[] = {
 int XItemHandler_Cutscene__Update_VtableHook(void *self)
 {
     // Test if we should skip this cutscene
-    if (g_gamestate_ap_settings.skip_cutscene_button && g_pad_button_edge_down(PAD_BUTTON_Y)) {
+    if (g_gamestate_ap_settings.skip_cutscene_button) {
         bool ignore = false;
         for (int i = 0; i < NUM_CUTSCENES_TO_IGNORE; i++) {
             if ((XITEMHANDLER_CUTSCENE_M_FILE_HASH(self) == cutscenes_to_ignore[i].file_hash) &&
@@ -43,9 +44,16 @@ int XItemHandler_Cutscene__Update_VtableHook(void *self)
             // title or loading screen, as this causes a crash.
             m_States loading_state = GET_MAP_LOADING->m_State;
             m_States titles_state = GET_MAP_TITLES->m_State;
+            bool loading_or_titles_running = (loading_state == Running) || (titles_state == Running);
             
-            if ((loading_state != Running) && (titles_state != Running)) {
-                skip_cutscene(self);
+            if (!loading_or_titles_running)
+            {
+                draw_cutscene_skip_text = true;
+
+                if (g_pad_button_edge_down(PAD_BUTTON_Y))
+                {
+                    skip_cutscene(self);
+                }
             }
         }
     }

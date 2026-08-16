@@ -24,6 +24,9 @@ extern CostTextType cost_text_type;
 // The amount of light/dark gems to display on the cost text.
 extern int cost_text_amt;
 
+// Whether to draw the "Y to skip" text this frame.
+extern bool draw_cutscene_skip_text;
+
 static inline bool ap_gamestate_is_initialized() {
     return g_gamestate_ap_settings.init == AP_SETTINGS_INIT_MAGICVALUE;
 }
