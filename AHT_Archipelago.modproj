@@ -1215,6 +1215,19 @@
           "auto_calculate_injection_file_address": false,
           "injection_type": "memory_only",
           "enabled": true
+        },
+        {
+          "name": "disable_maps_setting_selectable_bit",
+          "code_files": [
+            "./asm/GC_NTSC/disable_maps_setting_selectable_bit.s"
+          ],
+          "memory_address": "802321d8",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
         }
       ],
       "binary_patches": [],
