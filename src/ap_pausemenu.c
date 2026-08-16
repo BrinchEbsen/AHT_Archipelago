@@ -15,6 +15,8 @@
 
 #define AP_TELEPORT_CLOSE_TIMER_MAX 60
 
+#define PAUSEMENU_OUTLINE_COLOR COLOR_DARK_GREEN
+
 int close_timer = 0;
 
 bool instant_shop_opening = false;
@@ -164,6 +166,7 @@ s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
         draw_pause_stats(self, pWnd);
         draw_notification_toggle(self, pWnd);
         draw_ut_stats(self, pWnd);
+        draw_checks_percentage(self, pWnd);
     } else {
         TEXT_PRINT_ALIGN_COLOR(pWnd, 0, 0, BottomCentre, COLOR_RED, "Archipelago gamestate not initialized!");
     }
@@ -284,15 +287,15 @@ bool do_pause_menu_controls()
 
 void draw_teleport_menu(GUI_Base* self, void* pWnd)
 {
-    TEXT_PRINT_ALIGN(pWnd, 35, 0, BottomCentre, "Hold ~X to teleport to HUB");
+    TEXT_PRINT_ALIGN(pWnd, 0, 364, TopRight, "Hold ~X to teleport to HUB");
 
     if (close_timer <= 0) {
         return;
     }
 
     EXRect bgrect = {
-        .x = WND_WIDTH / 4,
-        .y = WND_HEIGHT - 20,
+        .x = (WND_WIDTH / 2) - 20,
+        .y = WND_HEIGHT - 50,
         .w = WND_WIDTH / 2,
         .h = 15
     };
@@ -317,12 +320,12 @@ void draw_instant_shop_menu(GUI_Base* self, void* pWnd)
 {
     if (instant_shop_cannot_open_reason == NULL)
     {
-        TEXT_PRINT_ALIGN(pWnd, 35, 0, BottomCentre, "Press ~X to open shop");
+        TEXT_PRINT_ALIGN(pWnd, 0, 364, TopRight, "Press ~X to open shop");
     }
     else
     {
-        TEXT_PRINT_ALIGN(pWnd, 35, 350, Centre, "Cannot open shop:");
-        TEXT_PRINT_ALIGN(pWnd, 35, 385, Centre, instant_shop_cannot_open_reason);
+        TEXT_PRINT_ALIGN(pWnd, 0, 364, TopRight, "Cannot open shop:");
+        TEXT_PRINT_ALIGN(pWnd, 0, 384, TopRight, instant_shop_cannot_open_reason);
     }
 }
 
@@ -340,6 +343,7 @@ void draw_pause_stats(GUI_Base* self, void* pWnd)
     };
 
     XWnd__DrawRect(pWnd, &r, COLOR_RGBA(0, 0, 0, 0x20));
+    XWnd__DrawRectOutline(pWnd, &r, PAUSEMENU_OUTLINE_COLOR, 2, RECT_SIDE_ALL);
 
     RGBA on_col = COLOR_WHITE;
     RGBA off_col = COLOR_RGBA(0x40, 0x40, 0x40, 0x80);
@@ -479,6 +483,7 @@ void draw_notification_toggle(GUI_Base* self, void* pWnd)
     };
 
     XWnd__DrawRect(pWnd, &r, COLOR_RGBA(0, 0, 0, 0x20));
+    XWnd__DrawRectOutline(pWnd, &r, PAUSEMENU_OUTLINE_COLOR, 2, RECT_SIDE_ALL);
 
     textprintf(pWnd, 2, 2, 1.0f, TopLeft, COLOR_WHITE, true,
         "~B Show Notifications: %s", show_notifications ? "Yes" : "No");
@@ -503,6 +508,7 @@ void draw_ut_stats(GUI_Base* self, void* pWnd)
     }
 
     XWnd__DrawRect(pWnd, &r, COLOR_RGBA(0, 0, 0, 0x20));
+    XWnd__DrawRectOutline(pWnd, &r, PAUSEMENU_OUTLINE_COLOR, 2, RECT_SIDE_ALL);
 
     u16 txt_x_base = r.x+4;
     static const u16 txt_y_base = 12;
@@ -537,6 +543,39 @@ void draw_ut_stats(GUI_Base* self, void* pWnd)
                 g_gamestate_ap_settings.total_gems_in_logic);
         }
     }
+}
+
+void draw_checks_percentage(GUI_Base* self, void* pWnd)
+{
+    int total = 0;
+    int collected = 0;
+
+    for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++)
+    {
+        APCollectable* coll = &g_ap_collectables[i];
+
+        if ((coll->type == FireWork) && !g_gamestate_ap_settings.fireworks_are_randomized)
+        {
+            continue;
+        }
+
+        total++;
+        collected += get_u8_bitfield_value(g_gamestate_ap_settings.location_bitfield, i*2);
+    }
+
+    float percentage = ((float)collected / (float)total) * 100.0f;
+
+    static EXRect r = {
+        .x = 0,
+        .y = 40+345+2,
+        .w = 140,
+        .h = 28
+    };
+
+    XWnd__DrawRect(pWnd, &r, COLOR_RGBA(0, 0, 0, 0x20));
+    XWnd__DrawRectOutline(pWnd, &r, PAUSEMENU_OUTLINE_COLOR, 2, RECT_SIDE_ALL);
+
+    textprintf(pWnd, 3, 390, 1.0f, TopLeft, COLOR_WHITE, true, "Checks: %.1f%%", percentage);
 }
 
 void close_pause_menu(GUI_Base* self)

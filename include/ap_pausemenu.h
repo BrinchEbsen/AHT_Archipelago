@@ -67,8 +67,8 @@ void draw_notification_toggle(GUI_Base* self, void* pWnd);
 // Draw the map icon toggle button prompt.
 void draw_ut_stats(GUI_Base* self, void* pWnd);
 
-// Draw the stats for the gem logic.
-void draw_gem_stats(GUI_Base* self, void* pWnd);
+// Draw the "Checks x%" text.
+void draw_checks_percentage(GUI_Base* self, void* pWnd);
 
 // Request for the pause menu to close.
 void close_pause_menu(GUI_Base* self);
