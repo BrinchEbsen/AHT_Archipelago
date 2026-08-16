@@ -1,0 +1,103 @@
+name: Output AR Code
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  output-ar-code:
+
+    runs-on: windows-latest
+
+    steps:
+      - name: Download mod utility
+        shell: pwsh
+        run: |
+          $mod_utility_dl_url = "https://github.com/C0mposer/C-Game-Modding-Utility/releases/download/1.2/Mod.Utility.v1.2.Win32.zip"
+
+          Invoke-WebRequest `
+            -Uri $mod_utility_dl_url `
+            -OutFile "$env:RUNNER_TEMP\mod-utility.zip"
+
+      - name: Unzip mod utility
+        shell: pwsh
+        run: |
+          $mod_utility_dir = "$env:RUNNER_TEMP\mod-utility"
+
+          # Remove previous directory if it exists already
+          if (Test-Path $mod_utility_dir) {
+              Remove-Item $mod_utility_dir -Recurse -Force
+          }
+
+          Expand-Archive `
+            -Path "$env:RUNNER_TEMP\mod-utility.zip" `
+            -DestinationPath $mod_utility_dir
+
+          # Save to env variable to be accessible in next steps
+          "MOD_UTILITY_DIR=$mod_utility_dir" |
+            Out-File -FilePath $env:GITHUB_ENV -Append
+
+      - name: Find projects directory
+        shell: pwsh
+        run: |
+          # Find "projects" dir
+          $projects = Get-ChildItem `
+            -Path $env:MOD_UTILITY_DIR `
+            -Directory `
+            -Filter "projects" |
+            Select-Object -First 1
+
+          if (-not $projects) {
+              Write-Error "'projects' directory could not be found."
+              exit 1
+          }
+
+          # Save to env variable to be accessible in next steps
+          # 
+          # .FullName to get the path from the Powershell object
+          "PROJECTS_DIR=$($projects.FullName)" |
+            Out-File -FilePath $env:GITHUB_ENV -Append
+
+      - name: Clone repository into projects
+        shell: pwsh
+        run: |
+          git clone `
+            "https://github.com/BrinchEbsen/AHT_Archipelago.git" `
+            "$env:PROJECTS_DIR\AHT_Archipelago"
+
+      - name: Output AR code
+        shell: pwsh
+        run: |
+          $utility = Get-ChildItem `
+            -Path $env:MOD_UTILITY_DIR `
+            -Filter "mod_utility.exe" `
+            -File |
+            Select-Object -First 1
+
+          if (-not $utility) {
+              Write-Error "'mod_utility.exe' could not be found."
+              exit 1
+          }
+
+          cd $env:MOD_UTILITY_DIR
+
+          & $utility.FullName `
+            export-cheat `
+            AHT_Archipelago `
+            action_replay `
+            --build=GC_NTSC `
+            --output=AR_Code.txt `
+            --yes
+
+          if ($LASTEXITCODE -ne 0) {
+              Write-Error "mod_utility.exe exited with code $LASTEXITCODE"
+              exit $LASTEXITCODE
+          }
+
+      - name: Upload AR code
+        uses: actions/upload-artifact@v4
+        with:
+          name: AR_Code
+          path: ${{ env.MOD_UTILITY_DIR }}/AR_Code.txt
+          if-no-files-found: error
