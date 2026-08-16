@@ -23,7 +23,7 @@ extern void EXItemAnimator_Script__SetScriptStatus(void* self, u32 Status);
 
 int XItemHandler_Cutscene__Update_VtableHook(void* self);
 
-// Skip the cutscene handled by the given cutscene object
-void skip_cutscene(void* p_cutscene_camera);
+// Test if the cutscene handled by the given cutscene object should be skipped
+void test_skip_cutscene(void* p_cutscene);
 
 #endif /* CUTSCENE_SKIP_H */

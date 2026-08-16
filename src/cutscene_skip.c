@@ -30,50 +30,53 @@ int XItemHandler_Cutscene__Update_VtableHook(void *self)
 {
     // Test if we should skip this cutscene
     if (g_gamestate_ap_settings.skip_cutscene_button) {
-        bool ignore = false;
-        for (int i = 0; i < NUM_CUTSCENES_TO_IGNORE; i++) {
-            if ((XITEMHANDLER_CUTSCENE_M_FILE_HASH(self) == cutscenes_to_ignore[i].file_hash) &&
-                (XITEMHANDLER_CUTSCENE_M_SCENE_HASH(self) == cutscenes_to_ignore[i].scene_hash)) {
-                ignore = true;
-                break;
-            }
-        }
-
-        if (!ignore) {
-            // We don't want to skip the "cutscene" in the
-            // title or loading screen, as this causes a crash.
-            m_States loading_state = GET_MAP_LOADING->m_State;
-            m_States titles_state = GET_MAP_TITLES->m_State;
-            bool loading_or_titles_running = (loading_state == Running) || (titles_state == Running);
-            
-            if (!loading_or_titles_running)
-            {
-                draw_cutscene_skip_text = true;
-
-                if (g_pad_button_edge_down(PAD_BUTTON_Y))
-                {
-                    skip_cutscene(self);
-                }
-            }
-        }
+        test_skip_cutscene(self);
     }
 
     return XItemHandler_Cutscene__Update(self);
 }
 
-void skip_cutscene(void* p_cutscene)
+void test_skip_cutscene(void* p_cutscene)
 {
-    // This is essentially a re-implementation of how skipping cutscenes worked
-    // in the August 3rd 2004 prototype of the game.
-    // We simply set the cutscene script's status to 3, which ends it immediately.
+    // Don't skip if cutscene is ignored
+    for (int i = 0; i < NUM_CUTSCENES_TO_IGNORE; i++)
+    {
+        if ((XITEMHANDLER_CUTSCENE_M_FILE_HASH(p_cutscene)  == cutscenes_to_ignore[i].file_hash) &&
+            (XITEMHANDLER_CUTSCENE_M_SCENE_HASH(p_cutscene) == cutscenes_to_ignore[i].scene_hash))
+        {
+            return;
+        }
+    }
 
+    // We don't want to skip the "cutscene" in the title or loading screen, as this causes a crash.
+    if ((GET_MAP_LOADING->m_State == Running) || (GET_MAP_TITLES->m_State == Running))
+    {
+        return;
+    }
+
+    // Only allow skipping if the player's controls are locked (or the player doesn't exist)
     bool controls_locked = true;
     if (gpPlayer != NULL) {
         controls_locked = XSEItemHandler_Player__ControlsLocked(gpPlayer);
     }
-
-    if (controls_locked) {
-        void* script = XITEMHANDLER_CUTSCENE_M_PSCRIPT(p_cutscene);
-        EXItemAnimator_Script__SetScriptStatus(script, 3);
+    if (!controls_locked)
+    {
+        return;
     }
+
+    // Draw "Y to skip" text to the HUD
+    draw_cutscene_skip_text = true;
+
+    // Only proceed if the cutscene skip button is pressed
+    if (!g_pad_button_edge_down(PAD_BUTTON_Y))
+    {
+        return;
+    }
+
+    // This is essentially a re-implementation of how skipping cutscenes worked
+    // in the August 3rd 2004 prototype of the game.
+    // We simply set the cutscene script's status to 3, which ends it immediately.
+
+    void* script = XITEMHANDLER_CUTSCENE_M_PSCRIPT(p_cutscene);
+    EXItemAnimator_Script__SetScriptStatus(script, 3);
 }
