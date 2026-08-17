@@ -567,7 +567,8 @@
           "code_files": [
             "./src/ap_collectables.c",
             "./src/ap_triginfo.c",
-            "./src/BASIC_hooks.c"
+            "./src/BASIC_hooks.c",
+            "./src/ap_collectables_array.c"
           ],
           "memory_address": "801858c0",
           "size": "1D60",
