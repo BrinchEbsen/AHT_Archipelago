@@ -1,0 +1,107 @@
+[
+    {
+        "type": "DragonEgg",
+        "map_index": 45,
+        "trig_index": 0,
+        "x": -115.731,
+        "z": -226.261
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 45,
+        "trig_index": 2,
+        "x": 132.225,
+        "z": -92.283
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 45,
+        "trig_index": 3,
+        "x": 207.902,
+        "z": -146.365
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 45,
+        "trig_index": 4,
+        "x": 78.532,
+        "z": -206.129
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 45,
+        "trig_index": 7,
+        "x": 99.567,
+        "z": 162.294
+    },
+    {
+        "type": "LightGem",
+        "map_index": 45,
+        "trig_index": 11,
+        "x": -184.912,
+        "z": 59.219
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 45,
+        "trig_index": 12,
+        "x": -101.286,
+        "z": -36.468
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 45,
+        "trig_index": 13,
+        "x": -236.195,
+        "z": -67.429
+    },
+    {
+        "type": "LightGem",
+        "map_index": 45,
+        "trig_index": 19,
+        "x": 380.275,
+        "z": -35.876
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 45,
+        "trig_index": 29,
+        "x": -435.76,
+        "z": -95.785
+    },
+    {
+        "type": "LightGem",
+        "map_index": 45,
+        "trig_index": 47,
+        "x": 342.804,
+        "z": -39.804
+    },
+    {
+        "type": "EggThief",
+        "map_index": 45,
+        "trig_index": 59,
+        "x": 305.556,
+        "z": 98.605
+    },
+    {
+        "type": "LightGem",
+        "map_index": 45,
+        "trig_index": 119,
+        "x": 398.746,
+        "z": 110.269
+    },
+    {
+        "type": "LightGem",
+        "map_index": 45,
+        "trig_index": 120,
+        "x": -26.176,
+        "z": -204.344
+    },
+    {
+        "type": "LightGem",
+        "map_index": 45,
+        "trig_index": 192,
+        "x": -446.493,
+        "z": 32.213
+    }
+]

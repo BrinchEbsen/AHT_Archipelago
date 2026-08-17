@@ -1,0 +1,121 @@
+[
+    {
+        "type": "LightGem",
+        "map_index": 22,
+        "trig_index": 8,
+        "x": 709.432,
+        "z": -410.398
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 22,
+        "trig_index": 11,
+        "x": 675.898,
+        "z": -296.257
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 22,
+        "trig_index": 12,
+        "x": 938.631,
+        "z": -407.264
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 22,
+        "trig_index": 14,
+        "x": 680.723,
+        "z": -344.604
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 22,
+        "trig_index": 15,
+        "x": 1062.884,
+        "z": -400.652
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 22,
+        "trig_index": 21,
+        "x": 1007.291,
+        "z": -589.001
+    },
+    {
+        "type": "LightGem",
+        "map_index": 22,
+        "trig_index": 23,
+        "x": 1296.417,
+        "z": -228.452
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 22,
+        "trig_index": 29,
+        "x": 972.379,
+        "z": -669.891
+    },
+    {
+        "type": "LightGem",
+        "map_index": 22,
+        "trig_index": 37,
+        "x": 743.213,
+        "z": -601.936
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 22,
+        "trig_index": 38,
+        "x": 846.709,
+        "z": -568.009
+    },
+    {
+        "type": "EggThief",
+        "map_index": 22,
+        "trig_index": 52,
+        "x": 1250.741,
+        "z": -308.75
+    },
+    {
+        "type": "LightGem",
+        "map_index": 22,
+        "trig_index": 73,
+        "x": 780.287,
+        "z": -771.342
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 22,
+        "trig_index": 74,
+        "x": 698.026,
+        "z": -797.89
+    },
+    {
+        "type": "LightGem",
+        "map_index": 22,
+        "trig_index": 90,
+        "x": 925.533,
+        "z": -649.716
+    },
+    {
+        "type": "LightGem_Chest",
+        "map_index": 22,
+        "trig_index": 312,
+        "x": 579.858,
+        "z": -286.488
+    },
+    {
+        "type": "LightGem",
+        "map_index": 22,
+        "trig_index": 313,
+        "x": 925.944,
+        "z": -854.214
+    },
+    {
+        "type": "LightGem_Chest",
+        "map_index": 22,
+        "trig_index": 314,
+        "x": 1056.308,
+        "z": -791.347
+    }
+]

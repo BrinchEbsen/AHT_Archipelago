@@ -1,0 +1,38 @@
+[
+    {
+        "type": "NonCollectable",
+        "map_index": 24,
+        "trig_index": 11,
+        "objective": "HT_Objective_GivenDoubleJump",
+        "x": 206.557,
+        "z": 54.382,
+        "comment": "Elder Tomas"
+    },
+    {
+        "type": "NonCollectable",
+        "map_index": 23,
+        "trig_index": 71,
+        "objective": "HT_Objective_GivenPoleGrabAbility",
+        "x": 181.836,
+        "z": 503.226,
+        "comment": "Elder Magnus"
+    },
+    {
+        "type": "NonCollectable",
+        "map_index": 20,
+        "trig_index": 10,
+        "objective": "HT_Objective_GivenWingShieldAbility",
+        "x": 240.131,
+        "z": -0.156,
+        "comment": "Elder Titan"
+    },
+    {
+        "type": "NonCollectable",
+        "map_index": 33,
+        "trig_index": 9,
+        "objective": "HT_Objective_GivenWallKickAbility",
+        "x": -682.961,
+        "z": -148.253,
+        "comment": "Elder Astor"
+    }
+]

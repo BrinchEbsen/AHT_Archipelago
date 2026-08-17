@@ -1,0 +1,100 @@
+[
+    {
+        "type": "LightGem",
+        "map_index": 33,
+        "trig_index": 4,
+        "x": -796.231,
+        "z": -326.562
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 33,
+        "trig_index": 8,
+        "x": -707.511,
+        "z": -152.005
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 33,
+        "trig_index": 11,
+        "x": -546.61,
+        "z": -154.257
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 33,
+        "trig_index": 15,
+        "x": -589.098,
+        "z": -189.818
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 33,
+        "trig_index": 21,
+        "x": -386.851,
+        "z": -125.771
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 33,
+        "trig_index": 22,
+        "x": -421.771,
+        "z": -113.849
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 33,
+        "trig_index": 31,
+        "x": -639.206,
+        "z": -364.31
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 33,
+        "trig_index": 33,
+        "x": -594.839,
+        "z": -288.317
+    },
+    {
+        "type": "LightGem",
+        "map_index": 33,
+        "trig_index": 36,
+        "x": -626.585,
+        "z": -290.399
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 33,
+        "trig_index": 44,
+        "x": -546.963,
+        "z": -417.671
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 33,
+        "trig_index": 45,
+        "x": -615.706,
+        "z": -458.546
+    },
+    {
+        "type": "LightGem_Chest",
+        "map_index": 33,
+        "trig_index": 67,
+        "x": -670.845,
+        "z": -173.75
+    },
+    {
+        "type": "EggThief",
+        "map_index": 33,
+        "trig_index": 133,
+        "x": -330.0,
+        "z": -80.0
+    },
+    {
+        "type": "DragonEgg_Chest",
+        "map_index": 33,
+        "trig_index": 421,
+        "x": -773.415,
+        "z": -108.71
+    }
+]

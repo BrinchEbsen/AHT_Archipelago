@@ -1,0 +1,337 @@
+[
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 24,
+        "trig_index": 158,
+        "objective": "HT_Objective_MR1_HalfDone",
+        "x": -101.334,
+        "z": -55.373,
+        "comment": "Dragon Village - Sgt. Byrd"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 24,
+        "trig_index": 158,
+        "objective": "HT_Objective_MR1_AllDone",
+        "x": -101.334,
+        "z": -55.373
+    },
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 23,
+        "trig_index": 6,
+        "objective": "HT_Objective_MR1_Spy_HalfDone",
+        "x": 144.06,
+        "z": 578.149,
+        "comment": "Crocovile Swamp - Turret"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 23,
+        "trig_index": 6,
+        "objective": "HT_Objective_MiniGame1A_Complete",
+        "x": 144.06,
+        "z": 578.149
+    },
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 23,
+        "trig_index": 69,
+        "objective": "HT_Objective_MR1_Blk_HalfDone",
+        "x": 225.391,
+        "z": 524.413,
+        "comment": "Crocovile Swamp - Blink"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 23,
+        "trig_index": 69,
+        "objective": "HT_Objective_MR1_Blk_AllDone",
+        "x": 225.391,
+        "z": 524.413
+    },
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 22,
+        "trig_index": 283,
+        "objective": "HT_Objective_MR1_Spx_Egg",
+        "x": 1115.686,
+        "z": -576.15,
+        "comment": "Dragonfly Falls - Sparx"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 22,
+        "trig_index": 283,
+        "objective": "HT_Objective_MR1_Spx_AllDone",
+        "x": 1115.686,
+        "z": -576.15
+    },
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 45,
+        "trig_index": 115,
+        "objective": "HT_Objective_MR2_Blk_HalfDone",
+        "x": -262.141,
+        "z": -86.49,
+        "comment": "Coastal Remains - Blink"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 45,
+        "trig_index": 115,
+        "objective": "HT_Objective_MR2_Blk_AllDone",
+        "x": -262.141,
+        "z": -86.49
+    },
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 45,
+        "trig_index": 77,
+        "objective": "HT_Objective_MR2_Spy_HalfDone",
+        "x": -159.896,
+        "z": -236.013,
+        "comment": "Coastal Remains - Turret"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 45,
+        "trig_index": 77,
+        "objective": "HT_Objective_MR2_Spy_AllDone",
+        "x": -159.896,
+        "z": -236.013
+    },
+    {
+        "type": "LightGem",
+        "map_index": 45,
+        "trig_index": 150,
+        "objective": "HT_Objective_OtterNPC_AllDone",
+        "x": -135.012,
+        "z": 26.804,
+        "comment": "Coastal Remains - Otto"
+    },
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 19,
+        "trig_index": 65,
+        "objective": "HT_Objective_MR2_Spx_HalfDone",
+        "x": -842.878,
+        "z": -44.993,
+        "comment": "Sunken Ruins - Sparx"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 19,
+        "trig_index": 65,
+        "objective": "HT_Objective_MR2_Spx_AllDone",
+        "x": -842.878,
+        "z": -44.993
+    },
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 20,
+        "trig_index": 81,
+        "objective": "HT_Objective_MR2_Sgt_HalfDone",
+        "x": 380.287,
+        "z": -125.903,
+        "comment": "Cloudy Domain - Sgt. Byrd"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 20,
+        "trig_index": 81,
+        "objective": "HT_Objective_MR2_Sgt_AllDone",
+        "x": 380.287,
+        "z": -125.903
+    },
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 31,
+        "trig_index": 244,
+        "objective": "HT_Objective_MR3_Blk_HalfDone",
+        "x": 28.673,
+        "z": -178.357,
+        "comment": "Frostbite Village - Blink"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 31,
+        "trig_index": 244,
+        "objective": "HT_Objective_MR3_Blk_AllDone",
+        "x": 28.673,
+        "z": -178.357
+    },
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 31,
+        "trig_index": 242,
+        "objective": "HT_Objective_MR3_Spy_HalfDone",
+        "x": -83.802,
+        "z": 100.301,
+        "comment": "Frostbite Village - Turret"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 31,
+        "trig_index": 242,
+        "objective": "HT_Objective_MR3_Spy_AllDone",
+        "x": -83.802,
+        "z": 100.301
+    },
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 35,
+        "trig_index": 128,
+        "objective": "HT_Objective_MR3_Spx_HalfDone",
+        "x": 142.24,
+        "z": -1387.189,
+        "comment": "Gloomy Glacier - Sparx"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 35,
+        "trig_index": 128,
+        "objective": "HT_Objective_MR3_Spx_AllDone",
+        "x": 142.24,
+        "z": -1387.189
+    },
+    {
+        "type": "LightGem",
+        "map_index": 35,
+        "trig_index": 88,
+        "objective": "HT_Objective_3B_BentleyHasRewarded",
+        "x": 65.178,
+        "z": -615.165,
+        "comment": "Gloomy Glacier - Bentley"
+    },
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 33,
+        "trig_index": 48,
+        "objective": "HT_Objective_MR3_Sgt_HalfDone",
+        "x": -448.719,
+        "z": -173.292,
+        "comment": "Ice Citadel - Sgt. Byrd"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 33,
+        "trig_index": 48,
+        "objective": "HT_Objective_MR3_Sgt_AllDone",
+        "x": -448.719,
+        "z": -173.292
+    },
+    {
+        "type": "LightGem",
+        "map_index": 33,
+        "trig_index": 97,
+        "objective": "HT_Objective_3C_LitBoiler_1",
+        "x": -413.696,
+        "z": -235.004,
+        "comment": "Ice Citadel - Boiler 1"
+    },
+    {
+        "type": "LightGem",
+        "map_index": 33,
+        "trig_index": 99,
+        "objective": "HT_Objective_3C_LitBoiler_3",
+        "x": -709.677,
+        "z": -249.536,
+        "comment": "Ice Citadel - Boiler 3"
+    },
+    {
+        "type": "LightGem",
+        "map_index": 33,
+        "trig_index": 101,
+        "objective": "HT_Objective_3C_LitBoiler_5",
+        "x": -855.619,
+        "z": -325.652,
+        "comment": "Ice Citadel - Boiler 5"
+    },
+    {
+        "type": "LightGem",
+        "map_index": 33,
+        "trig_index": 47,
+        "objective": "HT_Objective_3C_IcePrincessHasRewarded",
+        "x": -494.835,
+        "z": -340.113,
+        "comment": "Ice Citadel - Ice Princess"
+    },
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 44,
+        "trig_index": 8,
+        "objective": "HT_Objective_MR4_Spy_HalfDone",
+        "x": 110.059,
+        "z": -41.345,
+        "comment": "Stormy Beach - Turret"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 44,
+        "trig_index": 8,
+        "objective": "HT_Objective_MR4_Spy_AllDone",
+        "x": 110.059,
+        "z": -41.345
+    },
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 60,
+        "trig_index": 94,
+        "objective": "HT_Objective_MR4_Sgt_HalfDone",
+        "x": -226.573,
+        "z": 552.857,
+        "comment": "Molten Mount - Sgt. Byrd"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 60,
+        "trig_index": 94,
+        "objective": "HT_Objective_MR4_Sgt_AllDone",
+        "x": -226.573,
+        "z": 552.857
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 60,
+        "trig_index": 93,
+        "objective": "HT_Objective_TeenaHasRewarded",
+        "x": 8.892,
+        "z": 620.573,
+        "comment": "Molten Mount - Teena"
+    },
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 63,
+        "trig_index": 12,
+        "objective": "HT_Objective_MR4_Spx_HalfDone",
+        "x": -170.275,
+        "z": -1263.319,
+        "comment": "Magma Falls Bottom - Sparx"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 63,
+        "trig_index": 12,
+        "objective": "HT_Objective_MR4_Spx_AllDone",
+        "x": -170.275,
+        "z": -1263.319
+    },
+    {
+        "type": "DragonEgg_MiniGame",
+        "map_index": 30,
+        "trig_index": 154,
+        "objective": "HT_Objective_MR4_Blk_HalfDone",
+        "x": -366.247,
+        "z": -1674.918,
+        "comment": "Dark Mine - Blink"
+    },
+    {
+        "type": "LightGem_MiniGame",
+        "map_index": 30,
+        "trig_index": 154,
+        "objective": "HT_Objective_MR4_Blk_AllDone",
+        "x": -366.247,
+        "z": -1674.918
+    }
+]

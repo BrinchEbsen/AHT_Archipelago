@@ -1,0 +1,79 @@
+[
+    {
+        "type": "DragonEgg",
+        "map_index": 35,
+        "trig_index": 1,
+        "x": 187.602,
+        "z": -716.696
+    },
+    {
+        "type": "LightGem",
+        "map_index": 35,
+        "trig_index": 2,
+        "x": 77.346,
+        "z": -790.991
+    },
+    {
+        "type": "LightGem",
+        "map_index": 35,
+        "trig_index": 15,
+        "x": 336.983,
+        "z": -913.114
+    },
+    {
+        "type": "LightGem",
+        "map_index": 35,
+        "trig_index": 27,
+        "x": 68.165,
+        "z": -1400.024
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 35,
+        "trig_index": 57,
+        "x": 194.297,
+        "z": -1429.799
+    },
+    {
+        "type": "LightGem",
+        "map_index": 35,
+        "trig_index": 58,
+        "x": 84.155,
+        "z": -1311.049
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 35,
+        "trig_index": 212,
+        "x": 280.546,
+        "z": -1022.916
+    },
+    {
+        "type": "LightGem",
+        "map_index": 35,
+        "trig_index": 232,
+        "x": 231.672,
+        "z": -1394.083
+    },
+    {
+        "type": "LightGem",
+        "map_index": 35,
+        "trig_index": 233,
+        "x": 210.635,
+        "z": -1273.26
+    },
+    {
+        "type": "DragonEgg_Chest",
+        "map_index": 35,
+        "trig_index": 267,
+        "x": 126.942,
+        "z": -817.064
+    },
+    {
+        "type": "DragonEgg_Chest",
+        "map_index": 35,
+        "trig_index": 268,
+        "x": 317.489,
+        "z": -585.642
+    }
+]

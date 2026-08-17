@@ -1,0 +1,121 @@
+[
+    {
+        "type": "LightGem",
+        "map_index": 31,
+        "trig_index": 4,
+        "x": -163.103,
+        "z": 135.544
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 31,
+        "trig_index": 5,
+        "x": 60.377,
+        "z": 147.53
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 31,
+        "trig_index": 6,
+        "x": 188.558,
+        "z": 86.418
+    },
+    {
+        "type": "LightGem",
+        "map_index": 31,
+        "trig_index": 7,
+        "x": 235.793,
+        "z": 35.055
+    },
+    {
+        "type": "LightGem",
+        "map_index": 31,
+        "trig_index": 11,
+        "x": 277.068,
+        "z": -445.761
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 31,
+        "trig_index": 36,
+        "x": -106.951,
+        "z": 96.723
+    },
+    {
+        "type": "EggThief",
+        "map_index": 31,
+        "trig_index": 60,
+        "x": 293.786,
+        "z": -178.487
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 31,
+        "trig_index": 61,
+        "x": 250.211,
+        "z": -350.799
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 31,
+        "trig_index": 66,
+        "x": 266.501,
+        "z": -478.457
+    },
+    {
+        "type": "LightGem",
+        "map_index": 31,
+        "trig_index": 74,
+        "x": 296.465,
+        "z": -275.83
+    },
+    {
+        "type": "LightGem",
+        "map_index": 31,
+        "trig_index": 150,
+        "x": -119.191,
+        "z": -24.916
+    },
+    {
+        "type": "LightGem",
+        "map_index": 31,
+        "trig_index": 170,
+        "x": 69.112,
+        "z": 307.069
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 31,
+        "trig_index": 246,
+        "x": -97.852,
+        "z": 165.881
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 31,
+        "trig_index": 247,
+        "x": 75.265,
+        "z": -158.639
+    },
+    {
+        "type": "LightGem",
+        "map_index": 31,
+        "trig_index": 312,
+        "x": -21.688,
+        "z": -470.546
+    },
+    {
+        "type": "DragonEgg_Chest",
+        "map_index": 31,
+        "trig_index": 372,
+        "x": 57.459,
+        "z": 264.138
+    },
+    {
+        "type": "DragonEgg_Chest",
+        "map_index": 31,
+        "trig_index": 373,
+        "x": 114.466,
+        "z": 69.87
+    }
+]

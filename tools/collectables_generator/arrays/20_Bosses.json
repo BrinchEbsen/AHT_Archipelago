@@ -1,0 +1,38 @@
+[
+    {
+        "type": "NonCollectable",
+        "map_index": 24,
+        "trig_index": 346,
+        "objective": "HT_Objective_Boss1_Beaten",
+        "x": 151.245,
+        "z": -102.081,
+        "comment": "Gnasty Gnorc"
+    },
+    {
+        "type": "NonCollectable",
+        "map_index": 45,
+        "trig_index": 235,
+        "objective": "HT_Objective_Boss2_Beaten",
+        "x": 3.925,
+        "z": 80.844,
+        "comment": "Ineptune"
+    },
+    {
+        "type": "NonCollectable",
+        "map_index": 31,
+        "trig_index": 318,
+        "objective": "HT_Objective_Boss3_Beaten",
+        "x": -51.937,
+        "z": -58.285,
+        "comment": "Red"
+    },
+    {
+        "type": "NonCollectable",
+        "map_index": 40,
+        "trig_index": 391,
+        "objective": "HT_Objective_Boss4_Beaten",
+        "x": -1281.773,
+        "z": -1668.25,
+        "comment": "Mecha Red"
+    }
+]

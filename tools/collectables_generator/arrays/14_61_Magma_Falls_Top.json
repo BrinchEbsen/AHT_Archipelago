@@ -1,0 +1,16 @@
+[
+    {
+        "type": "DragonEgg_Chest",
+        "map_index": 61,
+        "trig_index": 39,
+        "x": 286.53,
+        "z": 863.705
+    },
+    {
+        "type": "LightGem",
+        "map_index": 61,
+        "trig_index": 57,
+        "x": 196.759,
+        "z": 834.204
+    }
+]

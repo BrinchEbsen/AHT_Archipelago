@@ -1,0 +1,30 @@
+[
+    {
+        "type": "DarkGem",
+        "map_index": 63,
+        "trig_index": 2,
+        "x": 135.064,
+        "z": -1068.57
+    },
+    {
+        "type": "EggThief",
+        "map_index": 63,
+        "trig_index": 10,
+        "x": -237.019,
+        "z": -1036.122
+    },
+    {
+        "type": "LightGem",
+        "map_index": 63,
+        "trig_index": 16,
+        "x": -82.247,
+        "z": -1162.16
+    },
+    {
+        "type": "LightGem_Chest",
+        "map_index": 63,
+        "trig_index": 51,
+        "x": 29.596,
+        "z": -1150.912
+    }
+]

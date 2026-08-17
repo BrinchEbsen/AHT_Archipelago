@@ -1,0 +1,121 @@
+[
+    {
+        "type": "DarkGem",
+        "map_index": 23,
+        "trig_index": 0,
+        "x": 8.988,
+        "z": 538.614
+    },
+    {
+        "type": "EggThief",
+        "map_index": 23,
+        "trig_index": 1,
+        "x": 293.351,
+        "z": 734.02
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 23,
+        "trig_index": 5,
+        "x": 152.106,
+        "z": 537.051
+    },
+    {
+        "type": "LightGem",
+        "map_index": 23,
+        "trig_index": 8,
+        "x": 334.059,
+        "z": 619.921
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 23,
+        "trig_index": 36,
+        "x": 207.287,
+        "z": 509.651
+    },
+    {
+        "type": "LightGem",
+        "map_index": 23,
+        "trig_index": 48,
+        "x": 297.543,
+        "z": 592.444
+    },
+    {
+        "type": "LightGem",
+        "map_index": 23,
+        "trig_index": 49,
+        "x": 105.845,
+        "z": 594.52
+    },
+    {
+        "type": "LightGem",
+        "map_index": 23,
+        "trig_index": 54,
+        "x": 165.745,
+        "z": 750.651
+    },
+    {
+        "type": "LightGem",
+        "map_index": 23,
+        "trig_index": 58,
+        "x": 75.439,
+        "z": 538.957
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 23,
+        "trig_index": 62,
+        "x": -151.165,
+        "z": 491.431
+    },
+    {
+        "type": "DarkGem",
+        "map_index": 23,
+        "trig_index": 68,
+        "x": 175.806,
+        "z": 482.756
+    },
+    {
+        "type": "DragonEgg_Chest",
+        "map_index": 23,
+        "trig_index": 103,
+        "x": 135.36,
+        "z": 593.936
+    },
+    {
+        "type": "LightGem",
+        "map_index": 23,
+        "trig_index": 161,
+        "x": 73.546,
+        "z": 549.902
+    },
+    {
+        "type": "LightGem_Chest",
+        "map_index": 23,
+        "trig_index": 162,
+        "x": -58.559,
+        "z": 515.1
+    },
+    {
+        "type": "DragonEgg_Chest",
+        "map_index": 23,
+        "trig_index": 202,
+        "x": 171.311,
+        "z": 659.408
+    },
+    {
+        "type": "DragonEgg",
+        "map_index": 23,
+        "trig_index": 203,
+        "x": 287.616,
+        "z": 506.183
+    },
+    {
+        "type": "LightGem",
+        "map_index": 23,
+        "trig_index": 204,
+        "x": 193.263,
+        "z": 508.721
+    }
+]
