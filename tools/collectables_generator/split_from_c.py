@@ -98,4 +98,4 @@ with open(in_file) as file:
 
 for filename, items in outputs.items():
     with open("arrays/"+filename+".json", 'w+t') as file:
-        file.writelines(json.dumps(items, indent=4))
+        file.write(json.dumps(items, indent=4))
