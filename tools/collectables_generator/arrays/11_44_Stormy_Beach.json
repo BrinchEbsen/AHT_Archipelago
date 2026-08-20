@@ -1,5 +1,6 @@
 [
     {
+        "index": 142,
         "type": "DarkGem",
         "map_index": 44,
         "trig_index": 27,
@@ -7,6 +8,7 @@
         "z": 303.808
     },
     {
+        "index": 143,
         "type": "LightGem",
         "map_index": 44,
         "trig_index": 44,
@@ -14,6 +16,7 @@
         "z": 57.555
     },
     {
+        "index": 144,
         "type": "EggThief",
         "map_index": 44,
         "trig_index": 66,

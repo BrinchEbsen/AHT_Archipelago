@@ -9,6 +9,7 @@ str_pragma_endregion = "#pragma endregion"
 curr_file_index: int = 0
 curr_file: str | None = None
 curr_entry: dict[str, int | float | str] | None = None
+curr_entry_index: int = 0
 curr_comment: str | None = None
 
 outputs: dict[str, list[dict[str, int | float | str]]] = {}
@@ -58,6 +59,8 @@ with open(in_file) as file:
 
         if line.find("{") != -1:
             curr_entry = {}
+            curr_entry["index"] = curr_entry_index
+            curr_entry_index += 1
             continue
 
         if curr_entry is not None:

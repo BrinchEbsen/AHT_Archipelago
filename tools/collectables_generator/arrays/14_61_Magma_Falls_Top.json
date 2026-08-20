@@ -1,5 +1,6 @@
 [
     {
+        "index": 171,
         "type": "DragonEgg_Chest",
         "map_index": 61,
         "trig_index": 39,
@@ -7,6 +8,7 @@
         "z": 863.705
     },
     {
+        "index": 172,
         "type": "LightGem",
         "map_index": 61,
         "trig_index": 57,

@@ -1,5 +1,6 @@
 [
     {
+        "index": 241,
         "type": "NonCollectable",
         "map_index": 24,
         "trig_index": 11,
@@ -9,6 +10,7 @@
         "comment": "Elder Tomas"
     },
     {
+        "index": 242,
         "type": "NonCollectable",
         "map_index": 23,
         "trig_index": 71,
@@ -18,6 +20,7 @@
         "comment": "Elder Magnus"
     },
     {
+        "index": 243,
         "type": "NonCollectable",
         "map_index": 20,
         "trig_index": 10,
@@ -27,6 +30,7 @@
         "comment": "Elder Titan"
     },
     {
+        "index": 244,
         "type": "NonCollectable",
         "map_index": 33,
         "trig_index": 9,

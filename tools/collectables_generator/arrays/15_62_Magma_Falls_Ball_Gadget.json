@@ -1,20 +1,24 @@
 [
     {
+        "index": 173,
         "type": "DragonEgg",
         "map_index": 62,
         "trig_index": 59
     },
     {
+        "index": 174,
         "type": "DragonEgg",
         "map_index": 62,
         "trig_index": 82
     },
     {
+        "index": 175,
         "type": "LightGem",
         "map_index": 62,
         "trig_index": 83
     },
     {
+        "index": 176,
         "type": "LightGem",
         "map_index": 62,
         "trig_index": 90

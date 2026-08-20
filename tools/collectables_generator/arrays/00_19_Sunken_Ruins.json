@@ -1,5 +1,6 @@
 [
     {
+        "index": 0,
         "type": "LightGem",
         "map_index": 19,
         "trig_index": 0,
@@ -7,6 +8,7 @@
         "z": 59.447
     },
     {
+        "index": 1,
         "type": "LightGem",
         "map_index": 19,
         "trig_index": 2,
@@ -14,6 +16,7 @@
         "z": -148.267
     },
     {
+        "index": 2,
         "type": "DragonEgg",
         "map_index": 19,
         "trig_index": 3,
@@ -21,6 +24,7 @@
         "z": -43.671
     },
     {
+        "index": 3,
         "type": "DarkGem",
         "map_index": 19,
         "trig_index": 4,
@@ -28,6 +32,7 @@
         "z": 61.091
     },
     {
+        "index": 4,
         "type": "DarkGem",
         "map_index": 19,
         "trig_index": 10,
@@ -35,6 +40,7 @@
         "z": -165.004
     },
     {
+        "index": 5,
         "type": "DragonEgg",
         "map_index": 19,
         "trig_index": 26,
@@ -42,6 +48,7 @@
         "z": 34.074
     },
     {
+        "index": 6,
         "type": "DarkGem",
         "map_index": 19,
         "trig_index": 64,
@@ -49,6 +56,7 @@
         "z": -108.185
     },
     {
+        "index": 7,
         "type": "DragonEgg_Chest",
         "map_index": 19,
         "trig_index": 86,
@@ -56,6 +64,7 @@
         "z": 56.702
     },
     {
+        "index": 8,
         "type": "LightGem_Chest",
         "map_index": 19,
         "trig_index": 90,
@@ -63,6 +72,7 @@
         "z": 88.784
     },
     {
+        "index": 9,
         "type": "LightGem_Chest",
         "map_index": 19,
         "trig_index": 91,
@@ -70,6 +80,7 @@
         "z": 158.848
     },
     {
+        "index": 10,
         "type": "DragonEgg_Chest",
         "map_index": 19,
         "trig_index": 92,
@@ -77,6 +88,7 @@
         "z": -58.909
     },
     {
+        "index": 11,
         "type": "DragonEgg_Chest",
         "map_index": 19,
         "trig_index": 93,
@@ -84,6 +96,7 @@
         "z": -159.2
     },
     {
+        "index": 12,
         "type": "LightGem_Chest",
         "map_index": 19,
         "trig_index": 94,
@@ -91,6 +104,7 @@
         "z": -101.822
     },
     {
+        "index": 13,
         "type": "LightGem",
         "map_index": 19,
         "trig_index": 131,
@@ -98,6 +112,7 @@
         "z": -179.793
     },
     {
+        "index": 14,
         "type": "LightGem_Chest",
         "map_index": 19,
         "trig_index": 183,

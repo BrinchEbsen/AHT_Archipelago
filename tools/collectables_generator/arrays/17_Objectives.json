@@ -1,5 +1,6 @@
 [
     {
+        "index": 181,
         "type": "DragonEgg_MiniGame",
         "map_index": 24,
         "trig_index": 158,
@@ -9,6 +10,7 @@
         "comment": "Dragon Village - Sgt. Byrd"
     },
     {
+        "index": 182,
         "type": "LightGem_MiniGame",
         "map_index": 24,
         "trig_index": 158,
@@ -17,6 +19,7 @@
         "z": -55.373
     },
     {
+        "index": 183,
         "type": "DragonEgg_MiniGame",
         "map_index": 23,
         "trig_index": 6,
@@ -26,6 +29,7 @@
         "comment": "Crocovile Swamp - Turret"
     },
     {
+        "index": 184,
         "type": "LightGem_MiniGame",
         "map_index": 23,
         "trig_index": 6,
@@ -34,6 +38,7 @@
         "z": 578.149
     },
     {
+        "index": 185,
         "type": "DragonEgg_MiniGame",
         "map_index": 23,
         "trig_index": 69,
@@ -43,6 +48,7 @@
         "comment": "Crocovile Swamp - Blink"
     },
     {
+        "index": 186,
         "type": "LightGem_MiniGame",
         "map_index": 23,
         "trig_index": 69,
@@ -51,6 +57,7 @@
         "z": 524.413
     },
     {
+        "index": 187,
         "type": "DragonEgg_MiniGame",
         "map_index": 22,
         "trig_index": 283,
@@ -60,6 +67,7 @@
         "comment": "Dragonfly Falls - Sparx"
     },
     {
+        "index": 188,
         "type": "LightGem_MiniGame",
         "map_index": 22,
         "trig_index": 283,
@@ -68,6 +76,7 @@
         "z": -576.15
     },
     {
+        "index": 189,
         "type": "DragonEgg_MiniGame",
         "map_index": 45,
         "trig_index": 115,
@@ -77,6 +86,7 @@
         "comment": "Coastal Remains - Blink"
     },
     {
+        "index": 190,
         "type": "LightGem_MiniGame",
         "map_index": 45,
         "trig_index": 115,
@@ -85,6 +95,7 @@
         "z": -86.49
     },
     {
+        "index": 191,
         "type": "DragonEgg_MiniGame",
         "map_index": 45,
         "trig_index": 77,
@@ -94,6 +105,7 @@
         "comment": "Coastal Remains - Turret"
     },
     {
+        "index": 192,
         "type": "LightGem_MiniGame",
         "map_index": 45,
         "trig_index": 77,
@@ -102,6 +114,7 @@
         "z": -236.013
     },
     {
+        "index": 193,
         "type": "LightGem",
         "map_index": 45,
         "trig_index": 150,
@@ -111,6 +124,7 @@
         "comment": "Coastal Remains - Otto"
     },
     {
+        "index": 194,
         "type": "DragonEgg_MiniGame",
         "map_index": 19,
         "trig_index": 65,
@@ -120,6 +134,7 @@
         "comment": "Sunken Ruins - Sparx"
     },
     {
+        "index": 195,
         "type": "LightGem_MiniGame",
         "map_index": 19,
         "trig_index": 65,
@@ -128,6 +143,7 @@
         "z": -44.993
     },
     {
+        "index": 196,
         "type": "DragonEgg_MiniGame",
         "map_index": 20,
         "trig_index": 81,
@@ -137,6 +153,7 @@
         "comment": "Cloudy Domain - Sgt. Byrd"
     },
     {
+        "index": 197,
         "type": "LightGem_MiniGame",
         "map_index": 20,
         "trig_index": 81,
@@ -145,6 +162,7 @@
         "z": -125.903
     },
     {
+        "index": 198,
         "type": "DragonEgg_MiniGame",
         "map_index": 31,
         "trig_index": 244,
@@ -154,6 +172,7 @@
         "comment": "Frostbite Village - Blink"
     },
     {
+        "index": 199,
         "type": "LightGem_MiniGame",
         "map_index": 31,
         "trig_index": 244,
@@ -162,6 +181,7 @@
         "z": -178.357
     },
     {
+        "index": 200,
         "type": "DragonEgg_MiniGame",
         "map_index": 31,
         "trig_index": 242,
@@ -171,6 +191,7 @@
         "comment": "Frostbite Village - Turret"
     },
     {
+        "index": 201,
         "type": "LightGem_MiniGame",
         "map_index": 31,
         "trig_index": 242,
@@ -179,6 +200,7 @@
         "z": 100.301
     },
     {
+        "index": 202,
         "type": "DragonEgg_MiniGame",
         "map_index": 35,
         "trig_index": 128,
@@ -188,6 +210,7 @@
         "comment": "Gloomy Glacier - Sparx"
     },
     {
+        "index": 203,
         "type": "LightGem_MiniGame",
         "map_index": 35,
         "trig_index": 128,
@@ -196,6 +219,7 @@
         "z": -1387.189
     },
     {
+        "index": 204,
         "type": "LightGem",
         "map_index": 35,
         "trig_index": 88,
@@ -205,6 +229,7 @@
         "comment": "Gloomy Glacier - Bentley"
     },
     {
+        "index": 205,
         "type": "DragonEgg_MiniGame",
         "map_index": 33,
         "trig_index": 48,
@@ -214,6 +239,7 @@
         "comment": "Ice Citadel - Sgt. Byrd"
     },
     {
+        "index": 206,
         "type": "LightGem_MiniGame",
         "map_index": 33,
         "trig_index": 48,
@@ -222,6 +248,7 @@
         "z": -173.292
     },
     {
+        "index": 207,
         "type": "LightGem",
         "map_index": 33,
         "trig_index": 97,
@@ -231,6 +258,7 @@
         "comment": "Ice Citadel - Boiler 1"
     },
     {
+        "index": 208,
         "type": "LightGem",
         "map_index": 33,
         "trig_index": 99,
@@ -240,6 +268,7 @@
         "comment": "Ice Citadel - Boiler 3"
     },
     {
+        "index": 209,
         "type": "LightGem",
         "map_index": 33,
         "trig_index": 101,
@@ -249,6 +278,7 @@
         "comment": "Ice Citadel - Boiler 5"
     },
     {
+        "index": 210,
         "type": "LightGem",
         "map_index": 33,
         "trig_index": 47,
@@ -258,6 +288,7 @@
         "comment": "Ice Citadel - Ice Princess"
     },
     {
+        "index": 211,
         "type": "DragonEgg_MiniGame",
         "map_index": 44,
         "trig_index": 8,
@@ -267,6 +298,7 @@
         "comment": "Stormy Beach - Turret"
     },
     {
+        "index": 212,
         "type": "LightGem_MiniGame",
         "map_index": 44,
         "trig_index": 8,
@@ -275,6 +307,7 @@
         "z": -41.345
     },
     {
+        "index": 213,
         "type": "DragonEgg_MiniGame",
         "map_index": 60,
         "trig_index": 94,
@@ -284,6 +317,7 @@
         "comment": "Molten Mount - Sgt. Byrd"
     },
     {
+        "index": 214,
         "type": "LightGem_MiniGame",
         "map_index": 60,
         "trig_index": 94,
@@ -292,6 +326,7 @@
         "z": 552.857
     },
     {
+        "index": 215,
         "type": "DragonEgg",
         "map_index": 60,
         "trig_index": 93,
@@ -301,6 +336,7 @@
         "comment": "Molten Mount - Teena"
     },
     {
+        "index": 216,
         "type": "DragonEgg_MiniGame",
         "map_index": 63,
         "trig_index": 12,
@@ -310,6 +346,7 @@
         "comment": "Magma Falls Bottom - Sparx"
     },
     {
+        "index": 217,
         "type": "LightGem_MiniGame",
         "map_index": 63,
         "trig_index": 12,
@@ -318,6 +355,7 @@
         "z": -1263.319
     },
     {
+        "index": 218,
         "type": "DragonEgg_MiniGame",
         "map_index": 30,
         "trig_index": 154,
@@ -327,6 +365,7 @@
         "comment": "Dark Mine - Blink"
     },
     {
+        "index": 219,
         "type": "LightGem_MiniGame",
         "map_index": 30,
         "trig_index": 154,

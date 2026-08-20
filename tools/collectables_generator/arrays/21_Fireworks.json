@@ -1,5 +1,6 @@
 [
     {
+        "index": 249,
         "type": "FireWork",
         "map_index": 24,
         "trig_index": 304,
@@ -8,6 +9,7 @@
         "comment": "Dragon Village"
     },
     {
+        "index": 250,
         "type": "FireWork",
         "map_index": 24,
         "trig_index": 305,
@@ -15,6 +17,7 @@
         "z": 15.199
     },
     {
+        "index": 251,
         "type": "FireWork",
         "map_index": 24,
         "trig_index": 344,
@@ -22,6 +25,7 @@
         "z": 133.725
     },
     {
+        "index": 252,
         "type": "FireWork",
         "map_index": 24,
         "trig_index": 431,
@@ -29,6 +33,7 @@
         "z": -70.162
     },
     {
+        "index": 253,
         "type": "FireWork",
         "map_index": 23,
         "trig_index": 276,
@@ -37,6 +42,7 @@
         "comment": "Crocovile Swamp"
     },
     {
+        "index": 254,
         "type": "FireWork",
         "map_index": 23,
         "trig_index": 292,
@@ -44,6 +50,7 @@
         "z": 443.695
     },
     {
+        "index": 255,
         "type": "FireWork",
         "map_index": 23,
         "trig_index": 294,
@@ -51,6 +58,7 @@
         "z": 496.094
     },
     {
+        "index": 256,
         "type": "FireWork",
         "map_index": 19,
         "trig_index": 207,
@@ -59,6 +67,7 @@
         "comment": "Sunken Ruins"
     },
     {
+        "index": 257,
         "type": "FireWork",
         "map_index": 19,
         "trig_index": 236,
@@ -66,6 +75,7 @@
         "z": -4.108
     },
     {
+        "index": 258,
         "type": "FireWork",
         "map_index": 19,
         "trig_index": 252,
@@ -73,6 +83,7 @@
         "z": -201.492
     },
     {
+        "index": 259,
         "type": "FireWork",
         "map_index": 19,
         "trig_index": 287,
@@ -80,6 +91,7 @@
         "z": -131.139
     },
     {
+        "index": 260,
         "type": "FireWork",
         "map_index": 20,
         "trig_index": 113,
@@ -88,6 +100,7 @@
         "comment": "Cloudy Domain"
     },
     {
+        "index": 261,
         "type": "FireWork",
         "map_index": 20,
         "trig_index": 264,
@@ -95,6 +108,7 @@
         "z": -35.0
     },
     {
+        "index": 262,
         "type": "FireWork",
         "map_index": 20,
         "trig_index": 273,
@@ -102,6 +116,7 @@
         "z": 131.332
     },
     {
+        "index": 263,
         "type": "FireWork",
         "map_index": 33,
         "trig_index": 250,
@@ -110,6 +125,7 @@
         "comment": "Ice Citadel"
     },
     {
+        "index": 264,
         "type": "FireWork",
         "map_index": 44,
         "trig_index": 98,
@@ -118,6 +134,7 @@
         "comment": "Stormy Beach"
     },
     {
+        "index": 265,
         "type": "FireWork",
         "map_index": 44,
         "trig_index": 113,
@@ -125,6 +142,7 @@
         "z": 42.17
     },
     {
+        "index": 266,
         "type": "FireWork",
         "map_index": 44,
         "trig_index": 149,
@@ -132,6 +150,7 @@
         "z": 177.84
     },
     {
+        "index": 267,
         "type": "FireWork",
         "map_index": 60,
         "trig_index": 132,
@@ -140,6 +159,7 @@
         "comment": "Molten Mount"
     },
     {
+        "index": 268,
         "type": "FireWork",
         "map_index": 61,
         "trig_index": 19,
@@ -148,6 +168,7 @@
         "comment": "Magma Falls Top"
     },
     {
+        "index": 269,
         "type": "FireWork",
         "map_index": 30,
         "trig_index": 315,
@@ -156,6 +177,7 @@
         "comment": "Dark Mine"
     },
     {
+        "index": 270,
         "type": "FireWork",
         "map_index": 30,
         "trig_index": 366,

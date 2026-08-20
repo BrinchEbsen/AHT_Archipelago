@@ -1,5 +1,6 @@
 [
     {
+        "index": 106,
         "type": "LightGem",
         "map_index": 33,
         "trig_index": 4,
@@ -7,6 +8,7 @@
         "z": -326.562
     },
     {
+        "index": 107,
         "type": "DarkGem",
         "map_index": 33,
         "trig_index": 8,
@@ -14,6 +16,7 @@
         "z": -152.005
     },
     {
+        "index": 108,
         "type": "DarkGem",
         "map_index": 33,
         "trig_index": 11,
@@ -21,6 +24,7 @@
         "z": -154.257
     },
     {
+        "index": 109,
         "type": "DragonEgg",
         "map_index": 33,
         "trig_index": 15,
@@ -28,6 +32,7 @@
         "z": -189.818
     },
     {
+        "index": 110,
         "type": "DarkGem",
         "map_index": 33,
         "trig_index": 21,
@@ -35,6 +40,7 @@
         "z": -125.771
     },
     {
+        "index": 111,
         "type": "DragonEgg",
         "map_index": 33,
         "trig_index": 22,
@@ -42,6 +48,7 @@
         "z": -113.849
     },
     {
+        "index": 112,
         "type": "DragonEgg",
         "map_index": 33,
         "trig_index": 31,
@@ -49,6 +56,7 @@
         "z": -364.31
     },
     {
+        "index": 113,
         "type": "DarkGem",
         "map_index": 33,
         "trig_index": 33,
@@ -56,6 +64,7 @@
         "z": -288.317
     },
     {
+        "index": 114,
         "type": "LightGem",
         "map_index": 33,
         "trig_index": 36,
@@ -63,6 +72,7 @@
         "z": -290.399
     },
     {
+        "index": 115,
         "type": "DarkGem",
         "map_index": 33,
         "trig_index": 44,
@@ -70,6 +80,7 @@
         "z": -417.671
     },
     {
+        "index": 116,
         "type": "DragonEgg",
         "map_index": 33,
         "trig_index": 45,
@@ -77,6 +88,7 @@
         "z": -458.546
     },
     {
+        "index": 117,
         "type": "LightGem_Chest",
         "map_index": 33,
         "trig_index": 67,
@@ -84,6 +96,7 @@
         "z": -173.75
     },
     {
+        "index": 118,
         "type": "EggThief",
         "map_index": 33,
         "trig_index": 133,
@@ -91,6 +104,7 @@
         "z": -80.0
     },
     {
+        "index": 119,
         "type": "DragonEgg_Chest",
         "map_index": 33,
         "trig_index": 421,

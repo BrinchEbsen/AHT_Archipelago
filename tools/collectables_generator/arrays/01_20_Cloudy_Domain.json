@@ -1,5 +1,6 @@
 [
     {
+        "index": 15,
         "type": "DarkGem",
         "map_index": 20,
         "trig_index": 2,
@@ -7,6 +8,7 @@
         "z": 0.269
     },
     {
+        "index": 16,
         "type": "DarkGem",
         "map_index": 20,
         "trig_index": 8,
@@ -14,6 +16,7 @@
         "z": 0.86
     },
     {
+        "index": 17,
         "type": "LightGem",
         "map_index": 20,
         "trig_index": 9,
@@ -21,6 +24,7 @@
         "z": -89.37
     },
     {
+        "index": 18,
         "type": "DarkGem",
         "map_index": 20,
         "trig_index": 82,
@@ -28,6 +32,7 @@
         "z": -95.921
     },
     {
+        "index": 19,
         "type": "LightGem_Chest",
         "map_index": 20,
         "trig_index": 109,
@@ -35,6 +40,7 @@
         "z": -8.013
     },
     {
+        "index": 20,
         "type": "DragonEgg_Chest",
         "map_index": 20,
         "trig_index": 132,
@@ -42,6 +48,7 @@
         "z": -57.23
     },
     {
+        "index": 21,
         "type": "DragonEgg",
         "map_index": 20,
         "trig_index": 133,
@@ -49,6 +56,7 @@
         "z": 70.687
     },
     {
+        "index": 22,
         "type": "LightGem",
         "map_index": 20,
         "trig_index": 134,
@@ -56,6 +64,7 @@
         "z": 99.23
     },
     {
+        "index": 23,
         "type": "LightGem",
         "map_index": 20,
         "trig_index": 135,
@@ -63,6 +72,7 @@
         "z": 4.02
     },
     {
+        "index": 24,
         "type": "DragonEgg",
         "map_index": 20,
         "trig_index": 136,
@@ -70,6 +80,7 @@
         "z": -104.773
     },
     {
+        "index": 25,
         "type": "LightGem",
         "map_index": 20,
         "trig_index": 137,
@@ -77,6 +88,7 @@
         "z": -132.52
     },
     {
+        "index": 26,
         "type": "LightGem",
         "map_index": 20,
         "trig_index": 183,
@@ -84,6 +96,7 @@
         "z": 104.976
     },
     {
+        "index": 27,
         "type": "DragonEgg_Chest",
         "map_index": 20,
         "trig_index": 194,
@@ -91,6 +104,7 @@
         "z": 117.823
     },
     {
+        "index": 28,
         "type": "EggThief",
         "map_index": 20,
         "trig_index": 239,

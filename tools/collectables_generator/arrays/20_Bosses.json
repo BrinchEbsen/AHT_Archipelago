@@ -1,5 +1,6 @@
 [
     {
+        "index": 245,
         "type": "NonCollectable",
         "map_index": 24,
         "trig_index": 346,
@@ -9,6 +10,7 @@
         "comment": "Gnasty Gnorc"
     },
     {
+        "index": 246,
         "type": "NonCollectable",
         "map_index": 45,
         "trig_index": 235,
@@ -18,6 +20,7 @@
         "comment": "Ineptune"
     },
     {
+        "index": 247,
         "type": "NonCollectable",
         "map_index": 31,
         "trig_index": 318,
@@ -27,6 +30,7 @@
         "comment": "Red"
     },
     {
+        "index": 248,
         "type": "NonCollectable",
         "map_index": 40,
         "trig_index": 391,

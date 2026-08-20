@@ -1,5 +1,6 @@
 [
     {
+        "index": 65,
         "type": "DarkGem",
         "map_index": 24,
         "trig_index": 1,
@@ -7,6 +8,7 @@
         "z": 62.445
     },
     {
+        "index": 66,
         "type": "DarkGem",
         "map_index": 24,
         "trig_index": 2,
@@ -14,6 +16,7 @@
         "z": 69.036
     },
     {
+        "index": 67,
         "type": "DarkGem",
         "map_index": 24,
         "trig_index": 8,
@@ -21,6 +24,7 @@
         "z": -8.333
     },
     {
+        "index": 68,
         "type": "DragonEgg",
         "map_index": 24,
         "trig_index": 16,
@@ -28,6 +32,7 @@
         "z": 8.255
     },
     {
+        "index": 69,
         "type": "LightGem",
         "map_index": 24,
         "trig_index": 21,
@@ -35,6 +40,7 @@
         "z": -83.488
     },
     {
+        "index": 70,
         "type": "DragonEgg",
         "map_index": 24,
         "trig_index": 92,
@@ -42,6 +48,7 @@
         "z": -25.722
     },
     {
+        "index": 71,
         "type": "LightGem",
         "map_index": 24,
         "trig_index": 139,
@@ -49,6 +56,7 @@
         "z": -102.361
     },
     {
+        "index": 72,
         "type": "DragonEgg",
         "map_index": 24,
         "trig_index": 141,
@@ -56,6 +64,7 @@
         "z": -75.268
     },
     {
+        "index": 73,
         "type": "LightGem",
         "map_index": 24,
         "trig_index": 290,
@@ -63,6 +72,7 @@
         "z": -11.277
     },
     {
+        "index": 74,
         "type": "DragonEgg_Chest",
         "map_index": 24,
         "trig_index": 302,
@@ -70,6 +80,7 @@
         "z": -8.877
     },
     {
+        "index": 75,
         "type": "DragonEgg",
         "map_index": 24,
         "trig_index": 341,
@@ -77,6 +88,7 @@
         "z": -165.061
     },
     {
+        "index": 76,
         "type": "LightGem_Chest",
         "map_index": 24,
         "trig_index": 342,
@@ -84,6 +96,7 @@
         "z": -44.351
     },
     {
+        "index": 77,
         "type": "LightGem_Chest",
         "map_index": 24,
         "trig_index": 343,

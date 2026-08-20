@@ -1,10 +1,12 @@
 [
     {
+        "index": 29,
         "type": "LightGem",
         "map_index": 21,
         "trig_index": 59
     },
     {
+        "index": 30,
         "type": "DragonEgg",
         "map_index": 21,
         "trig_index": 60

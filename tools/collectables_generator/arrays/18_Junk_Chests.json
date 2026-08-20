@@ -1,5 +1,6 @@
 [
     {
+        "index": 220,
         "type": "Junk_Chest",
         "map_index": 45,
         "trig_index": 315,
@@ -8,6 +9,7 @@
         "comment": "Coastal Remains"
     },
     {
+        "index": 221,
         "type": "Junk_Chest",
         "map_index": 45,
         "trig_index": 462,
@@ -15,6 +17,7 @@
         "z": 29.594
     },
     {
+        "index": 222,
         "type": "Junk_Chest",
         "map_index": 19,
         "trig_index": 284,
@@ -23,6 +26,7 @@
         "comment": "Sunken Ruins"
     },
     {
+        "index": 223,
         "type": "Junk_Chest",
         "map_index": 20,
         "trig_index": 243,
@@ -31,6 +35,7 @@
         "comment": "Cloudy Domain"
     },
     {
+        "index": 224,
         "type": "Junk_Chest",
         "map_index": 31,
         "trig_index": 232,
@@ -39,6 +44,7 @@
         "comment": "Frostbite Village"
     },
     {
+        "index": 225,
         "type": "Junk_Chest",
         "map_index": 31,
         "trig_index": 485,
@@ -46,6 +52,7 @@
         "z": 74.633
     },
     {
+        "index": 226,
         "type": "Junk_Chest",
         "map_index": 35,
         "trig_index": 249,
@@ -54,6 +61,7 @@
         "comment": "Gloomy Glacier"
     },
     {
+        "index": 227,
         "type": "Junk_Chest",
         "map_index": 33,
         "trig_index": 286,
@@ -62,6 +70,7 @@
         "comment": "Ice Citadel"
     },
     {
+        "index": 228,
         "type": "Junk_Chest",
         "map_index": 33,
         "trig_index": 300,
@@ -69,6 +78,7 @@
         "z": -125.507
     },
     {
+        "index": 229,
         "type": "Junk_Chest",
         "map_index": 33,
         "trig_index": 309,
@@ -76,6 +86,7 @@
         "z": -328.987
     },
     {
+        "index": 230,
         "type": "Junk_Chest",
         "map_index": 33,
         "trig_index": 377,
@@ -83,6 +94,7 @@
         "z": -407.357
     },
     {
+        "index": 231,
         "type": "Junk_Chest",
         "map_index": 44,
         "trig_index": 97,
@@ -91,6 +103,7 @@
         "comment": "Stormy Beach"
     },
     {
+        "index": 232,
         "type": "Junk_Chest",
         "map_index": 44,
         "trig_index": 105,
@@ -98,6 +111,7 @@
         "z": -85.783
     },
     {
+        "index": 233,
         "type": "Junk_Chest",
         "map_index": 44,
         "trig_index": 168,
@@ -105,6 +119,7 @@
         "z": -49.765
     },
     {
+        "index": 234,
         "type": "Junk_Chest",
         "map_index": 44,
         "trig_index": 198,
@@ -112,6 +127,7 @@
         "z": 38.666
     },
     {
+        "index": 235,
         "type": "Junk_Chest",
         "map_index": 44,
         "trig_index": 199,
@@ -119,6 +135,7 @@
         "z": 161.055
     },
     {
+        "index": 236,
         "type": "Junk_Chest",
         "map_index": 60,
         "trig_index": 325,
@@ -127,6 +144,7 @@
         "comment": "Molten Mount"
     },
     {
+        "index": 237,
         "type": "Junk_Chest",
         "map_index": 61,
         "trig_index": 49,
@@ -135,6 +153,7 @@
         "comment": "Magma Falls Top"
     },
     {
+        "index": 238,
         "type": "Junk_Chest",
         "map_index": 30,
         "trig_index": 377,
@@ -143,6 +162,7 @@
         "comment": "Dark Mine"
     },
     {
+        "index": 239,
         "type": "Junk_Chest",
         "map_index": 40,
         "trig_index": 389,
@@ -151,6 +171,7 @@
         "comment": "Red's Laboratory"
     },
     {
+        "index": 240,
         "type": "Junk_Chest",
         "map_index": 40,
         "trig_index": 390,
