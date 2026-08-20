@@ -567,6 +567,16 @@ void draw_checks_percentage(GUI_Base* self, void* pWnd)
         collected += get_u8_bitfield_value(g_gamestate_ap_settings.location_bitfield, i*2);
     }
 
+    if (AP_GAMESTATE_SHOP_IS_RANDOMIZED)
+    {
+        // -1 because of teleport ticket at the start
+        for (int i = 0; i < g_gamestate_ap_settings.xls_shop_rowcount-1; i++)
+        {
+            total++;
+            collected += g_gamestate_ap_settings.shop_text[i].been_bought;
+        }
+    }
+
     float percentage = ((float)collected / (float)total) * 100.0f;
 
     EXRect r = {
