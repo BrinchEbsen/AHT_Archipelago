@@ -73,6 +73,9 @@ void draw_ut_stats(GUI_Base* self, void* pWnd);
 // Draw the "Checks x%" text.
 void draw_checks_percentage(GUI_Base* self, void* pWnd);
 
+// Draw the "DL x/y" text.
+void draw_deathlink_count(GUI_Base* self, void* pWnd);
+
 // Request for the pause menu to close.
 void close_pause_menu(GUI_Base* self);
 

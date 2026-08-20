@@ -160,7 +160,14 @@ void ap_handle_deathlink_outgoing(DeathLinkReason reason)
     if (deathlink_ignore_next_death) {
         deathlink_ignore_next_death = false;
     } else {
-        g_gamestate_ap_settings.deathlink_outgoing = reason;
+        g_gamestate_ap_settings.deathlink_death_counter++;
+        
+        if (g_gamestate_ap_settings.deathlink_death_counter
+                >= g_gamestate_ap_settings.deathlink_deaths_before_send)
+        {
+            g_gamestate_ap_settings.deathlink_death_counter = 0;
+            g_gamestate_ap_settings.deathlink_outgoing = reason;
+        }
     }
 }
 

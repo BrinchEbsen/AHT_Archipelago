@@ -174,6 +174,10 @@ s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
         draw_notification_toggle(self, pWnd);
         draw_ut_stats(self, pWnd);
         draw_checks_percentage(self, pWnd);
+        if (g_gamestate_ap_settings.deathlink_deaths_before_send > 1)
+        {
+            draw_deathlink_count(self, pWnd);
+        }
     } else {
         TEXT_PRINT_ALIGN_COLOR(pWnd, 0, 0, BottomCentre, COLOR_RED, "Archipelago gamestate not initialized!");
     }
@@ -589,6 +593,30 @@ void draw_checks_percentage(GUI_Base* self, void* pWnd)
     draw_menu_rect(pWnd, &r);
 
     textprintf(pWnd, 3, 390, 1.0f, TopLeft, COLOR_WHITE, true, "Checks: %.1f%%", percentage);
+}
+
+void draw_deathlink_count(GUI_Base* self, void* pWnd)
+{
+    EXRect r = {
+        .x = 140+2,
+        .y = 40,
+        .w = (WND_WIDTH/2)-140-3,
+        .h = 28
+    };
+
+    draw_menu_rect(pWnd, &r);
+
+    u8 death_counter = g_gamestate_ap_settings.deathlink_death_counter;
+    u8 death_limit   = g_gamestate_ap_settings.deathlink_deaths_before_send;
+
+    // Make text flash red if you're 1 death away from a deathlink.
+    RGBA text_color = COLOR_WHITE;
+    if ((death_counter == (death_limit-1)) && ((self->m_UpdateCounter & 0x10) != 0))
+    {
+        text_color = COLOR_LIGHT_RED;
+    }
+
+    textprintf(pWnd, r.x+3, r.y+1, 1.0f, TopLeft, text_color, true, "DL: %u/%u", death_counter, death_limit);
 }
 
 void close_pause_menu(GUI_Base* self)

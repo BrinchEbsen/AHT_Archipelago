@@ -579,6 +579,8 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("u8 num_ice_ammo_received: %x\n", &psettings->num_ice_ammo_received);
     PRINTF("u8 deathlink_ingoing: %x\n", &psettings->deathlink_ingoing);
     PRINTF("u8 deathlink_outgoing: %x\n", &psettings->deathlink_outgoing);
+    PRINTF("u8 deathlink_deaths_before_send: %x\n", &psettings->deathlink_deaths_before_send);
+    PRINTF("u8 deathlink_death_counter: %x\n", &psettings->deathlink_death_counter);
     PRINTF("bool infinite_butterfly_jar: %x\n", &psettings->infinite_butterfly_jar);
     PRINTF("bool infinite_double_gem: %x\n", &psettings->infinite_double_gem);
     PRINTF("bool fireworks_are_randomized: %x\n", &psettings->fireworks_are_randomized);

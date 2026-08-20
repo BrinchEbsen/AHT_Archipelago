@@ -81,6 +81,8 @@ typedef struct APSettings {
     u8 num_ice_ammo_received;
     u8 deathlink_ingoing;
     u8 deathlink_outgoing;
+    u8 deathlink_deaths_before_send;
+    u8 deathlink_death_counter;
     bool infinite_butterfly_jar;
     bool infinite_double_gem;
     bool fireworks_are_randomized;
