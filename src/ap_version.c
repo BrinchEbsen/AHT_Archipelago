@@ -1,3 +1,3 @@
 #include <ap_version.h>
 
-u32 g_ap_version = AP_VERSION;
+u16 g_ap_version[2] = {AP_VERSION};

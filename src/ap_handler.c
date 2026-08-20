@@ -553,7 +553,8 @@ bool TeleportPad_PlayerObjectives__GetObjective_PreCallHook(
 
 void print_interface_addresses()
 {
-    PRINTF("AP MOD VERSION %u (0x%x)\n", g_ap_version, &g_ap_version);
+    PRINTF("AP MOD VERSION %u.%u (Maj: 0x%x, Min: 0x%x)\n",
+        g_ap_version[0], g_ap_version[1], &g_ap_version[0], &g_ap_version[1]);
     PRINTF("-----\nPATCH AREA:\n");
     print_apsettings_addresses(&g_patch_ap_settings);
     PRINTF("-----\nGAMESTATE AREA:\n");

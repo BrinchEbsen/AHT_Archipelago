@@ -425,7 +425,7 @@
       "extracted_game_folder": "",
       "main_executable": "Start.dol",
       "source_path": "",
-      "compiler_flags": "-O2 -Werror -I include/ingame_stdlib/ -I include/ex/ -I include/se/ -D AP_VERSION=12",
+      "compiler_flags": "-O2 -Werror -I include/ingame_stdlib/ -I include/ex/ -I include/se/ -D AP_VERSION=13,0",
       "is_single_file_mode": false,
       "single_file_path": null,
       "memory_only_mode": true,
