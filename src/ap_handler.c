@@ -379,7 +379,6 @@ void ap_init_gamestate()
         ABILITY_WATER_BREATH |
         ABILITY_ICE_BREATH
     );
-    PRINTF("DEBUG QUICK START!\n");
     #endif
 
     if (g_gamestate_ap_settings.starting_realm > 3) {
