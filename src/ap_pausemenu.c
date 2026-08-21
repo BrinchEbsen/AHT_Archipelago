@@ -127,6 +127,68 @@ HUBCentreEntry hub_centers[] = {
     }
 };
 
+typedef struct StatAbilityEntry
+{
+    char* str;
+    u32 flag; // Last flag isn't used, so if that one is set, we check the butterfly jar
+} StatAbilityEntry;
+
+#define NUM_STAT_ABILITY_ENTRIES 13
+StatAbilityEntry stat_ability_entries[] = {
+    {
+        .str = "Double Jump",
+        .flag = ABILITY_DOUBLE_JUMP
+    },
+    {
+        .str = "Pole Spin",
+        .flag = ABILITY_HIT_POINT_UPGRADE
+    },
+    {
+        .str = "Health Refill",
+        .flag = 0x80000000 // butterfly jar
+    },
+    {
+        .str = "Fire Breath",
+        .flag = ABILITY_AP_FIREBREATH
+    },
+    {
+        .str = "Electric Breath",
+        .flag = ABILITY_ELECTRIC_BREATH
+    },
+    {
+        .str = "Water Breath",
+        .flag = ABILITY_WATER_BREATH
+    },
+    {
+        .str = "Ice Breath",
+        .flag = ABILITY_ICE_BREATH
+    },
+    {
+        .str = "Wing Shield",
+        .flag = ABILITY_WING_SHIELD
+    },
+    {
+        .str = "Wall Kick",
+        .flag = ABILITY_WALL_KICK
+    },
+    {
+        .str = "Shockwave",
+        .flag = ABILITY_HORN_DIVE_UPGRADE
+    },
+    {
+        .str = "Glide",
+        .flag = ABILITY_AP_GLIDE
+    },
+    {
+        .str = "Charge",
+        .flag = ABILITY_AP_CHARGE
+    },
+    {
+        .str = "Swim",
+        .flag = ABILITY_AP_SWIM
+    }
+};
+
 int curr_page = 0;
 static inline void next_page()
 {
@@ -380,61 +442,19 @@ void draw_stats_abilities(GUI_Base* self, void *pWnd, u16 x, u16 y, u16 spacing,
     RGBA* col;
     u32 abiflg = gGameState.m_PlayerState.m_AbilityFlags;
 
-    col = ((abiflg & ABILITY_DOUBLE_JUMP) != 0) ? &on_col : &off_col;
-    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Double Jump");
-    y += spacing;
-
-    col = ((abiflg & ABILITY_POLE_SPIN) != 0) ? &on_col : &off_col;
-    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Pole Spin");
-    y += spacing;
-
-    col = ((abiflg & ABILITY_HIT_POINT_UPGRADE) != 0) ? &on_col : &off_col;
-    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Health Unit+");
-    y += spacing;
-
-    col = g_gamestate_ap_settings.infinite_butterfly_jar ? &on_col : &off_col;
-    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Health Refill");
-    y += spacing;
-
-    col = ((abiflg & ABILITY_AP_FIREBREATH) != 0) ? &on_col : &off_col;
-    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Fire Breath");
-    y += spacing;
-
-    col = ((abiflg & ABILITY_ELECTRIC_BREATH) != 0) ? &on_col : &off_col;
-    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Electric Breath");
-    y += spacing;
-
-    col = ((abiflg & ABILITY_WATER_BREATH) != 0) ? &on_col : &off_col;
-    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Water Breath");
-    y += spacing;
-
-    col = ((abiflg & ABILITY_ICE_BREATH) != 0) ? &on_col : &off_col;
-    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Ice Breath");
-    y += spacing;
-
-    col = ((abiflg & ABILITY_WING_SHIELD) != 0) ? &on_col : &off_col;
-    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Wing Shield");
-    y += spacing;
-
-    col = ((abiflg & ABILITY_WALL_KICK) != 0) ? &on_col : &off_col;
-    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Wall Kick");
-    y += spacing;
-
-    col = ((abiflg & ABILITY_HORN_DIVE_UPGRADE) != 0) ? &on_col : &off_col;
-    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Shockwave");
-    y += spacing;
-
-    col = ((abiflg & ABILITY_AP_GLIDE) != 0) ? &on_col : &off_col;
-    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Glide");
-    y += spacing;
-
-    col = ((abiflg & ABILITY_AP_CHARGE) != 0) ? &on_col : &off_col;
-    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Charge");
-    y += spacing;
-
-    col = ((abiflg & ABILITY_AP_SWIM) != 0) ? &on_col : &off_col;
-    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, "Swim");
-    y += spacing;
+    for (int i = 0; i < NUM_STAT_ABILITY_ENTRIES; i++)
+    {
+        if ((stat_ability_entries[i].flag & 0x80000000) != 0)
+        {
+            col = g_gamestate_ap_settings.infinite_butterfly_jar ? &on_col : &off_col; 
+        }
+        else
+        {
+            col = ((abiflg & stat_ability_entries[i].flag) != 0) ? &on_col : &off_col;
+        }
+        TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, stat_ability_entries[i].str);
+        y += spacing;
+    }
 
     if (!AP_GAMESTATE_USE_KEY_RINGS) {
         s8 lock_pickers = gGameState.m_PlayerState.m_LockPickers;
