@@ -20,7 +20,7 @@ void textprint_set_params(void *pWnd, u16 x, u16 y, float Scale, TextAlign Align
 
 void textprintw(void* pWnd, u16 x, u16 y, float Scale, TextAlign Align, RGBA Color, bool Shadow, wchar16 *pText);
 void textprint(void* pWnd, u16 x, u16 y, float Scale, TextAlign Align, RGBA Color, bool Shadow, char* pText);
-void textprint_hash(void* pWnd, u16 x, u16 y, float Scale, TextAlign Align, RGBA Color, bool Shadow, EXHashCode code);
+// void textprint_hash(void* pWnd, u16 x, u16 y, float Scale, TextAlign Align, RGBA Color, bool Shadow, EXHashCode code);
 void textprintf(void* pWnd, u16 x, u16 y, float Scale, TextAlign Align, RGBA Color, bool Shadow, char* pText, ...);
 
 #define TEXT_PRINT(pWnd, x, y, pText) \

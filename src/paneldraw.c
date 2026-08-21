@@ -104,20 +104,20 @@ void textprintw(void* pWnd, u16 x, u16 y, float Scale, TextAlign Align, RGBA Col
     }
 }
 
-void textprint_hash(void* pWnd, u16 x, u16 y, float Scale, TextAlign Align, RGBA Color, bool Shadow, EXHashCode code)
-{
-    if (Shadow) {
-        textprint_set_params(pWnd, x+2, y+2, Scale, Align, COLOR_BLACK);
-        XWnd__TextPrintH(pWnd, code);
+// void textprint_hash(void* pWnd, u16 x, u16 y, float Scale, TextAlign Align, RGBA Color, bool Shadow, EXHashCode code)
+// {
+//     if (Shadow) {
+//         textprint_set_params(pWnd, x+2, y+2, Scale, Align, COLOR_BLACK);
+//         XWnd__TextPrintH(pWnd, code);
     
-        XWND_FONT_COLOR(pWnd)->rgba = Color.rgba;
-        textprint_set_rect(pWnd, x, y);
-        XWnd__TextPrintH(pWnd, code);
-    } else {
-        textprint_set_params(pWnd, x, y, Scale, Align, Color);
-        XWnd__TextPrintH(pWnd, code);
-    }
-}
+//         XWND_FONT_COLOR(pWnd)->rgba = Color.rgba;
+//         textprint_set_rect(pWnd, x, y);
+//         XWnd__TextPrintH(pWnd, code);
+//     } else {
+//         textprint_set_params(pWnd, x, y, Scale, Align, Color);
+//         XWnd__TextPrintH(pWnd, code);
+//     }
+// }
 
 void textprint(void* pWnd, u16 x, u16 y, float Scale, TextAlign Align, RGBA Color, bool Shadow, char *pText)
 {
