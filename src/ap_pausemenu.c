@@ -12,6 +12,7 @@
 #include <ap_keyring.h>
 #include <ap_minimap.h>
 #include <minimap_status.h>
+#include <map_minigame.h>
 
 #define AP_TELEPORT_CLOSE_TIMER_MAX 60
 
@@ -541,14 +542,26 @@ void draw_ut_stats(GUI_Base* self, void* pWnd)
         
         if (g_gamestate_ap_settings.shop_unlock_mode)
         {
+            s32 gems = gGameState.m_PlayerState.m_Gems;
+
+            // Test if this is a minigame map.
+            SE_Map* map = GetSpyroMap(0);
+            if (map != NULL)
+            {
+                GetRuntimeClass_func get_rtc = map->__vtable->GetRuntimeClass.__pfn;
+                EXRuntimeClass* rtc = get_rtc();
+                if (class_is_or_inherits_from(rtc, &classSEMap_MiniGame))
+                {
+                    // We add the stored gems to the current count.
+                    gems += ((SEMap_MiniGame*)map)->m_StoredGems;
+                }
+            }
+
             textprintf(pWnd, txt_x_base, txt_y_base+20, 1.0f, TopLeft, COLOR_WHITE, true,
-                "Gems: %d/%d",
-                gGameState.m_PlayerState.m_Gems,
-                g_gamestate_ap_settings.total_gems_available);
+                "Gems: %d/%d", gems, g_gamestate_ap_settings.total_gems_available);
 
             textprintf(pWnd, txt_x_base, txt_y_base+40, 1.0f, TopLeft, COLOR_WHITE, true,
-                "(%d Required)",
-                g_gamestate_ap_settings.total_gems_in_logic);
+                "(%d Required)", g_gamestate_ap_settings.total_gems_in_logic);
         }
     }
 }

@@ -107,6 +107,9 @@ SE_MapList__m_gNumMaps = 0x804cb608;
 start_map_index = 0x8045AB00;
 SE_MapList__FindMap = 0x80233044;
 
+/* map_minigame.h */
+classSEMap_MiniGame = 0x803cc500;
+
 /* player.h */
 gpPlayer = 0x804CB35C;
 gpPlayerItem = 0x804CB360;
