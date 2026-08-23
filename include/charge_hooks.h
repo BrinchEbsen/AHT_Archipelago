@@ -8,5 +8,7 @@
 
 Bool charge_XSEItemHandler_Player__ButtonDown_PreCallHook(void* self, Buttons button);
 Bool charge_XSEItemHandler_Player__ButtonPressed_PreCallHook(void* self, Buttons button);
+Bool paddle_XSEItemHandler_Player__ButtonDown_PreCallHook(void* self, Buttons button);
+bool charge_XSEItemHandler_PlayerCheckModeChange_PreCallHook(void* self, u32 NewAnimMode);
 
 #endif /* CHARGE_HOOKS_H */

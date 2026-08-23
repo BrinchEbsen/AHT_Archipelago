@@ -192,7 +192,8 @@ extern Bool XSEItemHandler_Player__ButtonDown(void* self, Buttons button);
 extern Bool XSEItemHandler_Player__ButtonPressed(void* self, Buttons button);
 extern void XSEItemHandler_Player__SetMode(void* self, PlayerModes mode, int force, int params);
 extern int XSEItemHandler_Player__InitialiseStart(void* self);
-Bool XSEItemHandler_Player__SetShoppingMode(void* self, Bool onoff);
+extern Bool XSEItemHandler_Player__SetShoppingMode(void* self, Bool onoff);
+extern bool XSEItemHandler_Player__CheckModeChange(void* self, u32 NewAnimMode);
 
 #define XSEItemHandler_Player__M_PLAYERTYPE(self) OFFSET_VAL(Players, self, 0x578)
 #define XSEItemHandler_Player__M_PLAYERSTATEFLAGS(self) OFFSET_VAL(PStateFlags, self, 0x580)
