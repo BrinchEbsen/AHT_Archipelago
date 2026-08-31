@@ -513,10 +513,11 @@
             "./src/gadget_hooks.c",
             "./src/boss_hooks.c",
             "./src/text_hooks.c",
-            "./src/trigger_hooks.c"
+            "./src/trigger_hooks.c",
+            "./src/ap_notification.c"
           ],
           "memory_address": "80296618",
-          "size": "7A00",
+          "size": "7BC4",
           "injection_file": "",
           "injection_file_address": "",
           "auto_calculate_injection_file_address": false,
@@ -552,10 +553,10 @@
         {
           "name": "EXGeoViewerWnd_Overwrite_2",
           "code_files": [
-            "./src/ap_notification.c"
+            "./src/ap_notification.data.c"
           ],
-          "memory_address": "8029E018",
-          "size": "3CC",
+          "memory_address": "8029E1DC",
+          "size": "208",
           "injection_file": "",
           "injection_file_address": "",
           "auto_calculate_injection_file_address": false,

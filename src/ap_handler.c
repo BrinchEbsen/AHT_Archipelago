@@ -559,9 +559,9 @@ void print_interface_addresses()
     PRINTF("-----\nGAMESTATE AREA:\n");
     print_apsettings_addresses(&g_gamestate_ap_settings);
     PRINTF("-----\nNOTIFICATION:\n");
-    PRINTF("RGBA ap_notification_color: %x\n", &ap_notification_color);
-    PRINTF("u32 ap_notification_timer: %x\n", &ap_notification_timer);
-    PRINTF("char[%d] ap_notification_text_buffer: %x\n", AP_NOTIFICATION_TEXT_BUFFER_SIZE, &ap_notification_text_buffer);
+    PRINTF("RGBA color: %x\n", &notif_data.color);
+    PRINTF("u32 timer: %x\n", &notif_data.timer);
+    PRINTF("wchar16[%d] text_buffer: %x\n", AP_NOTIFICATION_TEXT_BUFFER_SIZE, &notif_data.text_buffer);
     PRINTF("-----\n");
 }
 
