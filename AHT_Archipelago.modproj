@@ -425,7 +425,7 @@
       "extracted_game_folder": "",
       "main_executable": "Start.dol",
       "source_path": "",
-      "compiler_flags": "-O2 -fno-inline -Werror -I include/ingame_stdlib/ -I include/ex/ -I include/se/ -I CONFIG",
+      "compiler_flags": "-O2 -fno-inline -Werror -I include/ingame_stdlib/ -I include/ex/ -I include/se/ -I include/CONFIG",
       "is_single_file_mode": false,
       "single_file_path": null,
       "memory_only_mode": true,
