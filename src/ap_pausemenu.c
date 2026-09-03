@@ -141,7 +141,7 @@ StatAbilityEntry stat_ability_entries[] = {
     },
     {
         .str = "Pole Spin",
-        .flag = ABILITY_HIT_POINT_UPGRADE
+        .flag = ABILITY_POLE_SPIN
     },
     {
         .str = "Health Refill",
