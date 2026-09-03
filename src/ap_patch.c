@@ -105,6 +105,8 @@ APSettings g_patch_ap_settings = {
     .ut_enabled = false,
     #endif
 
+    .trap = 0,
+
     // SHOP ITEMS
     .xls_shop_sheetcount_ALWAYS_1 = 1,
     .xls_shop_sheet_offset_ALWAYS_4 = 4,

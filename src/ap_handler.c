@@ -19,6 +19,7 @@
 #include <ap_version.h>
 #include <ap_triginfo.h>
 #include <ap_pausemenu.h>
+#include <ap_trap.h>
 
 #if AP_DEBUG_ADD_REMOVE_SHOP_ITEMS!=0
 void dbg_add_shop_item();
@@ -117,6 +118,8 @@ void ap_gamestate_update()
     }
     
     ap_deathlink_update();
+
+    ap_trap_update();
 
     ap_update_realm_access();
 
@@ -515,6 +518,7 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("int total_gems_in_logic: %x\n", &psettings->total_gems_in_logic);
     PRINTF("int total_gems_available: %x\n", &psettings->total_gems_available);
     PRINTF("bool ut_enabled: %x\n", &psettings->ut_enabled);
+    PRINTF("u8 trap: %d\n", &psettings->trap);
     PRINTF("int xls_shop_sheetcount_ALWAYS_1: %x\n", &psettings->xls_shop_sheetcount_ALWAYS_1);
     PRINTF("int xls_shop_sheet_offset_ALWAYS_4: %x\n", &psettings->xls_shop_sheet_offset_ALWAYS_4);
     PRINTF("int xls_shop_rowcount: %x\n", &psettings->xls_shop_rowcount);

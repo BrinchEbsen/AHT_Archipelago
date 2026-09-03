@@ -56,6 +56,13 @@ typedef enum DeathLinkReason
     /* 27 */ DLReason_Turret_R4         // Turret minigame fail (realm 4)
 } DeathLinkReason;
 
+typedef enum TrapType
+{
+    TrapType_MoneyBagsSpamCall,     // 1
+    TrapType_ReversedControls,      // 2
+    TrapType_NUM
+} TrapType;
+
 #define TELEPORT_PASS_PRICE 0
 
 typedef struct APSettings_TextEntry
@@ -125,6 +132,8 @@ typedef struct APSettings {
     int total_gems_available;
 
     bool ut_enabled;
+
+    u8 trap;
 
     // Number of datasheets in this spreadsheet.
     // GUI_Shop only has 1 datasheet.

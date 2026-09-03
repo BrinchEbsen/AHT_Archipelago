@@ -10,12 +10,13 @@
 // ---------------------------------------------------- OPTIONS (GENERAL) ----------------------------------
 #define _build_config_AP_VERSION_NUMBER_MAJOR           15      // Version number (major).
 #define _build_config_AP_VERSION_NUMBER_MINOR           0       // Version number (minor).
-#define _build_config_AP_DEBUG_ENABLE                   0       // Enable debug options (DISABLE FOR RELEASE!).
+#define _build_config_AP_DEBUG_ENABLE                   1       // Enable debug options (DISABLE FOR RELEASE!).
 // ---------------------------------------------------- OPTIONS (DEBUG) ------------------------------------
 #define _build_config_AP_DEBUG_QUICK_START              1       // Patch is automatically written to and game will start with some abilities unlocked.
 #define _build_config_AP_DEBUG_ADD_REMOVE_SHOP_ITEMS    0       // B+right to append dummy shop item to list, B+left to remove shop item.
 #define _build_config_AP_DEBUG_NOTIFICATION             0       // Dpad down to display test notification.
 #define _build_config_AP_DEBUG_DEATHLINK                0       // B+dpad to trigger deathlink events, info printed to the screen.
+#define _build_config_AP_DEBUG_TRAPS                    1       // 
 // ---------------------------------------------------------------------------------------------------------
 
 
@@ -44,6 +45,9 @@
 #ifndef AP_DEBUG_DEATHLINK
 #define AP_DEBUG_DEATHLINK _build_config_AP_DEBUG_DEATHLINK
 #endif /* AP_DEBUG_DEATHLINK */
+#ifndef AP_DEBUG_TRAPS
+#define AP_DEBUG_TRAPS _build_config_AP_DEBUG_TRAPS
+#endif /* AP_DEBUG_TRAPS */
 #else /* AP_DEBUG_ENABLE != 0 */
 #ifndef AP_DEBUG_QUICK_START
 #define AP_DEBUG_QUICK_START 0
@@ -57,6 +61,9 @@
 #ifndef AP_DEBUG_DEATHLINK
 #define AP_DEBUG_DEATHLINK 0
 #endif /* AP_DEBUG_DEATHLINK */
+#ifndef AP_DEBUG_TRAPS
+#define AP_DEBUG_TRAPS 0
+#endif /* AP_DEBUG_TRAPS */
 #endif /* AP_DEBUG_ENABLE != 0 */
 
 #endif /* AP_BUILD_CONFIG_H */

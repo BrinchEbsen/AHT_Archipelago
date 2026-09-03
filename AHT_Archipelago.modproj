@@ -514,7 +514,8 @@
             "./src/boss_hooks.c",
             "./src/text_hooks.c",
             "./src/trigger_hooks.c",
-            "./src/ap_notification.c"
+            "./src/ap_notification.c",
+            "./src/ap_trap.c"
           ],
           "memory_address": "80296618",
           "size": "7BC4",
