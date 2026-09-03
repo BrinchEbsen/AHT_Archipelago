@@ -11,6 +11,7 @@
 #define AP_SETTINGS_INIT_MAGICVALUE 0x45424245 // 'EBBE' in ASCII :)
 
 #define SHOP_NUM_VANILLA_ENTRIES 1
+#define SHOP_NUM_CUSTOM_ENTRIES 60
 #define SHOP_TOTAL_NUM_ENTRIES 61
 // Base hashcode for custom shop text elements.
 #define AP_TEXT_ENTRY_HASHCODE_BASE 0x28010000
@@ -140,7 +141,7 @@ typedef struct APSettings {
     // The entries in the datasheet, each representing a shop item.
     xlsShoppingItem xls_shop_items[SHOP_TOTAL_NUM_ENTRIES];
 
-    APSettings_TextEntry shop_text[SHOP_TOTAL_NUM_ENTRIES - SHOP_NUM_VANILLA_ENTRIES];
+    APSettings_TextEntry shop_text[SHOP_NUM_CUSTOM_ENTRIES];
 } APSettings;
 
 // The gamestate area settings. These are used while the game is being played.

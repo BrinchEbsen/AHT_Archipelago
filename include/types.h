@@ -6,6 +6,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include <stdarg.h>
+#include <build_config.h>
 
 // ==================== Type Definitions ====================
 

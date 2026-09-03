@@ -1,0 +1,41 @@
+{
+    "general": [
+        {
+            "name": "AP_VERSION_NUMBER_MAJOR",
+            "description": "Version number (major).",
+            "default_value": 0
+        },
+        {
+            "name": "AP_VERSION_NUMBER_MINOR",
+            "description": "Version number (minor).",
+            "default_value": 0
+        },
+        {
+            "name": "AP_DEBUG_ENABLE",
+            "description": "Enable debug options (DISABLE FOR RELEASE!).",
+            "default_value": 0
+        }
+    ],
+    "debug": [
+        {
+            "name": "AP_DEBUG_QUICK_START",
+            "description": "Patch is automatically written to and game will start with some abilities unlocked.",
+            "default_value": 0
+        },
+        {
+            "name": "AP_DEBUG_ADD_REMOVE_SHOP_ITEMS",
+            "description": "B+right to append dummy shop item to list, B+left to remove shop item.",
+            "default_value": 0
+        },
+        {
+            "name": "AP_DEBUG_NOTIFICATION",
+            "description": "Dpad down to display test notification.",
+            "default_value": 0
+        },
+        {
+            "name": "AP_DEBUG_DEATHLINK",
+            "description": "B+dpad to trigger deathlink events, info printed to the screen.",
+            "default_value": 0
+        }
+    ]
+}

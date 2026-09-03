@@ -23,7 +23,7 @@ APSettings g_patch_ap_settings = {
     .randomize_shop = false,
     .use_key_rings = false,
 
-    #ifdef AP_QUICK_START
+    #if AP_DEBUG_QUICK_START!=0
     .skip_cutscene_button = true,
     .instant_teleport_mode = AP_TELEPORT_MODE_SHOP_ANYWHERE,
     .disable_popups = true,
@@ -85,7 +85,7 @@ APSettings g_patch_ap_settings = {
 
     .shop_unlock_mode = false,
 
-    #ifdef AP_QUICK_START
+    #if AP_DEBUG_QUICK_START!=0
     .teleport_anywhere = true,
     .unlock_all_shops = true,
     #else
@@ -99,7 +99,7 @@ APSettings g_patch_ap_settings = {
     .total_gems_in_logic = 0,
     .total_gems_available = 0,
 
-    #ifdef AP_QUICK_START
+    #if AP_DEBUG_QUICK_START!=0
     .ut_enabled = true,
     #else
     .ut_enabled = false,

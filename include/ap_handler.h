@@ -41,10 +41,6 @@ void ap_update();
 // Update routine for the game's state.
 void ap_gamestate_update();
 
-void dbg_add_shop_item();
-
-void dbg_remove_shop_item();
-
 // Hooks into the drawing routine for drawing text, icons, etc.
 void ap_draw(void* pWnd);
 

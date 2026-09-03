@@ -20,35 +20,9 @@
 #include <ap_triginfo.h>
 #include <ap_pausemenu.h>
 
-// #define AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
-// #define AP_DEBUG_NOTIFICATION
-// #define AP_DEBUG_DEATHLINK
-// #define AP_DEBUG_COLLECTABLES
-// #define AP_DEBUG_TRIGINFO
-
-#ifdef AP_QUICK_START
-#pragma message ( "COMPILING WITH AP_QUICK_START, DO NOT RELEASE" )
-#endif
-
-#ifdef AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
-#pragma message ( "COMPILING WITH AP_DEBUG_ADD_REMOVE_SHOP_ITEMS, DO NOT RELEASE" )
-#endif
-
-#ifdef AP_DEBUG_NOTIFICATION
-#pragma message ( "COMPILING WITH AP_DEBUG_NOTIFICATION, DO NOT RELEASE" )
-#endif
-
-#ifdef AP_DEBUG_DEATHLINK
-#pragma message ( "COMPILING WITH AP_DEBUG_DEATHLINK, DO NOT RELEASE" )
-#endif
-
-#ifdef AP_DEBUG_COLLECTABLES
-#pragma message ( "COMPILING WITH AP_DEBUG_COLLECTABLES, DO NOT RELEASE" )
-#endif
-
-#ifdef AP_DEBUG_TRIGINFO
-void dbg_print_shop_triginfos();
-#pragma message ( "COMPILING WITH AP_DEBUG_TRIGINFO, DO NOT RELEASE" )
+#if AP_DEBUG_ADD_REMOVE_SHOP_ITEMS!=0
+void dbg_add_shop_item();
+void dbg_remove_shop_item();
 #endif
 
 MapOrderInfo realm_teleporter_maporderinfo[] = {
@@ -84,27 +58,6 @@ void ap_update()
     ONCE {
         print_interface_addresses();
     }
-
-    #ifdef AP_DEBUG_COLLECTABLES
-    // Prints all locations to the log
-    if (g_pad_button_state(PAD_BUTTON_B)) {
-        if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
-            for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
-                APCollectable* coll = &g_ap_collectables[i];
-                switch (coll->union_type) {
-                    case APC_Grabbable:
-                        PRINTF("[%d]-G | m: %d, t: %d\n",
-                            i, coll->grabbable.map_index, coll->grabbable.trigger_index);
-                        break;
-                    case APC_Objective:
-                        PRINTF("[%d]-O | m: %d, t: %d, h: %x\n",
-                            i, coll->objective.map_index, coll->objective.trigger_index, coll->objective.objective);
-                        break;
-                }
-            }
-        }
-    }
-    #endif
 }
 
 void ap_gamestate_update()
@@ -176,7 +129,7 @@ void ap_gamestate_update()
         handle_instant_shop_sequence();
     }
 
-    #ifdef AP_DEBUG_DEATHLINK
+    #if AP_DEBUG_DEATHLINK!=0
     if (g_pad_button_state(PAD_BUTTON_B)) {
         if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
             g_gamestate_ap_settings.deathlink_ingoing = AP_DEATHLINK_MODE_SHIELDED;
@@ -193,7 +146,7 @@ void ap_gamestate_update()
     }
     #endif
 
-    #ifdef AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
+    #if AP_DEBUG_ADD_REMOVE_SHOP_ITEMS!=0
     if (g_pad_button_state(PAD_BUTTON_B)) {
         if (g_pad_button_edge_down(PAD_BUTTON_DPAD_RIGHT)) {
             dbg_add_shop_item();
@@ -203,21 +156,15 @@ void ap_gamestate_update()
     }
     #endif
 
-    #ifdef AP_DEBUG_NOTIFICATION
+    #if AP_DEBUG_NOTIFICATION!=0
     if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
         ap_set_notification(60*5, COLOR_WHITE,
             u"Test notification! The notification that tests things! Something testy happened, probably!");
     }
     #endif
-
-    #ifdef AP_DEBUG_TRIGINFO
-    if (g_pad_button_edge_down(PAD_BUTTON_Z)) {
-        dbg_print_shop_triginfos();
-    }
-    #endif
 }
 
-#ifdef AP_DEBUG_ADD_REMOVE_SHOP_ITEMS
+#if AP_DEBUG_ADD_REMOVE_SHOP_ITEMS!=0
 void dbg_add_shop_item()
 {
     int index = g_gamestate_ap_settings.xls_shop_rowcount;
@@ -263,46 +210,6 @@ void dbg_remove_shop_item()
 }
 #endif
 
-#ifdef AP_DEBUG_TRIGINFO
-void dbg_print_shop_triginfos()
-{
-    for (int i = 0; i < gGameState.m_NumTrigInfo; i++) {
-        GameStateTrigInfo* tinfo = &gGameState.m_TrigInfo[i];
-
-        if (tinfo->m_Type != Type_RestartPoint) {
-            continue;
-        }
-
-        char* ht_string;
-        if (tinfo->u.RestartPoint.HashCode == HT_StartPoint_MAINSHOP) {
-            ht_string = "HT_StartPoint_MAINSHOP";
-        } else if (tinfo->u.RestartPoint.HashCode == HT_StartPoint_SHOP) {
-            ht_string = "HT_StartPoint_SHOP";
-        } else {
-            continue;
-        }
-
-        PRINTF("{\n");
-        PRINTF("    .m_MapIndex = %d,\n", tinfo->m_MapIndex);
-        PRINTF("    .m_TrigIndex = %d,\n", tinfo->m_TrigIndex);
-        PRINTF("    .m_XYZ = {\n");
-        PRINTF("        .x = %ff,\n", tinfo->m_XYZ.x);
-        PRINTF("        .y = %ff,\n", tinfo->m_XYZ.y);
-        PRINTF("        .z = %ff\n", tinfo->m_XYZ.z);
-        PRINTF("    },\n");
-        PRINTF("    .m_Type = Type_RestartPoint,\n");
-        PRINTF("    .u = {\n");
-        PRINTF("        .RestartPoint = {\n");
-        PRINTF("            .HasVisited = 1,\n");
-        PRINTF("            .HashCode = %s,\n", ht_string);
-        PRINTF("            .NameTextHashCode = 0x%x,\n", tinfo->u.RestartPoint.NameTextHashCode);
-        PRINTF("        }\n");
-        PRINTF("    }\n");
-        PRINTF("},\n");
-    }
-}
-#endif
-
 void ap_draw(void* pWnd)
 {
     if ((gGameLoop.m_State == Running) && !gGameLoop.m_GameIsPaused)
@@ -320,7 +227,7 @@ void ap_draw(void* pWnd)
             TEXT_PRINT_COLOR(pWnd, 0, 0, COLOR_WHITE, "~X Skip");
         }
 
-        #ifdef AP_DEBUG_DEATHLINK
+        #if AP_DEBUG_DEATHLINK!=0
         TEXT_PRINT_ALIGN_COLOR_F(pWnd, 0, 0, CentreLeft, COLOR_LIGHT_RED,
             "DL in: %d\nDL out: %d\nign: %d",
             g_gamestate_ap_settings.deathlink_ingoing,
@@ -368,7 +275,7 @@ void ap_init_gamestate()
     memcpy(&g_gamestate_ap_settings, &g_patch_ap_settings, sizeof(APSettings));
     PRINTF("Copied settings from injected patch.\n");
 
-    #ifdef AP_QUICK_START
+    #if AP_DEBUG_QUICK_START!=0
     gGameState.m_PlayerState.m_AbilityFlags |= (
         ABILITY_AP_FIREBREATH |
         ABILITY_AP_GLIDE |
