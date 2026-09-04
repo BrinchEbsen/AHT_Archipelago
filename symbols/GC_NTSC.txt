@@ -4,6 +4,7 @@ OSReport = 0x8026226C;
 /* pad.h */
 EXBaseGamePad__m_pGamePad = 0x804cba94;
 g_PadNum = 0x804cb660;
+EXGamePad__Update = 0x8030a364;
 
 /* sfx.h */
 PlaySFX = 0x8024bc58;
@@ -40,6 +41,16 @@ GUI_Base__v_Draw = 0x801a67ac;
 /* exmem.h */
 _EXAlloc = 0x802caf50;
 EXFree = 0x802cb080;
+
+/* exrand.h */
+g_EXRandClass = 0x804cc854;
+EXRandClass__Rand32 = 0x802f50a8;
+EXRandClass__Randf = 0x802f50e0;
+
+/* exitemenv.h */
+EXItemEnv__m_pTheItemEnv = 0x804cbb4c;
+EXItemEnv__StartMusic = 0x802bd548;
+XSEItemEnv__StartMusic__LockedFlag = 0x804cb650;
 
 /* ap_handler.h */
 XSEItemHandler_StartPoint__Update = 0x80105fe4;

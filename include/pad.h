@@ -30,6 +30,26 @@
 #define PAD_NUM_BUTTONS 24
 #define PAD_NUM_PORTS 4
 
+typedef enum AnalogChan {
+    LAX=0,
+    LAY=1,
+    RAX=2,
+    RAY=3,
+    PLDUp=4,
+    PLDDown=5,
+    PLDLeft=6,
+    PLDRight=7,
+    PBtn1=8,
+    PBtn2=9,
+    PBtn3=10,
+    PBtn4=11,
+    ALS1=12,
+    ALS2=13,
+    ARS1=14,
+    ARS2=15,
+    ANALOGCOUNT=16
+} AnalogChan;
+
 typedef struct EXPadActionMap {
     u32 ButtonBits;
     u32 ActionBits;
@@ -73,6 +93,11 @@ extern EXBaseGamePad* EXBaseGamePad__m_pGamePad;
 
 /// @brief The global current pad index.
 extern s32 g_PadNum;
+
+/// @brief Reverse the x-axis of the left and right analog sticks after polling.
+extern bool pad_reverse_analog;
+extern void EXGamePad__Update(EXBaseGamePad* self);
+void EXGamePad__Update_PreCallHook(EXBaseGamePad* self);
 
 // A bunch of these pad functions are commented out as they weren't needed and took up space.
 

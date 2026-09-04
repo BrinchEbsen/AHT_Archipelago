@@ -134,6 +134,7 @@ typedef struct APSettings {
     bool ut_enabled;
 
     u8 trap;
+    s32 trap_data;
 
     // Number of datasheets in this spreadsheet.
     // GUI_Shop only has 1 datasheet.

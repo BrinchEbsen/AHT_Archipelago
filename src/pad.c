@@ -1,5 +1,18 @@
 #include "pad.h"
 
+bool pad_reverse_analog = false;
+
+void EXGamePad__Update_PreCallHook(EXBaseGamePad* self)
+{
+    EXGamePad__Update(self);
+
+    if (pad_reverse_analog)
+    {
+        self->m_AnalogChan[g_PadNum][LAX]   *= -1.0f;
+        self->m_AnalogChan[g_PadNum][RAX]   *= -1.0f;
+    }
+}
+
 /*
 int button_state_counts[PAD_NUM_BUTTONS * PAD_NUM_PORTS];
 int button_state_timers[PAD_NUM_BUTTONS * PAD_NUM_PORTS];

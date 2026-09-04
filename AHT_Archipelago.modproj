@@ -515,7 +515,8 @@
             "./src/text_hooks.c",
             "./src/trigger_hooks.c",
             "./src/ap_notification.c",
-            "./src/ap_trap.c"
+            "./src/ap_trap.c",
+            "./src/ex/exitemenv.c"
           ],
           "memory_address": "80296618",
           "size": "7BC4",
@@ -1225,6 +1226,32 @@
             "./asm/GC_NTSC/disable_maps_setting_selectable_bit.s"
           ],
           "memory_address": "802321d8",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "XSEItemEnv__StartMusic_ReImplHook",
+          "code_files": [
+            "./asm/GC_NTSC/XSEItemEnv__StartMusic_ReImplHook.s"
+          ],
+          "memory_address": "80241570",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "EXGamePad__Update_PreCallHook",
+          "code_files": [
+            "./asm/GC_NTSC/EXGamePad__Update_PreCallHook.s"
+          ],
+          "memory_address": "802752d8",
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",

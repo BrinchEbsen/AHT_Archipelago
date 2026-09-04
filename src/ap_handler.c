@@ -519,6 +519,7 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("int total_gems_available: %x\n", &psettings->total_gems_available);
     PRINTF("bool ut_enabled: %x\n", &psettings->ut_enabled);
     PRINTF("u8 trap: %d\n", &psettings->trap);
+    PRINTF("u32 trap_data: %d\n", &psettings->trap_data);
     PRINTF("int xls_shop_sheetcount_ALWAYS_1: %x\n", &psettings->xls_shop_sheetcount_ALWAYS_1);
     PRINTF("int xls_shop_sheet_offset_ALWAYS_4: %x\n", &psettings->xls_shop_sheet_offset_ALWAYS_4);
     PRINTF("int xls_shop_rowcount: %x\n", &psettings->xls_shop_rowcount);
