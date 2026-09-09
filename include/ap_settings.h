@@ -77,80 +77,167 @@ typedef struct APSettings_TextEntry
  * https://github.com/BrinchEbsen/AHT_Archipelago/wiki
  */
 
+/// @brief Struct holding the settings and AP-related state of an AP playthrough.
+/// 
+/// Held in the patch area (`g_patch_ap_settings`) for initial settings written by the client.
+/// 
+/// Held in the gamestate area (`g_gamestate_ap_settings`) for the state of the current save.
 typedef struct APSettings {
+
+    /// @brief One long bitfield for every location in the multiworld.
+    /// Every element is stored as two bits. The first is 1 if the item
+    /// has been collected, and the second is 1 if it's deemed "reachable".
     u8 location_bitfield[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];
+
+    /// @brief A bitfield for which of the 14 keyrings have been obtained in this save.
     u8 keyring_bitfield[AP_SETTINGS_KEYRINGS_BITFIELD_SIZE];
+
+    /// @brief A bitfield for which of the 37 shop pads are enabled in this save.
     u8 shoppad_bitfield[AP_SETTINGS_SHOPPAD_BITFIELD_SIZE];
+
+    /// @brief A value used by the client to keep track of the amount of gem packs obtained on this savefile.
     u8 num_gem_packs_received;
+
+    /// @brief A value used by the client to keep track of the amount of lock picks obtained on this savefile.
     u8 num_lock_picks_received;
+
+    /// @brief A value used by the client to keep track of the amount of fire bombs obtained on this savefile.
     u8 num_fire_ammo_received;
+
+    /// @brief A value used by the client to keep track of the amount of electric missiles obtained on this savefile.
     u8 num_electric_ammo_received;
+
+    /// @brief A value used by the client to keep track of the amount of water bombs obtained on this savefile.
     u8 num_water_ammo_received;
+
+    /// @brief A value used by the client to keep track of the amount of ice missiles obtained on this savefile.
     u8 num_ice_ammo_received;
+
+    /// @brief The ingoing deathlink signal. Set to 1 or 2 by the client to indicate a deathlink has been
+    /// received and the game should kill the player.
     u8 deathlink_ingoing;
+
+    /// @brief The outgoing deathlink signal. Set to a non-zero value by the game if the player has died enough times.
     u8 deathlink_outgoing;
+
+    /// @brief The amount of times the player has to die before the outgoing signal is set.
     u8 deathlink_deaths_before_send;
+
+    /// @brief Counter to keep track of the number of deaths the player has had since the last outgoing deathlink.
     u8 deathlink_death_counter;
+
+    /// @brief Give the player a butterfly jar every time they die and respawn.
     bool infinite_butterfly_jar;
+
+    /// @brief Turn on the double gem powerup permanently.
     bool infinite_double_gem;
+    
+    /// @brief Whether fireworks are randomized.
     bool fireworks_are_randomized;
+
+    /// @brief Whether the shop is randomized.
     bool randomize_shop;
+
+    /// @brief Whether key rings are used.
     bool use_key_rings;
 
+    /// @brief Whether the cutscenes can be skipped with a button press.
     bool skip_cutscene_button;
+
+    /// @brief The type of convenience option to present on the pause menu.
+    ///
+    /// - 0: None
+    ///
+    /// - 1: Teleport to HUB
+    ///
+    /// - 2: Shop anywhere
     u8 instant_teleport_mode;
+
+    /// @brief Disable the tutorial pop-ups (always enabled).
     bool disable_popups;
+
+    /// @brief Teleport the player to the top/bottom of the elevators when the player interacts with them.
     bool instant_elevators;
 
+    /// @brief The realm the player should start this save in.
     u8 starting_realm;
+
+    /// @brief Which realms the player has access to from the realm teleporter.
     bool realm_access[4];
 
+    /// @brief Whether the patch struct has been written to by the client, and it's safe to copy to gamestate.
     bool patch_been_written_to;
+
+    /// @brief The lower 4 bytes of the multiworld seed, to check for mismatches.
     u32 mw_seed;
 
-    // For detecting whether the gamestate should initialize.
-    // Always the ASCII value "EBBE" when initialized.
+    /// @brief For detecting whether the gamestate should initialize. Always the ASCII value "EBBE" when initialized.
     u32 init;
 
+    /// @brief The Dark Gem costs for the barriers for each of the 4 bosses.
     u8 boss_costs[4];
+
+    /// @brief The Light Gem costs for each of the 4 light gem doors.
     u8 lg_door_costs[4];
+
+    /// @brief The Light Gem cost of the ball gadget.
     u8 ball_gadget_cost;
+
+    /// @brief The Light Gem cost of the invincibility gadget.
     u8 invincibility_cost;
+
+    /// @brief The Light Gem cost of the supercharge gadget.
     u8 supercharge_cost;
+
+    /// @brief Whether the "boss easy mode" should be set for each of the 4 bosses.
     bool boss_easy_mode[4];
 
+    /// @brief Set the shop items to progressively "unlock" by gem count instead of being bought.
     bool shop_unlock_mode;
 
+    /// @brief Make the shop pad teleport ticket not limited to within the realm the player is in.
     bool teleport_anywhere;
 
+    /// @brief Immediately unlock every shop pad teleport location from the start of the game.
     bool unlock_all_shops;
 
+    /// @brief Disables the behavior where the game unlocks a shop pad for teleporting when you get close to it.
     bool disable_shop_pad_proximity_activate;
+    
+    /// @brief Disables the behavior where a realm's main shop is always selectable on the shop teleport menu.
     bool disable_main_shop_always_available;
-
+    
+    /// @brief The number of gems the player is expected to have logic-wise.
     int total_gems_in_logic;
+    
+    /// @brief The total number of gems the player has access to, logic-wise.
     int total_gems_available;
 
+    /// @brief Whether the client has access to UniversalTracker.
     bool ut_enabled;
 
+    /// @brief Which trap to initiate.
     u8 trap;
+    
+    /// @brief A generic slot for any parameters the trap signaled in `trap` might need.
     s32 trap_data;
 
-    // Number of datasheets in this spreadsheet.
-    // GUI_Shop only has 1 datasheet.
+    /// @brief Number of datasheets in this spreadsheet.
+    /// GUI_Shop only has 1 datasheet.
     int xls_shop_sheetcount_ALWAYS_1;
 
-    // Offset from here until the datasheet.
-    // This will always be 4 bytes.
+    /// @brief Offset from here until the datasheet.
+    /// This will always be 4 bytes.
     int xls_shop_sheet_offset_ALWAYS_4;
 
-    // Number of rows in the datasheet.
-    // This is the number of items in the shop (15 in vanilla).
+    /// @brief Number of rows in the datasheet.
+    /// This is the number of items in the shop (15 in vanilla).
     int xls_shop_rowcount;
 
-    // The entries in the datasheet, each representing a shop item.
+    /// @brief The entries in the datasheet, each representing a shop item.
     xlsShoppingItem xls_shop_items[SHOP_TOTAL_NUM_ENTRIES];
 
+    /// @brief Properties and text of the custom shop items in `xls_shop_items`.
     APSettings_TextEntry shop_text[SHOP_NUM_CUSTOM_ENTRIES];
 } APSettings;
 
