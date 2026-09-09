@@ -16,6 +16,7 @@ for entry in os.scandir("arrays"):
 
 in_dicts = dict(sorted(in_dicts.items()))
 
+curr_index = 0
 for region_name, entries in in_dicts.items():
     # Remove the sorting numbers and replace underscores
     cleaned_region_name = region_name[3:].replace("_", " ")
@@ -28,7 +29,8 @@ for region_name, entries in in_dicts.items():
             assert isinstance(m_comment, str)
             output_str += "\t// "+m_comment+"\n"
 
-        output_str += "\t{\n"
+        output_str += "\t{ // ["+str(curr_index).rjust(3)+"]\n"
+        curr_index += 1
 
         m_type = entry["type"]
         assert isinstance(m_type, str)
