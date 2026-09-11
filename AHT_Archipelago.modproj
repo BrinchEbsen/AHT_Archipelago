@@ -1133,7 +1133,7 @@
         {
           "name": "disable_title_trailer",
           "code_files": [
-            "./asm/GC/disable_title_trailer.s"
+            "./asm/GC/NTSC/disable_title_trailer.s"
           ],
           "memory_address": "801f0d9c",
           "size": "0",
