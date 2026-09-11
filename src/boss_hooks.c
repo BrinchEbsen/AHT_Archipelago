@@ -57,12 +57,24 @@ void ap_setup_boss_damage() {
     // Assembly patches for Mecha Red
 
     if (g_gamestate_ap_settings.boss_easy_mode[3]) {
+#if defined(GC_NTSC)
         *((u32*)0x8003b314) = 0x3ba00024; // li r29, 36
         *((u32*)0x8003b358) = 0x3ba00009; // li r29, 9
         *((u32*)0x8003b384) = 0x3ba00006; // li r29, 6
+#elif defined(GC_PAL)
+        *((u32*)0x8003b340) = 0x3ba00024; // li r29, 36
+        *((u32*)0x8003b384) = 0x3ba00009; // li r29, 9
+        *((u32*)0x8003b3b0) = 0x3ba00006; // li r29, 6
+#endif
     } else {
+#if defined(GC_NTSC)
         *((u32*)0x8003b314) = 0x3ba0000c; // li r29, 12
         *((u32*)0x8003b358) = 0x3ba00003; // li r29, 3
         *((u32*)0x8003b384) = 0x3ba00002; // li r29, 2
+#elif defined(GC_PAL)
+        *((u32*)0x8003b340) = 0x3ba0000c; // li r29, 12
+        *((u32*)0x8003b384) = 0x3ba00003; // li r29, 3
+        *((u32*)0x8003b3b0) = 0x3ba00002; // li r29, 2
+#endif
     }
 }

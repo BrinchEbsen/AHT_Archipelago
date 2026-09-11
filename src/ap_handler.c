@@ -375,19 +375,37 @@ void ap_update_realm_access()
 
 void ap_update_teleport_anywhere() {
     if (!g_gamestate_ap_settings.teleport_anywhere) {
+#if defined(GC_NTSC)
         // PrevSelectableRestart - Only if RealmID matches current
         *((u32*)0x801aecac) = 0x7c7f1b78; // mr r31, r3
         // NextSelectableRestart - Only if RealmID matches current
         *((u32*)0x801aeb8c) = 0x7c7f1b78; // mr r31, r3
         // GetNumBuyableShopPads - Get map realm to compare with
         *((u32*)0x801af128) = 0x801f008c; // lwz r0, 0x008C (r31)
+#elif defined(GC_PAL)
+        // PrevSelectableRestart - Only if RealmID matches current
+        *((u32*)0x801af2c4) = 0x7c7f1b78; // mr r31, r3
+        // NextSelectableRestart - Only if RealmID matches current
+        *((u32*)0x801af1a4) = 0x7c7f1b78; // mr r31, r3
+        // GetNumBuyableShopPads - Get map realm to compare with
+        *((u32*)0x801af740) = 0x801f008c; // lwz r0, 0x008C (r31)
+#endif
     } else {
+#if defined(GC_NTSC)
         // PrevSelectableRestart - Assume RealmID matches
         *((u32*)0x801aecac) = 0x3be00001; // li r31, 1
         // NextSelectableRestart - Assume RealmID matches
         *((u32*)0x801aeb8c) = 0x3be00001; // li r31, 1
         // GetNumBuyableShopPads - Assume RealmID matches
         *((u32*)0x801af128) = 0x7f20cb78; // mr r0, r25
+#elif defined(GC_PAL)
+        // PrevSelectableRestart - Assume RealmID matches
+        *((u32*)0x801af2c4) = 0x3be00001; // li r31, 1
+        // NextSelectableRestart - Assume RealmID matches
+        *((u32*)0x801af1a4) = 0x3be00001; // li r31, 1
+        // GetNumBuyableShopPads - Assume RealmID matches
+        *((u32*)0x801af740) = 0x7f20cb78; // mr r0, r25
+#endif
     }
 }
 
