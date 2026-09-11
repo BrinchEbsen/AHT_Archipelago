@@ -1,0 +1,263 @@
+/* os.h */
+OSReport = ;
+
+/* pad.h */
+EXBaseGamePad__m_pGamePad = ;
+g_PadNum = ;
+EXGamePad__Update = ;
+
+/* sfx.h */
+PlaySFX = ;
+PlaySFX_Item = ;
+
+/* loop.h */
+SE_Loop__virtual_table = ;
+SE_Loop__CreateObject = ;
+SE_Loop__DrawStateRunning = ;
+SE_Loop__ChildListDraw = ;
+SE_Loop__Cue = ;
+SE_Loop__CueRun = ;
+SE_Loop__CueChildLoop = ;
+SE_Loop__AddDrawToXWnd = ;
+
+/* gameloop.h */
+SE_GameLoop__GoToMap = ;
+SE_GameLoop__StartGameState = ;
+SE_GameLoop__CueGameState = ;
+SE_GameLoop__GameSetPauseOn = ;
+SE_GameLoop__GameSetPauseOff = ;
+gGameLoop = ;
+
+/* gameflow.h */
+theGameFlow = ;
+SEGameFlow__v_StateRunning = ;
+
+/* gui_base.h */
+GUI_Base_virtual_table = ;
+GUI_Base__CreateObject = ;
+GUI_Base__Update = ;
+GUI_Base__v_Draw = ;
+
+/* exmem.h */
+_EXAlloc = ;
+EXFree = ;
+
+/* exrand.h */
+g_EXRandClass = ;
+EXRandClass__Rand32 = ;
+EXRandClass__Randf = ;
+
+/* exitemenv.h */
+EXItemEnv__m_pTheItemEnv = ;
+EXItemEnv__StartMusic = ;
+XSEItemEnv__StartMusic__LockedFlag = ;
+
+/* ap_handler.h */
+XSEItemHandler_StartPoint__Update = ;
+Popup__Update = ;
+
+/* ap_pausemenu.h */
+gpPanelShop = ;
+PanelShop__OpenShop = ;
+GUI_PauseMenu__v_StateRunning = ;
+GUI_PauseMenu__v_DrawStateRunning = ;
+SE_GameLoop__Teleport = ;
+
+/* ap_deathlink.h */
+XSEItemHandler_Player__TakeDamage = ;
+XSEItemHandler_BallGadget__TakeDamage = ;
+XSEItemHandler_Player__InvulnerableToAttack = ;
+
+/* ap_minimap.h */
+GUI_MiniMap__DrawRestarts = ;
+GUI_MiniMap__DrawIcon = ;
+EXGeoHeader__Texture = ;
+
+/* exdisplay.h */
+EXBaseDisplay__m_pDisplay = ;
+
+/* wnd.h */
+gpGameWnd = ;
+gpPanelWnd = ;
+gpGeoHT_File_Panel = ;
+gTextBuffer = ;
+EXBaseWnd__SelectFont = ;
+XWnd__SetText = ;
+XWnd__FontPrintW = ;
+XWnd__FontPrint = ;
+XWnd__AddDrawSELoop_Tail = ;
+XWnd__TextPrintH = ;
+XWnd__TextPrintC = ;
+XWnd__TextPrintW = ;
+XWnd__DrawGraduatedRectOutline = ;
+XWnd__DrawRect = ;
+XWnd__DrawRectOutline = ;
+XWnd__DrawSector = ;
+XWnd__DrawTextureBox = ;
+EXWnd__DrawLine = ;
+EXWnd__DrawTriFan = ;
+EXWnd__DrawTriStrip = ;
+EXWnd__SelectTriFanTexture = ;
+EXWnd__SelectSprite2DTexture = ;
+
+/* filemanager.h */
+gSEFileManager = ;
+SE_FileManager__IsGeoLoaded = ;
+SE_FileManager__GetGeoHeader = ;
+
+/* map.h */
+SE_Map__GetNumDragonEggs = ;
+SE_Map__SetNumDragonEggs = ;
+SE_Map__GetLastStartPoint = ;
+SE_Map__SetLastStartPoint = ;
+SEMap_MiniGame__SetMiniGameDie = ;
+SEMap_MiniGame__SetMiniGameFailed = ;
+GetSpyroMap = ;
+gMapList = ;
+SE_MapList__m_gNumMaps = ;
+start_map_index = ;
+SE_MapList__FindMap = ;
+
+/* map_minigame.h */
+classSEMap_MiniGame = ;
+
+/* player.h */
+gpPlayer = ;
+gpPlayerItem = ;
+XSEItemHandler_Player__ControlsLocked = ;
+XSEItemHandler_Player__ButtonDown = ;
+XSEItemHandler_Player__ButtonPressed = ;
+XSEItemHandler_Player__SetMode = ;
+XSEItemHandler_Player__InitialiseStart = ;
+XSEItemHandler_Player__SetShoppingMode = ;
+XSEItemHandler_Player__CheckModeChange = ;
+
+/* cutscene_skip.h */
+EXItemAnimator_Script__SetScriptStatus = ;
+XItemHandler_Cutscene__Update = ;
+
+/* gamestate.h */
+gGameState = ;
+SE_GameState__operatorequals = ;
+SE_GameState__FindTrigInfo = ;
+PlayerObjectives__ObjectiveIntoIndexAndBit = ;
+PlayerObjectives__ClearObjective = ;
+
+/* playerstate.h */
+PlayerState__Update = ;
+PlayerState__RestartGame = ;
+
+/* minimap_status.h */
+gMiniMapStatus = ;
+MiniMapStatus__SetBitName = ;
+
+/* collectable_hooks.h */
+LightXtal__Collected = ;
+DarkXtal__Collected = ;
+DragonEgg__Collected = ;
+MemCard_AutoSave = ;
+LockedChest__OpenLockedChest = ;
+CPU_Base__CreatedChestPickup = ;
+classLockedChest = ;
+BaseChest__ReleaseMyGems = ;
+LockedChest__IdleUpdate = ;
+FireWorks__UpdatePathPosRot = ;
+R4ZFireWorks__classR4ZFireWorks = ;
+
+/* breath_hooks.h */
+XSEItemHandler_Spyro__GetCurrentBreath = ;
+GUI_Panel__ForcePanelOn = ;
+EXSoundTag__IsPlaying = ;
+ElecBreath__PlaySound = ;
+
+/* file_select_hooks.h */
+MemCardSlotMenu__DrawSavedGameInfo = ;
+MemCardSlotMenu__v_OnSelect = ;
+TitleLoop__v_DrawStateRunning = ;
+
+/* start_gate_hooks.h */
+ScriptedGate__v_Preserve = ;
+
+/* shop_hooks.h */
+SE_SpreadSheet__OpenSpreadSheet_FileHash = ;
+GUI_ShopItem__BuyItems = ;
+GUI_ShopItem__IsAvailable = ;
+
+/* BASIC_hooks.h */
+SpyroBASIC__Update = ;
+SpyroBASIC__Init = ;
+BASIC_Main__Init = ;
+BASIC_Main__RunScript = ;
+BASIC_Main__UpdatePointers = ;
+Monitor__BASICcmd_Stall = ;
+Monitor__BASICcmd_Suicide = ;
+Monitor__BASICcmd_GetDistanceToPlayer = ;
+Monitor__BASICcmd_Zoopoo = ;
+
+/* lg_door_hooks.h */
+Switch_LightGem__GetTriggerConfig = ;
+Switch_LightGem__Update = ;
+
+/* elevator_hooks.h */
+SXI_Path__MoveAlongPath = ;
+FlippingPlatform__HandleFlip = ;
+
+/* gadget_hooks.h */
+GadgetPad__Update = ;
+
+/* boss_hooks.h */
+XSEItemHandler_GnastyGnorc__PlayerAttack = ;
+gnasty_health_subtract = ;
+XSEItemHandler_Ineptune__PlayerAttack = ;
+ineptune_health_subtract = ;
+XSEItemHandler_Red__HitByExplosion = ;
+red_health_subtract = ;
+
+/* gametext.h */
+gGameText = ;
+GameText__GetText = ;
+
+/* text_hooks.h */
+GameText__FindTextItem = ;
+
+/* trigger_hooks.h */
+EXItemAnimator_Map__GetGeoMap = ;
+SE_TriggerList__ConstructAll = ;
+
+/* igstdlib.h */
+strcasecmp = ;
+strcmp = ;
+strcpy = ;
+strlen = ;
+strncpy = ;
+strupr = ;
+strrev = ;
+strcat = ;
+strncat = ;
+strncmp = ;
+strstr = ;
+Wcscpy = ;
+memcpy = ;
+memmove = ;
+memset = ;
+memcmp = ;
+printf = ;
+vprintf = ;
+sprintf = ;
+vsprintf = ;
+
+/* igmath.h */
+acosf = ;
+asinf = ;
+atan2f = ;
+fmodf = ;
+powf = ;
+sqrtf = ;
+atanf = ;
+ceilf = ;
+cosf = ;
+fabsf = ;
+floorf = ;
+sinf = ;
+tanf = ;
+scalbnf = ;
