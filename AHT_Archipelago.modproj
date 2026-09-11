@@ -600,7 +600,7 @@
         {
           "name": "PlayerObjectives__SetObjective__ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/PlayerObjectives__SetObjective__ReImplHook.s"
+            "./asm/GC/PlayerObjectives__SetObjective__ReImplHook.s"
           ],
           "memory_address": "80066244",
           "size": "0",
@@ -613,7 +613,7 @@
         {
           "name": "SE_BitHeap__Allocate__FixBug",
           "code_files": [
-            "./asm/GC_NTSC/SE_BitHeap__Allocate__FixBug.s"
+            "./asm/GC/SE_BitHeap__Allocate__FixBug.s"
           ],
           "memory_address": "8022c238",
           "size": "0",
@@ -626,7 +626,7 @@
         {
           "name": "DarkXTal__Collected_VtableHook",
           "code_files": [
-            "./asm/GC_NTSC/DarkXTal__Collected_VtableHook.s"
+            "./asm/GC/DarkXTal__Collected_VtableHook.s"
           ],
           "memory_address": "80426b30",
           "size": "0",
@@ -639,7 +639,7 @@
         {
           "name": "DragonEgg__Collected_VtableHook",
           "code_files": [
-            "./asm/GC_NTSC/DragonEgg__Collected_VtableHook.s"
+            "./asm/GC/DragonEgg__Collected_VtableHook.s"
           ],
           "memory_address": "80426730",
           "size": "0",
@@ -652,7 +652,7 @@
         {
           "name": "LightXTal__Collected_VtableHook",
           "code_files": [
-            "./asm/GC_NTSC/LightXTal__Collected_VtableHook.s"
+            "./asm/GC/LightXTal__Collected_VtableHook.s"
           ],
           "memory_address": "80426930",
           "size": "0",
@@ -665,7 +665,7 @@
         {
           "name": "PlayerState__AddDarkGems_ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/PlayerState__AddDarkGems_ReImplHook.s"
+            "./asm/GC/PlayerState__AddDarkGems_ReImplHook.s"
           ],
           "memory_address": "80068a78",
           "size": "0",
@@ -678,7 +678,7 @@
         {
           "name": "PlayerState__AddDragonEggs_ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/PlayerState__AddDragonEggs_ReImplHook.s"
+            "./asm/GC/PlayerState__AddDragonEggs_ReImplHook.s"
           ],
           "memory_address": "80068b94",
           "size": "0",
@@ -691,7 +691,7 @@
         {
           "name": "PlayerState__AddLightGems_ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/PlayerState__AddLightGems_ReImplHook.s"
+            "./asm/GC/PlayerState__AddLightGems_ReImplHook.s"
           ],
           "memory_address": "800689ec",
           "size": "0",
@@ -704,7 +704,7 @@
         {
           "name": "LockedChest__OpenLockedChest_PreCallHook",
           "code_files": [
-            "./asm/GC_NTSC/LockedChest__OpenLockedChest_PreCallHook.s"
+            "./asm/GC/LockedChest__OpenLockedChest_PreCallHook.s"
           ],
           "memory_address": "800fa5b8",
           "size": "0",
@@ -717,7 +717,7 @@
         {
           "name": "EggThief__EggCollection_ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/EggThief__EggCollection_ReImplHook.s"
+            "./asm/GC/EggThief__EggCollection_ReImplHook.s"
           ],
           "memory_address": "80156b74",
           "size": "0",
@@ -730,7 +730,7 @@
         {
           "name": "XSEItemHandler_Spyro__TestBreatheFire__ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/XSEItemHandler_Spyro__TestBreatheFire__ReImplHook.s"
+            "./asm/GC/XSEItemHandler_Spyro__TestBreatheFire__ReImplHook.s"
           ],
           "memory_address": "800ad9fc",
           "size": "0",
@@ -743,7 +743,7 @@
         {
           "name": "XSEItemHandler_Spyro__TestBreathChange__ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/XSEItemHandler_Spyro__TestBreathChange__ReImplHook.s"
+            "./asm/GC/XSEItemHandler_Spyro__TestBreathChange__ReImplHook.s"
           ],
           "memory_address": "8008ae04",
           "size": "0",
@@ -756,7 +756,7 @@
         {
           "name": "SEGameFlow__v_StateRunning__VTHOOK",
           "code_files": [
-            "./asm/GC_NTSC/SEGameFlow_StateRunning_VTHook.s"
+            "./asm/GC/SEGameFlow_StateRunning_VTHook.s"
           ],
           "memory_address": "804173a0",
           "size": "0",
@@ -769,7 +769,7 @@
         {
           "name": "XItemHandler_Cutscene__Update_VtableHook",
           "code_files": [
-            "./asm/GC_NTSC/XItemHandler_Cutscene__Update_VtableHook.s"
+            "./asm/GC/XItemHandler_Cutscene__Update_VtableHook.s"
           ],
           "memory_address": "80415130",
           "size": "0",
@@ -782,7 +782,7 @@
         {
           "name": "GUI_PauseMenu__v_DrawStateRunning_VtableHook",
           "code_files": [
-            "./asm/GC_NTSC/GUI_PauseMenu__v_DrawStateRunning_VtableHook.s"
+            "./asm/GC/GUI_PauseMenu__v_DrawStateRunning_VtableHook.s"
           ],
           "memory_address": "8042d968",
           "size": "0",
@@ -795,7 +795,7 @@
         {
           "name": "GUI_PauseMenu__v_StateRunning_VtableHook",
           "code_files": [
-            "./asm/GC_NTSC/GUI_PauseMenu__v_StateRunning_VtableHook.s"
+            "./asm/GC/GUI_PauseMenu__v_StateRunning_VtableHook.s"
           ],
           "memory_address": "8042d950",
           "size": "0",
@@ -808,7 +808,7 @@
         {
           "name": "GUI_Item__v_GetText_ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/GUI_Item__v_GetText_ReImplHook.s"
+            "./asm/GC/GUI_Item__v_GetText_ReImplHook.s"
           ],
           "memory_address": "801aa434",
           "size": "0",
@@ -821,7 +821,7 @@
         {
           "name": "TeleportPad_PlayerObjectives__GetObjective_PreCallHook",
           "code_files": [
-            "./asm/GC_NTSC/TeleportPad_PlayerObjectives__GetObjective_PreCallHook.s"
+            "./asm/GC/TeleportPad_PlayerObjectives__GetObjective_PreCallHook.s"
           ],
           "memory_address": "800ea594",
           "size": "0",
@@ -834,7 +834,7 @@
         {
           "name": "MemCardSlotMenu__DrawSavedGameInfo_PreCallHook",
           "code_files": [
-            "./asm/GC_NTSC/MemCardSlotMenu__DrawSavedGameInfo_PreCallHook.s"
+            "./asm/GC/MemCardSlotMenu__DrawSavedGameInfo_PreCallHook.s"
           ],
           "memory_address": "80236398",
           "size": "0",
@@ -847,7 +847,7 @@
         {
           "name": "ScriptedGate__v_Preserve_VtableHook",
           "code_files": [
-            "./asm/GC_NTSC/ScriptedGate__v_Preserve_VtableHook.s"
+            "./asm/GC/ScriptedGate__v_Preserve_VtableHook.s"
           ],
           "memory_address": "80423210",
           "size": "0",
@@ -860,7 +860,7 @@
         {
           "name": "PlayerObjectives__GetObjective__ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/PlayerObjectives__GetObjective__ReImplHook.s"
+            "./asm/GC/PlayerObjectives__GetObjective__ReImplHook.s"
           ],
           "memory_address": "800663dc",
           "size": "0",
@@ -873,7 +873,7 @@
         {
           "name": "XSEItemHandler_Spyro__TestShooter__ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/XSEItemHandler_Spyro__TestShooter__ReImplHook.s"
+            "./asm/GC/XSEItemHandler_Spyro__TestShooter__ReImplHook.s"
           ],
           "memory_address": "800ad7ac",
           "size": "0",
@@ -886,7 +886,7 @@
         {
           "name": "XSEItemHandler_Base__BASIC_Update_ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/XSEItemHandler_Base__BASIC_Update_ReImplHook.s"
+            "./asm/GC/XSEItemHandler_Base__BASIC_Update_ReImplHook.s"
           ],
           "memory_address": "800bf070",
           "size": "0",
@@ -899,7 +899,7 @@
         {
           "name": "BASIC_Main__UpdatePointers_PreCallHook",
           "code_files": [
-            "./asm/GC_NTSC/BASIC_Main__UpdatePointers_PreCallHook.s"
+            "./asm/GC/BASIC_Main__UpdatePointers_PreCallHook.s"
           ],
           "memory_address": "800037f8",
           "size": "0",
@@ -912,7 +912,7 @@
         {
           "name": "Popup__Update_VtableHook",
           "code_files": [
-            "./asm/GC_NTSC/Popup__Update_VtableHook.s"
+            "./asm/GC/Popup__Update_VtableHook.s"
           ],
           "memory_address": "804142A8",
           "size": "0",
@@ -925,7 +925,7 @@
         {
           "name": "Switch_LightGem__GetTriggerConfig_VtableHook",
           "code_files": [
-            "./asm/GC_NTSC/Switch_LightGem__GetTriggerConfig_VtableHook.s"
+            "./asm/GC/Switch_LightGem__GetTriggerConfig_VtableHook.s"
           ],
           "memory_address": "8041ec50",
           "size": "0",
@@ -938,7 +938,7 @@
         {
           "name": "Switch_LightGem_disablemodel",
           "code_files": [
-            "./asm/GC_NTSC/Switch_LightGem_disablemodel.s"
+            "./asm/GC/Switch_LightGem_disablemodel.s"
           ],
           "memory_address": "8018b988",
           "size": "0",
@@ -951,7 +951,7 @@
         {
           "name": "Switch_LightGem__Update_VtableHook",
           "code_files": [
-            "./asm/GC_NTSC/Switch_LightGem__Update_VtableHook.s"
+            "./asm/GC/Switch_LightGem__Update_VtableHook.s"
           ],
           "memory_address": "8041eaa8",
           "size": "0",
@@ -964,7 +964,7 @@
         {
           "name": "ElecBreath__Stop_ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/ElecBreath__Stop_ReImplHook.s"
+            "./asm/GC/ElecBreath__Stop_ReImplHook.s"
           ],
           "memory_address": "8009b84c",
           "size": "0",
@@ -977,7 +977,7 @@
         {
           "name": "PlayerState__IncLockPickers_ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/PlayerState__IncLockPickers_ReImplHook.s"
+            "./asm/GC/PlayerState__IncLockPickers_ReImplHook.s"
           ],
           "memory_address": "80068c90",
           "size": "0",
@@ -990,7 +990,7 @@
         {
           "name": "SE_GameLoop__StartGameState_PreCallHook_BallGadgetDeath",
           "code_files": [
-            "./asm/GC_NTSC/SE_GameLoop__StartGameState_PreCallHook_BallGadgetDeath.s"
+            "./asm/GC/SE_GameLoop__StartGameState_PreCallHook_BallGadgetDeath.s"
           ],
           "memory_address": "8000b43c",
           "size": "0",
@@ -1003,7 +1003,7 @@
         {
           "name": "SEMap_MiniGame__SetMiniGameDie_PreCallHook_SparxDeath",
           "code_files": [
-            "./asm/GC_NTSC/SEMap_MiniGame__SetMiniGameDie_PreCallHook_SparxDeath.s"
+            "./asm/GC/SEMap_MiniGame__SetMiniGameDie_PreCallHook_SparxDeath.s"
           ],
           "memory_address": "80016494",
           "size": "0",
@@ -1016,7 +1016,7 @@
         {
           "name": "SEMap_MiniGame__SetMiniGameFailed_PostHook",
           "code_files": [
-            "./asm/GC_NTSC/SEMap_MiniGame__SetMiniGameFailed_PostHook.s"
+            "./asm/GC/SEMap_MiniGame__SetMiniGameFailed_PostHook.s"
           ],
           "memory_address": "80201e44",
           "size": "0",
@@ -1029,7 +1029,7 @@
         {
           "name": "mapchanger_SE_GameState__operatorequals_PreCallHook",
           "code_files": [
-            "./asm/GC_NTSC/mapchanger_SE_GameState__operatorequals_PreCallHook.s"
+            "./asm/GC/mapchanger_SE_GameState__operatorequals_PreCallHook.s"
           ],
           "memory_address": "8023ef88",
           "size": "0",
@@ -1042,7 +1042,7 @@
         {
           "name": "GUI_MiniMap__DrawRestarts__PreCallHOOK",
           "code_files": [
-            "./asm/GC_NTSC/GUI_MiniMap__DrawRestarts__PreCallHOOK.s"
+            "./asm/GC/GUI_MiniMap__DrawRestarts__PreCallHOOK.s"
           ],
           "memory_address": "801ad85c",
           "size": "0",
@@ -1055,7 +1055,7 @@
         {
           "name": "GadgetPad__Update_VtableHook",
           "code_files": [
-            "./asm/GC_NTSC/GadgetPad__Update_VtableHook.s"
+            "./asm/GC/GadgetPad__Update_VtableHook.s"
           ],
           "memory_address": "8040e768",
           "size": "0",
@@ -1068,7 +1068,7 @@
         {
           "name": "XSEItemHandler_Base__BASICcmd_GetObjective_ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/XSEItemHandler_Base__BASICcmd_GetObjective_ReImplHook.s"
+            "./asm/GC/XSEItemHandler_Base__BASICcmd_GetObjective_ReImplHook.s"
           ],
           "memory_address": "800bf6cc",
           "size": "0",
@@ -1081,7 +1081,7 @@
         {
           "name": "FireWorks__UpdatePathPosRot_PreCallHook",
           "code_files": [
-            "./asm/GC_NTSC/FireWorks__UpdatePathPosRot_PreCallHook.s"
+            "./asm/GC/FireWorks__UpdatePathPosRot_PreCallHook.s"
           ],
           "memory_address": "8014a3a4",
           "size": "0",
@@ -1094,7 +1094,7 @@
         {
           "name": "GUI_Status_CloseButtonCheckFix",
           "code_files": [
-            "./asm/GC_NTSC/GUI_Status_CloseButtonCheckFix.s"
+            "./asm/GC/GUI_Status_CloseButtonCheckFix.s"
           ],
           "memory_address": "801b61c4",
           "size": "0",
@@ -1107,7 +1107,7 @@
         {
           "name": "MemCardSlotMenu__v_OnSelect_VtableHook",
           "code_files": [
-            "./asm/GC_NTSC/MemCardSlotMenu__v_OnSelect_VtableHook.s"
+            "./asm/GC/MemCardSlotMenu__v_OnSelect_VtableHook.s"
           ],
           "memory_address": "804468fc",
           "size": "0",
@@ -1120,7 +1120,7 @@
         {
           "name": "TitleLoop__v_DrawStateRunning_VtableHook",
           "code_files": [
-            "./asm/GC_NTSC/TitleLoop__v_DrawStateRunning_VtableHook.s"
+            "./asm/GC/TitleLoop__v_DrawStateRunning_VtableHook.s"
           ],
           "memory_address": "8042e990",
           "size": "0",
@@ -1133,7 +1133,7 @@
         {
           "name": "disable_title_trailer",
           "code_files": [
-            "./asm/GC_NTSC/disable_title_trailer.s"
+            "./asm/GC/disable_title_trailer.s"
           ],
           "memory_address": "801f0d9c",
           "size": "0",
@@ -1146,7 +1146,7 @@
         {
           "name": "disable_intro_logos",
           "code_files": [
-            "./asm/GC_NTSC/disable_intro_logos.s"
+            "./asm/GC/disable_intro_logos.s"
           ],
           "memory_address": "803c0e1c",
           "size": "0",
@@ -1159,7 +1159,7 @@
         {
           "name": "GUI_ShopItem__GetCost_ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/GUI_ShopItem__GetCost_ReImplHook.s"
+            "./asm/GC/GUI_ShopItem__GetCost_ReImplHook.s"
           ],
           "memory_address": "802282b4",
           "size": "0",
@@ -1172,7 +1172,7 @@
         {
           "name": "XSEItemHandler_StartPoint__Update_VtableHook",
           "code_files": [
-            "./asm/GC_NTSC/XSEItemHandler_StartPoint__Update_VtableHook.s"
+            "./asm/GC/XSEItemHandler_StartPoint__Update_VtableHook.s"
           ],
           "memory_address": "80414D50",
           "size": "0",
@@ -1185,7 +1185,7 @@
         {
           "name": "GUI_MiniMap__Callback_IsRestartSelectable_ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/GUI_MiniMap__Callback_IsRestartSelectable_ReImplHook.s"
+            "./asm/GC/GUI_MiniMap__Callback_IsRestartSelectable_ReImplHook.s"
           ],
           "memory_address": "801ab650",
           "size": "0",
@@ -1198,7 +1198,7 @@
         {
           "name": "SE_GameLoop__Teleport_PreCallHook",
           "code_files": [
-            "./asm/GC_NTSC/SE_GameLoop__Teleport_PreCallHook.s"
+            "./asm/GC/SE_GameLoop__Teleport_PreCallHook.s"
           ],
           "memory_address": "800a6540",
           "size": "0",
@@ -1211,7 +1211,7 @@
         {
           "name": "SE_TriggerList__ConstructAll_PreCallHook",
           "code_files": [
-            "./asm/GC_NTSC/SE_TriggerList__ConstructAll_PreCallHook.s"
+            "./asm/GC/SE_TriggerList__ConstructAll_PreCallHook.s"
           ],
           "memory_address": "8023b848",
           "size": "0",
@@ -1224,7 +1224,7 @@
         {
           "name": "disable_maps_setting_selectable_bit",
           "code_files": [
-            "./asm/GC_NTSC/disable_maps_setting_selectable_bit.s"
+            "./asm/GC/disable_maps_setting_selectable_bit.s"
           ],
           "memory_address": "802321d8",
           "size": "0",
@@ -1237,7 +1237,7 @@
         {
           "name": "XSEItemEnv__StartMusic_ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/XSEItemEnv__StartMusic_ReImplHook.s"
+            "./asm/GC/XSEItemEnv__StartMusic_ReImplHook.s"
           ],
           "memory_address": "80241570",
           "size": "0",
@@ -1250,7 +1250,7 @@
         {
           "name": "EXGamePad__Update_PreCallHook",
           "code_files": [
-            "./asm/GC_NTSC/EXGamePad__Update_PreCallHook.s"
+            "./asm/GC/EXGamePad__Update_PreCallHook.s"
           ],
           "memory_address": "802752d8",
           "size": "0",
@@ -1263,7 +1263,7 @@
         {
           "name": "XSEItemHandler_Player__TestScanMode_ReImplHook",
           "code_files": [
-            "./asm/GC_NTSC/XSEItemHandler_Player__TestScanMode_ReImplHook.s"
+            "./asm/GC/XSEItemHandler_Player__TestScanMode_ReImplHook.s"
           ],
           "memory_address": "8005c954",
           "size": "0",
@@ -1278,55 +1278,55 @@
       "multi_patches": [
         {
           "name": "multi_GlideHooks",
-          "file_path": "./asm/GC_NTSC/multi_GlideHooks.s"
+          "file_path": "./asm/GC/NTSC/multi_GlideHooks.s"
         },
         {
           "name": "multi_ChargeHooks",
-          "file_path": "./asm/GC_NTSC/multi_ChargeHooks.s"
+          "file_path": "./asm/GC/NTSC/multi_ChargeHooks.s"
         },
         {
           "name": "multi_SwimHooks",
-          "file_path": "./asm/GC_NTSC/multi_SwimHooks.s"
+          "file_path": "./asm/GC/NTSC/multi_SwimHooks.s"
         },
         {
           "name": "multi_ShopHooks",
-          "file_path": "./asm/GC_NTSC/multi_ShopHooks.s"
+          "file_path": "./asm/GC/NTSC/multi_ShopHooks.s"
         },
         {
           "name": "multi_DisableRealm3AutoAbilities",
-          "file_path": "./asm/GC_NTSC/multi_DisableRealm3AutoAbilities.s"
+          "file_path": "./asm/GC/NTSC/multi_DisableRealm3AutoAbilities.s"
         },
         {
           "name": "multi_Player_urghhhImDead_PostHook",
-          "file_path": "./asm/GC_NTSC/multi_Player_urghhhImDead_PostHook.s"
+          "file_path": "./asm/GC/NTSC/multi_Player_urghhhImDead_PostHook.s"
         },
         {
           "name": "multi_XSEItemHandler_Player__InitialiseStart_PreCallHook",
-          "file_path": "./asm/GC_NTSC/multi_XSEItemHandler_Player__InitialiseStart_PreCallHook.s"
+          "file_path": "./asm/GC/NTSC/multi_XSEItemHandler_Player__InitialiseStart_PreCallHook.s"
         },
         {
           "name": "multi_BossDisableAbilityGain",
-          "file_path": "./asm/GC_NTSC/multi_BossDisableAbilityGain.s"
+          "file_path": "./asm/GC/NTSC/multi_BossDisableAbilityGain.s"
         },
         {
           "name": "multi_elevator_hooks",
-          "file_path": "./asm/GC_NTSC/multi_elevator_hooks.s"
+          "file_path": "./asm/GC/NTSC/multi_elevator_hooks.s"
         },
         {
           "name": "multi_CPU_Base_hooks",
-          "file_path": "./asm/GC_NTSC/multi_CPU_Base_hooks.s"
+          "file_path": "./asm/GC/NTSC/multi_CPU_Base_hooks.s"
         },
         {
           "name": "multi_gadget_hooks",
-          "file_path": "./asm/GC_NTSC/multi_gadget_hooks.s"
+          "file_path": "./asm/GC/NTSC/multi_gadget_hooks.s"
         },
         {
           "name": "multi_boss_hooks",
-          "file_path": "./asm/GC_NTSC/multi_boss_hooks.s"
+          "file_path": "./asm/GC/NTSC/multi_boss_hooks.s"
         },
         {
           "name": "multi_text_hooks",
-          "file_path": "./asm/GC_NTSC/multi_text_hooks.s"
+          "file_path": "./asm/GC/NTSC/multi_text_hooks.s"
         }
       ]
     },
