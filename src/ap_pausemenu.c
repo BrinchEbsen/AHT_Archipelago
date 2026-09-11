@@ -136,7 +136,7 @@ typedef struct StatAbilityEntry
     u32 flag; // Last flag isn't used, so if that one is set, we check the butterfly jar
 } StatAbilityEntry;
 
-#define NUM_STAT_ABILITY_ENTRIES 13
+#define NUM_STAT_ABILITY_ENTRIES 14
 StatAbilityEntry stat_ability_entries[] = {
     {
         .str = "Double Jump",
@@ -145,6 +145,10 @@ StatAbilityEntry stat_ability_entries[] = {
     {
         .str = "Pole Spin",
         .flag = ABILITY_POLE_SPIN
+    },
+    {
+        .str = "Health Unit+",
+        .flag = ABILITY_HIT_POINT_UPGRADE
     },
     {
         .str = "Health Refill",
