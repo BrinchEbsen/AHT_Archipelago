@@ -1,12 +1,13 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
+#include <types.h>
 
-#if GC_NTSC
+#if defined(BUILD_GC)
 
 #include <os.h>
 #define PRINTF(fmt, ...) OSReport(fmt, ##__VA_ARGS__)
 
-#elif PS2_NTSC
+#elif defined(BUILD_PS2)
 
 #include <syscalls.h>
 #define PRINTF(fmt, ...) _print(fmt, ##__VA_ARGS__)
