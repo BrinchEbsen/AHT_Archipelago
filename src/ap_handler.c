@@ -511,6 +511,7 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("u8 supercharge_cost: %x\n", &psettings->supercharge_cost);
     PRINTF("bool[4] boss_easy_mode: %x\n", &psettings->boss_easy_mode);
     PRINTF("bool shop_unlock_mode: %x\n", &psettings->shop_unlock_mode);
+    PRINTF("bool display_gem_stats: %x\n", &psettings->display_gem_stats);
     PRINTF("bool teleport_anywhere: %x\n", &psettings->teleport_anywhere);
     PRINTF("bool unlock_all_shops: %x\n", &psettings->unlock_all_shops);
     PRINTF("bool disable_shop_pad_proximity_activate: %x\n", &psettings->disable_shop_pad_proximity_activate);

@@ -195,6 +195,9 @@ typedef struct APSettings {
     /// @brief Set the shop items to progressively "unlock" by gem count instead of being bought.
     bool shop_unlock_mode;
 
+    /// @brief Make the pause menu display gem stats.
+    bool display_gem_stats;
+
     /// @brief Make the shop pad teleport ticket not limited to within the realm the player is in.
     bool teleport_anywhere;
 

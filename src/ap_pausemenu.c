@@ -532,7 +532,7 @@ void draw_ut_stats(GUI_Base* self, void* pWnd)
     {
         r.h += r.h/2;
     }
-    else if (g_gamestate_ap_settings.shop_unlock_mode)
+    else if (g_gamestate_ap_settings.display_gem_stats)
     {
         r.h += r.h;
     }
@@ -544,7 +544,7 @@ void draw_ut_stats(GUI_Base* self, void* pWnd)
 
     if (!g_gamestate_ap_settings.ut_enabled)
     {
-        if (g_gamestate_ap_settings.shop_unlock_mode)
+        if (g_gamestate_ap_settings.display_gem_stats)
         {
             textprint(pWnd, txt_x_base, txt_y_base, 1.0f, TopLeft, COLOR_LIGHT_RED, true,
                 "Map Icons & Gem Logic unavailable, UT required.");
@@ -560,7 +560,7 @@ void draw_ut_stats(GUI_Base* self, void* pWnd)
         textprint(pWnd, txt_x_base, txt_y_base, 1.0f, TopLeft, COLOR_WHITE, true,
             "Map Icons Enabled");
         
-        if (g_gamestate_ap_settings.shop_unlock_mode)
+        if (g_gamestate_ap_settings.display_gem_stats)
         {
             s32 gems = gGameState.m_PlayerState.m_Gems;
 
@@ -578,7 +578,7 @@ void draw_ut_stats(GUI_Base* self, void* pWnd)
             }
 
             textprintf(pWnd, txt_x_base, txt_y_base+20, 1.0f, TopLeft, COLOR_WHITE, true,
-                "Gems: %d/%d", gems, g_gamestate_ap_settings.total_gems_available);
+                "Total Gems: %d/%d", gems, g_gamestate_ap_settings.total_gems_available);
 
             textprintf(pWnd, txt_x_base, txt_y_base+40, 1.0f, TopLeft, COLOR_WHITE, true,
                 "(%d Required)", g_gamestate_ap_settings.total_gems_in_logic);

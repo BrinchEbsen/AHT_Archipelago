@@ -8,7 +8,7 @@
  */
 
 // ---------------------------------------------------- OPTIONS (GENERAL) ----------------------------------
-#define _build_config_AP_VERSION_NUMBER_MAJOR           15      // Version number (major).
+#define _build_config_AP_VERSION_NUMBER_MAJOR           16      // Version number (major).
 #define _build_config_AP_VERSION_NUMBER_MINOR           0       // Version number (minor).
 #define _build_config_AP_DEBUG_ENABLE                   0       // Enable debug options (DISABLE FOR RELEASE!).
 // ---------------------------------------------------- OPTIONS (DEBUG) ------------------------------------

@@ -84,6 +84,7 @@ APSettings g_patch_ap_settings = {
     },
 
     .shop_unlock_mode = false,
+    .display_gem_stats = false,
 
     #if AP_DEBUG_QUICK_START!=0
     .teleport_anywhere = true,
