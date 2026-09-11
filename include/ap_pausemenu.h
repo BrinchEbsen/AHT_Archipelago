@@ -34,6 +34,8 @@ s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd);
 extern s32 GUI_PauseMenu__v_StateRunning(GUI_Base* self);
 s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self);
 
+void do_scanmode_controls();
+
 /// @brief Whether the player should be able to open the shop from the pause menu.
 /// @param reason The string containing the reason for not being able to open the shop.
 /// This is set to NULL if the shop can be opened.

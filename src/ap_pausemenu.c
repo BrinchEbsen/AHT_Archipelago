@@ -13,6 +13,9 @@
 #include <ap_minimap.h>
 #include <minimap_status.h>
 #include <map_minigame.h>
+#include <player.h>
+#include <sfx.h>
+#include <Sound.h>
 
 #define AP_TELEPORT_CLOSE_TIMER_MAX 60
 
@@ -250,6 +253,8 @@ s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
 
 s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self)
 {
+    do_scanmode_controls();
+
     if (do_pause_menu_controls()) {
         if (g_gamestate_ap_settings.instant_teleport_mode == AP_TELEPORT_MODE_TP_TO_HUB) {
             if (g_pad_button_state(PAD_BUTTON_Y)) {
@@ -290,6 +295,33 @@ s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self)
     }
 
     return GUI_PauseMenu__v_StateRunning(self);
+}
+
+void do_scanmode_controls()
+{
+    static u32 timer = 0;
+
+    bool triggers_held = g_pad_button_state(PAD_BUTTON_L) && g_pad_button_state(PAD_BUTTON_R);
+
+    if (triggers_held)
+    {
+        timer++;
+    }
+    else
+    {
+        timer = 0;
+    }
+
+    if (timer == 60)
+    {
+        PlaySFX(HT_Sound_SFX_GEN_HUD_NPC_CHOOSE);
+    }
+
+    if ((timer > 60) && g_pad_button_edge_down(PAD_BUTTON_B))
+    {
+        g_scanmode_enable = !g_scanmode_enable;
+        PlaySFX(HT_Sound_SFX_GEN_HUD_NPC_SELECT);
+    }
 }
 
 bool can_start_shop_sequence(char** reason)
