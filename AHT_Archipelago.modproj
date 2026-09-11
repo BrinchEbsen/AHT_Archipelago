@@ -1350,7 +1350,119 @@
       "memory_only_mode": true,
       "output_format": "iso",
       "section_maps": {},
-      "code_caves": [],
+      "code_caves": [
+        {
+          "name": "EXGeoViewerWnd_Overwrite",
+          "code_files": [
+            "./src/ap_handler.c",
+            "./src/pad.c",
+            "./src/ex/exvector.c",
+            "./src/ex/runtimeclass.c",
+            "./src/se/gamestate.c",
+            "./src/breath_hooks.c",
+            "./src/collectable_hooks.c",
+            "./src/glide_hooks.c",
+            "./src/charge_hooks.c",
+            "./src/swim_hooks.c",
+            "./src/paneldraw.c",
+            "./src/cutscene_skip.c",
+            "./src/shop_hooks.c",
+            "./src/file_select_hooks.c",
+            "./src/gate_hooks.c",
+            "./src/ap_pausemenu.c",
+            "./src/lg_door_hooks.c",
+            "./src/ap_objectives.c",
+            "./src/elevator_hooks.c",
+            "./src/se/playerstate.c",
+            "./src/ap_deathlink.c",
+            "./src/ap_keyring.c",
+            "./src/ap_minimap.c",
+            "./src/gadget_hooks.c",
+            "./src/boss_hooks.c",
+            "./src/text_hooks.c",
+            "./src/trigger_hooks.c",
+            "./src/ap_notification.c",
+            "./src/ap_trap.c",
+            "./src/ex/exitemenv.c",
+            "./src/se/player.c"
+          ],
+          "memory_address": "80296e88",
+          "size": "7BC4",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "SE_GameState_Storage",
+          "code_files": [
+            "./src/ap_settings.c"
+          ],
+          "memory_address": "804687BC",
+          "size": "2000",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "AP_Patch_Storage",
+          "code_files": [
+            "./src/ap_patch.c"
+          ],
+          "memory_address": "803D99F8",
+          "size": "2000",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "EXGeoViewerWnd_Overwrite_2",
+          "code_files": [
+            "./src/ap_notification.data.c"
+          ],
+          "memory_address": "8029EA4C",
+          "size": "208",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "Shark_Overwrite",
+          "code_files": [
+            "./src/ap_collectables.c",
+            "./src/ap_triginfo.c",
+            "./src/BASIC_hooks.c",
+            "./src/ap_collectables_array.c"
+          ],
+          "memory_address": "80185ed0",
+          "size": "1D60",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "AP_Version_Number",
+          "code_files": [
+            "./src/ap_version.c"
+          ],
+          "memory_address": "80187C30",
+          "size": "4",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        }
+      ],
       "hooks": [],
       "binary_patches": [],
       "multi_patches": []
