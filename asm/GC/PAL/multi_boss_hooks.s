@@ -1,8 +1,8 @@
-.memaddr 0x
+.memaddr 0x80407a84
 .long XSEItemHandler_GnastyGnorc__PlayerAttack_VtableHook
 
-.memaddr 0x
+.memaddr 0x80407894
 .long XSEItemHandler_Ineptune__PlayerAttack_VtableHook
 
-.memaddr 0x
+.memaddr 0x80041474
 bl XSEItemHandler_Red__HitByExplosion_PreCallHook

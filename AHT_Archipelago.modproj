@@ -2129,7 +2129,60 @@
         }
       ],
       "binary_patches": [],
-      "multi_patches": []
+      "multi_patches": [
+        {
+          "name": "multi_GlideHooks",
+          "file_path": "./asm/GC/PAL/multi_GlideHooks.s"
+        },
+        {
+          "name": "multi_ChargeHooks",
+          "file_path": "./asm/GC/PAL/multi_ChargeHooks.s"
+        },
+        {
+          "name": "multi_SwimHooks",
+          "file_path": "./asm/GC/PAL/multi_SwimHooks.s"
+        },
+        {
+          "name": "multi_ShopHooks",
+          "file_path": "./asm/GC/PAL/multi_ShopHooks.s"
+        },
+        {
+          "name": "multi_DisableRealm3AutoAbilities",
+          "file_path": "./asm/GC/PAL/multi_DisableRealm3AutoAbilities.s"
+        },
+        {
+          "name": "multi_Player_urghhhImDead_PostHook",
+          "file_path": "./asm/GC/PAL/multi_Player_urghhhImDead_PostHook.s"
+        },
+        {
+          "name": "multi_XSEItemHandler_Player__InitialiseStart_PreCallHook",
+          "file_path": "./asm/GC/PAL/multi_XSEItemHandler_Player__InitialiseStart_PreCallHook.s"
+        },
+        {
+          "name": "multi_BossDisableAbilityGain",
+          "file_path": "./asm/GC/PAL/multi_BossDisableAbilityGain.s"
+        },
+        {
+          "name": "multi_elevator_hooks",
+          "file_path": "./asm/GC/PAL/multi_elevator_hooks.s"
+        },
+        {
+          "name": "multi_CPU_Base_hooks",
+          "file_path": "./asm/GC/PAL/multi_CPU_Base_hooks.s"
+        },
+        {
+          "name": "multi_gadget_hooks",
+          "file_path": "./asm/GC/PAL/multi_gadget_hooks.s"
+        },
+        {
+          "name": "multi_boss_hooks",
+          "file_path": "./asm/GC/PAL/multi_boss_hooks.s"
+        },
+        {
+          "name": "multi_text_hooks",
+          "file_path": "./asm/GC/PAL/multi_text_hooks.s"
+        }
+      ]
     }
   ]
 }

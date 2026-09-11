@@ -43,11 +43,11 @@ bl paddle_XSEItemHandler_Player__ButtonDown_PreCallHook
 bl paddle_XSEItemHandler_Player__ButtonDown_PreCallHook
 
 .memaddr 0x8008e8bc
-# Animmode change in TestWaterDive (make diving underwater use paddle animmode).
+# Animmode change in HandleWaterDive (make diving underwater use paddle animmode).
 bl charge_XSEItemHandler_PlayerCheckModeChange_PreCallHook
 
 .memaddr 0x8008f240
-# Animmode change in TestWaterDive (make diving underwater use paddle animmode).
+# Animmode change in HandleWaterDive (make diving underwater use paddle animmode).
 bl charge_XSEItemHandler_PlayerCheckModeChange_PreCallHook
 
 .memaddr 0x8008fcf8
