@@ -1342,7 +1342,7 @@
       "injection_file_offsets": {},
       "injection_file_types": {},
       "extracted_game_folder": null,
-      "main_executable": null,
+      "main_executable": "Start.dol",
       "source_path": null,
       "compiler_flags": "-O2 -fno-inline -Werror -I include/ingame_stdlib/ -I include/ex/ -I include/se/ -I include/CONFIG",
       "is_single_file_mode": false,
