@@ -186,8 +186,6 @@ struct SEMap_MiniGame {
 
 extern EXRuntimeClass classSEMap_MiniGame;
 
-#if GC_NTSC
-_Static_assert(sizeof(SEMap_MiniGame) == 0x1b0);
-#endif
+SIZE_ASSERT(SEMap_MiniGame, 0x1b0, 0x1b0)
 
 #endif /* MAP_MINIGAME_H */

@@ -24,10 +24,6 @@ typedef struct SE_BitHeap {
     PreserveStackEntry m_Stack[32];
 } SE_BitHeap;
 
-#if GC_NTSC
-_Static_assert(sizeof(SE_BitHeap) == 0x4288);
-#elif PS2_NTSC
-_Static_assert(sizeof(SE_BitHeap) == 0x4288);
-#endif
+SIZE_ASSERT(SE_BitHeap, 0x4288, 0x4288)
 
 #endif /* BITHEAP_H */

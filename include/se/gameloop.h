@@ -78,7 +78,7 @@ struct SE_GameLoop {
     u32 m_GCStatusScreenCounter; // only on GC
 };
 
-_Static_assert(sizeof(SE_GameLoop) == 0xA4);
+SIZE_ASSERT(SE_GameLoop, 0xA4, 0xA4)
 
 extern s32 SE_GameLoop__GoToMap(
     SE_GameLoop* this, EXHashCode GeoCode, EXHashCode StartPointCode, EXHashCode MapCode);

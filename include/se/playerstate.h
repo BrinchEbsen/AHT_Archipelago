@@ -84,11 +84,7 @@ typedef struct PlayerSetupInfo {
     u8 _pad0[4];
 } PlayerSetupInfo;
 
-#if GC_NTSC
-_Static_assert(sizeof(PlayerSetupInfo) == 0xc0);
-#elif PS2_NTSC
-_Static_assert(sizeof(PlayerSetupInfo) == 0xc0);
-#endif
+SIZE_ASSERT(PlayerSetupInfo, 0xc0, 0xc0)
 
 typedef struct PlayerState {
     BreathType m_CurrentBreath;
@@ -142,11 +138,7 @@ typedef struct PlayerState {
     u8 _pad1[4];
 } PlayerState;
 
-#if GC_NTSC
-_Static_assert(sizeof(PlayerState) == 0x128);
-#elif PS2_NTSC
-_Static_assert(sizeof(PlayerState) == 0x130);
-#endif
+SIZE_ASSERT(PlayerState, 0x128, 0x130)
 
 extern void PlayerState__Update(PlayerState* self);
 extern void PlayerState__RestartGame(PlayerState* self);

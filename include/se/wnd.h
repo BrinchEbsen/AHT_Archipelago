@@ -58,7 +58,7 @@ typedef struct EXPrimVert {
     };
 } EXPrimVert;
 
-_Static_assert(sizeof(EXPrimVert) == 0x20);
+SIZE_ASSERT(EXPrimVert, 0x20, 0x20)
 
 extern void EXBaseWnd__SelectFont(void* self, void* pGeoFile, EXHashCode FontHash);
 

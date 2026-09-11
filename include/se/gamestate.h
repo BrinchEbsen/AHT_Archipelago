@@ -81,11 +81,7 @@ typedef struct SE_GameState {
     GameState__SE_Map m_Map[200];
 } SE_GameState;
 
-#if GC_NTSC
-_Static_assert(sizeof(SE_GameState) == 0xb254);
-#elif PS2_NTSC
-_Static_assert(sizeof(SE_GameState) == 0xb270);
-#endif
+SIZE_ASSERT(SE_GameState, 0xb254, 0xb270)
 
 extern SE_GameState gGameState;
 

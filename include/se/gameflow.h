@@ -33,7 +33,7 @@ struct SEGameFlow {
     s32 m_PlayerHasControlCount;
 };
 
-_Static_assert(sizeof(SEGameFlow) == 0x90);
+SIZE_ASSERT(SEGameFlow, 0x90, 0x90)
 
 extern SEGameFlow theGameFlow;
 

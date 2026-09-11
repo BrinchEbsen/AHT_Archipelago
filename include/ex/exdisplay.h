@@ -19,7 +19,7 @@ struct EXPresentParams {
     Bool EnableVsync;
 };
 
-_Static_assert(sizeof(EXPresentParams) == 0x18);
+SIZE_ASSERT(EXPresentParams, 0x18, 0x18)
 
 typedef struct EXBaseDisplay__vtable EXBaseDisplay__vtable;
 struct EXBaseDisplay__vtable {
@@ -66,7 +66,7 @@ struct EXBaseDisplay {
     EXBaseDisplay__vtable *__vtable;
 };
 
-_Static_assert(sizeof(EXBaseDisplay) == 0x58);
+SIZE_ASSERT(EXBaseDisplay, 0x58, 0x58)
 
 extern EXBaseDisplay* EXBaseDisplay__m_pDisplay;
 

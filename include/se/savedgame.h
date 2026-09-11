@@ -14,6 +14,6 @@ typedef struct SavedGame
     u8 _pad0[4];
 } SavedGame;
 
-_Static_assert(sizeof(SavedGame) == 0xb260);
+SIZE_ASSERT(SavedGame, 0xb260, 0xb260)
 
 #endif /* SAVEDGAME_H */

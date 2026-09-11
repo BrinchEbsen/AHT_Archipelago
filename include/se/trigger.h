@@ -27,11 +27,7 @@ typedef struct TriggerTableEntry {
     TriggerSetupInfo TriggerSetup;
 } TriggerTableEntry;
 
-#if GC_NTSC
-_Static_assert(sizeof(TriggerTableEntry) == 0x28);
-#elif PS2_NTSC
-_Static_assert(sizeof(TriggerTableEntry) == 0x28);
-#endif
+SIZE_ASSERT(TriggerTableEntry, 0x28, 0x28)
 
 typedef enum States__SE_Trigger {
     State_Undefined=0,
@@ -93,11 +89,7 @@ struct SE_Trigger {
 
 #define XSEITEMHANDLER_ITEM_TRIGGER(self) OFFSET_VAL(SE_Trigger*, self, 0x10)
 
-#if GC_NTSC
-_Static_assert(sizeof(SE_Trigger) == 0xc8);
-#elif PS2_NTSC
-_Static_assert(sizeof(SE_Trigger) == 0xc8);
-#endif
+SIZE_ASSERT(SE_Trigger, 0xc8, 0xc8)
 
 typedef struct TriggerBitArray {
     s32 m_BitsPerElement; /* Inherited from BitArray */
@@ -126,10 +118,6 @@ typedef struct SE_TriggerList {
     u32 m_Flags;
 } SE_TriggerList;
 
-#if GC_NTSC
-_Static_assert(sizeof(SE_TriggerList) == 0x28);
-#elif PS2_NTSC
-_Static_assert(sizeof(SE_TriggerList) == 0x28);
-#endif
+SIZE_ASSERT(SE_TriggerList, 0x28, 0x28)
 
 #endif /* TRIGGER_H */

@@ -139,11 +139,7 @@ struct GUI_Base {
     float m_HiLightFadeSpeed;
 };
 
-#if GC_NTSC
-_Static_assert(sizeof(GUI_Base) == 0x15c);
-#elif PS2_NTSC
-_Static_assert(sizeof(GUI_Base) == 0x15c);
-#endif
+SIZE_ASSERT(GUI_Base, 0x15c, 0x15c)
 
 extern GUI_Base* GUI_Base__CreateObject(void);
 extern s32 GUI_Base__Update(GUI_Base* self);

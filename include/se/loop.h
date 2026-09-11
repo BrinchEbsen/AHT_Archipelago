@@ -78,11 +78,7 @@ struct SE_Loop { // 0x78
 	/* 0x74 */ SE_Loop__vtable* __vtable;
 };
 
-#if GC_NTSC
-_Static_assert(sizeof(SE_Loop) == 0x78);
-#elif PS2_NTSC
-_Static_assert(sizeof(SE_Loop) == 0x78);
-#endif
+SIZE_ASSERT(SE_Loop, 0x78, 0x78)
 
 extern SE_Loop* SE_Loop__CreateObject(void);
 extern s32 SE_Loop__DrawStateRunning(SE_Loop* self, void* pWnd);

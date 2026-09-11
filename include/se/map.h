@@ -72,11 +72,7 @@ typedef struct GameState__SE_Map {
     GameState__TriggerList m_TriggerList;
 } GameState__SE_Map;
 
-#if GC_NTSC
-_Static_assert(sizeof(GameState__SE_Map) == 0x64);
-#elif PS2_NTSC
-_Static_assert(sizeof(GameState__SE_Map) == 0x64);
-#endif
+SIZE_ASSERT(GameState__SE_Map, 0x64, 0x64)
 
 typedef struct SE_Map__vtable SE_Map__vtable;
 struct SE_Map__vtable {
@@ -180,11 +176,7 @@ struct SE_Map {
     EXHashCode m_IntroCutSceneObjective;
 };
 
-#if GC_NTSC
-_Static_assert(sizeof(SE_Map) == 0x128);
-#elif PS2_NTSC
-_Static_assert(sizeof(SE_Map) == 0x130);
-#endif
+SIZE_ASSERT(SE_Map, 0x128, 0x130)
 
 extern s32 SE_Map__GetNumDragonEggs(SE_Map* self, int Type);
 extern void SE_Map__SetNumDragonEggs(SE_Map* self, s32 Num, int Type);

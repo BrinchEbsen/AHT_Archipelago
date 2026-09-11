@@ -22,11 +22,7 @@ struct EXTrigger {
     EXTrigger__vtable *__vtable;
 };
 
-#if GC_NTSC
-_Static_assert(sizeof(EXTrigger) == 0x68);
-#elif PS2_NTSC
-_Static_assert(sizeof(EXTrigger) == 0x68);
-#endif
+SIZE_ASSERT(EXTrigger, 0x68, 0x68)
 
 typedef struct EXGeoTrigger
 {

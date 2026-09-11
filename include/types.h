@@ -8,6 +8,22 @@
 #include <stdarg.h>
 #include <build_config.h>
 
+// ====================== Build Defines =====================
+
+#if defined(GC_NTSC) || defined(GC_PAL)
+
+#define BUILD_GC
+#define SIZE_ASSERT(type, size_gc, size_ps2) _Static_assert(sizeof(type) == size_gc);
+
+#elif defined(PS2_NTSC) || defined(PS2_PAL)
+
+#define BUILD_PS2
+#define SIZE_ASSERT(type, size_gc, size_ps2) _Static_assert(sizeof(type) == size_ps2);
+
+#else
+#define SIZE_ASSERT(type, size_gc, size_ps2)
+#endif
+
 // ==================== Type Definitions ====================
 
 typedef unsigned char           u8, uint8_t, byte, uchar, undefined1, undefined;
@@ -19,7 +35,7 @@ typedef signed int              s32, int32_t;
 typedef signed char             Bool;
 typedef unsigned int            EXHashCode;
 
-#ifdef PS2_NTSC
+#ifdef BUILD_PS2
 struct __vtbl_ptr_type {
     short int __delta;
     short int __index;
