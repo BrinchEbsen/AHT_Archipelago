@@ -2002,7 +2002,7 @@
           "code_files": [
             "./asm/GC/disable_intro_logos.s"
           ],
-          "memory_address": "803c183a",
+          "memory_address": "803c183c",
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
