@@ -2,6 +2,8 @@
 #include <system.h>
 #include <map.h>
 
+#define DARK_MINE_MISALIGNED_LOAD_TRIGGER_INDEX 217
+
 void SE_TriggerList__ConstructAll_PreCallHook(SE_TriggerList* self)
 {
     // Grab the map data and check if it's Dark Mine.
@@ -32,8 +34,8 @@ void correct_dark_mine_loading_trigger(void* p_geo_map)
     s32 triggers_offset = OFFSET_VAL(s32, trigger_header, 0x4);
     s32* p_triggers = OFFSET_PTR(s32, trigger_header, 0x4 + triggers_offset);
 
-    s32 loadtrigger_offset = p_triggers[217*2];
-    EXGeoTrigger* p_trigger = OFFSET_PTR(EXGeoTrigger, &p_triggers[217*2], loadtrigger_offset);
+    s32 loadtrigger_offset = p_triggers[DARK_MINE_MISALIGNED_LOAD_TRIGGER_INDEX*2];
+    EXGeoTrigger* p_trigger = OFFSET_PTR(EXGeoTrigger, &p_triggers[DARK_MINE_MISALIGNED_LOAD_TRIGGER_INDEX*2], loadtrigger_offset);
 
     p_trigger->Rotation.y = 2.215784f;
 }

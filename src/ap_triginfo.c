@@ -96,7 +96,11 @@ GameStateTrigInfo shops_triginfos[] = {
     // Dragonfly Falls - Secret Area
     {
         .m_MapIndex = 22,
+#if defined(GC_NTSC)
         .m_TrigIndex = 182,
+#elif defined(GC_PAL)
+        .m_TrigIndex = 181,
+#endif
         .m_XYZ = {
             .x = 1153.867554f,
             .y = 15.348602f,
@@ -114,7 +118,11 @@ GameStateTrigInfo shops_triginfos[] = {
     // Dragonfly Falls - Tropical  Cove
     {
         .m_MapIndex = 22,
+#if defined(GC_NTSC)
         .m_TrigIndex = 290,
+#elif defined(GC_PAL)
+        .m_TrigIndex = 289,
+#endif
         .m_XYZ = {
             .x = 994.407471f,
             .y = -36.903439f,

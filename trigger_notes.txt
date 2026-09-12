@@ -1,0 +1,52 @@
+differences from GC NTSC to GC PAL
+
+
+
+dragon village
+    no difference
+
+crocovile swamp
+    no difference
+
+dragonfly falls
+    removed trigger 111
+    4 appended triggers
+
+coastal remains
+    no difference
+
+sunken ruins
+    no difference
+
+sunken ruins
+    no difference
+
+frostbite village
+    no difference
+
+ice citadel
+    no difference
+
+stormy beach
+    no difference
+
+molten mount
+    removed trigger 160
+    removed trigger 168
+    removed trigger 315, 316, 317
+    8 appended triggers
+
+magma falls top
+    no difference
+
+magma falls ball gadget
+    no difference
+
+magma falls bottom
+    no difference
+
+dark mine
+    no difference
+
+red's laboratory
+    no difference
