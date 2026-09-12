@@ -26,6 +26,10 @@ void dbg_add_shop_item();
 void dbg_remove_shop_item();
 #endif
 
+#if AP_DEBUG_GLOBAL_ADDRESSES!=0
+void dbg_print_misc_globals();
+#endif
+
 MapOrderInfo realm_teleporter_maporderinfo[] = {
     { .m_FileHash = HT_File_Realm1A,    .m_MapHash = 0xFFFFFFFF },
     { .m_FileHash = HT_File_Realm2A,    .m_MapHash = 0xFFFFFFFF },
@@ -480,6 +484,10 @@ bool TeleportPad_PlayerObjectives__GetObjective_PreCallHook(
 
 void print_interface_addresses()
 {
+#if AP_DEBUG_GLOBAL_ADDRESSES!=0
+    dbg_print_misc_globals();
+#endif
+
     PRINTF("AP MOD VERSION %u.%u (Maj: 0x%x, Min: 0x%x)\n",
         g_ap_version[0], g_ap_version[1], &g_ap_version[0], &g_ap_version[1]);
     PRINTF("-----\nPATCH AREA:\n");
@@ -545,6 +553,26 @@ void print_apsettings_addresses(APSettings* psettings)
     PRINTF("xlsShoppingItem[%d] xls_shop_items: %x\n", SHOP_TOTAL_NUM_ENTRIES, &psettings->xls_shop_items);
     PRINTF("APSettings_TextEntry[%d] shop_text: %x\n", SHOP_TOTAL_NUM_ENTRIES - SHOP_NUM_VANILLA_ENTRIES, &psettings->shop_text);
 }
+
+#if AP_DEBUG_GLOBAL_ADDRESSES!=0
+void dbg_print_misc_globals()
+{
+    PRINTF("objectives: %x\n", &gGameState.m_PlayerObjectives);
+    PRINTF("abilities: %x\n", &gGameState.m_PlayerState.m_AbilityFlags);
+    PRINTF("breath: %x\n", &gGameState.m_PlayerState.m_CurrentBreath);
+    PRINTF("gems: %x\n", &gGameState.m_PlayerState.m_Gems);
+    PRINTF("lock picks: %x\n", &gGameState.m_PlayerState.m_LockPickers);
+    PRINTF("light gems: %x\n", &gGameState.m_PlayerState.m_TotalLightGems);
+    PRINTF("dark gems: %x\n", &gGameState.m_PlayerState.m_TotalDarkGems);
+    PRINTF("dragon eggs: %x\n", &gGameState.m_PlayerState.m_TotalDragonEggs);
+    PRINTF("fire ammo: %x\n", &gGameState.m_PlayerState.m_FlameBombs);
+    PRINTF("ice ammo: %x\n", &gGameState.m_PlayerState.m_IceBombs);
+    PRINTF("water ammo: %x\n", &gGameState.m_PlayerState.m_WaterBombs);
+    PRINTF("elec ammo: %x\n", &gGameState.m_PlayerState.m_ElectricBombs);
+    PRINTF("gameloop state: %x\n", &gGameLoop.m_State);
+    PRINTF("gameloop paused: %x\n", &gGameLoop.m_pPanel + 1);
+}
+#endif
 
 int XSEItemHandler_Player__InitialiseStart_PreCallHook(void* self)
 {

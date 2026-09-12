@@ -16,7 +16,8 @@
 #define _build_config_AP_DEBUG_ADD_REMOVE_SHOP_ITEMS    0       // B+right to append dummy shop item to list, B+left to remove shop item.
 #define _build_config_AP_DEBUG_NOTIFICATION             0       // Dpad down to display test notification.
 #define _build_config_AP_DEBUG_DEATHLINK                0       // B+dpad to trigger deathlink events, info printed to the screen.
-#define _build_config_AP_DEBUG_TRAPS                    1       // B+dpad to trigger traps.
+#define _build_config_AP_DEBUG_TRAPS                    0       // B+dpad to trigger traps.
+#define _build_config_AP_DEBUG_GLOBAL_ADDRESSES         0       // Print misc. game addresses to the console on boot.
 // ---------------------------------------------------------------------------------------------------------
 
 
@@ -48,6 +49,9 @@
 #ifndef AP_DEBUG_TRAPS
 #define AP_DEBUG_TRAPS _build_config_AP_DEBUG_TRAPS
 #endif /* AP_DEBUG_TRAPS */
+#ifndef AP_DEBUG_GLOBAL_ADDRESSES
+#define AP_DEBUG_GLOBAL_ADDRESSES _build_config_AP_DEBUG_GLOBAL_ADDRESSES
+#endif /* AP_DEBUG_GLOBAL_ADDRESSES */
 #else /* AP_DEBUG_ENABLE != 0 */
 #ifndef AP_DEBUG_QUICK_START
 #define AP_DEBUG_QUICK_START 0
@@ -64,6 +68,9 @@
 #ifndef AP_DEBUG_TRAPS
 #define AP_DEBUG_TRAPS 0
 #endif /* AP_DEBUG_TRAPS */
+#ifndef AP_DEBUG_GLOBAL_ADDRESSES
+#define AP_DEBUG_GLOBAL_ADDRESSES 0
+#endif /* AP_DEBUG_GLOBAL_ADDRESSES */
 #endif /* AP_DEBUG_ENABLE != 0 */
 
 #endif /* AP_BUILD_CONFIG_H */
