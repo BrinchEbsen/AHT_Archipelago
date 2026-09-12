@@ -3,7 +3,10 @@
         "index": 241,
         "type": "NonCollectable",
         "map_index": 24,
-        "trig_index": 11,
+        "trig_index": {
+            "GC_NTSC": 11,
+            "GC_PAL": 11
+        },
         "objective": "HT_Objective_GivenDoubleJump",
         "x": 206.557,
         "z": 54.382,
@@ -13,7 +16,10 @@
         "index": 242,
         "type": "NonCollectable",
         "map_index": 23,
-        "trig_index": 71,
+        "trig_index": {
+            "GC_NTSC": 71,
+            "GC_PAL": 71
+        },
         "objective": "HT_Objective_GivenPoleGrabAbility",
         "x": 181.836,
         "z": 503.226,
@@ -23,7 +29,10 @@
         "index": 243,
         "type": "NonCollectable",
         "map_index": 20,
-        "trig_index": 10,
+        "trig_index": {
+            "GC_NTSC": 10,
+            "GC_PAL": 10
+        },
         "objective": "HT_Objective_GivenWingShieldAbility",
         "x": 240.131,
         "z": -0.156,
@@ -33,7 +42,10 @@
         "index": 244,
         "type": "NonCollectable",
         "map_index": 33,
-        "trig_index": 9,
+        "trig_index": {
+            "GC_NTSC": 9,
+            "GC_PAL": 9
+        },
         "objective": "HT_Objective_GivenWallKickAbility",
         "x": -682.961,
         "z": -148.253,

@@ -8,11 +8,17 @@ str_pragma_endregion = "#pragma endregion"
 
 curr_file_index: int = 0
 curr_file: str | None = None
-curr_entry: dict[str, int | float | str] | None = None
+curr_entry: dict[str, int | float | str | dict[str, int]] | None = None
 curr_entry_index: int = 0
 curr_comment: str | None = None
 
-outputs: dict[str, list[dict[str, int | float | str]]] = {}
+outputs: dict[str, list[dict[str, int | float | str | dict[str, int]]]] = {}
+
+build_versions: list[str] = [
+    "GC_NTSC",
+    "GC_PAL"
+]
+specify_build_version: str = ""
 
 
 def get_struct_value_string(line: str, name: str) -> str | None:
@@ -29,6 +35,21 @@ def get_struct_value_string(line: str, name: str) -> str | None:
         val_str = val_str.rstrip(',')
 
     return val_str
+
+
+def test_for_build_version_define(line: str) -> None:
+    global specify_build_version
+
+    line = line.strip()
+    if not line.startswith("#"):
+        return
+
+    if line.startswith("#if defined(") or line.startswith("#elif defined("):
+        idx_1 = line.index("(")+1
+        idx_2 = line.index(")")
+        specify_build_version = line[idx_1:idx_2]
+    elif line.startswith("#endif"):
+        specify_build_version = ""
 
 
 with open(in_file) as file:
@@ -55,7 +76,9 @@ with open(in_file) as file:
 
         comment_split = line.split("//")
         if len(comment_split) >= 2:
-            curr_comment = comment_split[1].strip()
+            # Don't include comment if it's the index comment
+            if '{' not in comment_split[0]:
+                curr_comment = comment_split[1].strip()
 
         if line.find("{") != -1:
             curr_entry = {}
@@ -64,6 +87,8 @@ with open(in_file) as file:
             continue
 
         if curr_entry is not None:
+            test_for_build_version_define(line)
+            
             val_str = get_struct_value_string(line, "type")
             if val_str is not None:
                 curr_entry["type"] = val_str
@@ -74,7 +99,15 @@ with open(in_file) as file:
 
             val_str = get_struct_value_string(line, "trig_index")
             if val_str is not None:
-                curr_entry["trig_index"] = int(val_str)
+                if "trig_index" not in curr_entry:
+                    curr_entry["trig_index"] = {}
+
+                assert isinstance(curr_entry["trig_index"], dict)
+                if specify_build_version == "":
+                    for bv in build_versions:
+                        curr_entry["trig_index"][bv] = int(val_str)
+                else:
+                    curr_entry["trig_index"][specify_build_version] = int(val_str)
 
             val_str = get_struct_value_string(line, "objective")
             if val_str is not None:

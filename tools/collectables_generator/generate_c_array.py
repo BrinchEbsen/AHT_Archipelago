@@ -5,7 +5,7 @@ output_str: str = "#include <ap_collectables_array.h>\n"
 output_str += "#include <hashcodes.h>\n\n"
 output_str += "APCollectable g_ap_collectables[] = {\n"
 
-in_dicts: dict[str, list[dict[str, int | float | str]]] = {}
+in_dicts: dict[str, list[dict[str, int | float | str | dict[str, int]]]] = {}
 
 for entry in os.scandir("arrays"):
     if entry.is_file():
@@ -40,9 +40,32 @@ for region_name, entries in in_dicts.items():
         assert isinstance(m_map_index, int)
         output_str += "\t\t.map_index = "+str(m_map_index)+",\n"
 
+        # probably the ugliest code i've ever written
         m_trig_index = entry["trig_index"]
-        assert isinstance(m_trig_index, int)
-        output_str += "\t\t.trig_index = "+str(m_trig_index)+",\n"
+        assert isinstance(m_trig_index, dict)
+        separate_builds = False
+        prev_v: int | None = None
+        for k, v in m_trig_index.items():
+            if prev_v is None:
+                prev_v = v
+                continue
+            else:
+                if v != prev_v:
+                    separate_builds = True
+                    break
+                prev_v = v
+        if separate_builds:
+            first = True
+            for k, v in m_trig_index.items():
+                if first:
+                    first = False
+                    output_str += "#if defined("+k+")\n"
+                else:
+                    output_str += "#elif defined("+k+")\n"
+                output_str += "\t\t.trig_index = "+str(v)+",\n"
+            output_str += "#endif\n"
+        else:
+            output_str += "\t\t.trig_index = "+str(prev_v)+",\n"
 
         if "objective" in entry.keys():
             m_objective = entry["objective"]

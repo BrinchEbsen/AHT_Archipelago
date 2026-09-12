@@ -3,7 +3,10 @@
         "index": 249,
         "type": "FireWork",
         "map_index": 24,
-        "trig_index": 304,
+        "trig_index": {
+            "GC_NTSC": 304,
+            "GC_PAL": 304
+        },
         "x": 223.69,
         "z": -74.603,
         "comment": "Dragon Village"
@@ -12,7 +15,10 @@
         "index": 250,
         "type": "FireWork",
         "map_index": 24,
-        "trig_index": 305,
+        "trig_index": {
+            "GC_NTSC": 305,
+            "GC_PAL": 305
+        },
         "x": 292.67,
         "z": 15.199
     },
@@ -20,7 +26,10 @@
         "index": 251,
         "type": "FireWork",
         "map_index": 24,
-        "trig_index": 344,
+        "trig_index": {
+            "GC_NTSC": 344,
+            "GC_PAL": 344
+        },
         "x": 58.806,
         "z": 133.725
     },
@@ -28,7 +37,10 @@
         "index": 252,
         "type": "FireWork",
         "map_index": 24,
-        "trig_index": 431,
+        "trig_index": {
+            "GC_NTSC": 431,
+            "GC_PAL": 431
+        },
         "x": -66.573,
         "z": -70.162
     },
@@ -36,7 +48,10 @@
         "index": 253,
         "type": "FireWork",
         "map_index": 23,
-        "trig_index": 276,
+        "trig_index": {
+            "GC_NTSC": 276,
+            "GC_PAL": 276
+        },
         "x": 197.835,
         "z": 495.531,
         "comment": "Crocovile Swamp"
@@ -45,7 +60,10 @@
         "index": 254,
         "type": "FireWork",
         "map_index": 23,
-        "trig_index": 292,
+        "trig_index": {
+            "GC_NTSC": 292,
+            "GC_PAL": 292
+        },
         "x": -68.49,
         "z": 443.695
     },
@@ -53,7 +71,10 @@
         "index": 255,
         "type": "FireWork",
         "map_index": 23,
-        "trig_index": 294,
+        "trig_index": {
+            "GC_NTSC": 294,
+            "GC_PAL": 294
+        },
         "x": 209.934,
         "z": 496.094
     },
@@ -61,7 +82,10 @@
         "index": 256,
         "type": "FireWork",
         "map_index": 19,
-        "trig_index": 207,
+        "trig_index": {
+            "GC_NTSC": 207,
+            "GC_PAL": 207
+        },
         "x": -625.89,
         "z": 81.543,
         "comment": "Sunken Ruins"
@@ -70,7 +94,10 @@
         "index": 257,
         "type": "FireWork",
         "map_index": 19,
-        "trig_index": 236,
+        "trig_index": {
+            "GC_NTSC": 236,
+            "GC_PAL": 236
+        },
         "x": -815.179,
         "z": -4.108
     },
@@ -78,7 +105,10 @@
         "index": 258,
         "type": "FireWork",
         "map_index": 19,
-        "trig_index": 252,
+        "trig_index": {
+            "GC_NTSC": 252,
+            "GC_PAL": 252
+        },
         "x": -802.593,
         "z": -201.492
     },
@@ -86,7 +116,10 @@
         "index": 259,
         "type": "FireWork",
         "map_index": 19,
-        "trig_index": 287,
+        "trig_index": {
+            "GC_NTSC": 287,
+            "GC_PAL": 287
+        },
         "x": -590.07,
         "z": -131.139
     },
@@ -94,7 +127,10 @@
         "index": 260,
         "type": "FireWork",
         "map_index": 20,
-        "trig_index": 113,
+        "trig_index": {
+            "GC_NTSC": 113,
+            "GC_PAL": 113
+        },
         "x": -111.685,
         "z": 23.601,
         "comment": "Cloudy Domain"
@@ -103,7 +139,10 @@
         "index": 261,
         "type": "FireWork",
         "map_index": 20,
-        "trig_index": 264,
+        "trig_index": {
+            "GC_NTSC": 264,
+            "GC_PAL": 264
+        },
         "x": 120.875,
         "z": -35.0
     },
@@ -111,7 +150,10 @@
         "index": 262,
         "type": "FireWork",
         "map_index": 20,
-        "trig_index": 273,
+        "trig_index": {
+            "GC_NTSC": 273,
+            "GC_PAL": 273
+        },
         "x": 16.897,
         "z": 131.332
     },
@@ -119,7 +161,10 @@
         "index": 263,
         "type": "FireWork",
         "map_index": 33,
-        "trig_index": 250,
+        "trig_index": {
+            "GC_NTSC": 250,
+            "GC_PAL": 250
+        },
         "x": -822.257,
         "z": -337.989,
         "comment": "Ice Citadel"
@@ -128,7 +173,10 @@
         "index": 264,
         "type": "FireWork",
         "map_index": 44,
-        "trig_index": 98,
+        "trig_index": {
+            "GC_NTSC": 98,
+            "GC_PAL": 98
+        },
         "x": -151.7,
         "z": 64.303,
         "comment": "Stormy Beach"
@@ -137,7 +185,10 @@
         "index": 265,
         "type": "FireWork",
         "map_index": 44,
-        "trig_index": 113,
+        "trig_index": {
+            "GC_NTSC": 113,
+            "GC_PAL": 113
+        },
         "x": 53.333,
         "z": 42.17
     },
@@ -145,7 +196,10 @@
         "index": 266,
         "type": "FireWork",
         "map_index": 44,
-        "trig_index": 149,
+        "trig_index": {
+            "GC_NTSC": 149,
+            "GC_PAL": 149
+        },
         "x": -49.664,
         "z": 177.84
     },
@@ -153,7 +207,10 @@
         "index": 267,
         "type": "FireWork",
         "map_index": 60,
-        "trig_index": 132,
+        "trig_index": {
+            "GC_NTSC": 132,
+            "GC_PAL": 132
+        },
         "x": -96.888,
         "z": 551.814,
         "comment": "Molten Mount"
@@ -162,7 +219,10 @@
         "index": 268,
         "type": "FireWork",
         "map_index": 61,
-        "trig_index": 19,
+        "trig_index": {
+            "GC_NTSC": 19,
+            "GC_PAL": 19
+        },
         "x": 194.501,
         "z": 864.891,
         "comment": "Magma Falls Top"
@@ -171,7 +231,10 @@
         "index": 269,
         "type": "FireWork",
         "map_index": 30,
-        "trig_index": 315,
+        "trig_index": {
+            "GC_NTSC": 315,
+            "GC_PAL": 315
+        },
         "x": -488.456,
         "z": -1539.12,
         "comment": "Dark Mine"
@@ -180,7 +243,10 @@
         "index": 270,
         "type": "FireWork",
         "map_index": 30,
-        "trig_index": 366,
+        "trig_index": {
+            "GC_NTSC": 366,
+            "GC_PAL": 366
+        },
         "x": -508.205,
         "z": -1708.773
     }

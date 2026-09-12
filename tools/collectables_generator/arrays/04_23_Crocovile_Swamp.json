@@ -3,7 +3,10 @@
         "index": 48,
         "type": "DarkGem",
         "map_index": 23,
-        "trig_index": 0,
+        "trig_index": {
+            "GC_NTSC": 0,
+            "GC_PAL": 0
+        },
         "x": 8.988,
         "z": 538.614
     },
@@ -11,7 +14,10 @@
         "index": 49,
         "type": "EggThief",
         "map_index": 23,
-        "trig_index": 1,
+        "trig_index": {
+            "GC_NTSC": 1,
+            "GC_PAL": 1
+        },
         "x": 293.351,
         "z": 734.02
     },
@@ -19,7 +25,10 @@
         "index": 50,
         "type": "DarkGem",
         "map_index": 23,
-        "trig_index": 5,
+        "trig_index": {
+            "GC_NTSC": 5,
+            "GC_PAL": 5
+        },
         "x": 152.106,
         "z": 537.051
     },
@@ -27,7 +36,10 @@
         "index": 51,
         "type": "LightGem",
         "map_index": 23,
-        "trig_index": 8,
+        "trig_index": {
+            "GC_NTSC": 8,
+            "GC_PAL": 8
+        },
         "x": 334.059,
         "z": 619.921
     },
@@ -35,7 +47,10 @@
         "index": 52,
         "type": "DragonEgg",
         "map_index": 23,
-        "trig_index": 36,
+        "trig_index": {
+            "GC_NTSC": 36,
+            "GC_PAL": 36
+        },
         "x": 207.287,
         "z": 509.651
     },
@@ -43,7 +58,10 @@
         "index": 53,
         "type": "LightGem",
         "map_index": 23,
-        "trig_index": 48,
+        "trig_index": {
+            "GC_NTSC": 48,
+            "GC_PAL": 48
+        },
         "x": 297.543,
         "z": 592.444
     },
@@ -51,7 +69,10 @@
         "index": 54,
         "type": "LightGem",
         "map_index": 23,
-        "trig_index": 49,
+        "trig_index": {
+            "GC_NTSC": 49,
+            "GC_PAL": 49
+        },
         "x": 105.845,
         "z": 594.52
     },
@@ -59,7 +80,10 @@
         "index": 55,
         "type": "LightGem",
         "map_index": 23,
-        "trig_index": 54,
+        "trig_index": {
+            "GC_NTSC": 54,
+            "GC_PAL": 54
+        },
         "x": 165.745,
         "z": 750.651
     },
@@ -67,7 +91,10 @@
         "index": 56,
         "type": "LightGem",
         "map_index": 23,
-        "trig_index": 58,
+        "trig_index": {
+            "GC_NTSC": 58,
+            "GC_PAL": 58
+        },
         "x": 75.439,
         "z": 538.957
     },
@@ -75,7 +102,10 @@
         "index": 57,
         "type": "DragonEgg",
         "map_index": 23,
-        "trig_index": 62,
+        "trig_index": {
+            "GC_NTSC": 62,
+            "GC_PAL": 62
+        },
         "x": -151.165,
         "z": 491.431
     },
@@ -83,7 +113,10 @@
         "index": 58,
         "type": "DarkGem",
         "map_index": 23,
-        "trig_index": 68,
+        "trig_index": {
+            "GC_NTSC": 68,
+            "GC_PAL": 68
+        },
         "x": 175.806,
         "z": 482.756
     },
@@ -91,7 +124,10 @@
         "index": 59,
         "type": "DragonEgg_Chest",
         "map_index": 23,
-        "trig_index": 103,
+        "trig_index": {
+            "GC_NTSC": 103,
+            "GC_PAL": 103
+        },
         "x": 135.36,
         "z": 593.936
     },
@@ -99,7 +135,10 @@
         "index": 60,
         "type": "LightGem",
         "map_index": 23,
-        "trig_index": 161,
+        "trig_index": {
+            "GC_NTSC": 161,
+            "GC_PAL": 161
+        },
         "x": 73.546,
         "z": 549.902
     },
@@ -107,7 +146,10 @@
         "index": 61,
         "type": "LightGem_Chest",
         "map_index": 23,
-        "trig_index": 162,
+        "trig_index": {
+            "GC_NTSC": 162,
+            "GC_PAL": 162
+        },
         "x": -58.559,
         "z": 515.1
     },
@@ -115,7 +157,10 @@
         "index": 62,
         "type": "DragonEgg_Chest",
         "map_index": 23,
-        "trig_index": 202,
+        "trig_index": {
+            "GC_NTSC": 202,
+            "GC_PAL": 202
+        },
         "x": 171.311,
         "z": 659.408
     },
@@ -123,7 +168,10 @@
         "index": 63,
         "type": "DragonEgg",
         "map_index": 23,
-        "trig_index": 203,
+        "trig_index": {
+            "GC_NTSC": 203,
+            "GC_PAL": 203
+        },
         "x": 287.616,
         "z": 506.183
     },
@@ -131,7 +179,10 @@
         "index": 64,
         "type": "LightGem",
         "map_index": 23,
-        "trig_index": 204,
+        "trig_index": {
+            "GC_NTSC": 204,
+            "GC_PAL": 204
+        },
         "x": 193.263,
         "z": 508.721
     }

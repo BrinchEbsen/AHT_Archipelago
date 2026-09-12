@@ -3,7 +3,10 @@
         "index": 171,
         "type": "DragonEgg_Chest",
         "map_index": 61,
-        "trig_index": 39,
+        "trig_index": {
+            "GC_NTSC": 39,
+            "GC_PAL": 39
+        },
         "x": 286.53,
         "z": 863.705
     },
@@ -11,7 +14,10 @@
         "index": 172,
         "type": "LightGem",
         "map_index": 61,
-        "trig_index": 57,
+        "trig_index": {
+            "GC_NTSC": 57,
+            "GC_PAL": 57
+        },
         "x": 196.759,
         "z": 834.204
     }

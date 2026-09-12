@@ -3,12 +3,18 @@
         "index": 29,
         "type": "LightGem",
         "map_index": 21,
-        "trig_index": 59
+        "trig_index": {
+            "GC_NTSC": 59,
+            "GC_PAL": 59
+        }
     },
     {
         "index": 30,
         "type": "DragonEgg",
         "map_index": 21,
-        "trig_index": 60
+        "trig_index": {
+            "GC_NTSC": 60,
+            "GC_PAL": 60
+        }
     }
 ]

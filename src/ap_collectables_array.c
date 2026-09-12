@@ -368,7 +368,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [ 45]
 		.type = LightGem_Chest,
 		.map_index = 22,
+#if defined(GC_NTSC)
 		.trig_index = 312,
+#elif defined(GC_PAL)
+		.trig_index = 311,
+#endif
 		.objective = 0xFFFF,
 		.x = 579.858f,
 		.z = -286.488f
@@ -376,7 +380,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [ 46]
 		.type = LightGem,
 		.map_index = 22,
+#if defined(GC_NTSC)
 		.trig_index = 313,
+#elif defined(GC_PAL)
+		.trig_index = 312,
+#endif
 		.objective = 0xFFFF,
 		.x = 925.944f,
 		.z = -854.214f
@@ -384,7 +392,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [ 47]
 		.type = LightGem_Chest,
 		.map_index = 22,
+#if defined(GC_NTSC)
 		.trig_index = 314,
+#elif defined(GC_PAL)
+		.trig_index = 313,
+#endif
 		.objective = 0xFFFF,
 		.x = 1056.308f,
 		.z = -791.347f
@@ -1372,7 +1384,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [168]
 		.type = LightGem_Chest,
 		.map_index = 60,
+#if defined(GC_NTSC)
 		.trig_index = 213,
+#elif defined(GC_PAL)
+		.trig_index = 211,
+#endif
 		.objective = 0xFFFF,
 		.x = -213.884f,
 		.z = 562.944f
@@ -1380,7 +1396,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [169]
 		.type = DragonEgg_Chest,
 		.map_index = 60,
+#if defined(GC_NTSC)
 		.trig_index = 214,
+#elif defined(GC_PAL)
+		.trig_index = 212,
+#endif
 		.objective = 0xFFFF,
 		.x = 185.123f,
 		.z = 920.068f
@@ -1388,7 +1408,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [170]
 		.type = LightGem_Chest,
 		.map_index = 60,
+#if defined(GC_NTSC)
 		.trig_index = 215,
+#elif defined(GC_PAL)
+		.trig_index = 213,
+#endif
 		.objective = 0xFFFF,
 		.x = 309.684f,
 		.z = 939.061f

@@ -3,7 +3,10 @@
         "index": 142,
         "type": "DarkGem",
         "map_index": 44,
-        "trig_index": 27,
+        "trig_index": {
+            "GC_NTSC": 27,
+            "GC_PAL": 27
+        },
         "x": -92.003,
         "z": 303.808
     },
@@ -11,7 +14,10 @@
         "index": 143,
         "type": "LightGem",
         "map_index": 44,
-        "trig_index": 44,
+        "trig_index": {
+            "GC_NTSC": 44,
+            "GC_PAL": 44
+        },
         "x": -213.556,
         "z": 57.555
     },
@@ -19,7 +25,10 @@
         "index": 144,
         "type": "EggThief",
         "map_index": 44,
-        "trig_index": 66,
+        "trig_index": {
+            "GC_NTSC": 66,
+            "GC_PAL": 66
+        },
         "x": -34.484,
         "z": 18.496
     }

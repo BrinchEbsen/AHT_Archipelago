@@ -3,7 +3,10 @@
         "index": 131,
         "type": "LightGem",
         "map_index": 40,
-        "trig_index": 1,
+        "trig_index": {
+            "GC_NTSC": 1,
+            "GC_PAL": 1
+        },
         "x": -1070.981,
         "z": -1205.956
     },
@@ -11,7 +14,10 @@
         "index": 132,
         "type": "DarkGem",
         "map_index": 40,
-        "trig_index": 2,
+        "trig_index": {
+            "GC_NTSC": 2,
+            "GC_PAL": 2
+        },
         "x": -1597.688,
         "z": -1304.058
     },
@@ -19,7 +25,10 @@
         "index": 133,
         "type": "DarkGem",
         "map_index": 40,
-        "trig_index": 3,
+        "trig_index": {
+            "GC_NTSC": 3,
+            "GC_PAL": 3
+        },
         "x": -957.165,
         "z": -1200.406
     },
@@ -27,7 +36,10 @@
         "index": 134,
         "type": "DarkGem",
         "map_index": 40,
-        "trig_index": 4,
+        "trig_index": {
+            "GC_NTSC": 4,
+            "GC_PAL": 4
+        },
         "x": -1069.976,
         "z": -1617.574
     },
@@ -35,7 +47,10 @@
         "index": 135,
         "type": "DragonEgg",
         "map_index": 40,
-        "trig_index": 41,
+        "trig_index": {
+            "GC_NTSC": 41,
+            "GC_PAL": 41
+        },
         "x": -1350.317,
         "z": -1317.104
     },
@@ -43,7 +58,10 @@
         "index": 136,
         "type": "LightGem",
         "map_index": 40,
-        "trig_index": 109,
+        "trig_index": {
+            "GC_NTSC": 109,
+            "GC_PAL": 109
+        },
         "x": -1142.621,
         "z": -1473.406
     },
@@ -51,7 +69,10 @@
         "index": 137,
         "type": "DragonEgg",
         "map_index": 40,
-        "trig_index": 110,
+        "trig_index": {
+            "GC_NTSC": 110,
+            "GC_PAL": 110
+        },
         "x": -975.346,
         "z": -1607.982
     },
@@ -59,7 +80,10 @@
         "index": 138,
         "type": "LightGem",
         "map_index": 40,
-        "trig_index": 111,
+        "trig_index": {
+            "GC_NTSC": 111,
+            "GC_PAL": 111
+        },
         "x": -990.302,
         "z": -1540.03
     },
@@ -67,7 +91,10 @@
         "index": 139,
         "type": "LightGem",
         "map_index": 40,
-        "trig_index": 115,
+        "trig_index": {
+            "GC_NTSC": 115,
+            "GC_PAL": 115
+        },
         "x": -1441.266,
         "z": -1354.549
     },
@@ -75,7 +102,10 @@
         "index": 140,
         "type": "EggThief",
         "map_index": 40,
-        "trig_index": 237,
+        "trig_index": {
+            "GC_NTSC": 237,
+            "GC_PAL": 237
+        },
         "x": -1241.792,
         "z": -1420.346
     },
@@ -83,7 +113,10 @@
         "index": 141,
         "type": "LightGem",
         "map_index": 40,
-        "trig_index": 388,
+        "trig_index": {
+            "GC_NTSC": 388,
+            "GC_PAL": 388
+        },
         "x": -1514.395,
         "z": -1282.014
     }
