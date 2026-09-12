@@ -64,8 +64,8 @@ GUI_PauseMenu__v_DrawStateRunning = 0x80399150;
 SE_GameLoop__Teleport = 0x80240b34;
 
 /* ap_deathlink.h */
-XSEItemHandler_Player__TakeDamage = 0x800641a4;
-XSEItemHandler_BallGadget__TakeDamage = 0x80008d1c;
+XSEItemHandler_Player__TakeDamage = 0x80064290;
+XSEItemHandler_BallGadget__TakeDamage = 0x80008df4;
 XSEItemHandler_Player__InvulnerableToAttack = 0x8005a98c;
 
 /* ap_minimap.h */
@@ -84,7 +84,7 @@ gTextBuffer = 0x80456fa0;
 EXBaseWnd__SelectFont = 0x803037dc;
 XWnd__SetText = 0x8012fba4;
 XWnd__FontPrintW = 0x80133920;
-XWnd__FontPrint = 0x80133920;
+XWnd__FontPrint = 0x80134dac;
 XWnd__AddDrawSELoop_Tail = 0x8012f774;
 XWnd__TextPrintH = 0x8012f9a8;
 XWnd__TextPrintC = 0x8012f9f4;
@@ -102,7 +102,7 @@ EXWnd__SelectSprite2DTexture = 0x8031d8ac;
 
 /* filemanager.h */
 gSEFileManager = 0x804611d0;
-SE_FileManager__IsGeoLoaded = 0x8022e114;
+SE_FileManager__IsGeoLoaded = 0x8022e254;
 SE_FileManager__GetGeoHeader = 0x8022e28c;
 
 /* map.h */
@@ -167,7 +167,7 @@ R4ZFireWorks__classR4ZFireWorks = 0x803c9a64;
 /* breath_hooks.h */
 XSEItemHandler_Spyro__GetCurrentBreath = 0x800ad62c;
 GUI_Panel__ForcePanelOn = 0x80222c14;
-EXSoundTag__IsPlaying = 0x802f9770;
+EXSoundTag__IsPlaying = 0x802f97dc;
 ElecBreath__PlaySound = 0x8009d42c;
 
 /* file_select_hooks.h */
@@ -236,7 +236,7 @@ strcat = 0x8035a7a0;
 strncat = 0x8035a830;
 strncmp = 0x8035a8dc;
 strstr = 0x8035a9bc;
-Wcscpy = 0x802fc74c;
+Wcscpy = 0x802fc77c;
 memcpy = 0x8025a560;
 memmove = 0x8025a604;
 memset = 0x8025a6f0;
