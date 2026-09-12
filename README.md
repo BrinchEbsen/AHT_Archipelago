@@ -10,11 +10,11 @@ Created using Composer's [code injection utility](https://github.com/C0mposer/C-
 
 ## Compatibility
 
-This mod is currently limited specifically to the NTSC GameCube version (G5SE7D).
+This mod is currently limited specifically to the NTSC GameCube version (G5SE7D). A release for the PAL GameCube version (G5SP7D) is under development.
 
 | Platform | NTSC | PAL |
 | -------- | ---- | --- |
-| GameCube | ✅   | ❌  |
+| GameCube | ✅   | 🚧  |
 | PS2      | ❌   | ❌  |
 | Xbox     | ❌   | ❌  |
 
