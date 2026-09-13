@@ -5,6 +5,14 @@
 #include <pad.h>
 #include <ap_version.h>
 
+#if defined(BUILD_NTSC)
+#define TITLE_REGION_STR " (NTSC)"
+#elif defined(BUILD_PAL)
+#define TITLE_REGION_STR " (PAL)"
+#else
+#define TITLE_REGION_STR
+#endif
+
 // Whether the file select screen is currently displaying a warning.
 bool ap_save_warning_active = false;
 
@@ -42,7 +50,7 @@ s32 TitleLoop__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
         case 1: // TitleState_PressStart
         case 2: // TitleState_StartMenu
         case 4: // TitleState_ExtrasMenu
-            TEXT_PRINT_COLOR_F(pWnd, 0, 0, COLOR_WHITE, "Archipelago Mod Version %u.%u", g_ap_version[0], g_ap_version[1]);
+            TEXT_PRINT_COLOR_F(pWnd, 0, 0, COLOR_WHITE, "Archipelago Mod Version %u.%u" TITLE_REGION_STR, g_ap_version[0], g_ap_version[1]);
             if (g_patch_ap_settings.patch_been_written_to) {
                 TEXT_PRINT_COLOR(pWnd, 0, 20, COLOR_LIGHT_GREEN, "Settings initialized");
             } else {
