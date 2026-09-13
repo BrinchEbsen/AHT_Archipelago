@@ -14,16 +14,19 @@ void SE_TriggerList__ConstructAll_PreCallHook(SE_TriggerList* self)
         void* geo_map = EXItemAnimator_Map__GetGeoMap(map_anim);
         if (geo_map != NULL)
         {
+#if defined(CORRECT_DARK_MINE_LOADING_TRIGGER)
             if (self->m_pMap->m_MapListIndex == 30) // dark mine
             {
                 correct_dark_mine_loading_trigger(geo_map);
             }
+#endif
         }
     }
 
     SE_TriggerList__ConstructAll(self);
 }
 
+#if defined(CORRECT_DARK_MINE_LOADING_TRIGGER)
 void correct_dark_mine_loading_trigger(void* p_geo_map)
 {
     // Pointer math is funky because of the way the data is formatted with relative pointers
@@ -39,3 +42,4 @@ void correct_dark_mine_loading_trigger(void* p_geo_map)
 
     p_trigger->Rotation.y = 2.215784f;
 }
+#endif

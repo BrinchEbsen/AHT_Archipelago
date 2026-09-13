@@ -24,6 +24,12 @@
 #define SIZE_ASSERT(type, size_gc, size_ps2)
 #endif
 
+#if defined(GC_NTSC) || defined(PS2_NTSC)
+#define BUILD_NTSC
+#elif defined(GC_PAL) || defined(PS2_PAL)
+#define BUILD_PAL
+#endif
+
 // ==================== Type Definitions ====================
 
 typedef unsigned char           u8, uint8_t, byte, uchar, undefined1, undefined;
