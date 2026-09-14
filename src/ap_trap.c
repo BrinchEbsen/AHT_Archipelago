@@ -17,6 +17,8 @@
 
 u8 traps_states[TrapType_NUM] = {0};
 
+s32 traps_params[TrapType_NUM] = {0};
+
 ap_trap_update_func traps_update_funcs[TrapType_NUM] =
 {
     [TrapType_MoneyBagsSpamCall]    = ap_trap_moneybags_spam_call_update,
@@ -50,8 +52,10 @@ void ap_trap_update()
         if (type < TrapType_NUM)
         {
             traps_states[type] = 1;
+            traps_params[type] = g_gamestate_ap_settings.trap_data;
         }
         g_gamestate_ap_settings.trap = 0;
+        g_gamestate_ap_settings.trap_data = 0;
     }
 
     // Update any traps that are running.
@@ -59,7 +63,7 @@ void ap_trap_update()
     {
         if (traps_states[i] != 0)
         {
-            traps_update_funcs[i](&traps_states[i]);
+            traps_update_funcs[i](&traps_states[i], &traps_params[i]);
         }
     }
 }
@@ -88,10 +92,8 @@ u16 mb_voicelines_hashes[] =
     HT_Sound_SPEECH_MBG_043 & 0xFFFF
 };
 
-void ap_trap_moneybags_spam_call_update(u8* state)
+void ap_trap_moneybags_spam_call_update(u8* state, s32* param)
 {
-    static s32 timer = 0;
-
     if (gpPlayer == NULL)
     {
         return;
@@ -105,7 +107,6 @@ void ap_trap_moneybags_spam_call_update(u8* state)
     switch (*state)
     {
         case 1:
-            timer = g_gamestate_ap_settings.trap_data;
             int line_index = RAND32 % ARRAY_SIZE(mb_voicelines_hashes);
             PlaySFX(0x1AF00000 | mb_voicelines_hashes[line_index]);
             XSEItemEnv__StartMusic_ReImplHook(EXItemEnv__m_pTheItemEnv, HT_Sound_MFX_Shop, 0, 0, 0);
@@ -114,8 +115,8 @@ void ap_trap_moneybags_spam_call_update(u8* state)
             return;
         case 2:
         default:
-            timer--;
-            if (timer <= 0)
+            (*param)--;
+            if (*param <= 0)
             {
                 lock_music_to_shop = false;
                 *state = 0;
@@ -124,21 +125,18 @@ void ap_trap_moneybags_spam_call_update(u8* state)
     }
 }
 
-void ap_trap_reverse_controls_update(u8* state)
+void ap_trap_reverse_controls_update(u8* state, s32* param)
 {
-    static s32 timer = 0;
-
     switch (*state)
     {
         case 1:
-            timer = g_gamestate_ap_settings.trap_data;
             pad_reverse_analog = true;
             *state = 2;
             return;
         case 2:
         default:
-            timer--;
-            if (timer <= 0)
+            (*param)--;
+            if (*param <= 0)
             {
                 pad_reverse_analog = false;
                 *state = 0;
