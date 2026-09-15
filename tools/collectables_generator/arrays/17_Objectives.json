@@ -80,7 +80,7 @@
         "map_index": 22,
         "trig_index": {
             "GC_NTSC": 283,
-            "GC_PAL": 283
+            "GC_PAL": 282
         },
         "objective": "HT_Objective_MR1_Spx_Egg",
         "x": 1115.686,
@@ -93,7 +93,7 @@
         "map_index": 22,
         "trig_index": {
             "GC_NTSC": 283,
-            "GC_PAL": 283
+            "GC_PAL": 282
         },
         "objective": "HT_Objective_MR1_Spx_AllDone",
         "x": 1115.686,

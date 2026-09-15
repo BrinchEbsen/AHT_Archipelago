@@ -1552,7 +1552,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [187]
 		.type = DragonEgg_MiniGame,
 		.map_index = 22,
+#if defined(GC_NTSC)
 		.trig_index = 283,
+#elif defined(GC_PAL)
+		.trig_index = 282,
+#endif
 		.objective = HT_Objective_MR1_Spx_Egg & 0xFFFF,
 		.x = 1115.686f,
 		.z = -576.15f
@@ -1560,7 +1564,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [188]
 		.type = LightGem_MiniGame,
 		.map_index = 22,
+#if defined(GC_NTSC)
 		.trig_index = 283,
+#elif defined(GC_PAL)
+		.trig_index = 282,
+#endif
 		.objective = HT_Objective_MR1_Spx_AllDone & 0xFFFF,
 		.x = 1115.686f,
 		.z = -576.15f
@@ -1973,7 +1981,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [236]
 		.type = Junk_Chest,
 		.map_index = 60,
+#if defined(GC_NTSC)
 		.trig_index = 325,
+#elif defined(GC_PAL)
+		.trig_index = 320,
+#endif
 		.objective = 0xFFFF,
 		.x = 301.385f,
 		.z = 1208.42f
