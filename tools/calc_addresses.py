@@ -44,7 +44,7 @@ class BuildVersion:
 
 class ParseState(Enum):
     FIND_STRUCT = 1
-    CHECK_SETTINGS_START = 2
+    CHECK_STRUCT_START = 2
     FIND_MEMBERS = 3
     GET_MEMBER_NAME = 4
     GET_MEMBER_OFFS = 5
@@ -59,8 +59,8 @@ def find_struct(readelf_lines: list[str], name: str) -> Struct:
         match state:
             case ParseState.FIND_STRUCT:
                 if "DW_TAG_structure_type" in line:
-                    state = ParseState.CHECK_SETTINGS_START
-            case ParseState.CHECK_SETTINGS_START:
+                    state = ParseState.CHECK_STRUCT_START
+            case ParseState.CHECK_STRUCT_START:
                 if line.endswith(name):
                     state = ParseState.FIND_MEMBERS
                 else:
