@@ -9,7 +9,9 @@ void EXGamePad__Update_PreCallHook(EXBaseGamePad* self)
     if (pad_reverse_analog)
     {
         self->m_AnalogChan[g_PadNum][LAX]   *= -1.0f;
+        self->m_AnalogChan[g_PadNum][LAY]   *= -1.0f;
         self->m_AnalogChan[g_PadNum][RAX]   *= -1.0f;
+        self->m_AnalogChan[g_PadNum][RAY]   *= -1.0f;
     }
 }
 
