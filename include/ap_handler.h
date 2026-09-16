@@ -75,12 +75,6 @@ SE_GameState* mapchanger_SE_GameState__operatorequals_PreCallHook(SE_GameState* 
 bool TeleportPad_PlayerObjectives__GetObjective_PreCallHook(
     PlayerObjectives* self, EXHashCode hashcode, s32* result);
 
-// Print out addresses for the client to Dolphin's log window.
-void print_interface_addresses();
-
-// Helper function for printing addresses of an AP settings struct.
-void print_apsettings_addresses(APSettings* psettings);
-
 // Called whenever the player is initialized.
 int XSEItemHandler_Player__InitialiseStart_PreCallHook(void* self);
 

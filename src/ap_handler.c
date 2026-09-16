@@ -59,10 +59,6 @@ void ap_update()
     if (g_patch_ap_settings.patch_been_written_to && (gGameLoop.m_State == Running)) {
         ap_gamestate_update();
     }
-
-    ONCE {
-        print_interface_addresses();
-    }
 }
 
 void ap_gamestate_update()
@@ -481,98 +477,6 @@ bool TeleportPad_PlayerObjectives__GetObjective_PreCallHook(
     *result = 1;
     return true;
 }
-
-void print_interface_addresses()
-{
-#if AP_DEBUG_GLOBAL_ADDRESSES!=0
-    dbg_print_misc_globals();
-#endif
-
-    PRINTF("AP MOD VERSION %u.%u (Maj: 0x%x, Min: 0x%x)\n",
-        g_ap_version[0], g_ap_version[1], &g_ap_version[0], &g_ap_version[1]);
-    PRINTF("-----\nPATCH AREA:\n");
-    print_apsettings_addresses(&g_patch_ap_settings);
-    PRINTF("-----\nGAMESTATE AREA:\n");
-    print_apsettings_addresses(&g_gamestate_ap_settings);
-    PRINTF("-----\nNOTIFICATION:\n");
-    PRINTF("RGBA color: %x\n", &notif_data.color);
-    PRINTF("u32 timer: %x\n", &notif_data.timer);
-    PRINTF("wchar16[%d] text_buffer: %x\n", AP_NOTIFICATION_TEXT_BUFFER_SIZE, &notif_data.text_buffer);
-    PRINTF("-----\n");
-}
-
-void print_apsettings_addresses(APSettings* psettings)
-{
-    PRINTF("u8 location_bitfield[%d]: %x\n", AP_SETTINGS_LOCATIONS_BITFIELD_SIZE, &psettings->location_bitfield);
-    PRINTF("u8 keyring_bitfield[%d]: %x\n", AP_SETTINGS_KEYRINGS_BITFIELD_SIZE, &psettings->keyring_bitfield);
-    PRINTF("u8 shoppad_bitfield[%d]: %x\n", AP_SETTINGS_SHOPPAD_BITFIELD_SIZE, &psettings->shoppad_bitfield);
-    PRINTF("u8 num_gem_packs_received: %x\n", &psettings->num_gem_packs_received);
-    PRINTF("u8 num_lock_picks_received: %x\n", &psettings->num_lock_picks_received);
-    PRINTF("u8 num_fire_ammo_received: %x\n", &psettings->num_fire_ammo_received);
-    PRINTF("u8 num_electric_ammo_received: %x\n", &psettings->num_electric_ammo_received);
-    PRINTF("u8 num_water_ammo_received: %x\n", &psettings->num_water_ammo_received);
-    PRINTF("u8 num_ice_ammo_received: %x\n", &psettings->num_ice_ammo_received);
-    PRINTF("u8 deathlink_ingoing: %x\n", &psettings->deathlink_ingoing);
-    PRINTF("u8 deathlink_outgoing: %x\n", &psettings->deathlink_outgoing);
-    PRINTF("u8 deathlink_deaths_before_send: %x\n", &psettings->deathlink_deaths_before_send);
-    PRINTF("u8 deathlink_death_counter: %x\n", &psettings->deathlink_death_counter);
-    PRINTF("bool infinite_butterfly_jar: %x\n", &psettings->infinite_butterfly_jar);
-    PRINTF("bool infinite_double_gem: %x\n", &psettings->infinite_double_gem);
-    PRINTF("bool fireworks_are_randomized: %x\n", &psettings->fireworks_are_randomized);
-    PRINTF("bool randomize_shop: %x\n", &psettings->randomize_shop);
-    PRINTF("bool use_key_rings: %x\n", &psettings->use_key_rings);
-    PRINTF("bool skip_cutscene_button: %x\n", &psettings->skip_cutscene_button);
-    PRINTF("u8 instant_teleport_mode: %x\n", &psettings->instant_teleport_mode);
-    PRINTF("bool disable_popups: %x\n", &psettings->disable_popups);
-    PRINTF("bool instant_elevators: %x\n", &psettings->instant_elevators);
-    PRINTF("u8 starting_realm: %x\n", &psettings->starting_realm);
-    PRINTF("bool[4] realm_access: %x\n", &psettings->realm_access);
-    PRINTF("bool patch_been_written_to: %x\n", &psettings->patch_been_written_to);
-    PRINTF("u32 mw_seed: %x\n", &psettings->mw_seed);
-    PRINTF("u32 init: %x\n", &psettings->init);
-    PRINTF("u8[4] boss_costs: %x\n", &psettings->boss_costs);
-    PRINTF("u8[4] lg_door_costs: %x\n", &psettings->lg_door_costs);
-    PRINTF("u8 ball_gadget_cost: %x\n", &psettings->ball_gadget_cost);
-    PRINTF("u8 invincibility_cost: %x\n", &psettings->invincibility_cost);
-    PRINTF("u8 supercharge_cost: %x\n", &psettings->supercharge_cost);
-    PRINTF("bool[4] boss_easy_mode: %x\n", &psettings->boss_easy_mode);
-    PRINTF("bool shop_unlock_mode: %x\n", &psettings->shop_unlock_mode);
-    PRINTF("bool display_gem_stats: %x\n", &psettings->display_gem_stats);
-    PRINTF("bool teleport_anywhere: %x\n", &psettings->teleport_anywhere);
-    PRINTF("bool unlock_all_shops: %x\n", &psettings->unlock_all_shops);
-    PRINTF("bool disable_shop_pad_proximity_activate: %x\n", &psettings->disable_shop_pad_proximity_activate);
-    PRINTF("bool disable_main_shop_always_available: %x\n", &psettings->disable_main_shop_always_available);
-    PRINTF("int total_gems_in_logic: %x\n", &psettings->total_gems_in_logic);
-    PRINTF("int total_gems_available: %x\n", &psettings->total_gems_available);
-    PRINTF("bool ut_enabled: %x\n", &psettings->ut_enabled);
-    PRINTF("u8 trap: %x\n", &psettings->trap);
-    PRINTF("u32 trap_data: %x\n", &psettings->trap_data);
-    PRINTF("int xls_shop_sheetcount_ALWAYS_1: %x\n", &psettings->xls_shop_sheetcount_ALWAYS_1);
-    PRINTF("int xls_shop_sheet_offset_ALWAYS_4: %x\n", &psettings->xls_shop_sheet_offset_ALWAYS_4);
-    PRINTF("int xls_shop_rowcount: %x\n", &psettings->xls_shop_rowcount);
-    PRINTF("xlsShoppingItem[%d] xls_shop_items: %x\n", SHOP_TOTAL_NUM_ENTRIES, &psettings->xls_shop_items);
-    PRINTF("APSettings_TextEntry[%d] shop_text: %x\n", SHOP_TOTAL_NUM_ENTRIES - SHOP_NUM_VANILLA_ENTRIES, &psettings->shop_text);
-}
-
-#if AP_DEBUG_GLOBAL_ADDRESSES!=0
-void dbg_print_misc_globals()
-{
-    PRINTF("objectives: %x\n", &gGameState.m_PlayerObjectives);
-    PRINTF("abilities: %x\n", &gGameState.m_PlayerState.m_AbilityFlags);
-    PRINTF("breath: %x\n", &gGameState.m_PlayerState.m_CurrentBreath);
-    PRINTF("gems: %x\n", &gGameState.m_PlayerState.m_Gems);
-    PRINTF("lock picks: %x\n", &gGameState.m_PlayerState.m_LockPickers);
-    PRINTF("light gems: %x\n", &gGameState.m_PlayerState.m_TotalLightGems);
-    PRINTF("dark gems: %x\n", &gGameState.m_PlayerState.m_TotalDarkGems);
-    PRINTF("dragon eggs: %x\n", &gGameState.m_PlayerState.m_TotalDragonEggs);
-    PRINTF("fire ammo: %x\n", &gGameState.m_PlayerState.m_FlameBombs);
-    PRINTF("ice ammo: %x\n", &gGameState.m_PlayerState.m_IceBombs);
-    PRINTF("water ammo: %x\n", &gGameState.m_PlayerState.m_WaterBombs);
-    PRINTF("elec ammo: %x\n", &gGameState.m_PlayerState.m_ElectricBombs);
-    PRINTF("gameloop state: %x\n", &gGameLoop.m_State);
-    PRINTF("gameloop paused: %x\n", &gGameLoop.m_pPanel + 1);
-}
-#endif
 
 int XSEItemHandler_Player__InitialiseStart_PreCallHook(void* self)
 {
