@@ -8,8 +8,8 @@
  */
 
 // ---------------------------------------------------- OPTIONS (GENERAL) ----------------------------------
-#define _build_config_AP_VERSION_NUMBER_MAJOR           16      // Version number (major).
-#define _build_config_AP_VERSION_NUMBER_MINOR           3       // Version number (minor).
+#define _build_config_AP_VERSION_NUMBER_MAJOR           17      // Version number (major).
+#define _build_config_AP_VERSION_NUMBER_MINOR           0       // Version number (minor).
 #define _build_config_AP_DEBUG_ENABLE                   0       // Enable debug options (DISABLE FOR RELEASE!).
 // ---------------------------------------------------- OPTIONS (DEBUG) ------------------------------------
 #define _build_config_AP_DEBUG_QUICK_START              1       // Patch is automatically written to and game will start with some abilities unlocked.

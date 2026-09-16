@@ -108,6 +108,7 @@ APSettings g_patch_ap_settings = {
 
     .trap = 0,
     .trap_data = 0,
+    .trap_counters = {0},
 
     // SHOP ITEMS
     .xls_shop_sheetcount_ALWAYS_1 = 1,

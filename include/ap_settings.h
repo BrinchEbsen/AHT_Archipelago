@@ -63,6 +63,8 @@ typedef enum TrapType
     TrapType_NUM
 } TrapType;
 
+#define NUM_TRAPS_IN_CLIENT 4
+
 #define TELEPORT_PASS_PRICE 0
 
 typedef struct APSettings_TextEntry
@@ -224,6 +226,9 @@ typedef struct APSettings {
     
     /// @brief A generic slot for any parameters the trap signaled in `trap` might need.
     s32 trap_data;
+
+    /// @brief Counters for the client to keep track of received traps.
+    u8 trap_counters[NUM_TRAPS_IN_CLIENT];
 
     /// @brief Number of datasheets in this spreadsheet.
     /// GUI_Shop only has 1 datasheet.
