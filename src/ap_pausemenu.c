@@ -24,6 +24,9 @@ int close_timer = 0;
 bool instant_shop_opening = false;
 char* instant_shop_cannot_open_reason = NULL;
 
+#define TOGGLE_SCANMODE_TIMER_MAX 60
+int toggle_scanmode_timer = 0;
+
 int realm1_map_indexes[] = {
     2,  // Blinky MiniGame (MR1_Blk)
     3,  // SrgBird MiniGame (MR1_Sgt)
@@ -233,7 +236,13 @@ void draw_menu_rect(void* pWnd, EXRect* r)
 
 s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
 {
-    if (do_pause_menu_controls()) {
+    if (toggle_scanmode_timer > TOGGLE_SCANMODE_TIMER_MAX)
+    {
+        TEXT_PRINT_ALIGN_F(pWnd, 0, 370, Centre, "Scanmode Enable: %s",
+            g_scanmode_enable ? "True" : "False");
+    }
+    else if (do_pause_menu_controls())
+    {
         if (g_gamestate_ap_settings.instant_teleport_mode == AP_TELEPORT_MODE_TP_TO_HUB) {
             draw_teleport_menu(self, pWnd);
         } else if (g_gamestate_ap_settings.instant_teleport_mode == AP_TELEPORT_MODE_SHOP_ANYWHERE) {
@@ -248,7 +257,9 @@ s32 GUI_PauseMenu__v_DrawStateRunning_VtableHook(GUI_Base* self, void* pWnd)
         {
             draw_deathlink_count(self, pWnd);
         }
-    } else {
+    }
+    else
+    {
         TEXT_PRINT_ALIGN_COLOR(pWnd, 0, 0, BottomCentre, COLOR_RED, "Archipelago gamestate not initialized!");
     }
 
@@ -303,25 +314,23 @@ s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self)
 
 void do_scanmode_controls()
 {
-    static u32 timer = 0;
-
     bool triggers_held = g_pad_button_state(PAD_BUTTON_L) && g_pad_button_state(PAD_BUTTON_R);
 
     if (triggers_held)
     {
-        timer++;
+        toggle_scanmode_timer++;
     }
     else
     {
-        timer = 0;
+        toggle_scanmode_timer = 0;
     }
 
-    if (timer == 60)
+    if (toggle_scanmode_timer == TOGGLE_SCANMODE_TIMER_MAX)
     {
         PlaySFX(HT_Sound_SFX_GEN_HUD_NPC_CHOOSE);
     }
 
-    if ((timer > 60) && g_pad_button_edge_down(PAD_BUTTON_B))
+    if ((toggle_scanmode_timer > TOGGLE_SCANMODE_TIMER_MAX) && g_pad_button_edge_down(PAD_BUTTON_B))
     {
         g_scanmode_enable = !g_scanmode_enable;
         PlaySFX(HT_Sound_SFX_GEN_HUD_NPC_SELECT);

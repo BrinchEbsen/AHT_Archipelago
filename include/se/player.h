@@ -2,8 +2,6 @@
 #define PLAYER_H
 #include <types.h>
 
-extern bool g_enable_scanmode;
-
 typedef enum Players {
     Player_Undefined=0,
     Player_Spyro=1,
