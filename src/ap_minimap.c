@@ -131,10 +131,25 @@ void minimap_draw_location(
     // Get texture to draw
     void* pHeader = SE_FileManager__GetGeoHeader(&gSEFileManager, HT_File_Panel);
     void* pTexture;
-    if (collected) {
+    RGBA col;
+
+    if (collected)
+    {
         pTexture = EXGeoHeader__Texture(pHeader, HT_Texture_CheckBox_Ticked);
-    } else {
+        col = COLOR_LIGHT_GREEN;
+    }
+    else
+    {
         pTexture = EXGeoHeader__Texture(pHeader, HT_Texture_CheckBox_Empty);
+
+        if (reachable)
+        {
+            col = COLOR_WHITE; // Yellow (base texture)
+        }
+        else
+        {
+            col = COLOR_LIGHT_RED;
+        }
     }
 
     EXWnd__SelectSprite2DTexture(pWnd, pTexture, false, false);
@@ -148,7 +163,7 @@ void minimap_draw_location(
         self,
         coll->x,
         coll->z,
-        reachable ? COLOR_LIGHT_GREEN : COLOR_LIGHT_RED, // Draw in green if reachable
+        col,
         8,
         pWnd);
 }
