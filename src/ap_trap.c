@@ -68,32 +68,34 @@ void ap_trap_update()
     }
 }
 
-u16 mb_voicelines_hashes[] =
-{
-    HT_Sound_SPEECH_MBG_006 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_007 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_008 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_009 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_010 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_011 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_012 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_014 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_015 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_017 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_018 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_030 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_033 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_035 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_036 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_037 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_039 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_040 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_042 & 0xFFFF,
-    HT_Sound_SPEECH_MBG_043 & 0xFFFF
+MBTrapEntry mb_voicelines[] = { //               Time in frames = Time (ms) * 1000/60
+    { .sfx_hash = HT_Sound_SPEECH_MBG_006 & 0xFFFF, .time = (u16)(3195u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_007 & 0xFFFF, .time = (u16)(5732u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_008 & 0xFFFF, .time = (u16)(1905u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_009 & 0xFFFF, .time = (u16)(2303u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_010 & 0xFFFF, .time = (u16)(2926u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_011 & 0xFFFF, .time = (u16)(1671u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_012 & 0xFFFF, .time = (u16)(5176u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_014 & 0xFFFF, .time = (u16)(3020u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_015 & 0xFFFF, .time = (u16)(3578u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_017 & 0xFFFF, .time = (u16)(4422u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_018 & 0xFFFF, .time = (u16)(4190u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_030 & 0xFFFF, .time = (u16)(10392u    * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_033 & 0xFFFF, .time = (u16)(6943u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_035 & 0xFFFF, .time = (u16)(3413u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_036 & 0xFFFF, .time = (u16)(3187u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_037 & 0xFFFF, .time = (u16)(3680u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_039 & 0xFFFF, .time = (u16)(2936u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_040 & 0xFFFF, .time = (u16)(5003u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_042 & 0xFFFF, .time = (u16)(2453u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
+    { .sfx_hash = HT_Sound_SPEECH_MBG_043 & 0xFFFF, .time = (u16)(2738u     * 0.06f) + SPAM_CALL_TRAP_VOICELINE_COOLDOWN },
 };
 
 void ap_trap_moneybags_spam_call_update(u8* state, s32* param)
 {
+    static int voice_timer = 0;
+    static int line_index_last = 0;
+
     if (gpPlayer == NULL)
     {
         return;
@@ -107,14 +109,30 @@ void ap_trap_moneybags_spam_call_update(u8* state, s32* param)
     switch (*state)
     {
         case 1:
-            int line_index = RAND32 % ARRAY_SIZE(mb_voicelines_hashes);
-            PlaySFX(0x1AF00000 | mb_voicelines_hashes[line_index]);
+            // Lock to shop music
             XSEItemEnv__StartMusic_ReImplHook(EXItemEnv__m_pTheItemEnv, HT_Sound_MFX_Shop, 0, 0, 0);
             lock_music_to_shop = true;
+            voice_timer = 0;
             *state = 2;
             return;
         case 2:
         default:
+            if (voice_timer <= 0)
+            {
+                // Choose random voice line.
+                // Try not to play the same line twice.
+                int line_index;
+                do {
+                    line_index = RAND32 % ARRAY_SIZE(mb_voicelines);
+                } while (line_index == line_index_last);
+                line_index_last = line_index;
+
+                // Play the voice line and set the timer to its length.
+                PlaySFX(0x1AF00000 | mb_voicelines[line_index].sfx_hash);
+                voice_timer = mb_voicelines[line_index].time;
+            }
+            voice_timer--;
+
             (*param)--;
             if (*param <= 0)
             {

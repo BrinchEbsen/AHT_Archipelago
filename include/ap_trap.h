@@ -24,9 +24,18 @@ void ap_trap_update();
 
 
 
+#define SPAM_CALL_TRAP_VOICELINE_COOLDOWN 60*2 // 2 seconds
+typedef struct MBTrapEntry
+{
+    // The lower 2 bytes of the SFX hashcode for the Moneybags voice line.
+    u16 sfx_hash;
+    // The time in frames the voice line lasts for, plus any cooldown time.
+    u16 time;
+} MBTrapEntry;
+
 // Trap update routines:
 
-/// @brief Play a random moneybags line and lock the music to the shop music.
+/// @brief Play random moneybags lines and lock the music to the shop music.
 void ap_trap_moneybags_spam_call_update(u8* state, s32* param);
 
 /// @brief Reverse the x-axis of the analog sticks.
