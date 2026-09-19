@@ -1,6 +1,6 @@
 # Spyro: A Hero's Tail - Archipelago Interface Mod
 
-Code injection mod for Spyro: A Hero's Tail that provides an interface for the [Archipelago client](https://github.com/seanstan95/PhoenixAP/tree/AHTEdits) for the game by Maya/Xua and PhoenixAki, as well as implementing several features suitable for Archipelago.
+Code injection mod for Spyro: A Hero's Tail that provides an interface for the [Archipelago client](https://github.com/PhoenixAki/PhoenixAP/tree/AHTDev) for the game by Maya/Xua and PhoenixAki, as well as implementing several features suitable for Archipelago.
 
 Read more about Archipelago here: <https://archipelago.gg/>
 
@@ -10,19 +10,19 @@ Created using Composer's [code injection utility](https://github.com/C0mposer/C-
 
 ## Compatibility
 
-This mod is currently limited specifically to the NTSC GameCube version (G5SE7D). A release for the PAL GameCube version (G5SP7D) is under development.
+This mod is currently limited to the GameCube NTSC (G5SE7D) and PAL (G5SP7D) versions of the game.
 
 | Platform | NTSC | PAL |
 | -------- | ---- | --- |
-| GameCube | ✅   | 🚧  |
+| GameCube | ✅   | ✅  |
 | PS2      | ❌   | ❌  |
 | Xbox     | ❌   | ❌  |
 
 ## Installation/Usage
 
-The mod is installed through an Action Replay (AR) code in Dolphin. The latest code can be found in a text file in the client's latest release: <https://github.com/seanstan95/PhoenixAP/releases/latest>
+The mod is installed through an Action Replay (AR) code in Dolphin. The latest codes can be found in a text file in the client's latest release: <https://github.com/seanstan95/PhoenixAP/releases/latest>
 
-Open the properties menu for Spyro: A Hero's Tail (G5SE7D) in the game list, go to AR Codes, then add a new code with the contents of the text file. Make sure the code is enabled, and that "enable cheats" is enabled in Dolphin.
+Open the properties menu for Spyro: A Hero's Tail in the game list, go to AR Codes, then add a new code with the contents of the appropriate text file for your version of the game. Make sure the code is enabled, and that "enable cheats" is enabled in Dolphin.
 
 ## For Developers
 
@@ -40,7 +40,7 @@ Clone this repository into the tool's `projects` folder.
 
 #### Building (GUI)
 
-Open the project in the GUI by clicking "Load Existing Project" and choosing the .modproj in the cloned repository.
+Open the project in the GUI by clicking "Load Existing Project" and choosing the .modproj in the cloned repository. Choose either the GC_NTSC or GC_PAL build version, depending on the version of the game you're compiling the code for.
 
 Go to the "Build Project" tab and click "Compile".
 
@@ -50,6 +50,10 @@ Once compilation is finished, click "Generate Action Replay Code" to generate th
 
 Run the following command on `mod_utility.exe` to output a text file with the code:
 
-`mod_utility export-cheat AHT_Archipelago action_replay --build=GC_NTSC --output=AR_Code.txt`
+`mod_utility export-cheat AHT_Archipelago action_replay --build=[build version] --output=AR_Code.txt`
+
+Replace `[build version]` with either GC_NTSC or GC_PAL, depending on the version of the game you're compiling the code for.
 
 Note that the resulting `AR_Code.txt` will have two extra lines at the top, which aren't part of the code that goes in Dolphin.
+
+Alternatively, there's a powershell script (`build_ar.ps1`) that builds both GC_NTSC and GC_PAL, puts the codes in the .config folder, and trims the top few lines automatically.
