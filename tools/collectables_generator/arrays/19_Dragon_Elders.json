@@ -2,6 +2,7 @@
     {
         "index": 241,
         "type": "NonCollectable",
+        "comment": "DV: Double Jump from Elder Tomas",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 11,
@@ -9,12 +10,12 @@
         },
         "objective": "HT_Objective_GivenDoubleJump",
         "x": 206.557,
-        "z": 54.382,
-        "comment": "Elder Tomas"
+        "z": 54.382
     },
     {
         "index": 242,
         "type": "NonCollectable",
+        "comment": "CS: Pole Spin from Elder Magnus",
         "map_index": 23,
         "trig_index": {
             "GC_NTSC": 71,
@@ -22,12 +23,12 @@
         },
         "objective": "HT_Objective_GivenPoleGrabAbility",
         "x": 181.836,
-        "z": 503.226,
-        "comment": "Elder Magnus"
+        "z": 503.226
     },
     {
         "index": 243,
         "type": "NonCollectable",
+        "comment": "CD: Wing Shield from Elder Titan",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 10,
@@ -35,12 +36,12 @@
         },
         "objective": "HT_Objective_GivenWingShieldAbility",
         "x": 240.131,
-        "z": -0.156,
-        "comment": "Elder Titan"
+        "z": -0.156
     },
     {
         "index": 244,
         "type": "NonCollectable",
+        "comment": "IC: Wall Kick from Elder Astor",
         "map_index": 33,
         "trig_index": {
             "GC_NTSC": 9,
@@ -48,7 +49,6 @@
         },
         "objective": "HT_Objective_GivenWallKickAbility",
         "x": -682.961,
-        "z": -148.253,
-        "comment": "Elder Astor"
+        "z": -148.253
     }
 ]

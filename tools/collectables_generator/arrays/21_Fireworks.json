@@ -2,18 +2,19 @@
     {
         "index": 249,
         "type": "FireWork",
+        "comment": "DV: Firework next to Ball Gadget",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 304,
             "GC_PAL": 304
         },
         "x": 223.69,
-        "z": -74.603,
-        "comment": "Dragon Village"
+        "z": -74.603
     },
     {
         "index": 250,
         "type": "FireWork",
+        "comment": "DV: Firework at end of glide tutorial",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 305,
@@ -25,6 +26,7 @@
     {
         "index": 251,
         "type": "FireWork",
+        "comment": "DV: Firework across Crocovile bridge",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 344,
@@ -36,6 +38,7 @@
     {
         "index": 252,
         "type": "FireWork",
+        "comment": "DV: Firework above Sgt. Byrd",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 431,
@@ -47,18 +50,19 @@
     {
         "index": 253,
         "type": "FireWork",
+        "comment": "CS: Firework atop Elder's tree",
         "map_index": 23,
         "trig_index": {
             "GC_NTSC": 276,
             "GC_PAL": 276
         },
         "x": 197.835,
-        "z": 495.531,
-        "comment": "Crocovile Swamp"
+        "z": 495.531
     },
     {
         "index": 254,
         "type": "FireWork",
+        "comment": "CS: Firework behind cliff in west area",
         "map_index": 23,
         "trig_index": {
             "GC_NTSC": 292,
@@ -70,6 +74,7 @@
     {
         "index": 255,
         "type": "FireWork",
+        "comment": "CS: Firework in middle of Elder's tree",
         "map_index": 23,
         "trig_index": {
             "GC_NTSC": 294,
@@ -81,18 +86,19 @@
     {
         "index": 256,
         "type": "FireWork",
+        "comment": "SR: Firework atop thermal room",
         "map_index": 19,
         "trig_index": {
             "GC_NTSC": 207,
             "GC_PAL": 207
         },
         "x": -625.89,
-        "z": 81.543,
-        "comment": "Sunken Ruins"
+        "z": 81.543
     },
     {
         "index": 257,
         "type": "FireWork",
+        "comment": "SR: Firework above heated wall kick",
         "map_index": 19,
         "trig_index": {
             "GC_NTSC": 236,
@@ -104,6 +110,7 @@
     {
         "index": 258,
         "type": "FireWork",
+        "comment": "SR: Firework atop pole rooms",
         "map_index": 19,
         "trig_index": {
             "GC_NTSC": 252,
@@ -115,6 +122,7 @@
     {
         "index": 259,
         "type": "FireWork",
+        "comment": "SR: Firework in rising statue room",
         "map_index": 19,
         "trig_index": {
             "GC_NTSC": 287,
@@ -126,18 +134,19 @@
     {
         "index": 260,
         "type": "FireWork",
+        "comment": "CD: Firework after Ball Gadget",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 113,
             "GC_PAL": 113
         },
         "x": -111.685,
-        "z": 23.601,
-        "comment": "Cloudy Domain"
+        "z": 23.601
     },
     {
         "index": 261,
         "type": "FireWork",
+        "comment": "CD: Firework next to thermal",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 264,
@@ -149,6 +158,7 @@
     {
         "index": 262,
         "type": "FireWork",
+        "comment": "CD: Firework in northwest",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 273,
@@ -160,30 +170,31 @@
     {
         "index": 263,
         "type": "FireWork",
+        "comment": "IC: Firework atop courtyard",
         "map_index": 33,
         "trig_index": {
             "GC_NTSC": 250,
             "GC_PAL": 250
         },
         "x": -822.257,
-        "z": -337.989,
-        "comment": "Ice Citadel"
+        "z": -337.989
     },
     {
         "index": 264,
         "type": "FireWork",
+        "comment": "SB: Firework in west cove",
         "map_index": 44,
         "trig_index": {
             "GC_NTSC": 98,
             "GC_PAL": 98
         },
         "x": -151.7,
-        "z": 64.303,
-        "comment": "Stormy Beach"
+        "z": 64.303
     },
     {
         "index": 265,
         "type": "FireWork",
+        "comment": "SB: Firework in lower Stormy Beach",
         "map_index": 44,
         "trig_index": {
             "GC_NTSC": 113,
@@ -195,6 +206,7 @@
     {
         "index": 266,
         "type": "FireWork",
+        "comment": "SB: Firework in cave",
         "map_index": 44,
         "trig_index": {
             "GC_NTSC": 149,
@@ -206,42 +218,43 @@
     {
         "index": 267,
         "type": "FireWork",
+        "comment": "MM: Firework in entrance",
         "map_index": 60,
         "trig_index": {
             "GC_NTSC": 132,
             "GC_PAL": 132
         },
         "x": -96.888,
-        "z": 551.814,
-        "comment": "Molten Mount"
+        "z": 551.814
     },
     {
         "index": 268,
         "type": "FireWork",
+        "comment": "MFt: Firework in wall kick room",
         "map_index": 61,
         "trig_index": {
             "GC_NTSC": 19,
             "GC_PAL": 19
         },
         "x": 194.501,
-        "z": 864.891,
-        "comment": "Magma Falls Top"
+        "z": 864.891
     },
     {
         "index": 269,
         "type": "FireWork",
+        "comment": "DM: Firework in piston room",
         "map_index": 30,
         "trig_index": {
             "GC_NTSC": 315,
             "GC_PAL": 315
         },
         "x": -488.456,
-        "z": -1539.12,
-        "comment": "Dark Mine"
+        "z": -1539.12
     },
     {
         "index": 270,
         "type": "FireWork",
+        "comment": "DM: Firework after ice pole spin",
         "map_index": 30,
         "trig_index": {
             "GC_NTSC": 366,

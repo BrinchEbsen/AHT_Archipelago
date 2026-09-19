@@ -3,6 +3,9 @@ import json
 in_file = '../../src/ap_collectables_array.c'
 out_dir = 'arrays'
 
+location_names_csv = "location_names.csv"
+location_names: list[tuple[int, str]] = []
+
 str_pragma_region = "#pragma region"
 str_pragma_endregion = "#pragma endregion"
 
@@ -50,6 +53,24 @@ def test_for_build_version_define(line: str) -> None:
         specify_build_version = line[idx_1:idx_2]
     elif line.startswith("#endif"):
         specify_build_version = ""
+
+
+def get_location_name(id: int):
+    global location_names
+    for name in location_names:
+        if name[0] == id:
+            return name[1]
+    raise TypeError(f"Location name for index {id} not found!")
+
+
+# Get the names of each location
+with open(location_names_csv) as file:
+    lines = file.readlines()
+    for line in lines:
+        split = line.split(';')
+        if len(split) != 2:
+            continue
+        location_names.append((int(split[1]), split[0]))
 
 
 with open(in_file) as file:
@@ -124,11 +145,12 @@ with open(in_file) as file:
                 val_str = val_str.rstrip('f')
                 curr_entry["z"] = float(val_str)
 
+            # Add comment with name
+            assert isinstance(curr_entry["index"], int)
+            curr_entry["comment"] = get_location_name(curr_entry["index"])
+
             # Add new entry to the file
             if line.find("}") != -1:
-                if curr_comment is not None:
-                    curr_entry["comment"] = curr_comment
-                    curr_comment = None
                 outputs[curr_file].append(curr_entry)
                 curr_entry = None
 

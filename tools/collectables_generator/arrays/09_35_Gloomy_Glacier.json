@@ -2,6 +2,7 @@
     {
         "index": 120,
         "type": "DragonEgg",
+        "comment": "GG: Dragon Egg behind breakable wall",
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 1,
@@ -13,6 +14,7 @@
     {
         "index": 121,
         "type": "LightGem",
+        "comment": "GG: Light Gem in skeleton ambush room",
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 2,
@@ -24,6 +26,7 @@
     {
         "index": 122,
         "type": "LightGem",
+        "comment": "GG: Light Gem after crumbling platforms",
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 15,
@@ -35,6 +38,7 @@
     {
         "index": 123,
         "type": "LightGem",
+        "comment": "GG: Light Gem at end of level",
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 27,
@@ -46,6 +50,7 @@
     {
         "index": 124,
         "type": "DragonEgg",
+        "comment": "GG: Dragon Egg after spinning bones",
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 57,
@@ -57,6 +62,7 @@
     {
         "index": 125,
         "type": "LightGem",
+        "comment": "GG: Light Gem behind lowering gate",
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 58,
@@ -68,6 +74,7 @@
     {
         "index": 126,
         "type": "DragonEgg",
+        "comment": "GG: Dragon Egg under bone bridge",
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 212,
@@ -79,6 +86,7 @@
     {
         "index": 127,
         "type": "LightGem",
+        "comment": "GG: Light Gem near crumbling platforms",
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 232,
@@ -90,6 +98,7 @@
     {
         "index": 128,
         "type": "LightGem",
+        "comment": "GG: Light Gem beyond moving platform",
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 233,
@@ -101,6 +110,7 @@
     {
         "index": 129,
         "type": "DragonEgg_Chest",
+        "comment": "GG: Dragon Egg in Locked Chest after skeleton ambush room",
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 267,
@@ -112,6 +122,7 @@
     {
         "index": 130,
         "type": "DragonEgg_Chest",
+        "comment": "GG: Dragon Egg in Locked Chest in Bentley's house",
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 268,

@@ -2,6 +2,7 @@
     {
         "index": 177,
         "type": "DarkGem",
+        "comment": "MFb: Dark Gem in entry area",
         "map_index": 63,
         "trig_index": {
             "GC_NTSC": 2,
@@ -13,6 +14,7 @@
     {
         "index": 178,
         "type": "EggThief",
+        "comment": "MFb: Dragon Egg from thief",
         "map_index": 63,
         "trig_index": {
             "GC_NTSC": 10,
@@ -24,6 +26,7 @@
     {
         "index": 179,
         "type": "LightGem",
+        "comment": "MFb: Light Gem in fire imp room",
         "map_index": 63,
         "trig_index": {
             "GC_NTSC": 16,
@@ -35,6 +38,7 @@
     {
         "index": 180,
         "type": "LightGem_Chest",
+        "comment": "MFb: Light Gem in Locked Chest",
         "map_index": 63,
         "trig_index": {
             "GC_NTSC": 51,

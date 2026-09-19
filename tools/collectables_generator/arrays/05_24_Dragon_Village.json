@@ -2,6 +2,7 @@
     {
         "index": 65,
         "type": "DarkGem",
+        "comment": "DV: Dark Gem by Ember",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 1,
@@ -13,6 +14,7 @@
     {
         "index": 66,
         "type": "DarkGem",
+        "comment": "DV: Dark Gem by Elder Tomas",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 2,
@@ -24,6 +26,7 @@
     {
         "index": 67,
         "type": "DarkGem",
+        "comment": "DV: Dark Gem above Sgt. Byrd",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 8,
@@ -35,6 +38,7 @@
     {
         "index": 68,
         "type": "DragonEgg",
+        "comment": "DV: Dragon Egg above Sgt. Byrd",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 16,
@@ -46,6 +50,7 @@
     {
         "index": 69,
         "type": "LightGem",
+        "comment": "DV: Light Gem above Sgt. Byrd",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 21,
@@ -57,6 +62,7 @@
     {
         "index": 70,
         "type": "DragonEgg",
+        "comment": "DV: Dragon Egg in glide tutorial",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 92,
@@ -68,6 +74,7 @@
     {
         "index": 71,
         "type": "LightGem",
+        "comment": "DV: Light Gem in lab secret entrance",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 139,
@@ -79,6 +86,7 @@
     {
         "index": 72,
         "type": "DragonEgg",
+        "comment": "DV: Dragon Egg by lab secret entrance",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 141,
@@ -90,6 +98,7 @@
     {
         "index": 73,
         "type": "LightGem",
+        "comment": "DV: Light Gem in nursery",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 290,
@@ -101,6 +110,7 @@
     {
         "index": 74,
         "type": "DragonEgg_Chest",
+        "comment": "DV: Dragon Egg in Locked Chest next to Ball Gadget",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 302,
@@ -112,6 +122,7 @@
     {
         "index": 75,
         "type": "DragonEgg",
+        "comment": "DV: Dragon Egg in Gnasty Gnorc Cave",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 341,
@@ -123,6 +134,7 @@
     {
         "index": 76,
         "type": "LightGem_Chest",
+        "comment": "DV: Light Gem in Locked Chest near Village Depot",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 342,
@@ -134,6 +146,7 @@
     {
         "index": 77,
         "type": "LightGem_Chest",
+        "comment": "DV: Light Gem in Locked Chest across Crocovile bridge",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 343,

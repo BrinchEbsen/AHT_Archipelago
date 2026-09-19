@@ -2,6 +2,7 @@
     {
         "index": 29,
         "type": "LightGem",
+        "comment": "CD: Light Gem from Ball Gadget",
         "map_index": 21,
         "trig_index": {
             "GC_NTSC": 59,
@@ -11,6 +12,7 @@
     {
         "index": 30,
         "type": "DragonEgg",
+        "comment": "CD: Dragon Egg from Ball Gadget",
         "map_index": 21,
         "trig_index": {
             "GC_NTSC": 60,

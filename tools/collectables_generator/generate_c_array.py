@@ -25,11 +25,12 @@ for region_name, entries in in_dicts.items():
 
     for entry in entries:
         if "comment" in entry.keys():
+            index_str = str(curr_index).rjust(3)
             m_comment = entry["comment"]
             assert isinstance(m_comment, str)
-            output_str += "\t// "+m_comment+"\n"
+            output_str += "\t// ["+index_str+"] "+m_comment+"\n"
 
-        output_str += "\t{ // ["+str(curr_index).rjust(3)+"]\n"
+        output_str += "\t{\n"
         curr_index += 1
 
         m_type = entry["type"]

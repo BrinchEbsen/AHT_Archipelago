@@ -2,6 +2,7 @@
     {
         "index": 15,
         "type": "DarkGem",
+        "comment": "CD: Dark Gem below thermal",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 2,
@@ -13,6 +14,7 @@
     {
         "index": 16,
         "type": "DarkGem",
+        "comment": "CD: Dark Gem before Ball Gadget",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 8,
@@ -24,6 +26,7 @@
     {
         "index": 17,
         "type": "LightGem",
+        "comment": "CD: Light Gem in wall kick building",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 9,
@@ -35,6 +38,7 @@
     {
         "index": 18,
         "type": "DarkGem",
+        "comment": "CD: Dark Gem after second orbiting platforms",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 82,
@@ -46,6 +50,7 @@
     {
         "index": 19,
         "type": "LightGem_Chest",
+        "comment": "CD: Light Gem in Locked Chest by elevator",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 109,
@@ -57,6 +62,7 @@
     {
         "index": 20,
         "type": "DragonEgg_Chest",
+        "comment": "CD: Dragon Egg in Locked Chest behind supercharge door",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 132,
@@ -68,6 +74,7 @@
     {
         "index": 21,
         "type": "DragonEgg",
+        "comment": "CD: Dragon Egg after Elder Titan",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 133,
@@ -79,6 +86,7 @@
     {
         "index": 22,
         "type": "LightGem",
+        "comment": "CD: Light Gem after Elder Titan",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 134,
@@ -90,6 +98,7 @@
     {
         "index": 23,
         "type": "LightGem",
+        "comment": "CD: Light Gem next to Elder's house",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 135,
@@ -101,6 +110,7 @@
     {
         "index": 24,
         "type": "DragonEgg",
+        "comment": "CD: Dragon Egg below first orbiting platforms",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 136,
@@ -112,6 +122,7 @@
     {
         "index": 25,
         "type": "LightGem",
+        "comment": "CD: Light Gem after southwest temporary platforms",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 137,
@@ -123,6 +134,7 @@
     {
         "index": 26,
         "type": "LightGem",
+        "comment": "CD: Light Gem in northwest",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 183,
@@ -134,6 +146,7 @@
     {
         "index": 27,
         "type": "DragonEgg_Chest",
+        "comment": "CD: Dragon Egg in northwest Locked Chest",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 194,
@@ -145,6 +158,7 @@
     {
         "index": 28,
         "type": "EggThief",
+        "comment": "CD: Dragon Egg after first orbiting platforms",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 239,

@@ -2,6 +2,7 @@
     {
         "index": 181,
         "type": "DragonEgg_MiniGame",
+        "comment": "DV: Dragon Egg from Sgt. Byrd",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 158,
@@ -9,12 +10,12 @@
         },
         "objective": "HT_Objective_MR1_HalfDone",
         "x": -101.334,
-        "z": -55.373,
-        "comment": "Dragon Village - Sgt. Byrd"
+        "z": -55.373
     },
     {
         "index": 182,
         "type": "LightGem_MiniGame",
+        "comment": "DV: Light Gem from Sgt. Byrd",
         "map_index": 24,
         "trig_index": {
             "GC_NTSC": 158,
@@ -27,6 +28,7 @@
     {
         "index": 183,
         "type": "DragonEgg_MiniGame",
+        "comment": "CS: Dragon Egg from Fredneck",
         "map_index": 23,
         "trig_index": {
             "GC_NTSC": 6,
@@ -34,12 +36,12 @@
         },
         "objective": "HT_Objective_MR1_Spy_HalfDone",
         "x": 144.06,
-        "z": 578.149,
-        "comment": "Crocovile Swamp - Turret"
+        "z": 578.149
     },
     {
         "index": 184,
         "type": "LightGem_MiniGame",
+        "comment": "CS: Light Gem from Fredneck",
         "map_index": 23,
         "trig_index": {
             "GC_NTSC": 6,
@@ -52,6 +54,7 @@
     {
         "index": 185,
         "type": "DragonEgg_MiniGame",
+        "comment": "CS: Dragon Egg from Blink",
         "map_index": 23,
         "trig_index": {
             "GC_NTSC": 69,
@@ -59,12 +62,12 @@
         },
         "objective": "HT_Objective_MR1_Blk_HalfDone",
         "x": 225.391,
-        "z": 524.413,
-        "comment": "Crocovile Swamp - Blink"
+        "z": 524.413
     },
     {
         "index": 186,
         "type": "LightGem_MiniGame",
+        "comment": "CS: Light Gem from Blink",
         "map_index": 23,
         "trig_index": {
             "GC_NTSC": 69,
@@ -77,6 +80,7 @@
     {
         "index": 187,
         "type": "DragonEgg_MiniGame",
+        "comment": "DF: Dragon Egg from Sparx",
         "map_index": 22,
         "trig_index": {
             "GC_NTSC": 283,
@@ -84,12 +88,12 @@
         },
         "objective": "HT_Objective_MR1_Spx_Egg",
         "x": 1115.686,
-        "z": -576.15,
-        "comment": "Dragonfly Falls - Sparx"
+        "z": -576.15
     },
     {
         "index": 188,
         "type": "LightGem_MiniGame",
+        "comment": "DF: Light Gem from Sparx",
         "map_index": 22,
         "trig_index": {
             "GC_NTSC": 283,
@@ -102,6 +106,7 @@
     {
         "index": 189,
         "type": "DragonEgg_MiniGame",
+        "comment": "CR: Dragon Egg from Blink",
         "map_index": 45,
         "trig_index": {
             "GC_NTSC": 115,
@@ -109,12 +114,12 @@
         },
         "objective": "HT_Objective_MR2_Blk_HalfDone",
         "x": -262.141,
-        "z": -86.49,
-        "comment": "Coastal Remains - Blink"
+        "z": -86.49
     },
     {
         "index": 190,
         "type": "LightGem_MiniGame",
+        "comment": "CR: Light Gem from Blink",
         "map_index": 45,
         "trig_index": {
             "GC_NTSC": 115,
@@ -127,6 +132,7 @@
     {
         "index": 191,
         "type": "DragonEgg_MiniGame",
+        "comment": "CR: Dragon Egg from Turtle Mother",
         "map_index": 45,
         "trig_index": {
             "GC_NTSC": 77,
@@ -134,12 +140,12 @@
         },
         "objective": "HT_Objective_MR2_Spy_HalfDone",
         "x": -159.896,
-        "z": -236.013,
-        "comment": "Coastal Remains - Turret"
+        "z": -236.013
     },
     {
         "index": 192,
         "type": "LightGem_MiniGame",
+        "comment": "CR: Light Gem from Turtle Mother",
         "map_index": 45,
         "trig_index": {
             "GC_NTSC": 77,
@@ -152,6 +158,7 @@
     {
         "index": 193,
         "type": "LightGem",
+        "comment": "CR: Light Gem from Otto",
         "map_index": 45,
         "trig_index": {
             "GC_NTSC": 150,
@@ -159,12 +166,12 @@
         },
         "objective": "HT_Objective_OtterNPC_AllDone",
         "x": -135.012,
-        "z": 26.804,
-        "comment": "Coastal Remains - Otto"
+        "z": 26.804
     },
     {
         "index": 194,
         "type": "DragonEgg_MiniGame",
+        "comment": "SR: Dragon Egg from Sparx",
         "map_index": 19,
         "trig_index": {
             "GC_NTSC": 65,
@@ -172,12 +179,12 @@
         },
         "objective": "HT_Objective_MR2_Spx_HalfDone",
         "x": -842.878,
-        "z": -44.993,
-        "comment": "Sunken Ruins - Sparx"
+        "z": -44.993
     },
     {
         "index": 195,
         "type": "LightGem_MiniGame",
+        "comment": "SR: Light Gem from Sparx",
         "map_index": 19,
         "trig_index": {
             "GC_NTSC": 65,
@@ -190,6 +197,7 @@
     {
         "index": 196,
         "type": "DragonEgg_MiniGame",
+        "comment": "CD: Dragon Egg from Sgt. Byrd",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 81,
@@ -197,12 +205,12 @@
         },
         "objective": "HT_Objective_MR2_Sgt_HalfDone",
         "x": 380.287,
-        "z": -125.903,
-        "comment": "Cloudy Domain - Sgt. Byrd"
+        "z": -125.903
     },
     {
         "index": 197,
         "type": "LightGem_MiniGame",
+        "comment": "CD: Light Gem from Sgt. Byrd",
         "map_index": 20,
         "trig_index": {
             "GC_NTSC": 81,
@@ -215,6 +223,7 @@
     {
         "index": 198,
         "type": "DragonEgg_MiniGame",
+        "comment": "FV: Dragon Egg from Blink",
         "map_index": 31,
         "trig_index": {
             "GC_NTSC": 244,
@@ -222,12 +231,12 @@
         },
         "objective": "HT_Objective_MR3_Blk_HalfDone",
         "x": 28.673,
-        "z": -178.357,
-        "comment": "Frostbite Village - Blink"
+        "z": -178.357
     },
     {
         "index": 199,
         "type": "LightGem_MiniGame",
+        "comment": "FV: Light Gem from Blink",
         "map_index": 31,
         "trig_index": {
             "GC_NTSC": 244,
@@ -240,6 +249,7 @@
     {
         "index": 200,
         "type": "DragonEgg_MiniGame",
+        "comment": "FV: Dragon Egg from Peggy",
         "map_index": 31,
         "trig_index": {
             "GC_NTSC": 242,
@@ -247,12 +257,12 @@
         },
         "objective": "HT_Objective_MR3_Spy_HalfDone",
         "x": -83.802,
-        "z": 100.301,
-        "comment": "Frostbite Village - Turret"
+        "z": 100.301
     },
     {
         "index": 201,
         "type": "LightGem_MiniGame",
+        "comment": "FV: Light Gem from Peggy",
         "map_index": 31,
         "trig_index": {
             "GC_NTSC": 242,
@@ -265,6 +275,7 @@
     {
         "index": 202,
         "type": "DragonEgg_MiniGame",
+        "comment": "GG: Dragon Egg from Sparx",
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 128,
@@ -272,12 +283,12 @@
         },
         "objective": "HT_Objective_MR3_Spx_HalfDone",
         "x": 142.24,
-        "z": -1387.189,
-        "comment": "Gloomy Glacier - Sparx"
+        "z": -1387.189
     },
     {
         "index": 203,
         "type": "LightGem_MiniGame",
+        "comment": "GG: Light Gem from Sparx",
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 128,
@@ -290,6 +301,7 @@
     {
         "index": 204,
         "type": "LightGem",
+        "comment": "GG: Light Gem from Bentley",
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 88,
@@ -297,12 +309,12 @@
         },
         "objective": "HT_Objective_3B_BentleyHasRewarded",
         "x": 65.178,
-        "z": -615.165,
-        "comment": "Gloomy Glacier - Bentley"
+        "z": -615.165
     },
     {
         "index": 205,
         "type": "DragonEgg_MiniGame",
+        "comment": "IC: Dragon Egg from Sgt. Byrd",
         "map_index": 33,
         "trig_index": {
             "GC_NTSC": 48,
@@ -310,12 +322,12 @@
         },
         "objective": "HT_Objective_MR3_Sgt_HalfDone",
         "x": -448.719,
-        "z": -173.292,
-        "comment": "Ice Citadel - Sgt. Byrd"
+        "z": -173.292
     },
     {
         "index": 206,
         "type": "LightGem_MiniGame",
+        "comment": "IC: Light Gem from Sgt. Byrd",
         "map_index": 33,
         "trig_index": {
             "GC_NTSC": 48,
@@ -328,6 +340,7 @@
     {
         "index": 207,
         "type": "LightGem",
+        "comment": "IC: Light Gem from lighting boiler near drawbridge",
         "map_index": 33,
         "trig_index": {
             "GC_NTSC": 97,
@@ -335,12 +348,12 @@
         },
         "objective": "HT_Objective_3C_LitBoiler_1",
         "x": -413.696,
-        "z": -235.004,
-        "comment": "Ice Citadel - Boiler 1"
+        "z": -235.004
     },
     {
         "index": 208,
         "type": "LightGem",
+        "comment": "IC: Light Gem from lighting boiler after cannon area",
         "map_index": 33,
         "trig_index": {
             "GC_NTSC": 99,
@@ -348,12 +361,12 @@
         },
         "objective": "HT_Objective_3C_LitBoiler_3",
         "x": -709.677,
-        "z": -249.536,
-        "comment": "Ice Citadel - Boiler 3"
+        "z": -249.536
     },
     {
         "index": 209,
         "type": "LightGem",
+        "comment": "IC: Light Gem from lighting boiler in courtyard",
         "map_index": 33,
         "trig_index": {
             "GC_NTSC": 101,
@@ -361,12 +374,12 @@
         },
         "objective": "HT_Objective_3C_LitBoiler_5",
         "x": -855.619,
-        "z": -325.652,
-        "comment": "Ice Citadel - Boiler 5"
+        "z": -325.652
     },
     {
         "index": 210,
         "type": "LightGem",
+        "comment": "IC: Light Gem from Ice Princess",
         "map_index": 33,
         "trig_index": {
             "GC_NTSC": 47,
@@ -374,12 +387,12 @@
         },
         "objective": "HT_Objective_3C_IcePrincessHasRewarded",
         "x": -494.835,
-        "z": -340.113,
-        "comment": "Ice Citadel - Ice Princess"
+        "z": -340.113
     },
     {
         "index": 211,
         "type": "DragonEgg_MiniGame",
+        "comment": "SB: Dragon Egg from Wally",
         "map_index": 44,
         "trig_index": {
             "GC_NTSC": 8,
@@ -387,12 +400,12 @@
         },
         "objective": "HT_Objective_MR4_Spy_HalfDone",
         "x": 110.059,
-        "z": -41.345,
-        "comment": "Stormy Beach - Turret"
+        "z": -41.345
     },
     {
         "index": 212,
         "type": "LightGem_MiniGame",
+        "comment": "SB: Light Gem from Wally",
         "map_index": 44,
         "trig_index": {
             "GC_NTSC": 8,
@@ -405,6 +418,7 @@
     {
         "index": 213,
         "type": "DragonEgg_MiniGame",
+        "comment": "MM: Dragon Egg from Sgt. Byrd",
         "map_index": 60,
         "trig_index": {
             "GC_NTSC": 94,
@@ -412,12 +426,12 @@
         },
         "objective": "HT_Objective_MR4_Sgt_HalfDone",
         "x": -226.573,
-        "z": 552.857,
-        "comment": "Molten Mount - Sgt. Byrd"
+        "z": 552.857
     },
     {
         "index": 214,
         "type": "LightGem_MiniGame",
+        "comment": "MM: Light Gem from Sgt. Byrd",
         "map_index": 60,
         "trig_index": {
             "GC_NTSC": 94,
@@ -430,6 +444,7 @@
     {
         "index": 215,
         "type": "DragonEgg",
+        "comment": "MM: Dragon Egg for avenging Teena",
         "map_index": 60,
         "trig_index": {
             "GC_NTSC": 93,
@@ -437,12 +452,12 @@
         },
         "objective": "HT_Objective_TeenaHasRewarded",
         "x": 8.892,
-        "z": 620.573,
-        "comment": "Molten Mount - Teena"
+        "z": 620.573
     },
     {
         "index": 216,
         "type": "DragonEgg_MiniGame",
+        "comment": "MFb: Dragon Egg from Sparx",
         "map_index": 63,
         "trig_index": {
             "GC_NTSC": 12,
@@ -450,12 +465,12 @@
         },
         "objective": "HT_Objective_MR4_Spx_HalfDone",
         "x": -170.275,
-        "z": -1263.319,
-        "comment": "Magma Falls Bottom - Sparx"
+        "z": -1263.319
     },
     {
         "index": 217,
         "type": "LightGem_MiniGame",
+        "comment": "MFb: Light Gem from Sparx",
         "map_index": 63,
         "trig_index": {
             "GC_NTSC": 12,
@@ -468,6 +483,7 @@
     {
         "index": 218,
         "type": "DragonEgg_MiniGame",
+        "comment": "DM: Dragon Egg from Blink",
         "map_index": 30,
         "trig_index": {
             "GC_NTSC": 154,
@@ -475,12 +491,12 @@
         },
         "objective": "HT_Objective_MR4_Blk_HalfDone",
         "x": -366.247,
-        "z": -1674.918,
-        "comment": "Dark Mine - Blink"
+        "z": -1674.918
     },
     {
         "index": 219,
         "type": "LightGem_MiniGame",
+        "comment": "DM: Light Gem from Blink",
         "map_index": 30,
         "trig_index": {
             "GC_NTSC": 154,

@@ -2,6 +2,7 @@
     {
         "index": 78,
         "type": "DarkGem",
+        "comment": "DM: Dark Gem in turret room",
         "map_index": 30,
         "trig_index": {
             "GC_NTSC": 19,
@@ -13,6 +14,7 @@
     {
         "index": 79,
         "type": "LightGem",
+        "comment": "DM: Light Gem in Light Gem door area",
         "map_index": 30,
         "trig_index": {
             "GC_NTSC": 83,
@@ -24,6 +26,7 @@
     {
         "index": 80,
         "type": "LightGem",
+        "comment": "DM: Light Gem in piston room",
         "map_index": 30,
         "trig_index": {
             "GC_NTSC": 84,
@@ -35,6 +38,7 @@
     {
         "index": 81,
         "type": "LightGem",
+        "comment": "DM: Light Gem in green pole room",
         "map_index": 30,
         "trig_index": {
             "GC_NTSC": 85,
@@ -46,6 +50,7 @@
     {
         "index": 82,
         "type": "LightGem",
+        "comment": "DM: Light Gem after ice pole spin",
         "map_index": 30,
         "trig_index": {
             "GC_NTSC": 86,
@@ -57,6 +62,7 @@
     {
         "index": 83,
         "type": "DragonEgg",
+        "comment": "DM: Dragon Egg in Light Gem door area",
         "map_index": 30,
         "trig_index": {
             "GC_NTSC": 87,
@@ -68,6 +74,7 @@
     {
         "index": 84,
         "type": "DragonEgg",
+        "comment": "DM: Dragon Egg next to Miner's Drop shop",
         "map_index": 30,
         "trig_index": {
             "GC_NTSC": 88,
@@ -79,6 +86,7 @@
     {
         "index": 85,
         "type": "DarkGem",
+        "comment": "DM: Dark Gem in green pole room",
         "map_index": 30,
         "trig_index": {
             "GC_NTSC": 89,
@@ -90,6 +98,7 @@
     {
         "index": 86,
         "type": "LightGem_Chest",
+        "comment": "DM: Light Gem in Locked Chest after entrance",
         "map_index": 30,
         "trig_index": {
             "GC_NTSC": 150,
@@ -101,6 +110,7 @@
     {
         "index": 87,
         "type": "DragonEgg_Chest",
+        "comment": "DM: Dragon Egg in Locked Chest in piston room",
         "map_index": 30,
         "trig_index": {
             "GC_NTSC": 211,
@@ -112,6 +122,7 @@
     {
         "index": 88,
         "type": "DragonEgg",
+        "comment": "DM: Dragon Egg below walkway",
         "map_index": 30,
         "trig_index": {
             "GC_NTSC": 214,

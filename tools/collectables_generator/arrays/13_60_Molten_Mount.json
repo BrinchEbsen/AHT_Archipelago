@@ -2,6 +2,7 @@
     {
         "index": 160,
         "type": "LightGem",
+        "comment": "MM: Light Gem in pole spin room",
         "map_index": 60,
         "trig_index": {
             "GC_NTSC": 4,
@@ -13,6 +14,7 @@
     {
         "index": 161,
         "type": "LightGem",
+        "comment": "MM: Light Gem across collapsed bridge",
         "map_index": 60,
         "trig_index": {
             "GC_NTSC": 5,
@@ -24,6 +26,7 @@
     {
         "index": 162,
         "type": "DragonEgg",
+        "comment": "MM: Dragon Egg approaching Sgt. Byrd",
         "map_index": 60,
         "trig_index": {
             "GC_NTSC": 6,
@@ -35,6 +38,7 @@
     {
         "index": 163,
         "type": "DarkGem",
+        "comment": "MM: Dark Gem before timed platform challenge",
         "map_index": 60,
         "trig_index": {
             "GC_NTSC": 9,
@@ -46,6 +50,7 @@
     {
         "index": 164,
         "type": "LightGem",
+        "comment": "MM: Light Gem from timed platform challenge",
         "map_index": 60,
         "trig_index": {
             "GC_NTSC": 17,
@@ -57,6 +62,7 @@
     {
         "index": 165,
         "type": "DarkGem",
+        "comment": "MM: Dark Gem at end of level",
         "map_index": 60,
         "trig_index": {
             "GC_NTSC": 21,
@@ -68,6 +74,7 @@
     {
         "index": 166,
         "type": "EggThief",
+        "comment": "MM: Dragon Egg from thief in northeast",
         "map_index": 60,
         "trig_index": {
             "GC_NTSC": 36,
@@ -79,6 +86,7 @@
     {
         "index": 167,
         "type": "DarkGem",
+        "comment": "MM: Dark Gem near rock monsters",
         "map_index": 60,
         "trig_index": {
             "GC_NTSC": 63,
@@ -90,6 +98,7 @@
     {
         "index": 168,
         "type": "LightGem_Chest",
+        "comment": "MM: Light Gem in Locked Chest next to Sgt. Byrd",
         "map_index": 60,
         "trig_index": {
             "GC_NTSC": 213,
@@ -101,6 +110,7 @@
     {
         "index": 169,
         "type": "DragonEgg_Chest",
+        "comment": "MM: Light Gem in Locked Chest behind chargeable wall",
         "map_index": 60,
         "trig_index": {
             "GC_NTSC": 214,
@@ -112,6 +122,7 @@
     {
         "index": 170,
         "type": "LightGem_Chest",
+        "comment": "MM: Dragon Egg in Locked Chest behind chargeable wall",
         "map_index": 60,
         "trig_index": {
             "GC_NTSC": 215,
