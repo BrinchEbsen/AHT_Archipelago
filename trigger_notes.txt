@@ -24,6 +24,12 @@ sunken ruins
 frostbite village
     no difference
 
+gloomy glacier
+    removed trigger 19
+    removed trigger 20
+    removed trigger 217
+    4 appended triggers
+
 ice citadel
     no difference
 

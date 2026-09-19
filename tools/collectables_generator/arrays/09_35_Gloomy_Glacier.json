@@ -38,7 +38,7 @@
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 27,
-            "GC_PAL": 27
+            "GC_PAL": 25
         },
         "x": 68.165,
         "z": -1400.024
@@ -49,7 +49,7 @@
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 57,
-            "GC_PAL": 57
+            "GC_PAL": 55
         },
         "x": 194.297,
         "z": -1429.799
@@ -60,7 +60,7 @@
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 58,
-            "GC_PAL": 58
+            "GC_PAL": 56
         },
         "x": 84.155,
         "z": -1311.049
@@ -71,7 +71,7 @@
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 212,
-            "GC_PAL": 212
+            "GC_PAL": 210
         },
         "x": 280.546,
         "z": -1022.916
@@ -82,7 +82,7 @@
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 232,
-            "GC_PAL": 232
+            "GC_PAL": 229
         },
         "x": 231.672,
         "z": -1394.083
@@ -93,7 +93,7 @@
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 233,
-            "GC_PAL": 233
+            "GC_PAL": 230
         },
         "x": 210.635,
         "z": -1273.26
@@ -104,7 +104,7 @@
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 267,
-            "GC_PAL": 267
+            "GC_PAL": 264
         },
         "x": 126.942,
         "z": -817.064
@@ -115,7 +115,7 @@
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 268,
-            "GC_PAL": 268
+            "GC_PAL": 265
         },
         "x": 317.489,
         "z": -585.642

@@ -268,7 +268,7 @@
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 128,
-            "GC_PAL": 128
+            "GC_PAL": 126
         },
         "objective": "HT_Objective_MR3_Spx_HalfDone",
         "x": 142.24,
@@ -281,7 +281,7 @@
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 128,
-            "GC_PAL": 128
+            "GC_PAL": 126
         },
         "objective": "HT_Objective_MR3_Spx_AllDone",
         "x": 142.24,
@@ -293,7 +293,7 @@
         "map_index": 35,
         "trig_index": {
             "GC_NTSC": 88,
-            "GC_PAL": 88
+            "GC_PAL": 86
         },
         "objective": "HT_Objective_3B_BentleyHasRewarded",
         "x": 65.178,

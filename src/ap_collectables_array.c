@@ -1016,7 +1016,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [123]
 		.type = LightGem,
 		.map_index = 35,
+#if defined(GC_NTSC)
 		.trig_index = 27,
+#elif defined(GC_PAL)
+		.trig_index = 25,
+#endif
 		.objective = 0xFFFF,
 		.x = 68.165f,
 		.z = -1400.024f
@@ -1024,7 +1028,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [124]
 		.type = DragonEgg,
 		.map_index = 35,
+#if defined(GC_NTSC)
 		.trig_index = 57,
+#elif defined(GC_PAL)
+		.trig_index = 55,
+#endif
 		.objective = 0xFFFF,
 		.x = 194.297f,
 		.z = -1429.799f
@@ -1032,7 +1040,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [125]
 		.type = LightGem,
 		.map_index = 35,
+#if defined(GC_NTSC)
 		.trig_index = 58,
+#elif defined(GC_PAL)
+		.trig_index = 56,
+#endif
 		.objective = 0xFFFF,
 		.x = 84.155f,
 		.z = -1311.049f
@@ -1040,7 +1052,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [126]
 		.type = DragonEgg,
 		.map_index = 35,
+#if defined(GC_NTSC)
 		.trig_index = 212,
+#elif defined(GC_PAL)
+		.trig_index = 210,
+#endif
 		.objective = 0xFFFF,
 		.x = 280.546f,
 		.z = -1022.916f
@@ -1048,7 +1064,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [127]
 		.type = LightGem,
 		.map_index = 35,
+#if defined(GC_NTSC)
 		.trig_index = 232,
+#elif defined(GC_PAL)
+		.trig_index = 229,
+#endif
 		.objective = 0xFFFF,
 		.x = 231.672f,
 		.z = -1394.083f
@@ -1056,7 +1076,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [128]
 		.type = LightGem,
 		.map_index = 35,
+#if defined(GC_NTSC)
 		.trig_index = 233,
+#elif defined(GC_PAL)
+		.trig_index = 230,
+#endif
 		.objective = 0xFFFF,
 		.x = 210.635f,
 		.z = -1273.26f
@@ -1064,7 +1088,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [129]
 		.type = DragonEgg_Chest,
 		.map_index = 35,
+#if defined(GC_NTSC)
 		.trig_index = 267,
+#elif defined(GC_PAL)
+		.trig_index = 264,
+#endif
 		.objective = 0xFFFF,
 		.x = 126.942f,
 		.z = -817.064f
@@ -1072,7 +1100,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [130]
 		.type = DragonEgg_Chest,
 		.map_index = 35,
+#if defined(GC_NTSC)
 		.trig_index = 268,
+#elif defined(GC_PAL)
+		.trig_index = 265,
+#endif
 		.objective = 0xFFFF,
 		.x = 317.489f,
 		.z = -585.642f
@@ -1688,7 +1720,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [202]
 		.type = DragonEgg_MiniGame,
 		.map_index = 35,
+#if defined(GC_NTSC)
 		.trig_index = 128,
+#elif defined(GC_PAL)
+		.trig_index = 126,
+#endif
 		.objective = HT_Objective_MR3_Spx_HalfDone & 0xFFFF,
 		.x = 142.24f,
 		.z = -1387.189f
@@ -1696,7 +1732,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [203]
 		.type = LightGem_MiniGame,
 		.map_index = 35,
+#if defined(GC_NTSC)
 		.trig_index = 128,
+#elif defined(GC_PAL)
+		.trig_index = 126,
+#endif
 		.objective = HT_Objective_MR3_Spx_AllDone & 0xFFFF,
 		.x = 142.24f,
 		.z = -1387.189f
@@ -1705,7 +1745,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [204]
 		.type = LightGem,
 		.map_index = 35,
+#if defined(GC_NTSC)
 		.trig_index = 88,
+#elif defined(GC_PAL)
+		.trig_index = 86,
+#endif
 		.objective = HT_Objective_3B_BentleyHasRewarded & 0xFFFF,
 		.x = 65.178f,
 		.z = -615.165f
@@ -1898,7 +1942,11 @@ APCollectable g_ap_collectables[] = {
 	{ // [226]
 		.type = Junk_Chest,
 		.map_index = 35,
+#if defined(GC_NTSC)
 		.trig_index = 249,
+#elif defined(GC_PAL)
+		.trig_index = 246,
+#endif
 		.objective = 0xFFFF,
 		.x = 265.841f,
 		.z = -596.061f
