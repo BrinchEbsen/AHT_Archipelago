@@ -26,10 +26,6 @@ void dbg_add_shop_item();
 void dbg_remove_shop_item();
 #endif
 
-#if AP_DEBUG_GLOBAL_ADDRESSES!=0
-void dbg_print_misc_globals();
-#endif
-
 MapOrderInfo realm_teleporter_maporderinfo[] = {
     { .m_FileHash = HT_File_Realm1A,    .m_MapHash = 0xFFFFFFFF },
     { .m_FileHash = HT_File_Realm2A,    .m_MapHash = 0xFFFFFFFF },
