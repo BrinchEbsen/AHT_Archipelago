@@ -1,4 +1,4 @@
-.memaddr 0x800a0e14
+.memaddr 0x800a0eb8
 # Charge button press check in TestChargePunch.
 bl charge_XSEItemHandler_Player__ButtonPressed_PreCallHook
 
