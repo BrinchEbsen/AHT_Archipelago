@@ -224,6 +224,9 @@ GameText__FindTextItem = 0x8012dfb8;
 EXItemAnimator_Map__GetGeoMap = 0x802abdf0;
 SE_TriggerList__ConstructAll = 0x8023bc6c;
 
+/* npc_hooks.h */
+XSEItemHandler_NPC__InitNPC = 0x800dbc5c;
+
 /* igstdlib.h */
 strcasecmp = 0x8025a784;
 strcmp = 0x8025a800;

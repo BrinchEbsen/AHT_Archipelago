@@ -1,0 +1,1 @@
+bl XSEItemHandler_NPC__InitNPC_PreCallHook

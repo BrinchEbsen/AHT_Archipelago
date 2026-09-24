@@ -65,6 +65,13 @@ typedef enum TrapType
 
 #define NUM_TRAPS_IN_CLIENT 4
 
+typedef enum MinigameConfig
+{
+    MinigameConfig_Normal,
+    MinigameConfig_EasyOnly,
+    MinigameConfig_Disabled
+} MinigameConfig;
+
 #define TELEPORT_PASS_PRICE 0
 
 typedef struct APSettings_TextEntry
@@ -229,6 +236,18 @@ typedef struct APSettings {
 
     /// @brief Counters for the client to keep track of received traps.
     u8 trap_counters[NUM_TRAPS_IN_CLIENT];
+
+    /// @brief How Blink minigames are configured.
+    u8 minigame_blink_config;
+    
+    /// @brief How Sparx minigames are configured.
+    u8 minigame_sparx_config;
+    
+    /// @brief How turret minigames are configured.
+    u8 minigame_turret_config;
+    
+    /// @brief How Sgt. Byrd minigames are configured.
+    u8 minigame_sgtbyrd_config;
 
     /// @brief Number of datasheets in this spreadsheet.
     /// GUI_Shop only has 1 datasheet.

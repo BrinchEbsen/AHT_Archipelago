@@ -517,7 +517,8 @@
             "./src/ap_notification.c",
             "./src/ap_trap.c",
             "./src/ex/exitemenv.c",
-            "./src/se/player.c"
+            "./src/se/player.c",
+            "./src/npc_hooks.c"
           ],
           "memory_address": "80296618",
           "size": "7BC4",
@@ -1272,6 +1273,19 @@
           "auto_calculate_injection_file_address": false,
           "injection_type": "memory_only",
           "enabled": true
+        },
+        {
+          "name": "XSEItemHandler_NPC__InitNPC_PreCallHook",
+          "code_files": [
+            "./asm/GC/XSEItemHandler_NPC__InitNPC_PreCallHook.s"
+          ],
+          "memory_address": "800dba04",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
         }
       ],
       "binary_patches": [],
@@ -1384,7 +1398,8 @@
             "./src/ap_notification.c",
             "./src/ap_trap.c",
             "./src/ex/exitemenv.c",
-            "./src/se/player.c"
+            "./src/se/player.c",
+            "./src/npc_hooks.c"
           ],
           "memory_address": "80296e88",
           "size": "7BC4",
@@ -2133,6 +2148,19 @@
             "./asm/GC/PAL/enforce_60hz.s"
           ],
           "memory_address": "8033e054",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "XSEItemHandler_NPC__InitNPC_PreCallHook",
+          "code_files": [
+            "./asm/GC/XSEItemHandler_NPC__InitNPC_PreCallHook.s"
+          ],
+          "memory_address": "800dbb50",
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
