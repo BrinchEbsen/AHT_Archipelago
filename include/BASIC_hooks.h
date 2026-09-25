@@ -13,24 +13,28 @@ typedef struct BossGateEntry
 // A list of boss gate triggers and their associated objectives for clearing them.
 extern BossGateEntry g_boss_gate_list[];
 
+typedef struct GameScriptPatchLine
+{
+    u32 line_num;
+    u32 line_patch[2];
+} GameScriptPatchLine;
+
 // A patch for a gamescript.
 typedef struct GameScriptPatch
 {
     // The trigger containing the gamescript.
     u16 trig_index;
     // The map containing the trigger.
-    u16 map_index;
+    u8 map_index;
     // Number of script lines to patch.
-    u16 num_lines;
-    // The starting line to patch from.
-    u16 start_line;
+    u8 num_lines;
     // Pointer to the values to patch into the gamescript.
-    u32* patches;
+    GameScriptPatchLine* patches;
 } GameScriptPatch;
 
-#define NUM_GAMESCRIPT_PATCHES 2
-// Array of gamescript patches.
-extern GameScriptPatch g_gamescript_patches[];
+#define NUM_CONST_GAMESCRIPT_PATCHES 2
+// Array of always-on gamescript patches.
+extern GameScriptPatch const_gamescript_patches[];
 
 #define XSEITEMHANDLER_M_PBASIC(self) OFFSET_VAL(void*, self, 0x380)
 

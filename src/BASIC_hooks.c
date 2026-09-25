@@ -36,41 +36,6 @@ BossGateEntry g_boss_gate_list[] = {
     }
 };
 
-u32 dragon_village_hunter_patch_1[] = {
-    // Original:    loc0 = GETOBJECTIVE HT_Objective_1B_Visited
-    // Patched:     loc0 = 0
-    0x0e1c0001, 0x00000000
-};
-
-u32 dragon_village_ember_patch[] = {
-    // Original:    FORCETALK
-    // Patched:     glo0 = 0
-    0x0e180001, 0x00000000
-};
-
-GameScriptPatch g_gamescript_patches[] = {
-    // Patch out a check that makes Hunter disappear if you do levels out of order.
-    // If you visit Crocovile Swamp before meeting him, he'll disappear and won't
-    // open the gate.
-    {
-        .map_index = 24,
-        .trig_index = 10,
-        .num_lines = 1,
-        .start_line = 0,
-        .patches = dragon_village_hunter_patch_1
-    },
-    // Make Ember not force a conversation when you meet her for the first time.
-    // Otherwise you can horn dive the dark gem and start a conversation with her
-    // at the same time, which can potentially soft lock the game.
-    {
-        .map_index = 24,
-        .trig_index = 289,
-        .num_lines = 1,
-        .start_line = 34,
-        .patches = dragon_village_ember_patch
-    }
-};
-
 void XSEItemHandler_Base__BASIC_Update_ReImplHook(void* self)
 {
     // We intercept the update routine to replace the boss barrier
@@ -166,8 +131,8 @@ bool BASIC_Main__UpdatePointers_PreCallHook(void* self)
     if (pTrigger != NULL) {
         SE_Map* pMap = pTrigger->m_pMap;
 
-        for (int i = 0; i < NUM_GAMESCRIPT_PATCHES; i++) {
-            GameScriptPatch* patch = &g_gamescript_patches[i];
+        for (int i = 0; i < NUM_CONST_GAMESCRIPT_PATCHES; i++) {
+            GameScriptPatch* patch = &const_gamescript_patches[i];
     
             if ((patch->map_index == pMap->m_MapListIndex) &&
                 (patch->trig_index == pTrigger->m_GeoTriggerIndex))
@@ -185,11 +150,11 @@ void apply_gamescript_patch(void* pBasic, GameScriptPatch* patch)
     // Get the script code
     u32* code = SPYROBASIC_SCRIPTCODE(pBasic);
 
-    // Each line is 8 bytes
-    code += patch->start_line*2;
-
-    for (int i = 0; i < patch->num_lines*2; i++) {
-        code[i] = patch->patches[i];
+    for (int i = 0; i < patch->num_lines; i++) {
+        u32 n = patch->patches[i].line_num;
+        // Each command is 8 bytes
+        code[ n*2   ] = patch->patches[i].line_patch[0];
+        code[(n*2)+1] = patch->patches[i].line_patch[1];
     }
 }
 

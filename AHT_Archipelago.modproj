@@ -518,7 +518,9 @@
             "./src/ap_trap.c",
             "./src/ex/exitemenv.c",
             "./src/se/player.c",
-            "./src/npc_hooks.c"
+            "./src/npc_hooks.c",
+            "./src/BASIC_hooks.c",
+            "./src/BASIC_hooks.patches.c"
           ],
           "memory_address": "80296618",
           "size": "7BC4",
@@ -572,7 +574,6 @@
           "code_files": [
             "./src/ap_collectables.c",
             "./src/ap_triginfo.c",
-            "./src/BASIC_hooks.c",
             "./src/ap_collectables_array.c"
           ],
           "memory_address": "801858c0",
@@ -1399,7 +1400,9 @@
             "./src/ap_trap.c",
             "./src/ex/exitemenv.c",
             "./src/se/player.c",
-            "./src/npc_hooks.c"
+            "./src/npc_hooks.c",
+            "./src/BASIC_hooks.c",
+            "./src/BASIC_hooks.patches.c"
           ],
           "memory_address": "80296e88",
           "size": "7BC4",
@@ -1453,7 +1456,6 @@
           "code_files": [
             "./src/ap_collectables.c",
             "./src/ap_triginfo.c",
-            "./src/BASIC_hooks.c",
             "./src/ap_collectables_array.c"
           ],
           "memory_address": "80185ed0",
