@@ -58,3 +58,62 @@ int XSEItemHandler_NPC__InitNPC_PreCallHook(void* self)
 
     return XSEItemHandler_NPC__InitNPC(self);
 }
+
+// this function is potentially pointless because minigame characters ideally won't even ask you
+// about the light gem version if the config is set to "easy only".
+bool minigame_onloaded_PlayerObjectives__GetObjective_PreCallHook(PlayerObjectives* self, EXHashCode hashcode, s32* result)
+{
+    if (g_gamestate_ap_settings.minigame_blink_config == MinigameConfig_EasyOnly)
+    {
+        switch (hashcode)
+        {
+            case HT_Objective_MR1_Blk_Easy:
+            case HT_Objective_MR2_Blk_Easy:
+            case HT_Objective_MR3_Blk_Easy:
+            case HT_Objective_MR4_Blk_Easy:
+                *result = 0;
+                return true;
+        }
+    }
+
+    if (g_gamestate_ap_settings.minigame_sparx_config == MinigameConfig_EasyOnly)
+    {
+        switch (hashcode)
+        {
+            case HT_Objective_MR1_Spx_Easy:
+            case HT_Objective_MR2_Easy:
+            case HT_Objective_MR3_Spx_Easy:
+            case HT_Objective_MR4_Spx_Easy:
+                *result = 0;
+                return true;
+        }
+    }
+
+    if (g_gamestate_ap_settings.minigame_turret_config == MinigameConfig_EasyOnly)
+    {
+        switch (hashcode)
+        {
+            case HT_Objective_1BFrogGivesEgg:
+            case HT_Objective_MR2_Spy_Easy:
+            case HT_Objective_MR3_Spy_Easy:
+            case HT_Objective_MR4_Spy_Easy:
+                *result = 0;
+                return true;
+        }
+    }
+
+    if (g_gamestate_ap_settings.minigame_sgtbyrd_config == MinigameConfig_EasyOnly)
+    {
+        switch (hashcode)
+        {
+            case HT_Objective_MR1_Easy:
+            case HT_Objective_MR2_Sgt_Easy:
+            case HT_Objective_MR3_Sgt_Easy:
+            case HT_Objective_MR4_Sgt_Easy:
+                *result = 0;
+                return true;
+        }
+    }
+
+    return PlayerObjectives__GetObjective__ReImplHook(self, hashcode, result);
+}

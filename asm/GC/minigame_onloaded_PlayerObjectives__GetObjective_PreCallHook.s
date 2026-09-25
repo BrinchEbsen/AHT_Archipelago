@@ -1,0 +1,1 @@
+bl minigame_onloaded_PlayerObjectives__GetObjective_PreCallHook

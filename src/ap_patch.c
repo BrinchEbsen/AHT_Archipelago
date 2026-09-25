@@ -110,10 +110,10 @@ APSettings g_patch_ap_settings = {
     .trap_data = 0,
     .trap_counters = {0},
 
-    .minigame_blink_config = MinigameConfig_Disabled,
-    .minigame_sparx_config = MinigameConfig_Disabled,
-    .minigame_turret_config = MinigameConfig_Disabled,
-    .minigame_sgtbyrd_config = MinigameConfig_Disabled,
+    .minigame_blink_config = MinigameConfig_EasyOnly,
+    .minigame_sparx_config = MinigameConfig_EasyOnly,
+    .minigame_turret_config = MinigameConfig_EasyOnly,
+    .minigame_sgtbyrd_config = MinigameConfig_EasyOnly,
 
     // SHOP ITEMS
     .xls_shop_sheetcount_ALWAYS_1 = 1,

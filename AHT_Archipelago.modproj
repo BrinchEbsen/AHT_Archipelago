@@ -1287,6 +1287,19 @@
           "auto_calculate_injection_file_address": false,
           "injection_type": "memory_only",
           "enabled": true
+        },
+        {
+          "name": "minigame_onloaded_PlayerObjectives__GetObjective_PreCallHook",
+          "code_files": [
+            "./asm/GC/minigame_onloaded_PlayerObjectives__GetObjective_PreCallHook.s"
+          ],
+          "memory_address": "80200cb4",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
         }
       ],
       "binary_patches": [],
@@ -2163,6 +2176,19 @@
             "./asm/GC/XSEItemHandler_NPC__InitNPC_PreCallHook.s"
           ],
           "memory_address": "800dbb50",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "minigame_onloaded_PlayerObjectives__GetObjective_PreCallHook",
+          "code_files": [
+            "./asm/GC/minigame_onloaded_PlayerObjectives__GetObjective_PreCallHook.s"
+          ],
+          "memory_address": "80201238",
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",

@@ -132,12 +132,34 @@ bool BASIC_Main__UpdatePointers_PreCallHook(void* self)
         SE_Map* pMap = pTrigger->m_pMap;
 
         for (int i = 0; i < NUM_CONST_GAMESCRIPT_PATCHES; i++) {
-            GameScriptPatch* patch = &const_gamescript_patches[i];
-    
-            if ((patch->map_index == pMap->m_MapListIndex) &&
-                (patch->trig_index == pTrigger->m_GeoTriggerIndex))
-            {
-                apply_gamescript_patch(self, patch);
+            apply_gamescript_patch(self, &const_gamescript_patches[i], pMap, pTrigger);
+        }
+
+        if (g_gamestate_ap_settings.minigame_blink_config == MinigameConfig_EasyOnly)
+        {
+            for (int i = 0; i < 4; i++) {
+                apply_gamescript_patch(self, &blink_easyonly_patches[i], pMap, pTrigger);
+            }
+        }
+
+        if (g_gamestate_ap_settings.minigame_sparx_config == MinigameConfig_EasyOnly)
+        {
+            for (int i = 0; i < 4; i++) {
+                apply_gamescript_patch(self, &sparx_easyonly_patches[i], pMap, pTrigger);
+            }
+        }
+
+        if (g_gamestate_ap_settings.minigame_turret_config == MinigameConfig_EasyOnly)
+        {
+            for (int i = 0; i < 4; i++) {
+                apply_gamescript_patch(self, &turret_easyonly_patches[i], pMap, pTrigger);
+            }
+        }
+
+        if (g_gamestate_ap_settings.minigame_sgtbyrd_config == MinigameConfig_EasyOnly)
+        {
+            for (int i = 0; i < 4; i++) {
+                apply_gamescript_patch(self, &sgtbyrd_easyonly_patches[i], pMap, pTrigger);
             }
         }
     }
@@ -145,8 +167,14 @@ bool BASIC_Main__UpdatePointers_PreCallHook(void* self)
     return ret;
 }
 
-void apply_gamescript_patch(void* pBasic, GameScriptPatch* patch)
+void apply_gamescript_patch(void* pBasic, GameScriptPatch* patch, SE_Map* map, SE_Trigger* trigger)
 {
+    if ((patch->map_index != map->m_MapListIndex) ||
+        (patch->trig_index != trigger->m_GeoTriggerIndex))
+    {
+        return;
+    }
+
     // Get the script code
     u32* code = SPYROBASIC_SCRIPTCODE(pBasic);
 
