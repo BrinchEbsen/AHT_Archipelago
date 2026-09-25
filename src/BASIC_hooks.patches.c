@@ -40,6 +40,9 @@ GameScriptPatch const_gamescript_patches[] = {
 #pragma endregion
 
 #pragma region Reusables
+
+// Repeated line-patches that can be used for multiple gamescript patches
+
 GameScriptPatchLine reusable_patch_1[] = {
     // Make NPC never think the light gem challenge is completed.
     {
@@ -103,6 +106,75 @@ GameScriptPatchLine reusable_patch_2[] = {
         .line_patch = BASIC_HOOK_TALK_TO_PLAYER(0)
     }
 };
+GameScriptPatchLine reusable_patch_3[] = {
+    // Make NPC never think the light gem challenge is completed.
+    {
+        .line_num = 4,
+        // Original:    glo3 = GETOBJECTIVE <minigame hard complete objective>
+        // Patched:     glo3 = 0
+        .line_patch = BASIC_HOOK_SET_VAR_IMMEDIATE(0x1b, 0)
+    },
+    // Make NPC not ask about the light gem challenge.
+    {
+        .line_num = 60,
+        // Original:    CALLPROC PlayCutsc_6
+        // Patched:     glo2 = 1
+        .line_patch = BASIC_HOOK_SET_VAR_IMMEDIATE(0x1a, 1)
+    },
+    // Prevent the yes/no box to choose the light gem from appearing.
+    {
+        .line_num = 74,
+        // Original:    YESNOBOX HT_Text_ASK_GEM
+        // Patched:     YESNO = 0
+        .line_patch = BASIC_HOOK_SET_VAR_IMMEDIATE(0x5, 0)
+    }
+};
+GameScriptPatchLine reusable_patch_4[] = {
+    // Make NPC never think the light gem challenge is completed.
+    {
+        .line_num = 7,
+        // Original:    glo5 = GETOBJECTIVE <minigame hard complete objective>
+        // Patched:     glo5 = 0
+        .line_patch = BASIC_HOOK_SET_VAR_IMMEDIATE(0x1d, 0)
+    },
+    // Prevent the yes/no box to choose the light gem from appearing.
+    {
+        .line_num = 91,
+        // Original:    glo11/glo12 = HT_Text_ASK_GEM
+        // Patched:     CALLPROC play
+        .line_patch = BASIC_HOOK_CALL_PROC(0x2)
+    },
+    {
+        .line_num = 92,
+        // Original:    CALLPROC play
+        // Patched:     TALKCAMERA 0
+        .line_patch = BASIC_HOOK_TALK_CAMERA(0)
+    },
+    {
+        .line_num = 93,
+        // Original:    CALLPROC quiz
+        // Patched:     TALKTOPLAYER 0
+        .line_patch = BASIC_HOOK_TALK_TO_PLAYER(0)
+    },
+    {
+        .line_num = 97,
+        // Original:    glo11/glo12 = HT_Text_ASK_GEM
+        // Patched:     glo7 = 1
+        .line_patch = BASIC_HOOK_SET_VAR_IMMEDIATE(0x1f, 1)
+    },
+    {
+        .line_num = 103,
+        // Original:    glo7 = 1
+        // Patched:     TALKCAMERA 0
+        .line_patch = BASIC_HOOK_TALK_CAMERA(0)
+    },
+    {
+        .line_num = 104,
+        // Original:    CALLPROC quiz
+        // Patched:     TALKTOPLAYER 0
+        .line_patch = BASIC_HOOK_TALK_TO_PLAYER(0)
+    }
+};
 #pragma endregion
 
 #pragma region Blink Easy Only
@@ -142,53 +214,7 @@ GameScriptPatch blink_easyonly_patches[] = {
         .trig_index = 115,
         .map_index = 45,
         .num_lines = 7,
-        .patches = (GameScriptPatchLine[])
-        {
-            // Make NPC never think the light gem challenge is completed.
-            {
-                .line_num = 7,
-                // Original:    glo5 = GETOBJECTIVE <minigame hard complete objective>
-                // Patched:     glo5 = 0
-                .line_patch = BASIC_HOOK_SET_VAR_IMMEDIATE(0x1d, 0)
-            },
-            // Prevent the yes/no box to choose the light gem from appearing.
-            {
-                .line_num = 91,
-                // Original:    glo12 = HT_Text_ASK_GEM
-                // Patched:     CALLPROC play
-                .line_patch = BASIC_HOOK_CALL_PROC(0x2)
-            },
-            {
-                .line_num = 92,
-                // Original:    CALLPROC play
-                // Patched:     TALKCAMERA 0
-                .line_patch = BASIC_HOOK_TALK_CAMERA(0)
-            },
-            {
-                .line_num = 93,
-                // Original:    CALLPROC quiz
-                // Patched:     TALKTOPLAYER 0
-                .line_patch = BASIC_HOOK_TALK_TO_PLAYER(0)
-            },
-            {
-                .line_num = 97,
-                // Original:    glo12 = HT_Text_ASK_GEM
-                // Patched:     glo7 = 1
-                .line_patch = BASIC_HOOK_SET_VAR_IMMEDIATE(0x1f, 1)
-            },
-            {
-                .line_num = 103,
-                // Original:    glo7 = 1
-                // Patched:     TALKCAMERA 0
-                .line_patch = BASIC_HOOK_TALK_CAMERA(0)
-            },
-            {
-                .line_num = 104,
-                // Original:    CALLPROC quiz
-                // Patched:     TALKTOPLAYER 0
-                .line_patch = BASIC_HOOK_TALK_TO_PLAYER(0)
-            }
-        }
+        .patches = reusable_patch_4
     },
     // Frostbite Village Blink
     {
@@ -211,31 +237,39 @@ GameScriptPatch blink_easyonly_patches[] = {
 GameScriptPatch sparx_easyonly_patches[] = {
     // Dragonfly Falls Sparx
     {
-        .trig_index = 0,
+#if defined(GC_NTSC)
+        .trig_index = 283,
+#elif defined(GC_PAL)
+        .trig_index = 282,
+#endif
         .map_index = 22,
-        .num_lines = 0,
-        .patches = NULL
+        .num_lines = 3,
+        .patches = reusable_patch_3
     },
     // Sunken Ruins Sparx
     {
-        .trig_index = 0,
+        .trig_index = 65,
         .map_index = 19,
-        .num_lines = 0,
-        .patches = NULL
+        .num_lines = 6,
+        .patches = reusable_patch_2
     },
     // Gloomy Glacier Sparx
     {
-        .trig_index = 0,
+#if defined(GC_NTSC)
+        .trig_index = 128,
+#elif defined(GC_PAL)
+        .trig_index = 126,
+#endif
         .map_index = 35,
-        .num_lines = 0,
-        .patches = NULL
+        .num_lines = 3,
+        .patches = reusable_patch_3
     },
     // Magma Falls Bottom Sparx
     {
-        .trig_index = 0,
+        .trig_index = 12,
         .map_index = 63,
-        .num_lines = 0,
-        .patches = NULL
+        .num_lines = 6,
+        .patches = reusable_patch_2
     }
 };
 #pragma endregion
@@ -244,31 +278,94 @@ GameScriptPatch sparx_easyonly_patches[] = {
 GameScriptPatch turret_easyonly_patches[] = {
     // Crocovile Swamp Turret
     {
-        .trig_index = 0,
+        .trig_index = 6,
         .map_index = 23,
-        .num_lines = 0,
-        .patches = NULL
+        .num_lines = 3,
+        .patches = (GameScriptPatchLine[])
+        {
+            // Make NPC never think the light gem challenge is completed.
+            {
+                .line_num = 4,
+                // Original:    glo3 = GETOBJECTIVE <minigame hard complete objective>
+                // Patched:     glo3 = 0
+                .line_patch = BASIC_HOOK_SET_VAR_IMMEDIATE(0x1b, 0)
+            },
+            // Make NPC not ask about the light gem challenge.
+            {
+                .line_num = 81,
+                // Original:    CALLPROC PlayCutsc_6
+                // Patched:     glo2 = 1
+                .line_patch = BASIC_HOOK_SET_VAR_IMMEDIATE(0x1a, 1)
+            },
+            // Prevent the yes/no box to choose the light gem from appearing.
+            {
+                .line_num = 95,
+                // Original:    YESNOBOX HT_Text_ASK_GEM
+                // Patched:     YESNO = 0
+                .line_patch = BASIC_HOOK_SET_VAR_IMMEDIATE(0x5, 0)
+            }
+        }
     },
     // Coastal Remains Turret
     {
-        .trig_index = 0,
+        .trig_index = 77,
         .map_index = 45,
-        .num_lines = 0,
-        .patches = NULL
+        .num_lines = 7,
+        .patches = reusable_patch_4
     },
     // Frostbite Village Turret
     {
-        .trig_index = 0,
+        .trig_index = 242,
         .map_index = 31,
-        .num_lines = 0,
-        .patches = NULL
+        .num_lines = 3,
+        .patches = reusable_patch_1
     },
     // Stormy Beach Turret
     {
-        .trig_index = 0,
+        .trig_index = 8,
         .map_index = 44,
-        .num_lines = 0,
-        .patches = NULL
+        .num_lines = 6,
+        .patches = (GameScriptPatchLine[])
+        {
+            // Make NPC never think the light gem challenge is completed.
+            {
+                .line_num = 7,
+                // Original:    glo5 = GETOBJECTIVE <minigame hard complete objective>
+                // Patched:     glo5 = 0
+                .line_patch = BASIC_HOOK_SET_VAR_IMMEDIATE(0x1d, 0)
+            },
+            // Prevent the yes/no box to choose the light gem from appearing.
+            {
+                .line_num = 93,
+                // Original:    glo12 = HT_Text_ASK_GEM
+                // Patched:     CALLPROC play
+                .line_patch = BASIC_HOOK_CALL_PROC(0x2)
+            },
+            {
+                .line_num = 94,
+                // Original:    CALLPROC play
+                // Patched:     TALKCAMERA 0
+                .line_patch = BASIC_HOOK_TALK_CAMERA(0)
+            },
+            {
+                .line_num = 95,
+                // Original:    CALLPROC quiz
+                // Patched:     TALKTOPLAYER 0
+                .line_patch = BASIC_HOOK_TALK_TO_PLAYER(0)
+            },
+            {
+                .line_num = 105,
+                // Original:    glo12 = HT_Text_ASK_GEM
+                // Patched:     TALKCAMERA 0
+                .line_patch = BASIC_HOOK_TALK_CAMERA(0)
+            },
+            {
+                .line_num = 106,
+                // Original:    CALLPROC quiz
+                // Patched:     TALKTOPLAYER 0
+                .line_patch = BASIC_HOOK_TALK_TO_PLAYER(0)
+            }
+        }
     }
 };
 #pragma endregion
