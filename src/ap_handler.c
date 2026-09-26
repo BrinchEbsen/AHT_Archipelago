@@ -609,6 +609,16 @@ int Popup__Update_VtableHook(void* self)
     return Popup__Update(self);
 }
 
+int LillyPad__Update_VtableHook(void* self)
+{
+    if (g_gamestate_ap_settings.minigame_turret_config == MinigameConfig_Disabled)
+    {
+        OFFSET_VAL(u16, self, 0x3e2) |= 1;
+    }
+
+    return LillyPad__Update(self);
+}
+
 s32 SEGameFlow__v_StateRunning__VTHOOK(SEGameFlow *self)
 {
     // Get or create a GUI element to assign a draw-routine.

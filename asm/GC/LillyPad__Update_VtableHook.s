@@ -1,0 +1,1 @@
+.long LillyPad__Update_VtableHook

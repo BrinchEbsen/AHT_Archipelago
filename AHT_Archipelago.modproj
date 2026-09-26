@@ -1300,6 +1300,19 @@
           "auto_calculate_injection_file_address": false,
           "injection_type": "memory_only",
           "enabled": true
+        },
+        {
+          "name": "LillyPad__Update_VtableHook",
+          "code_files": [
+            "./asm/GC/LillyPad__Update_VtableHook.s"
+          ],
+          "memory_address": "8043ddb8",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
         }
       ],
       "binary_patches": [],
@@ -2189,6 +2202,19 @@
             "./asm/GC/minigame_onloaded_PlayerObjectives__GetObjective_PreCallHook.s"
           ],
           "memory_address": "80201238",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "LillyPad__Update_VtableHook",
+          "code_files": [
+            "./asm/GC/LillyPad__Update_VtableHook.s"
+          ],
+          "memory_address": "8043e818",
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",

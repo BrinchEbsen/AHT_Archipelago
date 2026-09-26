@@ -98,6 +98,9 @@ extern int Popup__Update(void* self);
 // Hook into the Popup-object's update routine.
 int Popup__Update_VtableHook(void* self);
 
+extern int LillyPad__Update(void* self);
+int LillyPad__Update_VtableHook(void* self);
+
 // Generic every-frame hook for running whatever code we need.
 s32 SEGameFlow__v_StateRunning__VTHOOK(SEGameFlow* self);
 

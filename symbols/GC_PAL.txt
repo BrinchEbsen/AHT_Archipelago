@@ -55,6 +55,7 @@ XSEItemEnv__StartMusic__LockedFlag = 0x804cc110;
 /* ap_handler.h */
 XSEItemHandler_StartPoint__Update = 0x80106130;
 Popup__Update = 0x800fc7f4;
+LillyPad__Update = 0x801c3070;
 
 /* ap_pausemenu.h */
 gpPanelShop = 0x804cc0ac;
