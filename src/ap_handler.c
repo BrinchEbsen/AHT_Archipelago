@@ -609,11 +609,21 @@ int Popup__Update_VtableHook(void* self)
     return Popup__Update(self);
 }
 
+// (yes they spelt "Lilypad" wrong)
 int LillyPad__Update_VtableHook(void* self)
 {
+    // Make lilypads by Fredneck rise on their own if turret minigames are disabled.
     if (g_gamestate_ap_settings.minigame_turret_config == MinigameConfig_Disabled)
     {
-        OFFSET_VAL(u16, self, 0x3e2) |= 1;
+        // Only rise if the nearby dark gem is destroyed.
+        s32 obj;
+        PlayerObjectives__GetObjective__ReImplHook(
+            &gGameState.m_PlayerObjectives, HT_Objective_DX_1B_02, &obj);
+        
+        if (obj)
+        {
+            OFFSET_VAL(u16, self, 0x3e2) |= 1;
+        }
     }
 
     return LillyPad__Update(self);
