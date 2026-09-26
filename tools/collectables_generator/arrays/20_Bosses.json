@@ -9,6 +9,7 @@
             "GC_PAL": 346
         },
         "objective": "HT_Objective_Boss1_Beaten",
+        "minigame_type": "MinigameType_None",
         "x": 151.245,
         "z": -102.081
     },
@@ -22,6 +23,7 @@
             "GC_PAL": 235
         },
         "objective": "HT_Objective_Boss2_Beaten",
+        "minigame_type": "MinigameType_None",
         "x": 3.925,
         "z": 80.844
     },
@@ -35,6 +37,7 @@
             "GC_PAL": 318
         },
         "objective": "HT_Objective_Boss3_Beaten",
+        "minigame_type": "MinigameType_None",
         "x": -51.937,
         "z": -58.285
     },
@@ -48,6 +51,7 @@
             "GC_PAL": 391
         },
         "objective": "HT_Objective_Boss4_Beaten",
+        "minigame_type": "MinigameType_None",
         "x": -1281.773,
         "z": -1668.25
     }

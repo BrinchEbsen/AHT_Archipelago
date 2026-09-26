@@ -75,6 +75,11 @@ for region_name, entries in in_dicts.items():
         else:
             output_str += "\t\t.objective = 0xFFFF,\n"
 
+        if "minigame_type" in entry.keys():
+            m_minigame_type = entry["minigame_type"]
+            assert isinstance(m_minigame_type, str)
+            output_str += "\t\t.minigame_type = "+m_minigame_type+",\n"
+
         if "x" in entry.keys():
             m_x = entry["x"]
             assert isinstance(m_x, float)

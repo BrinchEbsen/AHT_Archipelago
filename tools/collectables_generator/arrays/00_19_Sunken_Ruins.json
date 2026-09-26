@@ -8,6 +8,7 @@
             "GC_NTSC": 0,
             "GC_PAL": 0
         },
+        "minigame_type": "MinigameType_None",
         "x": -687.673,
         "z": 59.447
     },
@@ -20,6 +21,7 @@
             "GC_NTSC": 2,
             "GC_PAL": 2
         },
+        "minigame_type": "MinigameType_None",
         "x": -906.078,
         "z": -148.267
     },
@@ -32,6 +34,7 @@
             "GC_NTSC": 3,
             "GC_PAL": 3
         },
+        "minigame_type": "MinigameType_None",
         "x": -790.679,
         "z": -43.671
     },
@@ -44,6 +47,7 @@
             "GC_NTSC": 4,
             "GC_PAL": 4
         },
+        "minigame_type": "MinigameType_None",
         "x": -631.413,
         "z": 61.091
     },
@@ -56,6 +60,7 @@
             "GC_NTSC": 10,
             "GC_PAL": 10
         },
+        "minigame_type": "MinigameType_None",
         "x": -732.583,
         "z": -165.004
     },
@@ -68,6 +73,7 @@
             "GC_NTSC": 26,
             "GC_PAL": 26
         },
+        "minigame_type": "MinigameType_None",
         "x": -629.449,
         "z": 34.074
     },
@@ -80,6 +86,7 @@
             "GC_NTSC": 64,
             "GC_PAL": 64
         },
+        "minigame_type": "MinigameType_None",
         "x": -604.58,
         "z": -108.185
     },
@@ -92,6 +99,7 @@
             "GC_NTSC": 86,
             "GC_PAL": 86
         },
+        "minigame_type": "MinigameType_None",
         "x": -547.007,
         "z": 56.702
     },
@@ -104,6 +112,7 @@
             "GC_NTSC": 90,
             "GC_PAL": 90
         },
+        "minigame_type": "MinigameType_None",
         "x": -633.089,
         "z": 88.784
     },
@@ -116,6 +125,7 @@
             "GC_NTSC": 91,
             "GC_PAL": 91
         },
+        "minigame_type": "MinigameType_None",
         "x": -625.657,
         "z": 158.848
     },
@@ -128,6 +138,7 @@
             "GC_NTSC": 92,
             "GC_PAL": 92
         },
+        "minigame_type": "MinigameType_None",
         "x": -891.616,
         "z": -58.909
     },
@@ -140,6 +151,7 @@
             "GC_NTSC": 93,
             "GC_PAL": 93
         },
+        "minigame_type": "MinigameType_None",
         "x": -799.01,
         "z": -159.2
     },
@@ -152,6 +164,7 @@
             "GC_NTSC": 94,
             "GC_PAL": 94
         },
+        "minigame_type": "MinigameType_None",
         "x": -496.219,
         "z": -101.822
     },
@@ -164,6 +177,7 @@
             "GC_NTSC": 131,
             "GC_PAL": 131
         },
+        "minigame_type": "MinigameType_None",
         "x": -762.908,
         "z": -179.793
     },
@@ -176,6 +190,7 @@
             "GC_NTSC": 183,
             "GC_PAL": 183
         },
+        "minigame_type": "MinigameType_None",
         "x": -636.02,
         "z": -82.516
     }

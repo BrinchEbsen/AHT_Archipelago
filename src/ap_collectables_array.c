@@ -9,6 +9,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 0,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -687.673f,
 		.z = 59.447f
 	},
@@ -18,6 +19,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 2,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -906.078f,
 		.z = -148.267f
 	},
@@ -27,6 +29,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 3,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -790.679f,
 		.z = -43.671f
 	},
@@ -36,6 +39,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 4,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -631.413f,
 		.z = 61.091f
 	},
@@ -45,6 +49,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 10,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -732.583f,
 		.z = -165.004f
 	},
@@ -54,6 +59,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 26,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -629.449f,
 		.z = 34.074f
 	},
@@ -63,6 +69,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 64,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -604.58f,
 		.z = -108.185f
 	},
@@ -72,6 +79,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 86,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -547.007f,
 		.z = 56.702f
 	},
@@ -81,6 +89,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 90,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -633.089f,
 		.z = 88.784f
 	},
@@ -90,6 +99,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 91,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -625.657f,
 		.z = 158.848f
 	},
@@ -99,6 +109,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 92,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -891.616f,
 		.z = -58.909f
 	},
@@ -108,6 +119,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 93,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -799.01f,
 		.z = -159.2f
 	},
@@ -117,6 +129,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 94,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -496.219f,
 		.z = -101.822f
 	},
@@ -126,6 +139,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 131,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -762.908f,
 		.z = -179.793f
 	},
@@ -135,6 +149,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 183,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -636.02f,
 		.z = -82.516f
 	},
@@ -146,6 +161,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 2,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 88.407f,
 		.z = 0.269f
 	},
@@ -155,6 +171,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 8,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 391.447f,
 		.z = 0.86f
 	},
@@ -164,6 +181,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 9,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 443.121f,
 		.z = -89.37f
 	},
@@ -173,6 +191,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 82,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 284.615f,
 		.z = -95.921f
 	},
@@ -182,6 +201,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 109,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -51.165f,
 		.z = -8.013f
 	},
@@ -191,6 +211,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 132,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 238.131f,
 		.z = -57.23f
 	},
@@ -200,6 +221,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 133,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 234.517f,
 		.z = 70.687f
 	},
@@ -209,6 +231,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 134,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 267.308f,
 		.z = 99.23f
 	},
@@ -218,6 +241,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 135,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 191.11f,
 		.z = 4.02f
 	},
@@ -227,6 +251,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 136,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 40.644f,
 		.z = -104.773f
 	},
@@ -236,6 +261,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 137,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -181.482f,
 		.z = -132.52f
 	},
@@ -245,6 +271,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 183,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -4.772f,
 		.z = 104.976f
 	},
@@ -254,6 +281,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 194,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -80.542f,
 		.z = 117.823f
 	},
@@ -263,6 +291,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 239,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 183.855f,
 		.z = -351.459f
 	},
@@ -274,6 +303,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 21,
 		.trig_index = 59,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 	},
 	// [ 30] CD: Dragon Egg from Ball Gadget
 	{
@@ -281,6 +311,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 21,
 		.trig_index = 60,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 	},
 	#pragma endregion /* 21 Cloudy Domain Ball Gadget */
 	#pragma region 22 Dragonfly Falls
@@ -290,6 +321,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 22,
 		.trig_index = 8,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 709.432f,
 		.z = -410.398f
 	},
@@ -299,6 +331,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 22,
 		.trig_index = 11,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 675.898f,
 		.z = -296.257f
 	},
@@ -308,6 +341,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 22,
 		.trig_index = 12,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 938.631f,
 		.z = -407.264f
 	},
@@ -317,6 +351,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 22,
 		.trig_index = 14,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 680.723f,
 		.z = -344.604f
 	},
@@ -326,6 +361,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 22,
 		.trig_index = 15,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 1062.884f,
 		.z = -400.652f
 	},
@@ -335,6 +371,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 22,
 		.trig_index = 21,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 1007.291f,
 		.z = -589.001f
 	},
@@ -344,6 +381,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 22,
 		.trig_index = 23,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 1296.417f,
 		.z = -228.452f
 	},
@@ -353,6 +391,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 22,
 		.trig_index = 29,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 972.379f,
 		.z = -669.891f
 	},
@@ -362,6 +401,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 22,
 		.trig_index = 37,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 743.213f,
 		.z = -601.936f
 	},
@@ -371,6 +411,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 22,
 		.trig_index = 38,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 846.709f,
 		.z = -568.009f
 	},
@@ -380,6 +421,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 22,
 		.trig_index = 52,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 1250.741f,
 		.z = -308.75f
 	},
@@ -389,6 +431,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 22,
 		.trig_index = 73,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 780.287f,
 		.z = -771.342f
 	},
@@ -398,6 +441,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 22,
 		.trig_index = 74,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 698.026f,
 		.z = -797.89f
 	},
@@ -407,6 +451,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 22,
 		.trig_index = 90,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 925.533f,
 		.z = -649.716f
 	},
@@ -420,6 +465,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 311,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 579.858f,
 		.z = -286.488f
 	},
@@ -433,6 +479,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 312,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 925.944f,
 		.z = -854.214f
 	},
@@ -446,6 +493,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 313,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 1056.308f,
 		.z = -791.347f
 	},
@@ -457,6 +505,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 0,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 8.988f,
 		.z = 538.614f
 	},
@@ -466,6 +515,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 1,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 293.351f,
 		.z = 734.02f
 	},
@@ -475,6 +525,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 5,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 152.106f,
 		.z = 537.051f
 	},
@@ -484,6 +535,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 8,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 334.059f,
 		.z = 619.921f
 	},
@@ -493,6 +545,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 36,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 207.287f,
 		.z = 509.651f
 	},
@@ -502,6 +555,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 48,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 297.543f,
 		.z = 592.444f
 	},
@@ -511,6 +565,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 49,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 105.845f,
 		.z = 594.52f
 	},
@@ -520,6 +575,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 54,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 165.745f,
 		.z = 750.651f
 	},
@@ -529,6 +585,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 58,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 75.439f,
 		.z = 538.957f
 	},
@@ -538,6 +595,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 62,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -151.165f,
 		.z = 491.431f
 	},
@@ -547,6 +605,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 68,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 175.806f,
 		.z = 482.756f
 	},
@@ -556,6 +615,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 103,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 135.36f,
 		.z = 593.936f
 	},
@@ -565,6 +625,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 161,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 73.546f,
 		.z = 549.902f
 	},
@@ -574,6 +635,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 162,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -58.559f,
 		.z = 515.1f
 	},
@@ -583,6 +645,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 202,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 171.311f,
 		.z = 659.408f
 	},
@@ -592,6 +655,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 203,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 287.616f,
 		.z = 506.183f
 	},
@@ -601,6 +665,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 204,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 193.263f,
 		.z = 508.721f
 	},
@@ -612,6 +677,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 1,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 87.14f,
 		.z = 62.445f
 	},
@@ -621,6 +687,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 2,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 228.663f,
 		.z = 69.036f
 	},
@@ -630,6 +697,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 8,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -107.383f,
 		.z = -8.333f
 	},
@@ -639,6 +707,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 16,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -106.383f,
 		.z = 8.255f
 	},
@@ -648,6 +717,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 21,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -67.898f,
 		.z = -83.488f
 	},
@@ -657,6 +727,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 92,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 384.315f,
 		.z = -25.722f
 	},
@@ -666,6 +737,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 139,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 45.001f,
 		.z = -102.361f
 	},
@@ -675,6 +747,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 141,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 12.535f,
 		.z = -75.268f
 	},
@@ -684,6 +757,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 290,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 182.639f,
 		.z = -11.277f
 	},
@@ -693,6 +767,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 302,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 200.086f,
 		.z = -8.877f
 	},
@@ -702,6 +777,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 341,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 202.56f,
 		.z = -165.061f
 	},
@@ -711,6 +787,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 342,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 35.483f,
 		.z = -44.351f
 	},
@@ -720,6 +797,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 343,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 66.002f,
 		.z = 159.513f
 	},
@@ -731,6 +809,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 19,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -392.19f,
 		.z = -1620.263f
 	},
@@ -740,6 +819,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 83,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -701.032f,
 		.z = -1398.659f
 	},
@@ -749,6 +829,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 84,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -487.318f,
 		.z = -1565.012f
 	},
@@ -758,6 +839,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 85,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -671.799f,
 		.z = -1623.578f
 	},
@@ -767,6 +849,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 86,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -514.328f,
 		.z = -1702.092f
 	},
@@ -776,6 +859,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 87,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -635.657f,
 		.z = -1405.647f
 	},
@@ -785,6 +869,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 88,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -575.873f,
 		.z = -1707.055f
 	},
@@ -794,6 +879,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 89,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -598.073f,
 		.z = -1628.077f
 	},
@@ -803,6 +889,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 150,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -432.978f,
 		.z = -1487.42f
 	},
@@ -812,6 +899,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 211,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -524.919f,
 		.z = -1531.056f
 	},
@@ -821,6 +909,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 214,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -375.168f,
 		.z = -1719.951f
 	},
@@ -832,6 +921,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 4,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -163.103f,
 		.z = 135.544f
 	},
@@ -841,6 +931,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 5,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 60.377f,
 		.z = 147.53f
 	},
@@ -850,6 +941,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 6,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 188.558f,
 		.z = 86.418f
 	},
@@ -859,6 +951,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 7,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 235.793f,
 		.z = 35.055f
 	},
@@ -868,6 +961,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 11,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 277.068f,
 		.z = -445.761f
 	},
@@ -877,6 +971,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 36,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -106.951f,
 		.z = 96.723f
 	},
@@ -886,6 +981,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 60,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 293.786f,
 		.z = -178.487f
 	},
@@ -895,6 +991,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 61,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 250.211f,
 		.z = -350.799f
 	},
@@ -904,6 +1001,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 66,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 266.501f,
 		.z = -478.457f
 	},
@@ -913,6 +1011,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 74,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 296.465f,
 		.z = -275.83f
 	},
@@ -922,6 +1021,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 150,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -119.191f,
 		.z = -24.916f
 	},
@@ -931,6 +1031,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 170,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 69.112f,
 		.z = 307.069f
 	},
@@ -940,6 +1041,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 246,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -97.852f,
 		.z = 165.881f
 	},
@@ -949,6 +1051,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 247,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 75.265f,
 		.z = -158.639f
 	},
@@ -958,6 +1061,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 312,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -21.688f,
 		.z = -470.546f
 	},
@@ -967,6 +1071,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 372,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 57.459f,
 		.z = 264.138f
 	},
@@ -976,6 +1081,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 373,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 114.466f,
 		.z = 69.87f
 	},
@@ -987,6 +1093,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 4,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -796.231f,
 		.z = -326.562f
 	},
@@ -996,6 +1103,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 8,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -707.511f,
 		.z = -152.005f
 	},
@@ -1005,6 +1113,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 11,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -546.61f,
 		.z = -154.257f
 	},
@@ -1014,6 +1123,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 15,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -589.098f,
 		.z = -189.818f
 	},
@@ -1023,6 +1133,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 21,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -386.851f,
 		.z = -125.771f
 	},
@@ -1032,6 +1143,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 22,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -421.771f,
 		.z = -113.849f
 	},
@@ -1041,6 +1153,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 31,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -639.206f,
 		.z = -364.31f
 	},
@@ -1050,6 +1163,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 33,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -594.839f,
 		.z = -288.317f
 	},
@@ -1059,6 +1173,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 36,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -626.585f,
 		.z = -290.399f
 	},
@@ -1068,6 +1183,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 44,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -546.963f,
 		.z = -417.671f
 	},
@@ -1077,6 +1193,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 45,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -615.706f,
 		.z = -458.546f
 	},
@@ -1086,6 +1203,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 67,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -670.845f,
 		.z = -173.75f
 	},
@@ -1095,6 +1213,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 133,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -330.0f,
 		.z = -80.0f
 	},
@@ -1104,6 +1223,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 421,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -773.415f,
 		.z = -108.71f
 	},
@@ -1115,6 +1235,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 35,
 		.trig_index = 1,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 187.602f,
 		.z = -716.696f
 	},
@@ -1124,6 +1245,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 35,
 		.trig_index = 2,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 77.346f,
 		.z = -790.991f
 	},
@@ -1133,6 +1255,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 35,
 		.trig_index = 15,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 336.983f,
 		.z = -913.114f
 	},
@@ -1146,6 +1269,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 25,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 68.165f,
 		.z = -1400.024f
 	},
@@ -1159,6 +1283,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 55,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 194.297f,
 		.z = -1429.799f
 	},
@@ -1172,6 +1297,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 56,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 84.155f,
 		.z = -1311.049f
 	},
@@ -1185,6 +1311,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 210,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 280.546f,
 		.z = -1022.916f
 	},
@@ -1198,6 +1325,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 229,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 231.672f,
 		.z = -1394.083f
 	},
@@ -1211,6 +1339,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 230,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 210.635f,
 		.z = -1273.26f
 	},
@@ -1224,6 +1353,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 264,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 126.942f,
 		.z = -817.064f
 	},
@@ -1237,6 +1367,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 265,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 317.489f,
 		.z = -585.642f
 	},
@@ -1248,6 +1379,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 40,
 		.trig_index = 1,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -1070.981f,
 		.z = -1205.956f
 	},
@@ -1257,6 +1389,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 40,
 		.trig_index = 2,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -1597.688f,
 		.z = -1304.058f
 	},
@@ -1266,6 +1399,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 40,
 		.trig_index = 3,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -957.165f,
 		.z = -1200.406f
 	},
@@ -1275,6 +1409,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 40,
 		.trig_index = 4,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -1069.976f,
 		.z = -1617.574f
 	},
@@ -1284,6 +1419,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 40,
 		.trig_index = 41,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -1350.317f,
 		.z = -1317.104f
 	},
@@ -1293,6 +1429,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 40,
 		.trig_index = 109,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -1142.621f,
 		.z = -1473.406f
 	},
@@ -1302,6 +1439,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 40,
 		.trig_index = 110,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -975.346f,
 		.z = -1607.982f
 	},
@@ -1311,6 +1449,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 40,
 		.trig_index = 111,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -990.302f,
 		.z = -1540.03f
 	},
@@ -1320,6 +1459,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 40,
 		.trig_index = 115,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -1441.266f,
 		.z = -1354.549f
 	},
@@ -1329,6 +1469,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 40,
 		.trig_index = 237,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -1241.792f,
 		.z = -1420.346f
 	},
@@ -1338,6 +1479,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 40,
 		.trig_index = 388,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -1514.395f,
 		.z = -1282.014f
 	},
@@ -1349,6 +1491,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 44,
 		.trig_index = 27,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -92.003f,
 		.z = 303.808f
 	},
@@ -1358,6 +1501,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 44,
 		.trig_index = 44,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -213.556f,
 		.z = 57.555f
 	},
@@ -1367,6 +1511,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 44,
 		.trig_index = 66,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -34.484f,
 		.z = 18.496f
 	},
@@ -1378,6 +1523,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 0,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -115.731f,
 		.z = -226.261f
 	},
@@ -1387,6 +1533,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 2,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 132.225f,
 		.z = -92.283f
 	},
@@ -1396,6 +1543,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 3,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 207.902f,
 		.z = -146.365f
 	},
@@ -1405,6 +1553,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 4,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 78.532f,
 		.z = -206.129f
 	},
@@ -1414,6 +1563,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 7,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 99.567f,
 		.z = 162.294f
 	},
@@ -1423,6 +1573,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 11,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -184.912f,
 		.z = 59.219f
 	},
@@ -1432,6 +1583,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 12,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -101.286f,
 		.z = -36.468f
 	},
@@ -1441,6 +1593,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 13,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -236.195f,
 		.z = -67.429f
 	},
@@ -1450,6 +1603,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 19,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 380.275f,
 		.z = -35.876f
 	},
@@ -1459,6 +1613,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 29,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -435.76f,
 		.z = -95.785f
 	},
@@ -1468,6 +1623,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 47,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 342.804f,
 		.z = -39.804f
 	},
@@ -1477,6 +1633,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 59,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 305.556f,
 		.z = 98.605f
 	},
@@ -1486,6 +1643,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 119,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 398.746f,
 		.z = 110.269f
 	},
@@ -1495,6 +1653,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 120,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -26.176f,
 		.z = -204.344f
 	},
@@ -1504,6 +1663,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 192,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -446.493f,
 		.z = 32.213f
 	},
@@ -1515,6 +1675,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 60,
 		.trig_index = 4,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -145.076f,
 		.z = 855.619f
 	},
@@ -1524,6 +1685,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 60,
 		.trig_index = 5,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -149.88f,
 		.z = 1027.325f
 	},
@@ -1533,6 +1695,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 60,
 		.trig_index = 6,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -267.886f,
 		.z = 651.69f
 	},
@@ -1542,6 +1705,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 60,
 		.trig_index = 9,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 93.966f,
 		.z = 1114.592f
 	},
@@ -1551,6 +1715,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 60,
 		.trig_index = 17,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 157.4f,
 		.z = 1252.836f
 	},
@@ -1560,6 +1725,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 60,
 		.trig_index = 21,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 167.944f,
 		.z = 985.603f
 	},
@@ -1569,6 +1735,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 60,
 		.trig_index = 36,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 347.688f,
 		.z = 1164.352f
 	},
@@ -1578,6 +1745,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 60,
 		.trig_index = 63,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -163.745f,
 		.z = 610.811f
 	},
@@ -1591,6 +1759,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 211,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -213.884f,
 		.z = 562.944f
 	},
@@ -1604,6 +1773,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 212,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 185.123f,
 		.z = 920.068f
 	},
@@ -1617,6 +1787,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 213,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 309.684f,
 		.z = 939.061f
 	},
@@ -1628,6 +1799,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 61,
 		.trig_index = 39,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 286.53f,
 		.z = 863.705f
 	},
@@ -1637,6 +1809,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 61,
 		.trig_index = 57,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 196.759f,
 		.z = 834.204f
 	},
@@ -1648,6 +1821,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 62,
 		.trig_index = 59,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 	},
 	// [174] MFt: Dragon Egg 2 in Ball Gadget
 	{
@@ -1655,6 +1829,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 62,
 		.trig_index = 82,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 	},
 	// [175] MFt: Light Gem 1 in Ball Gadget
 	{
@@ -1662,6 +1837,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 62,
 		.trig_index = 83,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 	},
 	// [176] MFt: Light Gem 2 in Ball Gadget
 	{
@@ -1669,6 +1845,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 62,
 		.trig_index = 90,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 	},
 	#pragma endregion /* 62 Magma Falls Ball Gadget */
 	#pragma region 63 Magma Falls Bottom
@@ -1678,6 +1855,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 63,
 		.trig_index = 2,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 135.064f,
 		.z = -1068.57f
 	},
@@ -1687,6 +1865,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 63,
 		.trig_index = 10,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -237.019f,
 		.z = -1036.122f
 	},
@@ -1696,6 +1875,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 63,
 		.trig_index = 16,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -82.247f,
 		.z = -1162.16f
 	},
@@ -1705,6 +1885,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 63,
 		.trig_index = 51,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 29.596f,
 		.z = -1150.912f
 	},
@@ -1716,6 +1897,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 158,
 		.objective = HT_Objective_MR1_HalfDone & 0xFFFF,
+		.minigame_type = MinigameType_SgtByrd,
 		.x = -101.334f,
 		.z = -55.373f
 	},
@@ -1725,6 +1907,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 158,
 		.objective = HT_Objective_MR1_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_SgtByrd,
 		.x = -101.334f,
 		.z = -55.373f
 	},
@@ -1734,6 +1917,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 6,
 		.objective = HT_Objective_MR1_Spy_HalfDone & 0xFFFF,
+		.minigame_type = MinigameType_Turret,
 		.x = 144.06f,
 		.z = 578.149f
 	},
@@ -1743,6 +1927,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 6,
 		.objective = HT_Objective_MiniGame1A_Complete & 0xFFFF,
+		.minigame_type = MinigameType_Turret,
 		.x = 144.06f,
 		.z = 578.149f
 	},
@@ -1752,6 +1937,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 69,
 		.objective = HT_Objective_MR1_Blk_HalfDone & 0xFFFF,
+		.minigame_type = MinigameType_Blink,
 		.x = 225.391f,
 		.z = 524.413f
 	},
@@ -1761,6 +1947,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 69,
 		.objective = HT_Objective_MR1_Blk_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_Blink,
 		.x = 225.391f,
 		.z = 524.413f
 	},
@@ -1774,6 +1961,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 282,
 #endif
 		.objective = HT_Objective_MR1_Spx_Egg & 0xFFFF,
+		.minigame_type = MinigameType_Sparx,
 		.x = 1115.686f,
 		.z = -576.15f
 	},
@@ -1787,6 +1975,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 282,
 #endif
 		.objective = HT_Objective_MR1_Spx_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_Sparx,
 		.x = 1115.686f,
 		.z = -576.15f
 	},
@@ -1796,6 +1985,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 115,
 		.objective = HT_Objective_MR2_Blk_HalfDone & 0xFFFF,
+		.minigame_type = MinigameType_Blink,
 		.x = -262.141f,
 		.z = -86.49f
 	},
@@ -1805,6 +1995,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 115,
 		.objective = HT_Objective_MR2_Blk_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_Blink,
 		.x = -262.141f,
 		.z = -86.49f
 	},
@@ -1814,6 +2005,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 77,
 		.objective = HT_Objective_MR2_Spy_HalfDone & 0xFFFF,
+		.minigame_type = MinigameType_Turret,
 		.x = -159.896f,
 		.z = -236.013f
 	},
@@ -1823,6 +2015,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 77,
 		.objective = HT_Objective_MR2_Spy_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_Turret,
 		.x = -159.896f,
 		.z = -236.013f
 	},
@@ -1832,6 +2025,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 150,
 		.objective = HT_Objective_OtterNPC_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -135.012f,
 		.z = 26.804f
 	},
@@ -1841,6 +2035,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 65,
 		.objective = HT_Objective_MR2_Spx_HalfDone & 0xFFFF,
+		.minigame_type = MinigameType_Sparx,
 		.x = -842.878f,
 		.z = -44.993f
 	},
@@ -1850,6 +2045,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 65,
 		.objective = HT_Objective_MR2_Spx_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_Sparx,
 		.x = -842.878f,
 		.z = -44.993f
 	},
@@ -1859,6 +2055,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 81,
 		.objective = HT_Objective_MR2_Sgt_HalfDone & 0xFFFF,
+		.minigame_type = MinigameType_SgtByrd,
 		.x = 380.287f,
 		.z = -125.903f
 	},
@@ -1868,6 +2065,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 81,
 		.objective = HT_Objective_MR2_Sgt_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_SgtByrd,
 		.x = 380.287f,
 		.z = -125.903f
 	},
@@ -1877,6 +2075,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 244,
 		.objective = HT_Objective_MR3_Blk_HalfDone & 0xFFFF,
+		.minigame_type = MinigameType_Blink,
 		.x = 28.673f,
 		.z = -178.357f
 	},
@@ -1886,6 +2085,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 244,
 		.objective = HT_Objective_MR3_Blk_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_Blink,
 		.x = 28.673f,
 		.z = -178.357f
 	},
@@ -1895,6 +2095,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 242,
 		.objective = HT_Objective_MR3_Spy_HalfDone & 0xFFFF,
+		.minigame_type = MinigameType_Turret,
 		.x = -83.802f,
 		.z = 100.301f
 	},
@@ -1904,6 +2105,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 242,
 		.objective = HT_Objective_MR3_Spy_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_Turret,
 		.x = -83.802f,
 		.z = 100.301f
 	},
@@ -1917,6 +2119,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 126,
 #endif
 		.objective = HT_Objective_MR3_Spx_HalfDone & 0xFFFF,
+		.minigame_type = MinigameType_Sparx,
 		.x = 142.24f,
 		.z = -1387.189f
 	},
@@ -1930,6 +2133,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 126,
 #endif
 		.objective = HT_Objective_MR3_Spx_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_Sparx,
 		.x = 142.24f,
 		.z = -1387.189f
 	},
@@ -1943,6 +2147,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 86,
 #endif
 		.objective = HT_Objective_3B_BentleyHasRewarded & 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 65.178f,
 		.z = -615.165f
 	},
@@ -1952,6 +2157,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 48,
 		.objective = HT_Objective_MR3_Sgt_HalfDone & 0xFFFF,
+		.minigame_type = MinigameType_SgtByrd,
 		.x = -448.719f,
 		.z = -173.292f
 	},
@@ -1961,6 +2167,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 48,
 		.objective = HT_Objective_MR3_Sgt_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_SgtByrd,
 		.x = -448.719f,
 		.z = -173.292f
 	},
@@ -1970,6 +2177,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 97,
 		.objective = HT_Objective_3C_LitBoiler_1 & 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -413.696f,
 		.z = -235.004f
 	},
@@ -1979,6 +2187,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 99,
 		.objective = HT_Objective_3C_LitBoiler_3 & 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -709.677f,
 		.z = -249.536f
 	},
@@ -1988,6 +2197,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 101,
 		.objective = HT_Objective_3C_LitBoiler_5 & 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -855.619f,
 		.z = -325.652f
 	},
@@ -1997,6 +2207,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 47,
 		.objective = HT_Objective_3C_IcePrincessHasRewarded & 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -494.835f,
 		.z = -340.113f
 	},
@@ -2006,6 +2217,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 44,
 		.trig_index = 8,
 		.objective = HT_Objective_MR4_Spy_HalfDone & 0xFFFF,
+		.minigame_type = MinigameType_Turret,
 		.x = 110.059f,
 		.z = -41.345f
 	},
@@ -2015,6 +2227,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 44,
 		.trig_index = 8,
 		.objective = HT_Objective_MR4_Spy_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_Turret,
 		.x = 110.059f,
 		.z = -41.345f
 	},
@@ -2024,6 +2237,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 60,
 		.trig_index = 94,
 		.objective = HT_Objective_MR4_Sgt_HalfDone & 0xFFFF,
+		.minigame_type = MinigameType_SgtByrd,
 		.x = -226.573f,
 		.z = 552.857f
 	},
@@ -2033,6 +2247,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 60,
 		.trig_index = 94,
 		.objective = HT_Objective_MR4_Sgt_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_SgtByrd,
 		.x = -226.573f,
 		.z = 552.857f
 	},
@@ -2042,6 +2257,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 60,
 		.trig_index = 93,
 		.objective = HT_Objective_TeenaHasRewarded & 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 8.892f,
 		.z = 620.573f
 	},
@@ -2051,6 +2267,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 63,
 		.trig_index = 12,
 		.objective = HT_Objective_MR4_Spx_HalfDone & 0xFFFF,
+		.minigame_type = MinigameType_Sparx,
 		.x = -170.275f,
 		.z = -1263.319f
 	},
@@ -2060,6 +2277,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 63,
 		.trig_index = 12,
 		.objective = HT_Objective_MR4_Spx_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_Sparx,
 		.x = -170.275f,
 		.z = -1263.319f
 	},
@@ -2069,6 +2287,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 154,
 		.objective = HT_Objective_MR4_Blk_HalfDone & 0xFFFF,
+		.minigame_type = MinigameType_Blink,
 		.x = -366.247f,
 		.z = -1674.918f
 	},
@@ -2078,6 +2297,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 154,
 		.objective = HT_Objective_MR4_Blk_AllDone & 0xFFFF,
+		.minigame_type = MinigameType_Blink,
 		.x = -366.247f,
 		.z = -1674.918f
 	},
@@ -2089,6 +2309,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 315,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 62.367f,
 		.z = -147.963f
 	},
@@ -2098,6 +2319,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 462,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 55.209f,
 		.z = 29.594f
 	},
@@ -2107,6 +2329,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 284,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -521.021f,
 		.z = -25.964f
 	},
@@ -2116,6 +2339,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 243,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 377.338f,
 		.z = 126.372f
 	},
@@ -2125,6 +2349,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 232,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 224.375f,
 		.z = 57.598f
 	},
@@ -2134,6 +2359,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 485,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -89.514f,
 		.z = 74.633f
 	},
@@ -2147,6 +2373,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 246,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 265.841f,
 		.z = -596.061f
 	},
@@ -2156,6 +2383,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 286,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -511.801f,
 		.z = -174.69f
 	},
@@ -2165,6 +2393,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 300,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -448.911f,
 		.z = -125.507f
 	},
@@ -2174,6 +2403,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 309,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -511.236f,
 		.z = -328.987f
 	},
@@ -2183,6 +2413,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 377,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -743.205f,
 		.z = -407.357f
 	},
@@ -2192,6 +2423,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 44,
 		.trig_index = 97,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -26.082f,
 		.z = 197.565f
 	},
@@ -2201,6 +2433,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 44,
 		.trig_index = 105,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 85.674f,
 		.z = -85.783f
 	},
@@ -2210,6 +2443,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 44,
 		.trig_index = 168,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -240.171f,
 		.z = -49.765f
 	},
@@ -2219,6 +2453,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 44,
 		.trig_index = 198,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -157.695f,
 		.z = 38.666f
 	},
@@ -2228,6 +2463,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 44,
 		.trig_index = 199,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 9.642f,
 		.z = 161.055f
 	},
@@ -2241,6 +2477,7 @@ APCollectable g_ap_collectables[] = {
 		.trig_index = 320,
 #endif
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 301.385f,
 		.z = 1208.42f
 	},
@@ -2250,6 +2487,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 61,
 		.trig_index = 49,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 225.428f,
 		.z = 895.251f
 	},
@@ -2259,6 +2497,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 377,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -497.835f,
 		.z = -1427.931f
 	},
@@ -2268,6 +2507,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 40,
 		.trig_index = 389,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -1022.593f,
 		.z = -1403.821f
 	},
@@ -2277,6 +2517,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 40,
 		.trig_index = 390,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -1077.671f,
 		.z = -1372.523f
 	},
@@ -2288,6 +2529,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 11,
 		.objective = HT_Objective_GivenDoubleJump & 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 206.557f,
 		.z = 54.382f
 	},
@@ -2297,6 +2539,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 71,
 		.objective = HT_Objective_GivenPoleGrabAbility & 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 181.836f,
 		.z = 503.226f
 	},
@@ -2306,6 +2549,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 10,
 		.objective = HT_Objective_GivenWingShieldAbility & 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 240.131f,
 		.z = -0.156f
 	},
@@ -2315,6 +2559,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 9,
 		.objective = HT_Objective_GivenWallKickAbility & 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -682.961f,
 		.z = -148.253f
 	},
@@ -2326,6 +2571,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 346,
 		.objective = HT_Objective_Boss1_Beaten & 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 151.245f,
 		.z = -102.081f
 	},
@@ -2335,6 +2581,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 45,
 		.trig_index = 235,
 		.objective = HT_Objective_Boss2_Beaten & 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 3.925f,
 		.z = 80.844f
 	},
@@ -2344,6 +2591,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 31,
 		.trig_index = 318,
 		.objective = HT_Objective_Boss3_Beaten & 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -51.937f,
 		.z = -58.285f
 	},
@@ -2353,6 +2601,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 40,
 		.trig_index = 391,
 		.objective = HT_Objective_Boss4_Beaten & 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -1281.773f,
 		.z = -1668.25f
 	},
@@ -2364,6 +2613,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 304,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 223.69f,
 		.z = -74.603f
 	},
@@ -2373,6 +2623,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 305,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 292.67f,
 		.z = 15.199f
 	},
@@ -2382,6 +2633,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 344,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 58.806f,
 		.z = 133.725f
 	},
@@ -2391,6 +2643,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 24,
 		.trig_index = 431,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -66.573f,
 		.z = -70.162f
 	},
@@ -2400,6 +2653,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 276,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 197.835f,
 		.z = 495.531f
 	},
@@ -2409,6 +2663,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 292,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -68.49f,
 		.z = 443.695f
 	},
@@ -2418,6 +2673,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 23,
 		.trig_index = 294,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 209.934f,
 		.z = 496.094f
 	},
@@ -2427,6 +2683,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 207,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -625.89f,
 		.z = 81.543f
 	},
@@ -2436,6 +2693,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 236,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -815.179f,
 		.z = -4.108f
 	},
@@ -2445,6 +2703,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 252,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -802.593f,
 		.z = -201.492f
 	},
@@ -2454,6 +2713,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 19,
 		.trig_index = 287,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -590.07f,
 		.z = -131.139f
 	},
@@ -2463,6 +2723,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 113,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -111.685f,
 		.z = 23.601f
 	},
@@ -2472,6 +2733,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 264,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 120.875f,
 		.z = -35.0f
 	},
@@ -2481,6 +2743,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 20,
 		.trig_index = 273,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 16.897f,
 		.z = 131.332f
 	},
@@ -2490,6 +2753,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 33,
 		.trig_index = 250,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -822.257f,
 		.z = -337.989f
 	},
@@ -2499,6 +2763,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 44,
 		.trig_index = 98,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -151.7f,
 		.z = 64.303f
 	},
@@ -2508,6 +2773,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 44,
 		.trig_index = 113,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 53.333f,
 		.z = 42.17f
 	},
@@ -2517,6 +2783,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 44,
 		.trig_index = 149,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -49.664f,
 		.z = 177.84f
 	},
@@ -2526,6 +2793,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 60,
 		.trig_index = 132,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -96.888f,
 		.z = 551.814f
 	},
@@ -2535,6 +2803,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 61,
 		.trig_index = 19,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = 194.501f,
 		.z = 864.891f
 	},
@@ -2544,6 +2813,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 315,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -488.456f,
 		.z = -1539.12f
 	},
@@ -2553,6 +2823,7 @@ APCollectable g_ap_collectables[] = {
 		.map_index = 30,
 		.trig_index = 366,
 		.objective = 0xFFFF,
+		.minigame_type = MinigameType_None,
 		.x = -508.205f,
 		.z = -1708.773f
 	}

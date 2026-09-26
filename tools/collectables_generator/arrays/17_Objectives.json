@@ -9,6 +9,7 @@
             "GC_PAL": 158
         },
         "objective": "HT_Objective_MR1_HalfDone",
+        "minigame_type": "MinigameType_SgtByrd",
         "x": -101.334,
         "z": -55.373
     },
@@ -22,6 +23,7 @@
             "GC_PAL": 158
         },
         "objective": "HT_Objective_MR1_AllDone",
+        "minigame_type": "MinigameType_SgtByrd",
         "x": -101.334,
         "z": -55.373
     },
@@ -35,6 +37,7 @@
             "GC_PAL": 6
         },
         "objective": "HT_Objective_MR1_Spy_HalfDone",
+        "minigame_type": "MinigameType_Turret",
         "x": 144.06,
         "z": 578.149
     },
@@ -48,6 +51,7 @@
             "GC_PAL": 6
         },
         "objective": "HT_Objective_MiniGame1A_Complete",
+        "minigame_type": "MinigameType_Turret",
         "x": 144.06,
         "z": 578.149
     },
@@ -61,6 +65,7 @@
             "GC_PAL": 69
         },
         "objective": "HT_Objective_MR1_Blk_HalfDone",
+        "minigame_type": "MinigameType_Blink",
         "x": 225.391,
         "z": 524.413
     },
@@ -74,6 +79,7 @@
             "GC_PAL": 69
         },
         "objective": "HT_Objective_MR1_Blk_AllDone",
+        "minigame_type": "MinigameType_Blink",
         "x": 225.391,
         "z": 524.413
     },
@@ -87,6 +93,7 @@
             "GC_PAL": 282
         },
         "objective": "HT_Objective_MR1_Spx_Egg",
+        "minigame_type": "MinigameType_Sparx",
         "x": 1115.686,
         "z": -576.15
     },
@@ -100,6 +107,7 @@
             "GC_PAL": 282
         },
         "objective": "HT_Objective_MR1_Spx_AllDone",
+        "minigame_type": "MinigameType_Sparx",
         "x": 1115.686,
         "z": -576.15
     },
@@ -113,6 +121,7 @@
             "GC_PAL": 115
         },
         "objective": "HT_Objective_MR2_Blk_HalfDone",
+        "minigame_type": "MinigameType_Blink",
         "x": -262.141,
         "z": -86.49
     },
@@ -126,6 +135,7 @@
             "GC_PAL": 115
         },
         "objective": "HT_Objective_MR2_Blk_AllDone",
+        "minigame_type": "MinigameType_Blink",
         "x": -262.141,
         "z": -86.49
     },
@@ -139,6 +149,7 @@
             "GC_PAL": 77
         },
         "objective": "HT_Objective_MR2_Spy_HalfDone",
+        "minigame_type": "MinigameType_Turret",
         "x": -159.896,
         "z": -236.013
     },
@@ -152,6 +163,7 @@
             "GC_PAL": 77
         },
         "objective": "HT_Objective_MR2_Spy_AllDone",
+        "minigame_type": "MinigameType_Turret",
         "x": -159.896,
         "z": -236.013
     },
@@ -165,6 +177,7 @@
             "GC_PAL": 150
         },
         "objective": "HT_Objective_OtterNPC_AllDone",
+        "minigame_type": "MinigameType_None",
         "x": -135.012,
         "z": 26.804
     },
@@ -178,6 +191,7 @@
             "GC_PAL": 65
         },
         "objective": "HT_Objective_MR2_Spx_HalfDone",
+        "minigame_type": "MinigameType_Sparx",
         "x": -842.878,
         "z": -44.993
     },
@@ -191,6 +205,7 @@
             "GC_PAL": 65
         },
         "objective": "HT_Objective_MR2_Spx_AllDone",
+        "minigame_type": "MinigameType_Sparx",
         "x": -842.878,
         "z": -44.993
     },
@@ -204,6 +219,7 @@
             "GC_PAL": 81
         },
         "objective": "HT_Objective_MR2_Sgt_HalfDone",
+        "minigame_type": "MinigameType_SgtByrd",
         "x": 380.287,
         "z": -125.903
     },
@@ -217,6 +233,7 @@
             "GC_PAL": 81
         },
         "objective": "HT_Objective_MR2_Sgt_AllDone",
+        "minigame_type": "MinigameType_SgtByrd",
         "x": 380.287,
         "z": -125.903
     },
@@ -230,6 +247,7 @@
             "GC_PAL": 244
         },
         "objective": "HT_Objective_MR3_Blk_HalfDone",
+        "minigame_type": "MinigameType_Blink",
         "x": 28.673,
         "z": -178.357
     },
@@ -243,6 +261,7 @@
             "GC_PAL": 244
         },
         "objective": "HT_Objective_MR3_Blk_AllDone",
+        "minigame_type": "MinigameType_Blink",
         "x": 28.673,
         "z": -178.357
     },
@@ -256,6 +275,7 @@
             "GC_PAL": 242
         },
         "objective": "HT_Objective_MR3_Spy_HalfDone",
+        "minigame_type": "MinigameType_Turret",
         "x": -83.802,
         "z": 100.301
     },
@@ -269,6 +289,7 @@
             "GC_PAL": 242
         },
         "objective": "HT_Objective_MR3_Spy_AllDone",
+        "minigame_type": "MinigameType_Turret",
         "x": -83.802,
         "z": 100.301
     },
@@ -282,6 +303,7 @@
             "GC_PAL": 126
         },
         "objective": "HT_Objective_MR3_Spx_HalfDone",
+        "minigame_type": "MinigameType_Sparx",
         "x": 142.24,
         "z": -1387.189
     },
@@ -295,6 +317,7 @@
             "GC_PAL": 126
         },
         "objective": "HT_Objective_MR3_Spx_AllDone",
+        "minigame_type": "MinigameType_Sparx",
         "x": 142.24,
         "z": -1387.189
     },
@@ -308,6 +331,7 @@
             "GC_PAL": 86
         },
         "objective": "HT_Objective_3B_BentleyHasRewarded",
+        "minigame_type": "MinigameType_None",
         "x": 65.178,
         "z": -615.165
     },
@@ -321,6 +345,7 @@
             "GC_PAL": 48
         },
         "objective": "HT_Objective_MR3_Sgt_HalfDone",
+        "minigame_type": "MinigameType_SgtByrd",
         "x": -448.719,
         "z": -173.292
     },
@@ -334,6 +359,7 @@
             "GC_PAL": 48
         },
         "objective": "HT_Objective_MR3_Sgt_AllDone",
+        "minigame_type": "MinigameType_SgtByrd",
         "x": -448.719,
         "z": -173.292
     },
@@ -347,6 +373,7 @@
             "GC_PAL": 97
         },
         "objective": "HT_Objective_3C_LitBoiler_1",
+        "minigame_type": "MinigameType_None",
         "x": -413.696,
         "z": -235.004
     },
@@ -360,6 +387,7 @@
             "GC_PAL": 99
         },
         "objective": "HT_Objective_3C_LitBoiler_3",
+        "minigame_type": "MinigameType_None",
         "x": -709.677,
         "z": -249.536
     },
@@ -373,6 +401,7 @@
             "GC_PAL": 101
         },
         "objective": "HT_Objective_3C_LitBoiler_5",
+        "minigame_type": "MinigameType_None",
         "x": -855.619,
         "z": -325.652
     },
@@ -386,6 +415,7 @@
             "GC_PAL": 47
         },
         "objective": "HT_Objective_3C_IcePrincessHasRewarded",
+        "minigame_type": "MinigameType_None",
         "x": -494.835,
         "z": -340.113
     },
@@ -399,6 +429,7 @@
             "GC_PAL": 8
         },
         "objective": "HT_Objective_MR4_Spy_HalfDone",
+        "minigame_type": "MinigameType_Turret",
         "x": 110.059,
         "z": -41.345
     },
@@ -412,6 +443,7 @@
             "GC_PAL": 8
         },
         "objective": "HT_Objective_MR4_Spy_AllDone",
+        "minigame_type": "MinigameType_Turret",
         "x": 110.059,
         "z": -41.345
     },
@@ -425,6 +457,7 @@
             "GC_PAL": 94
         },
         "objective": "HT_Objective_MR4_Sgt_HalfDone",
+        "minigame_type": "MinigameType_SgtByrd",
         "x": -226.573,
         "z": 552.857
     },
@@ -438,6 +471,7 @@
             "GC_PAL": 94
         },
         "objective": "HT_Objective_MR4_Sgt_AllDone",
+        "minigame_type": "MinigameType_SgtByrd",
         "x": -226.573,
         "z": 552.857
     },
@@ -451,6 +485,7 @@
             "GC_PAL": 93
         },
         "objective": "HT_Objective_TeenaHasRewarded",
+        "minigame_type": "MinigameType_None",
         "x": 8.892,
         "z": 620.573
     },
@@ -464,6 +499,7 @@
             "GC_PAL": 12
         },
         "objective": "HT_Objective_MR4_Spx_HalfDone",
+        "minigame_type": "MinigameType_Sparx",
         "x": -170.275,
         "z": -1263.319
     },
@@ -477,6 +513,7 @@
             "GC_PAL": 12
         },
         "objective": "HT_Objective_MR4_Spx_AllDone",
+        "minigame_type": "MinigameType_Sparx",
         "x": -170.275,
         "z": -1263.319
     },
@@ -490,6 +527,7 @@
             "GC_PAL": 154
         },
         "objective": "HT_Objective_MR4_Blk_HalfDone",
+        "minigame_type": "MinigameType_Blink",
         "x": -366.247,
         "z": -1674.918
     },
@@ -503,6 +541,7 @@
             "GC_PAL": 154
         },
         "objective": "HT_Objective_MR4_Blk_AllDone",
+        "minigame_type": "MinigameType_Blink",
         "x": -366.247,
         "z": -1674.918
     }

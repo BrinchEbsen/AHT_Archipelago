@@ -8,6 +8,7 @@
             "GC_NTSC": 1,
             "GC_PAL": 1
         },
+        "minigame_type": "MinigameType_None",
         "x": -1070.981,
         "z": -1205.956
     },
@@ -20,6 +21,7 @@
             "GC_NTSC": 2,
             "GC_PAL": 2
         },
+        "minigame_type": "MinigameType_None",
         "x": -1597.688,
         "z": -1304.058
     },
@@ -32,6 +34,7 @@
             "GC_NTSC": 3,
             "GC_PAL": 3
         },
+        "minigame_type": "MinigameType_None",
         "x": -957.165,
         "z": -1200.406
     },
@@ -44,6 +47,7 @@
             "GC_NTSC": 4,
             "GC_PAL": 4
         },
+        "minigame_type": "MinigameType_None",
         "x": -1069.976,
         "z": -1617.574
     },
@@ -56,6 +60,7 @@
             "GC_NTSC": 41,
             "GC_PAL": 41
         },
+        "minigame_type": "MinigameType_None",
         "x": -1350.317,
         "z": -1317.104
     },
@@ -68,6 +73,7 @@
             "GC_NTSC": 109,
             "GC_PAL": 109
         },
+        "minigame_type": "MinigameType_None",
         "x": -1142.621,
         "z": -1473.406
     },
@@ -80,6 +86,7 @@
             "GC_NTSC": 110,
             "GC_PAL": 110
         },
+        "minigame_type": "MinigameType_None",
         "x": -975.346,
         "z": -1607.982
     },
@@ -92,6 +99,7 @@
             "GC_NTSC": 111,
             "GC_PAL": 111
         },
+        "minigame_type": "MinigameType_None",
         "x": -990.302,
         "z": -1540.03
     },
@@ -104,6 +112,7 @@
             "GC_NTSC": 115,
             "GC_PAL": 115
         },
+        "minigame_type": "MinigameType_None",
         "x": -1441.266,
         "z": -1354.549
     },
@@ -116,6 +125,7 @@
             "GC_NTSC": 237,
             "GC_PAL": 237
         },
+        "minigame_type": "MinigameType_None",
         "x": -1241.792,
         "z": -1420.346
     },
@@ -128,6 +138,7 @@
             "GC_NTSC": 388,
             "GC_PAL": 388
         },
+        "minigame_type": "MinigameType_None",
         "x": -1514.395,
         "z": -1282.014
     }

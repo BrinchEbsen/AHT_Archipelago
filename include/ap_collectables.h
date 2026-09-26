@@ -17,6 +17,15 @@ typedef enum APCollectable_Type
     FireWork
 } APCollectable_Type;
 
+typedef enum MinigameType
+{
+    MinigameType_None,
+    MinigameType_Blink,
+    MinigameType_Sparx,
+    MinigameType_Turret,
+    MinigameType_SgtByrd
+} MinigameType;
+
 /// @brief An item in the game, in the form of either a "grabbable" 
 /// item in the world, or an "objective" from performing a task.
 typedef struct APCollectable
@@ -31,6 +40,9 @@ typedef struct APCollectable
     /// @brief Objective for objective-based items. Set to `0xFFFF` if
     /// it's not an objective.
     u16 objective;
+    /// @brief The type of minigame objective (if it is one).
+    /// Uses enum type `MinigameType`.
+    u8 minigame_type;
     /// @brief The x-position of the item in the world.
     float x;
     /// @brief The z-position of the item in the world.

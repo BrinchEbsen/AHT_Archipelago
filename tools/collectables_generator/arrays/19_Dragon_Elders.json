@@ -9,6 +9,7 @@
             "GC_PAL": 11
         },
         "objective": "HT_Objective_GivenDoubleJump",
+        "minigame_type": "MinigameType_None",
         "x": 206.557,
         "z": 54.382
     },
@@ -22,6 +23,7 @@
             "GC_PAL": 71
         },
         "objective": "HT_Objective_GivenPoleGrabAbility",
+        "minigame_type": "MinigameType_None",
         "x": 181.836,
         "z": 503.226
     },
@@ -35,6 +37,7 @@
             "GC_PAL": 10
         },
         "objective": "HT_Objective_GivenWingShieldAbility",
+        "minigame_type": "MinigameType_None",
         "x": 240.131,
         "z": -0.156
     },
@@ -48,6 +51,7 @@
             "GC_PAL": 9
         },
         "objective": "HT_Objective_GivenWallKickAbility",
+        "minigame_type": "MinigameType_None",
         "x": -682.961,
         "z": -148.253
     }

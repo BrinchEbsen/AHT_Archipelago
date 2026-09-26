@@ -8,6 +8,7 @@
             "GC_NTSC": 19,
             "GC_PAL": 19
         },
+        "minigame_type": "MinigameType_None",
         "x": -392.19,
         "z": -1620.263
     },
@@ -20,6 +21,7 @@
             "GC_NTSC": 83,
             "GC_PAL": 83
         },
+        "minigame_type": "MinigameType_None",
         "x": -701.032,
         "z": -1398.659
     },
@@ -32,6 +34,7 @@
             "GC_NTSC": 84,
             "GC_PAL": 84
         },
+        "minigame_type": "MinigameType_None",
         "x": -487.318,
         "z": -1565.012
     },
@@ -44,6 +47,7 @@
             "GC_NTSC": 85,
             "GC_PAL": 85
         },
+        "minigame_type": "MinigameType_None",
         "x": -671.799,
         "z": -1623.578
     },
@@ -56,6 +60,7 @@
             "GC_NTSC": 86,
             "GC_PAL": 86
         },
+        "minigame_type": "MinigameType_None",
         "x": -514.328,
         "z": -1702.092
     },
@@ -68,6 +73,7 @@
             "GC_NTSC": 87,
             "GC_PAL": 87
         },
+        "minigame_type": "MinigameType_None",
         "x": -635.657,
         "z": -1405.647
     },
@@ -80,6 +86,7 @@
             "GC_NTSC": 88,
             "GC_PAL": 88
         },
+        "minigame_type": "MinigameType_None",
         "x": -575.873,
         "z": -1707.055
     },
@@ -92,6 +99,7 @@
             "GC_NTSC": 89,
             "GC_PAL": 89
         },
+        "minigame_type": "MinigameType_None",
         "x": -598.073,
         "z": -1628.077
     },
@@ -104,6 +112,7 @@
             "GC_NTSC": 150,
             "GC_PAL": 150
         },
+        "minigame_type": "MinigameType_None",
         "x": -432.978,
         "z": -1487.42
     },
@@ -116,6 +125,7 @@
             "GC_NTSC": 211,
             "GC_PAL": 211
         },
+        "minigame_type": "MinigameType_None",
         "x": -524.919,
         "z": -1531.056
     },
@@ -128,6 +138,7 @@
             "GC_NTSC": 214,
             "GC_PAL": 214
         },
+        "minigame_type": "MinigameType_None",
         "x": -375.168,
         "z": -1719.951
     }

@@ -135,6 +135,10 @@ with open(in_file) as file:
                 if val_str != "0xFFFF":
                     curr_entry["objective"] = val_str.split()[0]
 
+            val_str = get_struct_value_string(line, "minigame_type")
+            if val_str is not None:
+                curr_entry["minigame_type"] = val_str
+
             val_str = get_struct_value_string(line, "x")
             if val_str is not None:
                 val_str = val_str.rstrip('f')

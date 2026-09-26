@@ -7,7 +7,8 @@
         "trig_index": {
             "GC_NTSC": 59,
             "GC_PAL": 59
-        }
+        },
+        "minigame_type": "MinigameType_None"
     },
     {
         "index": 174,
@@ -17,7 +18,8 @@
         "trig_index": {
             "GC_NTSC": 82,
             "GC_PAL": 82
-        }
+        },
+        "minigame_type": "MinigameType_None"
     },
     {
         "index": 175,
@@ -27,7 +29,8 @@
         "trig_index": {
             "GC_NTSC": 83,
             "GC_PAL": 83
-        }
+        },
+        "minigame_type": "MinigameType_None"
     },
     {
         "index": 176,
@@ -37,6 +40,7 @@
         "trig_index": {
             "GC_NTSC": 90,
             "GC_PAL": 90
-        }
+        },
+        "minigame_type": "MinigameType_None"
     }
 ]
