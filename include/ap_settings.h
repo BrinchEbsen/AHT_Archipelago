@@ -12,9 +12,10 @@
 
 #define SHOP_NUM_VANILLA_ENTRIES 1
 #define SHOP_NUM_CUSTOM_ENTRIES 60
-#define SHOP_TOTAL_NUM_ENTRIES 61
+#define SHOP_TOTAL_NUM_ENTRIES SHOP_NUM_VANILLA_ENTRIES + SHOP_NUM_CUSTOM_ENTRIES
 // Base hashcode for custom shop text elements.
 #define AP_TEXT_ENTRY_HASHCODE_BASE 0x28010000
+#define TELEPORT_PASS_PRICE 0
 
 #define AP_DEATHLINK_MODE_NONE      0
 #define AP_DEATHLINK_MODE_SHIELDED  1
@@ -71,8 +72,6 @@ typedef enum MinigameConfig
     MinigameConfig_EasyOnly,
     MinigameConfig_Disabled
 } MinigameConfig;
-
-#define TELEPORT_PASS_PRICE 0
 
 typedef struct APSettings_TextEntry
 {
