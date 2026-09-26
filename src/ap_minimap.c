@@ -65,6 +65,59 @@ void minimap_draw_locations(GUI_Base* self, void* pWnd)
             continue;
         }
 
+        bool disable = false;
+        bool easyonly = false;
+
+        switch (coll->minigame_type)
+        {
+            case MinigameType_Blink:
+                if (g_gamestate_ap_settings.minigame_blink_config == MinigameConfig_Disabled)
+                {
+                    disable = true;
+                }
+                else if (g_gamestate_ap_settings.minigame_blink_config == MinigameConfig_EasyOnly)
+                {
+                    easyonly = true;
+                }
+                break;
+            case MinigameType_Sparx:
+                if (g_gamestate_ap_settings.minigame_sparx_config == MinigameConfig_Disabled)
+                {
+                    disable = true;
+                }
+                else if (g_gamestate_ap_settings.minigame_sparx_config == MinigameConfig_EasyOnly)
+                {
+                    easyonly = true;
+                }
+                break;
+            case MinigameType_Turret:
+                if (g_gamestate_ap_settings.minigame_turret_config == MinigameConfig_Disabled)
+                {
+                    disable = true;
+                }
+                else if (g_gamestate_ap_settings.minigame_turret_config == MinigameConfig_EasyOnly)
+                {
+                    easyonly = true;
+                }
+                break;
+            case MinigameType_SgtByrd:
+                if (g_gamestate_ap_settings.minigame_sgtbyrd_config == MinigameConfig_Disabled)
+                {
+                    disable = true;
+                }
+                else if (g_gamestate_ap_settings.minigame_sgtbyrd_config == MinigameConfig_EasyOnly)
+                {
+                    easyonly = true;
+                }
+                break;
+            default: break;
+        }
+
+        if (disable)
+        {
+            continue;
+        }
+
         // Get whether this item is collected and/or reachable
 
         size_t byte = (i*2) / 8;
@@ -79,13 +132,18 @@ void minimap_draw_locations(GUI_Base* self, void* pWnd)
         if (coll->type == DragonEgg_MiniGame) {
             // Advance to next item.
             i++;
-            byte = (i*2) / 8;
-            bit = (i*2) % 8;
-            dat = g_gamestate_ap_settings.location_bitfield[byte];
-    
-            // Mark collected if both this and the light gem after is collected.
-            // We leave reachable alone, we assume it's reachable if the dragon egg is.
-            collected = collected && ((dat & (0b01 << bit)) != 0);
+
+            // Whether we logically count the light gem
+            if (!easyonly)
+            {
+                byte = (i*2) / 8;
+                bit = (i*2) % 8;
+                dat = g_gamestate_ap_settings.location_bitfield[byte];
+        
+                // Mark collected if both this and the light gem after is collected.
+                // We leave reachable alone, we assume it's reachable if the dragon egg is.
+                collected = collected && ((dat & (0b01 << bit)) != 0);
+            }
         }
 
         minimap_draw_location(self, pWnd, coll, reachable, collected);
