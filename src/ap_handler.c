@@ -234,11 +234,8 @@ void ap_draw(void* pWnd)
             deathlink_ignore_next_death);
         #endif
 
-        // if (gpPlayer != NULL)
-        // {
-        //     PlayerModes mode = XSEItemHandler_Player__M_PLAYERMODE(gpPlayer);
-        //     TEXT_PRINT_ALIGN_F(pWnd, 0, 0, Centre, "%d", mode);
-        // }
+        // TEXT_PRINT_ALIGN_F(pWnd, 0, 0, CentreLeft, "G: %d\nT: %d",
+        //     gGameState.m_PlayerState.m_Gems, gGameState.m_PlayerState.m_TotalGems);
     }
 }
 

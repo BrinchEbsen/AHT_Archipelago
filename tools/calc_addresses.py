@@ -137,6 +137,7 @@ output.append("\tDARK_GEM_COUNT: int\n")
 output.append("\tLIGHT_GEM_COUNT: int\n")
 output.append("\tDRAGON_EGG_COUNT: int\n")
 output.append("\tGEMS: int\n")
+output.append("\tTOTAL_GEMS: int\n")
 output.append("\tLOCKPICKS: int\n")
 output.append("\tACTIVE_BREATH: int\n")
 output.append("\tABILITY_FLAGS: int\n")
@@ -199,6 +200,12 @@ for bv in build_versions:
         +hex(bv.gamestate_addr+
              s_gamestate.get_member("m_PlayerState").offs+
              s_playerstate.get_member("m_Gems").offs)+
+             "\n")
+    # gGameState.m_PlayerState.m_TotalGems
+    output.append("\tTOTAL_GEMS = "
+        +hex(bv.gamestate_addr+
+             s_gamestate.get_member("m_PlayerState").offs+
+             s_playerstate.get_member("m_TotalGems").offs)+
              "\n")
     # gGameState.m_PlayerState.m_LockPickers
     output.append("\tLOCKPICKS = "

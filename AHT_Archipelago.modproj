@@ -1368,6 +1368,10 @@
         {
           "name": "multi_text_hooks",
           "file_path": "./asm/GC/NTSC/multi_text_hooks.s"
+        },
+        {
+          "name": "multi_fix_totalgems",
+          "file_path": "./asm/GC/NTSC/multi_fix_totalgems.s"
         }
       ]
     },
@@ -2276,6 +2280,10 @@
         {
           "name": "multi_text_hooks",
           "file_path": "./asm/GC/PAL/multi_text_hooks.s"
+        },
+        {
+          "name": "multi_fix_totalgems",
+          "file_path": "./asm/GC/PAL/multi_fix_totalgems.s"
         }
       ]
     }

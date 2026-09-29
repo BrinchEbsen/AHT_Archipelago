@@ -607,20 +607,22 @@ void draw_ut_stats(GUI_Base* self, void* pWnd)
         
         if (g_gamestate_ap_settings.display_gem_stats)
         {
-            s32 gems = gGameState.m_PlayerState.m_Gems;
+            s32 gems = gGameState.m_PlayerState.m_TotalGems;
+            
+            // s32 gems = gGameState.m_PlayerState.m_Gems;
 
-            // Test if this is a minigame map.
-            SE_Map* map = GetSpyroMap(0);
-            if (map != NULL)
-            {
-                GetRuntimeClass_func get_rtc = map->__vtable->GetRuntimeClass.__pfn;
-                EXRuntimeClass* rtc = get_rtc();
-                if (class_is_or_inherits_from(rtc, &classSEMap_MiniGame))
-                {
-                    // We add the stored gems to the current count.
-                    gems += ((SEMap_MiniGame*)map)->m_StoredGems;
-                }
-            }
+            // // Test if this is a minigame map.
+            // SE_Map* map = GetSpyroMap(0);
+            // if (map != NULL)
+            // {
+            //     GetRuntimeClass_func get_rtc = map->__vtable->GetRuntimeClass.__pfn;
+            //     EXRuntimeClass* rtc = get_rtc();
+            //     if (class_is_or_inherits_from(rtc, &classSEMap_MiniGame))
+            //     {
+            //         // We add the stored gems to the current count.
+            //         gems += ((SEMap_MiniGame*)map)->m_StoredGems;
+            //     }
+            // }
 
             textprintf(pWnd, txt_x_base, txt_y_base+20, 1.0f, TopLeft, COLOR_WHITE, true,
                 "Total Gems: %d/%d", gems, g_gamestate_ap_settings.total_gems_available);
