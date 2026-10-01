@@ -520,7 +520,8 @@
             "./src/se/player.c",
             "./src/npc_hooks.c",
             "./src/BASIC_hooks.c",
-            "./src/BASIC_hooks.patches.c"
+            "./src/BASIC_hooks.patches.c",
+            "./src/asm/asm_disable_total_gems_double_gems.s"
           ],
           "memory_address": "80296618",
           "size": "7BC4",
@@ -1313,6 +1314,19 @@
           "auto_calculate_injection_file_address": false,
           "injection_type": "memory_only",
           "enabled": true
+        },
+        {
+          "name": "disable_total_gems_double_gems",
+          "code_files": [
+            "./asm/GC/disable_total_gems_double_gems.s"
+          ],
+          "memory_address": "801674d0",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
         }
       ],
       "binary_patches": [],
@@ -1432,7 +1446,8 @@
             "./src/se/player.c",
             "./src/npc_hooks.c",
             "./src/BASIC_hooks.c",
-            "./src/BASIC_hooks.patches.c"
+            "./src/BASIC_hooks.patches.c",
+            "./src/asm/asm_disable_total_gems_double_gems.s"
           ],
           "memory_address": "80296e88",
           "size": "7BC4",
@@ -2219,6 +2234,19 @@
             "./asm/GC/LillyPad__Update_VtableHook.s"
           ],
           "memory_address": "8043e818",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "disable_total_gems_double_gems",
+          "code_files": [
+            "./asm/GC/disable_total_gems_double_gems.s"
+          ],
+          "memory_address": "80167ae0",
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
