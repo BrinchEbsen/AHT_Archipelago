@@ -647,6 +647,21 @@ void draw_checks_percentage(GUI_Base* self, void* pWnd)
             continue;
         }
 
+        bool easyonly = false;
+        bool disabled = false;
+
+        if (get_minigame_collectable_config(coll, &easyonly, &disabled))
+        {
+            if (disabled)
+            {
+                continue;
+            }
+            if ((coll->type == LightGem_MiniGame) && easyonly)
+            {
+                continue;
+            }
+        }
+
         total++;
         collected += get_u8_bitfield_value(g_gamestate_ap_settings.location_bitfield, i*2);
     }

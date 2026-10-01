@@ -76,3 +76,30 @@ s32 num_collectables_in_map(u16 map_index, s32* out_num_collected, s32* out_num_
 
     return num;
 }
+
+bool get_minigame_collectable_config(APCollectable* coll, bool* out_easyonly, bool* out_disabled)
+{
+    switch (coll->minigame_type)
+    {
+        case MinigameType_Blink:
+            *out_easyonly = g_gamestate_ap_settings.minigame_blink_config == MinigameConfig_EasyOnly;
+            *out_disabled = g_gamestate_ap_settings.minigame_blink_config == MinigameConfig_Disabled;
+            return true;
+        case MinigameType_Sparx:
+            *out_easyonly = g_gamestate_ap_settings.minigame_sparx_config == MinigameConfig_EasyOnly;
+            *out_disabled = g_gamestate_ap_settings.minigame_sparx_config == MinigameConfig_Disabled;
+            return true;
+        case MinigameType_Turret:
+            *out_easyonly = g_gamestate_ap_settings.minigame_turret_config == MinigameConfig_EasyOnly;
+            *out_disabled = g_gamestate_ap_settings.minigame_turret_config == MinigameConfig_Disabled;
+            return true;
+        case MinigameType_SgtByrd:
+            *out_easyonly = g_gamestate_ap_settings.minigame_sgtbyrd_config == MinigameConfig_EasyOnly;
+            *out_disabled = g_gamestate_ap_settings.minigame_sgtbyrd_config == MinigameConfig_Disabled;
+            return true;
+        default:
+            *out_easyonly = false;
+            *out_disabled = false;
+            return false;
+    }
+}

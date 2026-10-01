@@ -65,53 +65,10 @@ void minimap_draw_locations(GUI_Base* self, void* pWnd)
             continue;
         }
 
-        bool disable = false;
         bool easyonly = false;
+        bool disable = false;
 
-        switch (coll->minigame_type)
-        {
-            case MinigameType_Blink:
-                if (g_gamestate_ap_settings.minigame_blink_config == MinigameConfig_Disabled)
-                {
-                    disable = true;
-                }
-                else if (g_gamestate_ap_settings.minigame_blink_config == MinigameConfig_EasyOnly)
-                {
-                    easyonly = true;
-                }
-                break;
-            case MinigameType_Sparx:
-                if (g_gamestate_ap_settings.minigame_sparx_config == MinigameConfig_Disabled)
-                {
-                    disable = true;
-                }
-                else if (g_gamestate_ap_settings.minigame_sparx_config == MinigameConfig_EasyOnly)
-                {
-                    easyonly = true;
-                }
-                break;
-            case MinigameType_Turret:
-                if (g_gamestate_ap_settings.minigame_turret_config == MinigameConfig_Disabled)
-                {
-                    disable = true;
-                }
-                else if (g_gamestate_ap_settings.minigame_turret_config == MinigameConfig_EasyOnly)
-                {
-                    easyonly = true;
-                }
-                break;
-            case MinigameType_SgtByrd:
-                if (g_gamestate_ap_settings.minigame_sgtbyrd_config == MinigameConfig_Disabled)
-                {
-                    disable = true;
-                }
-                else if (g_gamestate_ap_settings.minigame_sgtbyrd_config == MinigameConfig_EasyOnly)
-                {
-                    easyonly = true;
-                }
-                break;
-            default: break;
-        }
+        get_minigame_collectable_config(coll, &easyonly, &disable);
 
         if (disable)
         {

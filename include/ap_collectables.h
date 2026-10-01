@@ -72,6 +72,13 @@ void ap_set_location(int index);
 /// @return Total number of items.
 s32 num_collectables_in_map(u16 map_index, s32* out_num_collected, s32* out_num_reachable);
 
+/// @brief Get whether a collectable's source minigame is set to "easy only" or "disabled" in the settings.
+/// @param coll The collectable.
+/// @param out_easyonly Whether this minigame is set to "easy only".
+/// @param out_disabled Whether this minigame is set to "disabled".
+/// @return Whether this is a minigame collectable at all.
+bool get_minigame_collectable_config(APCollectable* coll, bool* out_easyonly, bool* out_disabled);
+
 // The collectables array.
 extern APCollectable g_ap_collectables[];
 
