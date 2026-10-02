@@ -65,7 +65,7 @@ typedef enum TrapType
     TrapType_NUM
 } TrapType;
 
-#define NUM_TRAPS_IN_CLIENT 4
+#define NUM_TRAPS_IN_CLIENT 5
 
 typedef enum MinigameConfig
 {
