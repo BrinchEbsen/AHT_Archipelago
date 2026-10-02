@@ -20,6 +20,7 @@
 #include <ap_triginfo.h>
 #include <ap_pausemenu.h>
 #include <ap_trap.h>
+#include <ap_warps.h>
 
 #if AP_DEBUG_ADD_REMOVE_SHOP_ITEMS!=0
 void dbg_add_shop_item();
@@ -123,6 +124,8 @@ void ap_gamestate_update()
 
     ap_update_teleport_anywhere();
 
+    ap_warps_update();
+
     if (instant_shop_opening)
     {
         handle_instant_shop_sequence();
@@ -224,6 +227,11 @@ void ap_draw(void* pWnd)
         {
             draw_cutscene_skip_text = false;
             TEXT_PRINT_COLOR(pWnd, 0, 0, COLOR_WHITE, "~X Skip");
+        }
+
+        if (draw_warp_text)
+        {
+            TEXT_PRINT_ALIGN(pWnd, 0, 0, Centre, "~Y to warp across");
         }
 
         #if AP_DEBUG_DEATHLINK!=0

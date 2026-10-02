@@ -1,6 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include <types.h>
+#include <exvector.h>
 
 typedef enum Players {
     Player_Undefined=0,
@@ -192,6 +193,7 @@ extern void XSEItemHandler_Player__SetMode(void* self, PlayerModes mode, int for
 extern int XSEItemHandler_Player__InitialiseStart(void* self);
 extern Bool XSEItemHandler_Player__SetShoppingMode(void* self, Bool onoff);
 extern bool XSEItemHandler_Player__CheckModeChange(void* self, u32 NewAnimMode);
+extern void XSEItemHandler_Player__SetPlayer(void* self, EXVector* pos, EXVector* rot);
 
 #define XSEItemHandler_Player__M_PLAYERTYPE(self) OFFSET_VAL(Players, self, 0x578)
 #define XSEItemHandler_Player__M_PLAYERSTATEFLAGS(self) OFFSET_VAL(PStateFlags, self, 0x580)

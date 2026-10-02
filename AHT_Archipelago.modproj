@@ -521,7 +521,8 @@
             "./src/npc_hooks.c",
             "./src/BASIC_hooks.c",
             "./src/BASIC_hooks.patches.c",
-            "./src/asm/asm_disable_total_gems_double_gems.s"
+            "./src/asm/asm_disable_total_gems_double_gems.s",
+            "./src/ap_warps.c"
           ],
           "memory_address": "80296618",
           "size": "7BC4",
@@ -1447,7 +1448,8 @@
             "./src/npc_hooks.c",
             "./src/BASIC_hooks.c",
             "./src/BASIC_hooks.patches.c",
-            "./src/asm/asm_disable_total_gems_double_gems.s"
+            "./src/asm/asm_disable_total_gems_double_gems.s",
+            "./src/ap_warps.c"
           ],
           "memory_address": "80296e88",
           "size": "7BC4",

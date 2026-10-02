@@ -132,6 +132,7 @@ XSEItemHandler_Player__SetMode = 0x80058444;
 XSEItemHandler_Player__InitialiseStart = 0x8005808c;
 XSEItemHandler_Player__SetShoppingMode = 0x8005cab8;
 XSEItemHandler_Player__CheckModeChange = 0x8005b5f0;
+XSEItemHandler_Player__SetPlayer = 0x80060e1c;
 
 /* cutscene_skip.h */
 EXItemAnimator_Script__SetScriptStatus = 0x802b1c88;
