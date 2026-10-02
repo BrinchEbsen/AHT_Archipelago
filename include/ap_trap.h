@@ -41,4 +41,7 @@ void ap_trap_moneybags_spam_call_update(u8* state, s32* param);
 /// @brief Reverse the x-axis of the analog sticks.
 void ap_trap_reverse_controls_update(u8* state, s32* param);
 
+/// @brief Make the player model bounce. 
+void ap_trap_bouncy_update(u8* state, s32* param);
+
 #endif /* AP_TRAP_H */

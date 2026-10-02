@@ -61,6 +61,7 @@ typedef enum TrapType
 {
     TrapType_MoneyBagsSpamCall,     // 1
     TrapType_ReversedControls,      // 2
+    TrapType_Bouncy,                // 3
     TrapType_NUM
 } TrapType;
 

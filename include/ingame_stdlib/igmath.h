@@ -4,6 +4,9 @@
 // The ratio of a circle's circumference to its diameter. 
 #define M_PI 3.14159265358979323846f
 
+// Euler's constant
+#define M_E 2.71828182845904523536f
+
 // Only single-precision float math is included
 
 // Computes arc cosine (arccos(x)).

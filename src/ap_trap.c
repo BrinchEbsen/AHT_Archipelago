@@ -7,6 +7,7 @@
 #include <Sound.h>
 #include <exrand.h>
 #include <exitemenv.h>
+#include <igmath.h>
 
 /*
  * Each trap is given an "update" function with a state.
@@ -22,7 +23,8 @@ s32 traps_params[TrapType_NUM] = {0};
 ap_trap_update_func traps_update_funcs[TrapType_NUM] =
 {
     [TrapType_MoneyBagsSpamCall]    = ap_trap_moneybags_spam_call_update,
-    [TrapType_ReversedControls]     = ap_trap_reverse_controls_update
+    [TrapType_ReversedControls]     = ap_trap_reverse_controls_update,
+    [TrapType_Bouncy]               = ap_trap_bouncy_update
 };
 
 void ap_trap_update()
@@ -38,6 +40,11 @@ void ap_trap_update()
         else if (g_pad_button_edge_down(PAD_BUTTON_DPAD_LEFT))
         {
             g_gamestate_ap_settings.trap = TrapType_ReversedControls+1;
+            g_gamestate_ap_settings.trap_data = 60*60;
+        }
+        else if (g_pad_button_edge_down(PAD_BUTTON_DPAD_UP))
+        {
+            g_gamestate_ap_settings.trap = TrapType_Bouncy+1;
             g_gamestate_ap_settings.trap_data = 60*60;
         }
     }
@@ -157,6 +164,91 @@ void ap_trap_reverse_controls_update(u8* state, s32* param)
             if (*param <= 0)
             {
                 pad_reverse_analog = false;
+                *state = 0;
+            }
+            return;
+    }
+}
+
+#define BOUNCY_SPEED 4.24f
+#define BOUNCY_BIAS 2.2f
+
+// hyperbolic tangent (tanh)
+float tanh(float x)
+{
+    // https://en.wikipedia.org/wiki/Hyperbolic_functions
+
+    float n = powf(M_E, 2.0f*x);
+
+    return (
+        (n - 1.0f)  // sinh(x)   e^2x - 1
+        /           // ------- = --------
+        (n + 1.0f)  // cosh(x)   e^2x + 1
+    );
+}
+
+// scale a float between "start" and "end" with this function: (tanh(BOUNCY_BIAS*cos(x))+1)/2
+float bouncy_func(float start, float end, float x)
+{
+    float y = tanh(BOUNCY_BIAS * cosf(x));
+
+    // Scale between 0 and 1
+    y = (y + 1.0f) / 2.0f;
+
+    return start + ((end - start) * y);
+}
+
+void ap_trap_bouncy_update(u8* state, s32* param)
+{
+    if (gpPlayer == NULL)
+    {
+        return;
+    }
+
+    // Sparx's player version is scaled up by 3x in the game.
+    float mult = 1.0f;
+    if (XSEItemHandler_Player__M_PLAYERTYPE(gpPlayer) == Player_Sparx)
+    {
+        mult = 3.0f;
+    }
+
+    static float cycle_timer = 0.0f;
+    static float cycle_speed = 1.0f / BOUNCY_SPEED;
+
+    static EXVector3 scale_low = {
+        .x = 1.3f,
+        .y = 0.6f,
+        .z = 1.3f
+    };
+
+    static EXVector3 scale_high = {
+        .x = 0.8f,
+        .y = 1.1f,
+        .z = 0.8f
+    };
+
+    switch (*state)
+    {
+        case 1:
+            cycle_timer = 0.0f;
+            *state = 2;
+            return;
+        case 2:
+            cycle_timer += cycle_speed;
+            // The scale is an EXVector but we only care about xyz
+            EXVector3* scale = OFFSET_PTR(EXVector3, gpPlayerItem, 0xF0);
+            // Animate model
+            scale->x = bouncy_func(scale_low.x*mult, scale_high.x*mult, cycle_timer);
+            scale->y = bouncy_func(scale_low.y*mult, scale_high.y*mult, cycle_timer);
+            scale->z = bouncy_func(scale_low.z*mult, scale_high.z*mult, cycle_timer);
+            // Invalidate matrix so model updates
+            XSEItem__VALID_MTX(gpPlayerItem) = false;
+            (*param)--;
+            if (*param <= 0)
+            {
+                scale->x = 1.0f*mult;
+                scale->y = 1.0f*mult;
+                scale->z = 1.0f*mult;
                 *state = 0;
             }
             return;

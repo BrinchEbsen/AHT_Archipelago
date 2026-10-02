@@ -197,6 +197,8 @@ extern bool XSEItemHandler_Player__CheckModeChange(void* self, u32 NewAnimMode);
 #define XSEItemHandler_Player__M_PLAYERSTATEFLAGS(self) OFFSET_VAL(PStateFlags, self, 0x580)
 #define XSEItemHandler_Player__M_PLAYERMODE(self) OFFSET_VAL(PlayerModes, self, 0x834)
 
+#define XSEItem__VALID_MTX(self) OFFSET_VAL(bool, self, 0x82)
+
 extern bool g_scanmode_enable;
 
 bool XSEItemHandler_Player__TestScanMode_ReImplHook(void* self, int current_mode);
