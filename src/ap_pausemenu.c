@@ -300,6 +300,7 @@ s32 GUI_PauseMenu__v_StateRunning_VtableHook(GUI_Base* self)
     
         if (g_pad_button_edge_down(PAD_BUTTON_X)) {
             show_notifications = !show_notifications;
+            PlaySFX(HT_Sound_SFX_GEN_HUD_SELECT);
         }
     
         if (g_pad_button_edge_down(PAD_BUTTON_L) || g_pad_button_edge_down(PAD_BUTTON_DPAD_LEFT)) {
@@ -560,7 +561,9 @@ void draw_notification_toggle(GUI_Base* self, void* pWnd)
 
     draw_menu_rect(pWnd, &r);
 
-    textprintf(pWnd, 2, 2, 1.0f, TopLeft, COLOR_WHITE, true,
+    RGBA col = show_notifications ? COLOR_WHITE : COLOR_LIGHT_RED;
+
+    textprintf(pWnd, 2, 2, 1.0f, TopLeft, col, true,
         "~B Show Notifications: %s", show_notifications ? "Yes" : "No");
 }
 
