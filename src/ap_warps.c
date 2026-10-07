@@ -3,6 +3,7 @@
 #include <map.h>
 #include <player.h>
 #include <pad.h>
+#include <mapindex.h>
 
 bool draw_warp_text = false;
 
@@ -16,7 +17,7 @@ WarpNode warp_nodes[WARP_NODES_COUNT] =
             .z = -125.40934f
         },
         .radius = DEFAULT_WARP_NODE_RADIUS,
-        .map_index = 20,
+        .map_index = MI_CloudyDomain,
         .warp_to_index = 1
     },
     // [1] Cloudy Domain end of orbiting platforms 1
@@ -27,7 +28,7 @@ WarpNode warp_nodes[WARP_NODES_COUNT] =
             .z = -311.541138f
         },
         .radius = DEFAULT_WARP_NODE_RADIUS,
-        .map_index = 20,
+        .map_index = MI_CloudyDomain,
         .warp_to_index = 0
     },
     // [2] Cloudy Domain start of orbiting platforms 2
@@ -38,7 +39,7 @@ WarpNode warp_nodes[WARP_NODES_COUNT] =
             .z = -308.00354f
         },
         .radius = DEFAULT_WARP_NODE_RADIUS,
-        .map_index = 20,
+        .map_index = MI_CloudyDomain,
         .warp_to_index = 3
     },
     // [3] Cloudy Domain end of orbiting platforms 2
@@ -49,7 +50,7 @@ WarpNode warp_nodes[WARP_NODES_COUNT] =
             .z = -192.885864f
         },
         .radius = DEFAULT_WARP_NODE_RADIUS,
-        .map_index = 20,
+        .map_index = MI_CloudyDomain,
         .warp_to_index = 2
     }
 };

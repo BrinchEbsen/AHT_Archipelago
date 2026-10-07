@@ -1,6 +1,7 @@
 #include <trigger_hooks.h>
 #include <system.h>
 #include <map.h>
+#include <mapindex.h>
 
 #define DARK_MINE_MISALIGNED_LOAD_TRIGGER_INDEX 217
 
@@ -15,7 +16,7 @@ void SE_TriggerList__ConstructAll_PreCallHook(SE_TriggerList* self)
         if (geo_map != NULL)
         {
 #if defined(CORRECT_DARK_MINE_LOADING_TRIGGER)
-            if (self->m_pMap->m_MapListIndex == 30) // dark mine
+            if (self->m_pMap->m_MapListIndex == MI_DarkMine)
             {
                 correct_dark_mine_loading_trigger(geo_map);
             }

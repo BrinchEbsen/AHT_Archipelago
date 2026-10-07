@@ -1,4 +1,5 @@
 #include <BASIC_hooks.h>
+#include <mapindex.h>
 
 #pragma region Const Patches
 GameScriptPatch const_gamescript_patches[] = {
@@ -7,7 +8,7 @@ GameScriptPatch const_gamescript_patches[] = {
     // open the gate.
     {
         .trig_index = 10,
-        .map_index = 24,
+        .map_index = MI_DragonVillage,
         .num_lines = 1,
         .patches = (GameScriptPatchLine[])
         {
@@ -24,7 +25,7 @@ GameScriptPatch const_gamescript_patches[] = {
     // at the same time, which can potentially soft lock the game.
     {
         .trig_index = 289,
-        .map_index = 24,
+        .map_index = MI_DragonVillage,
         .num_lines = 1,
         .patches = (GameScriptPatchLine[])
         {
@@ -182,7 +183,7 @@ GameScriptPatch blink_easyonly_patches[] = {
     // Crocovile Swamp Blink
     {
         .trig_index = 69,
-        .map_index = 23,
+        .map_index = MI_CrocovileSwamp,
         .num_lines = 3,
         .patches = (GameScriptPatchLine[])
         {
@@ -212,21 +213,21 @@ GameScriptPatch blink_easyonly_patches[] = {
     // Coastal Remains Blink
     {
         .trig_index = 115,
-        .map_index = 45,
+        .map_index = MI_CoastalRemains,
         .num_lines = 7,
         .patches = reusable_patch_4
     },
     // Frostbite Village Blink
     {
         .trig_index = 244,
-        .map_index = 31,
+        .map_index = MI_FrostbiteVillage,
         .num_lines = 3,
         .patches = reusable_patch_1
     },
     // Dark Mine Blink
     {
         .trig_index = 154,
-        .map_index = 30,
+        .map_index = MI_DarkMine,
         .num_lines = 6,
         .patches = reusable_patch_2
     }
@@ -242,14 +243,14 @@ GameScriptPatch sparx_easyonly_patches[] = {
 #elif defined(GC_PAL)
         .trig_index = 282,
 #endif
-        .map_index = 22,
+        .map_index = MI_DragonflyFalls,
         .num_lines = 3,
         .patches = reusable_patch_3
     },
     // Sunken Ruins Sparx
     {
         .trig_index = 65,
-        .map_index = 19,
+        .map_index = MI_SunkenRuins,
         .num_lines = 6,
         .patches = reusable_patch_2
     },
@@ -260,14 +261,14 @@ GameScriptPatch sparx_easyonly_patches[] = {
 #elif defined(GC_PAL)
         .trig_index = 126,
 #endif
-        .map_index = 35,
+        .map_index = MI_GloomyGlacier,
         .num_lines = 3,
         .patches = reusable_patch_3
     },
     // Magma Falls Bottom Sparx
     {
         .trig_index = 12,
-        .map_index = 63,
+        .map_index = MI_MagmaFallsBottom,
         .num_lines = 6,
         .patches = reusable_patch_2
     }
@@ -279,7 +280,7 @@ GameScriptPatch turret_easyonly_patches[] = {
     // Crocovile Swamp Turret
     {
         .trig_index = 6,
-        .map_index = 23,
+        .map_index = MI_CrocovileSwamp,
         .num_lines = 3,
         .patches = (GameScriptPatchLine[])
         {
@@ -309,21 +310,21 @@ GameScriptPatch turret_easyonly_patches[] = {
     // Coastal Remains Turret
     {
         .trig_index = 77,
-        .map_index = 45,
+        .map_index = MI_CoastalRemains,
         .num_lines = 7,
         .patches = reusable_patch_4
     },
     // Frostbite Village Turret
     {
         .trig_index = 242,
-        .map_index = 31,
+        .map_index = MI_FrostbiteVillage,
         .num_lines = 3,
         .patches = reusable_patch_1
     },
     // Stormy Beach Turret
     {
         .trig_index = 8,
-        .map_index = 44,
+        .map_index = MI_StormyBeach,
         .num_lines = 6,
         .patches = (GameScriptPatchLine[])
         {
@@ -375,14 +376,14 @@ GameScriptPatch sgtbyrd_easyonly_patches[] = {
     // Dragon Village Sgt. Byrd
     {
         .trig_index = 158,
-        .map_index = 24,
+        .map_index = MI_DragonVillage,
         .num_lines = 3,
         .patches = reusable_patch_1
     },
     // Cloudy Domain Sgt. Byrd
     {
         .trig_index = 81,
-        .map_index = 20,
+        .map_index = MI_CloudyDomain,
         .num_lines = 6,
         .patches = (GameScriptPatchLine[])
         {
@@ -429,14 +430,14 @@ GameScriptPatch sgtbyrd_easyonly_patches[] = {
     // Ice Citadel Sgt. Byrd
     {
         .trig_index = 48,
-        .map_index = 33,
+        .map_index = MI_IceCitadel,
         .num_lines = 3,
         .patches = reusable_patch_1
     },
     // Molten Mount Sgt. Byrd
     {
         .trig_index = 94,
-        .map_index = 60,
+        .map_index = MI_MoltenMount,
         .num_lines = 6,
         .patches = reusable_patch_2
     }

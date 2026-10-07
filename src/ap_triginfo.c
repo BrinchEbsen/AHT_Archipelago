@@ -1,11 +1,12 @@
 #include <ap_triginfo.h>
 #include <gamestate.h>
 #include <hashcodes.h>
+#include <mapindex.h>
 
 GameStateTrigInfo shops_triginfos[] = {
     // Dragon Village - Village Depot
     {
-        .m_MapIndex = 24,
+        .m_MapIndex = MI_DragonVillage,
         .m_TrigIndex = 22,
         .m_XYZ = {
             .x = 131.375565f,
@@ -23,7 +24,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Crocovile Swamp - Elder's Tree
     {
-        .m_MapIndex = 23,
+        .m_MapIndex = MI_CrocovileSwamp,
         .m_TrigIndex = 107,
         .m_XYZ = {
             .x = 197.776062f,
@@ -41,7 +42,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Crocovile Swamp - Forgotten Temple
     {
-        .m_MapIndex = 23,
+        .m_MapIndex = MI_CrocovileSwamp,
         .m_TrigIndex = 109,
         .m_XYZ = {
             .x = 169.592377f,
@@ -59,7 +60,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Crocovile Swamp - Perilous Pyramid
     {
-        .m_MapIndex = 23,
+        .m_MapIndex = MI_CrocovileSwamp,
         .m_TrigIndex = 137,
         .m_XYZ = {
             .x = 39.919754f,
@@ -77,7 +78,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Dragonfly Falls - Steep Canyon
     {
-        .m_MapIndex = 22,
+        .m_MapIndex = MI_DragonflyFalls,
         .m_TrigIndex = 16,
         .m_XYZ = {
             .x = 645.000000f,
@@ -95,7 +96,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Dragonfly Falls - Secret Area
     {
-        .m_MapIndex = 22,
+        .m_MapIndex = MI_DragonflyFalls,
 #if defined(GC_NTSC)
         .m_TrigIndex = 182,
 #elif defined(GC_PAL)
@@ -117,7 +118,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Dragonfly Falls - Tropical  Cove
     {
-        .m_MapIndex = 22,
+        .m_MapIndex = MI_DragonflyFalls,
 #if defined(GC_NTSC)
         .m_TrigIndex = 290,
 #elif defined(GC_PAL)
@@ -139,7 +140,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Coastal Remains - Waterfall Walkway
     {
-        .m_MapIndex = 45,
+        .m_MapIndex = MI_CoastalRemains,
         .m_TrigIndex = 32,
         .m_XYZ = {
             .x = -264.341309f,
@@ -157,7 +158,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Coastal Remains - Domain Doorstep
     {
-        .m_MapIndex = 45,
+        .m_MapIndex = MI_CoastalRemains,
         .m_TrigIndex = 38,
         .m_XYZ = {
             .x = 397.344513f,
@@ -175,7 +176,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Coastal Remains - Coastal Depot
     {
-        .m_MapIndex = 45,
+        .m_MapIndex = MI_CoastalRemains,
         .m_TrigIndex = 149,
         .m_XYZ = {
             .x = 45.181740f,
@@ -193,7 +194,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Cloudy Domain - Elevator Top
     {
-        .m_MapIndex = 20,
+        .m_MapIndex = MI_CloudyDomain,
         .m_TrigIndex = 115,
         .m_XYZ = {
             .x = -61.589600f,
@@ -211,7 +212,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Cloudy Domain - Elder's Homestead
     {
-        .m_MapIndex = 20,
+        .m_MapIndex = MI_CloudyDomain,
         .m_TrigIndex = 153,
         .m_XYZ = {
             .x = 216.852676f,
@@ -229,7 +230,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Cloudy Domain - Tallest Tower
     {
-        .m_MapIndex = 20,
+        .m_MapIndex = MI_CloudyDomain,
         .m_TrigIndex = 165,
         .m_XYZ = {
             .x = 349.804749f,
@@ -247,7 +248,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Sunken Ruins - Atlantian Entryway
     {
-        .m_MapIndex = 19,
+        .m_MapIndex = MI_SunkenRuins,
         .m_TrigIndex = 368,
         .m_XYZ = {
             .x = -509.105347f,
@@ -265,7 +266,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Sunken Ruins - The Depths
     {
-        .m_MapIndex = 19,
+        .m_MapIndex = MI_SunkenRuins,
         .m_TrigIndex = 369,
         .m_XYZ = {
             .x = -761.477356f,
@@ -283,7 +284,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Sunken Ruins - Toxic Rise
     {
-        .m_MapIndex = 19,
+        .m_MapIndex = MI_SunkenRuins,
         .m_TrigIndex = 370,
         .m_XYZ = {
             .x = -664.525452f,
@@ -301,7 +302,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Frostbite Village - Eskimole Village
     {
-        .m_MapIndex = 31,
+        .m_MapIndex = MI_FrostbiteVillage,
         .m_TrigIndex = 84,
         .m_XYZ = {
             .x = 56.908875f,
@@ -319,7 +320,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Frostbite Village - Icy Camp
     {
-        .m_MapIndex = 31,
+        .m_MapIndex = MI_FrostbiteVillage,
         .m_TrigIndex = 280,
         .m_XYZ = {
             .x = 175.359985f,
@@ -337,7 +338,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Frostbite Village - Frosty Depot
     {
-        .m_MapIndex = 31,
+        .m_MapIndex = MI_FrostbiteVillage,
         .m_TrigIndex = 323,
         .m_XYZ = {
             .x = 3.596106f,
@@ -355,7 +356,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Ice Citadel - Cool Courtyard
     {
-        .m_MapIndex = 33,
+        .m_MapIndex = MI_IceCitadel,
         .m_TrigIndex = 89,
         .m_XYZ = {
             .x = -784.645569f,
@@ -373,7 +374,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Ice Citadel - Supercharge Central
     {
-        .m_MapIndex = 33,
+        .m_MapIndex = MI_IceCitadel,
         .m_TrigIndex = 90,
         .m_XYZ = {
             .x = -570.092590f,
@@ -391,7 +392,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Ice Citadel - Royal Chamber
     {
-        .m_MapIndex = 33,
+        .m_MapIndex = MI_IceCitadel,
         .m_TrigIndex = 91,
         .m_XYZ = {
             .x = -487.255676f,
@@ -409,7 +410,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Ice Citadel - Drawbridge Drop-off
     {
-        .m_MapIndex = 33,
+        .m_MapIndex = MI_IceCitadel,
         .m_TrigIndex = 92,
         .m_XYZ = {
             .x = -334.914398f,
@@ -427,7 +428,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Stormy Beach - Stormy Depot
     {
-        .m_MapIndex = 44,
+        .m_MapIndex = MI_StormyBeach,
         .m_TrigIndex = 7,
         .m_XYZ = {
             .x = -33.352539f,
@@ -445,7 +446,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Molten Mount - Destroyed Village
     {
-        .m_MapIndex = 60,
+        .m_MapIndex = MI_MoltenMount,
         .m_TrigIndex = 108,
         .m_XYZ = {
             .x = -26.569090f,
@@ -463,7 +464,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Molten Mount - Collapsed Bridge
     {
-        .m_MapIndex = 60,
+        .m_MapIndex = MI_MoltenMount,
         .m_TrigIndex = 113,
         .m_XYZ = {
             .x = -84.515282f,
@@ -481,7 +482,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Molten Mount - Lumber Storage
     {
-        .m_MapIndex = 60,
+        .m_MapIndex = MI_MoltenMount,
         .m_TrigIndex = 122,
         .m_XYZ = {
             .x = 214.482681f,
@@ -499,7 +500,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Magma Falls Top - Crackling Cave
     {
-        .m_MapIndex = 61,
+        .m_MapIndex = MI_MagmaFallsTop,
         .m_TrigIndex = 35,
         .m_XYZ = {
             .x = 248.159164f,
@@ -517,7 +518,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Magma Falls Bottom - Sparx Can Fly
     {
-        .m_MapIndex = 63,
+        .m_MapIndex = MI_MagmaFallsBottom,
         .m_TrigIndex = 21,
         .m_XYZ = {
             .x = -210.990295f,
@@ -535,7 +536,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Magma Falls Bottom - Chains of Lava
     {
-        .m_MapIndex = 63,
+        .m_MapIndex = MI_MagmaFallsBottom,
         .m_TrigIndex = 24,
         .m_XYZ = {
             .x = 66.081490f,
@@ -553,7 +554,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Dark Mine - Mine Mouth
     {
-        .m_MapIndex = 30,
+        .m_MapIndex = MI_DarkMine,
         .m_TrigIndex = 134,
         .m_XYZ = {
             .x = -490.521118f,
@@ -571,7 +572,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Dark Mine - Hidden Depths
     {
-        .m_MapIndex = 30,
+        .m_MapIndex = MI_DarkMine,
         .m_TrigIndex = 144,
         .m_XYZ = {
             .x = -452.249054f,
@@ -589,7 +590,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Dark Mine - Miner's Drop
     {
-        .m_MapIndex = 30,
+        .m_MapIndex = MI_DarkMine,
         .m_TrigIndex = 146,
         .m_XYZ = {
             .x = -577.123596f,
@@ -607,7 +608,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Red's Laboratory - Celestial Show
     {
-        .m_MapIndex = 40,
+        .m_MapIndex = MI_RedsLaboratory,
         .m_TrigIndex = 293,
         .m_XYZ = {
             .x = -1186.087769f,
@@ -625,7 +626,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Red's Laboratory - Mechanical Mishaps
     {
-        .m_MapIndex = 40,
+        .m_MapIndex = MI_RedsLaboratory,
         .m_TrigIndex = 295,
         .m_XYZ = {
             .x = -1486.697022f,
@@ -643,7 +644,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Red's Laboratory - Pre-production
     {
-        .m_MapIndex = 40,
+        .m_MapIndex = MI_RedsLaboratory,
         .m_TrigIndex = 297,
         .m_XYZ = {
             .x = -992.320435f,
@@ -661,7 +662,7 @@ GameStateTrigInfo shops_triginfos[] = {
     },
     // Red's Laboratory - Laser Leaps
     {
-        .m_MapIndex = 40,
+        .m_MapIndex = MI_RedsLaboratory,
         .m_TrigIndex = 299,
         .m_XYZ = {
             .x = -1052.305298f,

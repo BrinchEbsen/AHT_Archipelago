@@ -3,8 +3,6 @@
 #include <types.h>
 
 #define SCRIPTEDGATE_M_STATUS(self) OFFSET_VAL(u32, self, 0x3E0)
-#define START_GATE_TRIGGER_INDEX 153
-#define START_GATE_MAP 24
 
 typedef struct GateID
 {

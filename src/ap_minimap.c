@@ -7,11 +7,12 @@
 #include <minimap_status.h>
 #include <system.h>
 #include <pad.h>
+#include <mapindex.h>
 
 // Extra collectable items for the ball gadget stations
 
 APCollectable ballgadgetloc_cloudy_domain = {
-    .map_index = 20,
+    .map_index = MI_CloudyDomain,
     .trig_index = 77,
     .objective = 0xFFFF,
     .type = NonCollectable,
@@ -19,7 +20,7 @@ APCollectable ballgadgetloc_cloudy_domain = {
     .z = 65.122f
 };
 APCollectable ballgadgetloc_magma_falls = {
-    .map_index = 61,
+    .map_index = MI_MagmaFallsTop,
     .trig_index = 1,
     .objective = 0xFFFF,
     .type = NonCollectable,
@@ -114,20 +115,20 @@ void minimap_draw_locations(GUI_Base* self, void* pWnd)
     */
 
     // Cloudy Domain Ball Gadget
-    if (map->m_MapListIndex == 20) {
+    if (map->m_MapListIndex == MI_CloudyDomain) {
         s32 collected;
         s32 reachable;
-        s32 num = num_collectables_in_map(21, &collected, &reachable);
+        s32 num = num_collectables_in_map(MI_CloudyDomainBallGadget, &collected, &reachable);
         minimap_draw_location(self, pWnd, &ballgadgetloc_cloudy_domain,
             reachable >= num,
             collected >= num);
     }
 
     // Magma Falls Ball Gadget
-    if (map->m_MapListIndex == 61) {
+    if (map->m_MapListIndex == MI_MagmaFallsTop) {
         s32 collected;
         s32 reachable;
-        s32 num = num_collectables_in_map(62, &collected, &reachable);
+        s32 num = num_collectables_in_map(MI_MagmaFallsBallGadget, &collected, &reachable);
         minimap_draw_location(self, pWnd, &ballgadgetloc_magma_falls,
             reachable >= num,
             collected >= num);

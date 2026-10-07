@@ -16,6 +16,7 @@
 #include <player.h>
 #include <sfx.h>
 #include <Sound.h>
+#include <mapindex.h>
 
 #define AP_TELEPORT_CLOSE_TIMER_MAX 60
 
@@ -28,62 +29,62 @@ char* instant_shop_cannot_open_reason = NULL;
 int toggle_scanmode_timer = 0;
 
 int realm1_map_indexes[] = {
-    2,  // Blinky MiniGame (MR1_Blk)
-    3,  // SrgBird MiniGame (MR1_Sgt)
-    4,  // Sparx MiniGame (MR1_Spx)
-    5,  // Swamp Attack (MR1_Spy)
-    22, // Dragon Shores (Realm1C)
-    23, // Dragon Swamp (Realm1B)
-    24, // Dragon Village (Hub Realm1A)
-    25, // Map_R1LinkAB
-    26, // Map_R1LinkAC
-    32  // Gnasty Gnorc (Realm1Z)
+    MI_MR1_Blk,
+    MI_MR1_Sgt,
+    MI_MR1_Spx,
+    MI_MR1_Spy,
+    MI_DragonflyFalls,
+    MI_CrocovileSwamp,
+    MI_DragonVillage,
+    MI_R1LinkAB,
+    MI_R1LinkAC,
+    MI_GnastysCave
 };
 #define NUM_REALM1_MAPS 10
 
 int realm2_map_indexes[] = {
-    6,  // Blinky MiniGame (MR2_Blk)
-    7,  // SrgBird MiniGame (MR2_Sgt)
-    8,  // Sparx MiniGame (MR2_Spx)
-    9,  // Turtle MiniGame (MR2_Spy)
-    19, // Sunken City (Realm2B)
-    20, // Cloud City (Realm2C)
-    21, // Cloud City Ball Gadget (Realm2C)
-    45, // The Beach (Hub Realm2A)
-    46, // Map_R2LinkAB
-    47, // Map_R2LinkAC
-    64  // Watery Tomb (Realm2Z)
+    MI_MR2_Blk,
+    MI_MR2_Sgt,
+    MI_MR2_Spx,
+    MI_MR2_Spy,
+    MI_SunkenRuins,
+    MI_CloudyDomain,
+    MI_CloudyDomainBallGadget,
+    MI_CoastalRemains,
+    MI_R2LinkAB,
+    MI_R2LinkAC,
+    MI_WateryTomb
 };
 #define NUM_REALM2_MAPS 11
 
 int realm3_map_indexes[] = {
-    10, // Blinky MiniGame (MR3_Blk)
-    11, // SrgBird MiniGame (MR3_Sgt)
-    12, // Sparx MiniGame (MR3_Spx)
-    13, // Spyro MiniGame (MR3_Spy)
-    31, // Frostbite Village (Hub Realm3A)
-    33, // Ice Citadel (Realm3C)
-    35, // Mountain Pass (Realm3B)
-    41  // Red's Chamber (Realm3Z)
+    MI_MR3_Blk,
+    MI_MR3_Sgt,
+    MI_MR3_Spx,
+    MI_MR3_Spy,
+    MI_FrostbiteVillage,
+    MI_IceCitadel,
+    MI_GloomyGlacier,
+    MI_RedsChamber
 };
 #define NUM_REALM3_MAPS 8
 
 int realm4_map_indexes[] = {
-    14, // Blinky MiniGame (MR4_Blk)
-    15, // SrgBird MiniGame (MR4_Sgt)
-    16, // Sparx MiniGame (MR4_Spx)
-    17, // Spyro MiniGame (MR4_Spy)
-    30, // Mine & Foundry (Realm4D)
-    34, // MechaRed (Realm4Z)
-    40, // Professors Laboratory (Realm4E)
-    44, // Stormy Beach (Realm4A)
-    57, // Map_R4LinkBC
-    58, // Map_R4LinkCD
-    59, // Map_R4LinkDE
-    60, // Volcano Ascent (Realm4B)
-    61, // Volcano Descent 1 (Realm4C)
-    62, // Volcano Descent 2 (Realm4C)
-    63  // Volcano Descent 3 (Realm4C)
+    MI_MR4_Blk,
+    MI_MR4_Sgt,
+    MI_MR4_Spx,
+    MI_MR4_Spy,
+    MI_DarkMine,
+    MI_RedsLair,
+    MI_RedsLaboratory,
+    MI_StormyBeach,
+    MI_R4LinkBC,
+    MI_R4LinkCD,
+    MI_R4LinkDE,
+    MI_MoltenMount,
+    MI_MagmaFallsTop,
+    MI_MagmaFallsBallGadget,
+    MI_MagmaFallsBottom
 };
 #define NUM_REALM4_MAPS 15
 
@@ -100,7 +101,7 @@ typedef struct HUBCentreEntry
 #define NUM_HUB_CENTERS 4
 HUBCentreEntry hub_centers[] = {
     {
-        .map_index = 24,
+        .map_index = MI_DragonVillage,
         .maps = realm1_map_indexes,
         .num_maps = NUM_REALM1_MAPS,
         .file = HT_File_Realm1A,
@@ -108,7 +109,7 @@ HUBCentreEntry hub_centers[] = {
         .startpoint = HT_StartPoint_START
     },
     {
-        .map_index = 45,
+        .map_index = MI_CoastalRemains,
         .maps = realm2_map_indexes,
         .num_maps = NUM_REALM2_MAPS,
         .file = HT_File_Realm2A,
@@ -116,7 +117,7 @@ HUBCentreEntry hub_centers[] = {
         .startpoint = HT_StartPoint_START
     },
     {
-        .map_index = 31,
+        .map_index = MI_FrostbiteVillage,
         .maps = realm3_map_indexes,
         .num_maps = NUM_REALM3_MAPS,
         .file = HT_File_Realm3A,
@@ -124,7 +125,7 @@ HUBCentreEntry hub_centers[] = {
         .startpoint = HT_StartPoint_START
     },
     {
-        .map_index = 44,
+        .map_index = MI_StormyBeach,
         .maps = realm4_map_indexes,
         .num_maps = NUM_REALM4_MAPS,
         .file = HT_File_Realm4A,
@@ -762,7 +763,7 @@ void reset_boss_progress()
     PlayerObjectives__GetObjective__ReImplHook(
         &gGameState.m_PlayerObjectives, HT_Objective_Boss1_Beaten, &beaten_obj);
     if (beaten_obj == 0) {
-        gMapList.m_List[32].m_pMap->m_GameState->m_LastStartPoint = HT_StartPoint_START;
+        gMapList.m_List[MI_GnastysCave].m_pMap->m_GameState->m_LastStartPoint = HT_StartPoint_START;
     }
     
     // Ineptune
@@ -777,13 +778,13 @@ void reset_boss_progress()
     PlayerObjectives__GetObjective__ReImplHook(
         &gGameState.m_PlayerObjectives, HT_Objective_Boss3_Beaten, &beaten_obj);
     if (beaten_obj == 0) {
-        gMapList.m_List[41].m_pMap->m_GameState->m_LastStartPoint = HT_StartPoint_Restart1;
+        gMapList.m_List[MI_RedsChamber].m_pMap->m_GameState->m_LastStartPoint = HT_StartPoint_Restart1;
     }
     
     // Mecha Red
     PlayerObjectives__GetObjective__ReImplHook(
         &gGameState.m_PlayerObjectives, HT_Objective_Boss4_Beaten, &beaten_obj);
     if (beaten_obj == 0) {
-        gMapList.m_List[34].m_pMap->m_GameState->m_LastStartPoint = HT_StartPoint_START;
+        gMapList.m_List[MI_RedsLair].m_pMap->m_GameState->m_LastStartPoint = HT_StartPoint_START;
     }
 }

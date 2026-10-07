@@ -2,29 +2,30 @@
 #define ELEVATOR_HOOKS_H
 #include <types.h>
 #include <hashcodes.h>
+#include <mapindex.h>
 
-#define ELEVATOR_2C_2A_MAPINDEX             45
+#define ELEVATOR_2C_2A_MAPINDEX             MI_CoastalRemains
 #define ELEVATOR_2C_2A_STARTPOINT           HT_StartPoint_Restart2
 
-#define ELEVATOR_2A_2C_MAPINDEX             20
+#define ELEVATOR_2A_2C_MAPINDEX             MI_CloudyDomain
 #define ELEVATOR_2A_2C_STARTPOINT           HT_StartPoint_START
 
 #define ELEVATOR_SUNKENRUINS_TRIGGERINDEX   4
-#define ELEVATOR_SUNKENRUINS_MAPINDEX       46
+#define ELEVATOR_SUNKENRUINS_MAPINDEX       MI_R2LinkAB
 
-#define ELEVATOR_2B_2A_MAPINDEX             45
+#define ELEVATOR_2B_2A_MAPINDEX             MI_CoastalRemains
 #define ELEVATOR_2B_2A_STARTPOINT           HT_StartPoint_Restart8
 
-#define ELEVATOR_2A_2B_MAPINDEX             19
+#define ELEVATOR_2A_2B_MAPINDEX             MI_SunkenRuins
 #define ELEVATOR_2A_2B_STARTPOINT           HT_StartPoint_Restart1
 
 #define ELEVATOR_MAGMAFALLS_TRIGGERINDEX    4
-#define ELEVATOR_MAGMAFALLS_MAPINDEX        57
+#define ELEVATOR_MAGMAFALLS_MAPINDEX        MI_R4LinkBC
 
-#define ELEVATOR_4B_4C_MAPINDEX             61
+#define ELEVATOR_4B_4C_MAPINDEX             MI_MagmaFallsTop
 #define ELEVATOR_4B_4C_STARTPOINT           HT_StartPoint_Restart1
 
-#define ELEVATOR_4C_4B_MAPINDEX             60
+#define ELEVATOR_4C_4B_MAPINDEX             MI_MoltenMount
 #define ELEVATOR_4C_4B_STARTPOINT           HT_StartPoint_Restart9
 
 // Existing functions:

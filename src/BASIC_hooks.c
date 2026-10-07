@@ -8,29 +8,30 @@
 #include <ap_handler.h>
 #include <player.h>
 #include <exvector.h>
+#include <mapindex.h>
 
 BossGateEntry g_boss_gate_list[] = {
     // Gnasty Gnorc
     {
-        .map_index = 24,
+        .map_index = MI_DragonVillage,
         .trigger_index = 349,
         .clear_objective = HT_Objective_RA_RemovedBossBarrier
     },
     // Ineptune
     {
-        .map_index = 45,
+        .map_index = MI_CoastalRemains,
         .trigger_index = 236,
         .clear_objective = HT_Objective_RB_RemovedBossBarrier
     },
     // Red
     {
-        .map_index = 31,
+        .map_index = MI_FrostbiteVillage,
         .trigger_index = 319,
         .clear_objective = HT_Objective_RC_RemovedBossBarrier
     },
     // Mecha Red
     {
-        .map_index = 40,
+        .map_index = MI_RedsLaboratory,
         .trigger_index = 394,
         .clear_objective = HT_Objective_RD_RemovedBossBarrier
     }

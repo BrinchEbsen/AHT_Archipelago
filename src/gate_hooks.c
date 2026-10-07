@@ -1,20 +1,21 @@
 #include <gate_hooks.h>
 #include <map.h>
+#include <mapindex.h>
 
 GateID gates_to_force_open[] = {
     // Locked gate before first Zoe
     {
-        .map_index = 24,
+        .map_index = MI_DragonVillage,
         .trig_index = 153
     },
     // Dragon Village shop door
     {
-        .map_index = 24,
+        .map_index = MI_DragonVillage,
         .trig_index = 271
     },
     // Dragon Village nursery door
     {
-        .map_index = 24,
+        .map_index = MI_DragonVillage,
         .trig_index = 308
     },
 };

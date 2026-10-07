@@ -21,6 +21,7 @@
 #include <ap_pausemenu.h>
 #include <ap_trap.h>
 #include <ap_warps.h>
+#include <mapindex.h>
 
 #if AP_DEBUG_ADD_REMOVE_SHOP_ITEMS!=0
 void dbg_add_shop_item();
@@ -35,10 +36,10 @@ MapOrderInfo realm_teleporter_maporderinfo[] = {
 };
 
 s32 realm_hub_map_indexes[] = {
-    24, // Dragon Village
-    45, // Coastal Remains
-    31, // Frostbite Village
-    44  // Stormy Beach
+    MI_DragonVillage,
+    MI_CoastalRemains,
+    MI_FrostbiteVillage,
+    MI_StormyBeach
 };
 
 bool replenish_butterfly_jar = false;
