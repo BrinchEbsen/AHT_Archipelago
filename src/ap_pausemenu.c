@@ -28,7 +28,7 @@ char* instant_shop_cannot_open_reason = NULL;
 #define TOGGLE_SCANMODE_TIMER_MAX 60
 int toggle_scanmode_timer = 0;
 
-int realm1_map_indexes[] = {
+u8 realm1_map_indexes[] = {
     MI_MR1_Blk,
     MI_MR1_Sgt,
     MI_MR1_Spx,
@@ -42,7 +42,7 @@ int realm1_map_indexes[] = {
 };
 #define NUM_REALM1_MAPS 10
 
-int realm2_map_indexes[] = {
+u8 realm2_map_indexes[] = {
     MI_MR2_Blk,
     MI_MR2_Sgt,
     MI_MR2_Spx,
@@ -57,7 +57,7 @@ int realm2_map_indexes[] = {
 };
 #define NUM_REALM2_MAPS 11
 
-int realm3_map_indexes[] = {
+u8 realm3_map_indexes[] = {
     MI_MR3_Blk,
     MI_MR3_Sgt,
     MI_MR3_Spx,
@@ -69,7 +69,7 @@ int realm3_map_indexes[] = {
 };
 #define NUM_REALM3_MAPS 8
 
-int realm4_map_indexes[] = {
+u8 realm4_map_indexes[] = {
     MI_MR4_Blk,
     MI_MR4_Sgt,
     MI_MR4_Spx,
@@ -90,9 +90,9 @@ int realm4_map_indexes[] = {
 
 typedef struct HUBCentreEntry
 {
-    int map_index;
-    int* maps;
-    int num_maps;
+    u8 map_index;
+    u8* maps;
+    u8 num_maps;
     EXHashCode file;
     EXHashCode map;
     EXHashCode startpoint;
