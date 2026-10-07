@@ -2,11 +2,11 @@
 #include <hashcodes.h>
 
 APCollectable g_ap_collectables[] = {
-	#pragma region 19 Sunken Ruins
+	#pragma region Sunken Ruins
 	// [  0] SR: Light Gem via acid swim
 	{
 		.type = LightGem,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 0,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -16,7 +16,7 @@ APCollectable g_ap_collectables[] = {
 	// [  1] SR: Light Gem by fish statues
 	{
 		.type = LightGem,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 2,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -26,7 +26,7 @@ APCollectable g_ap_collectables[] = {
 	// [  2] SR: Dragon Egg above heated wall kick
 	{
 		.type = DragonEgg,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 3,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -36,7 +36,7 @@ APCollectable g_ap_collectables[] = {
 	// [  3] SR: Dark Gem in thermal room
 	{
 		.type = DarkGem,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 4,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -46,7 +46,7 @@ APCollectable g_ap_collectables[] = {
 	// [  4] SR: Dark Gem atop pole rooms
 	{
 		.type = DarkGem,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 10,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -56,7 +56,7 @@ APCollectable g_ap_collectables[] = {
 	// [  5] SR: Dragon Egg atop thermal room
 	{
 		.type = DragonEgg,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 26,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -66,7 +66,7 @@ APCollectable g_ap_collectables[] = {
 	// [  6] SR: Dark Gem on rising statue
 	{
 		.type = DarkGem,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 64,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -76,7 +76,7 @@ APCollectable g_ap_collectables[] = {
 	// [  7] SR: Dragon Egg in Locked Chest after first swim
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 86,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -86,7 +86,7 @@ APCollectable g_ap_collectables[] = {
 	// [  8] SR: Light Gem in Locked Chest atop thermal room
 	{
 		.type = LightGem_Chest,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 90,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -96,7 +96,7 @@ APCollectable g_ap_collectables[] = {
 	// [  9] SR: Light Gem in Locked Chest by Lily
 	{
 		.type = LightGem_Chest,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 91,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -106,7 +106,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 10] SR: Dragon Egg in Locked Chest by fish statues
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 92,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -116,7 +116,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 11] SR: Light Gem in Locked Chest atop pole rooms
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 93,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -126,7 +126,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 12] SR: Light Gem in Locked Chest after rising statue room
 	{
 		.type = LightGem_Chest,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 94,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -136,7 +136,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 13] SR: Light Gem in pole room acid tunnel
 	{
 		.type = LightGem,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 131,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -146,19 +146,19 @@ APCollectable g_ap_collectables[] = {
 	// [ 14] SR: Dragon Egg in Locked Chest in rising statue room
 	{
 		.type = LightGem_Chest,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 183,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
 		.x = -636.02f,
 		.z = -82.516f
 	},
-	#pragma endregion /* 19 Sunken Ruins */
-	#pragma region 20 Cloudy Domain
+	#pragma endregion /* Sunken Ruins */
+	#pragma region Cloudy Domain
 	// [ 15] CD: Dark Gem below thermal
 	{
 		.type = DarkGem,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 2,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -168,7 +168,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 16] CD: Dark Gem before Ball Gadget
 	{
 		.type = DarkGem,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 8,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -178,7 +178,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 17] CD: Light Gem in wall kick building
 	{
 		.type = LightGem,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 9,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -188,7 +188,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 18] CD: Dark Gem after second orbiting platforms
 	{
 		.type = DarkGem,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 82,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -198,7 +198,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 19] CD: Light Gem in Locked Chest by elevator
 	{
 		.type = LightGem_Chest,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 109,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -208,7 +208,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 20] CD: Dragon Egg in Locked Chest behind supercharge door
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 132,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -218,7 +218,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 21] CD: Dragon Egg after Elder Titan
 	{
 		.type = DragonEgg,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 133,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -228,7 +228,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 22] CD: Light Gem after Elder Titan
 	{
 		.type = LightGem,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 134,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -238,7 +238,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 23] CD: Light Gem next to Elder's house
 	{
 		.type = LightGem,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 135,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -248,7 +248,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 24] CD: Dragon Egg below first orbiting platforms
 	{
 		.type = DragonEgg,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 136,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -258,7 +258,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 25] CD: Light Gem after southwest temporary platforms
 	{
 		.type = LightGem,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 137,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -268,7 +268,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 26] CD: Light Gem in northwest
 	{
 		.type = LightGem,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 183,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -278,7 +278,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 27] CD: Dragon Egg in northwest Locked Chest
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 194,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -288,19 +288,19 @@ APCollectable g_ap_collectables[] = {
 	// [ 28] CD: Dragon Egg after first orbiting platforms
 	{
 		.type = EggThief,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 239,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
 		.x = 183.855f,
 		.z = -351.459f
 	},
-	#pragma endregion /* 20 Cloudy Domain */
-	#pragma region 21 Cloudy Domain Ball Gadget
+	#pragma endregion /* Cloudy Domain */
+	#pragma region Cloudy Domain Ball Gadget
 	// [ 29] CD: Light Gem from Ball Gadget
 	{
 		.type = LightGem,
-		.map_index = 21,
+		.map_index = MI_CloudyDomainBallGadget,
 		.trig_index = 59,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -308,17 +308,17 @@ APCollectable g_ap_collectables[] = {
 	// [ 30] CD: Dragon Egg from Ball Gadget
 	{
 		.type = DragonEgg,
-		.map_index = 21,
+		.map_index = MI_CloudyDomainBallGadget,
 		.trig_index = 60,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
 	},
-	#pragma endregion /* 21 Cloudy Domain Ball Gadget */
-	#pragma region 22 Dragonfly Falls
+	#pragma endregion /* Cloudy Domain Ball Gadget */
+	#pragma region Dragonfly Falls
 	// [ 31] DF: Light Gem behind cannon door
 	{
 		.type = LightGem,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 		.trig_index = 8,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -328,7 +328,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 32] DF: Dragon Egg behind chargeable wall in entry area
 	{
 		.type = DragonEgg,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 		.trig_index = 11,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -338,7 +338,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 33] DF: Dark Gem by canyon vultures
 	{
 		.type = DarkGem,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 		.trig_index = 12,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -348,7 +348,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 34] DF: Dark Gem behind chargeable wall in entry area
 	{
 		.type = DarkGem,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 		.trig_index = 14,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -358,7 +358,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 35] DF: Dragon Egg after canyon vultures in nest
 	{
 		.type = DragonEgg,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 		.trig_index = 15,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -368,7 +368,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 36] DF: Dark Gem next to Elder statue
 	{
 		.type = DarkGem,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 		.trig_index = 21,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -378,7 +378,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 37] DF: Light Gem in Light Gem door area
 	{
 		.type = LightGem,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 		.trig_index = 23,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -388,7 +388,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 38] DF: Dragon Egg behind chargeable wall in cove
 	{
 		.type = DragonEgg,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 		.trig_index = 29,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -398,7 +398,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 39] DF: Light Gem at end of cove
 	{
 		.type = LightGem,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 		.trig_index = 37,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -408,7 +408,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 40] DF: Dark Gem at end of cove
 	{
 		.type = DarkGem,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 		.trig_index = 38,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -418,7 +418,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 41] DF: Dragon Egg from thief in Light Gem door area
 	{
 		.type = EggThief,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 		.trig_index = 52,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -428,7 +428,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 42] DF: Light Gem in Hunter's area
 	{
 		.type = LightGem,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 		.trig_index = 73,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -438,7 +438,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 43] DF: Dragon Egg in Hunter's area
 	{
 		.type = DragonEgg,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 		.trig_index = 74,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -448,7 +448,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 44] DF: Light Gem behind underwater chargeable wall
 	{
 		.type = LightGem,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 		.trig_index = 90,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -458,7 +458,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 45] DF: Light Gem in Locked Chest in entry area
 	{
 		.type = LightGem_Chest,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 #if defined(GC_NTSC)
 		.trig_index = 312,
 #elif defined(GC_PAL)
@@ -472,7 +472,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 46] DF: Light Gem across platforms in cove
 	{
 		.type = LightGem,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 #if defined(GC_NTSC)
 		.trig_index = 313,
 #elif defined(GC_PAL)
@@ -486,7 +486,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 47] DF: Light Gem in Locked Chest in cove
 	{
 		.type = LightGem_Chest,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 #if defined(GC_NTSC)
 		.trig_index = 314,
 #elif defined(GC_PAL)
@@ -497,12 +497,12 @@ APCollectable g_ap_collectables[] = {
 		.x = 1056.308f,
 		.z = -791.347f
 	},
-	#pragma endregion /* 22 Dragonfly Falls */
-	#pragma region 23 Crocovile Swamp
+	#pragma endregion /* Dragonfly Falls */
+	#pragma region Crocovile Swamp
 	// [ 48] CS: Dark Gem near Perilous Pyramid
 	{
 		.type = DarkGem,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 0,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -512,7 +512,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 49] CS: Dragon Egg from thief in Forgotten Temple
 	{
 		.type = EggThief,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 1,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -522,7 +522,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 50] CS: Dark Gem in cave to Fredneck
 	{
 		.type = DarkGem,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 5,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -532,7 +532,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 51] CS: Light Gem behind wall with chargeable switch
 	{
 		.type = LightGem,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 8,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -542,7 +542,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 52] CS: Dragon Egg in middle of Elder's tree
 	{
 		.type = DragonEgg,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 36,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -552,7 +552,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 53] CS: Light Gem across sinking platforms
 	{
 		.type = LightGem,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 48,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -562,7 +562,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 54] CS: Light Gem next to lilypads
 	{
 		.type = LightGem,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 49,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -572,7 +572,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 55] CS: Light Gem in Forgotten Temple cave
 	{
 		.type = LightGem,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 54,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -582,7 +582,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 56] CS: Light Gem inside Perilous Pyramid behind supercharge door
 	{
 		.type = LightGem,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 58,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -592,7 +592,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 57] CS: Dragon Egg across muddy platforms in west area
 	{
 		.type = DragonEgg,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 62,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -602,7 +602,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 58] CS: Dark Gem outside Elder's tree
 	{
 		.type = DarkGem,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 68,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -612,7 +612,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 59] CS: Dragon Egg in Locked Chest after Perilous Pyramid
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 103,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -622,7 +622,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 60] CS: Light Gem atop Perilous Pyramid
 	{
 		.type = LightGem,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 161,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -632,7 +632,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 61] CS: Light Gem in Locked Chest behind chargeable wall
 	{
 		.type = LightGem_Chest,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 162,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -642,7 +642,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 62] CS: Dragon Egg in Locked Chest in Forgotten Temple
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 202,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -652,7 +652,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 63] CS: Dragon Egg in pole spin cave
 	{
 		.type = DragonEgg,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 203,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -662,19 +662,19 @@ APCollectable g_ap_collectables[] = {
 	// [ 64] CS: Light Gem atop Elder's tree
 	{
 		.type = LightGem,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 204,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
 		.x = 193.263f,
 		.z = 508.721f
 	},
-	#pragma endregion /* 23 Crocovile Swamp */
-	#pragma region 24 Dragon Village
+	#pragma endregion /* Crocovile Swamp */
+	#pragma region Dragon Village
 	// [ 65] DV: Dark Gem by Ember
 	{
 		.type = DarkGem,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 1,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -684,7 +684,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 66] DV: Dark Gem by Elder Tomas
 	{
 		.type = DarkGem,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 2,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -694,7 +694,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 67] DV: Dark Gem above Sgt. Byrd
 	{
 		.type = DarkGem,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 8,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -704,7 +704,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 68] DV: Dragon Egg above Sgt. Byrd
 	{
 		.type = DragonEgg,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 16,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -714,7 +714,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 69] DV: Light Gem above Sgt. Byrd
 	{
 		.type = LightGem,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 21,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -724,7 +724,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 70] DV: Dragon Egg in glide tutorial
 	{
 		.type = DragonEgg,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 92,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -734,7 +734,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 71] DV: Light Gem in lab secret entrance
 	{
 		.type = LightGem,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 139,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -744,7 +744,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 72] DV: Dragon Egg by lab secret entrance
 	{
 		.type = DragonEgg,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 141,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -754,7 +754,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 73] DV: Light Gem in nursery
 	{
 		.type = LightGem,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 290,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -764,7 +764,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 74] DV: Dragon Egg in Locked Chest next to Ball Gadget
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 302,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -774,7 +774,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 75] DV: Dragon Egg in Gnasty Gnorc Cave
 	{
 		.type = DragonEgg,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 341,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -784,7 +784,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 76] DV: Light Gem in Locked Chest near Village Depot
 	{
 		.type = LightGem_Chest,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 342,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -794,19 +794,19 @@ APCollectable g_ap_collectables[] = {
 	// [ 77] DV: Light Gem in Locked Chest across Crocovile bridge
 	{
 		.type = LightGem_Chest,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 343,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
 		.x = 66.002f,
 		.z = 159.513f
 	},
-	#pragma endregion /* 24 Dragon Village */
-	#pragma region 30 Dark Mine
+	#pragma endregion /* Dragon Village */
+	#pragma region Dark Mine
 	// [ 78] DM: Dark Gem in turret room
 	{
 		.type = DarkGem,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 19,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -816,7 +816,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 79] DM: Light Gem in Light Gem door area
 	{
 		.type = LightGem,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 83,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -826,7 +826,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 80] DM: Light Gem in piston room
 	{
 		.type = LightGem,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 84,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -836,7 +836,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 81] DM: Light Gem in green pole room
 	{
 		.type = LightGem,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 85,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -846,7 +846,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 82] DM: Light Gem after ice pole spin
 	{
 		.type = LightGem,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 86,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -856,7 +856,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 83] DM: Dragon Egg in Light Gem door area
 	{
 		.type = DragonEgg,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 87,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -866,7 +866,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 84] DM: Dragon Egg next to Miner's Drop shop
 	{
 		.type = DragonEgg,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 88,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -876,7 +876,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 85] DM: Dark Gem in green pole room
 	{
 		.type = DarkGem,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 89,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -886,7 +886,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 86] DM: Light Gem in Locked Chest after entrance
 	{
 		.type = LightGem_Chest,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 150,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -896,7 +896,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 87] DM: Dragon Egg in Locked Chest in piston room
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 211,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -906,19 +906,19 @@ APCollectable g_ap_collectables[] = {
 	// [ 88] DM: Dragon Egg below walkway
 	{
 		.type = DragonEgg,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 214,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
 		.x = -375.168f,
 		.z = -1719.951f
 	},
-	#pragma endregion /* 30 Dark Mine */
-	#pragma region 31 Frostbite Village
+	#pragma endregion /* Dark Mine */
+	#pragma region Frostbite Village
 	// [ 89] FV: Light Gem via floating platform near Peggy
 	{
 		.type = LightGem,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 4,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -928,7 +928,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 90] FV: Dark Gem in eskimole village
 	{
 		.type = DarkGem,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 5,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -938,7 +938,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 91] FV: Dark Gem in icicle room
 	{
 		.type = DarkGem,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 6,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -948,7 +948,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 92] FV: Light Gem above poles
 	{
 		.type = LightGem,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 7,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -958,7 +958,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 93] FV: Light Gem in orbiting platforms room
 	{
 		.type = LightGem,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 11,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -968,7 +968,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 94] FV: Dragon Egg underground near Peggy
 	{
 		.type = DragonEgg,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 36,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -978,7 +978,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 95] FV: Dragon Egg from thief after bouncing snowballs
 	{
 		.type = EggThief,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 60,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -988,7 +988,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 96] FV: Dragon Egg behind chargeable wall
 	{
 		.type = DragonEgg,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 61,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -998,7 +998,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 97] FV: Dark Gem in orbiting platforms room
 	{
 		.type = DarkGem,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 66,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1008,7 +1008,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 98] FV: Light Gem after bouncing snowballs
 	{
 		.type = LightGem,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 74,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1018,7 +1018,7 @@ APCollectable g_ap_collectables[] = {
 	// [ 99] FV: Light Gem returning from Ice Citadel
 	{
 		.type = LightGem,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 150,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1028,7 +1028,7 @@ APCollectable g_ap_collectables[] = {
 	// [100] FV: Light Gem in Light Gem door area
 	{
 		.type = LightGem,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 170,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1038,7 +1038,7 @@ APCollectable g_ap_collectables[] = {
 	// [101] FV: Dark Gem in cave near Peggy
 	{
 		.type = DarkGem,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 246,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1048,7 +1048,7 @@ APCollectable g_ap_collectables[] = {
 	// [102] FV: Dark Gem approaching icy camp blocking Blink
 	{
 		.type = DarkGem,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 247,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1058,7 +1058,7 @@ APCollectable g_ap_collectables[] = {
 	// [103] FV: Light Gem by Gloomy Glacier entrance
 	{
 		.type = LightGem,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 312,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1068,7 +1068,7 @@ APCollectable g_ap_collectables[] = {
 	// [104] FV: Dragon Egg in Locked Chest in Light Gem door area
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 372,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1078,19 +1078,19 @@ APCollectable g_ap_collectables[] = {
 	// [105] FV: Dragon Egg in Locked Chest in icicle room
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 373,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
 		.x = 114.466f,
 		.z = 69.87f
 	},
-	#pragma endregion /* 31 Frostbite Village */
-	#pragma region 33 Ice Citadel
+	#pragma endregion /* Frostbite Village */
+	#pragma region Ice Citadel
 	// [106] IC: Light Gem atop courtyard
 	{
 		.type = LightGem,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 4,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1100,7 +1100,7 @@ APCollectable g_ap_collectables[] = {
 	// [107] IC: Dark Gem above Elder Astor
 	{
 		.type = DarkGem,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 8,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1110,7 +1110,7 @@ APCollectable g_ap_collectables[] = {
 	// [108] IC: Dark Gem in sewer
 	{
 		.type = DarkGem,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 11,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1120,7 +1120,7 @@ APCollectable g_ap_collectables[] = {
 	// [109] IC: Dragon Egg at end of sewer
 	{
 		.type = DragonEgg,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 15,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1130,7 +1130,7 @@ APCollectable g_ap_collectables[] = {
 	// [110] IC: Dark Gem by drawbridge
 	{
 		.type = DarkGem,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 21,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1140,7 +1140,7 @@ APCollectable g_ap_collectables[] = {
 	// [111] IC: Dragon Egg behind supercharge door
 	{
 		.type = DragonEgg,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 22,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1150,7 +1150,7 @@ APCollectable g_ap_collectables[] = {
 	// [112] IC: Dragon Egg above elevator by cannon
 	{
 		.type = DragonEgg,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 31,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1160,7 +1160,7 @@ APCollectable g_ap_collectables[] = {
 	// [113] IC: Dark Gem by cannon
 	{
 		.type = DarkGem,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 33,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1170,7 +1170,7 @@ APCollectable g_ap_collectables[] = {
 	// [114] IC: Light Gem behind cannon door
 	{
 		.type = LightGem,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 36,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1180,7 +1180,7 @@ APCollectable g_ap_collectables[] = {
 	// [115] IC: Dark Gem via electric platform
 	{
 		.type = DarkGem,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 44,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1190,7 +1190,7 @@ APCollectable g_ap_collectables[] = {
 	// [116] IC: Dragon Egg next to cannon area via pole spin
 	{
 		.type = DragonEgg,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 45,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1200,7 +1200,7 @@ APCollectable g_ap_collectables[] = {
 	// [117] IC: Light Gem in Locked Chest after Elder Astor
 	{
 		.type = LightGem_Chest,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 67,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1210,7 +1210,7 @@ APCollectable g_ap_collectables[] = {
 	// [118] IC: Dragon Egg from thief after drawbridge
 	{
 		.type = EggThief,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 133,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1220,19 +1220,19 @@ APCollectable g_ap_collectables[] = {
 	// [119] IC: Dragon Egg in Locked Chest behind chargeable wall
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 421,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
 		.x = -773.415f,
 		.z = -108.71f
 	},
-	#pragma endregion /* 33 Ice Citadel */
-	#pragma region 35 Gloomy Glacier
+	#pragma endregion /* Ice Citadel */
+	#pragma region Gloomy Glacier
 	// [120] GG: Dragon Egg behind breakable wall
 	{
 		.type = DragonEgg,
-		.map_index = 35,
+		.map_index = MI_GloomyGlacier,
 		.trig_index = 1,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1242,7 +1242,7 @@ APCollectable g_ap_collectables[] = {
 	// [121] GG: Light Gem in skeleton ambush room
 	{
 		.type = LightGem,
-		.map_index = 35,
+		.map_index = MI_GloomyGlacier,
 		.trig_index = 2,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1252,7 +1252,7 @@ APCollectable g_ap_collectables[] = {
 	// [122] GG: Light Gem after crumbling platforms
 	{
 		.type = LightGem,
-		.map_index = 35,
+		.map_index = MI_GloomyGlacier,
 		.trig_index = 15,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1262,7 +1262,7 @@ APCollectable g_ap_collectables[] = {
 	// [123] GG: Light Gem at end of level
 	{
 		.type = LightGem,
-		.map_index = 35,
+		.map_index = MI_GloomyGlacier,
 #if defined(GC_NTSC)
 		.trig_index = 27,
 #elif defined(GC_PAL)
@@ -1276,7 +1276,7 @@ APCollectable g_ap_collectables[] = {
 	// [124] GG: Dragon Egg after spinning bones
 	{
 		.type = DragonEgg,
-		.map_index = 35,
+		.map_index = MI_GloomyGlacier,
 #if defined(GC_NTSC)
 		.trig_index = 57,
 #elif defined(GC_PAL)
@@ -1290,7 +1290,7 @@ APCollectable g_ap_collectables[] = {
 	// [125] GG: Light Gem behind lowering gate
 	{
 		.type = LightGem,
-		.map_index = 35,
+		.map_index = MI_GloomyGlacier,
 #if defined(GC_NTSC)
 		.trig_index = 58,
 #elif defined(GC_PAL)
@@ -1304,7 +1304,7 @@ APCollectable g_ap_collectables[] = {
 	// [126] GG: Dragon Egg under bone bridge
 	{
 		.type = DragonEgg,
-		.map_index = 35,
+		.map_index = MI_GloomyGlacier,
 #if defined(GC_NTSC)
 		.trig_index = 212,
 #elif defined(GC_PAL)
@@ -1318,7 +1318,7 @@ APCollectable g_ap_collectables[] = {
 	// [127] GG: Light Gem near crumbling platforms
 	{
 		.type = LightGem,
-		.map_index = 35,
+		.map_index = MI_GloomyGlacier,
 #if defined(GC_NTSC)
 		.trig_index = 232,
 #elif defined(GC_PAL)
@@ -1332,7 +1332,7 @@ APCollectable g_ap_collectables[] = {
 	// [128] GG: Light Gem beyond moving platform
 	{
 		.type = LightGem,
-		.map_index = 35,
+		.map_index = MI_GloomyGlacier,
 #if defined(GC_NTSC)
 		.trig_index = 233,
 #elif defined(GC_PAL)
@@ -1346,7 +1346,7 @@ APCollectable g_ap_collectables[] = {
 	// [129] GG: Dragon Egg in Locked Chest after skeleton ambush room
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 35,
+		.map_index = MI_GloomyGlacier,
 #if defined(GC_NTSC)
 		.trig_index = 267,
 #elif defined(GC_PAL)
@@ -1360,7 +1360,7 @@ APCollectable g_ap_collectables[] = {
 	// [130] GG: Dragon Egg in Locked Chest in Bentley's house
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 35,
+		.map_index = MI_GloomyGlacier,
 #if defined(GC_NTSC)
 		.trig_index = 268,
 #elif defined(GC_PAL)
@@ -1371,12 +1371,12 @@ APCollectable g_ap_collectables[] = {
 		.x = 317.489f,
 		.z = -585.642f
 	},
-	#pragma endregion /* 35 Gloomy Glacier */
-	#pragma region 40 Reds Laboratory
+	#pragma endregion /* Gloomy Glacier */
+	#pragma region Reds Laboratory
 	// [131] RL: Light Gem after conveyor belt
 	{
 		.type = LightGem,
-		.map_index = 40,
+		.map_index = MI_RedsLaboratory,
 		.trig_index = 1,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1386,7 +1386,7 @@ APCollectable g_ap_collectables[] = {
 	// [132] RL: Dark Gem in northwest
 	{
 		.type = DarkGem,
-		.map_index = 40,
+		.map_index = MI_RedsLaboratory,
 		.trig_index = 2,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1396,7 +1396,7 @@ APCollectable g_ap_collectables[] = {
 	// [133] RL: Dark Gem in northeast
 	{
 		.type = DarkGem,
-		.map_index = 40,
+		.map_index = MI_RedsLaboratory,
 		.trig_index = 3,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1406,7 +1406,7 @@ APCollectable g_ap_collectables[] = {
 	// [134] RL: Dark Gem in southeast
 	{
 		.type = DarkGem,
-		.map_index = 40,
+		.map_index = MI_RedsLaboratory,
 		.trig_index = 4,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1416,7 +1416,7 @@ APCollectable g_ap_collectables[] = {
 	// [135] RL: Dragon Egg in northwest piston room
 	{
 		.type = DragonEgg,
-		.map_index = 40,
+		.map_index = MI_RedsLaboratory,
 		.trig_index = 41,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1426,7 +1426,7 @@ APCollectable g_ap_collectables[] = {
 	// [136] RL: Light Gem atop southeast first room
 	{
 		.type = LightGem,
-		.map_index = 40,
+		.map_index = MI_RedsLaboratory,
 		.trig_index = 109,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1436,7 +1436,7 @@ APCollectable g_ap_collectables[] = {
 	// [137] RL: Dragon Egg behind lasers
 	{
 		.type = DragonEgg,
-		.map_index = 40,
+		.map_index = MI_RedsLaboratory,
 		.trig_index = 110,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1446,7 +1446,7 @@ APCollectable g_ap_collectables[] = {
 	// [138] RL: Light Gem above boiler
 	{
 		.type = LightGem,
-		.map_index = 40,
+		.map_index = MI_RedsLaboratory,
 		.trig_index = 111,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1456,7 +1456,7 @@ APCollectable g_ap_collectables[] = {
 	// [139] RL: Light Gem from northwest laser parkour
 	{
 		.type = LightGem,
-		.map_index = 40,
+		.map_index = MI_RedsLaboratory,
 		.trig_index = 115,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1466,7 +1466,7 @@ APCollectable g_ap_collectables[] = {
 	// [140] RL: Dragon Egg from thief in center room
 	{
 		.type = EggThief,
-		.map_index = 40,
+		.map_index = MI_RedsLaboratory,
 		.trig_index = 237,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1476,19 +1476,19 @@ APCollectable g_ap_collectables[] = {
 	// [141] RL: Light Gem from northwest pole spinning
 	{
 		.type = LightGem,
-		.map_index = 40,
+		.map_index = MI_RedsLaboratory,
 		.trig_index = 388,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
 		.x = -1514.395f,
 		.z = -1282.014f
 	},
-	#pragma endregion /* 40 Reds Laboratory */
-	#pragma region 44 Stormy Beach
+	#pragma endregion /* Reds Laboratory */
+	#pragma region Stormy Beach
 	// [142] SB: Dark Gem in cave
 	{
 		.type = DarkGem,
-		.map_index = 44,
+		.map_index = MI_StormyBeach,
 		.trig_index = 27,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1498,7 +1498,7 @@ APCollectable g_ap_collectables[] = {
 	// [143] SB: Light Gem in shipwreck
 	{
 		.type = LightGem,
-		.map_index = 44,
+		.map_index = MI_StormyBeach,
 		.trig_index = 44,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1508,19 +1508,19 @@ APCollectable g_ap_collectables[] = {
 	// [144] SB: Dragon Egg from thief below shop
 	{
 		.type = EggThief,
-		.map_index = 44,
+		.map_index = MI_StormyBeach,
 		.trig_index = 66,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
 		.x = -34.484f,
 		.z = 18.496f
 	},
-	#pragma endregion /* 44 Stormy Beach */
-	#pragma region 45 Coastal Remains
+	#pragma endregion /* Stormy Beach */
+	#pragma region Coastal Remains
 	// [145] CR: Dragon Egg across moving shells
 	{
 		.type = DragonEgg,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 0,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1530,7 +1530,7 @@ APCollectable g_ap_collectables[] = {
 	// [146] CR: Dark Gem by cannon
 	{
 		.type = DarkGem,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 2,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1540,7 +1540,7 @@ APCollectable g_ap_collectables[] = {
 	// [147] CR: Dragon Egg by cannon
 	{
 		.type = DragonEgg,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 3,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1550,7 +1550,7 @@ APCollectable g_ap_collectables[] = {
 	// [148] CR: Dark Gem behind cannon door
 	{
 		.type = DarkGem,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 4,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1560,7 +1560,7 @@ APCollectable g_ap_collectables[] = {
 	// [149] CR: Dragon Egg after piranha pool
 	{
 		.type = DragonEgg,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 7,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1570,7 +1570,7 @@ APCollectable g_ap_collectables[] = {
 	// [150] CR: Light Gem above Otto's pool
 	{
 		.type = LightGem,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 11,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1580,7 +1580,7 @@ APCollectable g_ap_collectables[] = {
 	// [151] CR: Dragon Egg after Archer Gnorc hallway
 	{
 		.type = DragonEgg,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 12,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1590,7 +1590,7 @@ APCollectable g_ap_collectables[] = {
 	// [152] CR: Dark Gem next to Blink
 	{
 		.type = DarkGem,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 13,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1600,7 +1600,7 @@ APCollectable g_ap_collectables[] = {
 	// [153] CR: Light Gem via electric platform
 	{
 		.type = LightGem,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 19,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1610,7 +1610,7 @@ APCollectable g_ap_collectables[] = {
 	// [154] CR: Dark Gem near Sunken Ruins
 	{
 		.type = DarkGem,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 29,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1620,7 +1620,7 @@ APCollectable g_ap_collectables[] = {
 	// [155] CR: Light Gem atop windmill area
 	{
 		.type = LightGem,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 47,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1630,7 +1630,7 @@ APCollectable g_ap_collectables[] = {
 	// [156] CR: Dragon Egg from thief in Light Gem door area
 	{
 		.type = EggThief,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 59,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1640,7 +1640,7 @@ APCollectable g_ap_collectables[] = {
 	// [157] CR: Light Gem in Light Gem door area
 	{
 		.type = LightGem,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 119,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1650,7 +1650,7 @@ APCollectable g_ap_collectables[] = {
 	// [158] CR: Light Gem above water mill
 	{
 		.type = LightGem,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 120,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1660,19 +1660,19 @@ APCollectable g_ap_collectables[] = {
 	// [159] CR: Light Gem near Sunken Ruins
 	{
 		.type = LightGem,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 192,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
 		.x = -446.493f,
 		.z = 32.213f
 	},
-	#pragma endregion /* 45 Coastal Remains */
-	#pragma region 60 Molten Mount
+	#pragma endregion /* Coastal Remains */
+	#pragma region Molten Mount
 	// [160] MM: Light Gem in pole spin room
 	{
 		.type = LightGem,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 		.trig_index = 4,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1682,7 +1682,7 @@ APCollectable g_ap_collectables[] = {
 	// [161] MM: Light Gem across collapsed bridge
 	{
 		.type = LightGem,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 		.trig_index = 5,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1692,7 +1692,7 @@ APCollectable g_ap_collectables[] = {
 	// [162] MM: Dragon Egg approaching Sgt. Byrd
 	{
 		.type = DragonEgg,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 		.trig_index = 6,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1702,7 +1702,7 @@ APCollectable g_ap_collectables[] = {
 	// [163] MM: Dark Gem before timed platform challenge
 	{
 		.type = DarkGem,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 		.trig_index = 9,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1712,7 +1712,7 @@ APCollectable g_ap_collectables[] = {
 	// [164] MM: Light Gem from timed platform challenge
 	{
 		.type = LightGem,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 		.trig_index = 17,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1722,7 +1722,7 @@ APCollectable g_ap_collectables[] = {
 	// [165] MM: Dark Gem at end of level
 	{
 		.type = DarkGem,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 		.trig_index = 21,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1732,7 +1732,7 @@ APCollectable g_ap_collectables[] = {
 	// [166] MM: Dragon Egg from thief in northeast
 	{
 		.type = EggThief,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 		.trig_index = 36,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1742,7 +1742,7 @@ APCollectable g_ap_collectables[] = {
 	// [167] MM: Dark Gem near rock monsters
 	{
 		.type = DarkGem,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 		.trig_index = 63,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1752,7 +1752,7 @@ APCollectable g_ap_collectables[] = {
 	// [168] MM: Light Gem in Locked Chest next to Sgt. Byrd
 	{
 		.type = LightGem_Chest,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 #if defined(GC_NTSC)
 		.trig_index = 213,
 #elif defined(GC_PAL)
@@ -1766,7 +1766,7 @@ APCollectable g_ap_collectables[] = {
 	// [169] MM: Light Gem in Locked Chest behind chargeable wall
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 #if defined(GC_NTSC)
 		.trig_index = 214,
 #elif defined(GC_PAL)
@@ -1780,7 +1780,7 @@ APCollectable g_ap_collectables[] = {
 	// [170] MM: Dragon Egg in Locked Chest behind chargeable wall
 	{
 		.type = LightGem_Chest,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 #if defined(GC_NTSC)
 		.trig_index = 215,
 #elif defined(GC_PAL)
@@ -1791,12 +1791,12 @@ APCollectable g_ap_collectables[] = {
 		.x = 309.684f,
 		.z = 939.061f
 	},
-	#pragma endregion /* 60 Molten Mount */
-	#pragma region 61 Magma Falls Top
+	#pragma endregion /* Molten Mount */
+	#pragma region Magma Falls Top
 	// [171] MFt: Dragon Egg in Locked Chest behind chargeable wall
 	{
 		.type = DragonEgg_Chest,
-		.map_index = 61,
+		.map_index = MI_MagmaFallsTop,
 		.trig_index = 39,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1806,19 +1806,19 @@ APCollectable g_ap_collectables[] = {
 	// [172] MFt: Light Gem in wall kick room
 	{
 		.type = LightGem,
-		.map_index = 61,
+		.map_index = MI_MagmaFallsTop,
 		.trig_index = 57,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
 		.x = 196.759f,
 		.z = 834.204f
 	},
-	#pragma endregion /* 61 Magma Falls Top */
-	#pragma region 62 Magma Falls Ball Gadget
+	#pragma endregion /* Magma Falls Top */
+	#pragma region Magma Falls Ball Gadget
 	// [173] MFt: Dragon Egg 1 in Ball Gadget
 	{
 		.type = DragonEgg,
-		.map_index = 62,
+		.map_index = MI_MagmaFallsBallGadget,
 		.trig_index = 59,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1826,7 +1826,7 @@ APCollectable g_ap_collectables[] = {
 	// [174] MFt: Dragon Egg 2 in Ball Gadget
 	{
 		.type = DragonEgg,
-		.map_index = 62,
+		.map_index = MI_MagmaFallsBallGadget,
 		.trig_index = 82,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1834,7 +1834,7 @@ APCollectable g_ap_collectables[] = {
 	// [175] MFt: Light Gem 1 in Ball Gadget
 	{
 		.type = LightGem,
-		.map_index = 62,
+		.map_index = MI_MagmaFallsBallGadget,
 		.trig_index = 83,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1842,17 +1842,17 @@ APCollectable g_ap_collectables[] = {
 	// [176] MFt: Light Gem 2 in Ball Gadget
 	{
 		.type = LightGem,
-		.map_index = 62,
+		.map_index = MI_MagmaFallsBallGadget,
 		.trig_index = 90,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
 	},
-	#pragma endregion /* 62 Magma Falls Ball Gadget */
-	#pragma region 63 Magma Falls Bottom
+	#pragma endregion /* Magma Falls Ball Gadget */
+	#pragma region Magma Falls Bottom
 	// [177] MFb: Dark Gem in entry area
 	{
 		.type = DarkGem,
-		.map_index = 63,
+		.map_index = MI_MagmaFallsBottom,
 		.trig_index = 2,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1862,7 +1862,7 @@ APCollectable g_ap_collectables[] = {
 	// [178] MFb: Dragon Egg from thief
 	{
 		.type = EggThief,
-		.map_index = 63,
+		.map_index = MI_MagmaFallsBottom,
 		.trig_index = 10,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1872,7 +1872,7 @@ APCollectable g_ap_collectables[] = {
 	// [179] MFb: Light Gem in fire imp room
 	{
 		.type = LightGem,
-		.map_index = 63,
+		.map_index = MI_MagmaFallsBottom,
 		.trig_index = 16,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -1882,19 +1882,19 @@ APCollectable g_ap_collectables[] = {
 	// [180] MFb: Light Gem in Locked Chest
 	{
 		.type = LightGem_Chest,
-		.map_index = 63,
+		.map_index = MI_MagmaFallsBottom,
 		.trig_index = 51,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
 		.x = 29.596f,
 		.z = -1150.912f
 	},
-	#pragma endregion /* 63 Magma Falls Bottom */
+	#pragma endregion /* Magma Falls Bottom */
 	#pragma region Objectives
 	// [181] DV: Dragon Egg from Sgt. Byrd
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 158,
 		.objective = HT_Objective_MR1_HalfDone & 0xFFFF,
 		.minigame_type = MinigameType_SgtByrd,
@@ -1904,7 +1904,7 @@ APCollectable g_ap_collectables[] = {
 	// [182] DV: Light Gem from Sgt. Byrd
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 158,
 		.objective = HT_Objective_MR1_AllDone & 0xFFFF,
 		.minigame_type = MinigameType_SgtByrd,
@@ -1914,7 +1914,7 @@ APCollectable g_ap_collectables[] = {
 	// [183] CS: Dragon Egg from Fredneck
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 6,
 		.objective = HT_Objective_MR1_Spy_HalfDone & 0xFFFF,
 		.minigame_type = MinigameType_Turret,
@@ -1924,7 +1924,7 @@ APCollectable g_ap_collectables[] = {
 	// [184] CS: Light Gem from Fredneck
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 6,
 		.objective = HT_Objective_MiniGame1A_Complete & 0xFFFF,
 		.minigame_type = MinigameType_Turret,
@@ -1934,7 +1934,7 @@ APCollectable g_ap_collectables[] = {
 	// [185] CS: Dragon Egg from Blink
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 69,
 		.objective = HT_Objective_MR1_Blk_HalfDone & 0xFFFF,
 		.minigame_type = MinigameType_Blink,
@@ -1944,7 +1944,7 @@ APCollectable g_ap_collectables[] = {
 	// [186] CS: Light Gem from Blink
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 69,
 		.objective = HT_Objective_MR1_Blk_AllDone & 0xFFFF,
 		.minigame_type = MinigameType_Blink,
@@ -1954,7 +1954,7 @@ APCollectable g_ap_collectables[] = {
 	// [187] DF: Dragon Egg from Sparx
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 #if defined(GC_NTSC)
 		.trig_index = 283,
 #elif defined(GC_PAL)
@@ -1968,7 +1968,7 @@ APCollectable g_ap_collectables[] = {
 	// [188] DF: Light Gem from Sparx
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 22,
+		.map_index = MI_DragonflyFalls,
 #if defined(GC_NTSC)
 		.trig_index = 283,
 #elif defined(GC_PAL)
@@ -1982,7 +1982,7 @@ APCollectable g_ap_collectables[] = {
 	// [189] CR: Dragon Egg from Blink
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 115,
 		.objective = HT_Objective_MR2_Blk_HalfDone & 0xFFFF,
 		.minigame_type = MinigameType_Blink,
@@ -1992,7 +1992,7 @@ APCollectable g_ap_collectables[] = {
 	// [190] CR: Light Gem from Blink
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 115,
 		.objective = HT_Objective_MR2_Blk_AllDone & 0xFFFF,
 		.minigame_type = MinigameType_Blink,
@@ -2002,7 +2002,7 @@ APCollectable g_ap_collectables[] = {
 	// [191] CR: Dragon Egg from Turtle Mother
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 77,
 		.objective = HT_Objective_MR2_Spy_HalfDone & 0xFFFF,
 		.minigame_type = MinigameType_Turret,
@@ -2012,7 +2012,7 @@ APCollectable g_ap_collectables[] = {
 	// [192] CR: Light Gem from Turtle Mother
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 77,
 		.objective = HT_Objective_MR2_Spy_AllDone & 0xFFFF,
 		.minigame_type = MinigameType_Turret,
@@ -2022,7 +2022,7 @@ APCollectable g_ap_collectables[] = {
 	// [193] CR: Light Gem from Otto
 	{
 		.type = LightGem,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 150,
 		.objective = HT_Objective_OtterNPC_AllDone & 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2032,7 +2032,7 @@ APCollectable g_ap_collectables[] = {
 	// [194] SR: Dragon Egg from Sparx
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 65,
 		.objective = HT_Objective_MR2_Spx_HalfDone & 0xFFFF,
 		.minigame_type = MinigameType_Sparx,
@@ -2042,7 +2042,7 @@ APCollectable g_ap_collectables[] = {
 	// [195] SR: Light Gem from Sparx
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 65,
 		.objective = HT_Objective_MR2_Spx_AllDone & 0xFFFF,
 		.minigame_type = MinigameType_Sparx,
@@ -2052,7 +2052,7 @@ APCollectable g_ap_collectables[] = {
 	// [196] CD: Dragon Egg from Sgt. Byrd
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 81,
 		.objective = HT_Objective_MR2_Sgt_HalfDone & 0xFFFF,
 		.minigame_type = MinigameType_SgtByrd,
@@ -2062,7 +2062,7 @@ APCollectable g_ap_collectables[] = {
 	// [197] CD: Light Gem from Sgt. Byrd
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 81,
 		.objective = HT_Objective_MR2_Sgt_AllDone & 0xFFFF,
 		.minigame_type = MinigameType_SgtByrd,
@@ -2072,7 +2072,7 @@ APCollectable g_ap_collectables[] = {
 	// [198] FV: Dragon Egg from Blink
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 244,
 		.objective = HT_Objective_MR3_Blk_HalfDone & 0xFFFF,
 		.minigame_type = MinigameType_Blink,
@@ -2082,7 +2082,7 @@ APCollectable g_ap_collectables[] = {
 	// [199] FV: Light Gem from Blink
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 244,
 		.objective = HT_Objective_MR3_Blk_AllDone & 0xFFFF,
 		.minigame_type = MinigameType_Blink,
@@ -2092,7 +2092,7 @@ APCollectable g_ap_collectables[] = {
 	// [200] FV: Dragon Egg from Peggy
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 242,
 		.objective = HT_Objective_MR3_Spy_HalfDone & 0xFFFF,
 		.minigame_type = MinigameType_Turret,
@@ -2102,7 +2102,7 @@ APCollectable g_ap_collectables[] = {
 	// [201] FV: Light Gem from Peggy
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 242,
 		.objective = HT_Objective_MR3_Spy_AllDone & 0xFFFF,
 		.minigame_type = MinigameType_Turret,
@@ -2112,7 +2112,7 @@ APCollectable g_ap_collectables[] = {
 	// [202] GG: Dragon Egg from Sparx
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 35,
+		.map_index = MI_GloomyGlacier,
 #if defined(GC_NTSC)
 		.trig_index = 128,
 #elif defined(GC_PAL)
@@ -2126,7 +2126,7 @@ APCollectable g_ap_collectables[] = {
 	// [203] GG: Light Gem from Sparx
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 35,
+		.map_index = MI_GloomyGlacier,
 #if defined(GC_NTSC)
 		.trig_index = 128,
 #elif defined(GC_PAL)
@@ -2140,7 +2140,7 @@ APCollectable g_ap_collectables[] = {
 	// [204] GG: Light Gem from Bentley
 	{
 		.type = LightGem,
-		.map_index = 35,
+		.map_index = MI_GloomyGlacier,
 #if defined(GC_NTSC)
 		.trig_index = 88,
 #elif defined(GC_PAL)
@@ -2154,7 +2154,7 @@ APCollectable g_ap_collectables[] = {
 	// [205] IC: Dragon Egg from Sgt. Byrd
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 48,
 		.objective = HT_Objective_MR3_Sgt_HalfDone & 0xFFFF,
 		.minigame_type = MinigameType_SgtByrd,
@@ -2164,7 +2164,7 @@ APCollectable g_ap_collectables[] = {
 	// [206] IC: Light Gem from Sgt. Byrd
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 48,
 		.objective = HT_Objective_MR3_Sgt_AllDone & 0xFFFF,
 		.minigame_type = MinigameType_SgtByrd,
@@ -2174,7 +2174,7 @@ APCollectable g_ap_collectables[] = {
 	// [207] IC: Light Gem from lighting boiler near drawbridge
 	{
 		.type = LightGem,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 97,
 		.objective = HT_Objective_3C_LitBoiler_1 & 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2184,7 +2184,7 @@ APCollectable g_ap_collectables[] = {
 	// [208] IC: Light Gem from lighting boiler after cannon area
 	{
 		.type = LightGem,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 99,
 		.objective = HT_Objective_3C_LitBoiler_3 & 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2194,7 +2194,7 @@ APCollectable g_ap_collectables[] = {
 	// [209] IC: Light Gem from lighting boiler in courtyard
 	{
 		.type = LightGem,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 101,
 		.objective = HT_Objective_3C_LitBoiler_5 & 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2204,7 +2204,7 @@ APCollectable g_ap_collectables[] = {
 	// [210] IC: Light Gem from Ice Princess
 	{
 		.type = LightGem,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 47,
 		.objective = HT_Objective_3C_IcePrincessHasRewarded & 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2214,7 +2214,7 @@ APCollectable g_ap_collectables[] = {
 	// [211] SB: Dragon Egg from Wally
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 44,
+		.map_index = MI_StormyBeach,
 		.trig_index = 8,
 		.objective = HT_Objective_MR4_Spy_HalfDone & 0xFFFF,
 		.minigame_type = MinigameType_Turret,
@@ -2224,7 +2224,7 @@ APCollectable g_ap_collectables[] = {
 	// [212] SB: Light Gem from Wally
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 44,
+		.map_index = MI_StormyBeach,
 		.trig_index = 8,
 		.objective = HT_Objective_MR4_Spy_AllDone & 0xFFFF,
 		.minigame_type = MinigameType_Turret,
@@ -2234,7 +2234,7 @@ APCollectable g_ap_collectables[] = {
 	// [213] MM: Dragon Egg from Sgt. Byrd
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 		.trig_index = 94,
 		.objective = HT_Objective_MR4_Sgt_HalfDone & 0xFFFF,
 		.minigame_type = MinigameType_SgtByrd,
@@ -2244,7 +2244,7 @@ APCollectable g_ap_collectables[] = {
 	// [214] MM: Light Gem from Sgt. Byrd
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 		.trig_index = 94,
 		.objective = HT_Objective_MR4_Sgt_AllDone & 0xFFFF,
 		.minigame_type = MinigameType_SgtByrd,
@@ -2254,7 +2254,7 @@ APCollectable g_ap_collectables[] = {
 	// [215] MM: Dragon Egg for avenging Teena
 	{
 		.type = DragonEgg,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 		.trig_index = 93,
 		.objective = HT_Objective_TeenaHasRewarded & 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2264,7 +2264,7 @@ APCollectable g_ap_collectables[] = {
 	// [216] MFb: Dragon Egg from Sparx
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 63,
+		.map_index = MI_MagmaFallsBottom,
 		.trig_index = 12,
 		.objective = HT_Objective_MR4_Spx_HalfDone & 0xFFFF,
 		.minigame_type = MinigameType_Sparx,
@@ -2274,7 +2274,7 @@ APCollectable g_ap_collectables[] = {
 	// [217] MFb: Light Gem from Sparx
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 63,
+		.map_index = MI_MagmaFallsBottom,
 		.trig_index = 12,
 		.objective = HT_Objective_MR4_Spx_AllDone & 0xFFFF,
 		.minigame_type = MinigameType_Sparx,
@@ -2284,7 +2284,7 @@ APCollectable g_ap_collectables[] = {
 	// [218] DM: Dragon Egg from Blink
 	{
 		.type = DragonEgg_MiniGame,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 154,
 		.objective = HT_Objective_MR4_Blk_HalfDone & 0xFFFF,
 		.minigame_type = MinigameType_Blink,
@@ -2294,7 +2294,7 @@ APCollectable g_ap_collectables[] = {
 	// [219] DM: Light Gem from Blink
 	{
 		.type = LightGem_MiniGame,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 154,
 		.objective = HT_Objective_MR4_Blk_AllDone & 0xFFFF,
 		.minigame_type = MinigameType_Blink,
@@ -2306,7 +2306,7 @@ APCollectable g_ap_collectables[] = {
 	// [220] CR: Empty Locked Chest in southern beach
 	{
 		.type = Junk_Chest,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 315,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2316,7 +2316,7 @@ APCollectable g_ap_collectables[] = {
 	// [221] CR: Empty Locked Chest behind Coastal Depot
 	{
 		.type = Junk_Chest,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 462,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2326,7 +2326,7 @@ APCollectable g_ap_collectables[] = {
 	// [222] SR: Empty Locked Chest in entry area
 	{
 		.type = Junk_Chest,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 284,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2336,7 +2336,7 @@ APCollectable g_ap_collectables[] = {
 	// [223] CD: Empty Locked Chest after Elder Titan in the distance
 	{
 		.type = Junk_Chest,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 243,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2346,7 +2346,7 @@ APCollectable g_ap_collectables[] = {
 	// [224] FV: Empty Locked Chest under bridge
 	{
 		.type = Junk_Chest,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 232,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2356,7 +2356,7 @@ APCollectable g_ap_collectables[] = {
 	// [225] FV: Empty Locked Chest underground near Peggy
 	{
 		.type = Junk_Chest,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 485,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2366,7 +2366,7 @@ APCollectable g_ap_collectables[] = {
 	// [226] GG: Empty Locked Chest in Bentley's house
 	{
 		.type = Junk_Chest,
-		.map_index = 35,
+		.map_index = MI_GloomyGlacier,
 #if defined(GC_NTSC)
 		.trig_index = 249,
 #elif defined(GC_PAL)
@@ -2380,7 +2380,7 @@ APCollectable g_ap_collectables[] = {
 	// [227] IC: Empty Locked Chest in tunnel to drawbridge
 	{
 		.type = Junk_Chest,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 286,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2390,7 +2390,7 @@ APCollectable g_ap_collectables[] = {
 	// [228] IC: Empty Locked Chest next to drawbridge
 	{
 		.type = Junk_Chest,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 300,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2400,7 +2400,7 @@ APCollectable g_ap_collectables[] = {
 	// [229] IC: Empty Locked Chest in royal chamber
 	{
 		.type = Junk_Chest,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 309,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2410,7 +2410,7 @@ APCollectable g_ap_collectables[] = {
 	// [230] IC: Empty Locked Chest in entryway
 	{
 		.type = Junk_Chest,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 377,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2420,7 +2420,7 @@ APCollectable g_ap_collectables[] = {
 	// [231] SB: Empty Locked Chest atop cave
 	{
 		.type = Junk_Chest,
-		.map_index = 44,
+		.map_index = MI_StormyBeach,
 		.trig_index = 97,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2430,7 +2430,7 @@ APCollectable g_ap_collectables[] = {
 	// [232] SB: Empty Locked Chest near Wally
 	{
 		.type = Junk_Chest,
-		.map_index = 44,
+		.map_index = MI_StormyBeach,
 		.trig_index = 105,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2440,7 +2440,7 @@ APCollectable g_ap_collectables[] = {
 	// [233] SB: Empty Locked Chest at end of west cove
 	{
 		.type = Junk_Chest,
-		.map_index = 44,
+		.map_index = MI_StormyBeach,
 		.trig_index = 168,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2450,7 +2450,7 @@ APCollectable g_ap_collectables[] = {
 	// [234] SB: Empty Locked Chest behind hut in west cove
 	{
 		.type = Junk_Chest,
-		.map_index = 44,
+		.map_index = MI_StormyBeach,
 		.trig_index = 198,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2460,7 +2460,7 @@ APCollectable g_ap_collectables[] = {
 	// [235] SB: Empty Locked Chest in cave entrance
 	{
 		.type = Junk_Chest,
-		.map_index = 44,
+		.map_index = MI_StormyBeach,
 		.trig_index = 199,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2470,7 +2470,7 @@ APCollectable g_ap_collectables[] = {
 	// [236] MM: Empty Locked Chest near thief
 	{
 		.type = Junk_Chest,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 #if defined(GC_NTSC)
 		.trig_index = 325,
 #elif defined(GC_PAL)
@@ -2484,7 +2484,7 @@ APCollectable g_ap_collectables[] = {
 	// [237] MFt: Empty Locked Chest across shop
 	{
 		.type = Junk_Chest,
-		.map_index = 61,
+		.map_index = MI_MagmaFallsTop,
 		.trig_index = 49,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2494,7 +2494,7 @@ APCollectable g_ap_collectables[] = {
 	// [238] DM: Empty Locked Chest in entrance
 	{
 		.type = Junk_Chest,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 377,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2504,7 +2504,7 @@ APCollectable g_ap_collectables[] = {
 	// [239] RL: Empty Locked Chest above poles
 	{
 		.type = Junk_Chest,
-		.map_index = 40,
+		.map_index = MI_RedsLaboratory,
 		.trig_index = 389,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2514,7 +2514,7 @@ APCollectable g_ap_collectables[] = {
 	// [240] RL: Empty Locked Chest above charge switches
 	{
 		.type = Junk_Chest,
-		.map_index = 40,
+		.map_index = MI_RedsLaboratory,
 		.trig_index = 390,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2526,7 +2526,7 @@ APCollectable g_ap_collectables[] = {
 	// [241] DV: Double Jump from Elder Tomas
 	{
 		.type = NonCollectable,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 11,
 		.objective = HT_Objective_GivenDoubleJump & 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2536,7 +2536,7 @@ APCollectable g_ap_collectables[] = {
 	// [242] CS: Pole Spin from Elder Magnus
 	{
 		.type = NonCollectable,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 71,
 		.objective = HT_Objective_GivenPoleGrabAbility & 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2546,7 +2546,7 @@ APCollectable g_ap_collectables[] = {
 	// [243] CD: Wing Shield from Elder Titan
 	{
 		.type = NonCollectable,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 10,
 		.objective = HT_Objective_GivenWingShieldAbility & 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2556,7 +2556,7 @@ APCollectable g_ap_collectables[] = {
 	// [244] IC: Wall Kick from Elder Astor
 	{
 		.type = NonCollectable,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 9,
 		.objective = HT_Objective_GivenWallKickAbility & 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2568,7 +2568,7 @@ APCollectable g_ap_collectables[] = {
 	// [245] DV: Defeat Gnasty Gnorc
 	{
 		.type = NonCollectable,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 346,
 		.objective = HT_Objective_Boss1_Beaten & 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2578,7 +2578,7 @@ APCollectable g_ap_collectables[] = {
 	// [246] CR: Defeat Ineptune
 	{
 		.type = NonCollectable,
-		.map_index = 45,
+		.map_index = MI_CoastalRemains,
 		.trig_index = 235,
 		.objective = HT_Objective_Boss2_Beaten & 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2588,7 +2588,7 @@ APCollectable g_ap_collectables[] = {
 	// [247] FV: Defeat Red
 	{
 		.type = NonCollectable,
-		.map_index = 31,
+		.map_index = MI_FrostbiteVillage,
 		.trig_index = 318,
 		.objective = HT_Objective_Boss3_Beaten & 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2598,7 +2598,7 @@ APCollectable g_ap_collectables[] = {
 	// [248] RL: Defeat Mecha-Red
 	{
 		.type = NonCollectable,
-		.map_index = 40,
+		.map_index = MI_RedsLaboratory,
 		.trig_index = 391,
 		.objective = HT_Objective_Boss4_Beaten & 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2610,7 +2610,7 @@ APCollectable g_ap_collectables[] = {
 	// [249] DV: Firework next to Ball Gadget
 	{
 		.type = FireWork,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 304,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2620,7 +2620,7 @@ APCollectable g_ap_collectables[] = {
 	// [250] DV: Firework at end of glide tutorial
 	{
 		.type = FireWork,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 305,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2630,7 +2630,7 @@ APCollectable g_ap_collectables[] = {
 	// [251] DV: Firework across Crocovile bridge
 	{
 		.type = FireWork,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 344,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2640,7 +2640,7 @@ APCollectable g_ap_collectables[] = {
 	// [252] DV: Firework above Sgt. Byrd
 	{
 		.type = FireWork,
-		.map_index = 24,
+		.map_index = MI_DragonVillage,
 		.trig_index = 431,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2650,7 +2650,7 @@ APCollectable g_ap_collectables[] = {
 	// [253] CS: Firework atop Elder's tree
 	{
 		.type = FireWork,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 276,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2660,7 +2660,7 @@ APCollectable g_ap_collectables[] = {
 	// [254] CS: Firework behind cliff in west area
 	{
 		.type = FireWork,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 292,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2670,7 +2670,7 @@ APCollectable g_ap_collectables[] = {
 	// [255] CS: Firework in middle of Elder's tree
 	{
 		.type = FireWork,
-		.map_index = 23,
+		.map_index = MI_CrocovileSwamp,
 		.trig_index = 294,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2680,7 +2680,7 @@ APCollectable g_ap_collectables[] = {
 	// [256] SR: Firework atop thermal room
 	{
 		.type = FireWork,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 207,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2690,7 +2690,7 @@ APCollectable g_ap_collectables[] = {
 	// [257] SR: Firework above heated wall kick
 	{
 		.type = FireWork,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 236,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2700,7 +2700,7 @@ APCollectable g_ap_collectables[] = {
 	// [258] SR: Firework atop pole rooms
 	{
 		.type = FireWork,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 252,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2710,7 +2710,7 @@ APCollectable g_ap_collectables[] = {
 	// [259] SR: Firework in rising statue room
 	{
 		.type = FireWork,
-		.map_index = 19,
+		.map_index = MI_SunkenRuins,
 		.trig_index = 287,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2720,7 +2720,7 @@ APCollectable g_ap_collectables[] = {
 	// [260] CD: Firework after Ball Gadget
 	{
 		.type = FireWork,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 113,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2730,7 +2730,7 @@ APCollectable g_ap_collectables[] = {
 	// [261] CD: Firework next to thermal
 	{
 		.type = FireWork,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 264,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2740,7 +2740,7 @@ APCollectable g_ap_collectables[] = {
 	// [262] CD: Firework in northwest
 	{
 		.type = FireWork,
-		.map_index = 20,
+		.map_index = MI_CloudyDomain,
 		.trig_index = 273,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2750,7 +2750,7 @@ APCollectable g_ap_collectables[] = {
 	// [263] IC: Firework atop courtyard
 	{
 		.type = FireWork,
-		.map_index = 33,
+		.map_index = MI_IceCitadel,
 		.trig_index = 250,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2760,7 +2760,7 @@ APCollectable g_ap_collectables[] = {
 	// [264] SB: Firework in west cove
 	{
 		.type = FireWork,
-		.map_index = 44,
+		.map_index = MI_StormyBeach,
 		.trig_index = 98,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2770,7 +2770,7 @@ APCollectable g_ap_collectables[] = {
 	// [265] SB: Firework in lower Stormy Beach
 	{
 		.type = FireWork,
-		.map_index = 44,
+		.map_index = MI_StormyBeach,
 		.trig_index = 113,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2780,7 +2780,7 @@ APCollectable g_ap_collectables[] = {
 	// [266] SB: Firework in cave
 	{
 		.type = FireWork,
-		.map_index = 44,
+		.map_index = MI_StormyBeach,
 		.trig_index = 149,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2790,7 +2790,7 @@ APCollectable g_ap_collectables[] = {
 	// [267] MM: Firework in entrance
 	{
 		.type = FireWork,
-		.map_index = 60,
+		.map_index = MI_MoltenMount,
 		.trig_index = 132,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2800,7 +2800,7 @@ APCollectable g_ap_collectables[] = {
 	// [268] MFt: Firework in wall kick room
 	{
 		.type = FireWork,
-		.map_index = 61,
+		.map_index = MI_MagmaFallsTop,
 		.trig_index = 19,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2810,7 +2810,7 @@ APCollectable g_ap_collectables[] = {
 	// [269] DM: Firework in piston room
 	{
 		.type = FireWork,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 315,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,
@@ -2820,7 +2820,7 @@ APCollectable g_ap_collectables[] = {
 	// [270] DM: Firework after ice pole spin
 	{
 		.type = FireWork,
-		.map_index = 30,
+		.map_index = MI_DarkMine,
 		.trig_index = 366,
 		.objective = 0xFFFF,
 		.minigame_type = MinigameType_None,

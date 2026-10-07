@@ -3,7 +3,7 @@
         "index": 249,
         "type": "FireWork",
         "comment": "DV: Firework next to Ball Gadget",
-        "map_index": 24,
+        "map_index": "MI_DragonVillage",
         "trig_index": {
             "GC_NTSC": 304,
             "GC_PAL": 304
@@ -16,7 +16,7 @@
         "index": 250,
         "type": "FireWork",
         "comment": "DV: Firework at end of glide tutorial",
-        "map_index": 24,
+        "map_index": "MI_DragonVillage",
         "trig_index": {
             "GC_NTSC": 305,
             "GC_PAL": 305
@@ -29,7 +29,7 @@
         "index": 251,
         "type": "FireWork",
         "comment": "DV: Firework across Crocovile bridge",
-        "map_index": 24,
+        "map_index": "MI_DragonVillage",
         "trig_index": {
             "GC_NTSC": 344,
             "GC_PAL": 344
@@ -42,7 +42,7 @@
         "index": 252,
         "type": "FireWork",
         "comment": "DV: Firework above Sgt. Byrd",
-        "map_index": 24,
+        "map_index": "MI_DragonVillage",
         "trig_index": {
             "GC_NTSC": 431,
             "GC_PAL": 431
@@ -55,7 +55,7 @@
         "index": 253,
         "type": "FireWork",
         "comment": "CS: Firework atop Elder's tree",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 276,
             "GC_PAL": 276
@@ -68,7 +68,7 @@
         "index": 254,
         "type": "FireWork",
         "comment": "CS: Firework behind cliff in west area",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 292,
             "GC_PAL": 292
@@ -81,7 +81,7 @@
         "index": 255,
         "type": "FireWork",
         "comment": "CS: Firework in middle of Elder's tree",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 294,
             "GC_PAL": 294
@@ -94,7 +94,7 @@
         "index": 256,
         "type": "FireWork",
         "comment": "SR: Firework atop thermal room",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 207,
             "GC_PAL": 207
@@ -107,7 +107,7 @@
         "index": 257,
         "type": "FireWork",
         "comment": "SR: Firework above heated wall kick",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 236,
             "GC_PAL": 236
@@ -120,7 +120,7 @@
         "index": 258,
         "type": "FireWork",
         "comment": "SR: Firework atop pole rooms",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 252,
             "GC_PAL": 252
@@ -133,7 +133,7 @@
         "index": 259,
         "type": "FireWork",
         "comment": "SR: Firework in rising statue room",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 287,
             "GC_PAL": 287
@@ -146,7 +146,7 @@
         "index": 260,
         "type": "FireWork",
         "comment": "CD: Firework after Ball Gadget",
-        "map_index": 20,
+        "map_index": "MI_CloudyDomain",
         "trig_index": {
             "GC_NTSC": 113,
             "GC_PAL": 113
@@ -159,7 +159,7 @@
         "index": 261,
         "type": "FireWork",
         "comment": "CD: Firework next to thermal",
-        "map_index": 20,
+        "map_index": "MI_CloudyDomain",
         "trig_index": {
             "GC_NTSC": 264,
             "GC_PAL": 264
@@ -172,7 +172,7 @@
         "index": 262,
         "type": "FireWork",
         "comment": "CD: Firework in northwest",
-        "map_index": 20,
+        "map_index": "MI_CloudyDomain",
         "trig_index": {
             "GC_NTSC": 273,
             "GC_PAL": 273
@@ -185,7 +185,7 @@
         "index": 263,
         "type": "FireWork",
         "comment": "IC: Firework atop courtyard",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 250,
             "GC_PAL": 250
@@ -198,7 +198,7 @@
         "index": 264,
         "type": "FireWork",
         "comment": "SB: Firework in west cove",
-        "map_index": 44,
+        "map_index": "MI_StormyBeach",
         "trig_index": {
             "GC_NTSC": 98,
             "GC_PAL": 98
@@ -211,7 +211,7 @@
         "index": 265,
         "type": "FireWork",
         "comment": "SB: Firework in lower Stormy Beach",
-        "map_index": 44,
+        "map_index": "MI_StormyBeach",
         "trig_index": {
             "GC_NTSC": 113,
             "GC_PAL": 113
@@ -224,7 +224,7 @@
         "index": 266,
         "type": "FireWork",
         "comment": "SB: Firework in cave",
-        "map_index": 44,
+        "map_index": "MI_StormyBeach",
         "trig_index": {
             "GC_NTSC": 149,
             "GC_PAL": 149
@@ -237,7 +237,7 @@
         "index": 267,
         "type": "FireWork",
         "comment": "MM: Firework in entrance",
-        "map_index": 60,
+        "map_index": "MI_MoltenMount",
         "trig_index": {
             "GC_NTSC": 132,
             "GC_PAL": 132
@@ -250,7 +250,7 @@
         "index": 268,
         "type": "FireWork",
         "comment": "MFt: Firework in wall kick room",
-        "map_index": 61,
+        "map_index": "MI_MagmaFallsTop",
         "trig_index": {
             "GC_NTSC": 19,
             "GC_PAL": 19
@@ -263,7 +263,7 @@
         "index": 269,
         "type": "FireWork",
         "comment": "DM: Firework in piston room",
-        "map_index": 30,
+        "map_index": "MI_DarkMine",
         "trig_index": {
             "GC_NTSC": 315,
             "GC_PAL": 315
@@ -276,7 +276,7 @@
         "index": 270,
         "type": "FireWork",
         "comment": "DM: Firework after ice pole spin",
-        "map_index": 30,
+        "map_index": "MI_DarkMine",
         "trig_index": {
             "GC_NTSC": 366,
             "GC_PAL": 366

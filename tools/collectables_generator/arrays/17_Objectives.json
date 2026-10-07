@@ -3,7 +3,7 @@
         "index": 181,
         "type": "DragonEgg_MiniGame",
         "comment": "DV: Dragon Egg from Sgt. Byrd",
-        "map_index": 24,
+        "map_index": "MI_DragonVillage",
         "trig_index": {
             "GC_NTSC": 158,
             "GC_PAL": 158
@@ -17,7 +17,7 @@
         "index": 182,
         "type": "LightGem_MiniGame",
         "comment": "DV: Light Gem from Sgt. Byrd",
-        "map_index": 24,
+        "map_index": "MI_DragonVillage",
         "trig_index": {
             "GC_NTSC": 158,
             "GC_PAL": 158
@@ -31,7 +31,7 @@
         "index": 183,
         "type": "DragonEgg_MiniGame",
         "comment": "CS: Dragon Egg from Fredneck",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 6,
             "GC_PAL": 6
@@ -45,7 +45,7 @@
         "index": 184,
         "type": "LightGem_MiniGame",
         "comment": "CS: Light Gem from Fredneck",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 6,
             "GC_PAL": 6
@@ -59,7 +59,7 @@
         "index": 185,
         "type": "DragonEgg_MiniGame",
         "comment": "CS: Dragon Egg from Blink",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 69,
             "GC_PAL": 69
@@ -73,7 +73,7 @@
         "index": 186,
         "type": "LightGem_MiniGame",
         "comment": "CS: Light Gem from Blink",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 69,
             "GC_PAL": 69
@@ -87,7 +87,7 @@
         "index": 187,
         "type": "DragonEgg_MiniGame",
         "comment": "DF: Dragon Egg from Sparx",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 283,
             "GC_PAL": 282
@@ -101,7 +101,7 @@
         "index": 188,
         "type": "LightGem_MiniGame",
         "comment": "DF: Light Gem from Sparx",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 283,
             "GC_PAL": 282
@@ -115,7 +115,7 @@
         "index": 189,
         "type": "DragonEgg_MiniGame",
         "comment": "CR: Dragon Egg from Blink",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 115,
             "GC_PAL": 115
@@ -129,7 +129,7 @@
         "index": 190,
         "type": "LightGem_MiniGame",
         "comment": "CR: Light Gem from Blink",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 115,
             "GC_PAL": 115
@@ -143,7 +143,7 @@
         "index": 191,
         "type": "DragonEgg_MiniGame",
         "comment": "CR: Dragon Egg from Turtle Mother",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 77,
             "GC_PAL": 77
@@ -157,7 +157,7 @@
         "index": 192,
         "type": "LightGem_MiniGame",
         "comment": "CR: Light Gem from Turtle Mother",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 77,
             "GC_PAL": 77
@@ -171,7 +171,7 @@
         "index": 193,
         "type": "LightGem",
         "comment": "CR: Light Gem from Otto",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 150,
             "GC_PAL": 150
@@ -185,7 +185,7 @@
         "index": 194,
         "type": "DragonEgg_MiniGame",
         "comment": "SR: Dragon Egg from Sparx",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 65,
             "GC_PAL": 65
@@ -199,7 +199,7 @@
         "index": 195,
         "type": "LightGem_MiniGame",
         "comment": "SR: Light Gem from Sparx",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 65,
             "GC_PAL": 65
@@ -213,7 +213,7 @@
         "index": 196,
         "type": "DragonEgg_MiniGame",
         "comment": "CD: Dragon Egg from Sgt. Byrd",
-        "map_index": 20,
+        "map_index": "MI_CloudyDomain",
         "trig_index": {
             "GC_NTSC": 81,
             "GC_PAL": 81
@@ -227,7 +227,7 @@
         "index": 197,
         "type": "LightGem_MiniGame",
         "comment": "CD: Light Gem from Sgt. Byrd",
-        "map_index": 20,
+        "map_index": "MI_CloudyDomain",
         "trig_index": {
             "GC_NTSC": 81,
             "GC_PAL": 81
@@ -241,7 +241,7 @@
         "index": 198,
         "type": "DragonEgg_MiniGame",
         "comment": "FV: Dragon Egg from Blink",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 244,
             "GC_PAL": 244
@@ -255,7 +255,7 @@
         "index": 199,
         "type": "LightGem_MiniGame",
         "comment": "FV: Light Gem from Blink",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 244,
             "GC_PAL": 244
@@ -269,7 +269,7 @@
         "index": 200,
         "type": "DragonEgg_MiniGame",
         "comment": "FV: Dragon Egg from Peggy",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 242,
             "GC_PAL": 242
@@ -283,7 +283,7 @@
         "index": 201,
         "type": "LightGem_MiniGame",
         "comment": "FV: Light Gem from Peggy",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 242,
             "GC_PAL": 242
@@ -297,7 +297,7 @@
         "index": 202,
         "type": "DragonEgg_MiniGame",
         "comment": "GG: Dragon Egg from Sparx",
-        "map_index": 35,
+        "map_index": "MI_GloomyGlacier",
         "trig_index": {
             "GC_NTSC": 128,
             "GC_PAL": 126
@@ -311,7 +311,7 @@
         "index": 203,
         "type": "LightGem_MiniGame",
         "comment": "GG: Light Gem from Sparx",
-        "map_index": 35,
+        "map_index": "MI_GloomyGlacier",
         "trig_index": {
             "GC_NTSC": 128,
             "GC_PAL": 126
@@ -325,7 +325,7 @@
         "index": 204,
         "type": "LightGem",
         "comment": "GG: Light Gem from Bentley",
-        "map_index": 35,
+        "map_index": "MI_GloomyGlacier",
         "trig_index": {
             "GC_NTSC": 88,
             "GC_PAL": 86
@@ -339,7 +339,7 @@
         "index": 205,
         "type": "DragonEgg_MiniGame",
         "comment": "IC: Dragon Egg from Sgt. Byrd",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 48,
             "GC_PAL": 48
@@ -353,7 +353,7 @@
         "index": 206,
         "type": "LightGem_MiniGame",
         "comment": "IC: Light Gem from Sgt. Byrd",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 48,
             "GC_PAL": 48
@@ -367,7 +367,7 @@
         "index": 207,
         "type": "LightGem",
         "comment": "IC: Light Gem from lighting boiler near drawbridge",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 97,
             "GC_PAL": 97
@@ -381,7 +381,7 @@
         "index": 208,
         "type": "LightGem",
         "comment": "IC: Light Gem from lighting boiler after cannon area",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 99,
             "GC_PAL": 99
@@ -395,7 +395,7 @@
         "index": 209,
         "type": "LightGem",
         "comment": "IC: Light Gem from lighting boiler in courtyard",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 101,
             "GC_PAL": 101
@@ -409,7 +409,7 @@
         "index": 210,
         "type": "LightGem",
         "comment": "IC: Light Gem from Ice Princess",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 47,
             "GC_PAL": 47
@@ -423,7 +423,7 @@
         "index": 211,
         "type": "DragonEgg_MiniGame",
         "comment": "SB: Dragon Egg from Wally",
-        "map_index": 44,
+        "map_index": "MI_StormyBeach",
         "trig_index": {
             "GC_NTSC": 8,
             "GC_PAL": 8
@@ -437,7 +437,7 @@
         "index": 212,
         "type": "LightGem_MiniGame",
         "comment": "SB: Light Gem from Wally",
-        "map_index": 44,
+        "map_index": "MI_StormyBeach",
         "trig_index": {
             "GC_NTSC": 8,
             "GC_PAL": 8
@@ -451,7 +451,7 @@
         "index": 213,
         "type": "DragonEgg_MiniGame",
         "comment": "MM: Dragon Egg from Sgt. Byrd",
-        "map_index": 60,
+        "map_index": "MI_MoltenMount",
         "trig_index": {
             "GC_NTSC": 94,
             "GC_PAL": 94
@@ -465,7 +465,7 @@
         "index": 214,
         "type": "LightGem_MiniGame",
         "comment": "MM: Light Gem from Sgt. Byrd",
-        "map_index": 60,
+        "map_index": "MI_MoltenMount",
         "trig_index": {
             "GC_NTSC": 94,
             "GC_PAL": 94
@@ -479,7 +479,7 @@
         "index": 215,
         "type": "DragonEgg",
         "comment": "MM: Dragon Egg for avenging Teena",
-        "map_index": 60,
+        "map_index": "MI_MoltenMount",
         "trig_index": {
             "GC_NTSC": 93,
             "GC_PAL": 93
@@ -493,7 +493,7 @@
         "index": 216,
         "type": "DragonEgg_MiniGame",
         "comment": "MFb: Dragon Egg from Sparx",
-        "map_index": 63,
+        "map_index": "MI_MagmaFallsBottom",
         "trig_index": {
             "GC_NTSC": 12,
             "GC_PAL": 12
@@ -507,7 +507,7 @@
         "index": 217,
         "type": "LightGem_MiniGame",
         "comment": "MFb: Light Gem from Sparx",
-        "map_index": 63,
+        "map_index": "MI_MagmaFallsBottom",
         "trig_index": {
             "GC_NTSC": 12,
             "GC_PAL": 12
@@ -521,7 +521,7 @@
         "index": 218,
         "type": "DragonEgg_MiniGame",
         "comment": "DM: Dragon Egg from Blink",
-        "map_index": 30,
+        "map_index": "MI_DarkMine",
         "trig_index": {
             "GC_NTSC": 154,
             "GC_PAL": 154
@@ -535,7 +535,7 @@
         "index": 219,
         "type": "LightGem_MiniGame",
         "comment": "DM: Light Gem from Blink",
-        "map_index": 30,
+        "map_index": "MI_DarkMine",
         "trig_index": {
             "GC_NTSC": 154,
             "GC_PAL": 154

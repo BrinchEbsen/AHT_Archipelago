@@ -3,7 +3,7 @@
         "index": 171,
         "type": "DragonEgg_Chest",
         "comment": "MFt: Dragon Egg in Locked Chest behind chargeable wall",
-        "map_index": 61,
+        "map_index": "MI_MagmaFallsTop",
         "trig_index": {
             "GC_NTSC": 39,
             "GC_PAL": 39
@@ -16,7 +16,7 @@
         "index": 172,
         "type": "LightGem",
         "comment": "MFt: Light Gem in wall kick room",
-        "map_index": 61,
+        "map_index": "MI_MagmaFallsTop",
         "trig_index": {
             "GC_NTSC": 57,
             "GC_PAL": 57

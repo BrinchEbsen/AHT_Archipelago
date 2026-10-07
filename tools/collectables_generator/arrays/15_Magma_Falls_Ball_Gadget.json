@@ -3,7 +3,7 @@
         "index": 173,
         "type": "DragonEgg",
         "comment": "MFt: Dragon Egg 1 in Ball Gadget",
-        "map_index": 62,
+        "map_index": "MI_MagmaFallsBallGadget",
         "trig_index": {
             "GC_NTSC": 59,
             "GC_PAL": 59
@@ -14,7 +14,7 @@
         "index": 174,
         "type": "DragonEgg",
         "comment": "MFt: Dragon Egg 2 in Ball Gadget",
-        "map_index": 62,
+        "map_index": "MI_MagmaFallsBallGadget",
         "trig_index": {
             "GC_NTSC": 82,
             "GC_PAL": 82
@@ -25,7 +25,7 @@
         "index": 175,
         "type": "LightGem",
         "comment": "MFt: Light Gem 1 in Ball Gadget",
-        "map_index": 62,
+        "map_index": "MI_MagmaFallsBallGadget",
         "trig_index": {
             "GC_NTSC": 83,
             "GC_PAL": 83
@@ -36,7 +36,7 @@
         "index": 176,
         "type": "LightGem",
         "comment": "MFt: Light Gem 2 in Ball Gadget",
-        "map_index": 62,
+        "map_index": "MI_MagmaFallsBallGadget",
         "trig_index": {
             "GC_NTSC": 90,
             "GC_PAL": 90

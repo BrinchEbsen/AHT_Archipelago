@@ -3,7 +3,7 @@
         "index": 245,
         "type": "NonCollectable",
         "comment": "DV: Defeat Gnasty Gnorc",
-        "map_index": 24,
+        "map_index": "MI_DragonVillage",
         "trig_index": {
             "GC_NTSC": 346,
             "GC_PAL": 346
@@ -17,7 +17,7 @@
         "index": 246,
         "type": "NonCollectable",
         "comment": "CR: Defeat Ineptune",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 235,
             "GC_PAL": 235
@@ -31,7 +31,7 @@
         "index": 247,
         "type": "NonCollectable",
         "comment": "FV: Defeat Red",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 318,
             "GC_PAL": 318
@@ -45,7 +45,7 @@
         "index": 248,
         "type": "NonCollectable",
         "comment": "RL: Defeat Mecha-Red",
-        "map_index": 40,
+        "map_index": "MI_RedsLaboratory",
         "trig_index": {
             "GC_NTSC": 391,
             "GC_PAL": 391

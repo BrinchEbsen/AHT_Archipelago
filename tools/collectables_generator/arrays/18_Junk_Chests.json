@@ -3,7 +3,7 @@
         "index": 220,
         "type": "Junk_Chest",
         "comment": "CR: Empty Locked Chest in southern beach",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 315,
             "GC_PAL": 315
@@ -16,7 +16,7 @@
         "index": 221,
         "type": "Junk_Chest",
         "comment": "CR: Empty Locked Chest behind Coastal Depot",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 462,
             "GC_PAL": 462
@@ -29,7 +29,7 @@
         "index": 222,
         "type": "Junk_Chest",
         "comment": "SR: Empty Locked Chest in entry area",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 284,
             "GC_PAL": 284
@@ -42,7 +42,7 @@
         "index": 223,
         "type": "Junk_Chest",
         "comment": "CD: Empty Locked Chest after Elder Titan in the distance",
-        "map_index": 20,
+        "map_index": "MI_CloudyDomain",
         "trig_index": {
             "GC_NTSC": 243,
             "GC_PAL": 243
@@ -55,7 +55,7 @@
         "index": 224,
         "type": "Junk_Chest",
         "comment": "FV: Empty Locked Chest under bridge",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 232,
             "GC_PAL": 232
@@ -68,7 +68,7 @@
         "index": 225,
         "type": "Junk_Chest",
         "comment": "FV: Empty Locked Chest underground near Peggy",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 485,
             "GC_PAL": 485
@@ -81,7 +81,7 @@
         "index": 226,
         "type": "Junk_Chest",
         "comment": "GG: Empty Locked Chest in Bentley's house",
-        "map_index": 35,
+        "map_index": "MI_GloomyGlacier",
         "trig_index": {
             "GC_NTSC": 249,
             "GC_PAL": 246
@@ -94,7 +94,7 @@
         "index": 227,
         "type": "Junk_Chest",
         "comment": "IC: Empty Locked Chest in tunnel to drawbridge",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 286,
             "GC_PAL": 286
@@ -107,7 +107,7 @@
         "index": 228,
         "type": "Junk_Chest",
         "comment": "IC: Empty Locked Chest next to drawbridge",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 300,
             "GC_PAL": 300
@@ -120,7 +120,7 @@
         "index": 229,
         "type": "Junk_Chest",
         "comment": "IC: Empty Locked Chest in royal chamber",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 309,
             "GC_PAL": 309
@@ -133,7 +133,7 @@
         "index": 230,
         "type": "Junk_Chest",
         "comment": "IC: Empty Locked Chest in entryway",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 377,
             "GC_PAL": 377
@@ -146,7 +146,7 @@
         "index": 231,
         "type": "Junk_Chest",
         "comment": "SB: Empty Locked Chest atop cave",
-        "map_index": 44,
+        "map_index": "MI_StormyBeach",
         "trig_index": {
             "GC_NTSC": 97,
             "GC_PAL": 97
@@ -159,7 +159,7 @@
         "index": 232,
         "type": "Junk_Chest",
         "comment": "SB: Empty Locked Chest near Wally",
-        "map_index": 44,
+        "map_index": "MI_StormyBeach",
         "trig_index": {
             "GC_NTSC": 105,
             "GC_PAL": 105
@@ -172,7 +172,7 @@
         "index": 233,
         "type": "Junk_Chest",
         "comment": "SB: Empty Locked Chest at end of west cove",
-        "map_index": 44,
+        "map_index": "MI_StormyBeach",
         "trig_index": {
             "GC_NTSC": 168,
             "GC_PAL": 168
@@ -185,7 +185,7 @@
         "index": 234,
         "type": "Junk_Chest",
         "comment": "SB: Empty Locked Chest behind hut in west cove",
-        "map_index": 44,
+        "map_index": "MI_StormyBeach",
         "trig_index": {
             "GC_NTSC": 198,
             "GC_PAL": 198
@@ -198,7 +198,7 @@
         "index": 235,
         "type": "Junk_Chest",
         "comment": "SB: Empty Locked Chest in cave entrance",
-        "map_index": 44,
+        "map_index": "MI_StormyBeach",
         "trig_index": {
             "GC_NTSC": 199,
             "GC_PAL": 199
@@ -211,7 +211,7 @@
         "index": 236,
         "type": "Junk_Chest",
         "comment": "MM: Empty Locked Chest near thief",
-        "map_index": 60,
+        "map_index": "MI_MoltenMount",
         "trig_index": {
             "GC_NTSC": 325,
             "GC_PAL": 320
@@ -224,7 +224,7 @@
         "index": 237,
         "type": "Junk_Chest",
         "comment": "MFt: Empty Locked Chest across shop",
-        "map_index": 61,
+        "map_index": "MI_MagmaFallsTop",
         "trig_index": {
             "GC_NTSC": 49,
             "GC_PAL": 49
@@ -237,7 +237,7 @@
         "index": 238,
         "type": "Junk_Chest",
         "comment": "DM: Empty Locked Chest in entrance",
-        "map_index": 30,
+        "map_index": "MI_DarkMine",
         "trig_index": {
             "GC_NTSC": 377,
             "GC_PAL": 377
@@ -250,7 +250,7 @@
         "index": 239,
         "type": "Junk_Chest",
         "comment": "RL: Empty Locked Chest above poles",
-        "map_index": 40,
+        "map_index": "MI_RedsLaboratory",
         "trig_index": {
             "GC_NTSC": 389,
             "GC_PAL": 389
@@ -263,7 +263,7 @@
         "index": 240,
         "type": "Junk_Chest",
         "comment": "RL: Empty Locked Chest above charge switches",
-        "map_index": 40,
+        "map_index": "MI_RedsLaboratory",
         "trig_index": {
             "GC_NTSC": 390,
             "GC_PAL": 390

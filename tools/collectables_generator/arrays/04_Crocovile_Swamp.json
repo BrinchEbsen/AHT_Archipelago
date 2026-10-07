@@ -3,7 +3,7 @@
         "index": 48,
         "type": "DarkGem",
         "comment": "CS: Dark Gem near Perilous Pyramid",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 0,
             "GC_PAL": 0
@@ -16,7 +16,7 @@
         "index": 49,
         "type": "EggThief",
         "comment": "CS: Dragon Egg from thief in Forgotten Temple",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 1,
             "GC_PAL": 1
@@ -29,7 +29,7 @@
         "index": 50,
         "type": "DarkGem",
         "comment": "CS: Dark Gem in cave to Fredneck",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 5,
             "GC_PAL": 5
@@ -42,7 +42,7 @@
         "index": 51,
         "type": "LightGem",
         "comment": "CS: Light Gem behind wall with chargeable switch",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 8,
             "GC_PAL": 8
@@ -55,7 +55,7 @@
         "index": 52,
         "type": "DragonEgg",
         "comment": "CS: Dragon Egg in middle of Elder's tree",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 36,
             "GC_PAL": 36
@@ -68,7 +68,7 @@
         "index": 53,
         "type": "LightGem",
         "comment": "CS: Light Gem across sinking platforms",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 48,
             "GC_PAL": 48
@@ -81,7 +81,7 @@
         "index": 54,
         "type": "LightGem",
         "comment": "CS: Light Gem next to lilypads",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 49,
             "GC_PAL": 49
@@ -94,7 +94,7 @@
         "index": 55,
         "type": "LightGem",
         "comment": "CS: Light Gem in Forgotten Temple cave",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 54,
             "GC_PAL": 54
@@ -107,7 +107,7 @@
         "index": 56,
         "type": "LightGem",
         "comment": "CS: Light Gem inside Perilous Pyramid behind supercharge door",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 58,
             "GC_PAL": 58
@@ -120,7 +120,7 @@
         "index": 57,
         "type": "DragonEgg",
         "comment": "CS: Dragon Egg across muddy platforms in west area",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 62,
             "GC_PAL": 62
@@ -133,7 +133,7 @@
         "index": 58,
         "type": "DarkGem",
         "comment": "CS: Dark Gem outside Elder's tree",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 68,
             "GC_PAL": 68
@@ -146,7 +146,7 @@
         "index": 59,
         "type": "DragonEgg_Chest",
         "comment": "CS: Dragon Egg in Locked Chest after Perilous Pyramid",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 103,
             "GC_PAL": 103
@@ -159,7 +159,7 @@
         "index": 60,
         "type": "LightGem",
         "comment": "CS: Light Gem atop Perilous Pyramid",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 161,
             "GC_PAL": 161
@@ -172,7 +172,7 @@
         "index": 61,
         "type": "LightGem_Chest",
         "comment": "CS: Light Gem in Locked Chest behind chargeable wall",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 162,
             "GC_PAL": 162
@@ -185,7 +185,7 @@
         "index": 62,
         "type": "DragonEgg_Chest",
         "comment": "CS: Dragon Egg in Locked Chest in Forgotten Temple",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 202,
             "GC_PAL": 202
@@ -198,7 +198,7 @@
         "index": 63,
         "type": "DragonEgg",
         "comment": "CS: Dragon Egg in pole spin cave",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 203,
             "GC_PAL": 203
@@ -211,7 +211,7 @@
         "index": 64,
         "type": "LightGem",
         "comment": "CS: Light Gem atop Elder's tree",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 204,
             "GC_PAL": 204

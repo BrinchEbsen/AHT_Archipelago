@@ -3,7 +3,7 @@
         "index": 89,
         "type": "LightGem",
         "comment": "FV: Light Gem via floating platform near Peggy",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 4,
             "GC_PAL": 4
@@ -16,7 +16,7 @@
         "index": 90,
         "type": "DarkGem",
         "comment": "FV: Dark Gem in eskimole village",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 5,
             "GC_PAL": 5
@@ -29,7 +29,7 @@
         "index": 91,
         "type": "DarkGem",
         "comment": "FV: Dark Gem in icicle room",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 6,
             "GC_PAL": 6
@@ -42,7 +42,7 @@
         "index": 92,
         "type": "LightGem",
         "comment": "FV: Light Gem above poles",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 7,
             "GC_PAL": 7
@@ -55,7 +55,7 @@
         "index": 93,
         "type": "LightGem",
         "comment": "FV: Light Gem in orbiting platforms room",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 11,
             "GC_PAL": 11
@@ -68,7 +68,7 @@
         "index": 94,
         "type": "DragonEgg",
         "comment": "FV: Dragon Egg underground near Peggy",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 36,
             "GC_PAL": 36
@@ -81,7 +81,7 @@
         "index": 95,
         "type": "EggThief",
         "comment": "FV: Dragon Egg from thief after bouncing snowballs",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 60,
             "GC_PAL": 60
@@ -94,7 +94,7 @@
         "index": 96,
         "type": "DragonEgg",
         "comment": "FV: Dragon Egg behind chargeable wall",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 61,
             "GC_PAL": 61
@@ -107,7 +107,7 @@
         "index": 97,
         "type": "DarkGem",
         "comment": "FV: Dark Gem in orbiting platforms room",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 66,
             "GC_PAL": 66
@@ -120,7 +120,7 @@
         "index": 98,
         "type": "LightGem",
         "comment": "FV: Light Gem after bouncing snowballs",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 74,
             "GC_PAL": 74
@@ -133,7 +133,7 @@
         "index": 99,
         "type": "LightGem",
         "comment": "FV: Light Gem returning from Ice Citadel",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 150,
             "GC_PAL": 150
@@ -146,7 +146,7 @@
         "index": 100,
         "type": "LightGem",
         "comment": "FV: Light Gem in Light Gem door area",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 170,
             "GC_PAL": 170
@@ -159,7 +159,7 @@
         "index": 101,
         "type": "DarkGem",
         "comment": "FV: Dark Gem in cave near Peggy",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 246,
             "GC_PAL": 246
@@ -172,7 +172,7 @@
         "index": 102,
         "type": "DarkGem",
         "comment": "FV: Dark Gem approaching icy camp blocking Blink",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 247,
             "GC_PAL": 247
@@ -185,7 +185,7 @@
         "index": 103,
         "type": "LightGem",
         "comment": "FV: Light Gem by Gloomy Glacier entrance",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 312,
             "GC_PAL": 312
@@ -198,7 +198,7 @@
         "index": 104,
         "type": "DragonEgg_Chest",
         "comment": "FV: Dragon Egg in Locked Chest in Light Gem door area",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 372,
             "GC_PAL": 372
@@ -211,7 +211,7 @@
         "index": 105,
         "type": "DragonEgg_Chest",
         "comment": "FV: Dragon Egg in Locked Chest in icicle room",
-        "map_index": 31,
+        "map_index": "MI_FrostbiteVillage",
         "trig_index": {
             "GC_NTSC": 373,
             "GC_PAL": 373

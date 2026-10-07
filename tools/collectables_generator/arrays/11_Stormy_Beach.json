@@ -3,7 +3,7 @@
         "index": 142,
         "type": "DarkGem",
         "comment": "SB: Dark Gem in cave",
-        "map_index": 44,
+        "map_index": "MI_StormyBeach",
         "trig_index": {
             "GC_NTSC": 27,
             "GC_PAL": 27
@@ -16,7 +16,7 @@
         "index": 143,
         "type": "LightGem",
         "comment": "SB: Light Gem in shipwreck",
-        "map_index": 44,
+        "map_index": "MI_StormyBeach",
         "trig_index": {
             "GC_NTSC": 44,
             "GC_PAL": 44
@@ -29,7 +29,7 @@
         "index": 144,
         "type": "EggThief",
         "comment": "SB: Dragon Egg from thief below shop",
-        "map_index": 44,
+        "map_index": "MI_StormyBeach",
         "trig_index": {
             "GC_NTSC": 66,
             "GC_PAL": 66

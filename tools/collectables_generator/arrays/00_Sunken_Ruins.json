@@ -3,7 +3,7 @@
         "index": 0,
         "type": "LightGem",
         "comment": "SR: Light Gem via acid swim",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 0,
             "GC_PAL": 0
@@ -16,7 +16,7 @@
         "index": 1,
         "type": "LightGem",
         "comment": "SR: Light Gem by fish statues",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 2,
             "GC_PAL": 2
@@ -29,7 +29,7 @@
         "index": 2,
         "type": "DragonEgg",
         "comment": "SR: Dragon Egg above heated wall kick",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 3,
             "GC_PAL": 3
@@ -42,7 +42,7 @@
         "index": 3,
         "type": "DarkGem",
         "comment": "SR: Dark Gem in thermal room",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 4,
             "GC_PAL": 4
@@ -55,7 +55,7 @@
         "index": 4,
         "type": "DarkGem",
         "comment": "SR: Dark Gem atop pole rooms",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 10,
             "GC_PAL": 10
@@ -68,7 +68,7 @@
         "index": 5,
         "type": "DragonEgg",
         "comment": "SR: Dragon Egg atop thermal room",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 26,
             "GC_PAL": 26
@@ -81,7 +81,7 @@
         "index": 6,
         "type": "DarkGem",
         "comment": "SR: Dark Gem on rising statue",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 64,
             "GC_PAL": 64
@@ -94,7 +94,7 @@
         "index": 7,
         "type": "DragonEgg_Chest",
         "comment": "SR: Dragon Egg in Locked Chest after first swim",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 86,
             "GC_PAL": 86
@@ -107,7 +107,7 @@
         "index": 8,
         "type": "LightGem_Chest",
         "comment": "SR: Light Gem in Locked Chest atop thermal room",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 90,
             "GC_PAL": 90
@@ -120,7 +120,7 @@
         "index": 9,
         "type": "LightGem_Chest",
         "comment": "SR: Light Gem in Locked Chest by Lily",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 91,
             "GC_PAL": 91
@@ -133,7 +133,7 @@
         "index": 10,
         "type": "DragonEgg_Chest",
         "comment": "SR: Dragon Egg in Locked Chest by fish statues",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 92,
             "GC_PAL": 92
@@ -146,7 +146,7 @@
         "index": 11,
         "type": "DragonEgg_Chest",
         "comment": "SR: Light Gem in Locked Chest atop pole rooms",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 93,
             "GC_PAL": 93
@@ -159,7 +159,7 @@
         "index": 12,
         "type": "LightGem_Chest",
         "comment": "SR: Light Gem in Locked Chest after rising statue room",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 94,
             "GC_PAL": 94
@@ -172,7 +172,7 @@
         "index": 13,
         "type": "LightGem",
         "comment": "SR: Light Gem in pole room acid tunnel",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 131,
             "GC_PAL": 131
@@ -185,7 +185,7 @@
         "index": 14,
         "type": "LightGem_Chest",
         "comment": "SR: Dragon Egg in Locked Chest in rising statue room",
-        "map_index": 19,
+        "map_index": "MI_SunkenRuins",
         "trig_index": {
             "GC_NTSC": 183,
             "GC_PAL": 183

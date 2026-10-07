@@ -116,7 +116,7 @@ with open(in_file) as file:
 
             val_str = get_struct_value_string(line, "map_index")
             if val_str is not None:
-                curr_entry["map_index"] = int(val_str)
+                curr_entry["map_index"] = val_str
 
             val_str = get_struct_value_string(line, "trig_index")
             if val_str is not None:

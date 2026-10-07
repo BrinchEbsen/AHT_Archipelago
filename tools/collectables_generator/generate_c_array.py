@@ -38,8 +38,8 @@ for region_name, entries in in_dicts.items():
         output_str += "\t\t.type = "+m_type+",\n"
 
         m_map_index = entry["map_index"]
-        assert isinstance(m_map_index, int)
-        output_str += "\t\t.map_index = "+str(m_map_index)+",\n"
+        assert isinstance(m_map_index, str)
+        output_str += "\t\t.map_index = "+m_map_index+",\n"
 
         # probably the ugliest code i've ever written
         m_trig_index = entry["trig_index"]

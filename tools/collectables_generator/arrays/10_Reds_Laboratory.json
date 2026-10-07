@@ -3,7 +3,7 @@
         "index": 131,
         "type": "LightGem",
         "comment": "RL: Light Gem after conveyor belt",
-        "map_index": 40,
+        "map_index": "MI_RedsLaboratory",
         "trig_index": {
             "GC_NTSC": 1,
             "GC_PAL": 1
@@ -16,7 +16,7 @@
         "index": 132,
         "type": "DarkGem",
         "comment": "RL: Dark Gem in northwest",
-        "map_index": 40,
+        "map_index": "MI_RedsLaboratory",
         "trig_index": {
             "GC_NTSC": 2,
             "GC_PAL": 2
@@ -29,7 +29,7 @@
         "index": 133,
         "type": "DarkGem",
         "comment": "RL: Dark Gem in northeast",
-        "map_index": 40,
+        "map_index": "MI_RedsLaboratory",
         "trig_index": {
             "GC_NTSC": 3,
             "GC_PAL": 3
@@ -42,7 +42,7 @@
         "index": 134,
         "type": "DarkGem",
         "comment": "RL: Dark Gem in southeast",
-        "map_index": 40,
+        "map_index": "MI_RedsLaboratory",
         "trig_index": {
             "GC_NTSC": 4,
             "GC_PAL": 4
@@ -55,7 +55,7 @@
         "index": 135,
         "type": "DragonEgg",
         "comment": "RL: Dragon Egg in northwest piston room",
-        "map_index": 40,
+        "map_index": "MI_RedsLaboratory",
         "trig_index": {
             "GC_NTSC": 41,
             "GC_PAL": 41
@@ -68,7 +68,7 @@
         "index": 136,
         "type": "LightGem",
         "comment": "RL: Light Gem atop southeast first room",
-        "map_index": 40,
+        "map_index": "MI_RedsLaboratory",
         "trig_index": {
             "GC_NTSC": 109,
             "GC_PAL": 109
@@ -81,7 +81,7 @@
         "index": 137,
         "type": "DragonEgg",
         "comment": "RL: Dragon Egg behind lasers",
-        "map_index": 40,
+        "map_index": "MI_RedsLaboratory",
         "trig_index": {
             "GC_NTSC": 110,
             "GC_PAL": 110
@@ -94,7 +94,7 @@
         "index": 138,
         "type": "LightGem",
         "comment": "RL: Light Gem above boiler",
-        "map_index": 40,
+        "map_index": "MI_RedsLaboratory",
         "trig_index": {
             "GC_NTSC": 111,
             "GC_PAL": 111
@@ -107,7 +107,7 @@
         "index": 139,
         "type": "LightGem",
         "comment": "RL: Light Gem from northwest laser parkour",
-        "map_index": 40,
+        "map_index": "MI_RedsLaboratory",
         "trig_index": {
             "GC_NTSC": 115,
             "GC_PAL": 115
@@ -120,7 +120,7 @@
         "index": 140,
         "type": "EggThief",
         "comment": "RL: Dragon Egg from thief in center room",
-        "map_index": 40,
+        "map_index": "MI_RedsLaboratory",
         "trig_index": {
             "GC_NTSC": 237,
             "GC_PAL": 237
@@ -133,7 +133,7 @@
         "index": 141,
         "type": "LightGem",
         "comment": "RL: Light Gem from northwest pole spinning",
-        "map_index": 40,
+        "map_index": "MI_RedsLaboratory",
         "trig_index": {
             "GC_NTSC": 388,
             "GC_PAL": 388

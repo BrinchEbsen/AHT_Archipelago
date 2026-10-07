@@ -2,5 +2,6 @@
 #define AP_COLLECTABLES_ARRAY_H
 #include <ap_collectables.h>
 #include <hashcodes.h>
+#include <mapindex.h>
 
 #endif /* AP_COLLECTABLES_ARRAY_H */

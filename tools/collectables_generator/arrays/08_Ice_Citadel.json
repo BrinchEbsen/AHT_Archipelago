@@ -3,7 +3,7 @@
         "index": 106,
         "type": "LightGem",
         "comment": "IC: Light Gem atop courtyard",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 4,
             "GC_PAL": 4
@@ -16,7 +16,7 @@
         "index": 107,
         "type": "DarkGem",
         "comment": "IC: Dark Gem above Elder Astor",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 8,
             "GC_PAL": 8
@@ -29,7 +29,7 @@
         "index": 108,
         "type": "DarkGem",
         "comment": "IC: Dark Gem in sewer",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 11,
             "GC_PAL": 11
@@ -42,7 +42,7 @@
         "index": 109,
         "type": "DragonEgg",
         "comment": "IC: Dragon Egg at end of sewer",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 15,
             "GC_PAL": 15
@@ -55,7 +55,7 @@
         "index": 110,
         "type": "DarkGem",
         "comment": "IC: Dark Gem by drawbridge",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 21,
             "GC_PAL": 21
@@ -68,7 +68,7 @@
         "index": 111,
         "type": "DragonEgg",
         "comment": "IC: Dragon Egg behind supercharge door",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 22,
             "GC_PAL": 22
@@ -81,7 +81,7 @@
         "index": 112,
         "type": "DragonEgg",
         "comment": "IC: Dragon Egg above elevator by cannon",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 31,
             "GC_PAL": 31
@@ -94,7 +94,7 @@
         "index": 113,
         "type": "DarkGem",
         "comment": "IC: Dark Gem by cannon",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 33,
             "GC_PAL": 33
@@ -107,7 +107,7 @@
         "index": 114,
         "type": "LightGem",
         "comment": "IC: Light Gem behind cannon door",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 36,
             "GC_PAL": 36
@@ -120,7 +120,7 @@
         "index": 115,
         "type": "DarkGem",
         "comment": "IC: Dark Gem via electric platform",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 44,
             "GC_PAL": 44
@@ -133,7 +133,7 @@
         "index": 116,
         "type": "DragonEgg",
         "comment": "IC: Dragon Egg next to cannon area via pole spin",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 45,
             "GC_PAL": 45
@@ -146,7 +146,7 @@
         "index": 117,
         "type": "LightGem_Chest",
         "comment": "IC: Light Gem in Locked Chest after Elder Astor",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 67,
             "GC_PAL": 67
@@ -159,7 +159,7 @@
         "index": 118,
         "type": "EggThief",
         "comment": "IC: Dragon Egg from thief after drawbridge",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 133,
             "GC_PAL": 133
@@ -172,7 +172,7 @@
         "index": 119,
         "type": "DragonEgg_Chest",
         "comment": "IC: Dragon Egg in Locked Chest behind chargeable wall",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 421,
             "GC_PAL": 421

@@ -3,7 +3,7 @@
         "index": 29,
         "type": "LightGem",
         "comment": "CD: Light Gem from Ball Gadget",
-        "map_index": 21,
+        "map_index": "MI_CloudyDomainBallGadget",
         "trig_index": {
             "GC_NTSC": 59,
             "GC_PAL": 59
@@ -14,7 +14,7 @@
         "index": 30,
         "type": "DragonEgg",
         "comment": "CD: Dragon Egg from Ball Gadget",
-        "map_index": 21,
+        "map_index": "MI_CloudyDomainBallGadget",
         "trig_index": {
             "GC_NTSC": 60,
             "GC_PAL": 60

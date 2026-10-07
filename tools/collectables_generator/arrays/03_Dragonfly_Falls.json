@@ -3,7 +3,7 @@
         "index": 31,
         "type": "LightGem",
         "comment": "DF: Light Gem behind cannon door",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 8,
             "GC_PAL": 8
@@ -16,7 +16,7 @@
         "index": 32,
         "type": "DragonEgg",
         "comment": "DF: Dragon Egg behind chargeable wall in entry area",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 11,
             "GC_PAL": 11
@@ -29,7 +29,7 @@
         "index": 33,
         "type": "DarkGem",
         "comment": "DF: Dark Gem by canyon vultures",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 12,
             "GC_PAL": 12
@@ -42,7 +42,7 @@
         "index": 34,
         "type": "DarkGem",
         "comment": "DF: Dark Gem behind chargeable wall in entry area",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 14,
             "GC_PAL": 14
@@ -55,7 +55,7 @@
         "index": 35,
         "type": "DragonEgg",
         "comment": "DF: Dragon Egg after canyon vultures in nest",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 15,
             "GC_PAL": 15
@@ -68,7 +68,7 @@
         "index": 36,
         "type": "DarkGem",
         "comment": "DF: Dark Gem next to Elder statue",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 21,
             "GC_PAL": 21
@@ -81,7 +81,7 @@
         "index": 37,
         "type": "LightGem",
         "comment": "DF: Light Gem in Light Gem door area",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 23,
             "GC_PAL": 23
@@ -94,7 +94,7 @@
         "index": 38,
         "type": "DragonEgg",
         "comment": "DF: Dragon Egg behind chargeable wall in cove",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 29,
             "GC_PAL": 29
@@ -107,7 +107,7 @@
         "index": 39,
         "type": "LightGem",
         "comment": "DF: Light Gem at end of cove",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 37,
             "GC_PAL": 37
@@ -120,7 +120,7 @@
         "index": 40,
         "type": "DarkGem",
         "comment": "DF: Dark Gem at end of cove",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 38,
             "GC_PAL": 38
@@ -133,7 +133,7 @@
         "index": 41,
         "type": "EggThief",
         "comment": "DF: Dragon Egg from thief in Light Gem door area",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 52,
             "GC_PAL": 52
@@ -146,7 +146,7 @@
         "index": 42,
         "type": "LightGem",
         "comment": "DF: Light Gem in Hunter's area",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 73,
             "GC_PAL": 73
@@ -159,7 +159,7 @@
         "index": 43,
         "type": "DragonEgg",
         "comment": "DF: Dragon Egg in Hunter's area",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 74,
             "GC_PAL": 74
@@ -172,7 +172,7 @@
         "index": 44,
         "type": "LightGem",
         "comment": "DF: Light Gem behind underwater chargeable wall",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 90,
             "GC_PAL": 90
@@ -185,7 +185,7 @@
         "index": 45,
         "type": "LightGem_Chest",
         "comment": "DF: Light Gem in Locked Chest in entry area",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 312,
             "GC_PAL": 311
@@ -198,7 +198,7 @@
         "index": 46,
         "type": "LightGem",
         "comment": "DF: Light Gem across platforms in cove",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 313,
             "GC_PAL": 312
@@ -211,7 +211,7 @@
         "index": 47,
         "type": "LightGem_Chest",
         "comment": "DF: Light Gem in Locked Chest in cove",
-        "map_index": 22,
+        "map_index": "MI_DragonflyFalls",
         "trig_index": {
             "GC_NTSC": 314,
             "GC_PAL": 313

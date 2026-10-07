@@ -3,7 +3,7 @@
         "index": 241,
         "type": "NonCollectable",
         "comment": "DV: Double Jump from Elder Tomas",
-        "map_index": 24,
+        "map_index": "MI_DragonVillage",
         "trig_index": {
             "GC_NTSC": 11,
             "GC_PAL": 11
@@ -17,7 +17,7 @@
         "index": 242,
         "type": "NonCollectable",
         "comment": "CS: Pole Spin from Elder Magnus",
-        "map_index": 23,
+        "map_index": "MI_CrocovileSwamp",
         "trig_index": {
             "GC_NTSC": 71,
             "GC_PAL": 71
@@ -31,7 +31,7 @@
         "index": 243,
         "type": "NonCollectable",
         "comment": "CD: Wing Shield from Elder Titan",
-        "map_index": 20,
+        "map_index": "MI_CloudyDomain",
         "trig_index": {
             "GC_NTSC": 10,
             "GC_PAL": 10
@@ -45,7 +45,7 @@
         "index": 244,
         "type": "NonCollectable",
         "comment": "IC: Wall Kick from Elder Astor",
-        "map_index": 33,
+        "map_index": "MI_IceCitadel",
         "trig_index": {
             "GC_NTSC": 9,
             "GC_PAL": 9

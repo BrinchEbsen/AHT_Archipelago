@@ -3,7 +3,7 @@
         "index": 145,
         "type": "DragonEgg",
         "comment": "CR: Dragon Egg across moving shells",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 0,
             "GC_PAL": 0
@@ -16,7 +16,7 @@
         "index": 146,
         "type": "DarkGem",
         "comment": "CR: Dark Gem by cannon",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 2,
             "GC_PAL": 2
@@ -29,7 +29,7 @@
         "index": 147,
         "type": "DragonEgg",
         "comment": "CR: Dragon Egg by cannon",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 3,
             "GC_PAL": 3
@@ -42,7 +42,7 @@
         "index": 148,
         "type": "DarkGem",
         "comment": "CR: Dark Gem behind cannon door",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 4,
             "GC_PAL": 4
@@ -55,7 +55,7 @@
         "index": 149,
         "type": "DragonEgg",
         "comment": "CR: Dragon Egg after piranha pool",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 7,
             "GC_PAL": 7
@@ -68,7 +68,7 @@
         "index": 150,
         "type": "LightGem",
         "comment": "CR: Light Gem above Otto's pool",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 11,
             "GC_PAL": 11
@@ -81,7 +81,7 @@
         "index": 151,
         "type": "DragonEgg",
         "comment": "CR: Dragon Egg after Archer Gnorc hallway",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 12,
             "GC_PAL": 12
@@ -94,7 +94,7 @@
         "index": 152,
         "type": "DarkGem",
         "comment": "CR: Dark Gem next to Blink",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 13,
             "GC_PAL": 13
@@ -107,7 +107,7 @@
         "index": 153,
         "type": "LightGem",
         "comment": "CR: Light Gem via electric platform",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 19,
             "GC_PAL": 19
@@ -120,7 +120,7 @@
         "index": 154,
         "type": "DarkGem",
         "comment": "CR: Dark Gem near Sunken Ruins",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 29,
             "GC_PAL": 29
@@ -133,7 +133,7 @@
         "index": 155,
         "type": "LightGem",
         "comment": "CR: Light Gem atop windmill area",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 47,
             "GC_PAL": 47
@@ -146,7 +146,7 @@
         "index": 156,
         "type": "EggThief",
         "comment": "CR: Dragon Egg from thief in Light Gem door area",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 59,
             "GC_PAL": 59
@@ -159,7 +159,7 @@
         "index": 157,
         "type": "LightGem",
         "comment": "CR: Light Gem in Light Gem door area",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 119,
             "GC_PAL": 119
@@ -172,7 +172,7 @@
         "index": 158,
         "type": "LightGem",
         "comment": "CR: Light Gem above water mill",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 120,
             "GC_PAL": 120
@@ -185,7 +185,7 @@
         "index": 159,
         "type": "LightGem",
         "comment": "CR: Light Gem near Sunken Ruins",
-        "map_index": 45,
+        "map_index": "MI_CoastalRemains",
         "trig_index": {
             "GC_NTSC": 192,
             "GC_PAL": 192
