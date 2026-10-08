@@ -7,6 +7,9 @@ extern void* EXItemEnv__m_pTheItemEnv;
 /// @brief Lock the music to only be the shop music.
 extern bool lock_music_to_shop;
 
+/// @brief Hashcode of the last track that was requested to play.
+extern EXHashCode curr_music_playing;
+
 extern void EXItemEnv__StartMusic(void* self, EXHashCode HashCode, u32 nGeoSoundFlags, s32 FadeOutTime, s32 FadeInTime);
 void XSEItemEnv__StartMusic_ReImplHook(void* self, EXHashCode HashCode, u32 nFlags, s32 FadeOutTime, s32 FadeInTime);
 extern u32 XSEItemEnv__StartMusic__LockedFlag;

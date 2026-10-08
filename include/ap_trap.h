@@ -33,6 +33,13 @@ typedef struct MBTrapEntry
     u16 time;
 } MBTrapEntry;
 
+#define BOUNCY_BIAS 2.2f
+typedef struct MusicBPMEntry
+{
+    EXHashCode music_hash;
+    float bpm;
+} MusicBPMEntry;
+
 // Trap update routines:
 
 /// @brief Play random moneybags lines and lock the music to the shop music.

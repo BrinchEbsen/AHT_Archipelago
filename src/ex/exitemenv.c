@@ -2,6 +2,7 @@
 #include <Sound.h>
 
 bool lock_music_to_shop = false;
+EXHashCode curr_music_playing = 0;
 
 void XSEItemEnv__StartMusic_ReImplHook(void* self, EXHashCode HashCode, u32 nFlags, s32 FadeOutTime, s32 FadeInTime)
 {
@@ -15,6 +16,8 @@ void XSEItemEnv__StartMusic_ReImplHook(void* self, EXHashCode HashCode, u32 nFla
         FadeOutTime = 0;
         FadeInTime = 0;
     }
+
+    curr_music_playing = HashCode;
 
     EXItemEnv__StartMusic(self, HashCode, nFlags, FadeOutTime, FadeInTime);
 

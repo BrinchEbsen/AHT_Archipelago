@@ -170,8 +170,30 @@ void ap_trap_reverse_controls_update(u8* state, s32* param)
     }
 }
 
-#define BOUNCY_SPEED 4.24f
-#define BOUNCY_BIAS 2.2f
+MusicBPMEntry music_bpms[] = {
+    { .music_hash = HT_Sound_MFX_Realm1A_roam,          .bpm = 135.0f },
+    { .music_hash = HT_Sound_MFX_Shop,                  .bpm = 115.0f },
+    { .music_hash = HT_Sound_MFX_Minigame_Sgt_2,        .bpm = 120.0f },
+    { .music_hash = HT_Sound_MFX_Realm1B_roam,          .bpm = 108.0f },
+    { .music_hash = HT_Sound_MFX_Minigame_Blk_1,        .bpm = 135.0f },
+    { .music_hash = HT_Sound_MFX_Realm4C_roam,          .bpm = 140.0f },
+    { .music_hash = HT_Sound_MFX_Realm1C_roam,          .bpm = 98.0f },
+    { .music_hash = HT_Sound_MFX_Realm5B_roam,          .bpm = 90.0f },
+    { .music_hash = HT_Sound_MFX_Minigame_Spx_1,        .bpm = 125.0f },
+    { .music_hash = HT_Sound_MFX_Realm1z_Battle,        .bpm = 150.0f },
+    { .music_hash = HT_Sound_MFX_Realm2A_roam,          .bpm = 110.0f },
+    { .music_hash = HT_Sound_MFX_Realm2C_roam,          .bpm = 115.0f },
+    { .music_hash = HT_Sound_MFX_Realm2C_Ball_Gadget,   .bpm = 130.0f },
+    { .music_hash = HT_Sound_MFX_Realm2B_roam,          .bpm = 120.0f },
+    { .music_hash = HT_Sound_MFX_Realm2z_Battle,        .bpm = 145.0f },
+    { .music_hash = HT_Sound_MFX_Realm3A_roam,          .bpm = 120.0f },
+    { .music_hash = HT_Sound_MFX_Realm3B_roam,          .bpm = 93.0f },
+    { .music_hash = HT_Sound_MFX_Realm3C_roam,          .bpm = 118.0f },
+    { .music_hash = HT_Sound_MFX_Realm4A_roam,          .bpm = 140.0f },
+    { .music_hash = HT_Sound_MFX_Realm4B_roam,          .bpm = 140.0f },
+    { .music_hash = HT_Sound_MFX_Realm4D_roam,          .bpm = 140.0f },
+    { .music_hash = HT_Sound_MFX_Realm4E_roam,          .bpm = 140.0f }
+};
 
 // hyperbolic tangent (tanh)
 float tanh(float x)
@@ -187,13 +209,28 @@ float tanh(float x)
     );
 }
 
-// scale a float between "start" and "end" with this function: (tanh(BOUNCY_BIAS*cos(x))+1)/2
-float bouncy_func(float start, float end, float x)
+float bouncy_func(float start, float end, int x)
 {
-    float y = tanh(BOUNCY_BIAS * cosf(x));
+    // Formula for bouncing to a specific BPM
+    // y = (tanh(BOUNCY_BIAS * cosf(2*x*M_PI*(BPM/FPS^2)))+1)/2
 
-    // Scale between 0 and 1
-    y = (y + 1.0f) / 2.0f;
+    float bpm = 135.0f;
+    for (int i = 0; i < ARRAY_SIZE(music_bpms); i++)
+    {
+        if (music_bpms[i].music_hash == curr_music_playing)
+        {
+            bpm = music_bpms[i].bpm;
+            break;
+        }
+    }
+
+    float y = (
+        tanh(
+            BOUNCY_BIAS * cosf(
+                ((float)x) * 2.0f * M_PI * (bpm / (59.94f*59.94f))
+            )
+        ) + 1.0f
+    ) / 2.0f;
 
     return start + ((end - start) * y);
 }
@@ -212,8 +249,7 @@ void ap_trap_bouncy_update(u8* state, s32* param)
         mult = 3.0f;
     }
 
-    static float cycle_timer = 0.0f;
-    static float cycle_speed = 1.0f / BOUNCY_SPEED;
+    static int cycle_timer = 0;
 
     static EXVector3 scale_low = {
         .x = 1.3f,
@@ -230,11 +266,11 @@ void ap_trap_bouncy_update(u8* state, s32* param)
     switch (*state)
     {
         case 1:
-            cycle_timer = 0.0f;
+            cycle_timer = 0;
             *state = 2;
             return;
         case 2:
-            cycle_timer += cycle_speed;
+            cycle_timer++;
             // The scale is an EXVector but we only care about xyz
             EXVector3* scale = OFFSET_PTR(EXVector3, gpPlayerItem, 0xF0);
             // Animate model
