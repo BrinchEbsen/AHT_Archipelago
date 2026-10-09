@@ -7,8 +7,8 @@ PlaySFX = 0x287918;
 PlaySFX_Item = 0x2879b8;
 
 /* loop.h */
-SE_Loop__virtual_table = 0x448148;
 SE_Loop__CreateObject = 0x103898;
+SE_Loop__virtual_table = 0x448148;
 
 /* igstdlib.h */
 printf = 0x405338;

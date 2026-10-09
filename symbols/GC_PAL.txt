@@ -3,174 +3,174 @@ OSReport = 0x80262acc;
 
 /* pad.h */
 EXBaseGamePad__m_pGamePad = 0x804cc554;
-g_PadNum = 0x804cc120;
 EXGamePad__Update = 0x8030acb0;
+g_PadNum = 0x804cc120;
 
 /* sfx.h */
 PlaySFX = 0x8024c39c;
 PlaySFX_Item = 0x8024c444;
 
 /* loop.h */
-SE_Loop__virtual_table = 0x80447d90;
-SE_Loop__CreateObject = 0x8022fc58;
-SE_Loop__DrawStateRunning = 0x802441d4;
-SE_Loop__ChildListDraw = 0x802307cc;
-SE_Loop__Cue = 0x80230d98;
-SE_Loop__CueRun = 0x80230ddc;
-SE_Loop__CueChildLoop = 0x8023064c;
 SE_Loop__AddDrawToXWnd = 0x8023079c;
+SE_Loop__ChildListDraw = 0x802307cc;
+SE_Loop__CreateObject = 0x8022fc58;
+SE_Loop__Cue = 0x80230d98;
+SE_Loop__CueChildLoop = 0x8023064c;
+SE_Loop__CueRun = 0x80230ddc;
+SE_Loop__DrawStateRunning = 0x802441d4;
+SE_Loop__virtual_table = 0x80447d90;
 
 /* gameloop.h */
+SE_GameLoop__CueGameState = 0x80240a1c;
+SE_GameLoop__GameSetPauseOff = 0x802408a8;
+SE_GameLoop__GameSetPauseOn = 0x8024080c;
 SE_GameLoop__GoToMap = 0x8023ed7c;
 SE_GameLoop__StartGameState = 0x80240a74;
-SE_GameLoop__CueGameState = 0x80240a1c;
-SE_GameLoop__GameSetPauseOn = 0x8024080c;
-SE_GameLoop__GameSetPauseOff = 0x802408a8;
 gGameLoop = 0x8046fdc8;
 
 /* gameflow.h */
-theGameFlow = 0x804565ec;
 SEGameFlow__v_StateRunning = 0x8012dd18;
+theGameFlow = 0x804565ec;
 
 /* gui_base.h */
-GUI_Base_virtual_table = 0x8042ee68;
 GUI_Base__CreateObject = 0x801a61f0;
 GUI_Base__Update = 0x801a6fd4;
 GUI_Base__v_Draw = 0x801a6dbc;
+GUI_Base_virtual_table = 0x8042ee68;
 
 /* exmem.h */
-_EXAlloc = 0x802cb89c;
 EXFree = 0x802cb9cc;
+_EXAlloc = 0x802cb89c;
 
 /* exrand.h */
-g_EXRandClass = 0x804cd30c;
 EXRandClass__Rand32 = 0x802f59f4;
 EXRandClass__Randf = 0x802f5a2c;
+g_EXRandClass = 0x804cd30c;
 
 /* exitemenv.h */
-EXItemEnv__m_pTheItemEnv = 0x804cc60c;
 EXItemEnv__StartMusic = 0x802bddb8;
+EXItemEnv__m_pTheItemEnv = 0x804cc60c;
 XSEItemEnv__StartMusic__LockedFlag = 0x804cc110;
 
 /* ap_handler.h */
-XSEItemHandler_StartPoint__Update = 0x80106130;
-Popup__Update = 0x800fc7f4;
 LillyPad__Update = 0x801c3070;
+Popup__Update = 0x800fc7f4;
+XSEItemHandler_StartPoint__Update = 0x80106130;
 
 /* ap_pausemenu.h */
-gpPanelShop = 0x804cc0ac;
-PanelShop__OpenShop = 0x8022b100;
-GUI_PauseMenu__v_StateRunning = 0x803990b0;
 GUI_PauseMenu__v_DrawStateRunning = 0x80399150;
+GUI_PauseMenu__v_StateRunning = 0x803990b0;
+PanelShop__OpenShop = 0x8022b100;
 SE_GameLoop__Teleport = 0x80240b34;
+gpPanelShop = 0x804cc0ac;
 
 /* ap_deathlink.h */
-XSEItemHandler_Player__TakeDamage = 0x80064290;
 XSEItemHandler_BallGadget__TakeDamage = 0x80008df4;
 XSEItemHandler_Player__InvulnerableToAttack = 0x8005a98c;
+XSEItemHandler_Player__TakeDamage = 0x80064290;
 
 /* ap_minimap.h */
-GUI_MiniMap__DrawRestarts = 0x801ad834;
-GUI_MiniMap__DrawIcon = 0x801ace6c;
 EXGeoHeader__Texture = 0x8028fea8;
+GUI_MiniMap__DrawIcon = 0x801ace6c;
+GUI_MiniMap__DrawRestarts = 0x801ad834;
 
 /* exdisplay.h */
 EXBaseDisplay__m_pDisplay = 0x804cc544;
 
 /* wnd.h */
-gpGameWnd = 0x804cbe8c;
-gpPanelWnd = 0x804cbe90;
-gpGeoHT_File_Panel = 0x804cbe84;
-gTextBuffer = 0x80456fa0;
 EXBaseWnd__SelectFont = 0x803037dc;
-XWnd__SetText = 0x8012fba4;
-XWnd__FontPrintW = 0x80133920;
-XWnd__FontPrint = 0x80134dac;
+EXWnd__DrawLine = 0x8031cf84;
+EXWnd__DrawTriFan = 0x8031d234;
+EXWnd__DrawTriStrip = 0x8031d1f4;
+EXWnd__SelectSprite2DTexture = 0x8031d8ac;
+EXWnd__SelectTriFanTexture = 0x8031c334;
 XWnd__AddDrawSELoop_Tail = 0x8012f774;
-XWnd__TextPrintH = 0x8012f9a8;
-XWnd__TextPrintC = 0x8012f9f4;
-XWnd__TextPrintW = 0x8012facc;
 XWnd__DrawGraduatedRectOutline = 0x80130e74;
 XWnd__DrawRect = 0x8012f950;
 XWnd__DrawRectOutline = 0x8012f97c;
 XWnd__DrawSector = 0x8025109c;
 XWnd__DrawTextureBox = 0x8012fcdc;
-EXWnd__DrawLine = 0x8031cf84;
-EXWnd__DrawTriFan = 0x8031d234;
-EXWnd__DrawTriStrip = 0x8031d1f4;
-EXWnd__SelectTriFanTexture = 0x8031c334;
-EXWnd__SelectSprite2DTexture = 0x8031d8ac;
+XWnd__FontPrint = 0x80134dac;
+XWnd__FontPrintW = 0x80133920;
+XWnd__SetText = 0x8012fba4;
+XWnd__TextPrintC = 0x8012f9f4;
+XWnd__TextPrintH = 0x8012f9a8;
+XWnd__TextPrintW = 0x8012facc;
+gTextBuffer = 0x80456fa0;
+gpGameWnd = 0x804cbe8c;
+gpGeoHT_File_Panel = 0x804cbe84;
+gpPanelWnd = 0x804cbe90;
 
 /* filemanager.h */
-gSEFileManager = 0x804611d0;
-SE_FileManager__IsGeoLoaded = 0x8022e254;
 SE_FileManager__GetGeoHeader = 0x8022e28c;
+SE_FileManager__IsGeoLoaded = 0x8022e254;
+gSEFileManager = 0x804611d0;
 
 /* map.h */
-SE_Map__GetNumDragonEggs = 0x80232ffc;
-SE_Map__SetNumDragonEggs = 0x80233048;
-SE_Map__GetLastStartPoint = 0x80232cb0;
-SE_Map__SetLastStartPoint = 0x80232c50;
+GetSpyroMap = 0x80233524;
 SEMap_MiniGame__SetMiniGameDie = 0x802023cc;
 SEMap_MiniGame__SetMiniGameFailed = 0x802022c8;
-GetSpyroMap = 0x80233524;
-gMapList = 0x8046f92c;
-SE_MapList__m_gNumMaps = 0x804cc0c8;
-start_map_index = 0x8045b5d8;
 SE_MapList__FindMap = 0x80233778;
+SE_MapList__m_gNumMaps = 0x804cc0c8;
+SE_Map__GetLastStartPoint = 0x80232cb0;
+SE_Map__GetNumDragonEggs = 0x80232ffc;
+SE_Map__SetLastStartPoint = 0x80232c50;
+SE_Map__SetNumDragonEggs = 0x80233048;
+gMapList = 0x8046f92c;
+start_map_index = 0x8045b5d8;
 
 /* map_minigame.h */
 classSEMap_MiniGame = 0x803ccf40;
 
 /* player.h */
-gpPlayer = 0x804cbe1c;
-gpPlayerItem = 0x804cbe20;
-XSEItemHandler_Player__ControlsLocked = 0x8005beb8;
 XSEItemHandler_Player__ButtonDown = 0x8005b17c;
 XSEItemHandler_Player__ButtonPressed = 0x8005b0d8;
-XSEItemHandler_Player__SetMode = 0x80058444;
-XSEItemHandler_Player__InitialiseStart = 0x8005808c;
-XSEItemHandler_Player__SetShoppingMode = 0x8005cab8;
 XSEItemHandler_Player__CheckModeChange = 0x8005b5f0;
+XSEItemHandler_Player__ControlsLocked = 0x8005beb8;
+XSEItemHandler_Player__InitialiseStart = 0x8005808c;
+XSEItemHandler_Player__SetMode = 0x80058444;
 XSEItemHandler_Player__SetPlayer = 0x80060e1c;
+XSEItemHandler_Player__SetShoppingMode = 0x8005cab8;
+gpPlayer = 0x804cbe1c;
+gpPlayerItem = 0x804cbe20;
 
 /* cutscene_skip.h */
 EXItemAnimator_Script__SetScriptStatus = 0x802b1c88;
 XItemHandler_Cutscene__Update = 0x801074b0;
 
 /* gamestate.h */
-gGameState = 0x80464610;
-SE_GameState__operatorequals = 0x80388de8;
-SE_GameState__FindTrigInfo = 0x8022f3f4;
-PlayerObjectives__ObjectiveIntoIndexAndBit = 0x80066614;
 PlayerObjectives__ClearObjective = 0x800663b0;
+PlayerObjectives__ObjectiveIntoIndexAndBit = 0x80066614;
+SE_GameState__FindTrigInfo = 0x8022f3f4;
+SE_GameState__operatorequals = 0x80388de8;
+gGameState = 0x80464610;
 
 /* playerstate.h */
-PlayerState__Update = 0x80068860;
 PlayerState__RestartGame = 0x8006881c;
+PlayerState__Update = 0x80068860;
 
 /* minimap_status.h */
-gMiniMapStatus = 0x8045a5d4;
 MiniMapStatus__SetBitName = 0x801aeb20;
+gMiniMapStatus = 0x8045a5d4;
 
 /* collectable_hooks.h */
-LightXtal__Collected = 0x80155560;
+BaseChest__ReleaseMyGems = 0x80147bf8;
+CPU_Base__CreatedChestPickup = 0x8014922c;
 DarkXtal__Collected = 0x80155370;
 DragonEgg__Collected = 0x801558a0;
-MemCard_AutoSave = 0x80238db8;
-LockedChest__OpenLockedChest = 0x80149f7c;
-CPU_Base__CreatedChestPickup = 0x8014922c;
-classLockedChest = 0x803c2500;
-BaseChest__ReleaseMyGems = 0x80147bf8;
-LockedChest__IdleUpdate = 0x80149bac;
 FireWorks__UpdatePathPosRot = 0x8014aa4c;
+LightXtal__Collected = 0x80155560;
+LockedChest__IdleUpdate = 0x80149bac;
+LockedChest__OpenLockedChest = 0x80149f7c;
+MemCard_AutoSave = 0x80238db8;
 R4ZFireWorks__classR4ZFireWorks = 0x803c9a64;
+classLockedChest = 0x803c2500;
 
 /* breath_hooks.h */
-XSEItemHandler_Spyro__GetCurrentBreath = 0x800ad62c;
-GUI_Panel__ForcePanelOn = 0x80222c14;
 EXSoundTag__IsPlaying = 0x802f97dc;
 ElecBreath__PlaySound = 0x8009d42c;
+GUI_Panel__ForcePanelOn = 0x80222c14;
+XSEItemHandler_Spyro__GetCurrentBreath = 0x800ad62c;
 
 /* file_select_hooks.h */
 MemCardSlotMenu__DrawSavedGameInfo = 0x80235800;
@@ -181,43 +181,43 @@ TitleLoop__v_DrawStateRunning = 0x801f0b94;
 ScriptedGate__v_Preserve = 0x80161c88;
 
 /* shop_hooks.h */
-SE_SpreadSheet__OpenSpreadSheet_FileHash = 0x8024cd74;
 GUI_ShopItem__BuyItems = 0x802289f0;
 GUI_ShopItem__IsAvailable = 0x802284dc;
+SE_SpreadSheet__OpenSpreadSheet_FileHash = 0x8024cd74;
 
 /* BASIC_hooks.h */
-SpyroBASIC__Update = 0x800c2378;
-SpyroBASIC__Init = 0x800c148c;
 BASIC_Main__Init = 0x800035fc;
 BASIC_Main__RunScript = 0x800037e0;
 BASIC_Main__UpdatePointers = 0x80003504;
+Monitor__BASICcmd_GetDistanceToPlayer = 0x800da1a0;
 Monitor__BASICcmd_Stall = 0x800da33c;
 Monitor__BASICcmd_Suicide = 0x800da304;
-Monitor__BASICcmd_GetDistanceToPlayer = 0x800da1a0;
 Monitor__BASICcmd_Zoopoo = 0x800da4ac;
+SpyroBASIC__Init = 0x800c148c;
+SpyroBASIC__Update = 0x800c2378;
 
 /* lg_door_hooks.h */
 Switch_LightGem__GetTriggerConfig = 0x8018bfb0;
 Switch_LightGem__Update = 0x8018bfd8;
 
 /* elevator_hooks.h */
-SXI_Path__MoveAlongPath = 0x802467c4;
 FlippingPlatform__HandleFlip = 0x801ea294;
+SXI_Path__MoveAlongPath = 0x802467c4;
 
 /* gadget_hooks.h */
 GadgetPad__Update = 0x800e8b4c;
 
 /* boss_hooks.h */
 XSEItemHandler_GnastyGnorc__PlayerAttack = 0x80030978;
-gnasty_health_subtract = 0x803b7e58;
 XSEItemHandler_Ineptune__PlayerAttack = 0x80036098;
-ineptune_health_subtract = 0x803b8004;
 XSEItemHandler_Red__HitByExplosion = 0x80043254;
+gnasty_health_subtract = 0x803b7e58;
+ineptune_health_subtract = 0x803b8004;
 red_health_subtract = 0x803b85f0;
 
 /* gametext.h */
-gGameText = 0x80456680;
 GameText__GetText = 0x8012e1c4;
+gGameText = 0x80456680;
 
 /* text_hooks.h */
 GameText__FindTextItem = 0x8012dfb8;
@@ -230,39 +230,40 @@ SE_TriggerList__ConstructAll = 0x8023bc6c;
 XSEItemHandler_NPC__InitNPC = 0x800dbc5c;
 
 /* igstdlib.h */
-strcasecmp = 0x8025a784;
-strcmp = 0x8025a800;
-strcpy = 0x8025a8a8;
-strlen = 0x8025a92c;
-strncpy = 0x8025a998;
-strupr = 0x8025aa64;
-strrev = 0x8025ab2c;
-strcat = 0x8035a7a0;
-strncat = 0x8035a830;
-strncmp = 0x8035a8dc;
-strstr = 0x8035a9bc;
 Wcscpy = 0x802fc77c;
+memcmp = 0x8035a710;
 memcpy = 0x8025a560;
 memmove = 0x8025a604;
 memset = 0x8025a6f0;
-memcmp = 0x8035a710;
 printf = 0x80359ca4;
-vprintf = 0x80359d50;
 sprintf = 0x8025a358;
+strcasecmp = 0x8025a784;
+strcat = 0x8035a7a0;
+strcmp = 0x8025a800;
+strcpy = 0x8025a8a8;
+strlen = 0x8025a92c;
+strncat = 0x8035a830;
+strncmp = 0x8035a8dc;
+strncpy = 0x8025a998;
+strrev = 0x8025ab2c;
+strstr = 0x8035a9bc;
+strupr = 0x8025aa64;
+vprintf = 0x80359d50;
 vsprintf = 0x8025a430;
 
 /* igmath.h */
 acosf = 0x80257c44;
 asinf = 0x80257e90;
 atan2f = 0x802580bc;
-fmodf = 0x802582dc;
-powf = 0x802584a4;
-sqrtf = 0x80258b98;
 atanf = 0x80258c90;
 ceilf = 0x80258ea0;
 cosf = 0x80258f64;
 fabsf = 0x80259040;
 floorf = 0x80259064;
-sinf = 0x8025912c;
-tanf = 0x80259208;
+fmodf = 0x802582dc;
+powf = 0x802584a4;
 scalbnf = 0x80259288;
+sinf = 0x8025912c;
+sqrtf = 0x80258b98;
+tanf = 0x80259208;
+
