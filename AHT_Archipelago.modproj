@@ -922,6 +922,19 @@
           "auto_calculate_injection_file_address": false,
           "injection_type": "memory_only",
           "enabled": true
+        },
+        {
+          "name": "disable_100percent_message",
+          "code_files": [
+            "./asm/GC/disable_100percent_message.s"
+          ],
+          "memory_address": "80068958",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
         }
       ],
       "binary_patches": [],
@@ -1843,6 +1856,19 @@
             "./asm/GC/disable_total_gems_double_gems.s"
           ],
           "memory_address": "80167ae0",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "disable_100percent_message",
+          "code_files": [
+            "./asm/GC/disable_100percent_message.s"
+          ],
+          "memory_address": "80068988",
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
