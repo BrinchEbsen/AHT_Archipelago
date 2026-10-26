@@ -3,7 +3,9 @@
 #include <hashcodes.h>
 
 APSettings g_patch_ap_settings = {
-    .location_bitfield = {0},
+    .location_bitfield_collected = {0},
+    .location_bitfield_reachable = {0},
+    .location_bitfield_reachable_trick = {0},
     .keyring_bitfield = {0},
     .shoppad_bitfield = {0},
     .num_gem_packs_received = 0,

@@ -5,7 +5,10 @@
 #include <playerstate.h>
 #include <xls_shop.h>
 
-#define AP_SETTINGS_LOCATIONS_BITFIELD_SIZE 0x50
+// Total number of entries in `g_ap_collectables`.
+#define AP_COLLECTABLES_TOTAL 271
+
+#define AP_SETTINGS_LOCATIONS_BITFIELD_SIZE ( (AP_COLLECTABLES_TOTAL/8) + ((AP_COLLECTABLES_TOTAL%8)>0 ? 1 : 0) )
 #define AP_SETTINGS_KEYRINGS_BITFIELD_SIZE 0x2
 #define AP_SETTINGS_SHOPPAD_BITFIELD_SIZE 0x5
 #define AP_SETTINGS_INIT_MAGICVALUE 0x45424245 // 'EBBE' in ASCII :)
@@ -93,10 +96,14 @@ typedef struct APSettings_TextEntry
 /// Held in the gamestate area (`g_gamestate_ap_settings`) for the state of the current save.
 typedef struct APSettings {
 
-    /// @brief One long bitfield for every location in the multiworld.
-    /// Every element is stored as two bits. The first is 1 if the item
-    /// has been collected, and the second is 1 if it's deemed "reachable".
-    u8 location_bitfield[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];
+    /// @brief The "collected" state of every collectable.
+    u8 location_bitfield_collected[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];
+
+    /// @brief The "reachable" state of every collectable.
+    u8 location_bitfield_reachable[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];
+
+    /// @brief The "reachable with tricks" state of every collectable.
+    u8 location_bitfield_reachable_trick[AP_SETTINGS_LOCATIONS_BITFIELD_SIZE];
 
     /// @brief A bitfield for which of the 14 keyrings have been obtained in this save.
     u8 keyring_bitfield[AP_SETTINGS_KEYRINGS_BITFIELD_SIZE];

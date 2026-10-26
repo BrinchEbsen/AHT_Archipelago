@@ -28,6 +28,10 @@ void dbg_add_shop_item();
 void dbg_remove_shop_item();
 #endif
 
+#if AP_DEBUG_SCRAMBLE_BITFIELDS!=0
+#include <exrand.h>
+#endif
+
 MapOrderInfo realm_teleporter_maporderinfo[] = {
     { .m_FileHash = HT_File_Realm1A,    .m_MapHash = 0xFFFFFFFF },
     { .m_FileHash = HT_File_Realm2A,    .m_MapHash = 0xFFFFFFFF },
@@ -163,6 +167,20 @@ void ap_gamestate_update()
     if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
         ap_set_notification(60*5, COLOR_WHITE,
             u"Test notification! The notification that tests things! Something testy happened, probably!");
+    }
+    #endif
+
+    #if AP_DEBUG_SCRAMBLE_BITFIELDS!=0
+    if (g_pad_button_state(PAD_BUTTON_B)) {
+        if (g_pad_button_edge_down(PAD_BUTTON_DPAD_DOWN)) {
+            for (int i = 0; i < AP_SETTINGS_LOCATIONS_BITFIELD_SIZE; i++)
+            {
+                u32 r = RAND32;
+                g_gamestate_ap_settings.location_bitfield_collected[i] = r & 0xFF;
+                g_gamestate_ap_settings.location_bitfield_reachable[i] = (r & 0xFF00) >> 8;
+                g_gamestate_ap_settings.location_bitfield_reachable_trick[i] = (r & 0xFF0000) >> 16;
+            }
+        }
     }
     #endif
 }

@@ -49,9 +49,6 @@ typedef struct APCollectable
     float z;
 } APCollectable;
 
-// Total number of entries in `g_ap_collectables`.
-#define AP_COLLECTABLES_TOTAL 271
-
 /// @brief Mark a grabbable item collected.
 /// @param map_index Map index of the grabbable item's trigger.
 /// @param trigger_index Index of the grabbable item's trigger.
@@ -65,12 +62,20 @@ void ap_set_objective(EXHashCode objective);
 /// @param index Index of the location into `g_ap_collectables`.
 void ap_set_location(int index);
 
-/// @brief Tally up all items in a map, and how many are reachable/collected.
+/// @brief Get the state of a collectable.
+/// @param index Index of the collectable.
+/// @param out_collected Whether the collectable is collected.
+/// @param out_reachable Whether the collectable is reachable.
+/// @param out_reachable_trick Whether the collectable is reachable with tricks.
+void get_collectable_state(size_t index, bool* out_collected, bool* out_reachable, bool* out_reachable_trick);
+
+/// @brief Tally up all items in a map and their states.
 /// @param map_index Index of the map.
 /// @param out_num_collected Amount of items collected.
 /// @param out_num_reachable Amount of items reachable.
+/// @param out_num_reachable_trick Amount of items reachable with tricks.
 /// @return Total number of items.
-s32 num_collectables_in_map(u16 map_index, s32* out_num_collected, s32* out_num_reachable);
+s32 num_collectables_in_map(u16 map_index, s32* out_num_collected, s32* out_num_reachable, s32* out_num_reachable_trick);
 
 /// @brief Get whether a collectable's source minigame is set to "easy only" or "disabled" in the settings.
 /// @param coll The collectable.

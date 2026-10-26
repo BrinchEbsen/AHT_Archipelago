@@ -41,16 +41,31 @@ void ap_set_objective(EXHashCode objective)
 
 void ap_set_location(int index)
 {
-    if (!set_u8_bitfield_value(g_gamestate_ap_settings.location_bitfield, index*2, true)) {
+    if (!set_u8_bitfield_value(g_gamestate_ap_settings.location_bitfield_collected, index*2, true)) {
         PRINTF("[AP] Set location flag index %d\n", index);
     }
 }
 
-s32 num_collectables_in_map(u16 map_index, s32* out_num_collected, s32* out_num_reachable)
+void get_collectable_state(size_t index, bool* out_collected, bool* out_reachable, bool* out_reachable_trick)
+{
+    size_t byte = index / 8;
+    u8 mask = 1 << (index % 8);
+
+    u8 dat_c = g_gamestate_ap_settings.location_bitfield_collected[byte] & mask;
+    u8 dat_r = g_gamestate_ap_settings.location_bitfield_reachable[byte] & mask;
+    u8 dat_t = g_gamestate_ap_settings.location_bitfield_reachable_trick[byte] & mask;
+
+    *out_collected       = dat_c ? true : false;
+    *out_reachable       = dat_r ? true : false;
+    *out_reachable_trick = dat_t ? true : false;
+}
+
+s32 num_collectables_in_map(u16 map_index, s32* out_num_collected, s32* out_num_reachable, s32* out_num_reachable_trick)
 {
     s32 num = 0;
     *out_num_collected = 0;
     *out_num_reachable = 0;
+    *out_num_reachable_trick = 0;
 
     for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++) {
         APCollectable* coll = &g_ap_collectables[i];
@@ -62,16 +77,15 @@ s32 num_collectables_in_map(u16 map_index, s32* out_num_collected, s32* out_num_
 
         num++;
 
-        size_t byte = (i*2) / 8;
-        size_t bit = (i*2) % 8;
-        u8 dat = g_gamestate_ap_settings.location_bitfield[byte];
+        bool collected;
+        bool reachable;
+        bool reachable_trick;
 
-        if ((dat & (0b01 << bit)) != 0) {
-            (*out_num_collected)++;
-        }
-        if ((dat & (0b10 << bit)) != 0) {
-            (*out_num_reachable)++;
-        }
+        get_collectable_state(i, &collected, &reachable, &reachable_trick);
+
+        if (collected) { (*out_num_collected)++; }
+        if (reachable) { (*out_num_reachable)++; }
+        if (reachable_trick) { (*out_num_reachable_trick)++; }
     }
 
     return num;

@@ -20,7 +20,7 @@
         {
             "name": "AP_DEBUG_QUICK_START",
             "description": "Patch is automatically written to and game will start with some abilities unlocked.",
-            "default_value": 0
+            "default_value": 1
         },
         {
             "name": "AP_DEBUG_ADD_REMOVE_SHOP_ITEMS",
@@ -40,6 +40,11 @@
         {
             "name": "AP_DEBUG_TRAPS",
             "description": "B+dpad to trigger traps.",
+            "default_value": 0
+        },
+        {
+            "name": "AP_DEBUG_SCRAMBLE_BITFIELDS",
+            "description": "B+dpad down to scramble location bitfields.",
             "default_value": 0
         }
     ]

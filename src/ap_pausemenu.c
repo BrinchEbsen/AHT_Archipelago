@@ -653,7 +653,7 @@ void draw_checks_percentage(GUI_Base* self, void* pWnd)
         }
 
         total++;
-        collected += get_u8_bitfield_value(g_gamestate_ap_settings.location_bitfield, i*2);
+        collected += get_u8_bitfield_value(g_gamestate_ap_settings.location_bitfield_collected, i);
     }
 
     if (AP_GAMESTATE_SHOP_IS_RANDOMIZED)

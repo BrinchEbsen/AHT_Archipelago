@@ -21,9 +21,10 @@ void minimap_draw_locations(GUI_Base* self, void* pWnd);
 /// @param self this-pointer (GUI_MiniMap)
 /// @param pWnd Window
 /// @param coll Collectable to draw
-/// @param reachable Whether the collectable is reachable (determines checkbox color)
 /// @param collected Whether the collectable is collected (determines whether box is checked)
+/// @param reachable Whether the collectable is reachable (makes uncollected location yellow)
+/// @param reachable_trick Whether the collectable is reachable (makes unreachable/uncollected location flash yellow)
 void minimap_draw_location(
-    GUI_Base* self, void* pWnd, APCollectable* coll, bool reachable, bool collected);
+    GUI_Base* self, void* pWnd, APCollectable* coll, bool collected, bool reachable, bool reachable_trick);
 
 #endif /* AP_MINIMAP_H */

@@ -8,6 +8,7 @@
 #include <system.h>
 #include <pad.h>
 #include <mapindex.h>
+#include <util.h>
 
 // Extra collectable items for the ball gadget stations
 
@@ -28,6 +29,8 @@ APCollectable ballgadgetloc_magma_falls = {
     .z = 931.982f
 };
 
+u8 trick_flasher_cycle = 0;
+
 void GUI_MiniMap__DrawRestarts__PreCallHOOK(GUI_Base* self, void* pWnd)
 {
     if (g_gamestate_ap_settings.ut_enabled) {
@@ -36,8 +39,25 @@ void GUI_MiniMap__DrawRestarts__PreCallHOOK(GUI_Base* self, void* pWnd)
     GUI_MiniMap__DrawRestarts(self, pWnd);
 }
 
+void minimap_update_trick_flashing(GUI_Base* self)
+{
+    s32 cycle = (self->m_UpdateCounter % 0x40) * 4;
+    
+    if (cycle > 0x80) {
+        cycle = 0x80 - (cycle - 0x80);
+    }
+
+    if (cycle < 0x40) {
+        cycle = 0x40;
+    }
+
+    trick_flasher_cycle = cycle;
+}
+
 void minimap_draw_locations(GUI_Base* self, void* pWnd)
 {
+    minimap_update_trick_flashing(self);
+
     // This is the "currently viewed" minimap.
     EXHashCode file_hash = gMiniMapStatus.m_Current.m_FileHash;
     EXHashCode map_hash = gMiniMapStatus.m_Current.m_MapHash;
@@ -78,12 +98,11 @@ void minimap_draw_locations(GUI_Base* self, void* pWnd)
 
         // Get whether this item is collected and/or reachable
 
-        size_t byte = (i*2) / 8;
-        size_t bit = (i*2) % 8;
-        u8 dat = g_gamestate_ap_settings.location_bitfield[byte];
+        bool collected;
+        bool reachable;
+        bool reachable_trick;
 
-        bool collected = (dat & (0b01 << bit)) != 0;
-        bool reachable = (dat & (0b10 << bit)) != 0;
+        get_collectable_state(i, &collected, &reachable, &reachable_trick);
 
         // If this is a minigame dragon egg, the icon should be combined
         // with the following light gem in the array.
@@ -94,17 +113,15 @@ void minimap_draw_locations(GUI_Base* self, void* pWnd)
             // Whether we logically count the light gem
             if (!easyonly)
             {
-                byte = (i*2) / 8;
-                bit = (i*2) % 8;
-                dat = g_gamestate_ap_settings.location_bitfield[byte];
-        
+                bool next_collectable = get_u8_bitfield_value(g_gamestate_ap_settings.location_bitfield_collected, i);
+
                 // Mark collected if both this and the light gem after is collected.
                 // We leave reachable alone, we assume it's reachable if the dragon egg is.
-                collected = collected && ((dat & (0b01 << bit)) != 0);
+                collected = collected && next_collectable;
             }
         }
 
-        minimap_draw_location(self, pWnd, coll, reachable, collected);
+        minimap_draw_location(self, pWnd, coll, collected, reachable, reachable_trick);
     }
 
     /*
@@ -118,25 +135,29 @@ void minimap_draw_locations(GUI_Base* self, void* pWnd)
     if (map->m_MapListIndex == MI_CloudyDomain) {
         s32 collected;
         s32 reachable;
-        s32 num = num_collectables_in_map(MI_CloudyDomainBallGadget, &collected, &reachable);
+        s32 reachable_trick;
+        s32 num = num_collectables_in_map(MI_CloudyDomainBallGadget, &collected, &reachable, &reachable_trick);
         minimap_draw_location(self, pWnd, &ballgadgetloc_cloudy_domain,
+            collected >= num,
             reachable >= num,
-            collected >= num);
+            reachable_trick >= num);
     }
 
     // Magma Falls Ball Gadget
     if (map->m_MapListIndex == MI_MagmaFallsTop) {
         s32 collected;
         s32 reachable;
-        s32 num = num_collectables_in_map(MI_MagmaFallsBallGadget, &collected, &reachable);
+        s32 reachable_trick;
+        s32 num = num_collectables_in_map(MI_MagmaFallsBallGadget, &collected, &reachable, &reachable_trick);
         minimap_draw_location(self, pWnd, &ballgadgetloc_magma_falls,
             reachable >= num,
-            collected >= num);
+            collected >= num,
+            reachable_trick >= num);
     }
 }
 
 void minimap_draw_location(
-    GUI_Base* self, void* pWnd, APCollectable* coll, bool reachable, bool collected)
+    GUI_Base* self, void* pWnd, APCollectable* coll, bool collected, bool reachable, bool reachable_trick)
 {
     // Only draw fireworks if fireworks are randomized
     if ((coll->type == FireWork) && !g_gamestate_ap_settings.fireworks_are_randomized)
@@ -164,7 +185,14 @@ void minimap_draw_location(
         }
         else
         {
-            col = COLOR_LIGHT_RED;
+            if (reachable_trick)
+            {
+                col = COLOR_RGBA(0x80, trick_flasher_cycle, trick_flasher_cycle, 0x80);
+            }
+            else
+            {
+                col = COLOR_LIGHT_RED;
+            }
         }
     }
 
