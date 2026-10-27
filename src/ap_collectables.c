@@ -41,7 +41,7 @@ void ap_set_objective(EXHashCode objective)
 
 void ap_set_location(int index)
 {
-    if (!set_u8_bitfield_value(g_gamestate_ap_settings.location_bitfield_collected, index*2, true)) {
+    if (!set_u8_bitfield_value(g_gamestate_ap_settings.location_bitfield_collected, index, true)) {
         PRINTF("[AP] Set location flag index %d\n", index);
     }
 }
