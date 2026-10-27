@@ -17,6 +17,7 @@
 #include <sfx.h>
 #include <Sound.h>
 #include <mapindex.h>
+#include <ap_handler.h>
 
 #define AP_TELEPORT_CLOSE_TIMER_MAX 60
 
@@ -625,48 +626,7 @@ void draw_ut_stats(GUI_Base* self, void* pWnd)
 
 void draw_checks_percentage(GUI_Base* self, void* pWnd)
 {
-    int total = 0;
-    int collected = 0;
-
-    for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++)
-    {
-        APCollectable* coll = &g_ap_collectables[i];
-
-        if ((coll->type == FireWork) && !g_gamestate_ap_settings.fireworks_are_randomized)
-        {
-            continue;
-        }
-
-        bool easyonly = false;
-        bool disabled = false;
-
-        if (get_minigame_collectable_config(coll, &easyonly, &disabled))
-        {
-            if (disabled)
-            {
-                continue;
-            }
-            if ((coll->type == LightGem_MiniGame) && easyonly)
-            {
-                continue;
-            }
-        }
-
-        total++;
-        collected += get_u8_bitfield_value(g_gamestate_ap_settings.location_bitfield_collected, i);
-    }
-
-    if (AP_GAMESTATE_SHOP_IS_RANDOMIZED)
-    {
-        // -1 because of teleport ticket at the start
-        for (int i = 0; i < g_gamestate_ap_settings.xls_shop_rowcount-1; i++)
-        {
-            total++;
-            collected += g_gamestate_ap_settings.shop_text[i].been_bought;
-        }
-    }
-
-    float percentage = ((float)collected / (float)total) * 100.0f;
+    float percentage = get_checks_percentage();
 
     EXRect r = {
         .x = 0,

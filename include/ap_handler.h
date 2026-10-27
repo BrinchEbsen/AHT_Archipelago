@@ -27,6 +27,8 @@ extern int cost_text_amt;
 // Whether to draw the "Y to skip" text this frame.
 extern bool draw_cutscene_skip_text;
 
+extern bool has_opened_minimap;
+
 static inline bool ap_gamestate_is_initialized() {
     return g_gamestate_ap_settings.init == AP_SETTINGS_INIT_MAGICVALUE;
 }
@@ -100,6 +102,10 @@ int Popup__Update_VtableHook(void* self);
 
 extern int LillyPad__Update(void* self);
 int LillyPad__Update_VtableHook(void* self);
+
+float get_checks_percentage();
+
+void LoadingLoop2D__XWnd__TextPrint_PreCallHook(void* self, EXHashCode Code);
 
 // Generic every-frame hook for running whatever code we need.
 s32 SEGameFlow__v_StateRunning__VTHOOK(SEGameFlow* self);

@@ -56,6 +56,8 @@ bool draw_cutscene_skip_text = false;
 
 bool do_autosave = false;
 
+bool has_opened_minimap = false;
+
 void ap_update()
 {
     if (g_patch_ap_settings.patch_been_written_to && (gGameLoop.m_State == Running)) {
@@ -293,10 +295,7 @@ void ap_draw_cost_text(void* pWnd, CostTextType type, int amt)
 
 void ap_init_gamestate()
 {
-    PRINTF("Initializing gamestate...\n");
-
     memcpy(&g_gamestate_ap_settings, &g_patch_ap_settings, sizeof(APSettings));
-    PRINTF("Copied settings from injected patch.\n");
 
     #if AP_DEBUG_QUICK_START!=0
     gGameState.m_PlayerState.m_AbilityFlags |= (
@@ -312,14 +311,10 @@ void ap_init_gamestate()
     #endif
 
     if (g_gamestate_ap_settings.starting_realm > 3) {
-        PRINTF("Invalid starting realm %d, defaulting to 0 (Dragon Village).\n",
-            g_gamestate_ap_settings.starting_realm);
-
         g_gamestate_ap_settings.starting_realm = 0;
     }
 
     gGameState.m_StartMapIndex = realm_hub_map_indexes[g_gamestate_ap_settings.starting_realm];
-    PRINTF("Set starting map index to %d\n", gGameState.m_StartMapIndex);
 
     MiniMapStatus__SetBitName(
         &gMiniMapStatus,
@@ -331,7 +326,6 @@ void ap_init_gamestate()
         PlayerObjectives__SetObjective__ReImplHook(
             &gGameState.m_PlayerObjectives, new_game_objectives[i]);
     }
-    PRINTF("Set %d objectives.\n", NUM_NEW_GAME_OBJECTIVES);
 
     // Set objective flag for having bought a lock pick
     gGameState.m_PlayerState.m_AbilityFlags |= ABILITY_BOUGHT_LOCK_PICK;
@@ -345,8 +339,6 @@ void ap_init_gamestate()
     do_autosave = true;
 
     ap_set_gamestate_initialized();
-
-    PRINTF("Gamestate initialized!\n");
 }
 
 void ap_update_realm_access()
@@ -483,8 +475,6 @@ SE_GameState* mapchanger_SE_GameState__operatorequals_PreCallHook(SE_GameState* 
         if (!ap_gamestate_is_initialized()) {
             ap_init_gamestate();
         }
-    } else {
-        PRINTF("Cannot initialize gamestate! Patch not written by client.\n");
     }
 
     return ret;
@@ -651,6 +641,63 @@ int LillyPad__Update_VtableHook(void* self)
     }
 
     return LillyPad__Update(self);
+}
+
+float get_checks_percentage()
+{
+    int total = 0;
+    int collected = 0;
+
+    for (int i = 0; i < AP_COLLECTABLES_TOTAL; i++)
+    {
+        APCollectable* coll = &g_ap_collectables[i];
+
+        if ((coll->type == FireWork) && !g_gamestate_ap_settings.fireworks_are_randomized)
+        {
+            continue;
+        }
+
+        bool easyonly = false;
+        bool disabled = false;
+
+        if (get_minigame_collectable_config(coll, &easyonly, &disabled))
+        {
+            if (disabled)
+            {
+                continue;
+            }
+            if ((coll->type == LightGem_MiniGame) && easyonly)
+            {
+                continue;
+            }
+        }
+
+        total++;
+        collected += get_u8_bitfield_value(g_gamestate_ap_settings.location_bitfield_collected, i);
+    }
+
+    if (AP_GAMESTATE_SHOP_IS_RANDOMIZED)
+    {
+        // -1 because of teleport ticket at the start
+        for (int i = 0; i < g_gamestate_ap_settings.xls_shop_rowcount-1; i++)
+        {
+            total++;
+            collected += g_gamestate_ap_settings.shop_text[i].been_bought;
+        }
+    }
+
+    return ((float)collected / (float)total) * 100.0f;
+}
+
+void LoadingLoop2D__XWnd__TextPrint_PreCallHook(void* self, EXHashCode Code)
+{
+    char* tiptext = has_opened_minimap ? "" : "\nHold ~S to open the minimap screen!";
+
+    float percentage = get_checks_percentage();
+
+    sprintf(gVarTextBuffer, "Checks: %.1f%%%s", percentage, tiptext);
+
+    XWnd__TextPrintC(self, gVarTextBuffer);
 }
 
 s32 SEGameFlow__v_StateRunning__VTHOOK(SEGameFlow *self)

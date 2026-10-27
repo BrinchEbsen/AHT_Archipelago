@@ -9,6 +9,7 @@
 #include <pad.h>
 #include <mapindex.h>
 #include <util.h>
+#include <ap_handler.h>
 
 // Extra collectable items for the ball gadget stations
 
@@ -56,6 +57,8 @@ void minimap_update_trick_flashing(GUI_Base* self)
 
 void minimap_draw_locations(GUI_Base* self, void* pWnd)
 {
+    has_opened_minimap = true;
+
     minimap_update_trick_flashing(self);
 
     // This is the "currently viewed" minimap.
