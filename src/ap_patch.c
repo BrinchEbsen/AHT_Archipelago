@@ -7,6 +7,7 @@ APSettings g_patch_ap_settings = {
     .location_bitfield_reachable = {0},
     .location_bitfield_reachable_trick = {0},
     .keyring_bitfield = {0},
+    .perlevel_lockpicks = {0},
     .shoppad_bitfield = {0},
     .num_gem_packs_received = 0,
     .num_fire_ammo_received = 0,
@@ -21,7 +22,7 @@ APSettings g_patch_ap_settings = {
     .infinite_double_gem = false,
     .fireworks_are_randomized = false,
     .randomize_shop = false,
-    .use_key_rings = false,
+    .key_mode = KeyMode_PerLevelLockpicks,
 
     #if AP_DEBUG_QUICK_START!=0
     .skip_cutscene_button = true,

@@ -160,6 +160,7 @@ DarkXtal__Collected = 0x80155370;
 DragonEgg__Collected = 0x801558a0;
 FireWorks__UpdatePathPosRot = 0x8014aa4c;
 LightXtal__Collected = 0x80155560;
+XSEItemHandler_Sparx__HandleLockPick = 0x800f9c04;
 LockedChest__IdleUpdate = 0x80149bac;
 LockedChest__OpenLockedChest = 0x80149f7c;
 MemCard_AutoSave = 0x80238db8;

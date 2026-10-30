@@ -5,7 +5,7 @@
 #include <map.h>
 #include <hashcodes.h>
 #include <runtimeclass.h>
-#include <ap_keyring.h>
+#include <ap_keys.h>
 
 void LightXtal__Collected_VtableHook(void *this, Bool Register)
 {
@@ -172,9 +172,36 @@ Bool LockedChest__ReleaseMyGems_VtableHook(void *self)
     return false;
 }
 
+void XSEItemHandler_Sparx__HandleLockPick_PreCallHook(void* self, int flag)
+{
+    if (g_gamestate_ap_settings.key_mode != KeyMode_PerLevelLockpicks)
+    {
+        XSEItemHandler_Sparx__HandleLockPick(self, flag);
+        return;
+    }
+
+    // Check if Sparx took one of our lock picks.
+    s8 prev_count = gGameState.m_PlayerState.m_LockPickers;
+    XSEItemHandler_Sparx__HandleLockPick(self, flag);
+    s8 diff = gGameState.m_PlayerState.m_LockPickers - prev_count;
+
+    // If Sparx took a lock pick, take the equivalent amount from this level's per-level lock pick.
+    if (diff != 0)
+    {
+        SE_Map* map = GetSpyroMap(0);
+
+        int index = ap_keys_get_level_index(map);
+
+        if (index >= 0)
+        {
+            g_gamestate_ap_settings.perlevel_lockpicks[index].num += diff;
+        }
+    }
+}
+
 void LockedChest__IdleUpdate_VtableHook(void* self)
 {
-    if (!AP_GAMESTATE_USE_KEY_RINGS) {
+    if (g_gamestate_ap_settings.key_mode != KeyMode_KeyRings) {
         LockedChest__IdleUpdate(self);
         return;
     }

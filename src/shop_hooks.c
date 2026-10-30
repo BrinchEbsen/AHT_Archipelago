@@ -3,16 +3,16 @@
 #include <ap_settings.h>
 #include <hashcodes.h>
 #include <gametext.h>
-#include <ap_keyring.h>
+#include <ap_keys.h>
 #include <igstdlib.h>
 #include <gamestate.h>
 
 void *SE_SpreadSheet__OpenSpreadSheet_FileHash_PreCallHook(
     SE_SpreadSheet *self, EXHashCode FileHash, EXHashCode SpreadSheetHash)
 {
-    // Shop isn't random, and doesn't use key rings
+    // Shop isn't random, and lock picks are vanilla.
     // (use the vanilla shop list, but patch it a bit)
-    if (!AP_GAMESTATE_SHOP_IS_RANDOMIZED && !AP_GAMESTATE_USE_KEY_RINGS) {
+    if (!AP_GAMESTATE_SHOP_IS_RANDOMIZED && (g_gamestate_ap_settings.key_mode == KeyMode_VanillaLockpicks)) {
         void* data = (xlsShoppingItem*)SE_SpreadSheet__OpenSpreadSheet_FileHash(self, FileHash, SpreadSheetHash);
         
         // Change flame bomb availableflags to only allow purchase when fire breath is acquired
@@ -27,11 +27,11 @@ void *SE_SpreadSheet__OpenSpreadSheet_FileHash_PreCallHook(
         return data;
     }
 
-    // Shop isn't random, and uses key rings
+    // Shop isn't random, and lock picks are non-vanilla.
     // (set up the shop in code)
-    if (!AP_GAMESTATE_SHOP_IS_RANDOMIZED && AP_GAMESTATE_USE_KEY_RINGS) {
+    if (!AP_GAMESTATE_SHOP_IS_RANDOMIZED && (g_gamestate_ap_settings.key_mode != KeyMode_VanillaLockpicks)) {
         if (g_gamestate_ap_settings.xls_shop_rowcount == 0) {
-            initialize_vanilla_key_ring_shop();
+            initialize_modified_vanilla_shop();
         }
     }
 
@@ -56,7 +56,15 @@ void GUI_Item__v_GetText_ReImplHook(GUI_Base* self, wchar16** pWide, char** pStr
     // Injection of custom hashcode
     if ((hash & 0xFFFF0000) == AP_TEXT_ENTRY_HASHCODE_BASE) {
         int index = hash & 0xFFFF;
-        *pWide = g_gamestate_ap_settings.shop_text[index].text;
+        APSettings_TextEntry* entry = &g_gamestate_ap_settings.shop_text[index];
+        if (entry->use_ascii)
+        {
+            *pString = entry->textc;
+        }
+        else
+        {
+            *pWide = entry->textw;
+        }
         return;
     }
 
@@ -75,8 +83,17 @@ int GUI_ShopItem__BuyItems_PreCallHook(GUI_ShopItem* self)
     if ((self->m_pItemData->ItemText & 0xFFFF0000) == AP_TEXT_ENTRY_HASHCODE_BASE) {
         int index = self->m_pItemData->ItemText & 0xFFFF;
 
-        if (!AP_GAMESTATE_SHOP_IS_RANDOMIZED && AP_GAMESTATE_USE_KEY_RINGS) {
-            set_u8_bitfield_value(g_gamestate_ap_settings.keyring_bitfield, index, true);
+        if (!AP_GAMESTATE_SHOP_IS_RANDOMIZED) {
+            if (g_gamestate_ap_settings.key_mode == KeyMode_KeyRings)
+            {
+                set_u8_bitfield_value(g_gamestate_ap_settings.keyring_bitfield, index, true);
+            }
+            else if (g_gamestate_ap_settings.key_mode == KeyMode_PerLevelLockpicks)
+            {
+                g_gamestate_ap_settings.perlevel_lockpicks[index].num += self->m_Count;
+                g_gamestate_ap_settings.perlevel_lockpicks[index].num_total += self->m_Count;
+            }
+            
         } else {
             g_gamestate_ap_settings.shop_text[index].been_bought = true;
         }
@@ -98,9 +115,28 @@ int GUI_ShopItem__IsAvailable_PreCallHook(GUI_ShopItem* self, Bool Buy)
     if ((self->m_pItemData->ItemText & 0xFFFF0000) == AP_TEXT_ENTRY_HASHCODE_BASE) {
         int index = self->m_pItemData->ItemText & 0xFFFF;
         
-        if (!AP_GAMESTATE_SHOP_IS_RANDOMIZED && AP_GAMESTATE_USE_KEY_RINGS) {
-            if (get_u8_bitfield_value(g_gamestate_ap_settings.keyring_bitfield, index)) {
-                return 2;
+        if (!AP_GAMESTATE_SHOP_IS_RANDOMIZED) {
+            if (g_gamestate_ap_settings.key_mode == KeyMode_KeyRings)
+            {
+                if (get_u8_bitfield_value(g_gamestate_ap_settings.keyring_bitfield, index)) {
+                    return 2;
+                }
+            }
+            else if (g_gamestate_ap_settings.key_mode == KeyMode_PerLevelLockpicks)
+            {
+                // Spoof the lock pick count and max before checking the availablity.
+                // This re-uses the vanilla code for our purposes.
+                u8 keys_before = gGameState.m_PlayerState.m_LockPickers;
+                u8 keys_max_before = gGameState.m_PlayerState.m_LockPickers_Max;
+                EXHashCode text_hash_before = self->m_pItemData->ItemText;
+                gGameState.m_PlayerState.m_LockPickers = g_gamestate_ap_settings.perlevel_lockpicks[index].num_total;
+                gGameState.m_PlayerState.m_LockPickers_Max = g_ap_keys_num_chests[index];
+                self->m_pItemData->ItemText = HT_Text_ShoppingItem_SparxLockPicker;
+                int ret = GUI_ShopItem__IsAvailable(self, Buy);
+                gGameState.m_PlayerState.m_LockPickers = keys_before;
+                gGameState.m_PlayerState.m_LockPickers_Max = keys_max_before;
+                self->m_pItemData->ItemText = text_hash_before;
+                return ret;
             }
         } else {
             if (g_gamestate_ap_settings.shop_text[index].been_bought) {
@@ -118,7 +154,7 @@ int GUI_ShopItem__GetCost_ReImplHook(GUI_ShopItem* self)
         return -1;
     }
 
-    if (g_gamestate_ap_settings.shop_unlock_mode) {
+    if (AP_GAMESTATE_SHOP_IS_RANDOMIZED && g_gamestate_ap_settings.shop_unlock_mode) {
         // Treat the cost variables as one 32-bit int
         return *((int*)&self->m_pItemData->cost[0]);
     } else {
@@ -131,42 +167,50 @@ int GUI_ShopItem__GetCost_ReImplHook(GUI_ShopItem* self)
     }
 }
 
-void initialize_vanilla_key_ring_shop()
+void initialize_modified_vanilla_shop()
 {
     xlsShoppingItem* items = g_gamestate_ap_settings.xls_shop_items;
 
     // Copy over all the non-keyring items.
-    memcpy(items, g_vanilla_key_ring_shop_start_items, sizeof(xlsShoppingItem)*NUM_VANILLA_KEY_RING_SHOP_START_ITEMS);
+    memcpy(items, g_vanilla_shop_items_without_keys, sizeof(xlsShoppingItem)*NUM_VANILLA_SHOP_ITEMS_WITHOUT_KEYS);
 
     // Start index for the keyring items
-    static int keyrings_start = NUM_VANILLA_KEY_RING_SHOP_START_ITEMS;
+    static int keys_start = NUM_VANILLA_SHOP_ITEMS_WITHOUT_KEYS;
 
     // Add all the keyrings
-    for (int i = keyrings_start; i < keyrings_start+AP_NUM_KEYRINGS; i++) {
-        int index = i - keyrings_start;
+    for (int i = keys_start; i < keys_start+AP_KEYS_NUM_LEVELS; i++) {
+        int index = i - keys_start;
 
-        items[i].Entity = HT_Entity_Lockpicker_Mag;
+        bool perlevel = g_gamestate_ap_settings.key_mode == KeyMode_PerLevelLockpicks;
+
+        items[i].Entity = perlevel ? HT_Entity_Lockpicker : HT_Entity_Lockpicker_Mag;
         items[i].File = HT_File_Panel;
         items[i].ItemText = AP_TEXT_ENTRY_HASHCODE_BASE + index;
         items[i].DescText = AP_TEXT_ENTRY_HASHCODE_BASE + index;
-        items[i].cost[0] = g_ap_keyring_num_chests[index] * 500;
-        items[i].cost[1] = g_ap_keyring_num_chests[index] * 625;
+        items[i].cost[0] = 500;
+        items[i].cost[1] = 625;
+        if (!perlevel)
+        {
+            items[i].cost[0] *= g_ap_keys_num_chests[index];
+            items[i].cost[1] *= g_ap_keys_num_chests[index];
+        }
         items[i].Count = -1;
         items[i].Num = 0;
         items[i].AvailableFlags = 0;
         items[i].BroughtFlags = 0;
 
         APSettings_TextEntry* textentry = &g_gamestate_ap_settings.shop_text[index];
+        textentry->use_ascii = true;
         textentry->been_bought = 0;
         
-        int len = wstrlen(g_ap_keyring_shop_strings[index]);
-        memcpy(textentry->text, g_ap_keyring_shop_strings[index], len*2);
+        char* fmt_text = perlevel ? "%s lock pick" : "%s key ring";
+        sprintf(textentry->textc, fmt_text, g_ap_keys_level_strings[index]);
     }
 
-    g_gamestate_ap_settings.xls_shop_rowcount = keyrings_start+AP_NUM_KEYRINGS;
+    g_gamestate_ap_settings.xls_shop_rowcount = keys_start+AP_KEYS_NUM_LEVELS;
 }
 
-xlsShoppingItem g_vanilla_key_ring_shop_start_items[] = {
+xlsShoppingItem g_vanilla_shop_items_without_keys[] = {
     {
         .Entity = HT_Entity_Shop_RightsOfPassage,
         .File = HT_File_Panel,

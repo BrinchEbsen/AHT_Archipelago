@@ -9,6 +9,7 @@
 #define AP_COLLECTABLES_TOTAL 271
 
 #define AP_SETTINGS_LOCATIONS_BITFIELD_SIZE ( (AP_COLLECTABLES_TOTAL/8) + ((AP_COLLECTABLES_TOTAL%8)>0 ? 1 : 0) )
+#define AP_KEYS_NUM_LEVELS 14
 #define AP_SETTINGS_KEYRINGS_BITFIELD_SIZE 0x2
 #define AP_SETTINGS_SHOPPAD_BITFIELD_SIZE 0x5
 #define AP_SETTINGS_INIT_MAGICVALUE 0x45424245 // 'EBBE' in ASCII :)
@@ -27,6 +28,24 @@
 #define AP_TELEPORT_MODE_VANILLA        0
 #define AP_TELEPORT_MODE_TP_TO_HUB      1
 #define AP_TELEPORT_MODE_SHOP_ANYWHERE  2
+
+typedef enum KeyMode
+{
+    // Lock picks work as normal
+    KeyMode_VanillaLockpicks,
+    // Lock picks are disabled entirely in favour of "key rings" which unlock all locked chests in a level.
+    KeyMode_KeyRings,
+    // There are individual lock pick types per level.
+    KeyMode_PerLevelLockpicks
+} KeyMode;
+
+typedef struct PerlevelLockpickEntry
+{
+    // The amount of this lock pick the player has.
+    u8 num;
+    // The amount of this lock pick the player has obtained in total.
+    u8 num_total;
+} PerlevelLockpickEntry;
 
 typedef enum DeathLinkReason
 {
@@ -80,8 +99,11 @@ typedef enum MinigameConfig
 typedef struct APSettings_TextEntry
 {
     /* 0x0 */ bool been_bought;
-    /* 0x1 */ u8 padding;
-    /* 0x2 */ wchar16 text[48];
+    /* 0x1 */ bool use_ascii;
+    /* 0x2 */ union {
+                  char textc[96];
+                  wchar16 textw[48];
+              };
 } APSettings_TextEntry; // Size: 0x62
 
 /*
@@ -107,6 +129,9 @@ typedef struct APSettings {
 
     /// @brief A bitfield for which of the 14 keyrings have been obtained in this save.
     u8 keyring_bitfield[AP_SETTINGS_KEYRINGS_BITFIELD_SIZE];
+
+    /// @brief Individual lock pick counts for each level with chests.
+    PerlevelLockpickEntry perlevel_lockpicks[AP_KEYS_NUM_LEVELS];
 
     /// @brief A bitfield for which of the 37 shop pads are enabled in this save.
     u8 shoppad_bitfield[AP_SETTINGS_SHOPPAD_BITFIELD_SIZE];
@@ -154,8 +179,8 @@ typedef struct APSettings {
     /// @brief Whether the shop is randomized.
     bool randomize_shop;
 
-    /// @brief Whether key rings are used.
-    bool use_key_rings;
+    /// @brief The behavior of locked chests and lock picks.
+    u8 key_mode;
 
     /// @brief Whether the cutscenes can be skipped with a button press.
     bool skip_cutscene_button;
@@ -288,6 +313,5 @@ extern APSettings g_gamestate_ap_settings;
 
 #define AP_GAMESTATE_SHOP_SPREADSHEET_START ((void*)(&g_gamestate_ap_settings.xls_shop_sheetcount_ALWAYS_1))
 #define AP_GAMESTATE_SHOP_IS_RANDOMIZED (g_gamestate_ap_settings.randomize_shop)
-#define AP_GAMESTATE_USE_KEY_RINGS (g_gamestate_ap_settings.use_key_rings)
 
 #endif /* AP_SETTINGS_H */

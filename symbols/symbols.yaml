@@ -392,6 +392,9 @@ collectable_hooks.h:
   LightXtal__Collected:
     GC_NTSC: 0x80154f50
     GC_PAL: 0x80155560
+  XSEItemHandler_Sparx__HandleLockPick:
+    GC_NTSC: 0x800f9ab8
+    GC_PAL: 0x800f9c04
   LockedChest__IdleUpdate:
     GC_NTSC: 0x8014959c
     GC_PAL: 0x80149bac

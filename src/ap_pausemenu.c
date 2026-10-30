@@ -9,7 +9,7 @@
 #include <gamestate.h>
 #include <ap_settings.h>
 #include <ap_notification.h>
-#include <ap_keyring.h>
+#include <ap_keys.h>
 #include <ap_minimap.h>
 #include <minimap_status.h>
 #include <map_minigame.h>
@@ -206,7 +206,7 @@ static inline void next_page()
 {
     curr_page++;
     
-    if (!AP_GAMESTATE_USE_KEY_RINGS && (curr_page == PauseMenu_Keyrings)) {
+    if ((g_gamestate_ap_settings.key_mode == KeyMode_VanillaLockpicks) && (curr_page == PauseMenu_Keyrings)) {
         curr_page++;
     }
 
@@ -218,7 +218,7 @@ static inline void prev_page()
 {
     curr_page--;
     
-    if (!AP_GAMESTATE_USE_KEY_RINGS && (curr_page == PauseMenu_Keyrings)) {
+    if ((g_gamestate_ap_settings.key_mode == KeyMode_VanillaLockpicks) && (curr_page == PauseMenu_Keyrings)) {
         curr_page--;
     }
 
@@ -475,7 +475,7 @@ void draw_pause_stats(GUI_Base* self, void* pWnd)
             draw_stats_abilities(self, pWnd, x, y, spacing, on_col, off_col);
             break;
         case PauseMenu_Keyrings:
-            draw_stats_keyrings(self, pWnd, x, y, spacing, on_col, off_col);
+            draw_stats_keys(self, pWnd, x, y, spacing, on_col, off_col);
             break;
         case PauseMenu_Realms:
             draw_stats_realms(self, pWnd, x, y, spacing, on_col, off_col);
@@ -504,7 +504,7 @@ void draw_stats_abilities(GUI_Base* self, void *pWnd, u16 x, u16 y, u16 spacing,
         y += spacing;
     }
 
-    if (!AP_GAMESTATE_USE_KEY_RINGS) {
+    if (g_gamestate_ap_settings.key_mode == KeyMode_VanillaLockpicks) {
         s8 lock_pickers = gGameState.m_PlayerState.m_LockPickers;
         col = (lock_pickers > 0) ? &on_col : &off_col;
         TEXT_PRINT_ALIGN_COLOR_F(pWnd, x, y, TopLeft, *col, "Lock Picks: %d", lock_pickers);
@@ -514,19 +514,33 @@ void draw_stats_abilities(GUI_Base* self, void *pWnd, u16 x, u16 y, u16 spacing,
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, on_col, "<L Abilities R>");
 }
 
-void draw_stats_keyrings(GUI_Base* self, void *pWnd, u16 x, u16 y, u16 spacing, RGBA on_col, RGBA off_col)
+void draw_stats_keys(GUI_Base* self, void *pWnd, u16 x, u16 y, u16 spacing, RGBA on_col, RGBA off_col)
 {
     RGBA* col;
     u8* keyrings = g_gamestate_ap_settings.keyring_bitfield;
 
-    for (int i = 0; i < AP_NUM_KEYRINGS; i++) {
-        col = get_u8_bitfield_value(keyrings, i) ? &on_col : &off_col;
-        TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, g_ap_keyring_pausemenu_strings[i]);
+    for (int i = 0; i < AP_KEYS_NUM_LEVELS; i++) {
+        if (g_gamestate_ap_settings.key_mode == KeyMode_KeyRings)
+        {
+            col = get_u8_bitfield_value(keyrings, i) ? &on_col : &off_col;
+            TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, *col, g_ap_keys_level_strings_short[i]);
+        }
+        else
+        {
+            u8 count = g_gamestate_ap_settings.perlevel_lockpicks[i].num_total;
+            u8 count_max = g_ap_keys_num_chests[i];
+            col = count > 0 ? &on_col : &off_col;
+            TEXT_PRINT_ALIGN_COLOR_F(pWnd, x, y, TopLeft, *col, "%s: %u/%u", g_ap_keys_level_strings_initials[i], count, count_max);
+        }
         y += spacing;
     }
 
     y += spacing*2;
-    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, on_col, "<L Key Rings R>");
+    char* page_str =
+        g_gamestate_ap_settings.key_mode == KeyMode_KeyRings
+        ? "<L Key Rings R>"
+        : "<L Lockpicks R>";
+    TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, on_col, page_str);
 }
 
 void draw_stats_realms(GUI_Base* self, void* pWnd, u16 x, u16 y, u16 spacing, RGBA on_col, RGBA off_col)

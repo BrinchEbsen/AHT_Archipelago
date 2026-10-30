@@ -1,10 +1,10 @@
 #include <util.h>
-#include <ap_keyring.h>
+#include <ap_keys.h>
 #include <ap_settings.h>
 
 // Entries are stored as 0xRRLL (Realm and Level id's)
 
-u16 g_ap_keyring_list[] = {
+u16 g_ap_key_list[] = {
     // Dragon Village
     ( Realm_1 << 8 ) | Level_A, // 0
     // Crocovile Swamp
@@ -38,24 +38,24 @@ u16 g_ap_keyring_list[] = {
     ( Realm_4 << 8 ) | Level_E  // 13
 };
 
-wchar16* g_ap_keyring_shop_strings[] = {
-    u"Dragon Village key ring",
-    u"Crocovile Swamp key ring",
-    u"Dragonfly Falls key ring",
-    u"Coastal Remains key ring",
-    u"Sunken Ruins key ring",
-    u"Cloudy Domain key ring",
-    u"Frostbite Village key ring",
-    u"Gloomy Glacier key ring",
-    u"Ice Citadel key ring",
-    u"Stormy Beach key ring",
-    u"Molten Mount key ring",
-    u"Magma Falls key ring",
-    u"Dark Mine key ring",
-    u"Red's Laboratory key ring"
+char* g_ap_keys_level_strings[] = {
+    "Dragon Village",
+    "Crocovile Swamp",
+    "Dragonfly Falls",
+    "Coastal Remains",
+    "Sunken Ruins",
+    "Cloudy Domain",
+    "Frostbite Village",
+    "Gloomy Glacier",
+    "Ice Citadel",
+    "Stormy Beach",
+    "Molten Mount",
+    "Magma Falls",
+    "Dark Mine",
+    "Red's Laboratory"
 };
 
-char* g_ap_keyring_pausemenu_strings[] = {
+char* g_ap_keys_level_strings_short[] = {
     "Dragon V.",
     "Crocovile S.",
     "Dragonfly F.",
@@ -72,7 +72,24 @@ char* g_ap_keyring_pausemenu_strings[] = {
     "Red's L."
 };
 
-u8 g_ap_keyring_num_chests[] = {
+char g_ap_keys_level_strings_initials[][3] = {
+    "DV",
+    "CS",
+    "DF",
+    "CR",
+    "CD",
+    "SR",
+    "FV",
+    "GG",
+    "IC",
+    "SB",
+    "MM",
+    "MF",
+    "DM",
+    "RL"
+};
+
+u8 g_ap_keys_num_chests[] = {
     // Dragon Village
     3,
     // Crocovile Swamp
@@ -106,27 +123,42 @@ u8 g_ap_keyring_num_chests[] = {
     2
 };
 
+int ap_keys_get_level_index(SE_Map* map)
+{
+    if (map == NULL) {
+        return -1;
+    }
+
+    if ((map->m_RealmID == 0) || (map->m_LevelID == 0)) {
+        return -1;
+    }
+
+    // Combine realm and level ID to match against format in the array
+    u16 realm_level = ( map->m_RealmID << 8 ) | map->m_LevelID;
+
+    for (int i = 0; i < AP_KEYS_NUM_LEVELS; i++)
+    {
+        if (realm_level == g_ap_key_list[i])
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
 bool ap_keyring_unlocked(SE_Map* map, bool* out_result)
 {
     *out_result = false;
 
-    if (map == NULL) {
+    int index = ap_keys_get_level_index(map);
+
+    if (index < 0)
+    {
         return false;
     }
 
-    if ((map->m_RealmID == 0) || (map->m_LevelID == 0)) {
-        return false;
-    }
+    *out_result = get_u8_bitfield_value(g_gamestate_ap_settings.keyring_bitfield, index);
 
-    // Combine realm and level ID to match against format in keyring array
-    u16 realm_level = ( map->m_RealmID << 8 ) | map->m_LevelID;
-
-    for (int i = 0; i < AP_NUM_KEYRINGS; i++) {
-        if (realm_level == g_ap_keyring_list[i]) {
-            *out_result = get_u8_bitfield_value(g_gamestate_ap_settings.keyring_bitfield, i);
-            return true;
-        }
-    }
-
-    return false;
+    return true;
 }

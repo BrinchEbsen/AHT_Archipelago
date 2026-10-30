@@ -43,6 +43,9 @@ extern Bool CPU_Base__CreatedChestPickup(void* self, s32 Index, EXVector* Pos, v
 extern Bool BaseChest__ReleaseMyGems(void* self);
 Bool LockedChest__ReleaseMyGems_VtableHook(void* self);
 
+extern void XSEItemHandler_Sparx__HandleLockPick_PreCallHook(void* self, int flag);
+void XSEItemHandler_Sparx__HandleLockPick(void* self, int flag);
+
 extern void LockedChest__IdleUpdate(void* self);
 void LockedChest__IdleUpdate_VtableHook(void* self);
 

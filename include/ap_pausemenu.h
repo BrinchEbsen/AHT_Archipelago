@@ -60,8 +60,8 @@ void draw_pause_stats(GUI_Base* self, void* pWnd);
 // Draw the stats page with the ability flags.
 void draw_stats_abilities(GUI_Base* self, void* pWnd, u16 x, u16 y, u16 spacing, RGBA on_col, RGBA off_col);
 
-// Draw the stats page with the keyrings.
-void draw_stats_keyrings(GUI_Base* self, void* pWnd, u16 x, u16 y, u16 spacing, RGBA on_col, RGBA off_col);
+// Draw the stats page with the keyrings or per-level lock picks.
+void draw_stats_keys(GUI_Base* self, void* pWnd, u16 x, u16 y, u16 spacing, RGBA on_col, RGBA off_col);
 
 // Draw the stats page with the accessible realms.
 void draw_stats_realms(GUI_Base* self, void* pWnd, u16 x, u16 y, u16 spacing, RGBA on_col, RGBA off_col);

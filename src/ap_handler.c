@@ -22,6 +22,7 @@
 #include <ap_trap.h>
 #include <ap_warps.h>
 #include <mapindex.h>
+#include <ap_keys.h>
 
 #if AP_DEBUG_ADD_REMOVE_SHOP_ITEMS!=0
 void dbg_add_shop_item();
@@ -89,7 +90,7 @@ void ap_gamestate_update()
     if (AP_GAMESTATE_SHOP_IS_RANDOMIZED)
     {
         // Freeze max values for lock picks and breath ammo
-        if (!AP_GAMESTATE_USE_KEY_RINGS) {
+        if (g_gamestate_ap_settings.key_mode == KeyMode_VanillaLockpicks) {
             gGameState.m_PlayerState.m_LockPickers_Max = 127;
         }
         gGameState.m_PlayerState.m_FlameBombs_Max = 127;
@@ -98,9 +99,27 @@ void ap_gamestate_update()
         gGameState.m_PlayerState.m_ElectricBombs_Max = 127;
     }
 
-    if (AP_GAMESTATE_USE_KEY_RINGS) {
+    if (g_gamestate_ap_settings.key_mode == KeyMode_KeyRings) {
+        // Lock picks are essentially disabled when using key rings.
         gGameState.m_PlayerState.m_LockPickers = 0;
         gGameState.m_PlayerState.m_LockPickers_Max = 0;
+    }
+    else if (g_gamestate_ap_settings.key_mode == KeyMode_PerLevelLockpicks) {
+        // The amount and maximum of the lock pick count is set to that of the current level.
+
+        SE_Map* map = GetSpyroMap(0);
+        int keys_index = ap_keys_get_level_index(map);
+
+        if (keys_index < 0)
+        {
+            gGameState.m_PlayerState.m_LockPickers = 0;
+            gGameState.m_PlayerState.m_LockPickers_Max = 0;
+        }
+        else
+        {
+            gGameState.m_PlayerState.m_LockPickers = g_gamestate_ap_settings.perlevel_lockpicks[keys_index].num;
+            gGameState.m_PlayerState.m_LockPickers_Max = g_ap_keys_num_chests[keys_index];
+        }
     }
 
     if (gGameState.m_PlayerState.m_TotalLightGems >= g_gamestate_ap_settings.invincibility_cost) {

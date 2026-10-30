@@ -86,7 +86,6 @@
             "./src/ex/exvector.c",
             "./src/ex/runtimeclass.c",
             "./src/se/gamestate.c",
-            "./src/breath_hooks.c",
             "./src/collectable_hooks.c",
             "./src/glide_hooks.c",
             "./src/charge_hooks.c",
@@ -102,7 +101,7 @@
             "./src/elevator_hooks.c",
             "./src/se/playerstate.c",
             "./src/ap_deathlink.c",
-            "./src/ap_keyring.c",
+            "./src/ap_keys.c",
             "./src/ap_minimap.c",
             "./src/gadget_hooks.c",
             "./src/boss_hooks.c",
@@ -170,7 +169,8 @@
           "code_files": [
             "./src/ap_collectables.c",
             "./src/ap_triginfo.c",
-            "./src/ap_collectables_array.c"
+            "./src/ap_collectables_array.c",
+            "./src/breath_hooks.c"
           ],
           "memory_address": "801858c0",
           "size": "1D60",
@@ -948,6 +948,19 @@
           "auto_calculate_injection_file_address": false,
           "injection_type": "memory_only",
           "enabled": true
+        },
+        {
+          "name": "XSEItemHandler_Sparx__HandleLockPick_PreCallHook",
+          "code_files": [
+            "./asm/GC/XSEItemHandler_Sparx__HandleLockPick_PreCallHook.s"
+          ],
+          "memory_address": "800eefd8",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
         }
       ],
       "binary_patches": [],
@@ -1039,7 +1052,6 @@
             "./src/ex/exvector.c",
             "./src/ex/runtimeclass.c",
             "./src/se/gamestate.c",
-            "./src/breath_hooks.c",
             "./src/collectable_hooks.c",
             "./src/glide_hooks.c",
             "./src/charge_hooks.c",
@@ -1055,7 +1067,7 @@
             "./src/elevator_hooks.c",
             "./src/se/playerstate.c",
             "./src/ap_deathlink.c",
-            "./src/ap_keyring.c",
+            "./src/ap_keys.c",
             "./src/ap_minimap.c",
             "./src/gadget_hooks.c",
             "./src/boss_hooks.c",
@@ -1123,7 +1135,8 @@
           "code_files": [
             "./src/ap_collectables.c",
             "./src/ap_triginfo.c",
-            "./src/ap_collectables_array.c"
+            "./src/ap_collectables_array.c",
+            "./src/breath_hooks.c"
           ],
           "memory_address": "80185ed0",
           "size": "1D60",
@@ -1901,6 +1914,19 @@
           "auto_calculate_injection_file_address": false,
           "injection_type": "memory_only",
           "enabled": true
+        },
+        {
+          "name": "XSEItemHandler_Sparx__HandleLockPick_PreCallHook",
+          "code_files": [
+            "./asm/GC/XSEItemHandler_Sparx__HandleLockPick_PreCallHook.s"
+          ],
+          "memory_address": "800ef124",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
         }
       ],
       "binary_patches": [],
@@ -2013,7 +2039,7 @@
             "./src/ap_collectables.c",
             "./src/ap_deathlink.c",
             "./src/ap_handler.c",
-            "./src/ap_keyring.c",
+            "./src/ap_keys.c",
             "./src/ap_objectives.c",
             "./src/ap_pausemenu.c",
             "./src/arena.c",
@@ -2116,7 +2142,7 @@
             "./src/ap_collectables.c",
             "./src/ap_deathlink.c",
             "./src/ap_handler.c",
-            "./src/ap_keyring.c",
+            "./src/ap_keys.c",
             "./src/ap_objectives.c",
             "./src/ap_pausemenu.c",
             "./src/arena.c",
