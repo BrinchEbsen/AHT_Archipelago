@@ -51,6 +51,7 @@ g_EXRandClass = 0x804cc854;
 EXItemEnv__StartMusic = 0x802bd548;
 EXItemEnv__m_pTheItemEnv = 0x804cbb4c;
 XSEItemEnv__StartMusic__LockedFlag = 0x804cb650;
+EXItemHandler__EXItemHandler = 0x802bff14;
 
 /* ap_handler.h */
 LillyPad__Update = 0x801c2a3c;
@@ -229,6 +230,10 @@ SE_TriggerList__ConstructAll = 0x8023b534;
 
 /* npc_hooks.h */
 XSEItemHandler_NPC__InitNPC = 0x800dbb10;
+
+/* cannon_hooks.h */
+XSEItemHandler_Cannon__Update = 0x800c267c;
+gSetTalkIndicatorVisibility = 0x80195da4;
 
 /* igstdlib.h */
 Wcscpy = 0x802fbe30;

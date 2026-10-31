@@ -14,4 +14,6 @@ extern void EXItemEnv__StartMusic(void* self, EXHashCode HashCode, u32 nGeoSound
 void XSEItemEnv__StartMusic_ReImplHook(void* self, EXHashCode HashCode, u32 nFlags, s32 FadeOutTime, s32 FadeInTime);
 extern u32 XSEItemEnv__StartMusic__LockedFlag;
 
+extern void* EXItemHandler__EXItemHandler(void* self);
+
 #endif /* EX_ITEM_ENV_H */

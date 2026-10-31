@@ -125,6 +125,9 @@ exitemenv.h:
   XSEItemEnv__StartMusic__LockedFlag:
     GC_NTSC: 0x804cb650
     GC_PAL: 0x804cc110
+  EXItemHandler__EXItemHandler:
+    GC_NTSC: 0x802bff14
+    GC_PAL: 0x802c0784
 
 ap_handler.h:
   LillyPad__Update:
@@ -547,6 +550,14 @@ npc_hooks.h:
   XSEItemHandler_NPC__InitNPC:
     GC_NTSC: 0x800dbb10
     GC_PAL: 0x800dbc5c
+
+cannon_hooks.h:
+  XSEItemHandler_Cannon__Update:
+    GC_NTSC: 0x800c267c
+    GC_PAL: 0x800c2770
+  gSetTalkIndicatorVisibility:
+    GC_NTSC: 0x80195da4
+    GC_PAL: 0x801963b4
 
 igstdlib.h:
   Wcscpy:

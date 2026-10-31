@@ -322,6 +322,7 @@ void ap_init_gamestate()
         ABILITY_AP_GLIDE |
         ABILITY_AP_CHARGE |
         ABILITY_AP_SWIM |
+        ABILITY_AP_CANNON |
         ABILITY_DOUBLE_JUMP |
         ABILITY_ELECTRIC_BREATH |
         ABILITY_WATER_BREATH |

@@ -141,7 +141,7 @@ typedef struct StatAbilityEntry
     u32 flag; // Last flag isn't used, so if that one is set, we check the butterfly jar
 } StatAbilityEntry;
 
-#define NUM_STAT_ABILITY_ENTRIES 14
+#define NUM_STAT_ABILITY_ENTRIES 15
 StatAbilityEntry stat_ability_entries[] = {
     {
         .str = "Double Jump",
@@ -198,6 +198,10 @@ StatAbilityEntry stat_ability_entries[] = {
     {
         .str = "Swim",
         .flag = ABILITY_AP_SWIM
+    },
+    {
+        .str = "Cannon",
+        .flag = ABILITY_AP_CANNON
     }
 };
 
@@ -509,7 +513,7 @@ void draw_stats_abilities(GUI_Base* self, void *pWnd, u16 x, u16 y, u16 spacing,
         col = (lock_pickers > 0) ? &on_col : &off_col;
         TEXT_PRINT_ALIGN_COLOR_F(pWnd, x, y, TopLeft, *col, "Lock Picks: %d", lock_pickers);
     }
-    y += spacing*2;
+    y += spacing;
 
     TEXT_PRINT_ALIGN_COLOR(pWnd, x, y, TopLeft, on_col, "<L Abilities R>");
 }

@@ -26,6 +26,7 @@
 #define ABILITY_AP_GLIDE            0x100000
 #define ABILITY_AP_CHARGE           0x200000
 #define ABILITY_AP_SWIM             0x400000
+#define ABILITY_AP_CANNON           0x800000
 
 #define ABILITY_ALL_PERMANENT_ABILITIES \
     ABILITY_DOUBLE_JUMP |\

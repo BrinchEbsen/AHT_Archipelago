@@ -1,0 +1,1 @@
+.long XSEItemHandler_Cannon__Update_VtableHook

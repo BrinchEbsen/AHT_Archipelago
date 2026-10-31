@@ -115,7 +115,8 @@
             "./src/BASIC_hooks.c",
             "./src/BASIC_hooks.patches.c",
             "./src/asm/asm_disable_total_gems_double_gems.s",
-            "./src/ap_warps.c"
+            "./src/ap_warps.c",
+            "./src/cannon_hooks.c"
           ],
           "memory_address": "80296618",
           "size": "7BC4",
@@ -961,6 +962,45 @@
           "auto_calculate_injection_file_address": false,
           "injection_type": "memory_only",
           "enabled": true
+        },
+        {
+          "name": "cannon_XSEItemHandler_Player__ButtonPressed_PreCallHook",
+          "code_files": [
+            "./asm/GC/cannon_XSEItemHandler_Player__ButtonPressed_PreCallHook.s"
+          ],
+          "memory_address": "800ada5c",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "XSEItemHandler_Cannon__Update_VtableHook",
+          "code_files": [
+            "./asm/GC/XSEItemHandler_Cannon__Update_VtableHook.s"
+          ],
+          "memory_address": "8040F120",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "cannon_EXItemHandler__ctor_PreCallHook",
+          "code_files": [
+            "./asm/GC/cannon_EXItemHandler__ctor_PreCallHook.s"
+          ],
+          "memory_address": "80385b08",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
         }
       ],
       "binary_patches": [],
@@ -1081,7 +1121,8 @@
             "./src/BASIC_hooks.c",
             "./src/BASIC_hooks.patches.c",
             "./src/asm/asm_disable_total_gems_double_gems.s",
-            "./src/ap_warps.c"
+            "./src/ap_warps.c",
+            "./src/cannon_hooks.c"
           ],
           "memory_address": "80296e88",
           "size": "7BC4",
@@ -1921,6 +1962,45 @@
             "./asm/GC/XSEItemHandler_Sparx__HandleLockPick_PreCallHook.s"
           ],
           "memory_address": "800ef124",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "cannon_XSEItemHandler_Player__ButtonPressed_PreCallHook",
+          "code_files": [
+            "./asm/GC/cannon_XSEItemHandler_Player__ButtonPressed_PreCallHook.s"
+          ],
+          "memory_address": "800adb2c",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "XSEItemHandler_Cannon__Update_VtableHook",
+          "code_files": [
+            "./asm/GC/XSEItemHandler_Cannon__Update_VtableHook.s"
+          ],
+          "memory_address": "8040FB80",
+          "size": "0",
+          "injection_file": "",
+          "injection_file_address": "",
+          "auto_calculate_injection_file_address": false,
+          "injection_type": "memory_only",
+          "enabled": true
+        },
+        {
+          "name": "cannon_EXItemHandler__ctor_PreCallHook",
+          "code_files": [
+            "./asm/GC/cannon_EXItemHandler__ctor_PreCallHook.s"
+          ],
+          "memory_address": "80386504",
           "size": "0",
           "injection_file": "",
           "injection_file_address": "",
