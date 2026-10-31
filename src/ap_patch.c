@@ -22,7 +22,7 @@ APSettings g_patch_ap_settings = {
     .infinite_double_gem = false,
     .fireworks_are_randomized = false,
     .randomize_shop = false,
-    .key_mode = KeyMode_PerLevelLockpicks,
+    .key_mode = KeyMode_VanillaLockpicks,
 
     #if AP_DEBUG_QUICK_START!=0
     .skip_cutscene_button = true,
