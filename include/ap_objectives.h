@@ -4,6 +4,6 @@
 
 #define NUM_NEW_GAME_OBJECTIVES 124
 // Objectives to immediately set upon the save starting.
-extern EXHashCode new_game_objectives[];
+extern u16 new_game_objectives[];
 
 #endif /* AP_OBJECTIVES */

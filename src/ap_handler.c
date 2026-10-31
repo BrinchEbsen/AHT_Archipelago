@@ -343,7 +343,8 @@ void ap_init_gamestate()
     // Set starting game objectives
     for (int i = 0; i < NUM_NEW_GAME_OBJECTIVES; i++) {
         PlayerObjectives__SetObjective__ReImplHook(
-            &gGameState.m_PlayerObjectives, new_game_objectives[i]);
+            &gGameState.m_PlayerObjectives,
+            HT_Objective_HASHCODE_BASE | new_game_objectives[i]);
     }
 
     // Set objective flag for having bought a lock pick
