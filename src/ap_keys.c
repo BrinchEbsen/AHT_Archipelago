@@ -77,8 +77,8 @@ char g_ap_keys_level_strings_initials[][3] = {
     "CS",
     "DF",
     "CR",
-    "CD",
     "SR",
+    "CD",
     "FV",
     "GG",
     "IC",
@@ -102,7 +102,7 @@ u8 g_ap_keys_num_chests[] = {
     // Sunken Ruins
     8,
     // Cloudy Domain
-    3,
+    4,
 
     // Frostbite Village
     4,
