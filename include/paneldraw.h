@@ -7,7 +7,8 @@
 extern GUI_Base* gp_paneldraw_loop;
 extern GUI_Base__vtable paneldraw_vtable;
 
-extern char gVarTextBuffer[0x200];
+#define VAR_TEXT_BUFFER_LEN 0x400
+char* get_var_text_buffer();
 
 extern DrawLoop paneldraw_callback;
 

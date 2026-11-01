@@ -8,15 +8,27 @@
 #include <exrect.h>
 #include <pad.h>
 #include <gameloop.h>
+#include <exmem.h>
 
 GUI_Base* gp_paneldraw_loop = NULL;
 GUI_Base__vtable paneldraw_vtable;
 
-char gVarTextBuffer[0x200];
-
 DrawLoop paneldraw_callback = NULL;
 
-void paneldraw_vtable_setup() {
+char* get_var_text_buffer()
+{
+    static char* buffer = NULL;
+
+    if (buffer == NULL)
+    {
+        buffer = _EXAlloc(VAR_TEXT_BUFFER_LEN, 0);
+    }
+
+    return buffer;
+}
+
+void paneldraw_vtable_setup()
+{
     // Copy the GUI_Base virtual table to our custom one, and replace the functions we want.
     memcpy(&paneldraw_vtable, &GUI_Base_virtual_table, sizeof(GUI_Base__vtable));
     paneldraw_vtable.v_Draw.__pfn = paneldraw__draw;
@@ -139,8 +151,10 @@ void textprintf(void* pWnd, u16 x, u16 y, float Scale, TextAlign Align, RGBA Col
     va_list args;
     va_start(args, pText);
 
-    vsprintf(gVarTextBuffer, pText, args);
-    textprint(pWnd, x, y, Scale, Align, Color, Shadow, gVarTextBuffer);
+    char* buff = get_var_text_buffer();
+
+    vsprintf(buff, pText, args);
+    textprint(pWnd, x, y, Scale, Align, Color, Shadow, buff);
 
     va_end(args);
 }

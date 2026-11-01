@@ -716,9 +716,11 @@ void LoadingLoop2D__XWnd__TextPrint_PreCallHook(void* self, EXHashCode Code)
 
     float percentage = get_checks_percentage();
 
-    sprintf(gVarTextBuffer, "Checks: %.1f%%%s", percentage, tiptext);
+    char* buff = get_var_text_buffer();
 
-    XWnd__TextPrintC(self, gVarTextBuffer);
+    sprintf(buff, "Checks: %.1f%%%s", percentage, tiptext);
+
+    XWnd__TextPrintC(self, buff);
 }
 
 s32 SEGameFlow__v_StateRunning__VTHOOK(SEGameFlow *self)
